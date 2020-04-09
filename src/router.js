@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Visualization from "./components/Visualization";
 
 Vue.use(Router);
 function lazyLoad(view){
@@ -9,11 +8,6 @@ function lazyLoad(view){
 
 export default new Router({
     routes: [
-        {
-            path: '/',
-            name: 'Visualization',
-            component: Visualization
-        },
         {
             path: "/404",
             name: "Error404",
