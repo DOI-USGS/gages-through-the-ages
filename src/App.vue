@@ -2,7 +2,13 @@
   <div id="app">
     <HeaderUSWDSBanner />
     <HeaderUSGS />
-    <router-view :is-internet-explorer="isInternetExplorer" />
+    <div id="Visualization">
+      <GagesBarChartAnimation />
+      <LongTerm />
+      <DataSources />
+      <Embed />
+      <SocialMedia />
+    </div>
     <FooterUSGS />
   </div>
 </template>
@@ -10,6 +16,10 @@
 <script>
     import HeaderUSWDSBanner from './components/HeaderUSWDSBanner'
     import HeaderUSGS from './components/HeaderUSGS'
+    import GagesBarChartAnimation from './components/GagesBarChartAnimation'
+    import LongTerm from './components/LongTerm'
+    import DataSources from './components/DataSources'
+    import Embed from './components/Embed'
     import FooterUSGS from './components/FooterUSGS'
 
     export default {
@@ -17,6 +27,10 @@
         components: {
             HeaderUSWDSBanner,
             HeaderUSGS,
+            GagesBarChartAnimation,
+            LongTerm,
+            DataSources,
+            Embed,
             FooterUSGS
         },
         data() {
@@ -37,22 +51,75 @@
     padding: 0;
   }
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     width: 100%;
   }
+  .svg-text {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    cursor: default;
+  }
+  *{
+    padding:0; margin:0;
+  }
+  p{
+    margin-top:10px;
+    font-size:1.2em;
+    line-height:1.5em;
+  }
 
-  @media screen and (min-width: 601px){
-    body{
-      height: 100vh;
+  a{
+    text-decoration:none;
+    cursor:pointer;
+    color: #003366;
+    font-weight: 600;
+  }
+
+  a:hover{
+    text-decoration:underline;
+  }
+
+  body{
+    font-family:sans-serif;
+  }
+
+  figure{
+    margin-top: 10px;
+  }
+
+  #Visualization{
+    width: 95vw;
+    max-width: 1210px;
+    padding: 10px 0 10px 0;
+    margin: 0 auto;
+  }
+
+  .section{
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width:768px){
+    #header h3{
+      font-size:1.2em;
+      margin:0 0 0 10px;
+      padding:0;
     }
-    #app{
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
+  }
+
+  @media screen and (min-width:1024px){
+   #Visualization{
+      width:770px;
+    }
+  }
+
+  @media screen and (min-width:1500px){
+    #Visualization{
+      width:810px;
     }
   }
 </style>
