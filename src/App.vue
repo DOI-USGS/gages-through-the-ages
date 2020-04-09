@@ -4,10 +4,10 @@
     <HeaderUSGS />
     <div id="Visualization">
       <GagesBarChartAnimation />
+      <MapboxSlider />
       <LongTerm />
       <DataSources />
       <Embed />
-      <SocialMedia />
     </div>
     <FooterUSGS />
   </div>
@@ -17,6 +17,7 @@
     import HeaderUSWDSBanner from './components/HeaderUSWDSBanner'
     import HeaderUSGS from './components/HeaderUSGS'
     import GagesBarChartAnimation from './components/GagesBarChartAnimation'
+    import MapboxSlider from './components/MapboxSlider'
     import LongTerm from './components/LongTerm'
     import DataSources from './components/DataSources'
     import Embed from './components/Embed'
@@ -28,6 +29,7 @@
             HeaderUSWDSBanner,
             HeaderUSGS,
             GagesBarChartAnimation,
+            MapboxSlider,
             LongTerm,
             DataSources,
             Embed,
