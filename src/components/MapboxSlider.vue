@@ -34,13 +34,15 @@ export default {
                 container: 'before',
                 style: beforeStyle.style,
                 center: [-95.7129, 37.0902],
-                zoom: 2
+                zoom: 2,
+                interactive: false
             });
             let afterMap = new mapboxgl.Map({
                 container: 'after',
                 style: afterStyle.style,
                 center: [-95.7129, 37.0902],
-                zoom: 2
+                zoom: 2,
+                interactive: false
             });
             let container = '#comparison-container';
 
