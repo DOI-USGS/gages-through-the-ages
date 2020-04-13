@@ -2637,7 +2637,6 @@
                 numYears: undefined,
                 delay: 500,
                 playInterval: undefined,
-                hovertext: null,
                 svg: document.getElementById("map-svg"),
                 ls: null
 
@@ -2647,6 +2646,15 @@
           this.startMonitoringLocationAnimation();
         },
         methods: {
+          hovertext(event, text) {
+              if (text) {
+                  console.log('show the tooltip eventually')
+                  // mapSVG.showTooltip(event.clientX, event.clientY, text);
+              } else {
+                  console.log('remove the tooltip eventually')
+                  // mapSVG.hideTooltip();
+              }
+          },
           showyear(year) {
               const self = this;
               let indices = undefined;
@@ -2671,10 +2679,11 @@
               $(barId).addClass('selected-year');
               $(":not(" + barId + ")").removeClass('selected-year');
           },
-          pause() {
+          pause(year) {
+              console.log('year in pause ', year)
             const self = this;
-            clearInterval(playInterval);
-            self.yearPointer = year - startYear;
+            clearInterval(self.playInterval);
+            self.yearPointer = year - this.startYear;
               self.showyear(year);
           },
           play() {
