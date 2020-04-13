@@ -51,16 +51,16 @@ pipeline {
             steps {
                 script {
                     if ("${params.BUILD_DEST}" == "prod") {
-                        targetDomain = "s3://gages-through-the-ages-prod-website"
+                        targetDomain = "s3://gages-through-ages-prod-website"
                     }
                     else if ("${params.BUILD_DEST}" == "qa") {
-                        targetDomain = "s3://gages-through-the-ages-qa-website"
+                        targetDomain = "s3://gages-through-ages-qa-website"
                     }
                     else if ("${params.BUILD_DEST}" == "beta") {
-                        targetDomain = "s3://gages-through-the-ages-beta-website"
+                        targetDomain = "s3://gages-through-ages-beta-website"
                     }
                     else {
-                        targetDomain = "s3://gages-through-the-ages-test-website"
+                        targetDomain = "s3://gages-through-ages-test-website"
                     }
                 }
                 sh """
