@@ -14,10 +14,10 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
       apt-get install nodejs -y
 
 # Create temp directory for building viz app
-RUN mkdir -p /tmp/gages-through-the-ages-app
+RUN mkdir -p /tmp/gages-through-the-ages
 
 # Copy source code
-WORKDIR /tmp/gages-through-the-ages-app
+WORKDIR /tmp/gages-through-the-ages
 COPY . .
 # Set environment variables for build target and tile source and then run config.sh
 # to insert the correct S3 tile source URLs in the Mapbox configuration file.
