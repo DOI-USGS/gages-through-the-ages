@@ -1605,1033 +1605,1033 @@
               x="-0.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '28 gages in 1890');"
+              @mousemove="hovertext($event, '28 gages in 1890')"
               @mouseover="pause('1890')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="4.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '32 gages in 1891');"
+              @mousemove="hovertext($event, '32 gages in 1891')"
               @mouseover="pause('1891')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="8.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '32 gages in 1892');"
+              @mousemove="hovertext($event, '32 gages in 1892')"
               @mouseover="pause('1892')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="13.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '33 gages in 1893');"
+              @mousemove="hovertext($event, '33 gages in 1893')"
               @mouseover="pause('1893')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="18.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '34 gages in 1894');"
+              @mousemove="hovertext($event, '34 gages in 1894')"
               @mouseover="pause('1894')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="22.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '49 gages in 1895');"
+              @mousemove="hovertext($event, '49 gages in 1895')"
               @mouseover="pause('1895')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="27.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '79 gages in 1896');"
+              @mousemove="hovertext($event, '79 gages in 1896')"
               @mouseover="pause('1896')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="32.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '91 gages in 1897');"
+              @mousemove="hovertext($event, '91 gages in 1897')"
               @mouseover="pause('1897')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="37"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '105 gages in 1898');"
+              @mousemove="hovertext($event, '105 gages in 1898')"
               @mouseover="pause('1898')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="41.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '119 gages in 1899');"
+              @mousemove="hovertext($event, '119 gages in 1899')"
               @mouseover="pause('1899')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="46.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '124 gages in 1900');"
+              @mousemove="hovertext($event, '124 gages in 1900')"
               @mouseover="pause('1900')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="51.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '139 gages in 1901');"
+              @mousemove="hovertext($event, '139 gages in 1901')"
               @mouseover="pause('1901')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="55.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '162 gages in 1902');"
+              @mousemove="hovertext($event, '162 gages in 1902')"
               @mouseover="pause('1902')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="60.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '194 gages in 1903');"
+              @mousemove="hovertext($event, '194 gages in 1903')"
               @mouseover="pause('1903')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="65.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '270 gages in 1904');"
+              @mousemove="hovertext($event, '270 gages in 1904')"
               @mouseover="pause('1904')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="69.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '325 gages in 1905');"
+              @mousemove="hovertext($event, '325 gages in 1905')"
               @mouseover="pause('1905')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="74.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '323 gages in 1906');"
+              @mousemove="hovertext($event, '323 gages in 1906')"
               @mouseover="pause('1906')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="79.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '323 gages in 1907');"
+              @mousemove="hovertext($event, '323 gages in 1907')"
               @mouseover="pause('1907')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="84"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '376 gages in 1908');"
+              @mousemove="hovertext($event, '376 gages in 1908')"
               @mouseover="pause('1908')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="88.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '432 gages in 1909');"
+              @mousemove="hovertext($event, '432 gages in 1909')"
               @mouseover="pause('1909')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="93.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '547 gages in 1910');"
+              @mousemove="hovertext($event, '547 gages in 1910')"
               @mouseover="pause('1910')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="98.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '705 gages in 1911');"
+              @mousemove="hovertext($event, '705 gages in 1911')"
               @mouseover="pause('1911')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="102.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '801 gages in 1912');"
+              @mousemove="hovertext($event, '801 gages in 1912')"
               @mouseover="pause('1912')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="107.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '809 gages in 1913');"
+              @mousemove="hovertext($event, '809 gages in 1913')"
               @mouseover="pause('1913')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="112.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '878 gages in 1914');"
+              @mousemove="hovertext($event, '878 gages in 1914')"
               @mouseover="pause('1914')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="116.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '930 gages in 1915');"
+              @mousemove="hovertext($event, '930 gages in 1915')"
               @mouseover="pause('1915')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="121.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '938 gages in 1916');"
+              @mousemove="hovertext($event, '938 gages in 1916')"
               @mouseover="pause('1916')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="126.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '933 gages in 1917');"
+              @mousemove="hovertext($event, '933 gages in 1917')"
               @mouseover="pause('1917')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="131"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '946 gages in 1918');"
+              @mousemove="hovertext($event, '946 gages in 1918')"
               @mouseover="pause('1918')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="135.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '957 gages in 1919');"
+              @mousemove="hovertext($event, '957 gages in 1919')"
               @mouseover="pause('1919')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="140.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '1056 gages in 1920');"
+              @mousemove="hovertext($event, '1056 gages in 1920')"
               @mouseover="pause('1920')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="145.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '1106 gages in 1921');"
+              @mousemove="hovertext($event, '1106 gages in 1921')"
               @mouseover="pause('1921')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="149.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '1263 gages in 1922');"
+              @mousemove="hovertext($event, '1263 gages in 1922')"
               @mouseover="pause('1922')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="154.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '1336 gages in 1923');"
+              @mousemove="hovertext($event, '1336 gages in 1923')"
               @mouseover="pause('1923')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="159.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '1399 gages in 1924');"
+              @mousemove="hovertext($event, '1399 gages in 1924')"
               @mouseover="pause('1924')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="163.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '1446 gages in 1925');"
+              @mousemove="hovertext($event, '1446 gages in 1925')"
               @mouseover="pause('1925')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="168.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '1534 gages in 1926');"
+              @mousemove="hovertext($event, '1534 gages in 1926')"
               @mouseover="pause('1926')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="173.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '1582 gages in 1927');"
+              @mousemove="hovertext($event, '1582 gages in 1927')"
               @mouseover="pause('1927')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="178"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '1694 gages in 1928');"
+              @mousemove="hovertext($event, '1694 gages in 1928')"
               @mouseover="pause('1928')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="182.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '2012 gages in 1929');"
+              @mousemove="hovertext($event, '2012 gages in 1929')"
               @mouseover="pause('1929')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="187.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '2259 gages in 1930');"
+              @mousemove="hovertext($event, '2259 gages in 1930')"
               @mouseover="pause('1930')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="192.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '2393 gages in 1931');"
+              @mousemove="hovertext($event, '2393 gages in 1931')"
               @mouseover="pause('1931')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="196.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '2432 gages in 1932');"
+              @mousemove="hovertext($event, '2432 gages in 1932')"
               @mouseover="pause('1932')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="201.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '2451 gages in 1933');"
+              @mousemove="hovertext($event, '2451 gages in 1933')"
               @mouseover="pause('1933')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="206.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '2449 gages in 1934');"
+              @mousemove="hovertext($event, '2449 gages in 1934')"
               @mouseover="pause('1934')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="210.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '2606 gages in 1935');"
+              @mousemove="hovertext($event, '2606 gages in 1935')"
               @mouseover="pause('1935')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="215.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '2698 gages in 1936');"
+              @mousemove="hovertext($event, '2698 gages in 1936')"
               @mouseover="pause('1936')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="220.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '2804 gages in 1937');"
+              @mousemove="hovertext($event, '2804 gages in 1937')"
               @mouseover="pause('1937')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="225"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '3002 gages in 1938');"
+              @mousemove="hovertext($event, '3002 gages in 1938')"
               @mouseover="pause('1938')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="229.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '3404 gages in 1939');"
+              @mousemove="hovertext($event, '3404 gages in 1939')"
               @mouseover="pause('1939')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="234.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '3855 gages in 1940');"
+              @mousemove="hovertext($event, '3855 gages in 1940')"
               @mouseover="pause('1940')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="239.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '4065 gages in 1941');"
+              @mousemove="hovertext($event, '4065 gages in 1941')"
               @mouseover="pause('1941')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="243.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '4177 gages in 1942');"
+              @mousemove="hovertext($event, '4177 gages in 1942')"
               @mouseover="pause('1942')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="248.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '4345 gages in 1943');"
+              @mousemove="hovertext($event, '4345 gages in 1943')"
               @mouseover="pause('1943')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="253.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '4535 gages in 1944');"
+              @mousemove="hovertext($event, '4535 gages in 1944')"
               @mouseover="pause('1944')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="257.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '4710 gages in 1945');"
+              @mousemove="hovertext($event, '4710 gages in 1945')"
               @mouseover="pause('1945')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="262.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '4938 gages in 1946');"
+              @mousemove="hovertext($event, '4938 gages in 1946')"
               @mouseover="pause('1946')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="267.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '5153 gages in 1947');"
+              @mousemove="hovertext($event, '5153 gages in 1947')"
               @mouseover="pause('1947')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="272"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '5311 gages in 1948');"
+              @mousemove="hovertext($event, '5311 gages in 1948')"
               @mouseover="pause('1948')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="276.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '5469 gages in 1949');"
+              @mousemove="hovertext($event, '5469 gages in 1949')"
               @mouseover="pause('1949')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="281.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '5619 gages in 1950');"
+              @mousemove="hovertext($event, '5619 gages in 1950')"
               @mouseover="pause('1950')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="286.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '5794 gages in 1951');"
+              @mousemove="hovertext($event, '5794 gages in 1951')"
               @mouseover="pause('1951')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="290.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '5995 gages in 1952');"
+              @mousemove="hovertext($event, '5995 gages in 1952')"
               @mouseover="pause('1952')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="295.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6016 gages in 1953');"
+              @mousemove="hovertext($event, '6016 gages in 1953')"
               @mouseover="pause('1953')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="300.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6053 gages in 1954');"
+              @mousemove="hovertext($event, '6053 gages in 1954')"
               @mouseover="pause('1954')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="304.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6060 gages in 1955');"
+              @mousemove="hovertext($event, '6060 gages in 1955')"
               @mouseover="pause('1955')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="309.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6145 gages in 1956');"
+              @mousemove="hovertext($event, '6145 gages in 1956')"
               @mouseover="pause('1956')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="314.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6238 gages in 1957');"
+              @mousemove="hovertext($event, '6238 gages in 1957')"
               @mouseover="pause('1957')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="319"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6342 gages in 1958');"
+              @mousemove="hovertext($event, '6342 gages in 1958')"
               @mouseover="pause('1958')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="323.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6477 gages in 1959');"
+              @mousemove="hovertext($event, '6477 gages in 1959')"
               @mouseover="pause('1959')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="328.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6647 gages in 1960');"
+              @mousemove="hovertext($event, '6647 gages in 1960')"
               @mouseover="pause('1960')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="333.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6897 gages in 1961');"
+              @mousemove="hovertext($event, '6897 gages in 1961')"
               @mouseover="pause('1961')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="337.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7007 gages in 1962');"
+              @mousemove="hovertext($event, '7007 gages in 1962')"
               @mouseover="pause('1962')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="342.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7123 gages in 1963');"
+              @mousemove="hovertext($event, '7123 gages in 1963')"
               @mouseover="pause('1963')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="347.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7369 gages in 1964');"
+              @mousemove="hovertext($event, '7369 gages in 1964')"
               @mouseover="pause('1964')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="351.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7555 gages in 1965');"
+              @mousemove="hovertext($event, '7555 gages in 1965')"
               @mouseover="pause('1965')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="356.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7762 gages in 1966');"
+              @mousemove="hovertext($event, '7762 gages in 1966')"
               @mouseover="pause('1966')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="361.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7919 gages in 1967');"
+              @mousemove="hovertext($event, '7919 gages in 1967')"
               @mouseover="pause('1967')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="366"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7829 gages in 1968');"
+              @mousemove="hovertext($event, '7829 gages in 1968')"
               @mouseover="pause('1968')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="370.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7832 gages in 1969');"
+              @mousemove="hovertext($event, '7832 gages in 1969')"
               @mouseover="pause('1969')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="375.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7707 gages in 1970');"
+              @mousemove="hovertext($event, '7707 gages in 1970')"
               @mouseover="pause('1970')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="380.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7449 gages in 1971');"
+              @mousemove="hovertext($event, '7449 gages in 1971')"
               @mouseover="pause('1971')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="384.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7378 gages in 1972');"
+              @mousemove="hovertext($event, '7378 gages in 1972')"
               @mouseover="pause('1972')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="389.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7272 gages in 1973');"
+              @mousemove="hovertext($event, '7272 gages in 1973')"
               @mouseover="pause('1973')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="394.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7216 gages in 1974');"
+              @mousemove="hovertext($event, '7216 gages in 1974')"
               @mouseover="pause('1974')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="398.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7366 gages in 1975');"
+              @mousemove="hovertext($event, '7366 gages in 1975')"
               @mouseover="pause('1975')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="403.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7451 gages in 1976');"
+              @mousemove="hovertext($event, '7451 gages in 1976')"
               @mouseover="pause('1976')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="408.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7434 gages in 1977');"
+              @mousemove="hovertext($event, '7434 gages in 1977')"
               @mouseover="pause('1977')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="413"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7426 gages in 1978');"
+              @mousemove="hovertext($event, '7426 gages in 1978')"
               @mouseover="pause('1978')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="417.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7415 gages in 1979');"
+              @mousemove="hovertext($event, '7415 gages in 1979')"
               @mouseover="pause('1979')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="422.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7468 gages in 1980');"
+              @mousemove="hovertext($event, '7468 gages in 1980')"
               @mouseover="pause('1980')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="427.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7167 gages in 1981');"
+              @mousemove="hovertext($event, '7167 gages in 1981')"
               @mouseover="pause('1981')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="431.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6788 gages in 1982');"
+              @mousemove="hovertext($event, '6788 gages in 1982')"
               @mouseover="pause('1982')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="436.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6628 gages in 1983');"
+              @mousemove="hovertext($event, '6628 gages in 1983')"
               @mouseover="pause('1983')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="441.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6665 gages in 1984');"
+              @mousemove="hovertext($event, '6665 gages in 1984')"
               @mouseover="pause('1984')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="445.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6645 gages in 1985');"
+              @mousemove="hovertext($event, '6645 gages in 1985')"
               @mouseover="pause('1985')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="450.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6576 gages in 1986');"
+              @mousemove="hovertext($event, '6576 gages in 1986')"
               @mouseover="pause('1986')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="455.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6560 gages in 1987');"
+              @mousemove="hovertext($event, '6560 gages in 1987')"
               @mouseover="pause('1987')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="460"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6661 gages in 1988');"
+              @mousemove="hovertext($event, '6661 gages in 1988')"
               @mouseover="pause('1988')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="464.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6659 gages in 1989');"
+              @mousemove="hovertext($event, '6659 gages in 1989')"
               @mouseover="pause('1989')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="469.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6686 gages in 1990');"
+              @mousemove="hovertext($event, '6686 gages in 1990')"
               @mouseover="pause('1990')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="474.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6602 gages in 1991');"
+              @mousemove="hovertext($event, '6602 gages in 1991')"
               @mouseover="pause('1991')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="478.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6596 gages in 1992');"
+              @mousemove="hovertext($event, '6596 gages in 1992')"
               @mouseover="pause('1992')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="483.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6567 gages in 1993');"
+              @mousemove="hovertext($event, '6567 gages in 1993')"
               @mouseover="pause('1993')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="488.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6530 gages in 1994');"
+              @mousemove="hovertext($event, '6530 gages in 1994')"
               @mouseover="pause('1994')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="492.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6400 gages in 1995');"
+              @mousemove="hovertext($event, '6400 gages in 1995')"
               @mouseover="pause('1995')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="497.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6340 gages in 1996');"
+              @mousemove="hovertext($event, '6340 gages in 1996')"
               @mouseover="pause('1996')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="502.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6411 gages in 1997');"
+              @mousemove="hovertext($event, '6411 gages in 1997')"
               @mouseover="pause('1997')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="507"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6465 gages in 1998');"
+              @mousemove="hovertext($event, '6465 gages in 1998')"
               @mouseover="pause('1998')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="511.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6681 gages in 1999');"
+              @mousemove="hovertext($event, '6681 gages in 1999')"
               @mouseover="pause('1999')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="516.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6786 gages in 2000');"
+              @mousemove="hovertext($event, '6786 gages in 2000')"
               @mouseover="pause('2000')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="521.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '6946 gages in 2001');"
+              @mousemove="hovertext($event, '6946 gages in 2001')"
               @mouseover="pause('2001')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="525.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7111 gages in 2002');"
+              @mousemove="hovertext($event, '7111 gages in 2002')"
               @mouseover="pause('2002')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="530.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7186 gages in 2003');"
+              @mousemove="hovertext($event, '7186 gages in 2003')"
               @mouseover="pause('2003')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="535.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7135 gages in 2004');"
+              @mousemove="hovertext($event, '7135 gages in 2004')"
               @mouseover="pause('2004')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="539.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7136 gages in 2005');"
+              @mousemove="hovertext($event, '7136 gages in 2005')"
               @mouseover="pause('2005')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="544.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7224 gages in 2006');"
+              @mousemove="hovertext($event, '7224 gages in 2006')"
               @mouseover="pause('2006')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="549.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7239 gages in 2007');"
+              @mousemove="hovertext($event, '7239 gages in 2007')"
               @mouseover="pause('2007')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="554"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7448 gages in 2008');"
+              @mousemove="hovertext($event, '7448 gages in 2008')"
               @mouseover="pause('2008')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="558.7"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7489 gages in 2009');"
+              @mousemove="hovertext($event, '7489 gages in 2009')"
               @mouseover="pause('2009')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="563.4"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7642 gages in 2010');"
+              @mousemove="hovertext($event, '7642 gages in 2010')"
               @mouseover="pause('2010')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="568.1"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7708 gages in 2011');"
+              @mousemove="hovertext($event, '7708 gages in 2011')"
               @mouseover="pause('2011')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="572.8"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7835 gages in 2012');"
+              @mousemove="hovertext($event, '7835 gages in 2012')"
               @mouseover="pause('2012')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="577.5"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7895 gages in 2013');"
+              @mousemove="hovertext($event, '7895 gages in 2013')"
               @mouseover="pause('2013')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="582.2"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7887 gages in 2014');"
+              @mousemove="hovertext($event, '7887 gages in 2014')"
               @mouseover="pause('2014')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="586.9"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '7973 gages in 2015');"
+              @mousemove="hovertext($event, '7973 gages in 2015')"
               @mouseover="pause('2015')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="591.6"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '8166 gages in 2016');"
+              @mousemove="hovertext($event, '8166 gages in 2016')"
               @mouseover="pause('2016')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="596.3"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '8045 gages in 2017');"
+              @mousemove="hovertext($event, '8045 gages in 2017')"
               @mouseover="pause('2017')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
             <rect
               x="601"
               height="100"
               width="4.7"
-              @mousemove="hovertext($event, '8229 gages in 2018');"
+              @mousemove="hovertext($event, '8229 gages in 2018')"
               @mouseover="pause('2018')"
-              @mouseout="hovertext('');play()"
+              @mouseout="hovertext(''), play()"
             />
           </g>
         </g>
