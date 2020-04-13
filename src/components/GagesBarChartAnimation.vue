@@ -1451,7 +1451,8 @@
                 <textPath
                   xlink:href="#flowing-text-path"
                   startOffset="3.3%"
-                >Number of active gages through time</textPath>
+                >Number of active gages through time
+                </textPath>
               </text>
             </g>
             <g
@@ -1463,25 +1464,29 @@
                 x="-5"
                 text-anchor="end"
                 dx="-0.33em"
-              >0</text>
+              >0
+              </text>
               <text
                 y="79.7"
                 x="-5"
                 text-anchor="end"
                 dx="-0.33em"
-              >2000</text>
+              >2000
+              </text>
               <text
                 y="54.5"
                 x="-5"
                 text-anchor="end"
                 dx="-0.33em"
-              >4000</text>
+              >4000
+              </text>
               <text
                 y="29.2"
                 x="-5"
                 text-anchor="end"
                 dx="-0.33em"
-              >6000</text>
+              >6000
+              </text>
             </g>
             <g
               id="x-axis-labels"
@@ -1492,79 +1497,92 @@
                 x="1.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1890</text>
+              >1890
+              </text>
               <text
                 y="105"
                 x="49.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1900</text>
+              >1900
+              </text>
               <text
                 y="105"
                 x="97.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1910</text>
+              >1910
+              </text>
               <text
                 y="105"
                 x="145.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1920</text>
+              >1920
+              </text>
               <text
                 y="105"
                 x="193.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1930</text>
+              >1930
+              </text>
               <text
                 y="105"
                 x="241.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1940</text>
+              >1940
+              </text>
               <text
                 y="105"
                 x="289.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1950</text>
+              >1950
+              </text>
               <text
                 y="105"
                 x="337.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1960</text>
+              >1960
+              </text>
               <text
                 y="105"
                 x="385.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1970</text>
+              >1970
+              </text>
               <text
                 y="105"
                 x="433.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1980</text>
+              >1980
+              </text>
               <text
                 y="105"
                 x="481.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >1990</text>
+              >1990
+              </text>
               <text
                 y="105"
                 x="529.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >2000</text>
+              >2000
+              </text>
               <text
                 y="105"
                 x="577.8"
                 text-anchor="middle"
                 dy="1.0em"
-              >2010</text>
+              >2010
+              </text>
             </g>
           </g>
           <g
@@ -1575,1021 +1593,1025 @@
               x="-0.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('27 gages in 1890', evt);"
-              onmouseover="vizlab.pause('1890')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '27 gages in 1890')"
+              @mouseover="pause('1890')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="4.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('31 gages in 1891', evt);"
-              onmouseover="vizlab.pause('1891')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '31 gages in 1891')"
+              @mouseover="pause('1891')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="9"
               height="100"
               width="4.8"
-              onmousemove="hovertext('31 gages in 1892', evt);"
-              onmouseover="vizlab.pause('1892')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '31 gages in 1892')"
+              @mouseover="pause('1892')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="13.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('32 gages in 1893', evt);"
-              onmouseover="vizlab.pause('1893')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '32 gages in 1893')"
+              @mouseover="pause('1893')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="18.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('33 gages in 1894', evt);"
-              onmouseover="vizlab.pause('1894')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '33 gages in 1894')"
+              @mouseover="pause('1894')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="23.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('48 gages in 1895', evt);"
-              onmouseover="vizlab.pause('1895')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '48 gages in 1895')"
+              @mouseover="pause('1895')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="28.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('78 gages in 1896', evt);"
-              onmouseover="vizlab.pause('1896')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '78 gages in 1896')"
+              @mouseover="pause('1896')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="33"
               height="100"
               width="4.8"
-              onmousemove="hovertext('90 gages in 1897', evt);"
-              onmouseover="vizlab.pause('1897')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '90 gages in 1897')"
+              @mouseover="pause('1897')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="37.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('104 gages in 1898', evt);"
-              onmouseover="vizlab.pause('1898')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '104 gages in 1898')"
+              @mouseover="pause('1898')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="42.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('118 gages in 1899', evt);"
-              onmouseover="vizlab.pause('1899')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '118 gages in 1899')"
+              @mouseover="pause('1899')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="47.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('123 gages in 1900', evt);"
-              onmouseover="vizlab.pause('1900')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '123 gages in 1900')"
+              @mouseover="pause('1900')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="52.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('138 gages in 1901', evt);"
-              onmouseover="vizlab.pause('1901')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '138 gages in 1901')"
+              @mouseover="pause('1901')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="57"
               height="100"
               width="4.8"
-              onmousemove="hovertext('161 gages in 1902', evt);"
-              onmouseover="vizlab.pause('1902')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '161 gages in 1902')"
+              @mouseover="pause('1902')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="61.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('193 gages in 1903', evt);"
-              onmouseover="vizlab.pause('1903')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '193 gages in 1903')"
+              @mouseover="pause('1903')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="66.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('270 gages in 1904', evt);"
-              onmouseover="vizlab.pause('1904')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '270 gages in 1904')"
+              @mouseover="pause('1904')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="71.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('325 gages in 1905', evt);"
-              onmouseover="vizlab.pause('1905')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '325 gages in 1905')"
+              @mouseover="pause('1905')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="76.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('323 gages in 1906', evt);"
-              onmouseover="vizlab.pause('1906')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '323 gages in 1906')"
+              @mouseover="pause('1906')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="81"
               height="100"
               width="4.8"
-              onmousemove="hovertext('323 gages in 1907', evt);"
-              onmouseover="vizlab.pause('1907')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '323 gages in 1907')"
+              @mouseover="pause('1907')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="85.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('376 gages in 1908', evt);"
-              onmouseover="vizlab.pause('1908')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '376 gages in 1908')"
+              @mouseover="pause('1908')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="90.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('432 gages in 1909', evt);"
-              onmouseover="vizlab.pause('1909')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '432 gages in 1909')"
+              @mouseover="pause('1909')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="95.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('547 gages in 1910', evt);"
-              onmouseover="vizlab.pause('1910')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '547 gages in 1910')"
+              @mouseover="pause('1910')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="100.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('705 gages in 1911', evt);"
-              onmouseover="vizlab.pause('1911')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '705 gages in 1911')"
+              @mouseover="pause('1911')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="105"
               height="100"
               width="4.8"
-              onmousemove="hovertext('801 gages in 1912', evt);"
-              onmouseover="vizlab.pause('1912')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '801 gages in 1912')"
+              @mouseover="pause('1912')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="109.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('809 gages in 1913', evt);"
-              onmouseover="vizlab.pause('1913')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '809 gages in 1913')"
+              @mouseover="pause('1913')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="114.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('877 gages in 1914', evt);"
-              onmouseover="vizlab.pause('1914')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '877 gages in 1914')"
+              @mouseover="pause('1914')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="119.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('929 gages in 1915', evt);"
-              onmouseover="vizlab.pause('1915')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '929 gages in 1915')"
+              @mouseover="pause('1915')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="124.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('937 gages in 1916', evt);"
-              onmouseover="vizlab.pause('1916')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '937 gages in 1916')"
+              @mouseover="pause('1916')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="129"
               height="100"
               width="4.8"
-              onmousemove="hovertext('932 gages in 1917', evt);"
-              onmouseover="vizlab.pause('1917')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '932 gages in 1917')"
+              @mouseover="pause('1917')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="133.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('945 gages in 1918', evt);"
-              onmouseover="vizlab.pause('1918')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '945 gages in 1918')"
+              @mouseover="pause('1918')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="138.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('956 gages in 1919', evt);"
-              onmouseover="vizlab.pause('1919')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '956 gages in 1919')"
+              @mouseover="pause('1919')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="143.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('1055 gages in 1920', evt);"
-              onmouseover="vizlab.pause('1920')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '1055 gages in 1920')"
+              @mouseover="pause('1920')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="148.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('1105 gages in 1921', evt);"
-              onmouseover="vizlab.pause('1921')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '1105 gages in 1921')"
+              @mouseover="pause('1921')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="153"
               height="100"
               width="4.8"
-              onmousemove="hovertext('1262 gages in 1922', evt);"
-              onmouseover="vizlab.pause('1922')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '1262 gages in 1922')"
+              @mouseover="pause('1922')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="157.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('1335 gages in 1923', evt);"
-              onmouseover="vizlab.pause('1923')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '1335 gages in 1923')"
+              @mouseover="pause('1923')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="162.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('1398 gages in 1924', evt);"
-              onmouseover="vizlab.pause('1924')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '1398 gages in 1924')"
+              @mouseover="pause('1924')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="167.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('1445 gages in 1925', evt);"
-              onmouseover="vizlab.pause('1925')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '1445 gages in 1925')"
+              @mouseover="pause('1925')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="172.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('1533 gages in 1926', evt);"
-              onmouseover="vizlab.pause('1926')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '1533 gages in 1926')"
+              @mouseover="pause('1926')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="177"
               height="100"
               width="4.8"
-              onmousemove="hovertext('1581 gages in 1927', evt);"
-              onmouseover="vizlab.pause('1927')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '1581 gages in 1927')"
+              @mouseover="pause('1927')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="181.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('1693 gages in 1928', evt);"
-              onmouseover="vizlab.pause('1928')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '1693 gages in 1928')"
+              @mouseover="pause('1928')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="186.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2011 gages in 1929', evt);"
-              onmouseover="vizlab.pause('1929')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2011 gages in 1929')"
+              @mouseover="pause('1929')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="191.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2258 gages in 1930', evt);"
-              onmouseover="vizlab.pause('1930')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2258 gages in 1930')"
+              @mouseover="pause('1930')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="196.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2392 gages in 1931', evt);"
-              onmouseover="vizlab.pause('1931')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2392 gages in 1931')"
+              @mouseover="pause('1931')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="201"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2431 gages in 1932', evt);"
-              onmouseover="vizlab.pause('1932')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2431 gages in 1932')"
+              @mouseover="pause('1932')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="205.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2450 gages in 1933', evt);"
-              onmouseover="vizlab.pause('1933')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2450 gages in 1933')"
+              @mouseover="pause('1933')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="210.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2448 gages in 1934', evt);"
-              onmouseover="vizlab.pause('1934')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2448 gages in 1934')"
+              @mouseover="pause('1934')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="215.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2605 gages in 1935', evt);"
-              onmouseover="vizlab.pause('1935')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2605 gages in 1935')"
+              @mouseover="pause('1935')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="220.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2697 gages in 1936', evt);"
-              onmouseover="vizlab.pause('1936')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2697 gages in 1936')"
+              @mouseover="pause('1936')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="225"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2802 gages in 1937', evt);"
-              onmouseover="vizlab.pause('1937')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2802 gages in 1937')"
+              @mouseover="pause('1937')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="229.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('2999 gages in 1938', evt);"
-              onmouseover="vizlab.pause('1938')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '2999 gages in 1938')"
+              @mouseover="pause('1938')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="234.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('3401 gages in 1939', evt);"
-              onmouseover="vizlab.pause('1939')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '3401 gages in 1939')"
+              @mouseover="pause('1939')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="239.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('3852 gages in 1940', evt);"
-              onmouseover="vizlab.pause('1940')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '3852 gages in 1940')"
+              @mouseover="pause('1940')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="244.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('4062 gages in 1941', evt);"
-              onmouseover="vizlab.pause('1941')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '4062 gages in 1941')"
+              @mouseover="pause('1941')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="249"
               height="100"
               width="4.8"
-              onmousemove="hovertext('4174 gages in 1942', evt);"
-              onmouseover="vizlab.pause('1942')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '4174 gages in 1942')"
+              @mouseover="pause('1942')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="253.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('4342 gages in 1943', evt);"
-              onmouseover="vizlab.pause('1943')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '4342 gages in 1943')"
+              @mouseover="pause('1943')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="258.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('4532 gages in 1944', evt);"
-              onmouseover="vizlab.pause('1944')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '4532 gages in 1944')"
+              @mouseover="pause('1944')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="263.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('4707 gages in 1945', evt);"
-              onmouseover="vizlab.pause('1945')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '4707 gages in 1945')"
+              @mouseover="pause('1945')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="268.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('4935 gages in 1946', evt);"
-              onmouseover="vizlab.pause('1946')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '4935 gages in 1946')"
+              @mouseover="pause('1946')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="273"
               height="100"
               width="4.8"
-              onmousemove="hovertext('5150 gages in 1947', evt);"
-              onmouseover="vizlab.pause('1947')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '5150 gages in 1947')"
+              @mouseover="pause('1947')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="277.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('5308 gages in 1948', evt);"
-              onmouseover="vizlab.pause('1948')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '5308 gages in 1948')"
+              @mouseover="pause('1948')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="282.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('5466 gages in 1949', evt);"
-              onmouseover="vizlab.pause('1949')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '5466 gages in 1949')"
+              @mouseover="pause('1949')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="287.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('5616 gages in 1950', evt);"
-              onmouseover="vizlab.pause('1950')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '5616 gages in 1950')"
+              @mouseover="pause('1950')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="292.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('5791 gages in 1951', evt);"
-              onmouseover="vizlab.pause('1951')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '5791 gages in 1951')"
+              @mouseover="pause('1951')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="297"
               height="100"
               width="4.8"
-              onmousemove="hovertext('5992 gages in 1952', evt);"
-              onmouseover="vizlab.pause('1952')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '5992 gages in 1952')"
+              @mouseover="pause('1952')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="301.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6013 gages in 1953', evt);"
-              onmouseover="vizlab.pause('1953')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6013 gages in 1953')"
+              @mouseover="pause('1953')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="306.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6050 gages in 1954', evt);"
-              onmouseover="vizlab.pause('1954')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6050 gages in 1954')"
+              @mouseover="pause('1954')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="311.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6057 gages in 1955', evt);"
-              onmouseover="vizlab.pause('1955')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6057 gages in 1955')"
+              @mouseover="pause('1955')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="316.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6142 gages in 1956', evt);"
-              onmouseover="vizlab.pause('1956')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6142 gages in 1956')"
+              @mouseover="pause('1956')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="321"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6235 gages in 1957', evt);"
-              onmouseover="vizlab.pause('1957')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6235 gages in 1957')"
+              @mouseover="pause('1957')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="325.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6339 gages in 1958', evt);"
-              onmouseover="vizlab.pause('1958')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6339 gages in 1958')"
+              @mouseover="pause('1958')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="330.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6474 gages in 1959', evt);"
-              onmouseover="vizlab.pause('1959')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6474 gages in 1959')"
+              @mouseover="pause('1959')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="335.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6644 gages in 1960', evt);"
-              onmouseover="vizlab.pause('1960')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6644 gages in 1960')"
+              @mouseover="pause('1960')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="340.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6894 gages in 1961', evt);"
-              onmouseover="vizlab.pause('1961')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6894 gages in 1961')"
+              @mouseover="pause('1961')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="345"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7004 gages in 1962', evt);"
-              onmouseover="vizlab.pause('1962')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7004 gages in 1962')"
+              @mouseover="pause('1962')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="349.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7120 gages in 1963', evt);"
-              onmouseover="vizlab.pause('1963')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7120 gages in 1963')"
+              @mouseover="pause('1963')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="354.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7365 gages in 1964', evt);"
-              onmouseover="vizlab.pause('1964')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7365 gages in 1964')"
+              @mouseover="pause('1964')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="359.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7551 gages in 1965', evt);"
-              onmouseover="vizlab.pause('1965')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7551 gages in 1965')"
+              @mouseover="pause('1965')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="364.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7758 gages in 1966', evt);"
-              onmouseover="vizlab.pause('1966')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7758 gages in 1966')"
+              @mouseover="pause('1966')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="369"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7914 gages in 1967', evt);"
-              onmouseover="vizlab.pause('1967')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7914 gages in 1967')"
+              @mouseover="pause('1967')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="373.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7824 gages in 1968', evt);"
-              onmouseover="vizlab.pause('1968')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7824 gages in 1968')"
+              @mouseover="pause('1968')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="378.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7827 gages in 1969', evt);"
-              onmouseover="vizlab.pause('1969')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7827 gages in 1969')"
+              @mouseover="pause('1969')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="383.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7702 gages in 1970', evt);"
-              onmouseover="vizlab.pause('1970')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7702 gages in 1970')"
+              @mouseover="pause('1970')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="388.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7444 gages in 1971', evt);"
-              onmouseover="vizlab.pause('1971')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7444 gages in 1971')"
+              @mouseover="pause('1971')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="393"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7373 gages in 1972', evt);"
-              onmouseover="vizlab.pause('1972')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7373 gages in 1972')"
+              @mouseover="pause('1972')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="397.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7264 gages in 1973', evt);"
-              onmouseover="vizlab.pause('1973')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7264 gages in 1973')"
+              @mouseover="pause('1973')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="402.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7208 gages in 1974', evt);"
-              onmouseover="vizlab.pause('1974')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7208 gages in 1974')"
+              @mouseover="pause('1974')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="407.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7358 gages in 1975', evt);"
-              onmouseover="vizlab.pause('1975')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7358 gages in 1975')"
+              @mouseover="pause('1975')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="412.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7443 gages in 1976', evt);"
-              onmouseover="vizlab.pause('1976')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7443 gages in 1976')"
+              @mouseover="pause('1976')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="417"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7426 gages in 1977', evt);"
-              onmouseover="vizlab.pause('1977')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7426 gages in 1977')"
+              @mouseover="pause('1977')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="421.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7418 gages in 1978', evt);"
-              onmouseover="vizlab.pause('1978')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7418 gages in 1978')"
+              @mouseover="pause('1978')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="426.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7407 gages in 1979', evt);"
-              onmouseover="vizlab.pause('1979')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7407 gages in 1979')"
+              @mouseover="pause('1979')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="431.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7460 gages in 1980', evt);"
-              onmouseover="vizlab.pause('1980')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7460 gages in 1980')"
+              @mouseover="pause('1980')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="436.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7159 gages in 1981', evt);"
-              onmouseover="vizlab.pause('1981')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7159 gages in 1981')"
+              @mouseover="pause('1981')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="441"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6779 gages in 1982', evt);"
-              onmouseover="vizlab.pause('1982')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6779 gages in 1982')"
+              @mouseover="pause('1982')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="445.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6618 gages in 1983', evt);"
-              onmouseover="vizlab.pause('1983')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6618 gages in 1983')"
+              @mouseover="pause('1983')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="450.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6655 gages in 1984', evt);"
-              onmouseover="vizlab.pause('1984')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6655 gages in 1984')"
+              @mouseover="pause('1984')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="455.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6633 gages in 1985', evt);"
-              onmouseover="vizlab.pause('1985')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6633 gages in 1985')"
+              @mouseover="pause('1985')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="460.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6564 gages in 1986', evt);"
-              onmouseover="vizlab.pause('1986')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6564 gages in 1986')"
+              @mouseover="pause('1986')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="465"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6548 gages in 1987', evt);"
-              onmouseover="vizlab.pause('1987')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6548 gages in 1987')"
+              @mouseover="pause('1987')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="469.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6649 gages in 1988', evt);"
-              onmouseover="vizlab.pause('1988')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6649 gages in 1988')"
+              @mouseover="pause('1988')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="474.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6645 gages in 1989', evt);"
-              onmouseover="vizlab.pause('1989')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6645 gages in 1989')"
+              @mouseover="pause('1989')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="479.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6671 gages in 1990', evt);"
-              onmouseover="vizlab.pause('1990')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6671 gages in 1990')"
+              @mouseover="pause('1990')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="484.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6587 gages in 1991', evt);"
-              onmouseover="vizlab.pause('1991')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6587 gages in 1991')"
+              @mouseover="pause('1991')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="489"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6581 gages in 1992', evt);"
-              onmouseover="vizlab.pause('1992')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6581 gages in 1992')"
+              @mouseover="pause('1992')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="493.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6551 gages in 1993', evt);"
-              onmouseover="vizlab.pause('1993')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6551 gages in 1993')"
+              @mouseover="pause('1993')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="498.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6516 gages in 1994', evt);"
-              onmouseover="vizlab.pause('1994')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6516 gages in 1994')"
+              @mouseover="pause('1994')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="503.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6386 gages in 1995', evt);"
-              onmouseover="vizlab.pause('1995')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6386 gages in 1995')"
+              @mouseover="pause('1995')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="508.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6325 gages in 1996', evt);"
-              onmouseover="vizlab.pause('1996')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6325 gages in 1996')"
+              @mouseover="pause('1996')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="513"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6396 gages in 1997', evt);"
-              onmouseover="vizlab.pause('1997')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6396 gages in 1997')"
+              @mouseover="pause('1997')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="517.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6451 gages in 1998', evt);"
-              onmouseover="vizlab.pause('1998')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6451 gages in 1998')"
+              @mouseover="pause('1998')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="522.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6668 gages in 1999', evt);"
-              onmouseover="vizlab.pause('1999')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6668 gages in 1999')"
+              @mouseover="pause('1999')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="527.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6769 gages in 2000', evt);"
-              onmouseover="vizlab.pause('2000')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6769 gages in 2000')"
+              @mouseover="pause('2000')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="532.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('6929 gages in 2001', evt);"
-              onmouseover="vizlab.pause('2001')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '6929 gages in 2001')"
+              @mouseover="pause('2001')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="537"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7095 gages in 2002', evt);"
-              onmouseover="vizlab.pause('2002')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7095 gages in 2002')"
+              @mouseover="pause('2002')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="541.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7169 gages in 2003', evt);"
-              onmouseover="vizlab.pause('2003')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7169 gages in 2003')"
+              @mouseover="pause('2003')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="546.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7114 gages in 2004', evt);"
-              onmouseover="vizlab.pause('2004')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7114 gages in 2004')"
+              @mouseover="pause('2004')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="551.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7116 gages in 2005', evt);"
-              onmouseover="vizlab.pause('2005')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7116 gages in 2005')"
+              @mouseover="pause('2005')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="556.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7204 gages in 2006', evt);"
-              onmouseover="vizlab.pause('2006')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7204 gages in 2006')"
+              @mouseover="pause('2006')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="561"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7216 gages in 2007', evt);"
-              onmouseover="vizlab.pause('2007')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7216 gages in 2007')"
+              @mouseover="pause('2007')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="565.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7429 gages in 2008', evt);"
-              onmouseover="vizlab.pause('2008')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7429 gages in 2008')"
+              @mouseover="pause('2008')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="570.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7471 gages in 2009', evt);"
-              onmouseover="vizlab.pause('2009')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7471 gages in 2009')"
+              @mouseover="pause('2009')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="575.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7612 gages in 2010', evt);"
-              onmouseover="vizlab.pause('2010')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7612 gages in 2010')"
+              @mouseover="pause('2010')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="580.2"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7678 gages in 2011', evt);"
-              onmouseover="vizlab.pause('2011')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7678 gages in 2011')"
+              @mouseover="pause('2011')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="585"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7804 gages in 2012', evt);"
-              onmouseover="vizlab.pause('2012')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7804 gages in 2012')"
+              @mouseover="pause('2012')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="589.8"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7848 gages in 2013', evt);"
-              onmouseover="vizlab.pause('2013')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7848 gages in 2013')"
+              @mouseover="pause('2013')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="594.6"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7830 gages in 2014', evt);"
-              onmouseover="vizlab.pause('2014')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7830 gages in 2014')"
+              @mouseover="pause('2014')"
+              @mouseout="hovertext($event, ''), play()"
             />
             <rect
               x="599.4"
               height="100"
               width="4.8"
-              onmousemove="hovertext('7815 gages in 2015', evt);"
-              onmouseover="vizlab.pause('2015')"
-              onmouseout="hovertext('');vizlab.play()"
+              @mousemove="hovertext($event, '7815 gages in 2015')"
+              @mouseover="pause('2015')"
+              @mousedown="hovertext($event, ''), play()"
             />
           </g>
         </g>
       </svg>
     </figure>
     <p>
-      The <a href="https://www.usgs.gov/science/mission-areas/water/groundwater-and-streamflow-information?qt-programs_l2_landing_page=0#qt-programs_l2_landing_page">U.S. Geological Survey Groundwater and Streamflow Information Program</a>
+      The <a
+        href="https://www.usgs.gov/science/mission-areas/water/groundwater-and-streamflow-information?qt-programs_l2_landing_page=0#qt-programs_l2_landing_page"
+      >U.S.
+        Geological Survey Groundwater and Streamflow Information Program</a>
       is funded by Congress to monitor drought and flood across the US through a network of stream gages.
     </p>
 
     <p>
-      Why should you care about USGS streamgages? The USGS has been monitoring streamflow since 1889, and data from streamgages
+      Why should you care about USGS streamgages? The USGS has been monitoring streamflow since 1889, and data from
+      streamgages
       have since become critical to hydropower operations, recreation, streamflow prediction, flood forecasts, emergency
       management, engineering designs, and many other purposes.
     </p>
@@ -2598,59 +2620,270 @@
   </div>
 </template>
 <script>
-export default {
-    name: 'GagesBarChartAnimation'
-}
+    import $ from 'jquery';
+    import yearData from "../assets/data/year-data.js"
+
+    export default {
+        name: 'GagesBarChartAnimation',
+        data() {
+            return {
+                monitoringLocationData: yearData.monitoringLocationData,
+                vizlab: this.vizlab || {},
+                yeardata: {},
+                paths: {},
+                toolTipMethods: null,
+                yearPointer: 0,
+                startYear: undefined,
+                numYears: undefined,
+                delay: 500,
+                playInterval: undefined,
+                ls: null,
+                svg: null,
+                svgId: null,
+                tooltipGroupId: null,
+                TOOLTIP_HTML: null
+
+            }
+        },
+        mounted() {
+          this.setUpHoverText();
+          this.startMonitoringLocationAnimation();
+
+        },
+        methods: {
+            setUpHoverText() {
+                const self = this;
+                let doySVG = document.getElementById('doy-NM');
+
+                this.svg = document.getElementById("map-svg");
+                this.svgId = $(this.svg).attr("id");
+                this.tooltipGroupId = this.svgId + '-tooltip-group';
+                this.TOOLTIP_HTML = '<defs>' +
+                        '<clipPath id="' + this.svgId + '-tipClip">' +
+                        '<rect x="-6" y="-11.5" height="11" width="12"/>' +
+                        '</clipPath>' +
+                        '</defs>' +
+                        '<rect height="24" class="tooltip-box hidden"/>' +
+                        '<path d="M-6,-12 l6,10 l6,-10" class="tooltip-point hidden" clipPath="url(#'+ this.svgId + '-tipClip"/>' +
+                        '<text dy="-1.1em" text-anchor="middle" class="tooltip-text svg-text"> </text>'
+
+                self.addTooltip();
+                $('#doy-NM .years-rect').mouseenter(function() {
+                    let year = $(this).attr('id').slice(2);
+                    $(this).addClass('selected-year');
+                    $('#doy_' + year).addClass('selected-doy');
+
+                    let use = document.createElementNS(doySVG.namespaceURI, 'use');
+                    use.setAttributeNS(doySVG.attributes["xmlns:xlink"].nodeValue, 'href', '#doy_' + year);
+                    document.getElementById('dayOfYear').appendChild(use);
+                });
+                $('#doy-NM .years-rect').mouseleave(function() {
+                    let year = $(this).attr('id').slice(2);
+                    $(this).removeClass('selected-year');
+                    $('#dayOfYear use').remove();
+                    $('#doy_' + year).removeClass('selected-doy');
+                });
+            },
+
+            cursorPoint: function(screenX, screenY) {
+                let svg = this.svg;
+                let point = svg.createSVGPoint();
+                point.x = screenX;
+                point.y = screenY;
+                point = point.matrixTransform(svg.getScreenCTM().inverse());
+                point.x = Math.round(point.x);
+                point.y = Math.round(point.y);
+                return point;
+            },
+            addTooltip() {
+                const self = this;
+
+                let tooltipGroup = document.createElementNS(self.svg.namespaceURI,"g");
+                tooltipGroup.id = self.tooltipGroupId
+                tooltipGroup.innerHTML = self.TOOLTIP_HTML;
+                self.svg.appendChild(tooltipGroup);
+            },
+            showTooltip(x, y, tooltipText) {
+                const self = this;
+                let svg = this.svg;
+                console.log('show tool tip x value: ' + x + ' y value ' + y + 'text ' + tooltipText)
+                let $tooltip = $(svg).find('.tooltip-text');
+                let $tooltipBox = $(svg).find('.tooltip-box');
+                let $tooltipPoint = $(svg).find('.tooltip-point');
+
+                let text = (typeof tooltipText === "function") ? tooltipText(options) : tooltipText;
+                let svgPoint = self.cursorPoint(x, y);
+                let svgWidth = Number(svg.getAttribute("viewBox").split(" ")[2]);
+                let textLength;
+                let halfLength;
+                let tooltipX;
+
+                $tooltip.html(text);
+                textLength = Math.round($tooltip.get()[0].getComputedTextLength());
+                halfLength = textLength / 2;
+
+                /* Make sure tooltip text is within the SVG */
+                if (svgPoint.x - halfLength - 6 < 0)  {
+                    tooltipX = halfLength + 6;
+                }
+                else if (svgPoint.x + halfLength + 6 > svgWidth) {
+                    tooltipX = svgWidth - halfLength - 6;
+                }
+                else {
+                    tooltipX = svgPoint.x;
+                }
+                $tooltip.attr("x", tooltipX).attr("y", svgPoint.y);
+
+                /* Set attributes for background box */
+                $tooltipBox.attr("x", tooltipX - halfLength - 6).attr("y", svgPoint.y - 35).attr("width", textLength + 12).removeClass("hidden");
+
+                /* Set attributes for the tooltip point */
+                $tooltipPoint.attr("transform", "translate(" + svgPoint.x + "," + svgPoint.y + ")").removeClass("hidden");
+            },
+            hideTooltip() {
+                console.log('hide the tooltip')
+                let svg = this.svg;
+                $(svg).find('.tooltip-text').html("");
+                $(svg).find('.tooltip-box').addClass("hidden");
+                $(svg).find('.tooltip-point').addClass("hidden");
+            },
+            hovertext(event, text) {
+                const self = this;
+                text ? self.showTooltip(event.clientX, event.clientY, text):
+                        self.hideTooltip();
+            },
+            showyear(year) {
+                const self = this;
+                let indices = undefined;
+                year = "" + year; // force year to be string
+                let barId = '#yr' + year;
+                let filterFunc = function (val, i) {
+                    if (undefined !== indices) {
+                        return (indices.indexOf(i) != -1)
+                    } else {
+                        return false;
+                    }
+                }
+                for (let group in self.yeardata) {
+                    if (self.paths.hasOwnProperty(group)) {
+                        indices = self.yeardata[group][year];
+                        let newpath = self.paths[group]["split"].filter(filterFunc);
+                        newpath = "M" + ((newpath.length > 0) ? newpath.join("M") : "0,0");
+                        $('#' + group).attr("d", newpath);
+                    }
+                }
+                $(barId).addClass('selected-year');
+                $(":not(" + barId + ")").removeClass('selected-year');
+            },
+            pause(year) {
+                const self = this;
+                clearInterval(self.playInterval);
+                self.yearPointer = year - this.startYear;
+                self.showyear(year);
+            },
+            play() {
+                const self = this;
+                self.playInterval = setInterval(function () {
+                    let year = self.startYear + self.yearPointer;
+                    self.yearPointer = (self.yearPointer + 1) % self.numYears;
+                    self.showyear(year);
+                }, self.delay);
+            },
+            lsfilter: function (val, i) {
+                return (this.ls.indexOf(val) == -1);
+            },
+            startMonitoringLocationAnimation() {
+                const self = this;
+                const data = this.monitoringLocationData;
+
+                async function organizeTheData() {
+                    let promise = new Promise((resolve, reject) => {
+                        for (let group in data) {
+                            let prevgages = [];
+                            self.yeardata[group] = {};
+                            if (undefined === self.numYears && undefined === self.startYear) {
+                                let keys = Object.keys(data[group])
+                                self.startYear = Number(keys[0]);
+                                self.numYears = keys.length;
+                            }
+                            for (let year in data[group]) {
+                                let gn = data[group][year]["gn"]
+                                self.ls = data[group][year]["ls"]
+                                let newgages = prevgages.filter(self.lsfilter)
+                                newgages = newgages.concat(gn);
+                                self.yeardata[group][year] = newgages;
+                                prevgages = newgages;
+                            }
+                        }
+                        resolve();
+                    });
+                }
+
+                organizeTheData().then(function () {
+                    for (let group in self.yeardata) {
+                        self.paths[group] = {};
+                        self.paths[group]["orig"] = $('#' + group).attr("d");
+                        self.paths[group]["split"] = self.paths[group]["orig"].split("M");
+                    }
+                    self.play();
+                });
+            },
+        }
+    }
 </script>
 <style scoped lang="scss">
-.interior-state {
-    fill:#b8bfac;
-    stroke:#f5f8ef;
+  .interior-state {
+    fill: #b8bfac;
+    stroke: #f5f8ef;
   }
+
   .exterior-state {
-    fill:#b8bfac;
-    stroke:none;
+    fill: #b8bfac;
+    stroke: none;
   }
-  .mouser-shape{
-    opacity:0;
+
+  .mouser-shape {
+    opacity: 0;
   }
+
   .watermark {
     cursor: pointer;
     fill: #c0c0c0;
     stroke: #bdbdbd;
-    stroke-width:0.5;
+    stroke-width: 0.5;
   }
 
   .site-dot {
-    stroke:#2c5258;
-    stroke-linecap:round;
-    stroke-width:3;
-    opacity:0.7;
+    stroke: #2c5258;
+    stroke-linecap: round;
+    stroke-width: 3;
+    opacity: 0.7;
   }
 
-  .gage-count-bar{
-    opacity:0.4;
+  .gage-count-bar {
+    opacity: 0.4;
     fill: #9BC1BC;
   }
-  .selected-year{
-    opacity:1;
+
+  .selected-year {
+    opacity: 1;
     fill: #ED6A5A;
   }
 
-  .selected-doy{
-    opacity:1;
+  .selected-doy {
+    opacity: 1;
     stroke: #ED6A5A;
   }
 
   .years-rect {
-    fill:red;
-    stroke:none;
-    opacity:0;
+    fill: red;
+    stroke: none;
+    opacity: 0;
   }
 
   .axis-labels {
-    stroke:none;
-    fill:#909090;
+    stroke: none;
+    fill: #909090;
     font-family: Arial;
     font-size: 0.75em;
   }
@@ -2660,15 +2893,16 @@ export default {
   }
 
   .years-rect:hover {
-    opacity:1.0;
+    opacity: 1.0;
   }
 
-  #y-axis, #x-axis{
+  #y-axis, #x-axis {
     stroke: #909090;
   }
-  .context-label{
-    fill:#c0c0c0;
-    stroke:none;
+
+  .context-label {
+    fill: #c0c0c0;
+    stroke: none;
     font-size: 0.75em;
   }
 
@@ -2677,7 +2911,7 @@ export default {
     opacity: 1;
   }
 
-  .tooltip-box, .tooltip-point{
+  .tooltip-box, .tooltip-point {
     stroke: none;
     opacity: 0.85;
     fill: white;
@@ -2687,11 +2921,11 @@ export default {
     opacity: 0;
   }
 
-   /*IE SVG Width Fix*/
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
-    #gage-map figure{
-      width:100%;
-      height:506px;
+  /*IE SVG Width Fix*/
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    #gage-map figure {
+      width: 100%;
+      height: 506px;
     }
   }
 
