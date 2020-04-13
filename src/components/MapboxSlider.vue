@@ -33,15 +33,15 @@ export default {
             let beforeMap = new mapboxgl.Map({
                 container: 'before',
                 style: beforeStyle.style,
-                center: [-95.7129, 37.0902],
-                zoom: 2,
+                center: [-82.9001, 32.1656],
+                zoom: 5,
                 interactive: false
             });
             let afterMap = new mapboxgl.Map({
                 container: 'after',
                 style: afterStyle.style,
-                center: [-95.7129, 37.0902],
-                zoom: 2,
+                center: [-82.9001, 32.1656],
+                zoom: 5,
                 interactive: false
             });
             let container = '#comparison-container';
@@ -56,7 +56,7 @@ export default {
 @import '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
 #maps{
     position: relative;
-    height: 300px;
+    height: 350px;
     overflow: hidden;
 }
 .map {
