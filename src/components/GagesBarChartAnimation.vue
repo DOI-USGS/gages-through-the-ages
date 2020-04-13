@@ -2755,7 +2755,6 @@
             showyear(year) {
                 const self = this;
                 let indices = undefined;
-                console.log('year', year)
                 year = "" + year; // force year to be string
                 let barId = '#yr' + year;
                 let filterFunc = function (val, i) {
