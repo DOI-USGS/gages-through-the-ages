@@ -60,9 +60,7 @@ pipeline {
                         targetDomain = "s3://gages-through-ages-beta-website"
                     }
                     else {
-                        targetDomain = "s3://gages-through-the-ages-test-website"
                         targetDomain = "s3://gages-through-ages-test-website"
-                        
                     }
                 }
                 sh """
