@@ -2742,7 +2742,6 @@
             showTooltip(x, y, tooltipText) {
                 const self = this;
                 let svg = this.svg;
-                console.log('show tool tip x value: ' + x + ' y value ' + y + 'text ' + tooltipText)
                 let $tooltip = $(svg).find('.tooltip-text');
                 let $tooltipBox = $(svg).find('.tooltip-box');
                 let $tooltipPoint = $(svg).find('.tooltip-point');
@@ -2777,7 +2776,6 @@
                 $tooltipPoint.attr("transform", "translate(" + svgPoint.x + "," + svgPoint.y + ")").removeClass("hidden");
             },
             hideTooltip() {
-                console.log('hide the tooltip')
                 let svg = this.svg;
                 $(svg).find('.tooltip-text').html("");
                 $(svg).find('.tooltip-box').addClass("hidden");
