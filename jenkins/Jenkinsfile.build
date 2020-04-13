@@ -38,7 +38,7 @@ pipeline {
                 sh """
                     docker build . --tag="gages-through-the-ages-docker" --build-arg BUILDTARGET=${params.BUILD_DEST} --build-arg VUE_BUILD_MODE=${params.VUE_BUILD_MODE}
                     docker run gages-through-the-ages-docker
-                    pathtemplate=":tmp/gages-through-the-ages-app/dist"
+                    pathtemplate=":tmp/gages-through-the-ages/dist"
                     dockerinstanceid=\$( docker ps -l -q )
                     docker cp  "\${dockerinstanceid}\${pathtemplate}" "$WORKSPACE"
                     docker rm "\${dockerinstanceid}"
