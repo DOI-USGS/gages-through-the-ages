@@ -2631,330 +2631,204 @@
                 vizlab: this.vizlab || {},
                 yeardata: {},
                 paths: {},
-                mapSVG: null,
+                toolTipMethods: null,
                 yearPointer: 0,
                 startYear: undefined,
                 numYears: undefined,
                 delay: 500,
                 playInterval: undefined,
-                svg: document.getElementById("map-svg"),
-                ls: null
+                ls: null,
+                svg: null,
+                svgId: null,
+                tooltipGroupId: null,
+                TOOLTIP_HTML: null
 
             }
         },
         mounted() {
+          this.setUpHoverText();
           this.startMonitoringLocationAnimation();
+
         },
         methods: {
-          hovertext(event, text) {
-              if (text) {
-                  console.log('show the tooltip eventually')
-                  // mapSVG.showTooltip(event.clientX, event.clientY, text);
-              } else {
-                  console.log('remove the tooltip eventually')
-                  // mapSVG.hideTooltip();
-              }
-          },
-          showyear(year) {
-              const self = this;
-              let indices = undefined;
-              console.log('show the d year', year)
-              year = "" + year; // force year to be string
-              let barId = '#yr' + year;
-              let filterFunc = function(val, i){
-                  if (undefined !== indices) {
-                      return (indices.indexOf(i) != -1)
-                  } else {
-                      return false;
-                  }
-              }
-              for (let group in self.yeardata) {
-                  if (self.paths.hasOwnProperty(group)) {
-                      indices = self.yeardata[group][year];
-                      let newpath = self.paths[group]["split"].filter(filterFunc);
-                      newpath = "M" + ((newpath.length > 0) ? newpath.join("M") : "0,0");
-                      $('#' + group).attr("d", newpath);
-                  }
-              }
-              $(barId).addClass('selected-year');
-              $(":not(" + barId + ")").removeClass('selected-year');
-          },
-          pause(year) {
-              console.log('year in pause ', year)
-            const self = this;
-            clearInterval(self.playInterval);
-            self.yearPointer = year - this.startYear;
-              self.showyear(year);
-          },
-          play() {
-              console.log('ran play')
-              const self = this;
+            setUpHoverText() {
+                const self = this;
+                let doySVG = document.getElementById('doy-NM');
 
-              self.playInterval = setInterval(function(){
-                  let year = self.startYear + self.yearPointer;
-                  self.yearPointer = (self.yearPointer + 1) % self.numYears;
-                  self.showyear(year);
-              }, self.delay);
-          },
-          lsfilter: function(val, i) {
-              return (this.ls.indexOf(val) == -1);
-          },
-            startMonitoringLocationAnimation() {
-              const self = this;
-              const data = this.monitoringLocationData;
+                this.svg = document.getElementById("map-svg");
+                this.svgId = $(this.svg).attr("id");
+                this.tooltipGroupId = this.svgId + '-tooltip-group';
+                this.TOOLTIP_HTML = '<defs>' +
+                        '<clipPath id="' + this.svgId + '-tipClip">' +
+                        '<rect x="-6" y="-11.5" height="11" width="12"/>' +
+                        '</clipPath>' +
+                        '</defs>' +
+                        '<rect height="24" class="tooltip-box hidden"/>' +
+                        '<path d="M-6,-12 l6,10 l6,-10" class="tooltip-point hidden" clipPath="url(#'+ this.svgId + '-tipClip"/>' +
+                        '<text dy="-1.1em" text-anchor="middle" class="tooltip-text svg-text"> </text>'
 
-              async function organizeTheData() {
-                  let promise = new Promise((resolve, reject) => {
-                      for (let group in data) {
-                          let prevgages = [];
-                          self.yeardata[group] = {};
-                          if (undefined === self.numYears && undefined === self.startYear) {
-                              console.log('ran this')
-                              let keys = Object.keys(data[group])
-                              self.startYear = Number(keys[0]);
-                              self.numYears = keys.length;
-                          }
-                          for (let year in data[group]) {
-                              console.log('ran the other')
-                              let gn = data[group][year]["gn"]
-                              self.ls = data[group][year]["ls"]
-                              let newgages = prevgages.filter(self.lsfilter)
-                              newgages = newgages.concat(gn);
-                              self.yeardata[group][year] = newgages;
-                              prevgages = newgages;
-                          }
-                      }
-                      resolve();
-                  });
-              }
+                self.addTooltip();
+                $('#doy-NM .years-rect').mouseenter(function() {
+                    let year = $(this).attr('id').slice(2);
+                    $(this).addClass('selected-year');
+                    $('#doy_' + year).addClass('selected-doy');
 
-              organizeTheData().then(function() {
-                  for (let group in self.yeardata) {
-                      self.paths[group] = {};
-                      self.paths[group]["orig"] = $('#' + group).attr("d");
-                      self.paths[group]["split"] = self.paths[group]["orig"].split("M");
-                  }
-                  self.play();
-              });
-          },
-            test() {
-            const data = yearData.monitoringLocationData;
-            let vizlab = this.vizlab;
-            let yeardata = this.yeardata;
-            let paths = this.paths;
-            let mapSVG = this.mapSVG;
-            let yearPointer = this.yearPointer;
-            let startYear = this.startYear;
-            let numYears = this.numYears;
-            let delay = this.delay;
-            let playInterval = this.playInterval;
-            let indices = undefined;
-
-
-              vizlab.svg = function() {
-                  let svg = this.svg;
-
-                  let cursorPoint = function(screenX, screenY) {
-                      let point = svg.createSVGPoint();
-                      point.x = screenX;
-                      point.y = screenY;
-                      point = point.matrixTransform(svg.getScreenCTM().inverse());
-                      point.x = Math.round(point.x);
-                      point.y = Math.round(point.y);
-                      console.log('testing return point ', point)
-                      return point;
-                  }
-
-                  let svgId = $(svg).attr("id");
-                  let tooltipGroupId = svgId + '-tooltip-group';
-
-                  let TOOLTIP_HTML =
-                          '<defs>' +
-                          '<clipPath id="' + svgId + '-tipClip">' +
-                          '<rect x="-6" y="-11.5" height="11" width="12"/>' +
-                          '</clipPath>' +
-                          '</defs>' +
-                          '<rect height="24" class="tooltip-box hidden"/>' +
-                          '<path d="M-6,-12 l6,10 l6,-10" class="tooltip-point hidden" clipPath="url(#'+ svgId + '-tipClip"/>' +
-                          '<text dy="-1.1em" text-anchor="middle" class="tooltip-text svg-text"> </text>';
-
-                  let addTooltip = function() {
-                      let tooltipGroup = document.createElementNS(svg.namespaceURI,"g");
-                      tooltipGroup.id = tooltipGroupId
-                      tooltipGroup.innerHTML = TOOLTIP_HTML;
-                      svg.appendChild(tooltipGroup);
-                  };
-
-                  let showTooltip = function(x, y, tooltipText) {
-                      let $tooltip = $(svg).find('.tooltip-text');
-                      let $tooltipBox = $(svg).find('.tooltip-box');
-                      let $tooltipPoint = $(svg).find('.tooltip-point');
-
-                      let text = (typeof tooltipText === "function") ? tooltipText(options) : tooltipText;
-                      let svgPoint = cursorPoint(x, y);
-                      let svgWidth = Number(svg.getAttribute("viewBox").split(" ")[2]);
-                      let textLength;
-                      let halfLength;
-                      let tooltipX;
-                      $tooltip.html(text);
-                      textLength = Math.round($tooltip.get()[0].getComputedTextLength());
-                      halfLength = textLength / 2;
-
-                      /* Make sure tooltip text is within the SVG */
-                      if (svgPoint.x - halfLength - 6 < 0)  {
-                          tooltipX = halfLength + 6;
-                      }
-                      else if (svgPoint.x + halfLength + 6 > svgWidth) {
-                          tooltipX = svgWidth - halfLength - 6;
-                      }
-                      else {
-                          tooltipX = svgPoint.x;
-                      }
-                      $tooltip.attr("x", tooltipX).attr("y", svgPoint.y);
-
-                      /* Set attributes for background box */
-                      $tooltipBox.attr("x", tooltipX - halfLength - 6).attr("y", svgPoint.y - 35).attr("width", textLength + 12).removeClass("hidden");
-
-                      /* Set attributes for the tooltip point */
-                      $tooltipPoint.attr("transform", "translate(" + svgPoint.x + "," + svgPoint.y + ")").removeClass("hidden");
-                  };
-
-                  let hideTooltip = function() {
-                      document.querySelector('.tooltip-text').innerHTML("");
-                      document.querySelector('.tooltip-box').classList.add("hidden");
-                      document.querySelector('.tooltip-point').classList.add("hidden");
-                  };
-
-                  return {
-                      addTooltip: addTooltip,
-                      showTooltip : showTooltip,
-                      hideTooltip : hideTooltip
-                  };
-              }
-
-
-
-
-            let ls = null;
-            let interval = setInterval(function(){
-              let checkEle = document.getElementById('footer');
-              if (checkEle.length > 0) {
-                  clearInterval(interval);
-              }
-            }, 25);
-
-
-
-              vizlab.showyear = function(year) {
-                  year = "" + year; // force year to be string
-                  let barId = '#yr' + year;
-                  let filterFunc = function(val, i){
-                      if (undefined !== indices) {
-                          return (indices.indexOf(i) != -1)
-                      } else {
-                          return false;
-                      }
-                  }
-                  for (let group in yeardata) {
-                      if (paths.hasOwnProperty(group)) {
-                          let indices = yeardata[group][year];
-                          let newpath = paths[group]["split"].filter(filterFunc);
-                          newpath = "M" + ((newpath.length > 0) ? newpath.join("M") : "0,0");
-                          $('#' + group).attr("d", newpath);
-                      }
-                  }
-                  $(barId).addClass('selected-year');
-                  $(":not(" + barId + ")").removeClass('selected-year');
-              };
-
-              $(document).ready(function() {
-                  console.log('did this run??')
-
-                  // Set up svg mouse over dom
-                  let doySVG = document.getElementById('doy-NM');
-
-                  mapSVG = vizlab.svg();
-                  mapSVG.addTooltip();
-                  $('#doy-NM .years-rect').mouseenter(function() {
-                      let year = $(this).attr('id').slice(2);
-                      $(this).addClass('selected-year');
-                      $('#doy_' + year).addClass('selected-doy');
-
-                      let use = document.createElementNS(doySVG.namespaceURI, 'use');
-                      use.setAttributeNS(doySVG.attributes["xmlns:xlink"].nodeValue, 'href', '#doy_' + year);
-                      document.getElementById('dayOfYear').appendChild(use);
-                  });
-                  $('#doy-NM .years-rect').mouseleave(function() {
-                      let year = $(this).attr('id').slice(2);
-                      $(this).removeClass('selected-year');
-                      $('#dayOfYear use').remove();
-                      $('#doy_' + year).removeClass('selected-doy');
-                  });
-              });
-
-              vizlab.play = function() {
-                  console.log(' got to vizlab play ', vizlab)
-                  playInterval = setInterval(function(){
-                      let year = startYear + yearPointer;
-                      console.log('year ', year)
-                      yearPointer = (yearPointer + 1) % numYears;
-                      vizlab.showyear(year);
-                  }, delay);
-              };
-
-              vizlab.pause = function(year) {
-                  clearInterval(playInterval);
-                  yearPointer = year - startYear;
-                  vizlab.showyear(year);
-              };
-
-
-            let lsfilter = function(val, i) {
-                return (ls.indexOf(val) == -1);
-            };
-            async function organizeTheData() {
-                let promise = new Promise((resolve, reject) => {
-                    for (let group in data) {
-                        let prevgages = [];
-                        yeardata[group] = {};
-                        if (undefined === numYears && undefined === startYear) {
-                            let keys = Object.keys(data[group])
-                            startYear = Number(keys[0]);
-                            numYears = keys.length;
-                        }
-                        for (let year in data[group]) {
-                            let gn = data[group][year]["gn"]
-                            ls = data[group][year]["ls"]
-                            let newgages = prevgages.filter(lsfilter)
-                            newgages = newgages.concat(gn);
-                            yeardata[group][year] = newgages;
-                            prevgages = newgages;
-                        }
-                    }
-                    resolve('the promise worked');
+                    let use = document.createElementNS(doySVG.namespaceURI, 'use');
+                    use.setAttributeNS(doySVG.attributes["xmlns:xlink"].nodeValue, 'href', '#doy_' + year);
+                    document.getElementById('dayOfYear').appendChild(use);
                 });
-            }
+                $('#doy-NM .years-rect').mouseleave(function() {
+                    let year = $(this).attr('id').slice(2);
+                    $(this).removeClass('selected-year');
+                    $('#dayOfYear use').remove();
+                    $('#doy_' + year).removeClass('selected-doy');
+                });
+            },
 
-            organizeTheData().then(function() {
-                for (let group in yeardata) {
-                    paths[group] = {};
-                    paths[group]["orig"] = $('#' + group).attr("d");
-                    paths[group]["split"] = paths[group]["orig"].split("M");
+            cursorPoint: function(screenX, screenY) {
+                let svg = this.svg;
+                let point = svg.createSVGPoint();
+                point.x = screenX;
+                point.y = screenY;
+                point = point.matrixTransform(svg.getScreenCTM().inverse());
+                point.x = Math.round(point.x);
+                point.y = Math.round(point.y);
+                return point;
+            },
+            addTooltip() {
+                const self = this;
 
-                    console.log('paths ', paths)
+                let tooltipGroup = document.createElementNS(self.svg.namespaceURI,"g");
+                tooltipGroup.id = self.tooltipGroupId
+                tooltipGroup.innerHTML = self.TOOLTIP_HTML;
+                self.svg.appendChild(tooltipGroup);
+            },
+            showTooltip(x, y, tooltipText) {
+                const self = this;
+                let svg = this.svg;
+                console.log('show tool tip x value: ' + x + ' y value ' + y + 'text ' + tooltipText)
+                let $tooltip = $(svg).find('.tooltip-text');
+                let $tooltipBox = $(svg).find('.tooltip-box');
+                let $tooltipPoint = $(svg).find('.tooltip-point');
+
+                let text = (typeof tooltipText === "function") ? tooltipText(options) : tooltipText;
+                let svgPoint = self.cursorPoint(x, y);
+                let svgWidth = Number(svg.getAttribute("viewBox").split(" ")[2]);
+                let textLength;
+                let halfLength;
+                let tooltipX;
+
+                $tooltip.html(text);
+                textLength = Math.round($tooltip.get()[0].getComputedTextLength());
+                halfLength = textLength / 2;
+
+                /* Make sure tooltip text is within the SVG */
+                if (svgPoint.x - halfLength - 6 < 0)  {
+                    tooltipX = halfLength + 6;
+                }
+                else if (svgPoint.x + halfLength + 6 > svgWidth) {
+                    tooltipX = svgWidth - halfLength - 6;
+                }
+                else {
+                    tooltipX = svgPoint.x;
+                }
+                $tooltip.attr("x", tooltipX).attr("y", svgPoint.y);
+
+                /* Set attributes for background box */
+                $tooltipBox.attr("x", tooltipX - halfLength - 6).attr("y", svgPoint.y - 35).attr("width", textLength + 12).removeClass("hidden");
+
+                /* Set attributes for the tooltip point */
+                $tooltipPoint.attr("transform", "translate(" + svgPoint.x + "," + svgPoint.y + ")").removeClass("hidden");
+            },
+            hideTooltip() {
+                console.log('hide the tooltip')
+                let svg = this.svg;
+                $(svg).find('.tooltip-text').html("");
+                $(svg).find('.tooltip-box').addClass("hidden");
+                $(svg).find('.tooltip-point').addClass("hidden");
+            },
+            hovertext(event, text) {
+                const self = this;
+                text ? self.showTooltip(event.clientX, event.clientY, text):
+                        self.hideTooltip();
+            },
+            showyear(year) {
+                const self = this;
+                let indices = undefined;
+                console.log('year', year)
+                year = "" + year; // force year to be string
+                let barId = '#yr' + year;
+                let filterFunc = function (val, i) {
+                    if (undefined !== indices) {
+                        return (indices.indexOf(i) != -1)
+                    } else {
+                        return false;
+                    }
+                }
+                for (let group in self.yeardata) {
+                    if (self.paths.hasOwnProperty(group)) {
+                        indices = self.yeardata[group][year];
+                        let newpath = self.paths[group]["split"].filter(filterFunc);
+                        newpath = "M" + ((newpath.length > 0) ? newpath.join("M") : "0,0");
+                        $('#' + group).attr("d", newpath);
+                    }
+                }
+                $(barId).addClass('selected-year');
+                $(":not(" + barId + ")").removeClass('selected-year');
+            },
+            pause(year) {
+                const self = this;
+                clearInterval(self.playInterval);
+                self.yearPointer = year - this.startYear;
+                self.showyear(year);
+            },
+            play() {
+                const self = this;
+                self.playInterval = setInterval(function () {
+                    let year = self.startYear + self.yearPointer;
+                    self.yearPointer = (self.yearPointer + 1) % self.numYears;
+                    self.showyear(year);
+                }, self.delay);
+            },
+            lsfilter: function (val, i) {
+                return (this.ls.indexOf(val) == -1);
+            },
+            startMonitoringLocationAnimation() {
+                const self = this;
+                const data = this.monitoringLocationData;
+
+                async function organizeTheData() {
+                    let promise = new Promise((resolve, reject) => {
+                        for (let group in data) {
+                            let prevgages = [];
+                            self.yeardata[group] = {};
+                            if (undefined === self.numYears && undefined === self.startYear) {
+                                let keys = Object.keys(data[group])
+                                self.startYear = Number(keys[0]);
+                                self.numYears = keys.length;
+                            }
+                            for (let year in data[group]) {
+                                let gn = data[group][year]["gn"]
+                                self.ls = data[group][year]["ls"]
+                                let newgages = prevgages.filter(self.lsfilter)
+                                newgages = newgages.concat(gn);
+                                self.yeardata[group][year] = newgages;
+                                prevgages = newgages;
+                            }
+                        }
+                        resolve();
+                    });
                 }
 
-                play();
-            });
-
-            this.hovertext = function(event, text) {
-              if (text) {
-                  mapSVG.showTooltip(event.clientX, event.clientY, text);
-              } else {
-                  mapSVG.hideTooltip();
-              }
-            }
-          }
+                organizeTheData().then(function () {
+                    for (let group in self.yeardata) {
+                        self.paths[group] = {};
+                        self.paths[group]["orig"] = $('#' + group).attr("d");
+                        self.paths[group]["split"] = self.paths[group]["orig"].split("M");
+                    }
+                    self.play();
+                });
+            },
         }
     }
 </script>
