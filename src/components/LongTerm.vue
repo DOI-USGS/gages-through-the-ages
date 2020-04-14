@@ -18,7 +18,7 @@
         <desc>NM gage</desc>
         <g transform="translate(0,72)">
           <g class="axis-labels svg-text">
-            <text transform="translate(15.12,152.03) rotate(-90)">Cubic Feet Per Second</text>
+            <text transform="translate(10.12,152.03) rotate(-90)">Cubic Feet Per Second</text>
             <text
               x="71.62"
               y="191.52"

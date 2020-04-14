@@ -4,6 +4,7 @@
     class="section"
   >
     <h2>Context Slider</h2>
+    <AutoCompleteSearchBox :city-names="cityNames" />
     <div id="maps">
       <div id="comparison-container">
         <div
@@ -23,25 +24,44 @@ import beforeStyle from '../assets/styles/beforeStyles';
 import afterStyle from '../assets/styles/afterStyles';
 import mapboxgl from 'mapbox-gl';
 import MapboxCompare from 'mapbox-gl-compare';
+import AutoCompleteSearchBox from "./AutoCompleteSearchBox";
+import usCities from "../assets/data/usCities";
+
 export default {
     name: 'MapboxSlider',
+    components: {
+        AutoCompleteSearchBox
+    },
+    data() {
+        return {
+            cityNames: this.getCityNames()
+
+        }
+    },
     mounted(){
-        this.CreateMaps();
+        this.createMaps();
     },
     methods: {
-        CreateMaps(){
+        getCityNames() {
+          let cityNames = [];
+          usCities.usCities.forEach(function(city) {
+              cityNames.push(city.city + ', ' + city.state);
+          });
+          return cityNames;
+        },
+        createMaps(){
             let beforeMap = new mapboxgl.Map({
                 container: 'before',
                 style: beforeStyle.style,
-                center: [-82.9001, 32.1656],
-                zoom: 5,
+                center: [-84.39, 33.75],
+                zoom: 6,
                 interactive: false
             });
             let afterMap = new mapboxgl.Map({
                 container: 'after',
                 style: afterStyle.style,
-                center: [-82.9001, 32.1656],
-                zoom: 5,
+                center: [-84.39, 33.75],
+                zoom: 6,
                 interactive: false
             });
             let container = '#comparison-container';
