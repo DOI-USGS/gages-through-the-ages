@@ -61,7 +61,7 @@ export default {
                         self.createMaps();
                     })
                     .catch((data, status) => {
-                        console.log('IP location failed; using default coordinates for map center');
+                        console.log('Could not retrieve location by IP; using default coordinates for map center');
                         self.createMaps();
                     });
         },
