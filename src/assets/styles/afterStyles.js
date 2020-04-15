@@ -8,12 +8,6 @@ export default {
                 'minzoom': 2, // setting this to equal the minzoom of main map, real tile extent is 2
                 'maxzoom': 6  // setting this to equal the maxzoom of main map, real tile extent is 10
             },
-            nhd_streams_grouped: {
-                type: 'vector',
-                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/nhdstreams_grouped/{z}/{x}/{y}.pbf'],
-                'minzoom': 2, // setting this to equal the minzoom of main map, real tile extent is 0
-                'maxzoom': 6  // setting this to equal the maxzoom of main map, real tile extent is 10
-            },
             openmaptiles: {
                 type: 'vector',
                 'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/openmaptiles/baselayers/{z}/{x}/{y}.pbf'],
@@ -26,6 +20,15 @@ export default {
                 'minzoom': 2,
                 'maxzoom': 12,
                 'tileSize': 256
+            },
+            'raster-tiles': {
+                'type': 'raster',
+                'tiles': [
+                    'https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg'
+                ],
+                'tileSize': 256,
+                'attribution':
+                        'Map tiles by <a target="_top" rel="noopener" href="http://stamen.com">Stamen Design</a>, under <a target="_top" rel="noopener" href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a target="_top" rel="noopener" href="http://openstreetmap.org">OpenStreetMap</a>, under <a target="_top" rel="noopener" href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>'
             }
         },
         'sprite': '',
@@ -37,7 +40,7 @@ export default {
                     'background-color': 'hsl(47, 26%, 88%)'
                 },
                 'type': 'background',
-                'showButtonLayerToggle': false
+
             },
             {
                 'id': 'Neighboring Countries',
@@ -52,7 +55,7 @@ export default {
                 'paint': {
                     'fill-color': 'hsl(47, 26%, 88%)'
                 },
-                'showButtonLayerToggle': false
+
             },
             {
                 'filter': ['all', ['==', '$type', 'Polygon'],
@@ -68,7 +71,7 @@ export default {
                 'layout': {
                     'visibility': 'visible'
                 },
-                'showButtonLayerToggle': false
+
             },
             {
                 'id': 'Terrain',
@@ -76,9 +79,17 @@ export default {
                 'source': 'hillshade',
                 'layout': {
                     'visibility': 'visible'
+                }
+            },
+            {
+                'id': 'simple-tiles',
+                'type': 'raster',
+                'source': 'raster-tiles',
+                'paint': {
+                   'raster-opacity': 1
                 },
-                'showButtonLayerToggle': true,
-                'showButtonStreamToggle': false,
+                'minzoom': 0,
+                'maxzoom': 22
             },
             {
                 'id': 'states',
@@ -88,42 +99,41 @@ export default {
                 'minzoom': 2,
                 'maxzoom': 24,
                 'layout': {
-                    'visibility': 'visible',
+                    'visibility': 'visible'
                 },
                 'paint': {
                     'line-color': 'rgb(0,0,0)'
                 }
 
             },
-            {
-                'filter': ['all', ['==', '$type', 'Point'],
-                    ['==', 'class', 'city']
-                ],
-                'id': 'place_label_city',
-                'layout': {
-                    'text-field': '{name:latin}\n{name:nonlatin}',
-                    'text-font': ['Noto Sans Regular'],
-                    'text-max-width': 10,
-                    'text-size': {
-                        'stops': [
-                            [3, 12],
-                            [8, 16]
-                        ]
-                    }
-                },
-                'maxzoom': 16,
-                'minzoom': 5,
-                'paint': {
-                    'text-color': 'hsl(0, 0%, 0%)',
-                    'text-halo-blur': 0,
-                    'text-halo-color': 'hsla(0, 0%, 100%, 0.75)',
-                    'text-halo-width': 2
-                },
-                'source': 'openmaptiles',
-                'source-layer': 'place',
-                'type': 'symbol',
-                'showButtonLayerToggle': false
-            }
+            // {
+            //     'filter': ['all', ['==', '$type', 'Point'],
+            //         ['==', 'class', 'city']
+            //     ],
+            //     'id': 'place_label_city',
+            //     'layout': {
+            //         'text-field': '{name:latin}\n{name:nonlatin}',
+            //         'text-font': ['Noto Sans Regular'],
+            //         'text-max-width': 10,
+            //         'text-size': {
+            //             'stops': [
+            //                 [3, 12],
+            //                 [8, 16]
+            //             ]
+            //         }
+            //     },
+            //     'maxzoom': 16,
+            //     'minzoom': 5,
+            //     'paint': {
+            //         'text-color': 'hsl(0, 0%, 0%)',
+            //         'text-halo-blur': 0,
+            //         'text-halo-color': 'hsla(0, 0%, 100%, 0.75)',
+            //         'text-halo-width': 2
+            //     },
+            //     'source': 'openmaptiles',
+            //     'source-layer': 'place',
+            //     'type': 'symbol'
+            // }
         ]
     }
 }
