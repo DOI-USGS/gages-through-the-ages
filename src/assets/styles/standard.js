@@ -20,15 +20,6 @@ export default {
                 'minzoom': 2,
                 'maxzoom': 12,
                 'tileSize': 256
-            },
-            'raster-tiles': {
-                'type': 'raster',
-                'tiles': [
-                    'https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg'
-                ],
-                'tileSize': 256,
-                'attribution':
-                        'Map tiles by <a target="_top" rel="noopener" href="http://stamen.com">Stamen Design</a>, under <a target="_top" rel="noopener" href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a target="_top" rel="noopener" href="http://openstreetmap.org">OpenStreetMap</a>, under <a target="_top" rel="noopener" href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>'
             }
         },
         'sprite': '',
@@ -39,8 +30,7 @@ export default {
                 'paint': {
                     'background-color': 'hsl(47, 26%, 88%)'
                 },
-                'type': 'background',
-
+                'type': 'background'
             },
             {
                 'id': 'Neighboring Countries',
@@ -82,16 +72,6 @@ export default {
                 }
             },
             {
-                'id': 'simple-tiles',
-                'type': 'raster',
-                'source': 'raster-tiles',
-                'paint': {
-                   'raster-opacity': 1
-                },
-                'minzoom': 0,
-                'maxzoom': 22
-            },
-            {
                 'id': 'states',
                 'type': 'line',
                 'source': 'basemap',
@@ -104,36 +84,35 @@ export default {
                 'paint': {
                     'line-color': 'rgb(0,0,0)'
                 }
-
             },
-            // {
-            //     'filter': ['all', ['==', '$type', 'Point'],
-            //         ['==', 'class', 'city']
-            //     ],
-            //     'id': 'place_label_city',
-            //     'layout': {
-            //         'text-field': '{name:latin}\n{name:nonlatin}',
-            //         'text-font': ['Noto Sans Regular'],
-            //         'text-max-width': 10,
-            //         'text-size': {
-            //             'stops': [
-            //                 [3, 12],
-            //                 [8, 16]
-            //             ]
-            //         }
-            //     },
-            //     'maxzoom': 16,
-            //     'minzoom': 5,
-            //     'paint': {
-            //         'text-color': 'hsl(0, 0%, 0%)',
-            //         'text-halo-blur': 0,
-            //         'text-halo-color': 'hsla(0, 0%, 100%, 0.75)',
-            //         'text-halo-width': 2
-            //     },
-            //     'source': 'openmaptiles',
-            //     'source-layer': 'place',
-            //     'type': 'symbol'
-            // }
+            {
+                'filter': ['all', ['==', '$type', 'Point'],
+                    ['==', 'class', 'city']
+                ],
+                'id': 'place_label_city',
+                'layout': {
+                    'text-field': '{name:latin}\n{name:nonlatin}',
+                    'text-font': ['Noto Sans Regular'],
+                    'text-max-width': 10,
+                    'text-size': {
+                        'stops': [
+                            [3, 12],
+                            [8, 16]
+                        ]
+                    }
+                },
+                'maxzoom': 16,
+                'minzoom': 5,
+                'paint': {
+                    'text-color': 'hsl(0, 0%, 0%)',
+                    'text-halo-blur': 0,
+                    'text-halo-color': 'hsla(0, 0%, 100%, 0.75)',
+                    'text-halo-width': 2
+                },
+                'source': 'openmaptiles',
+                'source-layer': 'place',
+                'type': 'symbol'
+            }
         ]
     }
 }
