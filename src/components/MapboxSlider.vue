@@ -29,6 +29,8 @@
 <script>
 import beforeStyle from '../assets/styles/beforeStyles';
 import afterStyle from '../assets/styles/afterStyles';
+import oldGages from '../assets/data/site_map_merc_1967';
+import newGages from '../assets/data/site_map_merc_2018';
 import mapboxgl from 'mapbox-gl';
 import MapboxCompare from 'mapbox-gl-compare';
 import AutoCompleteSearchBox from "./AutoCompleteSearchBox";
@@ -84,6 +86,8 @@ export default {
           return cityNames;
         },
         createMaps() {
+            let radius = 2;
+            let color = '#000000';
             let beforeMap = new mapboxgl.Map({
                 container: 'before',
                 style: beforeStyle.style,
@@ -98,6 +102,44 @@ export default {
                 zoom: this.zoom,
                 interactive: false
             });
+
+            beforeMap.on('load', function(){
+              beforeMap.addSource('oldGages', {
+                type: 'geojson',
+                data: oldGages.nationalGagesBeforeMap
+              });
+              beforeMap.addLayer({
+                'id': 'oldGages',
+                'source': 'oldGages',
+                'type': 'circle',
+                'paint': {
+                  'circle-radius': radius,
+                  'circle-color': color
+                },
+                'filter': ['==', '$type', 'Point']
+              });
+            });
+
+            afterMap.on('load', function(){
+              afterMap.addSource('newGages',{
+                type: 'geojson',
+                data: newGages.nationalGagesAfterMap
+              });
+              afterMap.addLayer({
+                'id': 'newGages',
+                'source': 'newGages',
+                'type': 'circle',
+                'paint': {
+                  'circle-radius': radius,
+                  'circle-color': color
+                },
+                'filter': ['==', '$type', 'Point']
+              });
+            });
+
+            
+            
+
             let container = '#comparison-container';
             this.$store.beforeMap = beforeMap; // add map to vuex store
             this.$store.afterMap = afterMap; // add map to vuex store
