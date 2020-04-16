@@ -29,18 +29,123 @@
       </div>
     </div>
     <div id="style-adjustments">
-      <button @click="switchStyle('standard'), active($event)" id="standard" class="active">
+      <button
+        id="standard"
+        class="active"
+        @click="switchStyle('standard'), active($event)"
+      >
         standard
       </button>
-      <button @click="switchStyle('toner'), active($event)" id="toner">
+      <button
+        id="toner"
+        @click="switchStyle('toner'), active($event)"
+      >
         toner
       </button>
-      <button @click="switchStyle('terrain'), active($event)" id="terrain">
+      <button
+        id="terrain"
+        @click="switchStyle('terrain'), active($event)"
+      >
         terrain
       </button>
-      <button @click="switchStyle('waterColor'), active($event)" id="watercolor">
+      <button
+        id="watercolor"
+        @click="switchStyle('waterColor'), active($event)"
+      >
         water color
       </button>
+    </div>
+    <div id="before-locations-adjustments">
+      <div>
+        <range-slider
+          id="adjustment-before-radius"
+          v-model="beforeRadius"
+          class="slider"
+          min="1"
+          max="10"
+          step="1"
+        />
+        <span>before radius {{ beforeRadius }}</span>
+      </div>
+      <div>
+        <range-slider
+          id="adjustment-before-color"
+          v-model="beforeColor"
+          class="slider"
+          min="0"
+          max="360"
+          step="1"
+        />
+        <span>before color {{ beforeColor }}</span>
+      </div>
+      <div>
+        <range-slider
+          id="adjustment-before-stroke-width"
+          v-model="beforeStrokeWidth"
+          class="slider"
+          min="1"
+          max="10"
+          step="1"
+        />
+        <span>before stroke width {{ beforeStrokeWidth }}</span>
+      </div>
+      <div>
+        <range-slider
+          id="adjustment-before-stroke-color"
+          v-model="beforeStrokeColor"
+          class="slider"
+          min="0"
+          max="360"
+          step="1"
+        />
+        <span>before stroke color {{ beforeStrokeColor }}</span>
+      </div>
+    </div>
+    <div id="after-locations-adjustments">
+      <div>
+        <range-slider
+            id="adjustment-after-radius"
+            v-model="afterRadius"
+            class="slider"
+            min="1"
+            max="10"
+            step="1"
+        />
+        <span>after radius {{ afterRadius }}</span>
+      </div>
+      <div>
+        <range-slider
+          id="adjustment-after-color"
+          v-model="afterColor"
+          class="slider"
+          min="0"
+          max="360"
+          step="1"
+        />
+        <span>after color {{ afterColor }}</span>
+      </div>
+      <div>
+        <range-slider
+          id="adjustment-after-stroke-width"
+          v-model="afterStrokeWidth"
+          class="slider"
+          min="1"
+          max="10"
+          step="1"
+        />
+        <span>after stroke width {{ afterStrokeWidth }}</span>
+      </div>
+      <div>
+        <range-slider
+          id="adjustment-after-stroke-color"
+          v-model="afterStrokeColor"
+          class="slider"
+          min="0"
+          max="360"
+          step="1"
+        />
+        <span>after stroke color {{ afterStrokeColor }}</span>
+      </div>
     </div>
     <p>
       The USGS updates the locations and density of gages based on the current needs in a particular
@@ -64,18 +169,40 @@ import terrain from "../assets/styles/terrain";
 import standard from "../assets/styles/standard";
 import waterColor from "../assets/styles/waterColor";
 
+import RangeSlider from 'vue-range-slider'
+import 'vue-range-slider/dist/vue-range-slider.css'
+
 export default {
     name: 'MapboxSlider',
     components: {
-        AutoCompleteSearchBox
+        AutoCompleteSearchBox,
+        RangeSlider
     },
     data() {
         return {
             cityNames: this.getCityNames(),
             center: [-84.39, 33.75],
             zoom: 7.5,
+            beforeRadius: 4,
+            beforeColor: 245,
+            beforeStrokeWidth: 1,
+            beforeStrokeColor: 245,
+            afterRadius: 4,
+            afterColor: 245,
+            afterStrokeWidth: 1,
+            afterStrokeColor: 245,
             currentStyle: 'standard'
         }
+    },
+    watch: {
+        beforeRadius: function() {this.$store.beforeMap.setPaintProperty('oldGages', 'circle-radius', this.beforeRadius);},
+        beforeColor: function() {this.$store.beforeMap.setPaintProperty('oldGages', 'circle-color', 'hsla(' + this.beforeColor + ', 100%, 25%, 1)');},
+        beforeStrokeWidth: function() {this.$store.beforeMap.setPaintProperty('oldGages', 'circle-stroke-width', this.beforeStrokeWidth);},
+        beforeStrokeColor: function() {this.$store.beforeMap.setPaintProperty('oldGages', 'circle-stroke-color', 'hsla(' + this.beforeStrokeColor + ', 100%, 25%, 1)');},
+        afterRadius: function() {this.$store.afterMap.setPaintProperty('newGages', 'circle-radius', this.afterRadius);},
+        afterColor: function() {this.$store.afterMap.setPaintProperty('newGages', 'circle-color', 'hsla(' + this.afterColor + ', 100%, 25%, 1)');},
+        afterStrokeWidth: function() {this.$store.afterMap.setPaintProperty('newGages', 'circle-stroke-width', this.afterStrokeWidth);},
+        afterStrokeColor: function() {this.$store.afterMap.setPaintProperty('newGages', 'circle-stroke-color', 'hsla(' + this.afterStrokeColor + ', 100%, 25%, 1)');},
     },
     mounted(){
         this.getLocationByIP();
@@ -150,10 +277,7 @@ export default {
           return cityNames;
         },
         addMonitoringLocationLayer() {
-            let radius = 4;
-            let color = '#89D4CF';
-            let strokeWidth = 1;
-            let strokeColor = '#734AE8'
+            const self = this;
 
             this.$store.beforeMap.addSource('oldGages', {
                 type: 'geojson',
@@ -165,10 +289,10 @@ export default {
                 'source': 'oldGages',
                 'type': 'circle',
                 'paint': {
-                    'circle-radius': radius,
-                    'circle-color': color,
-                    'circle-stroke-width': strokeWidth,
-                    'circle-stroke-color': strokeColor
+                    'circle-radius': self.beforeRadius,
+                    'circle-color': 'hsla(' + self.beforeColor + ', 100%, 25%, 1)',
+                    'circle-stroke-width': self.beforeStrokeWidth,
+                    'circle-stroke-color': 'hsla(' + self.beforeStrokeColor + ', 100%, 25%, 1)'
                 },
                 'filter': ['==', '$type', 'Point']
             });
@@ -183,10 +307,10 @@ export default {
                 'source': 'newGages',
                 'type': 'circle',
                 'paint': {
-                    'circle-radius': radius,
-                    'circle-color': color,
-                    'circle-stroke-width': strokeWidth,
-                    'circle-stroke-color': strokeColor
+                    'circle-radius':        self.afterRadius,
+                    'circle-color':         'hsla(' + self.afterColor + ', 100%, 25%, 1)',
+                    'circle-stroke-width':  self.afterStrokeWidth,
+                    'circle-stroke-color':  'hsla(' + self.afterStrokeColor + ', 100%, 25%, 1)'
                 },
                 'filter': ['==', '$type', 'Point']
             });
@@ -283,7 +407,7 @@ export default {
   color: red;
   font-weight: bold;
 }
-
+/* what follow is for the sliders and related toggles added to help style the map */
 #year-text {
   display: flex;
   align-items: center;
@@ -315,6 +439,19 @@ export default {
   button.active{
     color: #fff;
     background:#003366;
+  }
+}
+
+#before-locations-adjustments {
+  display: flex;
+  div {
+    flex: 1;
+  }
+}
+#after-locations-adjustments {
+  display: flex;
+  div {
+    flex: 1;
   }
 }
 </style>
