@@ -9,8 +9,12 @@
       @submit="moveMapToSubmittedLocation"
     />
     <div id="year-text">
-      <p class="before-year">1967</p>
-      <p class="after-year">2018</p>
+      <p class="before-year">
+        1967
+      </p>
+      <p class="after-year">
+        2018
+      </p>
     </div>
     <div id="maps">
       <div id="comparison-container">
@@ -24,24 +28,27 @@
         />
       </div>
     </div>
+    <div id="style-adjustments">
+      <button @click="switchStyle('standard'), active($event)" id="standard" class="active">
+        standard
+      </button>
+      <button @click="switchStyle('toner'), active($event)" id="toner">
+        toner
+      </button>
+      <button @click="switchStyle('terrain'), active($event)" id="terrain">
+        terrain
+      </button>
+      <button @click="switchStyle('waterColor'), active($event)" id="watercolor">
+        water color
+      </button>
+    </div>
     <p>
       The USGS updates the locations and density of gages based on the current needs in a particular
       area. The above map allows a localized comparison between points in time.
     </p>
-    <div id="style-adjustments">
-      <button @click="switchStyle('standard')">
-        standard
-      </button>
-      <button @click="switchStyle('toner')">
-        toner
-      </button>
-      <button @click="switchStyle('terrain')">
-        terrain
-      </button>
-      <button @click="switchStyle('waterColor')">
-        water color
-      </button>
-    </div>
+    <p class="warning">
+      Text on this page is in the pre-approval stage.
+    </p>
   </div>
 </template>
 <script>
@@ -67,9 +74,7 @@ export default {
             cityNames: this.getCityNames(),
             center: [-84.39, 33.75],
             zoom: 7.5,
-
             currentStyle: 'standard'
-
         }
     },
     mounted(){
@@ -79,10 +84,8 @@ export default {
         switchStyle(style) {
             const self = this;
             if (this.currentStyle !== style) {
-                console.log('switch to ', style)
                 switch(style) {
                     case 'standard':
-                        console.log('ran standard ')
                         self.$store.beforeMap.setStyle(standard.style);
                         self.$store.afterMap.setStyle(standard.style);
                         break;
@@ -105,6 +108,13 @@ export default {
             }
             self.currentStyle = style;
             self.addMonitoringLocationLayer();
+        },
+        active(event){
+          let buttons = document.querySelectorAll('#style-adjustments button');
+          buttons.forEach(function(button){
+            button.classList.remove('active');
+          })
+          event.currentTarget.classList.add('active');
         },
         getLocationByIP() {
             const self = this;
@@ -244,9 +254,6 @@ export default {
             this.$store.beforeMap = beforeMap; // add map to vuex store
             this.$store.afterMap = afterMap; // add map to vuex store
 
-
-
-
             new MapboxCompare(beforeMap, afterMap, container);
         }
     }
@@ -268,6 +275,15 @@ export default {
     width: 100%;
 }
 
+.autocomplete{
+  margin-top:10px;
+}
+
+.warning{
+  color: red;
+  font-weight: bold;
+}
+
 #year-text {
   display: flex;
   align-items: center;
@@ -286,6 +302,19 @@ export default {
 
   button {
     flex: 1;
+    height: 30px;
+    background: #fff;
+    outline: none;
+    border: 1px solid rgb(190,190,190);
+    cursor: pointer;
+    &:hover{
+      color: #fff;
+      background:#003366;
+    }
+  }
+  button.active{
+    color: #fff;
+    background:#003366;
   }
 }
 </style>

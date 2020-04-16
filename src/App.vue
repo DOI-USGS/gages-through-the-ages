@@ -5,7 +5,6 @@
     <div id="Visualization">
       <GagesBarChartAnimation />
       <MapboxSlider />
-      <LongTerm />
       <DataSources />
       <Embed />
     </div>
@@ -18,7 +17,6 @@
     import HeaderUSGS from './components/HeaderUSGS'
     import GagesBarChartAnimation from './components/GagesBarChartAnimation'
     import MapboxSlider from './components/MapboxSlider'
-    import LongTerm from './components/LongTerm'
     import DataSources from './components/DataSources'
     import Embed from './components/Embed'
     import FooterUSGS from './components/FooterUSGS'
@@ -30,7 +28,6 @@
             HeaderUSGS,
             GagesBarChartAnimation,
             MapboxSlider,
-            LongTerm,
             DataSources,
             Embed,
             FooterUSGS

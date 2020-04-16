@@ -2651,8 +2651,6 @@
       have since become critical to hydropower operations, recreation, streamflow prediction, flood forecasts, emergency
       management, engineering designs, and many other purposes.
     </p>
-
-    <p>Mouse over the timeline below the map to see the distribution of active stream gages for a given year.</p>
   </div>
 </template>
 <script>
