@@ -10,7 +10,7 @@ function lazyLoad(view){
 export default new Router({
     routes: [
         {
-            path: '/',
+            path: "/",
             name: 'Visualization',
             component: Visualization
         },
