@@ -48,6 +48,32 @@ export default {
 
             },
             {
+                'filter': ['all', ['==', '$type', 'LineString'],
+                    ['in', 'class', 'minor', 'service', 'trunk', 'primary', 'secondary', 'tertiary', 'motorway']
+                ],
+                'id': 'Roads',
+                'layout': {
+                    'line-cap': 'round',
+                    'line-join': 'round',
+                    'visibility': 'visible'
+                },
+                'paint': {
+                    'line-color': 'rgb(150,150,150)',
+                    'line-width': {
+                        'base': 1.55,
+                        'stops': [
+                            [4, 0.25],
+                            [20, 30]
+                        ]
+                    }
+                },
+                'source': 'openmaptiles',
+                'source-layer': 'transportation',
+                'type': 'line',
+                'minzoom': 5,
+                'showButtonLayerToggle': true
+            },
+            {
                 'filter': ['all', ['==', '$type', 'Polygon'],
                     ['!=', 'intermittent', 1]
                 ],
