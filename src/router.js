@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import App from "./App";
+import Visualization from "./views/Visualization";
 
 Vue.use(Router);
 function lazyLoad(view){
@@ -11,8 +11,8 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'App',
-            component: App
+            name: 'Visualization',
+            component: Visualization
         },
         {
             path: "/404",

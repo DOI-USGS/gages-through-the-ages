@@ -2,12 +2,7 @@
   <div id="app">
     <HeaderUSWDSBanner />
     <HeaderUSGS />
-    <div id="Visualization">
-      <GagesBarChartAnimation />
-      <MapboxSlider />
-      <DataSources />
-      <Embed />
-    </div>
+    <router-view />
     <FooterUSGS />
   </div>
 </template>
@@ -26,10 +21,6 @@
         components: {
             HeaderUSWDSBanner,
             HeaderUSGS,
-            GagesBarChartAnimation,
-            MapboxSlider,
-            DataSources,
-            Embed,
             FooterUSGS
         },
         data() {
