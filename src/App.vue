@@ -2,7 +2,7 @@
   <div id="app">
     <HeaderUSWDSBanner />
     <HeaderUSGS />
-    <router-view />
+    <router-view :is-internet-explorer="isInternetExplorer" />
     <FooterUSGS />
   </div>
 </template>
