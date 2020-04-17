@@ -29,7 +29,7 @@
       area. The above map allows a localized comparison between points in time.
     </p>
     <p class="warning">
-      Text on this page is in the pre-approval stage.
+      Text on this page is in the pre-approval stage and subject to change.
     </p>
   </div>
 </template>
@@ -45,7 +45,7 @@ export default {
     data() {
         return {
             center: [-84.39, 33.75],
-            zoom: 7.5
+            zoom: 6.5
         }
     },
     mounted(){
@@ -123,7 +123,7 @@ export default {
 
 #maps{
     position: relative;
-    height: 350px;
+    height: 400px;
     overflow: hidden;
 }
 .map {
