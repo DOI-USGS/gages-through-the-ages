@@ -44,8 +44,8 @@ export default {
     name: 'MapboxSlider',
     data() {
         return {
-            center: [-84.39, 33.75],
-            zoom: 6.5
+            center: [-84.39, 32.90],
+            zoom: 5.5
         }
     },
     mounted(){
