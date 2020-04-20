@@ -4,14 +4,6 @@
     class="section"
   >
     <h2>Gage Changes Over Time</h2>
-    <div id="year-text">
-      <p class="before-year">
-        1967
-      </p>
-      <p class="after-year">
-        2018
-      </p>
-    </div>
     <div id="maps">
       <div id="comparison-container">
         <div
@@ -57,6 +49,9 @@ export default {
             let color = '#000000';
             let strokeWidth = 1;
             let strokeColor = '#734AE8';
+            let beforeYear = '1967';
+            let afterYear = '2018';
+
             let beforeMap = new mapboxgl.Map({
                 container: 'before',
                 style: standard.style,
@@ -71,6 +66,11 @@ export default {
                 zoom: this.zoom,
                 interactive: false
             });
+
+            let beforeMapCanvas = beforeMap.getCanvasContainer();
+            let afterMapCanvas = afterMap.getCanvasContainer();
+            this.CreateYearDiv(beforeYear, "beforeYear", beforeMapCanvas);
+            this.CreateYearDiv(afterYear, "afterYear", afterMapCanvas);
 
             beforeMap.on('load', function() {
                 beforeMap.addSource('oldGages', {
@@ -113,6 +113,13 @@ export default {
             let container = '#comparison-container';
 
             new MapboxCompare(beforeMap, afterMap, container);
+        },
+        CreateYearDiv(year, divId, canvas){
+          let div = document.createElement('div');
+          div.setAttribute('id', divId);
+          div.setAttribute('class', 'yearDiv');
+          div.innerHTML = year;
+          canvas.appendChild(div);
         }
     }
 }
@@ -125,6 +132,7 @@ export default {
     position: relative;
     height: 400px;
     overflow: hidden;
+    margin-top: 10px;
 }
 .map {
     position: absolute;
@@ -154,4 +162,25 @@ export default {
     text-align: center;
   }
 }
+</style>
+<style lang='scss'>
+  .yearDiv{
+    position: relative;
+    z-index: 9000;
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,.9);
+    font-size: 1.8em;
+    width: 60px;
+    margin: 10px 0 0 10px;
+    padding: 5px 0;
+    text-align: center;
+    &::selection{
+      color: none;
+      background: none;
+    }
+  }
+  #afterYear{
+    position: absolute;
+    right: 10px;
+  }
 </style>
