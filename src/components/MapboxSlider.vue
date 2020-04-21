@@ -169,6 +169,8 @@ export default {
     z-index: 9000;
     background: rgb(255,255,255);
     background: rgba(255,255,255,.9);
+    border: 1px solid #2c5258;
+    box-shadow: 1px 1px #909090;
     font-size: 1.8em;
     width: 60px;
     margin: 10px 0 0 10px;
