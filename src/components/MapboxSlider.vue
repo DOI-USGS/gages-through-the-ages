@@ -45,24 +45,32 @@ export default {
     },
     methods: {
         createMaps() {
-            let radius = 2;
-            let color = '#000000';
+            let radius = 4;
+            let urban = '#EB7006';
+            let rural = '#817D7E';
             let strokeWidth = 1;
-            let strokeColor = '#734AE8';
+            let strokeColor = 'rgb(50,50,50)';
             let beforeYear = '1967';
             let afterYear = '2018';
+            let bounds = [
+              [-86.457617,29.980643],
+              [-80.761045,35.397831]
+            ]
 
             let beforeMap = new mapboxgl.Map({
                 container: 'before',
                 style: standard.style,
                 center: this.center,
+                maxBounds: bounds,
                 zoom: this.zoom,
                 interactive: false
+                
             });
             let afterMap = new mapboxgl.Map({
                 container: 'after',
                 style: standard.style,
                 center: this.center,
+                maxBounds: bounds,
                 zoom: this.zoom,
                 interactive: false
             });
@@ -83,9 +91,13 @@ export default {
                     'type': 'circle',
                     'paint': {
                         'circle-radius': radius,
-                        'circle-color': color,
-                        'circle-stroke-width': strokeWidth,
-                        'circle-stroke-color': strokeColor
+                        'circle-color': [
+                          'case',
+                          ['==', ['get', 'is_urban'], true], urban,
+                          rural
+                        ],
+                        'circle-stroke-color': strokeColor,
+                        'circle-stroke-width': strokeWidth
                     },
                     'filter': ['==', '$type', 'Point']
                 });
@@ -102,9 +114,13 @@ export default {
                     'type': 'circle',
                     'paint': {
                         'circle-radius': radius,
-                        'circle-color': color,
-                        'circle-stroke-width': strokeWidth,
-                        'circle-stroke-color': strokeColor
+                        'circle-color': [
+                          'case',
+                          ['==', ['get', 'is_urban'], true], urban,
+                          rural
+                        ],
+                        'circle-stroke-color': strokeColor,
+                        'circle-stroke-width': strokeWidth
                     },
                     'filter': ['==', '$type', 'Point']
                 });
@@ -130,9 +146,13 @@ export default {
 
 #maps{
     position: relative;
-    height: 400px;
     overflow: hidden;
     margin-top: 10px;
+    &:after{
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
 }
 .map {
     position: absolute;

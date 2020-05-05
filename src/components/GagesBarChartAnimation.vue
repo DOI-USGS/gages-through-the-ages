@@ -2865,13 +2865,13 @@
 </script>
 <style lang="scss">
   .interior-state {
-    fill: #b8bfac;
-    stroke: #f5f8ef;
+    fill: #b9c7d2;
+    stroke: rgb(50,50,50);
   }
 
   .exterior-state {
-    fill: #b8bfac;
-    stroke: none;
+    fill: #b9c7d2;
+    stroke: rgb(50,50,50);
   }
 
   .mouser-shape {
@@ -2886,7 +2886,7 @@
   }
 
   .site-dot {
-    stroke: #2c5258;
+    stroke: #000;
     stroke-linecap: round;
     stroke-width: 3;
     opacity: 0.7;
@@ -2894,7 +2894,7 @@
 
   .gage-count-bar {
     opacity: 0.4;
-    fill: #9BC1BC;
+    fill: #b9c7d2;
   }
 
   .selected-year {
