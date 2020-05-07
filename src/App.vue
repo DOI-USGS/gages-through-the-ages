@@ -2,6 +2,7 @@
   <div id="app">
     <HeaderUSWDSBanner />
     <HeaderUSGS />
+    <WorkInProgressWarning />
     <router-view :is-internet-explorer="isInternetExplorer" />
     <FooterUSGS />
   </div>
@@ -10,10 +11,7 @@
 <script>
     import HeaderUSWDSBanner from './components/HeaderUSWDSBanner'
     import HeaderUSGS from './components/HeaderUSGS'
-    import GagesBarChartAnimation from './components/GagesBarChartAnimation'
-    import MapboxSlider from './components/MapboxSlider'
-    import DataSources from './components/DataSources'
-    import Embed from './components/Embed'
+    import WorkInProgressWarning from "./components/WorkInProgressWarning";
     import FooterUSGS from './components/FooterUSGS'
 
     export default {
@@ -21,6 +19,7 @@
         components: {
             HeaderUSWDSBanner,
             HeaderUSGS,
+            WorkInProgressWarning,
             FooterUSGS
         },
         data() {
