@@ -75,7 +75,7 @@ export default {
                 container: 'georgiaBefore',
                 style: standard.style,
                 center: this.georgiaCenter,
-                maxBounds: bounds,
+                
                 zoom: this.zoom,
                 maxZoom: 9,
                 interactive: true
@@ -84,7 +84,7 @@ export default {
                 container: 'georgiaAfter',
                 style: standard.style,
                 center: this.georgiaCenter,
-                maxBounds: bounds,
+                
                 zoom: this.zoom,
                 maxZoom: 9,
                 interactive: true
