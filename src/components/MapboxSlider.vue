@@ -4,14 +4,26 @@
     class="section"
   >
     <h2>Gage Changes Over Time</h2>
-    <div id="maps">
-      <div id="comparison-container">
+    <div class="maps">
+      <div id="georgia-comparison-container">
         <div
-          id="before"
+          id="georgiaBefore"
           class="map"
         />
         <div
-          id="after"
+          id="georgiaAfter"
+          class="map"
+        />
+      </div>
+    </div>
+    <div class="maps">
+      <div id="colorado-comparison-container">
+        <div
+          id="coloradoBefore"
+          class="map"
+        />
+        <div
+          id="coloradoAfter"
           class="map"
         />
       </div>
@@ -36,8 +48,9 @@ export default {
     name: 'MapboxSlider',
     data() {
         return {
-            center: [-84.39, 32.90],
-            zoom: 5.5
+            georgiaCenter: [-84.39, 32.90],
+            coloradoCenter: [-105.7821, 39.5501],
+            zoom: 6
         }
     },
     mounted(){
@@ -48,6 +61,7 @@ export default {
             let radius = 4;
             let urban = '#EB7006';
             let rural = '#817D7E';
+            let outSideState = '#b8b6b6';
             let strokeWidth = 1;
             let strokeColor = 'rgb(50,50,50)';
             let beforeYear = '1967';
@@ -57,78 +71,108 @@ export default {
               [-80.761045,35.397831]
             ]
 
-            let beforeMap = new mapboxgl.Map({
-                container: 'before',
+            let georgiaBeforeMap = new mapboxgl.Map({
+                container: 'georgiaBefore',
                 style: standard.style,
-                center: this.center,
+                center: this.georgiaCenter,
                 maxBounds: bounds,
                 zoom: this.zoom,
-                interactive: false
-                
+                maxZoom: 9,
+                interactive: true
             });
-            let afterMap = new mapboxgl.Map({
-                container: 'after',
+            let georgiaAfterMap = new mapboxgl.Map({
+                container: 'georgiaAfter',
                 style: standard.style,
-                center: this.center,
+                center: this.georgiaCenter,
                 maxBounds: bounds,
                 zoom: this.zoom,
-                interactive: false
+                maxZoom: 9,
+                interactive: true
             });
 
-            let beforeMapCanvas = beforeMap.getCanvasContainer();
-            let afterMapCanvas = afterMap.getCanvasContainer();
-            this.CreateYearDiv(beforeYear, "beforeYear", beforeMapCanvas);
-            this.CreateYearDiv(afterYear, "afterYear", afterMapCanvas);
+            let coloradoBeforeMap = new mapboxgl.Map({
+                container: 'coloradoBefore',
+                style: standard.style,
+                center: this.coloradoCenter,
+                zoom: this.zoom,
+                maxZoom: 9,
+                interactive: true
+            });
+            let coloradoAfterMap = new mapboxgl.Map({
+                container: 'coloradoAfter',
+                style: standard.style,
+                center: this.coloradoCenter,
+                zoom: this.zoom,
+                maxZoom: 9,
+                interactive: true
+            });
+            //Get maps canvases
+            let georgiaBeforeMapCanvas = georgiaBeforeMap.getCanvasContainer();
+            let georgiaAfterMapCanvas = georgiaAfterMap.getCanvasContainer();
+            let coloradoBeforeMapCanvas = coloradoBeforeMap.getCanvasContainer();
+            let coloradoAfterMapCanvas = coloradoAfterMap.getCanvasContainer();
+            //Creates dives in the canvas area
+            this.CreateYearDiv(beforeYear, "beforeYear", georgiaBeforeMapCanvas);
+            this.CreateYearDiv(afterYear, "afterYear", georgiaAfterMapCanvas);
+            this.CreateYearDiv(beforeYear, "beforeYear", coloradoBeforeMapCanvas);
+            this.CreateYearDiv(afterYear, "afterYear", coloradoAfterMapCanvas);
+            //Add geojson layers
+            this.AddGeoJSON(georgiaBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural, outSideState);
+            this.AddGeoJSON(georgiaAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural, outSideState);
+            this.AddGeoJSON(coloradoBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural, outSideState);
+            this.AddGeoJSON(coloradoAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural, outSideState);
 
-            beforeMap.on('load', function() {
-                beforeMap.addSource('oldGages', {
+            let georgiaContainer = '#georgia-comparison-container';
+            let coloradoContainer = '#colorado-comparison-container';
+
+            new MapboxCompare(georgiaBeforeMap, georgiaAfterMap, georgiaContainer);
+            new MapboxCompare(coloradoBeforeMap, coloradoAfterMap, coloradoContainer);
+        },
+        AddGeoJSON(map, data, source, radius, urban, rural, outSideState){
+          map.on('load', function() {
+              var layers = map.getStyle().layers;
+              let symbolId;
+              for(let i = 0; i < layers.length; i++){
+                if(layers[i].type === 'symbol'){
+                  if(layers[i].id = 'place_label_city'){
+                    symbolId = layers[i].id;
+                    break;
+                  }
+                }
+              }
+                map.addSource(source, {
                     type: 'geojson',
-                    data: oldGages.nationalGagesBeforeMap
+                    data: data
                 });
-                beforeMap.addLayer({
-                    'id': 'oldGages',
-                    'source': 'oldGages',
+                map.addLayer({
+                    'id': source,
+                    'source': source,
                     'type': 'circle',
                     'paint': {
                         'circle-radius': radius,
                         'circle-color': [
                           'case',
-                          ['==', ['get', 'is_urban'], true], urban,
-                          rural
+                          ['==', ['get', 'is_georgia_urban'], true], urban,
+                          ['==', ['get', 'is_colorado_urban'], true], urban,
+                          ['==', ['get', 'is_georgia'], true], rural,
+                          ['==', ['get', 'is_colorado'], true], rural,
+                          outSideState
                         ],
-                        'circle-stroke-color': strokeColor,
-                        'circle-stroke-width': strokeWidth
-                    },
-                    'filter': ['==', '$type', 'Point']
-                });
-            });
-
-            afterMap.on('load', function() {
-                afterMap.addSource('newGages', {
-                    type: 'geojson',
-                    data: newGages.nationalGagesAfterMap
-                });
-                afterMap.addLayer({
-                    'id': 'newGages',
-                    'source': 'newGages',
-                    'type': 'circle',
-                    'paint': {
-                        'circle-radius': radius,
-                        'circle-color': [
+                        'circle-stroke-color': [
                           'case',
-                          ['==', ['get', 'is_urban'], true], urban,
-                          rural
+                          ['==',['get', 'is_georgia_urban'], true], 'rgb(50,50,50)',
+                          ['==',['get', 'is_georgia'], true], 'rgb(50,50,50)',
+                          ['==',['get', 'is_colorado_urban'], true], 'rgb(50,50,50)',
+                          ['==',['get', 'is_colorado'], true], 'rgb(50,50,50)',
+                          '#aaaaaa'
                         ],
-                        'circle-stroke-color': strokeColor,
-                        'circle-stroke-width': strokeWidth
+                        'circle-stroke-width': 1
                     },
                     'filter': ['==', '$type', 'Point']
-                });
+                },
+                symbolId
+                );
             });
-
-            let container = '#comparison-container';
-
-            new MapboxCompare(beforeMap, afterMap, container);
         },
         CreateYearDiv(year, divId, canvas){
           let div = document.createElement('div');
@@ -144,7 +188,7 @@ export default {
 @import '~mapbox-gl/dist/mapbox-gl.css';
 @import '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
 
-#maps{
+.maps{
     position: relative;
     overflow: hidden;
     margin-top: 10px;

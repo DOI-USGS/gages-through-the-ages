@@ -8,9 +8,15 @@ export default {
                 'minzoom': 2, // setting this to equal the minzoom of main map, real tile extent is 2
                 'maxzoom': 6  // setting this to equal the maxzoom of main map, real tile extent is 10
             },
-            urbanAreaGA: {
+            georgiaUrbanExtent: {
                 type: 'vector',
-                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misctilesets/urbanAreaGA/{z}/{x}/{y}.pbf'],
+                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misctilesets/gaUrbanExtent/{z}/{x}/{y}.pbf'],
+                'minzoom': 0, // setting this to equal the minzoom of main map, real tile extent is 2
+                'maxzoom': 14  // setting this to equal the maxzoom of main map, real tile extent is 10
+            },
+            coloradoUrbanExtent: {
+                type: 'vector',
+                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misctilesets/coUrbanExtent/{z}/{x}/{y}.pbf'],
                 'minzoom': 0, // setting this to equal the minzoom of main map, real tile extent is 2
                 'maxzoom': 14  // setting this to equal the maxzoom of main map, real tile extent is 10
             },
@@ -60,8 +66,8 @@ export default {
 
             },
             {
-                'filter': ['all', ['==', 'NAME', 'Georgia']],
-                'id': 'georgia',
+                'filter': ['all', ['==', 'NAME', 'Georgia'], ['==', 'NAME', 'Colorado']],
+                'id': 'stateOfInterest',
                 'type': 'fill',
                 'source': 'basemap',
                 'source-layer': 'states',
@@ -71,16 +77,7 @@ export default {
                     'visibility': 'visible'
                 },
                 'paint': {
-                    'fill-color': '#f7f7f7'
-                }
-            },
-            {
-                'id': 'urbanArea',
-                'type': 'fill',
-                'source': 'urbanAreaGA',
-                'source-layer': 'urban_areas_ga',
-                'paint':{
-                    'fill-color': '#c8c8c8'
+                    'fill-color': '#eeeeee'
                 }
             },
             {
@@ -117,7 +114,7 @@ export default {
 
             },
             {   
-                'filter': ['all', ['!=', 'NAME', 'Georgia']],
+                'filter': ['all', ['!=', 'NAME', 'Georgia'], ['!=', 'NAME', 'Colorado']],
                 'id': 'statesFill',
                 'type': 'fill',
                 'source': 'basemap',
@@ -128,11 +125,10 @@ export default {
                     'visibility': 'visible'
                 },
                 'paint': {
-                    'fill-color': '#cfcfcf'
+                    'fill-color': '#f5f5f7'
                 }
             },
             {
-                'filter': ['all', ['!=', 'NAME', 'Georgia']],
                 'id': 'statesOutline',
                 'type': 'line',
                 'source': 'basemap',
@@ -143,22 +139,25 @@ export default {
                     'visibility': 'visible'
                 },
                 'paint': {
-                    'line-color': 'rgb(180,180,180)'
+                    'line-color': 'rgb(200,200,200)'
                 }
             },
             {
-                'filter': ['all', ['==', 'NAME', 'Georgia']],
-                'id': 'georgiaOutline',
-                'type': 'line',
-                'source': 'basemap',
-                'source-layer': 'states',
-                'minzoom': 2,
-                'maxzoom': 24,
-                'layout': {
-                    'visibility': 'visible'
-                },
+                'id': 'coUrbanExtent',
+                'type': 'fill',
+                'source': 'coloradoUrbanExtent',
+                'source-layer': 'urban_areas_co',
                 'paint': {
-                    'line-color': 'rgb(0,0,0)'
+                    'fill-color': 'rgba(235,112,6,.6)'
+                }
+            },
+            {
+                'id': 'gaUrbanExtent',
+                'type': 'fill',
+                'source': 'georgiaUrbanExtent',
+                'source-layer': 'urban_areas_ga',
+                'paint': {
+                    'fill-color': 'rgba(235,112,6,.6)'
                 }
             },
             {
