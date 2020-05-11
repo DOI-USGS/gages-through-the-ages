@@ -24,7 +24,7 @@ export default {
                 type: 'vector',
                 'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/openmaptiles/baselayers/{z}/{x}/{y}.pbf'],
                 'minzoom': 2,
-                'maxzoom': 6
+                'maxzoom': 14
             },
             hillshade: {
                 type: 'raster',

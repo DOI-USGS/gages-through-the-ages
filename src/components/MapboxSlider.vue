@@ -6,6 +6,7 @@
     <h2>Gage Changes Over Time</h2>
     <div class="maps">
       <div id="georgia-comparison-container">
+        <InsetMap />
         <div
           id="georgiaBefore"
           class="map"
@@ -43,12 +44,16 @@ import newGages from '../assets/data/site_map_merc_2018';
 import mapboxgl from 'mapbox-gl';
 import MapboxCompare from 'mapbox-gl-compare';
 import standard from "../assets/styles/standard";
+import InsetMap from './InsetMap';
 
 export default {
-    name: 'MapboxSlider',
+    'name': 'MapboxSlider',
+    'components':{
+      InsetMap
+    },
     data() {
         return {
-            georgiaCenter: [-84.39, 32.90],
+            georgiaCenter: [-84.3880, 33.7490],
             coloradoCenter: [-105.7821, 39.5501],
             zoom: 6
         }
@@ -67,15 +72,15 @@ export default {
             let beforeYear = '1967';
             let afterYear = '2018';
             let bounds = [
-              [-86.457617,29.980643],
-              [-80.761045,35.397831]
+              [-85.626583,32.909064],
+              [-82.835487,34.687393]
             ]
 
             let georgiaBeforeMap = new mapboxgl.Map({
                 container: 'georgiaBefore',
                 style: standard.style,
                 center: this.georgiaCenter,
-                
+                maxBounds: bounds,
                 zoom: this.zoom,
                 maxZoom: 9,
                 interactive: true
@@ -84,7 +89,7 @@ export default {
                 container: 'georgiaAfter',
                 style: standard.style,
                 center: this.georgiaCenter,
-                
+                maxBounds: bounds,
                 zoom: this.zoom,
                 maxZoom: 9,
                 interactive: true
@@ -134,45 +139,43 @@ export default {
               let symbolId;
               for(let i = 0; i < layers.length; i++){
                 if(layers[i].type === 'symbol'){
-                  if(layers[i].id = 'place_label_city'){
                     symbolId = layers[i].id;
                     break;
                   }
                 }
-              }
-                map.addSource(source, {
-                    type: 'geojson',
-                    data: data
-                });
-                map.addLayer({
-                    'id': source,
-                    'source': source,
-                    'type': 'circle',
-                    'paint': {
-                        'circle-radius': radius,
-                        'circle-color': [
-                          'case',
-                          ['==', ['get', 'is_georgia_urban'], true], urban,
-                          ['==', ['get', 'is_colorado_urban'], true], urban,
-                          ['==', ['get', 'is_georgia'], true], rural,
-                          ['==', ['get', 'is_colorado'], true], rural,
-                          outSideState
-                        ],
-                        'circle-stroke-color': [
-                          'case',
-                          ['==',['get', 'is_georgia_urban'], true], 'rgb(50,50,50)',
-                          ['==',['get', 'is_georgia'], true], 'rgb(50,50,50)',
-                          ['==',['get', 'is_colorado_urban'], true], 'rgb(50,50,50)',
-                          ['==',['get', 'is_colorado'], true], 'rgb(50,50,50)',
-                          '#aaaaaa'
-                        ],
-                        'circle-stroke-width': 1
-                    },
-                    'filter': ['==', '$type', 'Point']
-                },
-                symbolId
-                );
-            });
+              map.addSource(source, {
+                  type: 'geojson',
+                  data: data
+              });
+              map.addLayer({
+                  'id': source,
+                  'source': source,
+                  'type': 'circle',
+                  'paint': {
+                      'circle-radius': radius,
+                      'circle-color': [
+                        'case',
+                        ['==', ['get', 'is_georgia_urban'], true], urban,
+                        ['==', ['get', 'is_colorado_urban'], true], urban,
+                        ['==', ['get', 'is_georgia'], true], rural,
+                        ['==', ['get', 'is_colorado'], true], rural,
+                        outSideState
+                      ],
+                      'circle-stroke-color': [
+                        'case',
+                        ['==',['get', 'is_georgia_urban'], true], 'rgb(50,50,50)',
+                        ['==',['get', 'is_georgia'], true], 'rgb(50,50,50)',
+                        ['==',['get', 'is_colorado_urban'], true], 'rgb(50,50,50)',
+                        ['==',['get', 'is_colorado'], true], 'rgb(50,50,50)',
+                        '#aaaaaa'
+                      ],
+                      'circle-stroke-width': 1
+                  },
+                  'filter': ['==', '$type', 'Point']
+              },
+              symbolId
+              );
+          });
         },
         CreateYearDiv(year, divId, canvas){
           let div = document.createElement('div');
