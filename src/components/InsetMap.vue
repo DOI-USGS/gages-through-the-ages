@@ -33,7 +33,7 @@ export default {
                     'source': 'Atlanta',
                     'type': 'fill',
                     'paint': {
-                        'fill-color': 'rgba(235,112,6,.6)'
+                        'fill-color': 'rgba(20,20,20,.4)'
                     }
                 });
             });
