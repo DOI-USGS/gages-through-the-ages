@@ -55,7 +55,8 @@ export default {
         return {
             georgiaCenter: [-84.3880, 33.7490],
             coloradoCenter: [-105.7821, 39.5501],
-            zoom: 6
+            zoom: 6,
+            interactive: true
         }
     },
     mounted(){
@@ -75,7 +76,6 @@ export default {
               [-85.626583,32.909064],
               [-82.835487,34.687393]
             ]
-
             let georgiaBeforeMap = new mapboxgl.Map({
                 container: 'georgiaBefore',
                 style: standard.style,
@@ -83,7 +83,7 @@ export default {
                 maxBounds: bounds,
                 zoom: this.zoom,
                 maxZoom: 9,
-                interactive: true
+                interactive: this.interactive
             });
             let georgiaAfterMap = new mapboxgl.Map({
                 container: 'georgiaAfter',
@@ -92,16 +92,15 @@ export default {
                 maxBounds: bounds,
                 zoom: this.zoom,
                 maxZoom: 9,
-                interactive: true
+                interactive: this.interactive
             });
-
             let coloradoBeforeMap = new mapboxgl.Map({
                 container: 'coloradoBefore',
                 style: standard.style,
                 center: this.coloradoCenter,
                 zoom: this.zoom,
                 maxZoom: 9,
-                interactive: true
+                interactive: this.interactive
             });
             let coloradoAfterMap = new mapboxgl.Map({
                 container: 'coloradoAfter',
@@ -109,7 +108,7 @@ export default {
                 center: this.coloradoCenter,
                 zoom: this.zoom,
                 maxZoom: 9,
-                interactive: true
+                interactive: this.interactive
             });
             //Get maps canvases
             let georgiaBeforeMapCanvas = georgiaBeforeMap.getCanvasContainer();

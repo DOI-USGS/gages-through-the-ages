@@ -4,7 +4,7 @@
 <script>
 import mapboxgl from 'mapbox-gl';
 import insetStyles from '../assets/styles/inset';
-import atlanta from '../assets/data/atlanta';
+import atlantaInset from '../assets/data/atlantaInset';
 export default {
     'name': 'InsetMap',
     'mounted'(){
@@ -21,12 +21,12 @@ export default {
                 style: insetStyles.style,
                 center: [-82.9001, 32.1656],
                 zoom: 3.5,
-                interactive: true
+                interactive: false
             });
             insetMap.on('load', function(){
                 insetMap.addSource('Atlanta', {
                   type: 'geojson',
-                  data: atlanta.atlanta
+                  data: atlantaInset.inset
                 });
                 insetMap.addLayer({
                     'id': 'Atlanta',
