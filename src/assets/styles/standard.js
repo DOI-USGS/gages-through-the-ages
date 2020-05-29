@@ -10,7 +10,7 @@ export default {
             },
             georgiaUrbanExtent: {
                 type: 'vector',
-                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misctilesets/gaUrbanExtent/{z}/{x}/{y}.pbf'],
+                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misctilesets/gaUrbanExtentSimplified/{z}/{x}/{y}.pbf'],
                 'minzoom': 0, // setting this to equal the minzoom of main map, real tile extent is 2
                 'maxzoom': 14  // setting this to equal the maxzoom of main map, real tile extent is 10
             },
@@ -19,6 +19,18 @@ export default {
                 'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misctilesets/coUrbanExtent/{z}/{x}/{y}.pbf'],
                 'minzoom': 0, // setting this to equal the minzoom of main map, real tile extent is 2
                 'maxzoom': 14  // setting this to equal the maxzoom of main map, real tile extent is 10
+            },
+            waterbody: {
+                type: 'vector',
+                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/waterbody/{z}/{x}/{y}.pbf'],
+                'minzoom': 3, // setting this to equal the minzoom of main map, real tile extent is 2
+                'maxzoom': 9  // setting this to equal the maxzoom of main map, real tile extent is 10
+            },
+            streams: {
+                type: 'vector',
+                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/streams/{z}/{x}/{y}.pbf'],
+                'minzoom': 3, // setting this to equal the minzoom of main map, real tile extent is 2
+                'maxzoom': 9  // setting this to equal the maxzoom of main map, real tile extent is 10
             },
             openmaptiles: {
                 type: 'vector',
@@ -46,24 +58,9 @@ export default {
             {
                 'id': 'background',
                 'paint': {
-                    'background-color': '#f5f5f7'
+                    'background-color': 'rgb(228,228,227)'
                 },
                 'type': 'background'
-            },
-            {
-                'id': 'Neighboring Countries',
-                'type': 'fill',
-                'source': 'basemap',
-                'minzoom': 2,
-                'maxzoom': 24,
-                'source-layer': 'neighboringcountry',
-                'layout': {
-                    'visibility': 'visible'
-                },
-                'paint': {
-                    'fill-color': 'hsl(47, 26%, 88%)'
-                },
-
             },
             {
                 'filter': ['all', ['==', 'NAME', 'Georgia'], ['==', 'NAME', 'Colorado']],
@@ -77,41 +74,26 @@ export default {
                     'visibility': 'visible'
                 },
                 'paint': {
-                    'fill-color': '#eeeeee'
+                    'fill-color': 'rgb(228,228,227)'
                 }
             },
             {
-                'id': 'Least Detail',
-                'layerDescription': 'contains stream orders 4-10',
-                'type': 'line',
-                'source': 'nhd_streams_grouped',
-                'source-layer': 'least_detail',
-                'minzoom': 0,
-                'maxzoom': 24,
-                'layout': {
-                    'visibility': 'visible'
-                },
+                'id': 'coUrbanExtent',
+                'type': 'fill',
+                'source': 'coloradoUrbanExtent',
+                'source-layer': 'urban_areas_co',
                 'paint': {
-                    'line-color': 'rgb(148,171,189)'
-                },
-                'showButtonLayerToggle': false,
-                'showButtonStreamToggle': true
+                    'fill-color': 'rgb(208,209,207)'
+                }
             },
             {
-                'filter': ['all', ['==', '$type', 'Polygon'],
-                    ['!=', 'intermittent', 1],
-                ],
-                'id': 'water',
-                'paint': {
-                    'fill-color': 'rgb(148,171,189)'
-                },
-                'source': 'openmaptiles',
-                'source-layer': 'water',
+                'id': 'gaUrbanExtent',
                 'type': 'fill',
-                'layout': {
-                    'visibility': 'visible'
-                },
-
+                'source': 'georgiaUrbanExtent',
+                'source-layer': 'urban_areas_ga_simplified',
+                'paint': {
+                    'fill-color': 'rgb(208,209,207)'
+                }
             },
             {   
                 'filter': ['all', ['!=', 'NAME', 'Georgia'], ['!=', 'NAME', 'Colorado']],
@@ -125,7 +107,38 @@ export default {
                     'visibility': 'visible'
                 },
                 'paint': {
-                    'fill-color': '#f5f5f7'
+                    'fill-color': 'rgb(228,228,227)'
+                }
+            },
+            {
+                'filter': ['all', ['!=', 'Strahler', 1]],
+                'id': 'streams',
+                'type': 'line',
+                'source': 'streams',
+                'source-layer': 'stream',
+                'paint': {
+                    'line-color': 'rgb(181,193,200)',
+                    'line-width': [
+                        'case',
+                        ['==',['get', 'Strahler'], 7], 3,
+                        ['==',['get', 'Strahler'], 6], 2.5,
+                        ['==',['get', 'Strahler'], 5], 2,
+                        ['==',['get', 'Strahler'], 4], 1.5,
+                        ['==',['get', 'Strahler'], 3], 1,
+                        ['==',['get', 'Strahler'], 2], .5,
+                        .3
+                    ]
+                }
+            },
+            {   
+                'id': 'waterbodies',
+                'type': 'fill',
+                'source': 'waterbody',
+                'source-layer': 'waterbody',
+                'minzoom': 3,
+                'maxzoom': 9,
+                'paint':{
+                    'fill-color': 'rgb(181,193,200)'
                 }
             },
             {
@@ -139,25 +152,8 @@ export default {
                     'visibility': 'visible'
                 },
                 'paint': {
-                    'line-color': 'rgb(200,200,200)'
-                }
-            },
-            {
-                'id': 'coUrbanExtent',
-                'type': 'fill',
-                'source': 'coloradoUrbanExtent',
-                'source-layer': 'urban_areas_co',
-                'paint': {
-                    'fill-color': 'rgba(235,112,6,.6)'
-                }
-            },
-            {
-                'id': 'gaUrbanExtent',
-                'type': 'fill',
-                'source': 'georgiaUrbanExtent',
-                'source-layer': 'urban_areas_ga',
-                'paint': {
-                    'fill-color': 'rgba(235,112,6,.6)'
+                    'line-color': 'rgb(246,246,245)',
+                    'line-width': .5
                 }
             },
             {
@@ -180,10 +176,8 @@ export default {
                 'maxzoom': 16,
                 'minzoom': 5,
                 'paint': {
-                    'text-color': 'hsl(0, 0%, 0%)',
-                    'text-halo-blur': 0,
-                    'text-halo-color': 'hsla(0, 0%, 100%, 0.75)',
-                    'text-halo-width': 2
+                    'text-color': 'rgb(138,139,138)',
+                    'text-halo-blur': 0
                 },
                 'source': 'openmaptiles',
                 'source-layer': 'place',
@@ -200,6 +194,8 @@ export default {
                     'text-font': ['Noto Sans Regular'],
                     "text-transform": "uppercase",
                     'text-max-width': 20,
+                    'text-letter-spacing': 1,
+                    'text-offset': [.9, -2.6],
                     'text-size': {
                         'stops': [
                             [3, 12],
@@ -210,10 +206,8 @@ export default {
                 'maxzoom': 16,
                 'minzoom': 5,
                 'paint': {
-                    'text-color': 'hsl(0, 0%, 0%)',
-                    'text-halo-blur': 0,
-                    'text-halo-color': 'hsla(0, 0%, 100%, 0.75)',
-                    'text-halo-width': 2
+                    'text-color': 'rgb(138,139,138)',
+                    'text-halo-blur': 0
                 },
                 'source': 'openmaptiles',
                 'source-layer': 'place',

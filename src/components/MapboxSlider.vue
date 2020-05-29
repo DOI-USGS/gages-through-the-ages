@@ -65,11 +65,8 @@ export default {
     methods: {
         createMaps() {
             let radius = 4;
-            let urban = '#EB7006';
-            let rural = '#817D7E';
-            let outSideState = '#b8b6b6';
-            let strokeWidth = 1;
-            let strokeColor = 'rgb(50,50,50)';
+            let urban = '#f7bb2e';
+            let rural = '#b087bd';
             let beforeYear = '1967';
             let afterYear = '2018';
             let bounds = [
@@ -121,10 +118,10 @@ export default {
             this.CreateYearDiv(beforeYear, "beforeYear", coloradoBeforeMapCanvas);
             this.CreateYearDiv(afterYear, "afterYear", coloradoAfterMapCanvas);
             //Add geojson layers
-            this.AddGeoJSON(georgiaBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural, outSideState);
-            this.AddGeoJSON(georgiaAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural, outSideState);
-            this.AddGeoJSON(coloradoBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural, outSideState);
-            this.AddGeoJSON(coloradoAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural, outSideState);
+            this.AddGeoJSON(georgiaBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural);
+            this.AddGeoJSON(georgiaAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural);
+            this.AddGeoJSON(coloradoBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural);
+            this.AddGeoJSON(coloradoAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural);
 
             let georgiaContainer = '#georgia-comparison-container';
             let coloradoContainer = '#colorado-comparison-container';
@@ -132,7 +129,7 @@ export default {
             new MapboxCompare(georgiaBeforeMap, georgiaAfterMap, georgiaContainer);
             new MapboxCompare(coloradoBeforeMap, coloradoAfterMap, coloradoContainer);
         },
-        AddGeoJSON(map, data, source, radius, urban, rural, outSideState){
+        AddGeoJSON(map, data, source, radius, urban, rural){
           map.on('load', function() {
               var layers = map.getStyle().layers;
               let symbolId;
@@ -158,17 +155,15 @@ export default {
                         ['==', ['get', 'is_colorado_urban'], true], urban,
                         ['==', ['get', 'is_georgia'], true], rural,
                         ['==', ['get', 'is_colorado'], true], rural,
-                        outSideState
+                        rural
                       ],
                       'circle-stroke-color': [
                         'case',
-                        ['==',['get', 'is_georgia_urban'], true], 'rgb(50,50,50)',
-                        ['==',['get', 'is_georgia'], true], 'rgb(50,50,50)',
-                        ['==',['get', 'is_colorado_urban'], true], 'rgb(50,50,50)',
-                        ['==',['get', 'is_colorado'], true], 'rgb(50,50,50)',
-                        '#aaaaaa'
+                        ['==',['get', 'is_georgia_urban'], true], 'rgb(170,170,170)',
+                        ['==',['get', 'is_colorado_urban'], true], 'rgb(170,170,170)',
+                        'rgb(240,240,240)'
                       ],
-                      'circle-stroke-width': 1
+                      'circle-stroke-width': .2
                   },
                   'filter': ['==', '$type', 'Point']
               },
@@ -233,11 +228,9 @@ export default {
   .yearDiv{
     position: relative;
     z-index: 9000;
-    background: rgb(255,255,255);
-    background: rgba(255,255,255,.9);
-    border: 1px solid #2c5258;
-    box-shadow: 1px 1px #909090;
-    font-size: 1.8em;
+    color: rgb(138,139,138);
+    font-size: 2em;
+    font-weight: bold;
     width: 60px;
     margin: 10px 0 0 10px;
     padding: 5px 0;

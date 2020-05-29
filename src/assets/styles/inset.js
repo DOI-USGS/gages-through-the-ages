@@ -21,7 +21,7 @@ export default {
             {
                 'id': 'background',
                 'paint': {
-                    'background-color': 'rgb(148,171,189)'
+                    'background-color': 'rgb(181,193,200)'
                 },
                 'type': 'background'
             },
@@ -36,14 +36,11 @@ export default {
                     'visibility': 'visible'
                 },
                 'paint': {
-                    'fill-color': [
-                        'case', 
-                        ['==', ['get', 'NAME'], 'Georgia'], '#d0dad7',
-                        '#f5f5f7'
-                    ]
+                    'fill-color': 'rgb(228,228,227)'
                 }
             },
             {
+                'filter': ['all', ['!=', 'NAME', 'Florida'], ['!=', 'NAME', 'Louisiana']],
                 'id': 'statesOutline',
                 'type': 'line',
                 'source': 'basemap',
@@ -54,7 +51,8 @@ export default {
                     'visibility': 'visible'
                 },
                 'paint': {
-                    'line-color': 'rgb(200,200,200)'
+                    'line-color': 'rgb(255,255,255)',
+                    'line-width': .5
                 }
             }
         ]
