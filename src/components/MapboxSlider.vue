@@ -17,6 +17,29 @@
         />
       </div>
     </div>
+    <p>
+      Factors that influence why USGS measures water resources have changed through time 
+      [Gages are built at specific locations for many reasons.]​
+    </p>
+    <p>
+      In present day, numerous gages are positioned near urban areas; these gages support 
+      [flood prediction](NOAA link) and advanced evacuation warnings​
+    </p>
+    <p>
+      The number of urban gages has increased​
+    </p>
+    <p>
+      X% of all active USGS gages were located within [urban areas](link to definition) in 2018 while a 
+      conservative estimate* suggests only Y% of gages would’ve been considered urban in 1967. ​
+    </p>
+    <p>
+      Other needs that drove stream gaging in the past have become less important and many gages have been retired​.
+    </p>
+    <p>
+      The need to estimate potential for hydropower in the Western US was met by establishing new gages in the 1900s 
+      that would provide a full view of the seasonal water availability. As the creation of new dams slowed significantly, 
+      the operation of some hydropower-oriented gages was no longer essential. ​
+    </p>
     <div class="maps">
       <div id="colorado-comparison-container">
         <div
@@ -29,10 +52,6 @@
         />
       </div>
     </div>
-    <p>
-      The USGS updates the locations and density of gages based on the current needs in a particular
-      area. The above map allows a localized comparison between points in time.
-    </p>
     <p class="warning">
       Text on this page is in the pre-approval stage and subject to change.
     </p>
