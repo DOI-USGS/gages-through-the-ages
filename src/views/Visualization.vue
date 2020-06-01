@@ -2,7 +2,10 @@
   <div id="Visualization">
     <GagesBarChartAnimation />
     <MapboxSlider />
+    <TakeAway />
     <DataSources />
+    <Methods />
+    <References />
   </div>
 </template>
 
@@ -10,12 +13,18 @@
   import GagesBarChartAnimation from "../components/GagesBarChartAnimation";
   import MapboxSlider from "../components/MapboxSlider";
   import DataSources from "../components/DataSources";
+  import Methods from "../components/Methods";
+  import References from '../components/References';
+  import TakeAway from '../components/TakeAway';
   export default {
       name: 'Visualization',
       components: {
           GagesBarChartAnimation,
           MapboxSlider,
-          DataSources
+          TakeAway,
+          DataSources,
+          Methods,
+          References
       }
   }
 </script>
