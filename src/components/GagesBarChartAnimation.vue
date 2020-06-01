@@ -2864,14 +2864,16 @@
     }
 </script>
 <style lang="scss">
+$stateFill: rgb(228,228,227);
+$stateStroke: rgb(255,255,255);
+$axis: rgb(100,100,100);
   .interior-state {
-    fill: #b9c7d2;
-    stroke: rgb(50,50,50);
+    fill: $stateFill;
+    stroke: $stateStroke;
   }
 
   .exterior-state {
-    fill: #b9c7d2;
-    stroke: rgb(50,50,50);
+    fill: $stateFill;
   }
 
   .mouser-shape {
@@ -2880,21 +2882,21 @@
 
   .watermark {
     cursor: pointer;
-    fill: #c0c0c0;
-    stroke: #bdbdbd;
+    fill: $stateFill;
+    stroke: $stateStroke;
     stroke-width: 0.5;
   }
 
   .site-dot {
-    stroke: #000;
+    stroke: rgb(50,50,50);
     stroke-linecap: round;
     stroke-width: 3;
     opacity: 0.7;
   }
 
   .gage-count-bar {
-    opacity: 0.4;
-    fill: #b9c7d2;
+    opacity: 0.6;
+    fill: $stateFill;
   }
 
   .selected-year {
@@ -2915,13 +2917,13 @@
 
   .axis-labels {
     stroke: none;
-    fill: #909090;
+    fill: $axis;
     font-family: Arial;
     font-size: 0.75em;
   }
 
   .axis-lines {
-    stroke: #909090;
+    stroke: $axis;
   }
 
   .years-rect:hover {
@@ -2929,7 +2931,7 @@
   }
 
   #y-axis, #x-axis {
-    stroke: #909090;
+    stroke: $axis;
   }
 
   .context-label {
