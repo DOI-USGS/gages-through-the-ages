@@ -1,7 +1,10 @@
 <template>
-    <div id="references" class="section">
-        <h2>References:</h2>
-    </div>
+  <div
+    id="references"
+    class="section"
+  >
+    <h2>References:</h2>
+  </div>
 </template>
 <script>
 export default {
