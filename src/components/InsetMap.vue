@@ -1,6 +1,6 @@
 <template>
   <div id="insetMap">
-    <img src="../images/inset/inset.jpg">
+    <img src="../images/inset/insetGeorgia.png">
   </div>
 </template>
 <script>
@@ -13,13 +13,12 @@ export default {
 </script>
 <style scoped lang="scss">
     #insetMap{
-        border: solid rgb(255,255,255);
-        border-width: 1px 0 0 1px;
-        width: 35%;
+        width: 20%;
         height: 20%;
         position: absolute;
-        right: 0;
-        bottom: 0;
+        left: 10px;
+        bottom: 10px;
         z-index: 90000;
+        object-fit: 'contain';
     }
 </style>
