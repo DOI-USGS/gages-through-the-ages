@@ -5,9 +5,9 @@
       <div v-for="method in methods.methods" :key="method.title">
         <h2 class="usa-accordion__heading">
           <button
-            class="usa-accordion__button"
-            aria-expanded="false"
-            :aria-controls="method.title"
+              class="usa-accordion__button"
+              aria-expanded="false"
+              :aria-controls="method.title"
           >
             {{ method.title }}
           </button>
@@ -20,21 +20,21 @@
   </div>
 </template>
 <script>
-import methods from '../assets/methods/methods';
-export default {
-    'name': 'Methods',
-    data(){
-        return{
-            methods: methods.methodContent
+    import methods from '../assets/methods/methods';
+    export default {
+        'name': 'Methods',
+        data(){
+            return{
+                methods: methods.methodContent
+            }
         }
     }
-}
 </script>
 <style lang="scss" scoped>
-    h2{
-        margin-bottom: 10px;
-    }
-    button:not([disabled]):focus{
-        outline: none;
-    }
+  h2{
+    margin-bottom: 10px;
+  }
+  button:not([disabled]):focus{
+    outline: none;
+  }
 </style>

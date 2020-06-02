@@ -3,16 +3,26 @@
     id="dataSources"
     class="section"
   >
-    <h2>Data sources:</h2>
-    <p>U.S. Geological Survey, 2016, National Water Information System—Web interface, accessed March 8, 2017, at http://dx.doi.org/10.5066/F7P55KJN.</p>
+    <h2>{{ text.title }}</h2>
+    <div
+      v-for="paragraph in text.paragraphSections"
+      :key="paragraph.paragraphText"
+    >
+      <p><span v-html="paragraph.paragraphText" /></p>
+    </div>
   </div>
 </template>
 <script>
+import dataSourcesText from "../assets/dataSources/dataSourcesText";
 export default {
-    name: 'DataSources'
+    name: 'DataSources',
+    data() {
+        return {
+            text: dataSourcesText.textContents
+        }
+    }
 }
 </script>
 <style scoped lang="scss">
 
 </style>
-    

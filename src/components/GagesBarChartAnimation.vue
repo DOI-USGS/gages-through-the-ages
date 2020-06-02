@@ -4,9 +4,9 @@
     class="section"
   >
     <div class="container">
-      <h2>{{ text.textContents.title }}</h2>
+      <h2>{{ text.title }}</h2>
 
-      <h3>{{ text.textContents.introText }}</h3>
+      <h3>{{ text.introText }}</h3>
     </div>
     <figure>
       <svg
@@ -2638,7 +2638,7 @@
       </svg>
     </figure>
     <div
-      v-for="paragraph in text.textContents.paragraphSections"
+      v-for="paragraph in text.paragraphSections"
       :key="paragraph.paragraphText"
     >
       <p><span v-html="paragraph.paragraphText" /></p>
@@ -2668,7 +2668,7 @@
                 svgId: null,
                 tooltipGroupId: null,
                 TOOLTIP_HTML: null,
-                text: gagesBarChartAnimationText
+                text: gagesBarChartAnimationText.textContents
 
             }
         },

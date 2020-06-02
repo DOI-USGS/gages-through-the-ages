@@ -3,7 +3,7 @@
     id="mapboxslider"
     class="section"
   >
-    <h2>Gage Changes Over Time</h2>
+    <h2>{{ sliderText.title }}</h2>
     <div class="maps">
       <div id="georgia-comparison-container">
         <InsetMap />
@@ -17,29 +17,12 @@
         />
       </div>
     </div>
-    <p>
-      Factors that influence why USGS measures water resources have changed through time 
-      [Gages are built at specific locations for many reasons.]​
-    </p>
-    <p>
-      In present day, numerous gages are positioned near urban areas; these gages support 
-      [flood prediction](NOAA link) and advanced evacuation warnings​
-    </p>
-    <p>
-      The number of urban gages has increased​
-    </p>
-    <p>
-      X% of all active USGS gages were located within [urban areas](link to definition) in 2018 while a 
-      conservative estimate* suggests only Y% of gages would’ve been considered urban in 1967. ​
-    </p>
-    <p>
-      Other needs that drove stream gaging in the past have become less important and many gages have been retired​.
-    </p>
-    <p>
-      The need to estimate potential for hydropower in the Western US was met by establishing new gages in the 1900s 
-      that would provide a full view of the seasonal water availability. As the creation of new dams slowed significantly, 
-      the operation of some hydropower-oriented gages was no longer essential. ​
-    </p>
+    <div
+      v-for="paragraph in sliderText.paragraphSections"
+      :key="paragraph.paragraphText"
+    >
+      <p><span v-html="paragraph.paragraphText" /></p>
+    </div>
     <div class="maps">
       <div id="colorado-comparison-container">
         <div
@@ -64,6 +47,7 @@ import mapboxgl from 'mapbox-gl';
 import MapboxCompare from 'mapbox-gl-compare';
 import standard from "../assets/styles/standard";
 import InsetMap from './InsetMap';
+import mapboxSliderText from "../assets/mapboxSlider/mapboxSliderText";
 
 export default {
     'name': 'MapboxSlider',
@@ -75,7 +59,8 @@ export default {
             georgiaCenter: [-84.3880, 33.7490],
             coloradoCenter: [-105.7821, 39.5501],
             zoom: 6,
-            interactive: true
+            interactive: false,
+            sliderText: mapboxSliderText.textContents
         }
     },
     mounted(){
