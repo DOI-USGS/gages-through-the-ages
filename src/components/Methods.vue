@@ -31,6 +31,8 @@
     }
 </script>
 <style lang="scss" scoped>
+$chevronLeft: '~@/assets/images/chevron-left.png';
+$chevronDown: '~@/assets/images/chevron-down.png';
   h2{
     margin-bottom: 10px;
   }
@@ -38,11 +40,11 @@
     outline: none;
   }
   .usa-accordion__button{
-    background-image: url('../images/methodsIcons/chevron-down.png');
+    background-image: url($chevronDown);
     background-size: 15px 10px;
   }
   .usa-accordion__button[aria-expanded=false]{
-    background-image: url('../images/methodsIcons/chevron-left.png');
+    background-image: url($chevronLeft);
     background-size: 10px 15px;
   }
 </style>
