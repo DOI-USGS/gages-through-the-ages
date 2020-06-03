@@ -2778,7 +2778,7 @@
             hovertext(event, text) {
                 const self = this;
                 if (event !== '') { // Don't run this on mouseout, which sends an empty event.
-                    const yearForGoogleAnalytics = text !== 'undefined' ? text.slice(-5) : 'year not active';
+                    const yearForGoogleAnalytics = text !== 'undefined' ? text.slice(-4) : 'year not active';
                     self.runGoogleAnalytics('bar chart hover', 'hover', yearForGoogleAnalytics)
                 }
 
