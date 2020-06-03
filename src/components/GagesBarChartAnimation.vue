@@ -2669,7 +2669,6 @@
                 tooltipGroupId: null,
                 TOOLTIP_HTML: null,
                 text: gagesBarChartAnimationText.textContents
-
             }
         },
         mounted() {
@@ -2678,6 +2677,10 @@
 
         },
         methods: {
+            runGoogleAnalytics(eventName, action, label) {
+                this.$ga.set({ dimension2: Date.now() });
+                this.$ga.event(eventName, action, label);
+            },
             setUpHoverText() {
                 const self = this;
                 let doySVG = document.getElementById('doy-NM');
@@ -2774,6 +2777,11 @@
             },
             hovertext(event, text) {
                 const self = this;
+                if (event !== '') { // Don't run this on mouseout, which sends an empty event.
+                    const yearForGoogleAnalytics = text !== 'undefined' ? text.slice(-5) : 'year not active';
+                    self.runGoogleAnalytics('bar chart hover', 'hover', yearForGoogleAnalytics)
+                }
+
                 text ? self.showTooltip(event.clientX, event.clientY, text):
                         self.hideTooltip();
             },
