@@ -37,4 +37,12 @@
   button:not([disabled]):focus{
     outline: none;
   }
+  .usa-accordion__button{
+    background-image: url('../images/methodsIcons/chevron-down.png');
+    background-size: 15px 10px;
+  }
+  .usa-accordion__button[aria-expanded=false]{
+    background-image: url('../images/methodsIcons/chevron-left.png');
+    background-size: 10px 15px;
+  }
 </style>
