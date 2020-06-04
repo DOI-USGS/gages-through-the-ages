@@ -4,9 +4,6 @@
   </div>
 </template>
 <script>
-import mapboxgl from 'mapbox-gl';
-import insetStyles from '../assets/styles/inset';
-import atlantaInset from '../assets/data/atlantaInset';
 export default {
     'name': 'InsetMap'
 }

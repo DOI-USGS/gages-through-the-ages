@@ -6,7 +6,7 @@
     <h2>{{ sliderText.title }}</h2>
     <div class="maps">
       <div id="georgia-comparison-container">
-        <InsetMap />
+        <GeorgiaInsetMap />
         <div
           id="georgiaBefore"
           class="map"
@@ -25,6 +25,7 @@
     </div>
     <div class="maps">
       <div id="colorado-comparison-container">
+        <ColoradoInset />
         <div
           id="coloradoBefore"
           class="map"
@@ -46,13 +47,15 @@ import newGages from '../assets/data/site_map_merc_2018';
 import mapboxgl from 'mapbox-gl';
 import MapboxCompare from 'mapbox-gl-compare';
 import standard from "../assets/styles/standard";
-import InsetMap from './InsetMap';
+import GeorgiaInsetMap from './georgiaInsetMap';
+import ColoradoInset from './coloradoInsetMap';
 import mapboxSliderText from "../assets/mapboxSlider/mapboxSliderText";
 
 export default {
     'name': 'MapboxSlider',
     'components':{
-      InsetMap
+      GeorgiaInsetMap,
+      ColoradoInset
     },
     data() {
         return {
@@ -73,15 +76,19 @@ export default {
             let rural = '#b087bd';
             let beforeYear = '1967';
             let afterYear = '2018';
-            let bounds = [
+            let georgiaBounds = [
               [-85.626583,32.909064],
               [-82.835487,34.687393]
+            ];
+            let coloradoBounds = [
+              [-110.074811,36.125882],
+              [-101.035681,41.899945]
             ]
             let georgiaBeforeMap = new mapboxgl.Map({
                 container: 'georgiaBefore',
                 style: standard.style,
                 center: this.georgiaCenter,
-                maxBounds: bounds,
+                maxBounds: georgiaBounds,
                 zoom: this.zoom,
                 maxZoom: 9,
                 interactive: this.interactive
@@ -90,7 +97,7 @@ export default {
                 container: 'georgiaAfter',
                 style: standard.style,
                 center: this.georgiaCenter,
-                maxBounds: bounds,
+                maxBounds: georgiaBounds,
                 zoom: this.zoom,
                 maxZoom: 9,
                 interactive: this.interactive
@@ -99,7 +106,8 @@ export default {
                 container: 'coloradoBefore',
                 style: standard.style,
                 center: this.coloradoCenter,
-                zoom: this.zoom,
+                //zoom: this.zoom,
+                maxBounds: coloradoBounds,
                 maxZoom: 9,
                 interactive: this.interactive
             });
@@ -107,7 +115,8 @@ export default {
                 container: 'coloradoAfter',
                 style: standard.style,
                 center: this.coloradoCenter,
-                zoom: this.zoom,
+                //zoom: this.zoom,
+                maxBounds: coloradoBounds,
                 maxZoom: 9,
                 interactive: this.interactive
             });
