@@ -3,7 +3,7 @@
     id="mapboxslider"
     class="section"
   >
-    <h2>{{ sliderText.title }}</h2>
+    <h2>{{ atlantaText.title }}</h2>
     <div class="maps">
       <div id="georgia-comparison-container">
         <GeorgiaInsetMap />
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div
-      v-for="paragraph in sliderText.paragraphSections"
+      v-for="paragraph in atlantaText.paragraphSections"
       :key="paragraph.paragraphText"
     >
       <p><span v-html="paragraph.paragraphText" /></p>
@@ -36,9 +36,12 @@
         />
       </div>
     </div>
-    <p class="warning">
-      Text on this page is in the pre-approval stage and subject to change.
-    </p>
+    <div
+    v-for="paragraph in coloradoText.paragraphSections"
+    :key="paragraph.paragraphText"
+  >
+    <p><span v-html="paragraph.paragraphText" /></p>
+  </div>
   </div>
 </template>
 <script>
@@ -49,7 +52,8 @@ import MapboxCompare from 'mapbox-gl-compare';
 import standard from "../assets/styles/standard";
 import GeorgiaInsetMap from './georgiaInsetMap';
 import ColoradoInset from './coloradoInsetMap';
-import mapboxSliderText from "../assets/mapboxSlider/mapboxSliderText";
+import atlantaSliderText from "../assets/mapboxSlider/atlantaSliderText";
+import coloradoSliderText from "../assets/mapboxSlider/coloradoSliderText";
 
 export default {
     'name': 'MapboxSlider',
@@ -63,7 +67,8 @@ export default {
             coloradoCenter: [-105.7821, 39.5501],
             zoom: 6,
             interactive: false,
-            sliderText: mapboxSliderText.textContents
+            atlantaText: atlantaSliderText.textContents,
+            coloradoText: coloradoSliderText.textContents
         }
     },
     mounted(){
