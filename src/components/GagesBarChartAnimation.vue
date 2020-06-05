@@ -3,10 +3,11 @@
     id="gage-map"
     class="section"
   >
-    <div class="container">
-      <h2>{{ text.title }}</h2>
+    <div class='container'>
+      <h1 class='title'>{{ text.title }}</h1>
+      <h3 class='subtitle'>{{ text.introText }}</h3>
 
-      <h3>{{ text.introText }}</h3>
+      <h3 class='figureTitle'>{{ text.graphTitle }}</h3>
     </div>
     <figure>
       <svg
@@ -2868,6 +2869,17 @@
 $stateFill: rgb(228,228,227);
 $stateStroke: rgb(255,255,255);
 $axis: rgb(100,100,100);
+
+.title{
+  margin: 5px 0;
+}
+.subtitle{
+  margin-bottom: 20px;
+}
+
+figure{
+  margin-bottom: 20px;;
+}
   .interior-state {
     fill: $stateFill;
     stroke: $stateStroke;
