@@ -258,3 +258,12 @@ export default {
     right: 10px;
   }
 </style>
+<style lang="scss">
+.mapboxgl-compare{
+  width: 2px;
+  background-color: #3887be;
+}
+.mapboxgl-compare .compare-swiper-vertical{
+  box-shadow: inset 0 0 0 0 #fff
+}
+</style>
