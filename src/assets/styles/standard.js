@@ -153,7 +153,7 @@ export default {
                 },
                 'paint': {
                     'line-color': 'rgb(246,246,245)',
-                    'line-width': .5
+                    'line-width': 1
                 }
             },
             {
