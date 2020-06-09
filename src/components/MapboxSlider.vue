@@ -243,6 +243,7 @@ export default {
 }
 </style>
 <style lang='scss'>
+$polygon: '~@/assets/images/polygon.png';
   .yearDiv{
     position: relative;
     z-index: 9000;
@@ -262,13 +263,33 @@ export default {
     position: absolute;
     right: 10px;
   }
-</style>
-<style lang="scss">
-.mapboxgl-compare{
+  .mapboxgl-compare{
   width: 2px;
   background-color: #3887be;
-}
-.mapboxgl-compare .compare-swiper-vertical{
-  box-shadow: inset 0 0 0 0 #fff
-}
+  }
+  .mapboxgl-compare .compare-swiper-vertical{
+    box-shadow: inset 0 0 0 0 #fff
+  }
+  .legendDot{
+    background: red;
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  #urbanGage{
+    background: #f7bb2e;
+  }
+  #ruralGage{
+    background: #b087bd;
+  }
+  #urbanPolygon{
+    background-image: url($polygon);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+  }
 </style>

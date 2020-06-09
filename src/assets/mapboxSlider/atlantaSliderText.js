@@ -3,11 +3,11 @@ export default {
         title: "",
         introText: "",
         paragraphSections: [
-            {paragraphText: "<strong>Since the 1960’s, the number of urban gages has increased.</strong>"
+            {paragraphText: "<strong>Since the 1960’s, the number of <span id='urbanGage' class='legendDot'></span> urban gages has increased.</strong>"
             },
-            {paragraphText: "X% of all active USGS gages were located within urban areas in 2018 while a conservative estimate* suggests only Y% of gages would’ve been considered urban in 1967."
+            {paragraphText: "X% of all active USGS gages were located within <span id='urbanPolygon'></span> urban areas in 2018 while a conservative estimate* suggests only Y% of gages would’ve been considered urban in 1967."
             },
-            {paragraphText: "<strong>Other needs that drove stream gaging in the past have become less important, and many rural gages have been retired.</strong>"
+            {paragraphText: "<strong>Other needs that drove stream gaging in the past have become less important, and many <span id='ruralGage' class='legendDot'></span> non-urban gages have been retired.</strong>"
             },
             {paragraphText: "In the early 1900’s, the need to estimate potential for hydropower in the Western US was met by establishing new gages that would provide a full view of the seasonal water availability. Notice in the map above how evenly dispersed the 1967 gages are along waterways in the Rocky Mountains."
             },
