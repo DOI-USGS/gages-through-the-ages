@@ -23,7 +23,7 @@ export default {
             },
             {paragraphText: "Up to the 1960’s, the US invested in a wide geographic dispersal of gages, with a specific lens of assessing" + 
                             " streams for their hydropower potential.  That meant that gages covered a wide geographic area, especially in" +
-                            " rural parts of the country."
+                            " non-urban parts of the country."
             },
             {paragraphText: "A decreasing demand for hydropower after the 1960’s and 70’s, combined with increasing populations in cities and" +
                             " the need for urban flood management, meant that the location of new gages began to migrate towards urban areas." + 
