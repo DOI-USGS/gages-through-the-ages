@@ -19,3 +19,10 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# R data pipeline stuff
+.Rproj.user
+*.Rproj
+*/tmp/*
+*/out/*
+.remake

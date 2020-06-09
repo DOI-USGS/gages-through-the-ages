@@ -1,0 +1,11 @@
+target_default: everything
+
+include:
+  - 1_fetch.yml
+  - 2_process.yml
+
+targets:
+  everything:
+    depends:
+      - 1_fetch
+      - 2_process

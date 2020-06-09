@@ -1,0 +1,51 @@
+target_default: 2_process
+
+packages:
+  - dplyr
+  - sf
+  - maps
+  - geojsonio
+  
+sources:
+  - 2_process/src/process_gages_utils.R
+  - 2_process/src/process_gages_spatial_utils.R
+  - 2_process/src/process_urban_areas.R
+
+targets:
+  2_process:
+    depends:
+      - 2_process/out/disch_sites.rds
+      - 2_process/out/urban_areas_co_1970.geojson
+      - 2_process/out/urban_areas_ga_1970.geojson
+      - 2_process/out/urban_areas_co_2018.geojson
+      - 2_process/out/urban_areas_ga_2018.geojson
+  
+  2_process/out/disch_sites.rds:
+    command: process_disch_sites(target_name, "1_fetch/out/active_gages_summary_data_file.rds")
+  
+  #2_process/out/site_map.rds:
+  #  command: 
+  
+  # Got digitized urban areas shapefile from Megan for both GA & CO
+  # Original PDF found at https://www2.census.gov/library/publications/decennial/1970/pc-s1-supplementary-reports/pc-s1-108ch2.pdf
+  2_process/out/urban_areas_co_1970.geojson:
+    command: process_digitized_urban_extent(
+      target_name, 
+      digitized_shp_fn = I("1_fetch/in/georgia3857.shp"))
+  2_process/out/urban_areas_ga_1970.geojson:
+    command: process_digitized_urban_extent(
+      target_name, 
+      digitized_shp_fn = I("1_fetch/in/colorado3857.shp"))
+  
+  # Downloaded urban areas shapefile from https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
+  # See "Urban Areas" header, `cb_2018_us_ua10_500k.zip`
+  2_process/out/urban_areas_co_2018.geojson:
+    command: process_modern_urban_extent(
+      target_name,
+      urban_extent_shp_fn = I("1_fetch/in/cb_2018_us_ua10_500k.shp"), 
+      state_nm = I("colorado"))
+  2_process/out/urban_areas_ga_2018.geojson:
+    command: process_modern_urban_extent(
+      target_name,
+      urban_extent_shp_fn = I("1_fetch/in/cb_2018_us_ua10_500k.shp"), 
+      state_nm = I("georgia"))
