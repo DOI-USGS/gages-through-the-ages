@@ -160,7 +160,6 @@ export default {
           let self = this;
           map.on('load', function(){
             let findSymbolId = self.GetMapLayers(map);
-            console.log(findSymbolId);
             map.addSource(source, {
               type: 'vector',
               tiles: [url]
