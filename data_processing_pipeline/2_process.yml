@@ -3,28 +3,109 @@ target_default: 2_process
 packages:
   - dplyr
   - sf
-  - maps
+  - sp
   - geojsonio
+  - maps
+  - maptools
+  - rgeos
+  - jsonlite
+  - xml2
+  - svglite
   
 sources:
   - 2_process/src/process_gages_utils.R
   - 2_process/src/process_gages_spatial_utils.R
   - 2_process/src/process_urban_areas.R
+  - 2_process/src/process_state_svg.R
 
 targets:
   2_process:
     depends:
+      - 2_process/out/active_gages_min_year_applied.rds
+      - 2_process/out/active_gages_summary_min_year_applied.rds
       - 2_process/out/disch_sites.rds
+      - 2_process/out/site_map.rds
+      - 2_process/out/site_map_mercator.rds
+      - 2_process/out/year_data.json
+      - 2_process/out/bar_data.xml
+      - 2_process/out/states_map.svg
       - 2_process/out/urban_areas_co_1970.geojson
       - 2_process/out/urban_areas_ga_1970.geojson
       - 2_process/out/urban_areas_co_2018.geojson
       - 2_process/out/urban_areas_ga_2018.geojson
   
-  2_process/out/disch_sites.rds:
-    command: process_disch_sites(target_name, "1_fetch/out/active_gages_summary_data_file.rds")
+  year_range: 
+    command: c(I(1890), I(2019)) # taken from original viz code & conversations with JR
+  site_chunk_n:
+    command: c(I(1000)) # number of sites per group for processing XML
+  site_chunk_nm_pattern:
+    command: c(I("sites-group-%s"))
   
-  #2_process/out/site_map.rds:
-  #  command: 
+  proj_albers:
+    command: c(I("+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"))
+  proj_mercator:
+    command: c(I("+proj=longlat +datum=WGS84"))
+  
+  ## -- Filter existing active gage count information for minimum year -- ##
+  
+  2_process/out/active_gages_min_year_applied.rds:
+    command: process_filter_gages_data_to_year_range(
+      target_name,
+      "1_fetch/out/active_gages_data_file.rds",
+      year_range)
+  2_process/out/active_gages_summary_min_year_applied.rds:
+    command: process_filter_gages_summary_to_year_range(
+      target_name,
+      "1_fetch/out/active_gages_summary_data_file.rds",
+      year_range)
+  
+  ## -- Gage counts & locations through time for map & bar chart -- ##
+  
+  2_process/out/disch_sites.rds:
+    command: process_disch_sites(target_name, "2_process/out/active_gages_summary_min_year_applied.rds")
+  
+  2_process/out/site_map.rds:
+    command: process_site_map(
+      target_name,
+      site_data_file = "2_process/out/disch_sites.rds",
+      proj_str = proj_albers)
+  2_process/out/site_map_mercator.rds:
+    command: process_site_map(
+      target_name,
+      site_data_file = "2_process/out/disch_sites.rds",
+      proj_str = proj_mercator)
+  
+  2_process/out/year_data.json:
+    command: process_year_json(
+      target_name,
+      gage_locations_file = "2_process/out/site_map.rds",
+      gage_year_data_file = "2_process/out/active_gages_min_year_applied.rds",
+      site_chunk_n, 
+      site_chunk_nm_pattern)
+  
+  state_map: 
+    command: generate_usa_map(proj_albers)
+  2_process/out/bar_data.xml:
+    command: process_bar_chart(
+      target_name,
+      gage_year_data_file = "2_process/out/active_gages_min_year_applied.rds",
+      state_sp = state_map)
+  
+  ## -- Put map & bar chart together in final SVG -- ##
+  # Code is exactly as it was in original version of this viz
+  2_process/out/states_map.svg:
+    command: process_state_svg(
+      target_name, 
+      site_locations_file = "2_process/out/site_map.rds", 
+      bar_xml_file = "2_process/out/bar_data.xml", 
+      state_map, 
+      usgs_watermark,
+      svg_title = I("U.S. Geological Survey Active Stream Gages"),
+      svg_alttext = I("Map of U.S. Geological Survey gages"),
+      site_chunk_n, 
+      site_chunk_nm_pattern)
+  
+  ## -- Urban areas for map slider -- ##
   
   # Got digitized urban areas shapefile from Megan for both GA & CO
   # Original PDF found at https://www2.census.gov/library/publications/decennial/1970/pc-s1-supplementary-reports/pc-s1-108ch2.pdf
@@ -49,3 +130,5 @@ targets:
       target_name,
       urban_extent_shp_fn = I("1_fetch/in/cb_2018_us_ua10_500k.shp"), 
       state_nm = I("georgia"))
+  
+  ## -- Urban vs rural gage identifiers for map slider -- ##
