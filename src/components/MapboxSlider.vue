@@ -66,7 +66,7 @@ export default {
             georgiaCenter: [-84.3880, 33.7490],
             coloradoCenter: [-105.7821, 39.5501],
             zoom: 6,
-            interactive: true,
+            interactive: false,
             atlantaText: atlantaSliderText.textContents,
             coloradoText: coloradoSliderText.textContents
         }
