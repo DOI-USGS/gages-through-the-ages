@@ -34,6 +34,8 @@ targets:
       - 2_process/out/slider_past_sites_inview.geojson
       - 2_process/out/slider_present_sites_inview.geojson
       - 2_process/out/states_map.svg
+      # Needed to determine % gages urban in past vs present
+      - 2_process/out/percent_urban_past_present.rds
   
   viz_year_range: 
     command: c(I(1890), I(2019)) # taken from original viz code & conversations with JR
@@ -64,10 +66,10 @@ targets:
   
   # This was `disch-sites.rds` in the original viz code
   2_process/out/site_loc_data.rds:
-    command: process_site_info(target_name, "2_process/out/active_gages_summary_min_year_applied.rds")
+    command: process_site_info(target_name, "2_process/out/active_gages_summary_min_year_applied.rds", file.out = TRUE)
   
   2_process/out/site_map.rds:
-    command: process_site_map(
+    command: process_site_map_sp(
       target_name,
       site_data_file = "2_process/out/site_loc_data.rds",
       proj_str = proj_albers)
@@ -127,6 +129,12 @@ targets:
       target_name,
       "2_process/out/urban_areas_co_2018.geojson",
       "2_process/out/urban_areas_ga_2018.geojson")
+  2_process/out/urban_areas_national_2018.geojson:
+    command: process_modern_urban_extent(
+      target_name,
+      urban_extent_shp_fn = "1_fetch/in/cb_2018_us_ua10_500k.shp", 
+      state_nm = I(""), 
+      proj_mercator)
   
   ## -- Urban vs rural gage identifiers for map slider -- ##
   
@@ -138,8 +146,10 @@ targets:
       target_name,
       "1_fetch/out/active_gages_summary_data_file.rds",
       slider_past_year_range)
-  2_process/out/slider_past_site_loc_data.rds:
+  slider_past_site_loc_data:
     command: process_site_info(target_name, "2_process/out/slider_past_active_gage_summary.rds")
+  slider_past_site_sf:
+    command: process_site_sf(slider_past_site_loc_data, proj_mercator)
   
   # Get site location data for the "present" part of the slider
   slider_present_year_range: 
@@ -149,9 +159,10 @@ targets:
       target_name,
       "1_fetch/out/active_gages_summary_data_file.rds",
       slider_present_year_range)
-  2_process/out/slider_present_site_loc_data.rds:
+  slider_present_site_loc_data:
     command: process_site_info(target_name, "2_process/out/slider_present_active_gage_summary.rds")
-  
+  slider_present_site_sf:
+    command: process_site_sf(slider_present_site_loc_data, proj_mercator)
   
   # Instead of all US sites classified as urban/rural, just do ones
   #   in the slider view. These bbox values for CO & GA were taken from
@@ -162,37 +173,65 @@ targets:
   ga_view:
     command: c(I(-87),I(31),I(-81),I(36))
   
-  2_process/out/slider_past_site_loc_data_inview.rds:
+  slider_past_site_sf_inview:
     command: filter_sites_to_view(
-      target_name, 
-      site_location_file = "2_process/out/slider_past_site_loc_data.rds",
-      proj_mercator, 
+      site_location_sf = slider_past_site_sf,
+      proj_str = proj_mercator, 
       co_view, ga_view)
   past_urban_gages_inview:
     command: find_urban_sites(
-      site_sf_file = "2_process/out/slider_past_site_loc_data_inview.rds",
+      gages_sf = slider_past_site_sf_inview,
       urban_extents_geojson = "2_process/out/urban_areas_ALL_1970.geojson")
   2_process/out/slider_past_sites_inview.geojson:
     command: process_urban_sites(
       target_name,
-      site_sf_file = "2_process/out/slider_past_site_loc_data_inview.rds",
+      gages_sf = slider_past_site_sf_inview,
       urban_gages = past_urban_gages_inview)
   
-  2_process/out/slider_present_site_loc_data_inview.rds:
+  slider_present_site_sf_inview:
     command: filter_sites_to_view(
-      target_name, 
-      site_location_file = "2_process/out/slider_present_site_loc_data.rds",
-      proj_mercator, 
+      site_location_sf = slider_present_site_sf,
+      proj_str = proj_mercator, 
       co_view, ga_view)
   present_urban_gages_inview:
     command: find_urban_sites(
-      site_sf_file = "2_process/out/slider_present_site_loc_data_inview.rds",
+      gages_sf = slider_present_site_sf_inview,
       urban_extents_geojson = "2_process/out/urban_areas_ALL_2018.geojson")
   2_process/out/slider_present_sites_inview.geojson:
     command: process_urban_sites(
       target_name,
-      site_sf_file = "2_process/out/slider_present_site_loc_data_inview.rds",
+      gages_sf = slider_present_site_sf_inview,
       urban_gages = present_urban_gages_inview)
+  
+  ## -- Calculate % gages urban in past vs present -- ##
+  
+  past_urban_gages_national:
+    command: find_urban_sites(
+      gages_sf = slider_past_site_sf,
+      urban_extents_geojson = "2_process/out/urban_areas_national_2018.geojson")
+  past_gages_national_classified:
+    command: process_urban_sites(
+      target_name,
+      gages_sf = slider_past_site_sf,
+      urban_gages = past_urban_gages_national,
+      file.out = FALSE)
+  
+  present_urban_gages_national:
+    command: find_urban_sites(
+      gages_sf = slider_present_site_sf,
+      urban_extents_geojson = "2_process/out/urban_areas_national_2018.geojson")
+  present_gages_national_classified:
+    command: process_urban_sites(
+      target_name,
+      gages_sf = slider_present_site_sf,
+      urban_gages = present_urban_gages_national,
+      file.out = FALSE)
+  
+  2_process/out/percent_urban_past_present.rds:
+    command: calc_perc_urban(
+      target_name, 
+      past_urban_gages = past_gages_national_classified,
+      present_urban_gages = present_gages_national_classified)
   
   ## -- Put map & bar chart together in final SVG -- ##
   # Code is exactly as it was in original version of this viz

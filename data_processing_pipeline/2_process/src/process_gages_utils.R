@@ -19,8 +19,8 @@ process_filter_gages_summary_to_year_range <- function(target_name, gages_data_f
     saveRDS(target_name)
 }
 
-process_site_info <- function(target_name, active_gages_data_file){
-  readRDS(active_gages_data_file) %>%
+process_site_info <- function(target_name, active_gages_data_file, file.out = FALSE){
+  gages_info <- readRDS(active_gages_data_file) %>%
     pull(site) %>% 
     dataRetrieval::readNWISsite() %>% 
     group_by(site_no) %>% 
@@ -32,8 +32,13 @@ process_site_info <- function(target_name, active_gages_data_file){
     summarize(huc = stringr::str_sub(tail(unique(huc_cd),1), 1L, 2L), 
               # huc = paste(stringr::str_sub(unique(huc_cd)[[1]], 1L, 2L), collapse = "|"),
               dec_lat_va = mean(dec_lat_va), dec_long_va = mean(dec_long_va)) %>% 
-    filter(dec_long_va < -65.4) %>% # remove US virgin Islands and other things we won't plot
-    saveRDS(target_name)
+    filter(dec_long_va < -65.4)  # remove US virgin Islands and other things we won't plot
+  if(file.out) {
+    saveRDS(gages_info, target_name)
+    return()
+  } else {
+    return(gages_info)
+  }
 }
 
 process_year_json <- function(target_name, gage_locations_file, gage_year_data_file, 
