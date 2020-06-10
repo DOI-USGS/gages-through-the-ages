@@ -25,4 +25,5 @@ The following are the files that actually need to be shared with other developer
 2_process/out/urban_areas_ga_2018.geojson
 2_process/out/slider_past_sites_inview.geojson
 2_process/out/slider_present_sites_inview.geojson
+2_process/out/states_map.svg
 ```
