@@ -45,8 +45,6 @@
   </div>
 </template>
 <script>
-import oldGages from '../assets/data/site_map_merc_1967';
-import newGages from '../assets/data/site_map_merc_2018';
 import mapboxgl from 'mapbox-gl';
 import MapboxCompare from 'mapbox-gl-compare';
 import standard from "../assets/styles/standard";
@@ -76,6 +74,8 @@ export default {
     },
     methods: {
         createMaps() {
+            const slider_present_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/slider_present_sites_inview.geojson';
+            const slider_past_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/slider_past_sites_inview.geojson';
             const co1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_co_1970/{z}/{x}/{y}.pbf';
             const co2018Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_co_2018/{z}/{x}/{y}.pbf';
             const ga1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_ga_1970/{z}/{x}/{y}.pbf';
@@ -145,10 +145,10 @@ export default {
             this.CreateYearDiv(beforeYear, "beforeYear", coloradoBeforeMapCanvas);
             this.CreateYearDiv(afterYear, "afterYear", coloradoAfterMapCanvas);
             //Add geojson layers
-            this.AddGeoJSON(georgiaBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural);
-            this.AddGeoJSON(georgiaAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural);
-            this.AddGeoJSON(coloradoBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural);
-            this.AddGeoJSON(coloradoAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural);
+            this.AddGeoJSON(georgiaBeforeMap, slider_past_sites_inview, 'slider_past_sites_inview', radius, urban, rural);
+            this.AddGeoJSON(georgiaAfterMap, slider_present_sites_inview, 'slider_present_sites_inview', radius, urban, rural);
+            this.AddGeoJSON(coloradoBeforeMap, slider_past_sites_inview, 'slider_past_sites_inview', radius, urban, rural);
+            this.AddGeoJSON(coloradoAfterMap, slider_present_sites_inview, 'slider_present_sites_inview', radius, urban, rural);
 
             let georgiaContainer = '#georgia-comparison-container';
             let coloradoContainer = '#colorado-comparison-container';
@@ -192,11 +192,8 @@ export default {
                       'circle-radius': radius,
                       'circle-color': [
                         'case',
-                        ['==', ['get', 'is_georgia_urban'], true], urban,
-                        ['==', ['get', 'is_colorado_urban'], true], urban,
-                        ['==', ['get', 'is_georgia'], true], rural,
-                        ['==', ['get', 'is_colorado'], true], rural,
-                        rural
+                          ['==', ['get', 'is_urban'], true], urban,
+                          rural
                       ],
                       'circle-stroke-color': [
                         'case',
