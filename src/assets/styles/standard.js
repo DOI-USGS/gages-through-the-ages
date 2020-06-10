@@ -8,18 +8,6 @@ export default {
                 'minzoom': 2, // setting this to equal the minzoom of main map, real tile extent is 2
                 'maxzoom': 6  // setting this to equal the maxzoom of main map, real tile extent is 10
             },
-            georgiaUrbanExtent: {
-                type: 'vector',
-                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misctilesets/gaUrbanExtentSimplified/{z}/{x}/{y}.pbf'],
-                'minzoom': 0, // setting this to equal the minzoom of main map, real tile extent is 2
-                'maxzoom': 14  // setting this to equal the maxzoom of main map, real tile extent is 10
-            },
-            coloradoUrbanExtent: {
-                type: 'vector',
-                'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misctilesets/coUrbanExtent/{z}/{x}/{y}.pbf'],
-                'minzoom': 0, // setting this to equal the minzoom of main map, real tile extent is 2
-                'maxzoom': 14  // setting this to equal the maxzoom of main map, real tile extent is 10
-            },
             waterbody: {
                 type: 'vector',
                 'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/waterbody/{z}/{x}/{y}.pbf'],
@@ -75,24 +63,6 @@ export default {
                 },
                 'paint': {
                     'fill-color': 'rgb(228,228,227)'
-                }
-            },
-            {
-                'id': 'coUrbanExtent',
-                'type': 'fill',
-                'source': 'coloradoUrbanExtent',
-                'source-layer': 'urban_areas_co',
-                'paint': {
-                    'fill-color': 'rgb(208,209,207)'
-                }
-            },
-            {
-                'id': 'gaUrbanExtent',
-                'type': 'fill',
-                'source': 'georgiaUrbanExtent',
-                'source-layer': 'urban_areas_ga_simplified',
-                'paint': {
-                    'fill-color': 'rgb(208,209,207)'
                 }
             },
             {   
