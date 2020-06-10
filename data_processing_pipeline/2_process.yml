@@ -18,6 +18,7 @@ sources:
   - 2_process/src/process_gages_spatial_utils.R
   - 2_process/src/process_urban_areas.R
   - 2_process/src/process_bar_chart.R
+  - 2_process/src/process_state_svg.R
 
 targets:
   2_process:
@@ -32,6 +33,7 @@ targets:
       - 2_process/out/urban_areas_ga_2018.geojson
       - 2_process/out/slider_past_sites_inview.geojson
       - 2_process/out/slider_present_sites_inview.geojson
+      - 2_process/out/states_map.svg
   
   viz_year_range: 
     command: c(I(1890), I(2019)) # taken from original viz code & conversations with JR
@@ -191,3 +193,17 @@ targets:
       target_name,
       site_sf_file = "2_process/out/slider_present_site_loc_data_inview.rds",
       urban_gages = present_urban_gages_inview)
+  
+  ## -- Put map & bar chart together in final SVG -- ##
+  # Code is exactly as it was in original version of this viz
+  2_process/out/states_map.svg:
+    command: process_state_svg(
+      target_name, 
+      site_locations_file = "2_process/out/site_map.rds", 
+      bar_xml_file = "2_process/out/bar_data.xml", 
+      state_map, 
+      usgs_watermark,
+      svg_title = I("U.S. Geological Survey Active Stream Gages"),
+      svg_alttext = I("Map of U.S. Geological Survey gages"),
+      site_chunk_n, 
+      site_chunk_nm_pattern)
