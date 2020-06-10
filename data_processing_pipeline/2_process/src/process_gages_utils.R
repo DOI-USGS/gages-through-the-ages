@@ -19,7 +19,7 @@ process_filter_gages_summary_to_year_range <- function(target_name, gages_data_f
     saveRDS(target_name)
 }
 
-process_disch_sites <- function(target_name, active_gages_data_file, min_year){
+process_site_info <- function(target_name, active_gages_data_file){
   readRDS(active_gages_data_file) %>%
     pull(site) %>% 
     dataRetrieval::readNWISsite() %>% 
