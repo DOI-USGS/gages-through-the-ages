@@ -17,15 +17,15 @@ sources:
   - 2_process/src/process_gages_utils.R
   - 2_process/src/process_gages_spatial_utils.R
   - 2_process/src/process_urban_areas.R
-  - 2_process/src/process_state_svg.R
+  - 2_process/src/process_bar_chart.R
 
 targets:
   2_process:
     depends:
-      - 2_process/out/site_map.geojson
+      # These are the ones that need to be shared for the viz
+      - 2_process/out/site_map.rds
       - 2_process/out/year_data.json
       - 2_process/out/bar_data.xml
-      - 2_process/out/states_map.svg
       - 2_process/out/urban_areas_co_1970.geojson
       - 2_process/out/urban_areas_ga_1970.geojson
       - 2_process/out/urban_areas_co_2018.geojson
@@ -69,11 +69,6 @@ targets:
       target_name,
       site_data_file = "2_process/out/site_loc_data.rds",
       proj_str = proj_albers)
-  # Need this to be geojson for viz
-  site_map:
-    command: readRDS("2_process/out/site_map.rds")
-  2_process/out/site_map.geojson:
-    command: geojson_write(file = target_name, input = site_map)
   
   2_process/out/year_data.json:
     command: process_year_json(

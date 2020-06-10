@@ -67,7 +67,7 @@ find_urban_sites <- function(site_sf_file, urban_extents_geojson) {
   urban_gages_sf <- st_join(urban_extents_sf, gages_sf, join = st_intersects) %>% unique()
   
   # Now return just unique site numbers
-  st_drop_geometry(urban_gages) %>%
+  st_drop_geometry(urban_gages_sf) %>%
     filter(!is.na(site_no)) %>% 
     pull(site_no) %>% 
     unique()
