@@ -189,7 +189,7 @@ targets:
     command: find_urban_sites(
       site_sf_file = "2_process/out/slider_past_site_loc_data_inview.rds",
       urban_extents_geojson = "2_process/out/urban_areas_ALL_1970.geojson")
-  2_process/out/slider_past_site_attr_inview.geojson:
+  2_process/out/slider_past_sites_inview.geojson:
     command: process_urban_sites(
       target_name,
       site_sf_file = "2_process/out/slider_past_site_loc_data_inview.rds",
@@ -205,7 +205,7 @@ targets:
     command: find_urban_sites(
       site_sf_file = "2_process/out/slider_present_site_loc_data_inview.rds",
       urban_extents_geojson = "2_process/out/urban_areas_ALL_2018.geojson")
-  2_process/out/slider_present_site_attr_inview.geojson:
+  2_process/out/slider_present_sites_inview.geojson:
     command: process_urban_sites(
       target_name,
       site_sf_file = "2_process/out/slider_present_site_loc_data_inview.rds",
