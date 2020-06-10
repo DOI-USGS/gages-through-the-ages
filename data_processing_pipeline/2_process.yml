@@ -86,20 +86,6 @@ targets:
       gage_year_data_file = "2_process/out/active_gages_min_year_applied.rds",
       state_sp = state_map)
   
-  ## -- Put map & bar chart together in final SVG -- ##
-  # Code is exactly as it was in original version of this viz
-  2_process/out/states_map.svg:
-    command: process_state_svg(
-      target_name, 
-      site_locations_file = "2_process/out/site_map.rds", 
-      bar_xml_file = "2_process/out/bar_data.xml", 
-      state_map, 
-      usgs_watermark,
-      svg_title = I("U.S. Geological Survey Active Stream Gages"),
-      svg_alttext = I("Map of U.S. Geological Survey gages"),
-      site_chunk_n, 
-      site_chunk_nm_pattern)
-  
   ## -- Urban areas for map slider -- ##
   
   # Got digitized urban areas shapefile from Megan for both GA & CO
