@@ -1,0 +1,193 @@
+target_default: 2_process
+
+packages:
+  - dplyr
+  - purrr
+  - sf
+  - sp
+  - geojsonio
+  - maps
+  - maptools
+  - rgeos
+  - jsonlite
+  - xml2
+  - svglite
+  
+sources:
+  - 2_process/src/process_gages_utils.R
+  - 2_process/src/process_gages_spatial_utils.R
+  - 2_process/src/process_urban_areas.R
+  - 2_process/src/process_bar_chart.R
+
+targets:
+  2_process:
+    depends:
+      # These are the ones that need to be shared for the viz
+      - 2_process/out/site_map.rds
+      - 2_process/out/year_data.json
+      - 2_process/out/bar_data.xml
+      - 2_process/out/urban_areas_co_1970.geojson
+      - 2_process/out/urban_areas_ga_1970.geojson
+      - 2_process/out/urban_areas_co_2018.geojson
+      - 2_process/out/urban_areas_ga_2018.geojson
+      - 2_process/out/slider_past_sites_inview.geojson
+      - 2_process/out/slider_present_sites_inview.geojson
+  
+  viz_year_range: 
+    command: c(I(1890), I(2019)) # taken from original viz code & conversations with JR
+  site_chunk_n:
+    command: c(I(1000)) # number of sites per group for processing XML
+  site_chunk_nm_pattern:
+    command: c(I("sites-group-%s"))
+  
+  proj_albers:
+    command: c(I("+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"))
+  proj_mercator:
+    command: c(I("+proj=longlat +datum=WGS84"))
+  
+  ## -- Filter existing active gage count information for year range -- ##
+  
+  2_process/out/active_gages_min_year_applied.rds:
+    command: process_filter_gages_data_to_year_range(
+      target_name,
+      "1_fetch/out/active_gages_data_file.rds",
+      viz_year_range)
+  2_process/out/active_gages_summary_min_year_applied.rds:
+    command: process_filter_gages_summary_to_year_range(
+      target_name,
+      "1_fetch/out/active_gages_summary_data_file.rds",
+      viz_year_range)
+  
+  ## -- Gage counts & locations through time for map & bar chart -- ##
+  
+  # This was `disch-sites.rds` in the original viz code
+  2_process/out/site_loc_data.rds:
+    command: process_site_info(target_name, "2_process/out/active_gages_summary_min_year_applied.rds")
+  
+  2_process/out/site_map.rds:
+    command: process_site_map(
+      target_name,
+      site_data_file = "2_process/out/site_loc_data.rds",
+      proj_str = proj_albers)
+  
+  2_process/out/year_data.json:
+    command: process_year_json(
+      target_name,
+      gage_locations_file = "2_process/out/site_map.rds",
+      gage_year_data_file = "2_process/out/active_gages_min_year_applied.rds",
+      site_chunk_n, 
+      site_chunk_nm_pattern)
+  
+  state_map: 
+    command: generate_usa_map(proj_albers)
+  2_process/out/bar_data.xml:
+    command: process_bar_chart(
+      target_name,
+      gage_year_data_file = "2_process/out/active_gages_min_year_applied.rds",
+      state_sp = state_map)
+  
+  ## -- Urban areas for map slider -- ##
+  
+  # Got digitized urban areas shapefile from Megan for both GA & CO
+  # Original PDF found at https://www2.census.gov/library/publications/decennial/1970/pc-s1-supplementary-reports/pc-s1-108ch2.pdf
+  2_process/out/urban_areas_co_1970.geojson:
+    command: process_digitized_urban_extent(
+      target_name, 
+      digitized_shp_fn = I("1_fetch/in/georgia3857.shp"),
+      proj_mercator)
+  2_process/out/urban_areas_ga_1970.geojson:
+    command: process_digitized_urban_extent(
+      target_name, 
+      digitized_shp_fn = I("1_fetch/in/colorado3857.shp"),
+      proj_mercator)
+  2_process/out/urban_areas_ALL_1970.geojson:
+    command: combine_urban_extents(
+      target_name,
+      "2_process/out/urban_areas_co_1970.geojson",
+      "2_process/out/urban_areas_ga_1970.geojson")
+  
+  # Downloaded urban areas shapefile from https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
+  # See "Urban Areas" header, `cb_2018_us_ua10_500k.zip`
+  2_process/out/urban_areas_co_2018.geojson:
+    command: process_modern_urban_extent(
+      target_name,
+      urban_extent_shp_fn = I("1_fetch/in/cb_2018_us_ua10_500k.shp"), 
+      state_nm = I("colorado"), 
+      proj_mercator)
+  2_process/out/urban_areas_ga_2018.geojson:
+    command: process_modern_urban_extent(
+      target_name,
+      urban_extent_shp_fn = I("1_fetch/in/cb_2018_us_ua10_500k.shp"), 
+      state_nm = I("georgia"), 
+      proj_mercator)
+  2_process/out/urban_areas_ALL_2018.geojson:
+    command: combine_urban_extents(
+      target_name,
+      "2_process/out/urban_areas_co_2018.geojson",
+      "2_process/out/urban_areas_ga_2018.geojson")
+  
+  ## -- Urban vs rural gage identifiers for map slider -- ##
+  
+  # Get site location data for the "past" part of the slider
+  slider_past_year_range: 
+    command: c(I(1967), I(1967)) 
+  2_process/out/slider_past_active_gage_summary.rds:
+    command: process_filter_gages_summary_to_year_range(
+      target_name,
+      "1_fetch/out/active_gages_summary_data_file.rds",
+      slider_past_year_range)
+  2_process/out/slider_past_site_loc_data.rds:
+    command: process_site_info(target_name, "2_process/out/slider_past_active_gage_summary.rds")
+  
+  # Get site location data for the "present" part of the slider
+  slider_present_year_range: 
+    command: c(I(2019), I(2019)) 
+  2_process/out/slider_present_active_gage_summary.rds:
+    command: process_filter_gages_summary_to_year_range(
+      target_name,
+      "1_fetch/out/active_gages_summary_data_file.rds",
+      slider_present_year_range)
+  2_process/out/slider_present_site_loc_data.rds:
+    command: process_site_info(target_name, "2_process/out/slider_present_active_gage_summary.rds")
+  
+  
+  # Instead of all US sites classified as urban/rural, just do ones
+  #   in the slider view. These bbox values for CO & GA were taken from
+  #   https://github.com/usgs-makerspace/gages-through-the-ages/blob/master/src/components/MapboxSlider.vue#L88-L94
+  #   but buffered a little bit for some wiggle room for zoom levels.
+  co_view:
+    command: c(I(-112),I(35),I(-100),I(43))
+  ga_view:
+    command: c(I(-87),I(31),I(-81),I(36))
+  
+  2_process/out/slider_past_site_loc_data_inview.rds:
+    command: filter_sites_to_view(
+      target_name, 
+      site_location_file = "2_process/out/slider_past_site_loc_data.rds",
+      proj_mercator, 
+      co_view, ga_view)
+  past_urban_gages_inview:
+    command: find_urban_sites(
+      site_sf_file = "2_process/out/slider_past_site_loc_data_inview.rds",
+      urban_extents_geojson = "2_process/out/urban_areas_ALL_1970.geojson")
+  2_process/out/slider_past_sites_inview.geojson:
+    command: process_urban_sites(
+      target_name,
+      site_sf_file = "2_process/out/slider_past_site_loc_data_inview.rds",
+      urban_gages = past_urban_gages_inview)
+  
+  2_process/out/slider_present_site_loc_data_inview.rds:
+    command: filter_sites_to_view(
+      target_name, 
+      site_location_file = "2_process/out/slider_present_site_loc_data.rds",
+      proj_mercator, 
+      co_view, ga_view)
+  present_urban_gages_inview:
+    command: find_urban_sites(
+      site_sf_file = "2_process/out/slider_present_site_loc_data_inview.rds",
+      urban_extents_geojson = "2_process/out/urban_areas_ALL_2018.geojson")
+  2_process/out/slider_present_sites_inview.geojson:
+    command: process_urban_sites(
+      target_name,
+      site_sf_file = "2_process/out/slider_present_site_loc_data_inview.rds",
+      urban_gages = present_urban_gages_inview)

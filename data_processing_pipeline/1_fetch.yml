@@ -1,0 +1,30 @@
+target_default: 1_fetch
+
+packages:
+  - aws.s3
+  - aws.signature
+  - dataRetrieval
+  
+sources:
+
+targets:
+  1_fetch:
+    depends:
+      - 1_fetch/out/active_gages_data_file.rds
+      - 1_fetch/out/active_gages_summary_data_file.rds
+  
+  # Setup known info
+  s3_bucket:
+    command: c(I("ds-pipeline-national-flow-observations"))
+  
+  1_fetch/out/active_gages_data_file.rds:
+    command: save_object(
+      file = target_name,
+      object = I("30_data_summarize/out/active_flow_gages.rds"), 
+      bucket = s3_bucket)
+  
+  1_fetch/out/active_gages_summary_data_file.rds:
+    command: save_object(
+      file = target_name,
+      object = I("30_data_summarize/out/active_flow_gages_summary.rds"), 
+      bucket = s3_bucket)
