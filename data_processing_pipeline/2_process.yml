@@ -95,12 +95,12 @@ targets:
   2_process/out/urban_areas_co_1970.geojson:
     command: process_digitized_urban_extent(
       target_name, 
-      digitized_shp_fn = I("1_fetch/in/georgia3857.shp"),
+      digitized_shp_fn = "1_fetch/in/georgia3857.shp",
       proj_mercator)
   2_process/out/urban_areas_ga_1970.geojson:
     command: process_digitized_urban_extent(
       target_name, 
-      digitized_shp_fn = I("1_fetch/in/colorado3857.shp"),
+      digitized_shp_fn = "1_fetch/in/colorado3857.shp",
       proj_mercator)
   2_process/out/urban_areas_ALL_1970.geojson:
     command: combine_urban_extents(
@@ -113,13 +113,13 @@ targets:
   2_process/out/urban_areas_co_2018.geojson:
     command: process_modern_urban_extent(
       target_name,
-      urban_extent_shp_fn = I("1_fetch/in/cb_2018_us_ua10_500k.shp"), 
+      urban_extent_shp_fn = "1_fetch/in/cb_2018_us_ua10_500k.shp", 
       state_nm = I("colorado"), 
       proj_mercator)
   2_process/out/urban_areas_ga_2018.geojson:
     command: process_modern_urban_extent(
       target_name,
-      urban_extent_shp_fn = I("1_fetch/in/cb_2018_us_ua10_500k.shp"), 
+      urban_extent_shp_fn = "1_fetch/in/cb_2018_us_ua10_500k.shp", 
       state_nm = I("georgia"), 
       proj_mercator)
   2_process/out/urban_areas_ALL_2018.geojson:
