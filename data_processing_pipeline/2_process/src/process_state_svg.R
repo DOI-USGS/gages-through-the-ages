@@ -45,8 +45,6 @@ process_state_svg <- function(target_name, site_locations_file, bar_xml_file,
   }
   rm(p)
   
-  library(dplyr)
-  
   cxs <- as.numeric(xml_attr(c, 'cx')) %>% round(0) %>% as.character()
   cys <- as.numeric(xml_attr(c, 'cy')) %>% round(0) %>% as.character()
   
