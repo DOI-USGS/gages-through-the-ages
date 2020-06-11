@@ -21,11 +21,11 @@ export default {
                             " Gages are built at specific locations for many reasons, and those reasons are reflected in the number and" + 
                             " location of gages through time.  Their placement tells a story of a changing nation."
             },
-            {paragraphText: "Up to the 1960’s, the US invested in a wide geographic dispersal of gages, with a specific lens of assessing" + 
+            {paragraphText: "Up to the 1960s, the US invested in a wide geographic dispersal of gages, with a specific lens of assessing" + 
                             " streams for their hydropower potential.  That meant that gages covered a wide geographic area, especially in" +
                             " non-urban parts of the country."
             },
-            {paragraphText: "A decreasing demand for hydropower after the 1960’s and 70’s, combined with increasing populations in cities and" +
+            {paragraphText: "A decreasing demand for hydropower after the 1960s and 70s, combined with increasing populations in cities and" +
                             " the need for urban flood management, meant that the location of new gages began to migrate towards urban areas." + 
                             " Today, many gages are clustered near urban areas to support flood prediction and advanced evacuation warnings."
             }
