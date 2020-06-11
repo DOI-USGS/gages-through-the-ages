@@ -5,7 +5,7 @@ export default {
         graphTitle: "U.S. Geological Survey’s Active Stream Gages",
         paragraphSections: [
             {paragraphText: "The U.S. Geological Survey (USGS) Groundwater and Streamflow Information Program" + 
-                            "is funded by Congress to monitor drought, flood, and water quality across the US through a" + 
+                            " is funded by Congress to monitor drought, flood, and water quality across the US through a" + 
                             " network of stream gages. Many of these gages are also supported through cooperation with state" + 
                             " and local funding partners."
             },
