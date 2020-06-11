@@ -40,7 +40,7 @@ export default {
                 'maxzoom': 6  // setting this to equal the maxzoom of main map, real tile extent is 10
             }
         },
-        'sprite': 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misc/pattern/pattern',
+        'sprite': '',
         'glyphs': 'https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf',
         'layers': [
             {

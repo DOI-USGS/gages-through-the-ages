@@ -1,6 +1,6 @@
 <template>
     <div id="coloradoInset">
-        <img src="~@/images/inset/insetColoradoLarge.png" srcset="~@/images/inset/insetColoradoSmall.png 199w, ~@/images/inset/insetColoradoMedium.png 397w, ~@/images/inset/insetColoradoLarge.png 794w" alt="United States Lower 48 Highlighting Colorado">
+        <img src="~@/images/inset/insetColoradoSmall.png" srcset="~@/images/inset/insetColoradoSmall.png 199w, ~@/images/inset/insetColoradoMedium.png 397w, ~@/images/inset/insetColoradoLarge.png 794w" alt="United States Lower 48 Highlighting Colorado">
     </div>
 </template>
 <script>
