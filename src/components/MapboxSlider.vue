@@ -84,7 +84,7 @@ export default {
             let urban = '#f7bb2e';
             let rural = '#b087bd';
             let beforeYear = '1967';
-            let afterYear = '2018';
+            let afterYear = '2019';
             let georgiaBounds = [
               [-85.626583,32.909064],
               [-82.835487,34.687393]
