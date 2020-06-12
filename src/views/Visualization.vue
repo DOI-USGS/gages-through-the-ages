@@ -28,11 +28,6 @@
           DataSources,
           Methods,
           References
-      },
-      mounted(){
-        let element = document.getElementById('mapboxslider');
-        let bounds = element.getBoundingClientRect();
-        console.log(bounds);
       }
   }
 </script>
