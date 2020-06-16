@@ -23,6 +23,7 @@
     >
       <p><span v-html="paragraph.paragraphText" /></p>
     </div>
+    <h2 class="spacer">{{ coloradoText.title }}</h2>
     <div class="maps">
       <div id="colorado-comparison-container">
         <ColoradoInset />
@@ -234,7 +235,9 @@ export default {
 <style scoped lang='scss'>
 @import '~mapbox-gl/dist/mapbox-gl.css';
 @import '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
-
+.spacer{
+  margin-top: 20px;
+}
 .maps{
     position: relative;
     overflow: hidden;
