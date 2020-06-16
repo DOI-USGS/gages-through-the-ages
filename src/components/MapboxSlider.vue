@@ -75,8 +75,8 @@ export default {
     },
     methods: {
         createMaps() {
-            const slider_present_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/site_map_w_attr_2018.json';
-            const slider_past_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/site_map_w_attr_1967.json';
+            const slider_present_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/slider_present_sites_inview_2018.geojson';
+            const slider_past_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/slider_past_sites_inview_1967.geojson';
             const co1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_co_1970/{z}/{x}/{y}.pbf';
             const co2018Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_co_2018/{z}/{x}/{y}.pbf';
             const ga1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_ga_1970/{z}/{x}/{y}.pbf';
@@ -193,8 +193,7 @@ export default {
                       'circle-radius': radius,
                       'circle-color': [
                         'case',
-                          ['==', ['get', 'is_georgia_urban'], true], urban,
-                          ['==', ['get', 'is_colorado_urban'], true], urban,
+                          ['==', ['get', 'is_urban'], true], urban,
                           rural
                       ],
                       'circle-stroke-color': [
