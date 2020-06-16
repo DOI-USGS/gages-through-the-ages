@@ -210,11 +210,11 @@ export default {
               );
           });
         },
-        GetMapLayers(map){
+        GetMapLayers(map, value, string){
           var layers = map.getStyle().layers;
           let symbolId;
           for(let i = 0; i < layers.length; i++){
-            if(layers[i].type === 'symbol'){
+            if(layers[i].id === 'streams'){
               symbolId = layers[i].id;
               break;
             }
