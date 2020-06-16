@@ -160,7 +160,7 @@ export default {
         AddUrbanExtent(map, url, source, sourceLayer){
           let self = this;
           map.on('load', function(){
-            let findSymbolId = self.GetMapLayers(map);
+            let findSymbolId = self.GetMapLayers(map, 'id', 'streams');
             map.addSource(source, {
               type: 'vector',
               tiles: [url]
@@ -179,8 +179,9 @@ export default {
         },
         AddGeoJSON(map, data, source, radius, urban, rural){
           let self = this;
+          let type;
           map.on('load', function() {
-              let findSymbolId = self.GetMapLayers(map);
+              let findSymbolId = self.GetMapLayers(map, 'type', 'symbol');
               map.addSource(source, {
                   type: 'geojson',
                   data: data
@@ -198,8 +199,7 @@ export default {
                       ],
                       'circle-stroke-color': [
                         'case',
-                        ['==',['get', 'is_georgia_urban'], true], 'rgb(170,170,170)',
-                        ['==',['get', 'is_colorado_urban'], true], 'rgb(170,170,170)',
+                        ['==',['get', 'is_urban'], true], 'rgb(170,170,170)',
                         'rgb(240,240,240)'
                       ],
                       'circle-stroke-width': .2
@@ -213,10 +213,19 @@ export default {
         GetMapLayers(map, value, string){
           var layers = map.getStyle().layers;
           let symbolId;
-          for(let i = 0; i < layers.length; i++){
-            if(layers[i].id === 'streams'){
-              symbolId = layers[i].id;
-              break;
+          if(value === 'id'){
+            for(let i = 0; i < layers.length; i++){
+              if(layers[i].id === string){
+                symbolId = layers[i].id;
+                break;
+              }
+            }
+          }else{
+            for(let i = 0; i < layers.length; i++){
+              if(layers[i].type === string){
+                symbolId = layers[i].id;
+                break;
+              }
             }
           }
           return symbolId;
