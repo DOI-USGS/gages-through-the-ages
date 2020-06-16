@@ -2,7 +2,7 @@
   <div id="Visualization">
     <GagesBarChartAnimation />
     <MapboxSlider />
-<!--    <AnnotatedTimeline />-->
+    <!--<AnnotatedTimeline />-->
     <TakeAway />
     <DataSources />
     <Methods />
@@ -12,8 +12,8 @@
 
 <script>
   import GagesBarChartAnimation from "../components/GagesBarChartAnimation";
-  import MapboxSlider from "../components/MapboxSlider";
   import DataSources from "../components/DataSources";
+  import MapboxSlider from "../components/MapboxSlider";
   // import AnnotatedTimeline from "../components/AnnotatedTimeline";
   import Methods from "../components/Methods";
   import References from '../components/References';
