@@ -153,7 +153,7 @@ targets:
   
   # Get site location data for the "present" part of the slider
   slider_present_year_range: 
-    command: c(I(2019), I(2019)) 
+    command: c(I(2018), I(2018)) 
   2_process/out/slider_present_active_gage_summary.rds:
     command: process_filter_gages_summary_to_year_range(
       target_name,
