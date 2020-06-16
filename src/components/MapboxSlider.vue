@@ -23,6 +23,7 @@
     >
       <p><span v-html="paragraph.paragraphText" /></p>
     </div>
+    <h2 class="spacer">{{ coloradoText.title }}</h2>
     <div class="maps">
       <div id="colorado-comparison-container">
         <ColoradoInset />
@@ -84,7 +85,7 @@ export default {
             let urban = '#f7bb2e';
             let rural = '#b087bd';
             let beforeYear = '1967';
-            let afterYear = '2019';
+            let afterYear = '2018';
             let georgiaBounds = [
               [-85.626583,32.909064],
               [-82.835487,34.687393]
@@ -233,7 +234,9 @@ export default {
 <style scoped lang='scss'>
 @import '~mapbox-gl/dist/mapbox-gl.css';
 @import '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
-
+.spacer{
+  margin-top: 20px;
+}
 .maps{
     position: relative;
     overflow: hidden;
