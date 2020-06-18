@@ -179,6 +179,7 @@ export default {
                     'text-field': ['get', 'State'],
                     'text-font': ['Noto Sans Regular'],
                     'text-offset': [0, -.1],
+                    'text-ignore-placement': true,
                     "text-size": {
                         "stops": [[5, 8],[6, 12], [7, 13]]
                     },
