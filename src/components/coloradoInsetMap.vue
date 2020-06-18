@@ -10,8 +10,8 @@ export default {
 </script>
 <style lang="scss" scoped>
     #coloradoInset{
-        width: 20%;
-        height: 12%;
+        width: 22%;
+        height: 14%;
         position: absolute;
         left: 10px;
         bottom: 10px;
