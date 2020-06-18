@@ -4,10 +4,9 @@ export default {
         introText: "A story of hydropower exploration to urban flood monitoring",
         graphTitle: "U.S. Geological Survey’s Active Stream Gages",
         paragraphSections: [
-            {svgText: "The U.S. Geological Survey (USGS) Groundwater and Streamflow Information Program is " +  
-                            "funded by Congress to monitor drought, flood, and water quality across the US through a " +
-                            "network of stream gages. Many of these gages are also supported through cooperation with state " + 
-                            "and local funding partners."
+            {svgText: "The U.S. Geological Survey (USGS) Streamgaging Program is funded by Congress and over 1,400 " +
+                        "state and local cooperators to monitor drought, flood, and water quality across the US through " +
+                        "a network of stream gages."
             },
             {paragraphText: "The USGS began using stream gages to quantify the nation's flowing waters in 1889. " + 
                             "These days, many gages are equipped with sensors that measure temperature, conductivity, " + 

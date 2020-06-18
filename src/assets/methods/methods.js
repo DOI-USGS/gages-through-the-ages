@@ -7,7 +7,7 @@ export default{
             },
             {
                 'title': 'Calculating USGS stream gages',
-                'method': 'To calculate the annual number of active USGS stream gages, an inventory of the USGS National Water Information System was completed using an <a href="https://github.com/USGS-R/national-flow-observations" target="_blank">R-based reproducible data pipeline called national-flow-observations</a>. For the purposes of this visualization, "active" gages are considered those with at least 335 days of data every year.'
+                'method': 'To calculate the annual number of active USGS stream gages, an inventory of the USGS National Water Information System was completed using an <a href="https://github.com/USGS-R/national-flow-observations" target="_blank">R-based reproducible data pipeline called national-flow-observations</a>. For the purposes of this visualization, "active" gages are considered those with at least 335 days of data every year. Early gages with only monthly records were counted as active.'
             },
             {
                 'title': 'Determining if a gage is urban or non-urban',
