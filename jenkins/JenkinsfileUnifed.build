@@ -4,7 +4,7 @@ pipeline {
             label 'team:makerspace-small'
         }
     }
-    triggers { pollSCM('*/5 * * * *') }
+    triggers { pollSCM('H/5 * * * *') }
     parameters {
         choice(choices: ['test', 'beta', 'prod'], description: 's3 bucket that the build will target', name: 'BUILD_DEST')
         choice(choices: ['test', 'beta', 'prod'], description: 'The mode selected will tell Vue which environment variables to use. Various feature flags will be disabled/enabled depending on mode. More importantly, the source of the tiles will change, with the development build loading tiles from the test S3 bucket and the production build loading tiles from the prod S3 bucket.', name: 'VUE_BUILD_MODE')
