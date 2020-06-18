@@ -746,7 +746,6 @@ figure{
     margin: 3vh 0;
   }
   picture{
-    background: red;
     width: 100%;
     height: 100%;
     display: flex;
