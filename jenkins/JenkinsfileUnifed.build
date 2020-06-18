@@ -4,13 +4,14 @@ pipeline {
             label 'team:makerspace-small'
         }
     }
-
+    triggers { pollSCM('H/5 * * * *') }
     parameters {
-        choice(choices: ['test', 'qa', 'beta', 'prod'], description: 's3 bucket that the build will target', name: 'BUILD_DEST')
-        choice(choices: ['test', 'qa', 'beta', 'prod'], description: 'The mode selected will tell Vue which environment variables to use. Various feature flags will be disabled/enabled depending on mode. More importantly, the source of the tiles will change, with the development build loading tiles from the test S3 bucket and the production build loading tiles from the prod S3 bucket.', name: 'VUE_BUILD_MODE')
+        choice(choices: ['test', 'beta', 'prod'], description: 's3 bucket that the build will target', name: 'BUILD_DEST')
+        choice(choices: ['test', 'beta', 'prod'], description: 'The mode selected will tell Vue which environment variables to use. Various feature flags will be disabled/enabled depending on mode. More importantly, the source of the tiles will change, with the development build loading tiles from the test S3 bucket and the production build loading tiles from the prod S3 bucket.', name: 'VUE_BUILD_MODE')
         gitParameter(name: 'BRANCH_TAG',
                      type: 'PT_BRANCH_TAG',
-                     defaultValue: 'master')
+                     selectedValue: 'DEFAULT',
+                     defaultValue: 'origin/master')
     }
 
     stages {
@@ -51,21 +52,18 @@ pipeline {
             steps {
                 script {
                     if ("${params.BUILD_DEST}" == "prod") {
-                        targetDomain = "s3://gages-through-the-ages-prod-website"
-                    }
-                    else if ("${params.BUILD_DEST}" == "qa") {
-                        targetDomain = "s3://gages-through-the-ages-qa-website"
+                        targetDomain = "s3://water-visualizations-prod-website/visualizations/gages-through-the-ages"
                     }
                     else if ("${params.BUILD_DEST}" == "beta") {
-                        targetDomain = "s3://gages-through-the-ages-beta-website"
+                        targetDomain = "s3://water-visualizations-beta-website/visualizations/gages-through-the-ages"
                     }
                     else {
-                        targetDomain = "s3://gages-through-the-ages-test-website"
+                        targetDomain = "s3://water-visualizations-test-website/visualizations/gages-through-the-ages"
                     }
                 }
                 sh """
-                    aws s3 rm "${targetDomain}"
-                    aws s3 cp "$WORKSPACE/dist" "${targetDomain}"/gages-through-the-ages --recursive
+                    aws s3 rm "${targetDomain}" --recursive
+                    aws s3 cp "$WORKSPACE/dist" "${targetDomain}" --recursive
                 """
             }
         }
