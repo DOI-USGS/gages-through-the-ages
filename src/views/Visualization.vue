@@ -31,3 +31,8 @@
       }
   }
 </script>
+<style lang="scss" scoped>
+.section{
+  margin-bottom: 4vh;
+}
+</style>
