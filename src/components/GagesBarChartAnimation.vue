@@ -404,11 +404,14 @@
     >
       <p><span v-html="paragraph.svgText" /></p>
     </div>
-    <picture>
-      <source media="(min-width:600px)" srcset="~@/images/gage/gageMedium.jpg">
-      <source media="(min-width:1200px)" srcset="~@/images/gage/gageLarge.jpg">
-      <img src="~@/images/gage/gageSmall.jpg" alt="USGS Gage 15905100 on Atigun River" />
-    </picture>
+    <div id="gageImage">
+      <picture>
+        <source media="(min-width:600px)" srcset="~@/images/gage/gageMedium.jpg">
+        <source media="(min-width:1200px)" srcset="~@/images/gage/gageLarge.jpg">
+        <img src="~@/images/gage/gageSmall.jpg" alt="USGS Gage 15905100 on Atigun River" />
+      </picture>
+      <caption>USGS Gage 15905100 monitoring Atigun River in Alaska. Photo credit Jeff Conaway.</caption>
+    </div>
     <div
       v-for="paragraph in text.paragraphSections"
       :key="paragraph.paragraphText"
@@ -739,6 +742,9 @@ figure{
     opacity: 0;
   }
 
+  #gageImage{
+    margin: 3vh 0;
+  }
   picture{
     background: red;
     width: 100%;
@@ -750,9 +756,12 @@ figure{
       width: 100%;
     }
   }
-
-
-
+  caption{
+    width: 100%;
+    display: block;
+    padding: 5px;
+    font-style:italic;
+  }
   /*IE SVG Width Fix*/
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     #gage-map figure {

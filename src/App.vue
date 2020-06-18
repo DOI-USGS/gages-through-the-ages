@@ -42,8 +42,13 @@
   #app {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
     width: 100%;
+    h1,h2{
+      color: #003366;
+    }
+    p{
+      color: #2c3e50;
+    }
   }
   .svg-text {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -88,9 +93,6 @@
     margin: 0 auto;
   }
 
-  .section{
-    margin-bottom: 20px;
-  }
 
   @media screen and (min-width:768px){
     #header h3{
