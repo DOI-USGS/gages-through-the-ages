@@ -51,21 +51,18 @@ pipeline {
             steps {
                 script {
                     if ("${params.BUILD_DEST}" == "prod") {
-                        targetDomain = "s3://gages-through-the-ages-prod-website"
-                    }
-                    else if ("${params.BUILD_DEST}" == "qa") {
-                        targetDomain = "s3://gages-through-the-ages-qa-website"
+                        targetDomain = "s3://water-visualizations-prod-website/visualizations/gages-through-the-ages"
                     }
                     else if ("${params.BUILD_DEST}" == "beta") {
-                        targetDomain = "s3://gages-through-the-ages-beta-website"
+                        targetDomain = "s3://water-visualizations-beta-website/visualizations/gages-through-the-ages"
                     }
                     else {
-                        targetDomain = "s3://gages-through-the-ages-test-website"
+                        targetDomain = "s3://water-visualizations-test-website/visualizations/gages-through-the-ages"
                     }
                 }
                 sh """
-                    aws s3 rm "${targetDomain}"
-                    aws s3 cp "$WORKSPACE/dist" "${targetDomain}"/gages-through-the-ages --recursive
+                    aws s3 rm "${targetDomain}" --recursive
+                    aws s3 cp "$WORKSPACE/dist" "${targetDomain}" --recursive
                 """
             }
         }
