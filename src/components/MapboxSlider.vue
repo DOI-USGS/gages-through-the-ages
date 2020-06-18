@@ -116,7 +116,7 @@ export default {
                 container: 'coloradoBefore',
                 style: standard.style,
                 center: this.coloradoCenter,
-                //zoom: this.zoom,
+                // zoom: 5,
                 maxBounds: coloradoBounds,
                 maxZoom: 9,
                 interactive: this.interactive
@@ -125,7 +125,7 @@ export default {
                 container: 'coloradoAfter',
                 style: standard.style,
                 center: this.coloradoCenter,
-                //zoom: this.zoom,
+                // zoom: 5,
                 maxBounds: coloradoBounds,
                 maxZoom: 9,
                 interactive: this.interactive
@@ -244,7 +244,7 @@ export default {
 @import '~mapbox-gl/dist/mapbox-gl.css';
 @import '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
 .spacer{
-  margin-top: 20px;
+  margin-top: 4vh;
 }
 .maps{
     position: relative;
