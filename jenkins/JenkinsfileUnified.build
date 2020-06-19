@@ -29,7 +29,7 @@ pipeline {
                           gitTool: 'Default',
                           submoduleCfg: [],
                           userRemoteConfigs: [[url: 'https://github.com/usgs-makerspace/gages-through-the-ages']]
-                          userRemoteConfigs: [[url: 'https://github.com/usgs-makerspace/gages-through-the-ages'.git]]
+                          userRemoteConfigs: [[url: 'https://github.com/usgs-makerspace/gages-through-the-ages.git']]
                         ])
                 }
         }
