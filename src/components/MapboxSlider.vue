@@ -17,6 +17,10 @@
         />
       </div>
     </div>
+    <caption class="mapcaption">
+        Figure 2. An interactive slider map depicting the change in <span id="urbanGage" class="legendDot" /> urban and <span id="ruralGage" class="legendDot"/>
+        non-urban stream gages and the growth of <span id="urbanPolygon"/> extent between 1967 and 2018in north central Georgia.
+      </caption>
     <div
       v-for="paragraph in atlantaText.paragraphSections"
       :key="paragraph.paragraphText"
@@ -37,6 +41,10 @@
         />
       </div>
     </div>
+    <caption class="mapcaption">
+      Figure 3. An interactive slider map depictingnon-urban-to-urban shiftinstream gage location between 
+      1967 and 2018 in the Rocky Mountains.
+    </caption>
     <div
     v-for="paragraph in coloradoText.paragraphSections"
     :key="paragraph.paragraphText"
@@ -241,6 +249,7 @@ export default {
 <style scoped lang='scss'>
 @import '~mapbox-gl/dist/mapbox-gl.css';
 @import '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
+$polygon: '~@/assets/images/polygon.png';
 .spacer{
   margin-top: 4vh;
 }
@@ -282,9 +291,33 @@ export default {
     text-align: center;
   }
 }
+.mapcaption{
+  text-align: left;
+  line-height: 1.4em;
+}
+.legendDot{
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  #urbanGage{
+    background: #f7bb2e;
+  }
+  #ruralGage{
+    background: #b087bd;
+  }
+  #urbanPolygon{
+    background-image: url($polygon);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+  }
 </style>
 <style lang='scss'>
-$polygon: '~@/assets/images/polygon.png';
   .yearDiv{
     position: relative;
     z-index: 9000;
@@ -310,27 +343,5 @@ $polygon: '~@/assets/images/polygon.png';
   }
   .mapboxgl-compare .compare-swiper-vertical{
     box-shadow: inset 0 0 0 0 #fff
-  }
-  .legendDot{
-    background: red;
-    height: 12px;
-    width: 12px;
-    display: inline-block;
-    border-radius: 50%;
-  }
-  #urbanGage{
-    background: #f7bb2e;
-  }
-  #ruralGage{
-    background: #b087bd;
-  }
-  #urbanPolygon{
-    background-image: url($polygon);
-    background-size: contain;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    height: 20px;
-    width: 20px;
-    display: inline-block;
   }
 </style>

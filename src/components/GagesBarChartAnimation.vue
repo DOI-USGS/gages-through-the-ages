@@ -759,7 +759,7 @@ figure{
   caption{
     width: 100%;
     display: block;
-    padding: 5px;
+    padding: 5px 0;
     font-style:italic;
   }
   /*IE SVG Width Fix*/
