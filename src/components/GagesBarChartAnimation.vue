@@ -264,136 +264,136 @@
           </g>
         </g>
         <g id="year-bars-mouser" class="mouser-shape">
-          <rect x="-0.6" height="100" width="4.7" @mousemove="hovertext( $event,'27 gages in 1890', evt);" @mouseover="pause('1890')" @mouseout="hovertext('');play()"/>
-          <rect x="4.1" height="100" width="4.7" @mousemove="hovertext( $event,'32 gages in 1891', evt);" @mouseover="pause('1891')" @mouseout="hovertext('');play()"/>
-          <rect x="8.8" height="100" width="4.7" @mousemove="hovertext( $event,'32 gages in 1892', evt);" @mouseover="pause('1892')" @mouseout="hovertext('');play()"/>
-          <rect x="13.5" height="100" width="4.7" @mousemove="hovertext( $event,'33 gages in 1893', evt);" @mouseover="pause('1893')" @mouseout="hovertext('');play()"/>
-          <rect x="18.2" height="100" width="4.7" @mousemove="hovertext( $event,'33 gages in 1894', evt);" @mouseover="pause('1894')" @mouseout="hovertext('');play()"/>
-          <rect x="22.9" height="100" width="4.7" @mousemove="hovertext( $event,'46 gages in 1895', evt);" @mouseover="pause('1895')" @mouseout="hovertext('');play()"/>
-          <rect x="27.6" height="100" width="4.7" @mousemove="hovertext( $event,'75 gages in 1896', evt);" @mouseover="pause('1896')" @mouseout="hovertext('');play()"/>
-          <rect x="32.3" height="100" width="4.7" @mousemove="hovertext( $event,'91 gages in 1897', evt);" @mouseover="pause('1897')" @mouseout="hovertext('');play()"/>
-          <rect x="37" height="100" width="4.7" @mousemove="hovertext( $event,'106 gages in 1898', evt);" @mouseover="pause('1898')" @mouseout="hovertext('');play()"/>
-          <rect x="41.7" height="100" width="4.7" @mousemove="hovertext( $event,'118 gages in 1899', evt);" @mouseover="pause('1899')" @mouseout="hovertext('');play()"/>
-          <rect x="46.4" height="100" width="4.7" @mousemove="hovertext( $event,'123 gages in 1900', evt);" @mouseover="pause('1900')" @mouseout="hovertext('');play()"/>
-          <rect x="51.1" height="100" width="4.7" @mousemove="hovertext( $event,'140 gages in 1901', evt);" @mouseover="pause('1901')" @mouseout="hovertext('');play()"/>
-          <rect x="55.8" height="100" width="4.7" @mousemove="hovertext( $event,'159 gages in 1902', evt);" @mouseover="pause('1902')" @mouseout="hovertext('');play()"/>
-          <rect x="60.5" height="100" width="4.7" @mousemove="hovertext( $event,'194 gages in 1903', evt);" @mouseover="pause('1903')" @mouseout="hovertext('');play()"/>
-          <rect x="65.2" height="100" width="4.7" @mousemove="hovertext( $event,'270 gages in 1904', evt);" @mouseover="pause('1904')" @mouseout="hovertext('');play()"/>
-          <rect x="69.9" height="100" width="4.7" @mousemove="hovertext( $event,'321 gages in 1905', evt);" @mouseover="pause('1905')" @mouseout="hovertext('');play()"/>
-          <rect x="74.6" height="100" width="4.7" @mousemove="hovertext( $event,'321 gages in 1906', evt);" @mouseover="pause('1906')" @mouseout="hovertext('');play()"/>
-          <rect x="79.3" height="100" width="4.7" @mousemove="hovertext( $event,'323 gages in 1907', evt);" @mouseover="pause('1907')" @mouseout="hovertext('');play()"/>
-          <rect x="84" height="100" width="4.7" @mousemove="hovertext( $event,'378 gages in 1908', evt);" @mouseover="pause('1908')" @mouseout="hovertext('');play()"/>
-          <rect x="88.7" height="100" width="4.7" @mousemove="hovertext( $event,'431 gages in 1909', evt);" @mouseover="pause('1909')" @mouseout="hovertext('');play()"/>
-          <rect x="93.4" height="100" width="4.7" @mousemove="hovertext( $event,'538 gages in 1910', evt);" @mouseover="pause('1910')" @mouseout="hovertext('');play()"/>
-          <rect x="98.1" height="100" width="4.7" @mousemove="hovertext( $event,'684 gages in 1911', evt);" @mouseover="pause('1911')" @mouseout="hovertext('');play()"/>
-          <rect x="102.8" height="100" width="4.7" @mousemove="hovertext( $event,'803 gages in 1912', evt);" @mouseover="pause('1912')" @mouseout="hovertext('');play()"/>
-          <rect x="107.5" height="100" width="4.7" @mousemove="hovertext( $event,'782 gages in 1913', evt);" @mouseover="pause('1913')" @mouseout="hovertext('');play()"/>
-          <rect x="112.2" height="100" width="4.7" @mousemove="hovertext( $event,'879 gages in 1914', evt);" @mouseover="pause('1914')" @mouseout="hovertext('');play()"/>
-          <rect x="116.9" height="100" width="4.7" @mousemove="hovertext( $event,'916 gages in 1915', evt);" @mouseover="pause('1915')" @mouseout="hovertext('');play()"/>
-          <rect x="121.6" height="100" width="4.7" @mousemove="hovertext( $event,'947 gages in 1916', evt);" @mouseover="pause('1916')" @mouseout="hovertext('');play()"/>
-          <rect x="126.3" height="100" width="4.7" @mousemove="hovertext( $event,'926 gages in 1917', evt);" @mouseover="pause('1917')" @mouseout="hovertext('');play()"/>
-          <rect x="131" height="100" width="4.7" @mousemove="hovertext( $event,'941 gages in 1918', evt);" @mouseover="pause('1918')" @mouseout="hovertext('');play()"/>
-          <rect x="135.7" height="100" width="4.7" @mousemove="hovertext( $event,'962 gages in 1919', evt);" @mouseover="pause('1919')" @mouseout="hovertext('');play()"/>
-          <rect x="140.4" height="100" width="4.7" @mousemove="hovertext( $event,'1062 gages in 1920', evt);" @mouseover="pause('1920')" @mouseout="hovertext('');play()"/>
-          <rect x="145.1" height="100" width="4.7" @mousemove="hovertext( $event,'1108 gages in 1921', evt);" @mouseover="pause('1921')" @mouseout="hovertext('');play()"/>
-          <rect x="149.8" height="100" width="4.7" @mousemove="hovertext( $event,'1259 gages in 1922', evt);" @mouseover="pause('1922')" @mouseout="hovertext('');play()"/>
-          <rect x="154.5" height="100" width="4.7" @mousemove="hovertext( $event,'1328 gages in 1923', evt);" @mouseover="pause('1923')" @mouseout="hovertext('');play()"/>
-          <rect x="159.2" height="100" width="4.7" @mousemove="hovertext( $event,'1405 gages in 1924', evt);" @mouseover="pause('1924')" @mouseout="hovertext('');play()"/>
-          <rect x="163.9" height="100" width="4.7" @mousemove="hovertext( $event,'1451 gages in 1925', evt);" @mouseover="pause('1925')" @mouseout="hovertext('');play()"/>
-          <rect x="168.6" height="100" width="4.7" @mousemove="hovertext( $event,'1537 gages in 1926', evt);" @mouseover="pause('1926')" @mouseout="hovertext('');play()"/>
-          <rect x="173.3" height="100" width="4.7" @mousemove="hovertext( $event,'1588 gages in 1927', evt);" @mouseover="pause('1927')" @mouseout="hovertext('');play()"/>
-          <rect x="178" height="100" width="4.7" @mousemove="hovertext( $event,'1703 gages in 1928', evt);" @mouseover="pause('1928')" @mouseout="hovertext('');play()"/>
-          <rect x="182.7" height="100" width="4.7" @mousemove="hovertext( $event,'2017 gages in 1929', evt);" @mouseover="pause('1929')" @mouseout="hovertext('');play()"/>
-          <rect x="187.4" height="100" width="4.7" @mousemove="hovertext( $event,'2256 gages in 1930', evt);" @mouseover="pause('1930')" @mouseout="hovertext('');play()"/>
-          <rect x="192.1" height="100" width="4.7" @mousemove="hovertext( $event,'2386 gages in 1931', evt);" @mouseover="pause('1931')" @mouseout="hovertext('');play()"/>
-          <rect x="196.8" height="100" width="4.7" @mousemove="hovertext( $event,'2429 gages in 1932', evt);" @mouseover="pause('1932')" @mouseout="hovertext('');play()"/>
-          <rect x="201.5" height="100" width="4.7" @mousemove="hovertext( $event,'2441 gages in 1933', evt);" @mouseover="pause('1933')" @mouseout="hovertext('');play()"/>
-          <rect x="206.2" height="100" width="4.7" @mousemove="hovertext( $event,'2443 gages in 1934', evt);" @mouseover="pause('1934')" @mouseout="hovertext('');play()"/>
-          <rect x="210.9" height="100" width="4.7" @mousemove="hovertext( $event,'2598 gages in 1935', evt);" @mouseover="pause('1935')" @mouseout="hovertext('');play()"/>
-          <rect x="215.6" height="100" width="4.7" @mousemove="hovertext( $event,'2702 gages in 1936', evt);" @mouseover="pause('1936')" @mouseout="hovertext('');play()"/>
-          <rect x="220.3" height="100" width="4.7" @mousemove="hovertext( $event,'2809 gages in 1937', evt);" @mouseover="pause('1937')" @mouseout="hovertext('');play()"/>
-          <rect x="225" height="100" width="4.7" @mousemove="hovertext( $event,'2996 gages in 1938', evt);" @mouseover="pause('1938')" @mouseout="hovertext('');play()"/>
-          <rect x="229.7" height="100" width="4.7" @mousemove="hovertext( $event,'3398 gages in 1939', evt);" @mouseover="pause('1939')" @mouseout="hovertext('');play()"/>
-          <rect x="234.4" height="100" width="4.7" @mousemove="hovertext( $event,'3858 gages in 1940', evt);" @mouseover="pause('1940')" @mouseout="hovertext('');play()"/>
-          <rect x="239.1" height="100" width="4.7" @mousemove="hovertext( $event,'4059 gages in 1941', evt);" @mouseover="pause('1941')" @mouseout="hovertext('');play()"/>
-          <rect x="243.8" height="100" width="4.7" @mousemove="hovertext( $event,'4183 gages in 1942', evt);" @mouseover="pause('1942')" @mouseout="hovertext('');play()"/>
-          <rect x="248.5" height="100" width="4.7" @mousemove="hovertext( $event,'4348 gages in 1943', evt);" @mouseover="pause('1943')" @mouseout="hovertext('');play()"/>
-          <rect x="253.2" height="100" width="4.7" @mousemove="hovertext( $event,'4545 gages in 1944', evt);" @mouseover="pause('1944')" @mouseout="hovertext('');play()"/>
-          <rect x="257.9" height="100" width="4.7" @mousemove="hovertext( $event,'4715 gages in 1945', evt);" @mouseover="pause('1945')" @mouseout="hovertext('');play()"/>
-          <rect x="262.6" height="100" width="4.7" @mousemove="hovertext( $event,'4943 gages in 1946', evt);" @mouseover="pause('1946')" @mouseout="hovertext('');play()"/>
-          <rect x="267.3" height="100" width="4.7" @mousemove="hovertext( $event,'5160 gages in 1947', evt);" @mouseover="pause('1947')" @mouseout="hovertext('');play()"/>
-          <rect x="272" height="100" width="4.7" @mousemove="hovertext( $event,'5328 gages in 1948', evt);" @mouseover="pause('1948')" @mouseout="hovertext('');play()"/>
-          <rect x="276.7" height="100" width="4.7" @mousemove="hovertext( $event,'5467 gages in 1949', evt);" @mouseover="pause('1949')" @mouseout="hovertext('');play()"/>
-          <rect x="281.4" height="100" width="4.7" @mousemove="hovertext( $event,'5610 gages in 1950', evt);" @mouseover="pause('1950')" @mouseout="hovertext('');play()"/>
-          <rect x="286.1" height="100" width="4.7" @mousemove="hovertext( $event,'5794 gages in 1951', evt);" @mouseover="pause('1951')" @mouseout="hovertext('');play()"/>
-          <rect x="290.8" height="100" width="4.7" @mousemove="hovertext( $event,'6004 gages in 1952', evt);" @mouseover="pause('1952')" @mouseout="hovertext('');play()"/>
-          <rect x="295.5" height="100" width="4.7" @mousemove="hovertext( $event,'6025 gages in 1953', evt);" @mouseover="pause('1953')" @mouseout="hovertext('');play()"/>
-          <rect x="300.2" height="100" width="4.7" @mousemove="hovertext( $event,'6061 gages in 1954', evt);" @mouseover="pause('1954')" @mouseout="hovertext('');play()"/>
-          <rect x="304.9" height="100" width="4.7" @mousemove="hovertext( $event,'6075 gages in 1955', evt);" @mouseover="pause('1955')" @mouseout="hovertext('');play()"/>
-          <rect x="309.6" height="100" width="4.7" @mousemove="hovertext( $event,'6165 gages in 1956', evt);" @mouseover="pause('1956')" @mouseout="hovertext('');play()"/>
-          <rect x="314.3" height="100" width="4.7" @mousemove="hovertext( $event,'6246 gages in 1957', evt);" @mouseover="pause('1957')" @mouseout="hovertext('');play()"/>
-          <rect x="319" height="100" width="4.7" @mousemove="hovertext( $event,'6354 gages in 1958', evt);" @mouseover="pause('1958')" @mouseout="hovertext('');play()"/>
-          <rect x="323.7" height="100" width="4.7" @mousemove="hovertext( $event,'6488 gages in 1959', evt);" @mouseover="pause('1959')" @mouseout="hovertext('');play()"/>
-          <rect x="328.4" height="100" width="4.7" @mousemove="hovertext( $event,'6662 gages in 1960', evt);" @mouseover="pause('1960')" @mouseout="hovertext('');play()"/>
-          <rect x="333.1" height="100" width="4.7" @mousemove="hovertext( $event,'6903 gages in 1961', evt);" @mouseover="pause('1961')" @mouseout="hovertext('');play()"/>
-          <rect x="337.8" height="100" width="4.7" @mousemove="hovertext( $event,'7013 gages in 1962', evt);" @mouseover="pause('1962')" @mouseout="hovertext('');play()"/>
-          <rect x="342.5" height="100" width="4.7" @mousemove="hovertext( $event,'7128 gages in 1963', evt);" @mouseover="pause('1963')" @mouseout="hovertext('');play()"/>
-          <rect x="347.2" height="100" width="4.7" @mousemove="hovertext( $event,'7397 gages in 1964', evt);" @mouseover="pause('1964')" @mouseout="hovertext('');play()"/>
-          <rect x="351.9" height="100" width="4.7" @mousemove="hovertext( $event,'7559 gages in 1965', evt);" @mouseover="pause('1965')" @mouseout="hovertext('');play()"/>
-          <rect x="356.6" height="100" width="4.7" @mousemove="hovertext( $event,'7771 gages in 1966', evt);" @mouseover="pause('1966')" @mouseout="hovertext('');play()"/>
-          <rect x="361.3" height="100" width="4.7" @mousemove="hovertext( $event,'7926 gages in 1967', evt);" @mouseover="pause('1967')" @mouseout="hovertext('');play()"/>
-          <rect x="366" height="100" width="4.7" @mousemove="hovertext( $event,'7844 gages in 1968', evt);" @mouseover="pause('1968')" @mouseout="hovertext('');play()"/>
-          <rect x="370.7" height="100" width="4.7" @mousemove="hovertext( $event,'7832 gages in 1969', evt);" @mouseover="pause('1969')" @mouseout="hovertext('');play()"/>
-          <rect x="375.4" height="100" width="4.7" @mousemove="hovertext( $event,'7706 gages in 1970', evt);" @mouseover="pause('1970')" @mouseout="hovertext('');play()"/>
-          <rect x="380.1" height="100" width="4.7" @mousemove="hovertext( $event,'7465 gages in 1971', evt);" @mouseover="pause('1971')" @mouseout="hovertext('');play()"/>
-          <rect x="384.8" height="100" width="4.7" @mousemove="hovertext( $event,'7407 gages in 1972', evt);" @mouseover="pause('1972')" @mouseout="hovertext('');play()"/>
-          <rect x="389.5" height="100" width="4.7" @mousemove="hovertext( $event,'7289 gages in 1973', evt);" @mouseover="pause('1973')" @mouseout="hovertext('');play()"/>
-          <rect x="394.2" height="100" width="4.7" @mousemove="hovertext( $event,'7227 gages in 1974', evt);" @mouseover="pause('1974')" @mouseout="hovertext('');play()"/>
-          <rect x="398.9" height="100" width="4.7" @mousemove="hovertext( $event,'7376 gages in 1975', evt);" @mouseover="pause('1975')" @mouseout="hovertext('');play()"/>
-          <rect x="403.6" height="100" width="4.7" @mousemove="hovertext( $event,'7455 gages in 1976', evt);" @mouseover="pause('1976')" @mouseout="hovertext('');play()"/>
-          <rect x="408.3" height="100" width="4.7" @mousemove="hovertext( $event,'7444 gages in 1977', evt);" @mouseover="pause('1977')" @mouseout="hovertext('');play()"/>
-          <rect x="413" height="100" width="4.7" @mousemove="hovertext( $event,'7449 gages in 1978', evt);" @mouseover="pause('1978')" @mouseout="hovertext('');play()"/>
-          <rect x="417.7" height="100" width="4.7" @mousemove="hovertext( $event,'7416 gages in 1979', evt);" @mouseover="pause('1979')" @mouseout="hovertext('');play()"/>
-          <rect x="422.4" height="100" width="4.7" @mousemove="hovertext( $event,'7412 gages in 1980', evt);" @mouseover="pause('1980')" @mouseout="hovertext('');play()"/>
-          <rect x="427.1" height="100" width="4.7" @mousemove="hovertext( $event,'7103 gages in 1981', evt);" @mouseover="pause('1981')" @mouseout="hovertext('');play()"/>
-          <rect x="431.8" height="100" width="4.7" @mousemove="hovertext( $event,'6754 gages in 1982', evt);" @mouseover="pause('1982')" @mouseout="hovertext('');play()"/>
-          <rect x="436.5" height="100" width="4.7" @mousemove="hovertext( $event,'6611 gages in 1983', evt);" @mouseover="pause('1983')" @mouseout="hovertext('');play()"/>
-          <rect x="441.2" height="100" width="4.7" @mousemove="hovertext( $event,'6654 gages in 1984', evt);" @mouseover="pause('1984')" @mouseout="hovertext('');play()"/>
-          <rect x="445.9" height="100" width="4.7" @mousemove="hovertext( $event,'6619 gages in 1985', evt);" @mouseover="pause('1985')" @mouseout="hovertext('');play()"/>
-          <rect x="450.6" height="100" width="4.7" @mousemove="hovertext( $event,'6554 gages in 1986', evt);" @mouseover="pause('1986')" @mouseout="hovertext('');play()"/>
-          <rect x="455.3" height="100" width="4.7" @mousemove="hovertext( $event,'6560 gages in 1987', evt);" @mouseover="pause('1987')" @mouseout="hovertext('');play()"/>
-          <rect x="460" height="100" width="4.7" @mousemove="hovertext( $event,'6681 gages in 1988', evt);" @mouseover="pause('1988')" @mouseout="hovertext('');play()"/>
-          <rect x="464.7" height="100" width="4.7" @mousemove="hovertext( $event,'6667 gages in 1989', evt);" @mouseover="pause('1989')" @mouseout="hovertext('');play()"/>
-          <rect x="469.4" height="100" width="4.7" @mousemove="hovertext( $event,'6729 gages in 1990', evt);" @mouseover="pause('1990')" @mouseout="hovertext('');play()"/>
-          <rect x="474.1" height="100" width="4.7" @mousemove="hovertext( $event,'6636 gages in 1991', evt);" @mouseover="pause('1991')" @mouseout="hovertext('');play()"/>
-          <rect x="478.8" height="100" width="4.7" @mousemove="hovertext( $event,'6633 gages in 1992', evt);" @mouseover="pause('1992')" @mouseout="hovertext('');play()"/>
-          <rect x="483.5" height="100" width="4.7" @mousemove="hovertext( $event,'6576 gages in 1993', evt);" @mouseover="pause('1993')" @mouseout="hovertext('');play()"/>
-          <rect x="488.2" height="100" width="4.7" @mousemove="hovertext( $event,'6549 gages in 1994', evt);" @mouseover="pause('1994')" @mouseout="hovertext('');play()"/>
-          <rect x="492.9" height="100" width="4.7" @mousemove="hovertext( $event,'6430 gages in 1995', evt);" @mouseover="pause('1995')" @mouseout="hovertext('');play()"/>
-          <rect x="497.6" height="100" width="4.7" @mousemove="hovertext( $event,'6386 gages in 1996', evt);" @mouseover="pause('1996')" @mouseout="hovertext('');play()"/>
-          <rect x="502.3" height="100" width="4.7" @mousemove="hovertext( $event,'6476 gages in 1997', evt);" @mouseover="pause('1997')" @mouseout="hovertext('');play()"/>
-          <rect x="507" height="100" width="4.7" @mousemove="hovertext( $event,'6520 gages in 1998', evt);" @mouseover="pause('1998')" @mouseout="hovertext('');play()"/>
-          <rect x="511.7" height="100" width="4.7" @mousemove="hovertext( $event,'6743 gages in 1999', evt);" @mouseover="pause('1999')" @mouseout="hovertext('');play()"/>
-          <rect x="516.4" height="100" width="4.7" @mousemove="hovertext( $event,'6867 gages in 2000', evt);" @mouseover="pause('2000')" @mouseout="hovertext('');play()"/>
-          <rect x="521.1" height="100" width="4.7" @mousemove="hovertext( $event,'7026 gages in 2001', evt);" @mouseover="pause('2001')" @mouseout="hovertext('');play()"/>
-          <rect x="525.8" height="100" width="4.7" @mousemove="hovertext( $event,'7237 gages in 2002', evt);" @mouseover="pause('2002')" @mouseout="hovertext('');play()"/>
-          <rect x="530.5" height="100" width="4.7" @mousemove="hovertext( $event,'7339 gages in 2003', evt);" @mouseover="pause('2003')" @mouseout="hovertext('');play()"/>
-          <rect x="535.2" height="100" width="4.7" @mousemove="hovertext( $event,'7285 gages in 2004', evt);" @mouseover="pause('2004')" @mouseout="hovertext('');play()"/>
-          <rect x="539.9" height="100" width="4.7" @mousemove="hovertext( $event,'7291 gages in 2005', evt);" @mouseover="pause('2005')" @mouseout="hovertext('');play()"/>
-          <rect x="544.6" height="100" width="4.7" @mousemove="hovertext( $event,'7458 gages in 2006', evt);" @mouseover="pause('2006')" @mouseout="hovertext('');play()"/>
-          <rect x="549.3" height="100" width="4.7" @mousemove="hovertext( $event,'7508 gages in 2007', evt);" @mouseover="pause('2007')" @mouseout="hovertext('');play()"/>
-          <rect x="554" height="100" width="4.7" @mousemove="hovertext( $event,'7685 gages in 2008', evt);" @mouseover="pause('2008')" @mouseout="hovertext('');play()"/>
-          <rect x="558.7" height="100" width="4.7" @mousemove="hovertext( $event,'7687 gages in 2009', evt);" @mouseover="pause('2009')" @mouseout="hovertext('');play()"/>
-          <rect x="563.4" height="100" width="4.7" @mousemove="hovertext( $event,'7827 gages in 2010', evt);" @mouseover="pause('2010')" @mouseout="hovertext('');play()"/>
-          <rect x="568.1" height="100" width="4.7" @mousemove="hovertext( $event,'7877 gages in 2011', evt);" @mouseover="pause('2011')" @mouseout="hovertext('');play()"/>
-          <rect x="572.8" height="100" width="4.7" @mousemove="hovertext( $event,'7984 gages in 2012', evt);" @mouseover="pause('2012')" @mouseout="hovertext('');play()"/>
-          <rect x="577.5" height="100" width="4.7" @mousemove="hovertext( $event,'8068 gages in 2013', evt);" @mouseover="pause('2013')" @mouseout="hovertext('');play()"/>
-          <rect x="582.2" height="100" width="4.7" @mousemove="hovertext( $event,'8033 gages in 2014', evt);" @mouseover="pause('2014')" @mouseout="hovertext('');play()"/>
-          <rect x="586.9" height="100" width="4.7" @mousemove="hovertext( $event,'8169 gages in 2015', evt);" @mouseover="pause('2015')" @mouseout="hovertext('');play()"/>
-          <rect x="591.6" height="100" width="4.7" @mousemove="hovertext( $event,'8181 gages in 2016', evt);" @mouseover="pause('2016')" @mouseout="hovertext('');play()"/>
-          <rect x="596.3" height="100" width="4.7" @mousemove="hovertext( $event,'8224 gages in 2017', evt);" @mouseover="pause('2017')" @mouseout="hovertext('');play()"/>
-          <rect x="601" height="100" width="4.7" @mousemove="hovertext( $event,'8461 gages in 2018', evt);" @mouseover="pause('2018')" @mouseout="hovertext('');play()"/>
-          <rect x="605.7" height="100" width="4.7" @mousemove="hovertext( $event,'8134 gages in 2019', evt);" @mouseover="pause('2019')" @mouseout="hovertext('');play()"/>
+          <rect x="-0.6" height="100" width="4.7" @mousemove="hovertext( $event,'27 gages in 1890');" @mouseover="pause('1890')" @mouseout="hovertext('');play()"/>
+          <rect x="4.1" height="100" width="4.7" @mousemove="hovertext( $event,'32 gages in 1891');" @mouseover="pause('1891')" @mouseout="hovertext('');play()"/>
+          <rect x="8.8" height="100" width="4.7" @mousemove="hovertext( $event,'32 gages in 1892');" @mouseover="pause('1892')" @mouseout="hovertext('');play()"/>
+          <rect x="13.5" height="100" width="4.7" @mousemove="hovertext( $event,'33 gages in 1893');" @mouseover="pause('1893')" @mouseout="hovertext('');play()"/>
+          <rect x="18.2" height="100" width="4.7" @mousemove="hovertext( $event,'33 gages in 1894');" @mouseover="pause('1894')" @mouseout="hovertext('');play()"/>
+          <rect x="22.9" height="100" width="4.7" @mousemove="hovertext( $event,'46 gages in 1895');" @mouseover="pause('1895')" @mouseout="hovertext('');play()"/>
+          <rect x="27.6" height="100" width="4.7" @mousemove="hovertext( $event,'75 gages in 1896');" @mouseover="pause('1896')" @mouseout="hovertext('');play()"/>
+          <rect x="32.3" height="100" width="4.7" @mousemove="hovertext( $event,'91 gages in 1897');" @mouseover="pause('1897')" @mouseout="hovertext('');play()"/>
+          <rect x="37" height="100" width="4.7" @mousemove="hovertext( $event,'106 gages in 1898');" @mouseover="pause('1898')" @mouseout="hovertext('');play()"/>
+          <rect x="41.7" height="100" width="4.7" @mousemove="hovertext( $event,'118 gages in 1899');" @mouseover="pause('1899')" @mouseout="hovertext('');play()"/>
+          <rect x="46.4" height="100" width="4.7" @mousemove="hovertext( $event,'123 gages in 1900');" @mouseover="pause('1900')" @mouseout="hovertext('');play()"/>
+          <rect x="51.1" height="100" width="4.7" @mousemove="hovertext( $event,'140 gages in 1901');" @mouseover="pause('1901')" @mouseout="hovertext('');play()"/>
+          <rect x="55.8" height="100" width="4.7" @mousemove="hovertext( $event,'159 gages in 1902');" @mouseover="pause('1902')" @mouseout="hovertext('');play()"/>
+          <rect x="60.5" height="100" width="4.7" @mousemove="hovertext( $event,'194 gages in 1903');" @mouseover="pause('1903')" @mouseout="hovertext('');play()"/>
+          <rect x="65.2" height="100" width="4.7" @mousemove="hovertext( $event,'270 gages in 1904');" @mouseover="pause('1904')" @mouseout="hovertext('');play()"/>
+          <rect x="69.9" height="100" width="4.7" @mousemove="hovertext( $event,'321 gages in 1905');" @mouseover="pause('1905')" @mouseout="hovertext('');play()"/>
+          <rect x="74.6" height="100" width="4.7" @mousemove="hovertext( $event,'321 gages in 1906');" @mouseover="pause('1906')" @mouseout="hovertext('');play()"/>
+          <rect x="79.3" height="100" width="4.7" @mousemove="hovertext( $event,'323 gages in 1907');" @mouseover="pause('1907')" @mouseout="hovertext('');play()"/>
+          <rect x="84" height="100" width="4.7" @mousemove="hovertext( $event,'378 gages in 1908');" @mouseover="pause('1908')" @mouseout="hovertext('');play()"/>
+          <rect x="88.7" height="100" width="4.7" @mousemove="hovertext( $event,'431 gages in 1909');" @mouseover="pause('1909')" @mouseout="hovertext('');play()"/>
+          <rect x="93.4" height="100" width="4.7" @mousemove="hovertext( $event,'538 gages in 1910');" @mouseover="pause('1910')" @mouseout="hovertext('');play()"/>
+          <rect x="98.1" height="100" width="4.7" @mousemove="hovertext( $event,'684 gages in 1911');" @mouseover="pause('1911')" @mouseout="hovertext('');play()"/>
+          <rect x="102.8" height="100" width="4.7" @mousemove="hovertext( $event,'803 gages in 1912');" @mouseover="pause('1912')" @mouseout="hovertext('');play()"/>
+          <rect x="107.5" height="100" width="4.7" @mousemove="hovertext( $event,'782 gages in 1913');" @mouseover="pause('1913')" @mouseout="hovertext('');play()"/>
+          <rect x="112.2" height="100" width="4.7" @mousemove="hovertext( $event,'879 gages in 1914');" @mouseover="pause('1914')" @mouseout="hovertext('');play()"/>
+          <rect x="116.9" height="100" width="4.7" @mousemove="hovertext( $event,'916 gages in 1915');" @mouseover="pause('1915')" @mouseout="hovertext('');play()"/>
+          <rect x="121.6" height="100" width="4.7" @mousemove="hovertext( $event,'947 gages in 1916');" @mouseover="pause('1916')" @mouseout="hovertext('');play()"/>
+          <rect x="126.3" height="100" width="4.7" @mousemove="hovertext( $event,'926 gages in 1917');" @mouseover="pause('1917')" @mouseout="hovertext('');play()"/>
+          <rect x="131" height="100" width="4.7" @mousemove="hovertext( $event,'941 gages in 1918');" @mouseover="pause('1918')" @mouseout="hovertext('');play()"/>
+          <rect x="135.7" height="100" width="4.7" @mousemove="hovertext( $event,'962 gages in 1919');" @mouseover="pause('1919')" @mouseout="hovertext('');play()"/>
+          <rect x="140.4" height="100" width="4.7" @mousemove="hovertext( $event,'1062 gages in 1920');" @mouseover="pause('1920')" @mouseout="hovertext('');play()"/>
+          <rect x="145.1" height="100" width="4.7" @mousemove="hovertext( $event,'1108 gages in 1921');" @mouseover="pause('1921')" @mouseout="hovertext('');play()"/>
+          <rect x="149.8" height="100" width="4.7" @mousemove="hovertext( $event,'1259 gages in 1922');" @mouseover="pause('1922')" @mouseout="hovertext('');play()"/>
+          <rect x="154.5" height="100" width="4.7" @mousemove="hovertext( $event,'1328 gages in 1923');" @mouseover="pause('1923')" @mouseout="hovertext('');play()"/>
+          <rect x="159.2" height="100" width="4.7" @mousemove="hovertext( $event,'1405 gages in 1924');" @mouseover="pause('1924')" @mouseout="hovertext('');play()"/>
+          <rect x="163.9" height="100" width="4.7" @mousemove="hovertext( $event,'1451 gages in 1925');" @mouseover="pause('1925')" @mouseout="hovertext('');play()"/>
+          <rect x="168.6" height="100" width="4.7" @mousemove="hovertext( $event,'1537 gages in 1926');" @mouseover="pause('1926')" @mouseout="hovertext('');play()"/>
+          <rect x="173.3" height="100" width="4.7" @mousemove="hovertext( $event,'1588 gages in 1927');" @mouseover="pause('1927')" @mouseout="hovertext('');play()"/>
+          <rect x="178" height="100" width="4.7" @mousemove="hovertext( $event,'1703 gages in 1928');" @mouseover="pause('1928')" @mouseout="hovertext('');play()"/>
+          <rect x="182.7" height="100" width="4.7" @mousemove="hovertext( $event,'2017 gages in 1929');" @mouseover="pause('1929')" @mouseout="hovertext('');play()"/>
+          <rect x="187.4" height="100" width="4.7" @mousemove="hovertext( $event,'2256 gages in 1930');" @mouseover="pause('1930')" @mouseout="hovertext('');play()"/>
+          <rect x="192.1" height="100" width="4.7" @mousemove="hovertext( $event,'2386 gages in 1931');" @mouseover="pause('1931')" @mouseout="hovertext('');play()"/>
+          <rect x="196.8" height="100" width="4.7" @mousemove="hovertext( $event,'2429 gages in 1932');" @mouseover="pause('1932')" @mouseout="hovertext('');play()"/>
+          <rect x="201.5" height="100" width="4.7" @mousemove="hovertext( $event,'2441 gages in 1933');" @mouseover="pause('1933')" @mouseout="hovertext('');play()"/>
+          <rect x="206.2" height="100" width="4.7" @mousemove="hovertext( $event,'2443 gages in 1934');" @mouseover="pause('1934')" @mouseout="hovertext('');play()"/>
+          <rect x="210.9" height="100" width="4.7" @mousemove="hovertext( $event,'2598 gages in 1935');" @mouseover="pause('1935')" @mouseout="hovertext('');play()"/>
+          <rect x="215.6" height="100" width="4.7" @mousemove="hovertext( $event,'2702 gages in 1936');" @mouseover="pause('1936')" @mouseout="hovertext('');play()"/>
+          <rect x="220.3" height="100" width="4.7" @mousemove="hovertext( $event,'2809 gages in 1937');" @mouseover="pause('1937')" @mouseout="hovertext('');play()"/>
+          <rect x="225" height="100" width="4.7" @mousemove="hovertext( $event,'2996 gages in 1938');" @mouseover="pause('1938')" @mouseout="hovertext('');play()"/>
+          <rect x="229.7" height="100" width="4.7" @mousemove="hovertext( $event,'3398 gages in 1939');" @mouseover="pause('1939')" @mouseout="hovertext('');play()"/>
+          <rect x="234.4" height="100" width="4.7" @mousemove="hovertext( $event,'3858 gages in 1940');" @mouseover="pause('1940')" @mouseout="hovertext('');play()"/>
+          <rect x="239.1" height="100" width="4.7" @mousemove="hovertext( $event,'4059 gages in 1941');" @mouseover="pause('1941')" @mouseout="hovertext('');play()"/>
+          <rect x="243.8" height="100" width="4.7" @mousemove="hovertext( $event,'4183 gages in 1942');" @mouseover="pause('1942')" @mouseout="hovertext('');play()"/>
+          <rect x="248.5" height="100" width="4.7" @mousemove="hovertext( $event,'4348 gages in 1943');" @mouseover="pause('1943')" @mouseout="hovertext('');play()"/>
+          <rect x="253.2" height="100" width="4.7" @mousemove="hovertext( $event,'4545 gages in 1944');" @mouseover="pause('1944')" @mouseout="hovertext('');play()"/>
+          <rect x="257.9" height="100" width="4.7" @mousemove="hovertext( $event,'4715 gages in 1945');" @mouseover="pause('1945')" @mouseout="hovertext('');play()"/>
+          <rect x="262.6" height="100" width="4.7" @mousemove="hovertext( $event,'4943 gages in 1946');" @mouseover="pause('1946')" @mouseout="hovertext('');play()"/>
+          <rect x="267.3" height="100" width="4.7" @mousemove="hovertext( $event,'5160 gages in 1947');" @mouseover="pause('1947')" @mouseout="hovertext('');play()"/>
+          <rect x="272" height="100" width="4.7" @mousemove="hovertext( $event,'5328 gages in 1948');" @mouseover="pause('1948')" @mouseout="hovertext('');play()"/>
+          <rect x="276.7" height="100" width="4.7" @mousemove="hovertext( $event,'5467 gages in 1949');" @mouseover="pause('1949')" @mouseout="hovertext('');play()"/>
+          <rect x="281.4" height="100" width="4.7" @mousemove="hovertext( $event,'5610 gages in 1950');" @mouseover="pause('1950')" @mouseout="hovertext('');play()"/>
+          <rect x="286.1" height="100" width="4.7" @mousemove="hovertext( $event,'5794 gages in 1951');" @mouseover="pause('1951')" @mouseout="hovertext('');play()"/>
+          <rect x="290.8" height="100" width="4.7" @mousemove="hovertext( $event,'6004 gages in 1952');" @mouseover="pause('1952')" @mouseout="hovertext('');play()"/>
+          <rect x="295.5" height="100" width="4.7" @mousemove="hovertext( $event,'6025 gages in 1953');" @mouseover="pause('1953')" @mouseout="hovertext('');play()"/>
+          <rect x="300.2" height="100" width="4.7" @mousemove="hovertext( $event,'6061 gages in 1954');" @mouseover="pause('1954')" @mouseout="hovertext('');play()"/>
+          <rect x="304.9" height="100" width="4.7" @mousemove="hovertext( $event,'6075 gages in 1955');" @mouseover="pause('1955')" @mouseout="hovertext('');play()"/>
+          <rect x="309.6" height="100" width="4.7" @mousemove="hovertext( $event,'6165 gages in 1956');" @mouseover="pause('1956')" @mouseout="hovertext('');play()"/>
+          <rect x="314.3" height="100" width="4.7" @mousemove="hovertext( $event,'6246 gages in 1957');" @mouseover="pause('1957')" @mouseout="hovertext('');play()"/>
+          <rect x="319" height="100" width="4.7" @mousemove="hovertext( $event,'6354 gages in 1958');" @mouseover="pause('1958')" @mouseout="hovertext('');play()"/>
+          <rect x="323.7" height="100" width="4.7" @mousemove="hovertext( $event,'6488 gages in 1959');" @mouseover="pause('1959')" @mouseout="hovertext('');play()"/>
+          <rect x="328.4" height="100" width="4.7" @mousemove="hovertext( $event,'6662 gages in 1960');" @mouseover="pause('1960')" @mouseout="hovertext('');play()"/>
+          <rect x="333.1" height="100" width="4.7" @mousemove="hovertext( $event,'6903 gages in 1961');" @mouseover="pause('1961')" @mouseout="hovertext('');play()"/>
+          <rect x="337.8" height="100" width="4.7" @mousemove="hovertext( $event,'7013 gages in 1962');" @mouseover="pause('1962')" @mouseout="hovertext('');play()"/>
+          <rect x="342.5" height="100" width="4.7" @mousemove="hovertext( $event,'7128 gages in 1963');" @mouseover="pause('1963')" @mouseout="hovertext('');play()"/>
+          <rect x="347.2" height="100" width="4.7" @mousemove="hovertext( $event,'7397 gages in 1964');" @mouseover="pause('1964')" @mouseout="hovertext('');play()"/>
+          <rect x="351.9" height="100" width="4.7" @mousemove="hovertext( $event,'7559 gages in 1965');" @mouseover="pause('1965')" @mouseout="hovertext('');play()"/>
+          <rect x="356.6" height="100" width="4.7" @mousemove="hovertext( $event,'7771 gages in 1966');" @mouseover="pause('1966')" @mouseout="hovertext('');play()"/>
+          <rect x="361.3" height="100" width="4.7" @mousemove="hovertext( $event,'7926 gages in 1967');" @mouseover="pause('1967')" @mouseout="hovertext('');play()"/>
+          <rect x="366" height="100" width="4.7" @mousemove="hovertext( $event,'7844 gages in 1968');" @mouseover="pause('1968')" @mouseout="hovertext('');play()"/>
+          <rect x="370.7" height="100" width="4.7" @mousemove="hovertext( $event,'7832 gages in 1969');" @mouseover="pause('1969')" @mouseout="hovertext('');play()"/>
+          <rect x="375.4" height="100" width="4.7" @mousemove="hovertext( $event,'7706 gages in 1970');" @mouseover="pause('1970')" @mouseout="hovertext('');play()"/>
+          <rect x="380.1" height="100" width="4.7" @mousemove="hovertext( $event,'7465 gages in 1971');" @mouseover="pause('1971')" @mouseout="hovertext('');play()"/>
+          <rect x="384.8" height="100" width="4.7" @mousemove="hovertext( $event,'7407 gages in 1972');" @mouseover="pause('1972')" @mouseout="hovertext('');play()"/>
+          <rect x="389.5" height="100" width="4.7" @mousemove="hovertext( $event,'7289 gages in 1973');" @mouseover="pause('1973')" @mouseout="hovertext('');play()"/>
+          <rect x="394.2" height="100" width="4.7" @mousemove="hovertext( $event,'7227 gages in 1974');" @mouseover="pause('1974')" @mouseout="hovertext('');play()"/>
+          <rect x="398.9" height="100" width="4.7" @mousemove="hovertext( $event,'7376 gages in 1975');" @mouseover="pause('1975')" @mouseout="hovertext('');play()"/>
+          <rect x="403.6" height="100" width="4.7" @mousemove="hovertext( $event,'7455 gages in 1976');" @mouseover="pause('1976')" @mouseout="hovertext('');play()"/>
+          <rect x="408.3" height="100" width="4.7" @mousemove="hovertext( $event,'7444 gages in 1977');" @mouseover="pause('1977')" @mouseout="hovertext('');play()"/>
+          <rect x="413" height="100" width="4.7" @mousemove="hovertext( $event,'7449 gages in 1978');" @mouseover="pause('1978')" @mouseout="hovertext('');play()"/>
+          <rect x="417.7" height="100" width="4.7" @mousemove="hovertext( $event,'7416 gages in 1979');" @mouseover="pause('1979')" @mouseout="hovertext('');play()"/>
+          <rect x="422.4" height="100" width="4.7" @mousemove="hovertext( $event,'7412 gages in 1980');" @mouseover="pause('1980')" @mouseout="hovertext('');play()"/>
+          <rect x="427.1" height="100" width="4.7" @mousemove="hovertext( $event,'7103 gages in 1981');" @mouseover="pause('1981')" @mouseout="hovertext('');play()"/>
+          <rect x="431.8" height="100" width="4.7" @mousemove="hovertext( $event,'6754 gages in 1982');" @mouseover="pause('1982')" @mouseout="hovertext('');play()"/>
+          <rect x="436.5" height="100" width="4.7" @mousemove="hovertext( $event,'6611 gages in 1983');" @mouseover="pause('1983')" @mouseout="hovertext('');play()"/>
+          <rect x="441.2" height="100" width="4.7" @mousemove="hovertext( $event,'6654 gages in 1984');" @mouseover="pause('1984')" @mouseout="hovertext('');play()"/>
+          <rect x="445.9" height="100" width="4.7" @mousemove="hovertext( $event,'6619 gages in 1985');" @mouseover="pause('1985')" @mouseout="hovertext('');play()"/>
+          <rect x="450.6" height="100" width="4.7" @mousemove="hovertext( $event,'6554 gages in 1986');" @mouseover="pause('1986')" @mouseout="hovertext('');play()"/>
+          <rect x="455.3" height="100" width="4.7" @mousemove="hovertext( $event,'6560 gages in 1987');" @mouseover="pause('1987')" @mouseout="hovertext('');play()"/>
+          <rect x="460" height="100" width="4.7" @mousemove="hovertext( $event,'6681 gages in 1988');" @mouseover="pause('1988')" @mouseout="hovertext('');play()"/>
+          <rect x="464.7" height="100" width="4.7" @mousemove="hovertext( $event,'6667 gages in 1989');" @mouseover="pause('1989')" @mouseout="hovertext('');play()"/>
+          <rect x="469.4" height="100" width="4.7" @mousemove="hovertext( $event,'6729 gages in 1990');" @mouseover="pause('1990')" @mouseout="hovertext('');play()"/>
+          <rect x="474.1" height="100" width="4.7" @mousemove="hovertext( $event,'6636 gages in 1991');" @mouseover="pause('1991')" @mouseout="hovertext('');play()"/>
+          <rect x="478.8" height="100" width="4.7" @mousemove="hovertext( $event,'6633 gages in 1992');" @mouseover="pause('1992')" @mouseout="hovertext('');play()"/>
+          <rect x="483.5" height="100" width="4.7" @mousemove="hovertext( $event,'6576 gages in 1993');" @mouseover="pause('1993')" @mouseout="hovertext('');play()"/>
+          <rect x="488.2" height="100" width="4.7" @mousemove="hovertext( $event,'6549 gages in 1994');" @mouseover="pause('1994')" @mouseout="hovertext('');play()"/>
+          <rect x="492.9" height="100" width="4.7" @mousemove="hovertext( $event,'6430 gages in 1995');" @mouseover="pause('1995')" @mouseout="hovertext('');play()"/>
+          <rect x="497.6" height="100" width="4.7" @mousemove="hovertext( $event,'6386 gages in 1996');" @mouseover="pause('1996')" @mouseout="hovertext('');play()"/>
+          <rect x="502.3" height="100" width="4.7" @mousemove="hovertext( $event,'6476 gages in 1997');" @mouseover="pause('1997')" @mouseout="hovertext('');play()"/>
+          <rect x="507" height="100" width="4.7" @mousemove="hovertext( $event,'6520 gages in 1998');" @mouseover="pause('1998')" @mouseout="hovertext('');play()"/>
+          <rect x="511.7" height="100" width="4.7" @mousemove="hovertext( $event,'6743 gages in 1999');" @mouseover="pause('1999')" @mouseout="hovertext('');play()"/>
+          <rect x="516.4" height="100" width="4.7" @mousemove="hovertext( $event,'6867 gages in 2000');" @mouseover="pause('2000')" @mouseout="hovertext('');play()"/>
+          <rect x="521.1" height="100" width="4.7" @mousemove="hovertext( $event,'7026 gages in 2001');" @mouseover="pause('2001')" @mouseout="hovertext('');play()"/>
+          <rect x="525.8" height="100" width="4.7" @mousemove="hovertext( $event,'7237 gages in 2002');" @mouseover="pause('2002')" @mouseout="hovertext('');play()"/>
+          <rect x="530.5" height="100" width="4.7" @mousemove="hovertext( $event,'7339 gages in 2003');" @mouseover="pause('2003')" @mouseout="hovertext('');play()"/>
+          <rect x="535.2" height="100" width="4.7" @mousemove="hovertext( $event,'7285 gages in 2004');" @mouseover="pause('2004')" @mouseout="hovertext('');play()"/>
+          <rect x="539.9" height="100" width="4.7" @mousemove="hovertext( $event,'7291 gages in 2005');" @mouseover="pause('2005')" @mouseout="hovertext('');play()"/>
+          <rect x="544.6" height="100" width="4.7" @mousemove="hovertext( $event,'7458 gages in 2006');" @mouseover="pause('2006')" @mouseout="hovertext('');play()"/>
+          <rect x="549.3" height="100" width="4.7" @mousemove="hovertext( $event,'7508 gages in 2007');" @mouseover="pause('2007')" @mouseout="hovertext('');play()"/>
+          <rect x="554" height="100" width="4.7" @mousemove="hovertext( $event,'7685 gages in 2008');" @mouseover="pause('2008')" @mouseout="hovertext('');play()"/>
+          <rect x="558.7" height="100" width="4.7" @mousemove="hovertext( $event,'7687 gages in 2009');" @mouseover="pause('2009')" @mouseout="hovertext('');play()"/>
+          <rect x="563.4" height="100" width="4.7" @mousemove="hovertext( $event,'7827 gages in 2010');" @mouseover="pause('2010')" @mouseout="hovertext('');play()"/>
+          <rect x="568.1" height="100" width="4.7" @mousemove="hovertext( $event,'7877 gages in 2011');" @mouseover="pause('2011')" @mouseout="hovertext('');play()"/>
+          <rect x="572.8" height="100" width="4.7" @mousemove="hovertext( $event,'7984 gages in 2012');" @mouseover="pause('2012')" @mouseout="hovertext('');play()"/>
+          <rect x="577.5" height="100" width="4.7" @mousemove="hovertext( $event,'8068 gages in 2013');" @mouseover="pause('2013')" @mouseout="hovertext('');play()"/>
+          <rect x="582.2" height="100" width="4.7" @mousemove="hovertext( $event,'8033 gages in 2014');" @mouseover="pause('2014')" @mouseout="hovertext('');play()"/>
+          <rect x="586.9" height="100" width="4.7" @mousemove="hovertext( $event,'8169 gages in 2015');" @mouseover="pause('2015')" @mouseout="hovertext('');play()"/>
+          <rect x="591.6" height="100" width="4.7" @mousemove="hovertext( $event,'8181 gages in 2016');" @mouseover="pause('2016')" @mouseout="hovertext('');play()"/>
+          <rect x="596.3" height="100" width="4.7" @mousemove="hovertext( $event,'8224 gages in 2017');" @mouseover="pause('2017')" @mouseout="hovertext('');play()"/>
+          <rect x="601" height="100" width="4.7" @mousemove="hovertext( $event,'8461 gages in 2018');" @mouseover="pause('2018')" @mouseout="hovertext('');play()"/>
+          <rect x="605.7" height="100" width="4.7" @mousemove="hovertext( $event,'8134 gages in 2019');" @mouseover="pause('2019')" @mouseout="hovertext('');play()"/>
         </g>
       </g>
     </svg>
