@@ -24,7 +24,7 @@
       </div>
     </div>
     <caption class="mapcaption">
-      <span v-html="atlantaText.caption"/>
+      <span v-html="atlantaText.caption" />
     </caption>
     <div
       v-for="paragraph in atlantaText.paragraphSections"
@@ -32,13 +32,15 @@
     >
       <p><span v-html="paragraph.belowSliderText" /></p>
     </div>
-    <h2 class="spacer">{{ coloradoText.title }}</h2>
+    <h2 class="spacer">
+      {{ coloradoText.title }}
+    </h2>
     <div
-    v-for="paragraph in coloradoText.paragraphSections"
-    :key="paragraph.aboveSliderText"
-  >
-    <p><span v-html="paragraph.aboveSliderText" /></p>
-  </div>
+      v-for="paragraph in coloradoText.paragraphSections"
+      :key="paragraph.aboveSliderText"
+    >
+      <p><span v-html="paragraph.aboveSliderText" /></p>
+    </div>
     <div class="maps">
       <div id="colorado-comparison-container">
         <ColoradoInset />
@@ -56,11 +58,11 @@
       {{ coloradoText.caption }}
     </caption>
     <div
-    v-for="paragraph in coloradoText.paragraphSections"
-    :key="paragraph.paragraphText"
-  >
-    <p><span v-html="paragraph.paragraphText" /></p>
-  </div>
+      v-for="paragraph in coloradoText.paragraphSections"
+      :key="paragraph.paragraphText"
+    >
+      <p><span v-html="paragraph.paragraphText" /></p>
+    </div>
   </div>
 </template>
 <script>

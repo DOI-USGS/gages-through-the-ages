@@ -1,18 +1,27 @@
 <template>
-  <div id="methods" class="section">
+  <div
+    id="methods"
+    class="section"
+  >
     <h2>Methods:</h2>
     <div class="usa-accordion usa-accordion--bordered">
-      <div v-for="method in methods.methods" :key="method.title">
+      <div
+        v-for="method in methods.methods"
+        :key="method.title"
+      >
         <h2 class="usa-accordion__heading">
           <button
-              class="usa-accordion__button"
-              aria-expanded="false"
-              :aria-controls="method.title"
+            class="usa-accordion__button"
+            aria-expanded="false"
+            :aria-controls="method.title"
           >
             {{ method.title }}
           </button>
         </h2>
-        <div :id="method.title" class="usa-accordion__content usa-prose">
+        <div
+          :id="method.title"
+          class="usa-accordion__content usa-prose"
+        >
           <p><span v-html="method.method" /></p>
         </div>
       </div>
