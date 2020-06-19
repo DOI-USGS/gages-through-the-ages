@@ -50,6 +50,12 @@
       color: #2c3e50;
     }
   }
+  caption{
+    width: 100%;
+    display: block;
+    padding: 5px 0;
+    font-style:italic;
+  }
   .svg-text {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */

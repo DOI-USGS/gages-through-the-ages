@@ -2659,34 +2659,21 @@
     <caption id="svgcaption">
       {{ text.caption }}
     </caption>
-    <div
-      v-for="paragraph in text.paragraphSections"
-      :key="paragraph.svgText"
-    >
-      <p><span v-html="paragraph.svgText" /></p>
+    <div>
+      <p>{{ text.svgText }}</p>
     </div>
-    <div id="gageImage">
-      <picture>
-        <source
-          media="(min-width:600px)"
-          srcset="~@/images/gage/gageMedium.jpg"
-        >
-        <source
-          media="(min-width:1200px)"
-          srcset="~@/images/gage/gageLarge.jpg"
-        >
-        <img
-          src="~@/images/gage/gageSmall.jpg"
-          alt="USGS Gage 15905100 on Atigun River"
-        >
-      </picture>
-      <caption>USGS Gage 15905100 monitoring Atigun River in Alaska. Photo credit Jeff Conaway.</caption>
-    </div>
-    <div
-      v-for="paragraph in text.paragraphSections"
-      :key="paragraph.paragraphText"
-    >
-      <p><span v-html="paragraph.paragraphText" /></p>
+    <div id="textWrapArea">
+      <div id="gageImage">
+        <img src="~@/images/gage/gageLarge.jpg" alt="Mississippi River Gage and Bridge in the background." />
+        <caption>Mississippi River Gage and Bridge in the background.</caption>
+      </div>
+      <div
+        id="gagetext"
+        v-for="paragraph in text.paragraphSections"
+        :key="paragraph.paragraphText"
+      >
+        <p><span v-html="paragraph.paragraphText" /></p>
+      </div>
     </div>
   </div>
 </template>
@@ -2994,24 +2981,18 @@ $axis: rgb(100,100,100);
   .tooltip-box.hidden, .tooltip-point.hidden {
     opacity: 0;
   }
-  #gageImage{
-    margin: 3vh 0;
+  #textWrapArea{
+    margin-top: 10px;
   }
-  picture{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    img{
-      object-fit: cover;
-      height: auto;
-      width: 100%;
+  // #gagetext{
+  //   background: orange;
+  // }
+  @media screen and (min-width: 600px){
+    #gageImage{
+      float: left;
+      width: 55%;
+      margin:15px 30px 10px 0;
     }
-  }
-  caption{
-    width: 100%;
-    display: block;
-    padding: 5px 0;
-    font-style:italic;
   }
   /*IE SVG Width Fix*/
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
