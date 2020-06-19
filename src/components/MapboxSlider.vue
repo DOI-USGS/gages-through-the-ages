@@ -4,6 +4,12 @@
     class="section"
   >
     <h2>{{ atlantaText.title }}</h2>
+    <div
+      v-for="paragraph in atlantaText.paragraphSections"
+      :key="paragraph.aboveSliderText"
+    >
+      <p><span v-html="paragraph.aboveSliderText" /></p>
+    </div>
     <div class="maps">
       <div id="georgia-comparison-container">
         <GeorgiaInsetMap />
@@ -17,13 +23,22 @@
         />
       </div>
     </div>
+    <caption class="mapcaption">
+      <span v-html="atlantaText.caption"/>
+    </caption>
     <div
       v-for="paragraph in atlantaText.paragraphSections"
-      :key="paragraph.paragraphText"
+      :key="paragraph.belowSliderText"
     >
-      <p><span v-html="paragraph.paragraphText" /></p>
+      <p><span v-html="paragraph.belowSliderText" /></p>
     </div>
     <h2 class="spacer">{{ coloradoText.title }}</h2>
+    <div
+    v-for="paragraph in coloradoText.paragraphSections"
+    :key="paragraph.aboveSliderText"
+  >
+    <p><span v-html="paragraph.aboveSliderText" /></p>
+  </div>
     <div class="maps">
       <div id="colorado-comparison-container">
         <ColoradoInset />
@@ -37,6 +52,9 @@
         />
       </div>
     </div>
+    <caption class="mapcaption">
+      {{ coloradoText.caption }}
+    </caption>
     <div
     v-for="paragraph in coloradoText.paragraphSections"
     :key="paragraph.paragraphText"
@@ -282,6 +300,11 @@ export default {
     text-align: center;
   }
 }
+.mapcaption{
+  margin: 0 auto;
+  line-height: 1.4em;
+  max-width: 660px;
+}
 </style>
 <style lang='scss'>
 $polygon: '~@/assets/images/polygon.png';
@@ -312,7 +335,6 @@ $polygon: '~@/assets/images/polygon.png';
     box-shadow: inset 0 0 0 0 #fff
   }
   .legendDot{
-    background: red;
     height: 12px;
     width: 12px;
     display: inline-block;
