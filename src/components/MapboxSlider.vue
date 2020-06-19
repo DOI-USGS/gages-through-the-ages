@@ -55,7 +55,7 @@
       </div>
     </div>
     <caption class="mapcaption">
-      {{ coloradoText.caption }}
+      <span v-html="coloradoText.caption"></span>
     </caption>
     <div
       v-for="paragraph in coloradoText.paragraphSections"
