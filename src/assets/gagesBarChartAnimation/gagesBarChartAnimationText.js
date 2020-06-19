@@ -3,6 +3,7 @@ export default {
         title: "Gages Through the Ages ",
         introText: "A story of hydropower exploration to urban flood monitoring",
         graphTitle: "U.S. Geological Survey’s Active Stream Gages",
+        caption:"Figure 1. U.S. Geological Survey’s active stream gages since 1889 until present day.",
         paragraphSections: [
             {svgText: "The U.S. Geological Survey (USGS) Streamgaging Program is funded by Congress and over 1,400 " +
                         "state and local cooperators to monitor drought, flood, and water quality across the US through " +

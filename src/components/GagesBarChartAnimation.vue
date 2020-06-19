@@ -400,7 +400,7 @@
 
    </figure>
    <caption id="svgcaption">
-     Figure 1. U.S. Geological Survey’s active stream gages since 1889 until present day.
+     {{text.caption}}
    </caption>
     <div
       v-for="paragraph in text.paragraphSections"
