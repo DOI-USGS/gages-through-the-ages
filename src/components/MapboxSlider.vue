@@ -4,6 +4,12 @@
     class="section"
   >
     <h2>{{ atlantaText.title }}</h2>
+    <div
+      v-for="paragraph in atlantaText.paragraphSections"
+      :key="paragraph.aboveSliderText"
+    >
+      <p><span v-html="paragraph.aboveSliderText" /></p>
+    </div>
     <div class="maps">
       <div id="georgia-comparison-container">
         <GeorgiaInsetMap />
@@ -19,15 +25,21 @@
     </div>
     <caption class="mapcaption">
         Figure 2. An interactive slider map depicting the change in <span id="urbanGage" class="legendDot" /> urban and <span id="ruralGage" class="legendDot"/>
-        non-urban stream gages and the growth of <span id="urbanPolygon"/> extent between 1967 and 2018in north central Georgia.
+        non-urban stream gages and the growth of <span id="urbanPolygon"/> extent between 1967 and 2018 in north central Georgia.
       </caption>
     <div
       v-for="paragraph in atlantaText.paragraphSections"
-      :key="paragraph.paragraphText"
+      :key="paragraph.belowSliderText"
     >
-      <p><span v-html="paragraph.paragraphText" /></p>
+      <p><span v-html="paragraph.belowSliderText" /></p>
     </div>
     <h2 class="spacer">{{ coloradoText.title }}</h2>
+    <div
+    v-for="paragraph in coloradoText.paragraphSections"
+    :key="paragraph.aboveSliderText"
+  >
+    <p><span v-html="paragraph.aboveSliderText" /></p>
+  </div>
     <div class="maps">
       <div id="colorado-comparison-container">
         <ColoradoInset />
@@ -292,8 +304,9 @@ $polygon: '~@/assets/images/polygon.png';
   }
 }
 .mapcaption{
-  text-align: left;
+  margin: 0 auto;
   line-height: 1.4em;
+  max-width: 660px;
 }
 .legendDot{
     height: 12px;

@@ -3,7 +3,7 @@ export default {
         title: "Technological Advances Making Real-Time Monitoring Possible ",
         introText: "",
         paragraphSections: [
-            {paragraphText: "Notice in the map above how evenly dispersed the 1967 gages are along waterways in the Rocky Mountains. " +  
+            {aboveSliderText: "During the late 1960s stream gage locations were evenly dispersed along waterways in the Rocky Mountains. " +  
                             "But as population centers like Denver, Colorado Springs, and Fort Collins urbanized, new gages were built " +
                             "there, as reflected by the new small clusters of gages found near those cities in 2018.  There was another " +
                             "reason for the rural-to-urban shift - technological advances in data availability."
