@@ -399,6 +399,9 @@
     </svg>
 
    </figure>
+   <caption id="svgcaption">
+     Figure 1. U.S. Geological Survey’s active stream gages since 1889 until present day.
+   </caption>
     <div
       v-for="paragraph in text.paragraphSections"
       :key="paragraph.svgText"
@@ -645,104 +648,86 @@ $stateFill: rgb(228,228,227);
 $stateStroke: rgb(255,255,255);
 $axis: rgb(100,100,100);
 
-.title{
-  margin: 5px 0;
-}
-.subtitle{
-  margin-bottom: 20px;
-}
-
-figure{
-  margin-bottom: 20px;;
-}
+  .title{
+    margin: 5px 0;
+  }
+  .subtitle{
+    margin-bottom: 20px;
+  }
+  #svgcaption{
+    margin-bottom: 20px;
+  }
   .interior-state {
     fill: $stateFill;
     stroke: $stateStroke;
   }
-
   .exterior-state {
     fill: $stateFill;
   }
-
   .mouser-shape {
     opacity: 0;
   }
-
   .watermark {
     cursor: pointer;
     fill: $stateFill;
     stroke: $stateStroke;
     stroke-width: 0.5;
   }
-
   .site-dot {
     stroke: rgb(50,50,50);
     stroke-linecap: round;
     stroke-width: 3;
     opacity: 0.7;
   }
-
   .gage-count-bar {
     opacity: 0.6;
     fill: $stateFill;
   }
-
   .selected-year {
     opacity: 1;
     fill: #ED6A5A;
   }
-
   .selected-doy {
     opacity: 1;
     stroke: #ED6A5A;
   }
-
   .years-rect {
     fill: red;
     stroke: none;
     opacity: 0;
   }
-
   .axis-labels {
     stroke: none;
     fill: $axis;
     font-family: Arial;
     font-size: 0.75em;
   }
-
   .axis-lines {
     stroke: $axis;
   }
-
   .years-rect:hover {
     opacity: 1.0;
   }
-
   #y-axis, #x-axis {
     stroke: $axis;
   }
-
   .context-label {
     fill: #c0c0c0;
     stroke: none;
     font-size: 0.75em;
   }
-
   .tooltip-text {
     z-index: 100;
     opacity: 1;
   }
-
   .tooltip-box, .tooltip-point {
     stroke: none;
     opacity: 0.85;
     fill: white;
   }
-
   .tooltip-box.hidden, .tooltip-point.hidden {
     opacity: 0;
   }
-
   #gageImage{
     margin: 3vh 0;
   }
@@ -769,6 +754,4 @@ figure{
       height: 506px;
     }
   }
-
-
 </style>
