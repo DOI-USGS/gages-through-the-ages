@@ -2,7 +2,7 @@ export default {
     textContents: {
         title: "A Shift from Hydropower to Urban Flood Management",
         introText: "",
-        caption: 'Figure 2. An interactive slider map depicting the change in <span id="urbanGage" class="legendDot"></span> urban and <span id="ruralGage" class="legendDot"></span> non-urban stream gages and the growth of <span id="urbanPolygon"/></span> urban extent between 1967 and 2018 in north central Georgia.',
+        caption: 'An interactive slider map depicting the change in <span id="urbanGage" class="legendDot"></span> urban and <span id="ruralGage" class="legendDot"></span> non-urban stream gages and the growth of <span id="urbanPolygon"/></span> urban extent between 1967 and 2018 in north central Georgia.',
         paragraphSections: [
             {aboveSliderText: "Up to the 1960’s, the US invested in a wide geographic dispersal of gages, " + 
                             "with a some focus on assessing rivers for their hydropower potential. " +
