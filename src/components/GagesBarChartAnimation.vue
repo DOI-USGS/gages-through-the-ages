@@ -6,8 +6,6 @@
     <div class='container'>
       <h1 class='title'>{{ text.title }}</h1>
       <h3 class='subtitle'>{{ text.introText }}</h3>
-
-      <h3 class='figureTitle'>{{ text.graphTitle }}</h3>
     </div>
    <figure>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 654.14 537.1" preserveAspectRatio="xMidYMid meet" id="map-svg">
