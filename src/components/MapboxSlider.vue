@@ -77,10 +77,8 @@ export default {
         createMaps() {
             const slider_present_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/slider_present_sites_inview_2018.geojson';
             const slider_past_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/slider_past_sites_inview_1967.geojson';
-            const co1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_co_1970/{z}/{x}/{y}.pbf';
-            const co2018Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_co_2018/{z}/{x}/{y}.pbf';
-            const ga1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_ga_1970/{z}/{x}/{y}.pbf';
-            const ga2018Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_ga_2018/{z}/{x}/{y}.pbf';
+            const urban1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_combined_1970/{z}/{x}/{y}.pbf';
+            const urban2018Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_combined_2018/{z}/{x}/{y}.pbf';
             let radius = 4;
             let urban = '#f7bb2e';
             let rural = '#b087bd';
@@ -131,10 +129,10 @@ export default {
                 interactive: this.interactive
             });
             //Add Urban Extents
-            this.AddUrbanExtent(coloradoBeforeMap, co1970Extent, 'co1970Extent', 'urban_areas_co_1970');
-            this.AddUrbanExtent(coloradoAfterMap, co2018Extent, 'co2018Extent', 'urban_areas_co_2018');
-            this.AddUrbanExtent(georgiaBeforeMap, ga1970Extent, 'ga1970Extent', 'urban_areas_ga_1970');
-            this.AddUrbanExtent(georgiaAfterMap, ga2018Extent, 'ga2018Extent', 'urban_areas_ga_2018');
+            this.AddUrbanExtent(coloradoBeforeMap, urban1970Extent, 'co1970Extent', 'combined_urban_areas_1970');
+            this.AddUrbanExtent(coloradoAfterMap, urban2018Extent, 'co2018Extent', 'combined_urban_areas_2018');
+            this.AddUrbanExtent(georgiaBeforeMap, urban1970Extent, 'ga1970Extent', 'combined_urban_areas_1970');
+            this.AddUrbanExtent(georgiaAfterMap, urban2018Extent, 'ga2018Extent', 'combined_urban_areas_2018');
             //Get maps canvases
             let georgiaBeforeMapCanvas = georgiaBeforeMap.getCanvasContainer();
             let georgiaAfterMapCanvas = georgiaAfterMap.getCanvasContainer();
