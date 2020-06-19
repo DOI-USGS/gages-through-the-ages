@@ -46,7 +46,7 @@
     h1,h2{
       color: #003366;
     }
-    p{
+    caption,p{
       color: #2c3e50;
     }
   }

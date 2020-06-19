@@ -2,7 +2,7 @@ export default {
     textContents: {
         title: "Gages Through the Ages ",
         introText: "A story of hydropower exploration to urban flood monitoring",
-        graphTitle: "U.S. Geological Survey’s Active Stream Gages",
+        graphTitle: "",
         caption:"Figure 1. U.S. Geological Survey’s active stream gages since 1889 until present day.",
         paragraphSections: [
             {svgText: "The U.S. Geological Survey (USGS) Streamgaging Program is funded by Congress and over 1,400 " +
@@ -13,9 +13,8 @@ export default {
                             "These days, many gages are equipped with sensors that measure temperature, conductivity, " + 
                             "salinity, and much more, and each gage sends the data in near real-time to a National Water Information System. " +
                             "The data from these gages have become critical to forecasting floods, managing streamflow, and operating hydropower " + 
-                            "plants, as well as recreation, emergency management, engineering designs, and much more." 
-            },
-            {paragraphText: "<strong>Since the 1960’s, the number of urban gages has increased and their distribution has shifted.</strong>"
+                            "plants, as well as recreation, emergency management, engineering designs, and much more. " +
+                            "Since the 1960’s, the number of urban gages has increased and their distribution has shifted."
             },
             {paragraphText: "Factors that influence why the USGS monitors particular waterways have changed a lot in the last 130 years. " +
                             "Gages are built at specific locations for many reasons, and those reasons are reflected in the number and " + 
