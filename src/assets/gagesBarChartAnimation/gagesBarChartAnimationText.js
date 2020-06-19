@@ -3,12 +3,11 @@ export default {
         title: "Gages Through the Ages ",
         introText: "A story of hydropower exploration to urban flood monitoring",
         graphTitle: "",
-        caption:"Figure 1. U.S. Geological Survey’s active stream gages since 1889 until present day.",
-        paragraphSections: [
-            {svgText: "The U.S. Geological Survey (USGS) Streamgaging Program is funded by Congress and over 1,400 " +
+        caption:"U.S. Geological Survey’s active stream gages since 1889 until present day.",
+        svgText: "The U.S. Geological Survey (USGS) Streamgaging Program is funded by Congress and over 1,400 " +
                         "state and local cooperators to monitor drought, flood, and water quality across the US through " +
-                        "a network of stream gages."
-            },
+                        "a network of stream gages.",
+        paragraphSections: [
             {paragraphText: "The USGS began using stream gages to quantify the nation's flowing waters in 1889. " + 
                             "These days, many gages are equipped with sensors that measure temperature, conductivity, " + 
                             "salinity, and much more, and each gage sends the data in near real-time to a National Water Information System. " +
