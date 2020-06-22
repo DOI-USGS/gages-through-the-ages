@@ -74,3 +74,11 @@ process_year_json <- function(target_name, gage_locations_file, gage_year_data_f
   
   cat(toJSON(gained_loss_out), file = target_name)
 }
+
+process_hundred_year_gages <- function(out_file, gages_summary_file) {
+  hundred_year_gages <-readRDS(gages_summary_file) %>% 
+    filter(n_years_active >= 100) %>% 
+    select(-which_years_active, -gap_years)
+  write.csv(x = hundred_year_gages, file = out_file,
+            row.names = FALSE)
+}

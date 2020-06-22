@@ -1,4 +1,5 @@
 target_default: 2_process
+include: 1_fetch.yml
 
 packages:
   - dplyr
@@ -12,6 +13,7 @@ packages:
   - jsonlite
   - xml2
   - svglite
+  - lwgeom
   
 sources:
   - 2_process/src/process_gages_utils.R
@@ -34,6 +36,7 @@ targets:
       - 2_process/out/slider_past_sites_inview.geojson
       - 2_process/out/slider_present_sites_inview.geojson
       - 2_process/out/states_map.svg
+      - 2_process/out/hundred_year_gages.csv
   
   viz_year_range: 
     command: c(I(1890), I(2019)) # taken from original viz code & conversations with JR
@@ -143,7 +146,7 @@ targets:
   
   # Get site location data for the "present" part of the slider
   slider_present_year_range: 
-    command: c(I(2019), I(2019)) 
+    command: c(I(2018), I(2018)) 
   2_process/out/slider_present_active_gage_summary.rds:
     command: process_filter_gages_summary_to_year_range(
       target_name,
@@ -152,6 +155,9 @@ targets:
   2_process/out/slider_present_site_loc_data.rds:
     command: process_site_info(target_name, "2_process/out/slider_present_active_gage_summary.rds")
   
+  2_process/out/hundred_year_gages.csv:
+    command: process_hundred_year_gages(out_file = target_name,
+      gages_summary_file = '1_fetch/out/active_gages_summary_data_file.rds')
   
   # Instead of all US sites classified as urban/rural, just do ones
   #   in the slider view. These bbox values for CO & GA were taken from
