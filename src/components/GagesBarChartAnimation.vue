@@ -2902,6 +2902,7 @@ $stateStroke: rgb(255,255,255);
 $axis: rgb(100,100,100);
 
   .title{
+    font-size: 1.7em;
     margin: 5px 0;
   }
   .subtitle{
@@ -2988,6 +2989,10 @@ $axis: rgb(100,100,100);
   //   background: orange;
   // }
   @media screen and (min-width: 600px){
+    .title{
+      font-size: 2em;
+      margin: 5px 0;
+    }
     #gageImage{
       float: left;
       width: 55%;

@@ -114,6 +114,12 @@
     }
   }
 
+  @media screen and (min-width: 1024px) and (max-height: 900px){
+    #Visualization{
+      width:700px;
+    }
+  }
+
   @media screen and (min-width:1500px){
     #Visualization{
       width:810px;
