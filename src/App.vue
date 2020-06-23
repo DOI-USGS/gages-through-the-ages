@@ -119,6 +119,21 @@
       width:700px;
     }
   }
+  /*Windows unique browser size*/
+  @media screen and (min-width: 1300px) and (max-height: 652px){
+    #Visualization{
+      width:570px;
+      .usa-accordion__heading{
+        font-size: 1.06rem;
+      }
+      h2{
+        font-size: 1.15rem;
+      }
+      caption,p{
+        font-size: 1rem;
+      }
+    }
+  }
 
   @media screen and (min-width:1500px){
     #Visualization{
