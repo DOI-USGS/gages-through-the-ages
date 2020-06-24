@@ -2,7 +2,7 @@ export default {
     textContents: {
         title: "Technological Advances Making Real-Time Monitoring Possible ",
         introText: "",
-        caption: 'An interactive slider map depicting <span id="ruralGage" class="legendDot"></span> non-urban to <span id="urbanGage" class="legendDot"></span> urban shift in stream gage location between 1967 and 2018 in the state of Colorado.',
+        caption: 'An interactive slider map depicting <span class="legendDot ruralGage"></span> non-urban to <span class="legendDot urbanGage"></span> urban shift in stream gage location between 1967 and 2018 in the state of Colorado.',
         paragraphSections: [
             {aboveSliderText: "During the late 1960s stream gage locations were evenly dispersed along waterways in the Rocky Mountains. " +  
                             "But as population centers like Denver, Colorado Springs, and Fort Collins urbanized, new gages were built " +
