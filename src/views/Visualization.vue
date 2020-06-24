@@ -40,13 +40,6 @@
     padding: 10px 0 10px 0;
     margin: 0 auto;
   }
-  @media screen and (min-width:768px){
-    #header h3{
-      font-size:1.2em;
-      margin:0 0 0 10px;
-      padding:0;
-    }
-  }
   @media screen and (min-width:1024px){
    #Visualization{
       width:770px;

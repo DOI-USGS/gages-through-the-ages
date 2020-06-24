@@ -91,4 +91,11 @@
   figure{
     margin-top: 10px;
   }
+  @media screen and (min-width:768px){
+    #header h3{
+      font-size:1.2em;
+      margin:0 0 0 10px;
+      padding:0;
+    }
+  }
 </style>
