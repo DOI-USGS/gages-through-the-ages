@@ -10,18 +10,18 @@
   </div>
 </template>
 <script>
-  import GagesBarChartAnimation from "../components/GagesBarChartAnimation";
-  import DataSources from "../components/DataSources";
-  import MapboxSlider from "../components/MapboxSlider";
+  // import GagesBarChartAnimation from "../components/GagesBarChartAnimation";
+  // import MapboxSlider from "../components/MapboxSlider";
   // import AnnotatedTimeline from "../components/AnnotatedTimeline";
+  import TakeAway from '../components/TakeAway';
+  import DataSources from "../components/DataSources";
   import Methods from "../components/Methods";
   import References from '../components/References';
-  import TakeAway from '../components/TakeAway';
   export default {
       name: 'Visualization',
       components: {
-          GagesBarChartAnimation,
-          MapboxSlider,
+          GagesBarChartAnimation: () => import(/*webpackChunkName: "SVG-Animation"*/ "../components/GagesBarChartAnimation"),
+          MapboxSlider: () => import(/*webpackChunkName: "mapbox-slider"*/ "../components/MapboxSlider"),
           // AnnotatedTimeline,
           TakeAway,
           DataSources,
