@@ -168,6 +168,11 @@ export default {
             this.AddGeoJSON(georgiaAfterMap, slider_present_sites_inview, 'slider_present_sites_inview', radius, urban, rural);
             this.AddGeoJSON(coloradoBeforeMap, slider_past_sites_inview, 'slider_past_sites_inview', radius, urban, rural);
             this.AddGeoJSON(coloradoAfterMap, slider_present_sites_inview, 'slider_present_sites_inview', radius, urban, rural);
+            //Add Scales
+            this.addScales(georgiaAfterMap);
+            this.addScales(georgiaBeforeMap);
+            this.addScales(coloradoAfterMap);
+            this.addScales(coloradoBeforeMap);
 
             let georgiaContainer = '#georgia-comparison-container';
             let coloradoContainer = '#colorado-comparison-container';
@@ -253,6 +258,13 @@ export default {
           div.className = 'yearDiv ' +  divId + '';
           div.innerHTML = year;
           canvas.appendChild(div);
+        },
+        addScales(map){
+          var scale = new mapboxgl.ScaleControl({
+            maxWidth: 80,
+            unit: 'imperial'
+          });
+          map.addControl(scale, 'bottom-right');
         }
     }
 }
@@ -299,6 +311,7 @@ export default {
 </style>
 <style lang='scss'>
 $polygon: '~@/assets/images/polygon.png';
+$ScaleColor: rgb(120,120,120);
   .yearDiv{
     position: relative;
     z-index: 9000;
@@ -324,6 +337,17 @@ $polygon: '~@/assets/images/polygon.png';
   }
   .mapboxgl-compare .compare-swiper-vertical{
     box-shadow: inset 0 0 0 0 #fff
+  }
+  .mapboxgl-ctrl-scale{
+    background: none;
+    border: 2px solid $ScaleColor;
+    border-top: $ScaleColor;
+    color: $ScaleColor;
+    -webkit-user-select: none; /* Safari, Chrome */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE */
+    user-select: none; /* CSS3 */
   }
   .legendDot{
     height: 12px;
