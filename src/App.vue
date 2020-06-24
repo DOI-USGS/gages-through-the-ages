@@ -42,8 +42,19 @@
   #app {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
     width: 100%;
+    h1,h2{
+      color: #003366;
+    }
+    caption,p{
+      color: #2c3e50;
+    }
+  }
+  caption{
+    width: 100%;
+    display: block;
+    padding: 5px 0;
+    font-style:italic;
   }
   .svg-text {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -80,35 +91,11 @@
   figure{
     margin-top: 10px;
   }
-
-  #Visualization{
-    width: 95vw;
-    max-width: 1210px;
-    padding: 10px 0 10px 0;
-    margin: 0 auto;
-  }
-
-  .section{
-    margin-bottom: 20px;
-  }
-
   @media screen and (min-width:768px){
     #header h3{
       font-size:1.2em;
       margin:0 0 0 10px;
       padding:0;
-    }
-  }
-
-  @media screen and (min-width:1024px){
-   #Visualization{
-      width:770px;
-    }
-  }
-
-  @media screen and (min-width:1500px){
-    #Visualization{
-      width:810px;
     }
   }
 </style>

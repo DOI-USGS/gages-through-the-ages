@@ -8,6 +8,10 @@ export default {
                 'minzoom': 2, // setting this to equal the minzoom of main map, real tile extent is 2
                 'maxzoom': 6  // setting this to equal the maxzoom of main map, real tile extent is 10
             },
+            stateNames: {
+                type: 'geojson',
+                'data': 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/stateNames/stateNames.json'
+            },
             waterbody: {
                 type: 'vector',
                 'tiles': ['https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/waterbody/{z}/{x}/{y}.pbf'],
@@ -40,7 +44,7 @@ export default {
                 'maxzoom': 6  // setting this to equal the maxzoom of main map, real tile extent is 10
             }
         },
-        'sprite': 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/misc/pattern/pattern',
+        'sprite': '',
         'glyphs': 'https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf',
         'layers': [
             {
@@ -50,23 +54,7 @@ export default {
                 },
                 'type': 'background'
             },
-            {
-                'filter': ['all', ['==', 'NAME', 'Georgia'], ['==', 'NAME', 'Colorado']],
-                'id': 'stateOfInterest',
-                'type': 'fill',
-                'source': 'basemap',
-                'source-layer': 'states',
-                'minzoom': 2,
-                'maxzoom': 24,
-                'layout': {
-                    'visibility': 'visible'
-                },
-                'paint': {
-                    'fill-color': 'rgb(228,228,227)'
-                }
-            },
             {   
-                'filter': ['all', ['!=', 'NAME', 'Georgia'], ['!=', 'NAME', 'Colorado']],
                 'id': 'statesFill',
                 'type': 'fill',
                 'source': 'basemap',
@@ -182,6 +170,33 @@ export default {
                 'source': 'openmaptiles',
                 'source-layer': 'place',
                 'type': 'symbol'
+            },
+            {
+                'id': 'stateNames',
+                'source': 'stateNames',
+                'type': 'symbol',
+                'layout': {
+                    'text-field': ['get', 'State'],
+                    'text-font': ['Noto Sans Regular'],
+                    'text-offset': [0, -.1],
+                    'text-ignore-placement': true,
+                    "text-size": {
+                        "stops": [[5, 8],[6, 12], [7, 13]]
+                    },
+                    'text-transform': 'uppercase',
+                    'text-letter-spacing': .2,
+                    "text-max-width": 20,
+                    'text-rotate': [
+                    'case',
+                    ['==', ['get', 'State'], 'Utah'], -90,
+                    ['==', ['get', 'State'], 'Kansas'], -90,
+                    0
+                    ]
+                },
+                'paint':{
+                    'text-color': 'rgb(138,139,138)',
+                    'text-halo-blur': 0
+                }
             }
         ]
     }

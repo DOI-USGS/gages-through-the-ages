@@ -4,6 +4,12 @@
     class="section"
   >
     <h2>{{ atlantaText.title }}</h2>
+    <div
+      v-for="paragraph in atlantaText.paragraphSections"
+      :key="paragraph.aboveSliderText"
+    >
+      <p><span v-html="paragraph.aboveSliderText" /></p>
+    </div>
     <div class="maps">
       <div id="georgia-comparison-container">
         <GeorgiaInsetMap />
@@ -17,11 +23,23 @@
         />
       </div>
     </div>
+    <caption class="mapcaption">
+      <span v-html="atlantaText.caption" />
+    </caption>
     <div
       v-for="paragraph in atlantaText.paragraphSections"
-      :key="paragraph.paragraphText"
+      :key="paragraph.belowSliderText"
     >
-      <p><span v-html="paragraph.paragraphText" /></p>
+      <p><span v-html="paragraph.belowSliderText" /></p>
+    </div>
+    <h2 class="spacer">
+      {{ coloradoText.title }}
+    </h2>
+    <div
+      v-for="paragraph in coloradoText.paragraphSections"
+      :key="paragraph.aboveSliderText"
+    >
+      <p><span v-html="paragraph.aboveSliderText" /></p>
     </div>
     <div class="maps">
       <div id="colorado-comparison-container">
@@ -36,17 +54,18 @@
         />
       </div>
     </div>
+    <caption class="mapcaption">
+      <span v-html="coloradoText.caption"></span>
+    </caption>
     <div
-    v-for="paragraph in coloradoText.paragraphSections"
-    :key="paragraph.paragraphText"
-  >
-    <p><span v-html="paragraph.paragraphText" /></p>
-  </div>
+      v-for="paragraph in coloradoText.paragraphSections"
+      :key="paragraph.paragraphText"
+    >
+      <p><span v-html="paragraph.paragraphText" /></p>
+    </div>
   </div>
 </template>
 <script>
-import oldGages from '../assets/data/site_map_merc_1967';
-import newGages from '../assets/data/site_map_merc_2018';
 import mapboxgl from 'mapbox-gl';
 import MapboxCompare from 'mapbox-gl-compare';
 import standard from "../assets/styles/standard";
@@ -76,10 +95,10 @@ export default {
     },
     methods: {
         createMaps() {
-            const co1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_co_1970/{z}/{x}/{y}.pbf';
-            const co2018Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_co_2018/{z}/{x}/{y}.pbf';
-            const ga1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_ga_1970/{z}/{x}/{y}.pbf';
-            const ga2018Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_ga_2018/{z}/{x}/{y}.pbf';
+            const slider_present_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/slider_present_sites_inview_2018.geojson';
+            const slider_past_sites_inview = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/contextSlider/slider_past_sites_inview_1967.geojson';
+            const urban1970Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_combined_1970/{z}/{x}/{y}.pbf';
+            const urban2018Extent = 'https://maptiles-prod-website.s3-us-west-2.amazonaws.com/gagesthroughages/urbanExtents/urban_areas_combined_2018/{z}/{x}/{y}.pbf';
             let radius = 4;
             let urban = '#f7bb2e';
             let rural = '#b087bd';
@@ -115,7 +134,7 @@ export default {
                 container: 'coloradoBefore',
                 style: standard.style,
                 center: this.coloradoCenter,
-                //zoom: this.zoom,
+                // zoom: 5,
                 maxBounds: coloradoBounds,
                 maxZoom: 9,
                 interactive: this.interactive
@@ -124,16 +143,16 @@ export default {
                 container: 'coloradoAfter',
                 style: standard.style,
                 center: this.coloradoCenter,
-                //zoom: this.zoom,
+                // zoom: 5,
                 maxBounds: coloradoBounds,
                 maxZoom: 9,
                 interactive: this.interactive
             });
             //Add Urban Extents
-            this.AddUrbanExtent(coloradoBeforeMap, co1970Extent, 'co1970Extent', 'urban_areas_co_1970');
-            this.AddUrbanExtent(coloradoAfterMap, co2018Extent, 'co2018Extent', 'urban_areas_co_2018');
-            this.AddUrbanExtent(georgiaBeforeMap, ga1970Extent, 'ga1970Extent', 'urban_areas_ga_1970');
-            this.AddUrbanExtent(georgiaAfterMap, ga2018Extent, 'ga2018Extent', 'urban_areas_ga_2018');
+            this.AddUrbanExtent(coloradoBeforeMap, urban1970Extent, 'co1970Extent', 'combined_urban_areas_1970');
+            this.AddUrbanExtent(coloradoAfterMap, urban2018Extent, 'co2018Extent', 'combined_urban_areas_2018');
+            this.AddUrbanExtent(georgiaBeforeMap, urban1970Extent, 'ga1970Extent', 'combined_urban_areas_1970');
+            this.AddUrbanExtent(georgiaAfterMap, urban2018Extent, 'ga2018Extent', 'combined_urban_areas_2018');
             //Get maps canvases
             let georgiaBeforeMapCanvas = georgiaBeforeMap.getCanvasContainer();
             let georgiaAfterMapCanvas = georgiaAfterMap.getCanvasContainer();
@@ -145,10 +164,10 @@ export default {
             this.CreateYearDiv(beforeYear, "beforeYear", coloradoBeforeMapCanvas);
             this.CreateYearDiv(afterYear, "afterYear", coloradoAfterMapCanvas);
             //Add geojson layers
-            this.AddGeoJSON(georgiaBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural);
-            this.AddGeoJSON(georgiaAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural);
-            this.AddGeoJSON(coloradoBeforeMap, oldGages.nationalGagesBeforeMap, 'oldGages', radius, urban, rural);
-            this.AddGeoJSON(coloradoAfterMap, newGages.nationalGagesAfterMap, 'newGages', radius, urban, rural);
+            this.AddGeoJSON(georgiaBeforeMap, slider_past_sites_inview, 'slider_past_sites_inview', radius, urban, rural);
+            this.AddGeoJSON(georgiaAfterMap, slider_present_sites_inview, 'slider_present_sites_inview', radius, urban, rural);
+            this.AddGeoJSON(coloradoBeforeMap, slider_past_sites_inview, 'slider_past_sites_inview', radius, urban, rural);
+            this.AddGeoJSON(coloradoAfterMap, slider_present_sites_inview, 'slider_present_sites_inview', radius, urban, rural);
 
             let georgiaContainer = '#georgia-comparison-container';
             let coloradoContainer = '#colorado-comparison-container';
@@ -159,7 +178,7 @@ export default {
         AddUrbanExtent(map, url, source, sourceLayer){
           let self = this;
           map.on('load', function(){
-            let findSymbolId = self.GetMapLayers(map);
+            let findSymbolId = self.GetMapLayers(map, 'id', 'streams');
             map.addSource(source, {
               type: 'vector',
               tiles: [url]
@@ -178,8 +197,9 @@ export default {
         },
         AddGeoJSON(map, data, source, radius, urban, rural){
           let self = this;
+          let type;
           map.on('load', function() {
-              let findSymbolId = self.GetMapLayers(map);
+              let findSymbolId = self.GetMapLayers(map, 'type', 'symbol');
               map.addSource(source, {
                   type: 'geojson',
                   data: data
@@ -192,16 +212,12 @@ export default {
                       'circle-radius': radius,
                       'circle-color': [
                         'case',
-                        ['==', ['get', 'is_georgia_urban'], true], urban,
-                        ['==', ['get', 'is_colorado_urban'], true], urban,
-                        ['==', ['get', 'is_georgia'], true], rural,
-                        ['==', ['get', 'is_colorado'], true], rural,
-                        rural
+                          ['==', ['get', 'is_urban'], true], urban,
+                          rural
                       ],
                       'circle-stroke-color': [
                         'case',
-                        ['==',['get', 'is_georgia_urban'], true], 'rgb(170,170,170)',
-                        ['==',['get', 'is_colorado_urban'], true], 'rgb(170,170,170)',
+                        ['==',['get', 'is_urban'], true], 'rgb(170,170,170)',
                         'rgb(240,240,240)'
                       ],
                       'circle-stroke-width': .2
@@ -212,13 +228,22 @@ export default {
               );
           });
         },
-        GetMapLayers(map){
+        GetMapLayers(map, value, string){
           var layers = map.getStyle().layers;
           let symbolId;
-          for(let i = 0; i < layers.length; i++){
-            if(layers[i].type === 'symbol'){
-              symbolId = layers[i].id;
-              break;
+          if(value === 'id'){
+            for(let i = 0; i < layers.length; i++){
+              if(layers[i].id === string){
+                symbolId = layers[i].id;
+                break;
+              }
+            }
+          }else{
+            for(let i = 0; i < layers.length; i++){
+              if(layers[i].type === string){
+                symbolId = layers[i].id;
+                break;
+              }
             }
           }
           return symbolId;
@@ -236,7 +261,9 @@ export default {
 <style scoped lang='scss'>
 @import '~mapbox-gl/dist/mapbox-gl.css';
 @import '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
-
+.spacer{
+  margin-top: 4vh;
+}
 .maps{
     position: relative;
     overflow: hidden;
@@ -275,6 +302,11 @@ export default {
     text-align: center;
   }
 }
+.mapcaption{
+  margin: 0 auto;
+  line-height: 1.4em;
+  max-width: 660px;
+}
 </style>
 <style lang='scss'>
 $polygon: '~@/assets/images/polygon.png';
@@ -305,7 +337,6 @@ $polygon: '~@/assets/images/polygon.png';
     box-shadow: inset 0 0 0 0 #fff
   }
   .legendDot{
-    background: red;
     height: 12px;
     width: 12px;
     display: inline-block;

@@ -1,9 +1,25 @@
 export default {
     textContents: {
-        title: "",
+        title: "Technological Advances Making Real-Time Monitoring Possible ",
         introText: "",
+        caption: 'An interactive slider map depicting <span id="ruralGage" class="legendDot"></span> non-urban to <span id="urbanGage" class="legendDot"></span> urban shift in stream gage location between 1967 and 2018 in the state of Colorado.',
         paragraphSections: [
-            {paragraphText: "USGS responds to the present-day needs of water management and the protection of life and property. As factors that influence water monitoring change, USGS continues to adapt. A new initiative established in 2019, called the “Next-Generation Water Observing System” is piloting new advanced water monitoring in the Delaware River Basin and will be expanding into the Upper Colorado River Basin next year. These new sources of water information will inform water resources decisions and advance the understanding of how best to meet the nation’s changing water needs. "
+            {aboveSliderText: "During the late 1960s stream gage locations were evenly dispersed along waterways in the Rocky Mountains. " +  
+                            "But as population centers like Denver, Colorado Springs, and Fort Collins urbanized, new gages were built " +
+                            "there, as reflected by the new small clusters of gages found near those cities in 2018.  There was another " +
+                            "reason for the rural-to-urban shift - technological advances in data availability."
+            },
+            {paragraphText: "Data sharing in the 1960’s was cumbersome.  Readings collected at gages could only be shared back with the USGS " +
+                            "and other agencies when a field crew could physically go to the gage, collect the readings, and then verbally " + 
+                            "transfer the information back to cooperators over the telephone, or share data once yearly in a published book. " + 
+                            "Data collected like this worked just fine for assessing hydropower seasonal capabilities, but was nowhere close " +
+                            "to the real-time data availability that was yet to come.  "
+            },
+            {paragraphText: "In the 1980’s, most gage data transfer was moved to satellite transmissions, making the data much more easily " +
+                            "accessible on a near real-time basis.  By 1995, the USGS launched National Water Information System web delivery " +
+                            "(NWISweb), which published data to the internet and made it publicly available.  Now, data can be accessed shortly " +
+                            "after being captured by sensors, making near real-time streamflow monitoring possible. These advances opened up " +
+                            "entirely new possibilities for emergency flood prediction and management."
             }
         ]
     }
