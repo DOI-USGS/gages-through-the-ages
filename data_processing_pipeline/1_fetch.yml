@@ -21,13 +21,13 @@ targets:
   1_fetch/out/active_gages_data_file.rds:
     command: save_object(
       file = target_name,
-      object = I("30_data_summarize/out/active_flow_gages.rds"), 
+      object = I("30_data_summarize/out/active_flow_gages_wy.rds"), 
       bucket = s3_bucket)
   
   1_fetch/out/active_gages_summary_data_file.rds:
     command: save_object(
       file = target_name,
-      object = I("30_data_summarize/out/active_flow_gages_summary.rds"), 
+      object = I("30_data_summarize/out/active_flow_gages_summary_wy.rds"), 
       bucket = s3_bucket)
   
   # For use later in the SVG map creation
