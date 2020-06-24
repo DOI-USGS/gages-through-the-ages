@@ -30,7 +30,7 @@ generate_usa_map <- function(proj_str){
   return(states_out)
 }
 
-process_site_map <- function(target_name, site_data_file, proj_str){
+process_site_map_sp <- function(target_name, site_data_file, proj_str){
   
   sites <- readRDS(site_data_file) %>% filter(!is.na(dec_lat_va))
   
@@ -96,4 +96,12 @@ points_sp <- function(locations, proj.string){
     sp::SpatialPoints(proj4string = CRS("+proj=longlat +datum=WGS84")) %>% 
     sp::spTransform(CRS(proj.string)) %>% 
     sp::SpatialPointsDataFrame(data = locations[c('site_no')])
+}
+
+process_site_sf <- function(site_location_data, proj_str) {
+  site_location_data %>% 
+    filter(!is.na(dec_lat_va)) %>% 
+    st_as_sf(coords = c("dec_long_va", "dec_lat_va"), crs = "+proj=longlat +datum=WGS84") %>% 
+    st_transform(crs = proj_str) %>% 
+    st_make_valid() 
 }

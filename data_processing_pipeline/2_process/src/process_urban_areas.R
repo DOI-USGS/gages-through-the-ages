@@ -9,7 +9,7 @@ process_digitized_urban_extent <- function(target_name, digitized_shp_fn, proj_s
 process_modern_urban_extent <- function(target_name, urban_extent_shp_fn, state_nm, proj_str) {
   state_sf <- st_as_sf(maps::map("state", state_nm, plot = FALSE, fill = TRUE)) %>% 
     st_transform(crs = proj_str) %>%
-    lwgeom::st_make_valid() %>% 
+    st_make_valid() %>% 
     select(-ID)
   
   urban_areas <- st_read(urban_extent_shp_fn) %>% 
@@ -28,13 +28,7 @@ combine_urban_extents <- function(target_name, ...) {
     geojson_write(file = target_name)
 }
 
-filter_sites_to_view <- function(target_name, site_location_file, proj_str, ...) {
-  
-  gages_sf <- readRDS(site_location_file) %>% 
-    filter(!is.na(dec_lat_va)) %>% 
-    st_as_sf(coords = c("dec_long_va", "dec_lat_va"), crs = "+proj=longlat +datum=WGS84") %>% 
-    st_transform(crs = proj_str) %>% 
-    lwgeom::st_make_valid() 
+filter_sites_to_view <- function(site_location_sf, proj_str, ...) {
   
   view_sf <- purrr::map(list(...), function(bbox_vec) {
     # Expecting bbox_vec to be c(xmin, ymin, xmax, ymax)
@@ -53,14 +47,13 @@ filter_sites_to_view <- function(target_name, site_location_file, proj_str, ...)
   }) %>% 
     purrr::reduce(st_union)
   
-  st_intersection(gages_sf, view_sf) %>% saveRDS(target_name)
+  st_intersection(site_location_sf, view_sf)
 }
 
-find_urban_sites <- function(site_sf_file, urban_extents_geojson) {
+find_urban_sites <- function(gages_sf, urban_extents_geojson) {
   
-  gages_sf <- readRDS(site_sf_file)
   urban_extents_sf <- st_read(urban_extents_geojson) %>% 
-    lwgeom::st_make_valid() 
+    st_make_valid() 
   
   stopifnot(st_crs(gages_sf) == st_crs(urban_extents_sf))
   
@@ -73,9 +66,24 @@ find_urban_sites <- function(site_sf_file, urban_extents_geojson) {
     unique()
 }
 
-process_urban_sites <- function(target_name, site_sf_file, urban_gages) {
+process_urban_sites <- function(target_name, gages_sf, urban_gages, file.out = TRUE) {
   # Add attribute for whether a gage is in an urban area or not
-  readRDS(site_sf_file) %>% 
-    mutate(is_urban = site_no %in% urban_gages) %>% 
-    geojson_write(file = target_name)
+  sites_sf_classified <- gages_sf %>% 
+    mutate(is_urban = site_no %in% urban_gages)
+  if(file.out) {
+    geojson_write(sites_sf_classified, file = target_name)
+    return()
+  } else {
+    return(sites_sf_classified)
+  }
+}
+
+calc_perc_urban <- function(target_name, past_urban_gages, present_urban_gages) {
+  
+  past_perc_urban <- sum(past_urban_gages$is_urban) / nrow(past_urban_gages) * 100
+  present_perc_urban <- sum(present_urban_gages$is_urban) / nrow(present_urban_gages) * 100
+  
+  saveRDS(tibble(`Percent Urban Past` = past_perc_urban, 
+                 `Percent Urban Present` = present_perc_urban),
+          target_name)
 }
