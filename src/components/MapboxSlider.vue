@@ -172,12 +172,8 @@ export default {
             let georgiaContainer = '#georgia-comparison-container';
             let coloradoContainer = '#colorado-comparison-container';
             //Creates the mapbox compares
-            let georgiaCompare = new MapboxCompare(georgiaBeforeMap, georgiaAfterMap, georgiaContainer);
+            new MapboxCompare(georgiaBeforeMap, georgiaAfterMap, georgiaContainer);
             new MapboxCompare(coloradoBeforeMap, coloradoAfterMap, coloradoContainer);
-            console.log(georgiaCompare)
-            let papa = document.getElementById('georgia-comparison-container')
-            let middle = papa.getBoundingClientRect().width / 2;
-            let test = document.getElementById('georgiaAfter');
         },
         AddUrbanExtent(map, url, source, sourceLayer){
           let self = this;
