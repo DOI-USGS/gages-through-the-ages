@@ -15,8 +15,8 @@ export default {
             },
             {belowSliderText: "As the creation of new dams slowed significantly after the 1960’s, some hydropower-oriented gages " +
                             "were no longer essential.  Many of those gages were retired. With that shift, more new gages were " +
-                            "established in urban areas.  A conservative estimate* suggests only 15% of gages would’ve been considered " + 
-                            "urban in 1967, but in 2019, 23% of all active USGS gages were located within urban areas.  Today, many gages " +
+                            "established in urban areas.  A conservative estimate* suggests only 16% of gages would’ve been considered " + 
+                            "urban in 1967, but in 2018, 23% of all active USGS gages were located within urban areas.  Today, many gages " +
                             "are clustered near urban areas to support flood prediction and advanced evacuation warnings."
             }
         ]
