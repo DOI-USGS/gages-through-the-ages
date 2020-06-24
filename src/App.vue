@@ -4,6 +4,7 @@
     <HeaderUSGS />
     <WorkInProgressWarning />
     <router-view :is-internet-explorer="isInternetExplorer" />
+    <FooterLinks />
     <FooterUSGS />
   </div>
 </template>
@@ -11,8 +12,10 @@
 <script>
     import HeaderUSWDSBanner from './components/HeaderUSWDSBanner'
     import HeaderUSGS from './components/HeaderUSGS'
-    import WorkInProgressWarning from "./components/WorkInProgressWarning";
+    import WorkInProgressWarning from "./components/WorkInProgressWarning"
+    import FooterLinks from './components/FooterLinks'
     import FooterUSGS from './components/FooterUSGS'
+
 
     export default {
         name: 'App',
@@ -20,6 +23,7 @@
             HeaderUSWDSBanner,
             HeaderUSGS,
             WorkInProgressWarning,
+            FooterLinks,
             FooterUSGS
         },
         data() {
@@ -97,5 +101,11 @@
       margin:0 0 0 10px;
       padding:0;
     }
+  }
+
+  /* aline the usa banner with usgs logo */
+  .usa-banner__inner {
+    margin-left: 10px;
+    padding-left: 5px;
   }
 </style>
