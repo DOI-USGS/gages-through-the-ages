@@ -2668,7 +2668,7 @@
         <caption>Mississippi River Gage and Bridge in the background.</caption>
       </div>
       <div
-        id="gagetext"
+        class="gagetext"
         v-for="paragraph in text.paragraphSections"
         :key="paragraph.paragraphText"
       >
@@ -2985,9 +2985,6 @@ $axis: rgb(100,100,100);
   #textWrapArea{
     margin-top: 10px;
   }
-  // #gagetext{
-  //   background: orange;
-  // }
   @media screen and (min-width: 600px){
     .title{
       font-size: 2em;

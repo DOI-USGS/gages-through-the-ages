@@ -250,8 +250,7 @@ export default {
         },
         CreateYearDiv(year, divId, canvas){
           let div = document.createElement('div');
-          div.setAttribute('id', divId);
-          div.setAttribute('class', 'yearDiv');
+          div.className = 'yearDiv ' +  divId + '';
           div.innerHTML = year;
           canvas.appendChild(div);
         }
@@ -280,16 +279,6 @@ export default {
     bottom: 0;
     width: 100%;
 }
-
-.autocomplete{
-  margin-top:10px;
-}
-
-.warning{
-  color: red;
-  font-weight: bold;
-}
-
 #year-text {
   display: flex;
   align-items: center;
@@ -325,13 +314,13 @@ $polygon: '~@/assets/images/polygon.png';
       background: none;
     }
   }
-  #afterYear{
+  .afterYear{
     position: absolute;
     right: 10px;
   }
   .mapboxgl-compare{
-  width: 2px;
-  background-color: #3887be;
+    width: 2px;
+    background-color: #3887be;
   }
   .mapboxgl-compare .compare-swiper-vertical{
     box-shadow: inset 0 0 0 0 #fff
@@ -342,13 +331,13 @@ $polygon: '~@/assets/images/polygon.png';
     display: inline-block;
     border-radius: 50%;
   }
-  #urbanGage{
+  .urbanGage{
     background: #f7bb2e;
   }
-  #ruralGage{
+  .ruralGage{
     background: #b087bd;
   }
-  #urbanPolygon{
+  .urbanPolygon{
     background-image: url($polygon);
     background-size: contain;
     background-repeat: no-repeat;
