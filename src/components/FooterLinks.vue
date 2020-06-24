@@ -41,7 +41,6 @@
     p {
       color: white;
     }
-
     background-color: #00264c;
     border-bottom: 1px solid white;
     .footer-viz-links {
@@ -69,9 +68,6 @@
       .footer-viz-links {
         flex-direction: row;
         justify-content: center;
-
-        a {
-        }
       }
     }
   }
