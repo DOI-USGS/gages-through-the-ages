@@ -103,5 +103,5 @@ process_site_sf <- function(site_location_data, proj_str) {
     filter(!is.na(dec_lat_va)) %>% 
     st_as_sf(coords = c("dec_long_va", "dec_lat_va"), crs = "+proj=longlat +datum=WGS84") %>% 
     st_transform(crs = proj_str) %>% 
-    lwgeom::st_make_valid() 
+    st_make_valid() 
 }

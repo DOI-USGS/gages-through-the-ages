@@ -9,7 +9,7 @@ process_digitized_urban_extent <- function(target_name, digitized_shp_fn, proj_s
 process_modern_urban_extent <- function(target_name, urban_extent_shp_fn, state_nm, proj_str) {
   state_sf <- st_as_sf(maps::map("state", state_nm, plot = FALSE, fill = TRUE)) %>% 
     st_transform(crs = proj_str) %>%
-    lwgeom::st_make_valid() %>% 
+    st_make_valid() %>% 
     select(-ID)
   
   urban_areas <- st_read(urban_extent_shp_fn) %>% 
@@ -53,7 +53,7 @@ filter_sites_to_view <- function(site_location_sf, proj_str, ...) {
 find_urban_sites <- function(gages_sf, urban_extents_geojson) {
   
   urban_extents_sf <- st_read(urban_extents_geojson) %>% 
-    lwgeom::st_make_valid() 
+    st_make_valid() 
   
   stopifnot(st_crs(gages_sf) == st_crs(urban_extents_sf))
   
