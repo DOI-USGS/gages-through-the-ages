@@ -7,9 +7,9 @@
       <h1 class="title">
         {{ text.title }}
       </h1>
-      <h3 class="subtitle">
+      <h2 class="subtitle">
         {{ text.introText }}
-      </h3>
+      </h2>
     </div>
     <figure>
       <svg
@@ -2904,11 +2904,16 @@ $stateFill: rgb(228,228,227);
 $stateStroke: rgb(255,255,255);
 $axis: rgb(100,100,100);
 
+  /* over ride the global h2 to shrink it a bit */
+  #app h2 {
+    font-size: 1em;
+  }
+
   .title{
     font-size: 1.7em;
     margin: 5px 0;
   }
-  .subtitle{
+  .subtitle {
     margin-bottom: 20px;
   }
   #svgcaption{

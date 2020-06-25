@@ -10,7 +10,10 @@
     >
       <p><span v-html="paragraph.aboveSliderText" /></p>
     </div>
-    <div class="maps" @click="trackSliderClick('atlanta')">
+    <div
+      class="maps"
+      @click="trackSliderClick('atlanta')"
+    >
       <div id="georgia-comparison-container">
         <GeorgiaInsetMap />
         <div
@@ -41,7 +44,10 @@
     >
       <p><span v-html="paragraph.aboveSliderText" /></p>
     </div>
-    <div class="maps" @click="trackSliderClick('colorado')">
+    <div
+      class="maps"
+      @click="trackSliderClick('colorado')"
+    >
       <div id="colorado-comparison-container">
         <ColoradoInset />
         <div

@@ -5,11 +5,15 @@
       <div class="footer-viz-links">
         <a :href="mariaLink">
           <figcaption>Hurricane Maria's Water Footprint</figcaption>
-          <img src="@/assets/images/thumbnailMaria.png">
+          <img src="@/assets/images/thumbnailMaria.png"
+               alt="thumbnail for Hurricane Maria visualization link"
+          >
         </a>
         <a :href="waterUseLink">
           <figcaption>Water use in the U.S., 2015</figcaption>
-          <img src="@/assets/images/thumbnailWaterUse.png">
+          <img src="@/assets/images/thumbnailWaterUse.png"
+            alt="thumbnail for Water Use visualization link"
+          >
         </a>
       </div>
     </div>
