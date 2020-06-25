@@ -16,7 +16,7 @@ export default{
                             'extents used in the 1967 visual, we digitized maps from the <a href="https://www2.census.gov/library/publications/decennial/1970/pc-s1-supplementary-reports/pc-s1-108ch2.pdf" target="_blank">1970 US Census Bureau report on urbanized areas ' +
                             'in the United States.</a> For the spatial extents used in the 2018 visual, we used <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html" target="_blank">cartographic boundary files for 2018 urban areas from the US Census Bureau</a>. ' +
                             'Using the urban extent spatial data and the USGS stream gage location data, we used point-in-polygon methods in R to '  +
-                            'determine if a stream gage was inside or outside of an urbanized area. Those methods can be found in <a @click="runGoogleAnalytics(\'methods\', \'click\', \'clicked pipeline link\')" href="https://github.com/usgs-makerspace/gages-through-the-ages/tree/master/data_processing_pipeline" v-ga="$ga.commands.trackName.bind(this, \'feedback email-prefooter\', \'click\', \'user selected feedback prefooter email link\')" target="_blank">this data processing pipeline</a>. '
+                            'determine if a stream gage was inside or outside of an urbanized area. Those methods can be found in <a href="https://github.com/usgs-makerspace/gages-through-the-ages/tree/master/data_processing_pipeline">this data processing pipeline</a>. '
             }
         ]
     }
