@@ -10,7 +10,10 @@
     >
       <p><span v-html="paragraph.aboveSliderText" /></p>
     </div>
-    <div class="maps">
+    <div
+      class="maps"
+      @click="trackSliderClick('atlanta')"
+    >
       <div id="georgia-comparison-container">
         <GeorgiaInsetMap />
         <div
@@ -41,7 +44,10 @@
     >
       <p><span v-html="paragraph.aboveSliderText" /></p>
     </div>
-    <div class="maps">
+    <div
+      class="maps"
+      @click="trackSliderClick('colorado')"
+    >
       <div id="colorado-comparison-container">
         <ColoradoInset />
         <div
@@ -265,6 +271,14 @@ export default {
             unit: 'imperial'
           });
           map.addControl(scale, 'bottom-right');
+        },
+        runGoogleAnalytics(eventName, action, label) {
+            this.$ga.set({ dimension2: Date.now() });
+            this.$ga.event(eventName, action, label);
+        },
+        trackSliderClick(clickedTarget) {
+            const sliderCLicked = 'slider clicked: ' + clickedTarget;
+            this.runGoogleAnalytics('slider interaction', 'click', sliderCLicked)
         }
     }
 }
