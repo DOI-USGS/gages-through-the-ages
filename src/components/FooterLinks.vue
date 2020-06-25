@@ -3,15 +3,23 @@
     <div class="inner-pre-footer-links-container">
       <p>Other visualizations of interest</p>
       <div class="footer-viz-links">
-        <a :href="mariaLink">
+        <a
+          v-ga="$ga.commands.trackName.bind(this, 'link - hurricane maria', 'click', 'user selected prefooter visualization link')"
+          :href="mariaLink"
+        >
           <figcaption>Hurricane Maria's Water Footprint</figcaption>
-          <img src="@/assets/images/thumbnailMaria.png"
-               alt="thumbnail for Hurricane Maria visualization link"
+          <img
+            src="@/assets/images/thumbnailMaria.png"
+            alt="thumbnail for Hurricane Maria visualization link"
           >
         </a>
-        <a :href="waterUseLink">
+        <a
+          v-ga="$ga.commands.trackName.bind(this, 'link - water use', 'click', 'user selected prefooter visualization link')"
+          :href="waterUseLink"
+        >
           <figcaption>Water use in the U.S., 2015</figcaption>
-          <img src="@/assets/images/thumbnailWaterUse.png"
+          <img
+            src="@/assets/images/thumbnailWaterUse.png"
             alt="thumbnail for Water Use visualization link"
           >
         </a>
