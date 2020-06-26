@@ -19,7 +19,6 @@
     </p>
     <router-link to="/">
       <button
-        v-ga="$ga.commands.trackName.bind(this, 'Button - 404', 'click', 'user went from error page to index')"
         class="usa-button--inverse"
       >
         {{ title }} main page
