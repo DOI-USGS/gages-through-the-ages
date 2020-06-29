@@ -270,6 +270,7 @@ export default {
           let div = document.createElement('div');
           div.className = 'yearDiv ' +  divId + '';
           div.innerHTML = year;
+          div.draggable = false;
           canvas.appendChild(div);
         },
         addScales(map){
@@ -343,6 +344,11 @@ $ScaleColor: rgb(120,120,120);
     margin: 10px 0 0 10px;
     padding: 5px 0;
     text-align: center;
+    -webkit-user-select: none; /* Safari, Chrome */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE */
+    user-select: none; /* CSS3 */
     &::selection{
       color: none;
       background: none;

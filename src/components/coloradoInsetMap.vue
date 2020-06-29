@@ -4,6 +4,8 @@
       src="~@/images/inset/insetColoradoSmall.png"
       srcset="~@/images/inset/insetColoradoSmall.png 199w, ~@/images/inset/insetColoradoMedium.png 397w, ~@/images/inset/insetColoradoLarge.png 794w"
       alt="United States Lower 48 Highlighting Colorado"
+      draggable="false"
+      ondragstart="return false;"
     >
   </div>
 </template>
@@ -24,6 +26,11 @@ export default {
         img{
             width: 100%;
             height: 100%;
+            -webkit-user-select: none; /* Safari, Chrome */
+            -khtml-user-select: none; /* Konqueror */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE */
+            user-select: none; /* CSS3 */
         }
     }
 </style>
