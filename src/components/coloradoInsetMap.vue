@@ -23,11 +23,6 @@ export default {
         bottom: 10px;
         z-index: 90000;
         object-fit: 'contain'; 
-        -webkit-user-select: none; /* Safari, Chrome */
-        -khtml-user-select: none; /* Konqueror */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* IE */
-        user-select: none; /* CSS3 */
         img{
             width: 100%;
             height: 100%;
