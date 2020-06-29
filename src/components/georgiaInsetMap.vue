@@ -5,6 +5,7 @@
       srcset="~@/images/inset/insetGeorgiaSmall.png 200w, ~@/images/inset/insetGeorgiaMedium.png 402w, ~@/images/inset/insetGeorgiaLarge.png 804w"
       alt="The state of Georgia Highlighting the City of Atlanta"
       draggable="false"
+      ondragstart="return false;"
     >
   </div>
 </template>
