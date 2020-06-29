@@ -5,7 +5,7 @@
   >
     <h2>{{ text.title }}</h2>
     <img
-      src="@/assets/images/beta_timeline.png"
+      src="@/assets/images/barChart.jpg"
       alt="annotated timeline showing important periods in gage history"
     >
     <div
@@ -32,5 +32,7 @@
 </script>
 
 <style scoped lang="scss">
-
+  img{
+    margin: 4vh 0;
+  }
 </style>
