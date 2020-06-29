@@ -2904,16 +2904,12 @@ $stateFill: rgb(228,228,227);
 $stateStroke: rgb(255,255,255);
 $axis: rgb(100,100,100);
 
-  /* over ride the global h2 to shrink it a bit */
-  #app h2 {
-    font-size: 1em;
-  }
-
   .title{
     font-size: 1.7em;
     margin: 5px 0;
   }
   .subtitle {
+    font-size: 1em;
     margin-bottom: 20px;
   }
   #svgcaption{
