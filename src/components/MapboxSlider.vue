@@ -154,6 +154,13 @@ export default {
                 maxZoom: 9,
                 interactive: this.interactive
             });
+            //Makes sure the bounds are being honored, hopefully for IOS
+            window.addEventListener('resize', function(){
+              georgiaAfterMap.fitBounds(georgiaBounds);
+              georgiaBeforeMap.fitBounds(georgiaBounds);
+              coloradoAfterMap.fitBounds(coloradoBounds);
+              coloradoBeforeMap.fitBounds(coloradoBounds);
+            })
             //Add Urban Extents
             this.AddUrbanExtent(coloradoBeforeMap, urban1970Extent, 'co1970Extent', 'combined_urban_areas_1970');
             this.AddUrbanExtent(coloradoAfterMap, urban2018Extent, 'co2018Extent', 'combined_urban_areas_2018');
