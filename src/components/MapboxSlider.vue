@@ -97,7 +97,7 @@ export default {
         }
     },
     mounted(){
-        this.createMaps();
+      this.createMaps();
     },
     methods: {
         createMaps() {
@@ -140,7 +140,6 @@ export default {
                 container: 'coloradoBefore',
                 style: standard.style,
                 center: this.coloradoCenter,
-                // zoom: 5,
                 maxBounds: coloradoBounds,
                 maxZoom: 9,
                 interactive: this.interactive
@@ -149,7 +148,6 @@ export default {
                 container: 'coloradoAfter',
                 style: standard.style,
                 center: this.coloradoCenter,
-                // zoom: 5,
                 maxBounds: coloradoBounds,
                 maxZoom: 9,
                 interactive: this.interactive

@@ -1,12 +1,15 @@
 <template>
   <div id="insetMap">
-    <img
-      src="~@/images/inset/insetGeorgiaSmall.png"
-      srcset="~@/images/inset/insetGeorgiaSmall.png 200w, ~@/images/inset/insetGeorgiaMedium.png 402w, ~@/images/inset/insetGeorgiaLarge.png 804w"
-      alt="The state of Georgia Highlighting the City of Atlanta"
-      draggable="false"
-      ondragstart="return false;"
-    >
+    <picture>
+      <source srcset="~@/images/inset/insetGeorgia.webp" type="image/webp">
+      <source srcset="~@/images/inset/insetGeorgiaMedium.png" type="image/png">
+      <img 
+        src="~@/images/inset/insetGeorgiaSmall.png" 
+        alt="The state of Georgia Highlighting the City of Atlanta"
+        draggable="false"
+        ondragstart="return false;"
+      >
+    </picture>
   </div>
 </template>
 <script>

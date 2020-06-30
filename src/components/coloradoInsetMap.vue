@@ -1,12 +1,15 @@
 <template>
   <div id="coloradoInset">
-    <img
-      src="~@/images/inset/insetColoradoSmall.png"
-      srcset="~@/images/inset/insetColoradoSmall.png 199w, ~@/images/inset/insetColoradoMedium.png 397w, ~@/images/inset/insetColoradoLarge.png 794w"
-      alt="United States Lower 48 Highlighting Colorado"
-      draggable="false"
-      ondragstart="return false;"
-    >
+    <picture>
+      <source srcset="~@/images/inset/insetColorado_large.webp" type="image/webp">
+      <source srcset="~@/images/inset/insetColoradoMedium.png" type="image/png">
+      <img 
+        src="~@/images/inset/insetColoradoSmall.png" 
+        alt="United States Lower 48 Highlighting Colorado"
+        draggable="false"
+        ondragstart="return false;"
+      >
+    </picture>
   </div>
 </template>
 <script>
