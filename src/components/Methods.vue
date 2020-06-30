@@ -14,6 +14,7 @@
             class="usa-accordion__button"
             aria-expanded="false"
             :aria-controls="method.title"
+            @click="trackMethodClick"
           >
             {{ method.title }}
           </button>
@@ -42,6 +43,10 @@
                 this.$ga.set({ dimension2: Date.now() });
                 this.$ga.event(eventName, action, label);
             },
+            trackMethodClick(event) {
+              const methodClicked = 'Method clicked: ' + event.target.innerHTML;
+              this.runGoogleAnalytics('method interaction', 'click', methodClicked);
+            }
         }
     }
 </script>
