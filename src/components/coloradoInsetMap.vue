@@ -1,10 +1,11 @@
 <template>
   <div id="coloradoInset">
     <picture>
-      <source srcset="~@/images/inset/insetColorado_large.webp" type="image/webp">
-      <source srcset="~@/images/inset/insetColoradoMedium.png" type="image/png">
+      <source srcset="@/assets/images/inset/insetColorado_large.webp" type="image/webp">
+      <source srcset="@/assets/images/inset/insetColoradoLarge.png" type="image/png">
+      <source srcset="@/assets/images/inset/insetColoradoMedium.png" type="image/png">
       <img 
-        src="~@/images/inset/insetColoradoSmall.png" 
+        src="@/assets/images/inset/insetColoradoSmall.png" 
         alt="United States Lower 48 Highlighting Colorado"
         draggable="false"
         ondragstart="return false;"
