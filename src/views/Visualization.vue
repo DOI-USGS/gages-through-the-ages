@@ -20,7 +20,7 @@
   export default {
       name: 'Visualization',
       components: {
-          GagesBarChartAnimation: () => import(/*webpackChunkName: "SVG-Animation"*/ "../components/GagesBarChartAnimation"),
+          GagesBarChartAnimation: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "SVG-Animation"*/ "../components/GagesBarChartAnimation"),
           MapboxSlider: () => import(/*webpackChunkName: "mapbox-slider"*/ "../components/MapboxSlider"),
           AnnotatedTimeline,
           TakeAway,
