@@ -13,356 +13,62 @@
   <meta content="width=device-width,initial-scale=1.0" name="viewport">
   <link href="<%= BASE_URL %>favicon.ico" rel="icon">
   <title><%= VUE_APP_TIER %><%= VUE_APP_TITLE %></title>
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": "Stream Gages Through the Ages",
-      "about": "The U.S. Geological Survey Groundwater and Streamflow Information Program is funded by Congress to monitor drought and flood across the US through a network of stream gages. The USGS has been monitoring streamflow since 1889, and data from streamgages
-      have since become critical to hydropower operations, recreation, streamflow prediction, flood forecasts, emergency management, engineering designs, and many other purposes. This data visualization shows an animation of stream gages since the late 1800s, by
-      year, across the US. In addition, records from one of the oldest continuously active USGS stream gages, on the Rio Grande River at Embudo, NM, is shown in an interactive plot. ",
-      "datePublished": "2017-03-22",
-      "contributor": {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "Mary Bucknell",
-
-
-        "email": "mbucknell@usgs.gov",
-
-
-        "affiliation": {
-
-
-          "@context": "http://schema.org",
-
-
-          "@type": "Organization",
-
-
-          "legalName": "U.S. Geological Survey"
-
-
-        }
-
-
-      },
-
-
-
-
-
-      "contributor": {
-
-
-        "@context": "http://schema.org",
-
-
-        "@type": "Person",
-
-
-        "name": "Lindsay Carr",
-
-
-        "email": "lcarr@usgs.gov",
-
-
-        "affiliation": {
-
-
-          "@context": "http://schema.org",
-
-
-          "@type": "Organization",
-
-
-          "legalName": "U.S. Geological Survey"
-
-
-        }
-
-
-      },
-
-
-
-
-
-      "contributor": {
-
-
-        "@context": "http://schema.org",
-
-
-        "@type": "Person",
-
-
-        "name": "Laura DeCicco",
-
-
-        "email": "ldecicco@usgs.gov",
-
-
-        "affiliation": {
-
-
-          "@context": "http://schema.org",
-
-
-          "@type": "Organization",
-
-
-          "legalName": "U.S. Geological Survey"
-
-
-        }
-
-
-      },
-
-
-
-
-
-      "contributor": {
-
-
-        "@context": "http://schema.org",
-
-
-        "@type": "Person",
-
-
-        "name": "Emily Read",
-
-
-        "email": "eread@usgs.gov",
-
-
-        "affiliation": {
-
-
-          "@context": "http://schema.org",
-
-
-          "@type": "Organization",
-
-
-          "legalName": "U.S. Geological Survey"
-
-
-        }
-
-
-      },
-
-
-
-
-
-      "contributor": {
-
-
-        "@context": "http://schema.org",
-
-
-        "@type": "Person",
-
-
-        "name": "Jordan Read",
-
-
-        "email": "jread@usgs.gov",
-
-
-        "affiliation": {
-
-
-          "@context": "http://schema.org",
-
-
-          "@type": "Organization",
-
-
-          "legalName": "U.S. Geological Survey"
-
-
-        }
-
-
-      },
-
-
-
-
-
-      "contributor": {
-
-
-        "@context": "http://schema.org",
-
-
-        "@type": "Person",
-
-
-        "name": "Jordan Walker",
-
-
-        "email": "jiwalker@usgs.gov",
-
-
-        "affiliation": {
-
-
-          "@context": "http://schema.org",
-
-
-          "@type": "Organization",
-
-
-          "legalName": "U.S. Geological Survey"
-
-
-        }
-
-
-      },
-
-
-
-
-
-      "contributor": {
-
-
-        "@context": "http://schema.org",
-
-
-        "@type": "Person",
-
-
-        "name": "David Watkins",
-
-
-        "email": "wwatkins@usgs.gov",
-
-
-        "affiliation": {
-
-
-          "@context": "http://schema.org",
-
-
-          "@type": "Organization",
-
-
-          "legalName": "U.S. Geological Survey"
-
-
-        }
-
-
-      },
-
-
-
-
-
-      "contributor": {
-
-
-        "@context": "http://schema.org",
-
-
-        "@type": "Person",
-
-
-        "name": "Marty Wernimont",
-
-
-        "email": "mwernimont@usgs.gov",
-
-
-        "affiliation": {
-
-
-          "@context": "http://schema.org",
-
-
-          "@type": "Organization",
-
-
-          "legalName": "U.S. Geological Survey"
-
-
-        }
-
-
-      },
-
-
-
-
-
-      "audience": {
-
-
-        "@context": "http://schema.org",
-
-
-        "@type": "Audience",
-
-
-        "audienceType": "General public"
-
-
-      },
-
-
-      "publisher": {
-
-
-        "@context": "http://schema.org",
-
-
-        "@type": "Organization",
-
-
-        "legalName": "U.S. Geological Survey"
-
-
-      },
-
-
-      "image":{
-
-
-        "@type": "ImageObject",
-
-
-        "url": "none",
-
-
-        "width": 250,
-
-
-        "height": 250,
-
-
-        "caption": "some text here"
-
-
-      },
-
-
-      "keywords": "water,USGS,VIZLAB,stream gages"
-
-
-    }
-
-
+  <script type='application/ld+json'>
+    { "@context": "http://www.schema.org",
+      "@type": "WebSite", "name": "Gages Through the Ages",
+      "url": "https://labs.waterdata.usgs.gov/visualizations/gages-through-the-ages/",
+      "about": "A visualization explaining the changing distribution of U.S. Geological Survey gages (monitoring locations) over time",
+      "datePublished": "2020-06-30",
+      "contributor": [
+        { "@type": "Person", "name": "Mary Bucknell",
+          "email": "mbucknell@usgs.gov",
+          "affiliation": { "@type": "Organization", "legalName": "U.S. Geological Survey" }
+        },
+        { "@type": "Person",
+          "name": "Aaron Briggs",
+          "email": "abriggs@contractor.usgs.gov",
+          "affiliation": { "@context": "http://schema.org", "@type": "Organization", "legalName": "U.S. Geological Survey" }
+        },
+        { "@type": "Person",
+          "name": "Ellen Bechtel",
+          "email": "ebechtel@contractor.usgs.gov",
+          "affiliation": { "@context": "http://schema.org", "@type": "Organization", "legalName": "U.S. Geological Survey" }
+        },
+        { "@type": "Person", "name": "Laura DeCicco",
+          "email": "ldecicco@usgs.gov",
+          "affiliation": { "@context": "http://schema.org",
+            "@type": "Organization", "legalName": "U.S. Geological Survey" }
+        },
+        { "@type": "Person", "name": "Linsay Platt",
+          "email": "lplatt@usgs.gov",
+          "affiliation": { "@type": "Organization", "legalName": "U.S. Geological Survey" }
+        },
+        { "@type": "Person",
+          "name": "Emily Read",
+          "email": "eread@usgs.gov",
+          "affiliation": { "@context": "http://schema.org", "@type": "Organization", "legalName": "U.S. Geological Survey" }
+        },
+        { "@type": "Person",
+          "name": "Jordan Read",
+          "email": "jread@usgs.gov",
+          "affiliation": { "@type": "Organization", "legalName": "U.S. Geological Survey" }
+        },
+        { "@type": "Person",
+          "name": "David Watkins",
+          "email": "wwatkins@usgs.gov",
+          "affiliation": { "@context": "http://schema.org",
+            "@type": "Organization", "legalName": "U.S. Geological Survey" }
+        },
+        { "@type": "Person",
+          "name": "Marty Wernimont",
+          "email": "mwernimont@contractor.usgs.gov",
+          "affiliation": { "@context": "http://schema.org", "@type": "Organization", "legalName": "U.S. Geological Survey" }
+        }]
+    },
+    "audience": { "@context": "http://schema.org", "@type": "Audience", "audienceType": "General public"},
+    "publisher": { "@context": "http://schema.org", "@type": "Organization", "legalName": "U.S. Geological Survey" },
+    "keywords": "water,USGS,stream gages" }
   </script>
-
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
