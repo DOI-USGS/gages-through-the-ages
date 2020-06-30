@@ -2664,10 +2664,13 @@
     </div>
     <div id="textWrapArea">
       <div id="gageImage">
-        <img
-          src="~@/images/gage/gageLarge.jpg"
-          alt="Mississippi River Gage and Bridge in the background."
-        >
+        <picture>
+          <source srcset="@/assets/images/gage/gageLarge.webp" type="image/webp">
+          <img
+            src="@/assets/images/gage/gageLarge.jpg"
+            alt="Mississippi River Gage and Bridge in the background."
+          >
+        </picture>
         <caption>Mississippi River Gage and Bridge in the background.</caption>
       </div>
       <div
