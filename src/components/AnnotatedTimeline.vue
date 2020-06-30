@@ -63,10 +63,8 @@
           self.checkWindowSize(windowSize);
         }, {passive: true})
         window.addEventListener('resize', function(){
-          console.log('resized');
           let windowSize = window.innerWidth;
           self.checkWindowSize(windowSize);
-          console.log(windowSize);
         }, {passive: true});  
       },
       methods:{
