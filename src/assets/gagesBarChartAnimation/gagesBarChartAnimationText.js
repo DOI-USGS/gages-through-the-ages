@@ -10,7 +10,7 @@ export default {
         paragraphSections: [
             {paragraphText: "The USGS began using stream gages to quantify the nation's flowing waters in 1889. " + 
                             "These days, many gages are equipped with sensors that measure temperature, conductivity, " + 
-                            "salinity, and much more, and each gage sends the data in near real-time to a National Water Information System. " +
+                            "salinity, and much more, and each gage sends the data in near real-time to a <a href='https://waterdata.usgs.gov/nwis' target='_blank'>National Water Information System</a>. " +
                             "The data from these gages have become critical to forecasting floods, managing streamflow, and operating hydropower " + 
                             "plants, as well as recreation, emergency management, engineering designs, and much more. " +
                             "Since the 1960’s, the number of urban gages has increased and their distribution has shifted."

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ title }}:</h2>
+    <h2>{{ title }}</h2>
     <div
       v-for="reference in references"
       :key="reference.reference"

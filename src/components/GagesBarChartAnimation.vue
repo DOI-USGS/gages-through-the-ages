@@ -2665,13 +2665,16 @@
     <div id="textWrapArea">
       <div id="gageImage">
         <picture>
-          <source srcset="@/assets/images/gage/gageLarge.webp" type="image/webp">
+          <source
+            srcset="@/assets/images/gage/gageLarge.webp"
+            type="image/webp"
+          >
           <img
             src="@/assets/images/gage/gageLarge.jpg"
             alt="Mississippi River Gage and Bridge in the background."
           >
         </picture>
-        <caption>Mississippi River Gage and Bridge in the background.</caption>
+        <caption>USGS Stream Gage along the Mississippi River.</caption>
       </div>
       <div
         v-for="paragraph in text.paragraphSections"

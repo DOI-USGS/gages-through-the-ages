@@ -1,9 +1,18 @@
 <template>
   <div id="coloradoInset">
     <picture>
-      <source srcset="@/assets/images/inset/insetColorado_large.webp" type="image/webp">
-      <source srcset="@/assets/images/inset/insetColoradoLarge.png" type="image/png">
-      <source srcset="@/assets/images/inset/insetColoradoMedium.png" type="image/png">
+      <source
+        srcset="@/assets/images/inset/insetColorado_large.webp"
+        type="image/webp"
+      >
+      <source
+        srcset="@/assets/images/inset/insetColoradoLarge.png"
+        type="image/png"
+      >
+      <source
+        srcset="@/assets/images/inset/insetColoradoMedium.png"
+        type="image/png"
+      >
       <img 
         src="@/assets/images/inset/insetColoradoSmall.png" 
         alt="United States Lower 48 Highlighting Colorado"

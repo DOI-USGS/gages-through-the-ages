@@ -4,30 +4,47 @@
     class="section"
   >
     <h2>{{ text.title }}</h2>
-    <div v-if="smallScreen" id="mobileAnnotatedBarCharts" class="breathingRoom">
+    <div
+      v-if="smallScreen"
+      id="mobileAnnotatedBarCharts"
+      class="breathingRoom"
+    >
       <picture>
-        <source srcset="@/assets/images/annotatedBarChart/mobile/pastEra.webp" type="image/webp">
+        <source
+          srcset="@/assets/images/annotatedBarChart/mobile/pastEra.webp"
+          type="image/webp"
+        >
         <img
           src="@/assets/images/annotatedBarChart/mobile/pastEra.jpg"
           alt="annotated timeline showing the years 1900 to 1930."
         >
       </picture>
       <picture>
-        <source srcset="@/assets/images/annotatedBarChart/mobile/midEra.webp" type="image/webp">
+        <source
+          srcset="@/assets/images/annotatedBarChart/mobile/midEra.webp"
+          type="image/webp"
+        >
         <img
           src="@/assets/images/annotatedBarChart/mobile/midEra.jpg"
           alt="annotated timeline showing the years 1930 to 1960."
         >
       </picture>
       <picture>
-        <source srcset="@/assets/images/annotatedBarChart/mobile/presentEra.webp" type="image/webp">
+        <source
+          srcset="@/assets/images/annotatedBarChart/mobile/presentEra.webp"
+          type="image/webp"
+        >
         <img
           src="@/assets/images/annotatedBarChart/mobile/presentEra.jpg"
           alt="annotated timeline showing the years 1960 to the present."
         >
       </picture>
     </div>
-    <div v-if="largeScreen" id="annotatedBarChart" class="breathingRoom">
+    <div
+      v-if="largeScreen"
+      id="annotatedBarChart"
+      class="breathingRoom"
+    >
       <picture>
         <img
           src="@/assets/images/annotatedBarChart/barChart.jpg"
