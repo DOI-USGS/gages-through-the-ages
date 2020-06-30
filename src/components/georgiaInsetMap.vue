@@ -1,9 +1,18 @@
 <template>
   <div id="insetMap">
     <picture>
-      <source srcset="@/assets/images/inset/insetGeorgia.webp" type="image/webp">
-      <source srcset="@/assets/images/inset/insetGeorgiaLarge.png" type="image/png">
-      <source srcset="@/assets/images/inset/insetGeorgiaMedium.png" type="image/png">
+      <source
+        srcset="@/assets/images/inset/insetGeorgia.webp"
+        type="image/webp"
+      >
+      <source
+        srcset="@/assets/images/inset/insetGeorgiaLarge.png"
+        type="image/png"
+      >
+      <source
+        srcset="@/assets/images/inset/insetGeorgiaMedium.png"
+        type="image/png"
+      >
       <img 
         src="@/assets/images/inset/insetGeorgiaSmall.png" 
         alt="The state of Georgia Highlighting the City of Atlanta"
