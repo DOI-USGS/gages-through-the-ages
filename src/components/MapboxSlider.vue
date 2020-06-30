@@ -163,7 +163,7 @@ export default {
                 coloradoAfterMap.fitBounds(coloradoBounds);
                 coloradoBeforeMap.fitBounds(coloradoBounds);
               }
-            });
+            }, {passive: true});
             //Add Urban Extents
             this.AddUrbanExtent(coloradoBeforeMap, urban1970Extent, 'co1970Extent', 'combined_urban_areas_1970');
             this.AddUrbanExtent(coloradoAfterMap, urban2018Extent, 'co2018Extent', 'combined_urban_areas_2018');
@@ -295,8 +295,8 @@ export default {
 }
 </script>
 <style scoped lang='scss'>
-@import '~mapbox-gl/dist/mapbox-gl.css';
-@import '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
+@import /* webpackPrefetch: true */ '~mapbox-gl/dist/mapbox-gl.css';
+@import /* webpackPrefetch: true */ '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
 .spacer{
   margin-top: 4vh;
 }
