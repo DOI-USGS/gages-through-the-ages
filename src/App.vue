@@ -4,8 +4,8 @@
     <HeaderUSGS />
     <WorkInProgressWarning />
     <router-view :is-internet-explorer="isInternetExplorer" />
-    <FooterLinks />
-    <FooterUSGS />
+    <FooterLinks v-if="checkIfBarChartIsRendered" />
+    <FooterUSGS v-if="checkIfBarChartIsRendered" />
   </div>
 </template>
 
@@ -13,9 +13,6 @@
     import HeaderUSWDSBanner from './components/HeaderUSWDSBanner'
     import HeaderUSGS from './components/HeaderUSGS'
     import WorkInProgressWarning from "./components/WorkInProgressWarning"
-    import FooterLinks from './components/FooterLinks'
-    import FooterUSGS from './components/FooterUSGS'
-
 
     export default {
         name: 'App',
@@ -23,12 +20,17 @@
             HeaderUSWDSBanner,
             HeaderUSGS,
             WorkInProgressWarning,
-            FooterLinks,
-            FooterUSGS
+            FooterLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links"*/ "./components/FooterLinks"),
+            FooterUSGS: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "usgs-footer"*/ "./components/FooterUSGS")
         },
         data() {
             return {
                 isInternetExplorer: false,
+            }
+        },
+        computed: {
+            checkIfBarChartIsRendered() {
+                return this.$store.state.svgRenderedOnInitialLoad;
             }
         },
         created() {
