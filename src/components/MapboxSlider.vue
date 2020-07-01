@@ -228,7 +228,12 @@ export default {
                   'source': source,
                   'type': 'circle',
                   'paint': {
-                      'circle-radius': radius,
+                      'circle-radius': {
+                        'stops': [
+                            [5, 2],
+                            [6, radius]
+                        ]
+                      },
                       'circle-color': [
                         'case',
                           ['==', ['get', 'is_urban'], true], urban,
