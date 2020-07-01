@@ -21,7 +21,7 @@
         </h2>
         <div
           :id="method.title"
-          class="usa-accordion__content usa-prose"
+          class="usa-accordion__content usa-prose gage-target"
         >
           <p><span v-html="method.method" /></p>
         </div>
@@ -37,6 +37,13 @@
             return{
                 methods: methods.methodContent
             }
+        },
+        mounted() {
+            // This is a fix for the weird USWDS glitch that causes the Methods section accordion menus to be open on page load
+            const targetAccordionDivs = document.querySelectorAll('div.gage-target');
+            targetAccordionDivs.forEach((div) => {
+                div.setAttribute('hidden', '""');
+            });
         },
         methods: {
             runGoogleAnalytics(eventName, action, label) {
@@ -59,6 +66,7 @@ $chevronDown: '~@/assets/images/chevron-down.png';
   button:not([disabled]):focus{
     outline: none;
   }
+
   .usa-accordion__button{
     background-image: url($chevronDown);
     background-size: 15px 10px;
