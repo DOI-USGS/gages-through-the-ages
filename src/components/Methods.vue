@@ -66,7 +66,6 @@ $chevronDown: '~@/assets/images/chevron-down.png';
   button:not([disabled]):focus{
     outline: none;
   }
-
   .usa-accordion__button{
     background-image: url($chevronDown);
     background-size: 15px 10px;
