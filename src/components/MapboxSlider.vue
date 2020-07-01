@@ -152,6 +152,7 @@ export default {
                 maxZoom: 9,
                 interactive: this.interactive
             });
+            console.log(coloradoAfterMap.getZoom());
             //Makes sure the bounds are being honored, hopefully for IOS
             let windowWidth = window.innerWidth;
             window.addEventListener('resize', function(){
@@ -228,7 +229,12 @@ export default {
                   'source': source,
                   'type': 'circle',
                   'paint': {
-                      'circle-radius': radius,
+                      'circle-radius': {
+                        'stops': [
+                            [5, 2],
+                            [6, radius]
+                        ]
+                      },
                       'circle-color': [
                         'case',
                           ['==', ['get', 'is_urban'], true], urban,
