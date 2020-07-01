@@ -152,7 +152,6 @@ export default {
                 maxZoom: 9,
                 interactive: this.interactive
             });
-            console.log(coloradoAfterMap.getZoom());
             //Makes sure the bounds are being honored, hopefully for IOS
             let windowWidth = window.innerWidth;
             window.addEventListener('resize', function(){
