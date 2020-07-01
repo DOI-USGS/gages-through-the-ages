@@ -12,7 +12,7 @@
 <script>
   // import GagesBarChartAnimation from "../components/GagesBarChartAnimation";
   // import MapboxSlider from "../components/MapboxSlider";
-  import AnnotatedTimeline from "../components/AnnotatedTimeline";
+  // import AnnotatedTimeline from "../components/AnnotatedTimeline";
   import TakeAway from '../components/TakeAway';
   import DataSources from "../components/DataSources";
   import Methods from "../components/Methods";
@@ -22,7 +22,7 @@
       components: {
           GagesBarChartAnimation: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "SVG-Animation"*/ "../components/GagesBarChartAnimation"),
           MapboxSlider: () => import(/*webpackChunkName: "mapbox-slider"*/ "../components/MapboxSlider"),
-          AnnotatedTimeline,
+          AnnotatedTimeline: () => import(/*webpackChunkName: "annotated-barchart"*/ "../components/AnnotatedTimeline"),
           TakeAway,
           DataSources,
           Methods,
