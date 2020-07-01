@@ -2715,7 +2715,11 @@
         mounted() {
           this.setUpHoverText();
           this.startMonitoringLocationAnimation();
-
+          // The following code will only run after the entire view GagesBarChartAnimation has been rendered
+          // it will change the Vuex state so that other components will know the the GagesBarChartAnimation map has loaded
+          this.$nextTick(function () {
+              this.$store.commit('changeBooleanStateOnSVGMapRender');
+          });
         },
         methods: {
             runGoogleAnalytics(eventName, action, label) {

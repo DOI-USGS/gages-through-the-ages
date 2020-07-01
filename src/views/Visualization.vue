@@ -1,32 +1,30 @@
 <template>
   <div id="Visualization">
     <GagesBarChartAnimation />
-    <MapboxSlider />
-    <AnnotatedTimeline />
-    <TakeAway />
-    <DataSources />
-    <Methods />
-    <References />
+    <MapboxSlider v-if="checkIfBarChartIsRendered" />
+    <AnnotatedTimeline v-if="checkIfBarChartIsRendered" />
+    <TakeAway v-if="checkIfBarChartIsRendered" />
+    <DataSources v-if="checkIfBarChartIsRendered" />
+    <Methods v-if="checkIfBarChartIsRendered" />
+    <References v-if="checkIfBarChartIsRendered" />
   </div>
 </template>
 <script>
-  // import GagesBarChartAnimation from "../components/GagesBarChartAnimation";
-  // import MapboxSlider from "../components/MapboxSlider";
-  // import AnnotatedTimeline from "../components/AnnotatedTimeline";
-  import TakeAway from '../components/TakeAway';
-  import DataSources from "../components/DataSources";
-  import Methods from "../components/Methods";
-  import References from '../components/References';
   export default {
       name: 'Visualization',
       components: {
           GagesBarChartAnimation: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "SVG-Animation"*/ "../components/GagesBarChartAnimation"),
           MapboxSlider: () => import(/*webpackChunkName: "mapbox-slider"*/ "../components/MapboxSlider"),
           AnnotatedTimeline: () => import(/*webpackChunkName: "annotated-barchart"*/ "../components/AnnotatedTimeline"),
-          TakeAway,
-          DataSources,
-          Methods,
-          References
+          TakeAway: () => import(/*webpackChunkName: "take-away"*/ "../components/TakeAway"),
+          DataSources: () => import(/*webpackChunkName: "data-sources"*/ "../components/DataSources"),
+          Methods: () => import(/*webpackChunkName: "methods"*/ "../components/Methods"),
+          References: () => import(/*webpackChunkName: "references"*/ "../components/References")
+      },
+      computed: {
+           checkIfBarChartIsRendered() {
+               return this.$store.state.svgRenderedOnInitialLoad;
+           }
       }
   }
 </script>
