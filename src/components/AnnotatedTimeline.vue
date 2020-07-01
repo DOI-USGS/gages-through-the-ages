@@ -11,32 +11,12 @@
     >
       <picture>
         <source
-          srcset="@/assets/images/annotatedBarChart/mobile/pastEra.webp"
+          srcset="@/assets/images/annotatedBarChart/barChartMobile.webp"
           type="image/webp"
         >
         <img
-          src="@/assets/images/annotatedBarChart/mobile/pastEra.jpg"
+          src="@/assets/images/annotatedBarChart/barChartMobile.png"
           alt="annotated timeline showing the years 1900 to 1930."
-        >
-      </picture>
-      <picture>
-        <source
-          srcset="@/assets/images/annotatedBarChart/mobile/midEra.webp"
-          type="image/webp"
-        >
-        <img
-          src="@/assets/images/annotatedBarChart/mobile/midEra.jpg"
-          alt="annotated timeline showing the years 1930 to 1960."
-        >
-      </picture>
-      <picture>
-        <source
-          srcset="@/assets/images/annotatedBarChart/mobile/presentEra.webp"
-          type="image/webp"
-        >
-        <img
-          src="@/assets/images/annotatedBarChart/mobile/presentEra.jpg"
-          alt="annotated timeline showing the years 1960 to the present."
         >
       </picture>
     </div>
@@ -46,8 +26,12 @@
       class="breathingRoom"
     >
       <picture>
+        <source
+          srcset="@/assets/images/annotatedBarChart/barChart.webp"
+          type="image/webp"
+        >
         <img
-          src="@/assets/images/annotatedBarChart/barChart.jpg"
+          src="@/assets/images/annotatedBarChart/barChart.png"
           alt="annotated timeline showing important periods in gage history"
         >
       </picture>
