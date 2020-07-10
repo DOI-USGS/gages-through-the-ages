@@ -2,7 +2,7 @@
   <div id="coloradoInset">
     <picture>
       <source
-        srcset="@/assets/images/inset/insetColorado_large.webp"
+        srcset="@/assets/images/inset/insetColoradoLarge.webp"
         type="image/webp"
       >
       <source
