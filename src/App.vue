@@ -2,10 +2,11 @@
   <div id="app">
     <HeaderUSWDSBanner />
     <HeaderUSGS />
-    <WorkInProgressWarning />
-    <router-view :is-internet-explorer="isInternetExplorer" />
-    <FooterLinks v-if="checkIfBarChartIsRendered" />
-    <FooterUSGS v-if="checkIfBarChartIsRendered" />
+    <InternetExplorerPage v-if="isInternetExplorer" />
+    <WorkInProgressWarning v-if="checkTypeOfEnv !== '' & !isInternetExplorer" />
+    <router-view v-if="!isInternetExplorer" />
+    <FooterLinks v-if="!isInternetExplorer & checkIfBarChartIsRendered" />
+    <FooterUSGS v-if="checkIfBarChartIsRendered || isInternetExplorer" />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
     import HeaderUSWDSBanner from './components/HeaderUSWDSBanner'
     import HeaderUSGS from './components/HeaderUSGS'
     import WorkInProgressWarning from "./components/WorkInProgressWarning"
+    import InternetExplorerPage from "./components/InternetExplorerPage";
 
     export default {
         name: 'App',
@@ -20,6 +22,7 @@
             HeaderUSWDSBanner,
             HeaderUSGS,
             WorkInProgressWarning,
+            InternetExplorerPage,
             FooterLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links"*/ "./components/FooterLinks"),
             FooterUSGS: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "usgs-footer"*/ "./components/FooterUSGS")
         },
@@ -31,6 +34,9 @@
         computed: {
             checkIfBarChartIsRendered() {
                 return this.$store.state.svgRenderedOnInitialLoad;
+            },
+            checkTypeOfEnv() {
+                return process.env.VUE_APP_TIER
             }
         },
         created() {
