@@ -2,7 +2,7 @@
   <div id="insetMap">
     <picture>
       <source
-        srcset="@/assets/images/inset/insetGeorgia.webp"
+        srcset="@/assets/images/inset/insetGeorgiaLarge.webp"
         type="image/webp"
       >
       <source
