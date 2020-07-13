@@ -32,8 +32,8 @@ export default {
         width: 20%;
         height: 20%;
         position: absolute;
-        left: 10px;
-        bottom: 10px;
+        left: 5px;
+        bottom: 5px;
         z-index: 90000;
         object-fit: 'contain';
         img{
@@ -45,5 +45,11 @@ export default {
           -ms-user-select: none; /* IE */
           user-select: none; /* CSS3 */
         }
+    }
+    @media screen and (min-width: 600px){
+      #insetMap{
+        left: 10px;
+        bottom: 10px;
+      }
     }
 </style>

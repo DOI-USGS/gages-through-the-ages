@@ -79,7 +79,6 @@ import GeorgiaInsetMap from './georgiaInsetMap';
 import ColoradoInset from './coloradoInsetMap';
 import atlantaSliderText from "../assets/mapboxSlider/atlantaSliderText";
 import coloradoSliderText from "../assets/mapboxSlider/coloradoSliderText";
-
 export default {
     'name': 'MapboxSlider',
     'components':{
@@ -187,7 +186,6 @@ export default {
             this.addScales(georgiaBeforeMap);
             this.addScales(coloradoAfterMap);
             this.addScales(coloradoBeforeMap);
-
             let georgiaContainer = '#georgia-comparison-container';
             let coloradoContainer = '#colorado-comparison-container';
             //Creates the mapbox compares
