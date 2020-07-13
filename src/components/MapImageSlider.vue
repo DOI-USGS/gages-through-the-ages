@@ -9,9 +9,9 @@
         </div>
         <div id="georgiaSlider" class="sliderContainer">
             <div id="sliderOne" class="beer-slider" data-beer-label="2018">
-                <img src="@/assets/images/slider/georgiaAfter.png" alt="USGS Gages in Atlanta Georgia in 2018">
+                <img srcset="@/assets/images/slider/georgiaAfterSmall.jpg 400w, @/assets/images/slider/georgiaAfterMedium.jpg 600w" sizes="(max-width: 600px) 600px, 810px" src="@/assets/images/slider/georgiaAfter.jpg" alt="USGS Gages in Atlanta Georgia in 2018">
                 <div class="beer-reveal" data-beer-label="1967">
-                    <img src="@/assets/images/slider/georgiaBefore.png" alt="USGS Gages in Atlanta Georgia in 1967">
+                    <img srcset="@/assets/images/slider/georgiaBeforeSmall.jpg 400w, @/assets/images/slider/georgiaBeforeMedium.jpg 600w" sizes="(max-width: 600px) 600px, 810px" src="@/assets/images/slider/georgiaBefore.jpg" alt="USGS Gages in Atlanta Georgia in 1967">
                 </div>
             </div>
             <GeorgiaInsetMap />
@@ -25,51 +25,20 @@
         >
             <p><span v-html="paragraph.belowSliderText" /></p>
         </div>
-        <h2 class="spacer">
-            {{ coloradoText.title }}
-        </h2>
-        <div
-            v-for="paragraph in coloradoText.paragraphSections"
-            :key="paragraph.aboveSliderText"
-        >
-            <p><span v-html="paragraph.aboveSliderText" /></p>
-        </div>
-        <div id="coloradoSlider" class="sliderContainer">
-            <div id="sliderTwo" class="beer-slider" data-beer-label="2018">
-                <img src="@/assets/images/slider/coloradoAfter.png" alt="USGS Gages in Atlanta Georgia in 2018">
-                <div class="beer-reveal" data-beer-label="1967">
-                    <img src="@/assets/images/slider/coloradoBefore.png" alt="USGS Gages in Atlanta Georgia in 1967">
-                </div>
-            </div>
-            <ColoradoInset />
-        </div>
-        <caption class="mapcaption">
-            <span v-html="coloradoText.caption" />
-        </caption>
-        <div
-            v-for="paragraph in coloradoText.paragraphSections"
-            :key="paragraph.paragraphText"
-        >
-            <p><span v-html="paragraph.paragraphText" /></p>
-        </div>
     </div>
 </template>
 <script>
 import BeerSlider from "beerslider";
 import GeorgiaInsetMap from './georgiaInsetMap';
-import ColoradoInset from './coloradoInsetMap';
 import atlantaSliderText from "../assets/mapboxSlider/atlantaSliderText";
-import coloradoSliderText from "../assets/mapboxSlider/coloradoSliderText";
 export default {
     'name': 'MapImageSlider',
     components:{
-        GeorgiaInsetMap,
-        ColoradoInset
+        GeorgiaInsetMap
     },
     data(){
         return{
-            atlantaText: atlantaSliderText.textContents,
-            coloradoText: coloradoSliderText.textContents
+            atlantaText: atlantaSliderText.textContents
         }
     },
     mounted(){
