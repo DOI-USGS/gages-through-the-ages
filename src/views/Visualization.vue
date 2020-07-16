@@ -1,8 +1,9 @@
 <template>
   <div id="Visualization">
     <GagesBarChartAnimation />
-    <MapImageSlider v-if="checkIfBarChartIsRendered" />
     <AnnotatedTimeline v-if="checkIfBarChartIsRendered" />
+    <RealTime v-if="checkIfBarChartIsRendered" />
+    <MapImageSlider v-if="checkIfBarChartIsRendered" />
     <TakeAway v-if="checkIfBarChartIsRendered" />
     <DataSources v-if="checkIfBarChartIsRendered" />
     <Methods v-if="checkIfBarChartIsRendered" />
@@ -14,8 +15,9 @@
       name: 'Visualization',
       components: {
           GagesBarChartAnimation: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "SVG-Animation"*/ "../components/GagesBarChartAnimation"),
-          MapImageSlider: () => import( /*webpackChunkName: "image-slider"*/ "../components/MapImageSlider"),
           AnnotatedTimeline: () => import(/*webpackChunkName: "annotated-barchart"*/ "../components/AnnotatedTimeline"),
+          RealTime: () => import( /*webpackChunkName: "real-time"*/ "../components/RealTime"),
+          MapImageSlider: () => import( /*webpackChunkName: "image-slider"*/ "../components/MapImageSlider"),
           TakeAway: () => import(/*webpackChunkName: "take-away"*/ "../components/TakeAway"),
           DataSources: () => import(/*webpackChunkName: "data-sources"*/ "../components/DataSources"),
           Methods: () => import(/*webpackChunkName: "methods"*/ "../components/Methods"),
@@ -61,11 +63,6 @@
       caption,p{
         font-size: 1rem;
       }
-    }
-  }
-  @media screen and (min-width:1500px){
-    #Visualization{
-      width:810px;
     }
   }
 </style>

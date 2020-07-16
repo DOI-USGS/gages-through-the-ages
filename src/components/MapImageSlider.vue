@@ -19,12 +19,6 @@
         <caption class="mapcaption">
             <span v-html="atlantaText.caption" />
         </caption>
-        <div
-            v-for="paragraph in atlantaText.paragraphSections"
-            :key="paragraph.belowSliderText"
-        >
-            <p><span v-html="paragraph.belowSliderText" /></p>
-        </div>
     </div>
 </template>
 <script>
@@ -57,6 +51,7 @@ $polygon: '~@/assets/images/polygon.png';
 }
 .sliderContainer{
     position: relative;
+    margin-top: 10px;
 }
 .beer-slider[data-beer-label]:after,
 .beer-reveal[data-beer-label]:after{

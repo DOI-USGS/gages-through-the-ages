@@ -2663,26 +2663,23 @@
       <p>{{ text.svgText }}</p>
     </div>
     <div id="textWrapArea">
-      <div id="gageImage">
-        <picture>
-          <source
-            srcset="@/assets/images/gage/gageLarge.webp"
-            type="image/webp"
-          >
-          <img
-            src="@/assets/images/gage/gageLarge.jpg"
-            alt="Mississippi River Gage and Bridge in the background."
-          >
-        </picture>
-        <caption>USGS Stream Gage along the Mississippi River.</caption>
+      <div id="gageImageContainer">
+        <div id="gageImage">
+          <picture>
+            <source
+              srcset="@/assets/images/gage/gageLarge.webp"
+              type="image/webp"
+            >
+            <img
+              src="@/assets/images/gage/gageLarge.jpg"
+              alt="Mississippi River Gage and Bridge in the background."
+            >
+          </picture>
+          <caption>USGS Stream Gage along the Mississippi River.</caption>
+        </div>
+        <p>{{ text.paragraphText1 }}</p>
       </div>
-      <div
-        v-for="paragraph in text.paragraphSections"
-        :key="paragraph.paragraphText"
-        class="gagetext"
-      >
-        <p><span v-html="paragraph.paragraphText" /></p>
-      </div>
+      <p class="clear">{{ text.paragraphText2 }}</p>
     </div>
   </div>
 </template>
@@ -3005,10 +3002,11 @@ $axis: rgb(100,100,100);
       margin: 5px 0;
     }
     #gageImage{
-      float: left;
-      width: 55%;
-      margin:15px 30px 10px 0;
+     width: 55%;
+     float: left;
+     margin:15px 30px 10px 0;
     }
+    .clear{clear: both;}
   }
   /*IE SVG Width Fix*/
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

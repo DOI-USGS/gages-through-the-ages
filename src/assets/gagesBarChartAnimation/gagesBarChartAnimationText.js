@@ -1,24 +1,20 @@
 export default {
     textContents: {
         title: "Gages Through the Ages ",
-        introText: "A story of hydropower exploration to urban flood monitoring",
+        introText: "A visual history of streamgaging in the US ",
         graphTitle: "",
-        caption:"U.S. Geological Survey’s active stream gages since 1889 until present day.",
-        svgText: "The U.S. Geological Survey (USGS) Streamgaging Program is funded by Congress and over 1,400 " +
-                        "state and local cooperators to monitor drought, flood, and water quality across the US through " +
-                        "a network of stream gages.",
-        paragraphSections: [
-            {paragraphText: "The USGS began using stream gages to quantify the nation's flowing waters in 1889. " + 
-                            "These days, many gages are equipped with sensors that measure temperature, conductivity, " + 
-                            "salinity, and much more, and each gage sends the data in near real-time to a <a href='https://waterdata.usgs.gov/nwis' target='_blank'>National Water Information System</a>. " +
-                            "The data from these gages have become critical to forecasting floods, managing streamflow, and operating hydropower " + 
-                            "plants, as well as recreation, emergency management, engineering designs, and much more. " +
-                            "Since the 1960’s, the number of urban gages has increased and their distribution has shifted."
-            },
-            {paragraphText: "Factors that influence why the USGS monitors particular waterways have changed a lot in the last 130 years. " +
-                            "Gages are built at specific locations for many reasons, and those reasons are reflected in the number and " + 
-                            "location of gages through time.  Their placement tells a story of a changing nation. "
-            }
-        ]
+        caption:"U.S. Geological Survey’s active streamgages since 1889 until present day",
+        svgText: "The U.S. Geological Survey (USGS) Streamgaging Program is funded by Congress and over 1,400 " + 
+                    "state and local partner agencies to monitor water-level and flow of rivers, and to support " + 
+                    "the monitoring of water quality across the US.   ",
+        paragraphText1: "Modern streamgages are often equipped with sensors that measure properties of water, " +
+                        "such as temperature, conductivity, and dissolved oxygen content. Gages send data in near " +
+                        "real-time to the National Water Information System (NWIS). Data from gages have become critical " +
+                        "to forecasting floods, managing streamflow, and operating hydropower plants, as well as recreation, " +
+                        "emergency management, engineering designs, and much more.",
+        paragraphText2: "The USGS began using streamgages to quantify the nation's flowing waters in 1889. Factors that influence " + 
+                        "why the USGS monitors particular waterways have changed in the last 130 years. Gages are built at specific " + 
+                        "locations for many reasons, and those reasons are reflected in the number and location of gages through time. " + 
+                        "Their placement tells a story of changing needs for the nation."
     }
 }

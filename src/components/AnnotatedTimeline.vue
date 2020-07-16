@@ -5,6 +5,12 @@
   >
     <h2>{{ text.title }}</h2>
     <div
+      v-for="paragraph in text.paragraphSections"
+      :key="paragraph.paragraphText"
+    >
+      <p><span v-html="paragraph.paragraphText" /></p>
+    </div>
+    <div
       v-if="smallScreen"
       id="mobileAnnotatedBarCharts"
       class="breathingRoom"
@@ -35,12 +41,6 @@
           alt="annotated timeline showing important periods in gage history"
         >
       </picture>
-    </div>
-    <div
-      v-for="paragraph in text.paragraphSections"
-      :key="paragraph.paragraphText"
-    >
-      <p><span v-html="paragraph.paragraphText" /></p>
     </div>
   </div>
 </template>

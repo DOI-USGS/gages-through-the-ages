@@ -1,19 +1,11 @@
 <template>
-  <div>
+  <div id="references" class="section">
     <h2>{{ title }}</h2>
     <div
       v-for="reference in references"
       :key="reference.reference"
     >
-      <p class="about-ref">
-        {{ reference.reference }}
-        <a
-          :href="reference.href"
-          target="_blank"
-        >
-          <span v-html="reference.href" />
-        </a>
-      </p>
+      <p class="about-ref"><span v-html="reference.reference" /></p>
     </div>
   </div>
 </template>
@@ -32,5 +24,5 @@
 </script>
 
 <style scoped lang="scss">
-
+  
 </style>
