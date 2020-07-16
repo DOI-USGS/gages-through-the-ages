@@ -1,7 +1,7 @@
 export default {
     textContents: {
         title: "Gages Through the Ages ",
-        introText: "A story of hydropower exploration to urban flood monitoring",
+        introText: "A visual history of streamgaging in the US ",
         graphTitle: "",
         caption:"U.S. Geological Survey’s active streamgages since 1889 until present day",
         svgText: "The U.S. Geological Survey (USGS) Streamgaging Program is funded by Congress and over 1,400 " + 
