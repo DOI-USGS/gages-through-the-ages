@@ -2,6 +2,7 @@
   <div id="Visualization">
     <GagesBarChartAnimation />
     <AnnotatedTimeline v-if="checkIfBarChartIsRendered" />
+    <RealTime v-if="checkIfBarChartIsRendered" />
     <MapImageSlider v-if="checkIfBarChartIsRendered" />
     <TakeAway v-if="checkIfBarChartIsRendered" />
     <DataSources v-if="checkIfBarChartIsRendered" />
@@ -15,6 +16,7 @@
       components: {
           GagesBarChartAnimation: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "SVG-Animation"*/ "../components/GagesBarChartAnimation"),
           AnnotatedTimeline: () => import(/*webpackChunkName: "annotated-barchart"*/ "../components/AnnotatedTimeline"),
+          RealTime: () => import( /*webpackChunkName: "real-time"*/ "../components/RealTime"),
           MapImageSlider: () => import( /*webpackChunkName: "image-slider"*/ "../components/MapImageSlider"),
           TakeAway: () => import(/*webpackChunkName: "take-away"*/ "../components/TakeAway"),
           DataSources: () => import(/*webpackChunkName: "data-sources"*/ "../components/DataSources"),

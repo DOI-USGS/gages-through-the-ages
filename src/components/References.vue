@@ -1,5 +1,5 @@
 <template>
-  <div id="references">
+  <div id="references" class="section">
     <h2>{{ title }}</h2>
     <div
       v-for="reference in references"
@@ -24,7 +24,5 @@
 </script>
 
 <style scoped lang="scss">
-  #references{
-    margin-bottom: 4vh;
-  }
+  
 </style>
