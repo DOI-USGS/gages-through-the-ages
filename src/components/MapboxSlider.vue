@@ -15,7 +15,7 @@
       @click="trackSliderClick('atlanta')"
     >
       <div id="georgia-comparison-container">
-        <GeorgiaInsetMap />
+        <!-- <GeorgiaInsetMap /> -->
         <div
           id="georgiaBefore"
           class="map"
@@ -35,40 +35,6 @@
     >
       <p><span v-html="paragraph.belowSliderText" /></p>
     </div>
-    <h2 class="spacer">
-      {{ coloradoText.title }}
-    </h2>
-    <div
-      v-for="paragraph in coloradoText.paragraphSections"
-      :key="paragraph.aboveSliderText"
-    >
-      <p><span v-html="paragraph.aboveSliderText" /></p>
-    </div>
-    <div
-      class="maps"
-      @click="trackSliderClick('colorado')"
-    >
-      <div id="colorado-comparison-container">
-        <ColoradoInset />
-        <div
-          id="coloradoBefore"
-          class="map"
-        />
-        <div
-          id="coloradoAfter"
-          class="map"
-        />
-      </div>
-    </div>
-    <caption class="mapcaption">
-      <span v-html="coloradoText.caption" />
-    </caption>
-    <div
-      v-for="paragraph in coloradoText.paragraphSections"
-      :key="paragraph.paragraphText"
-    >
-      <p><span v-html="paragraph.paragraphText" /></p>
-    </div>
   </div>
 </template>
 <script>
@@ -76,14 +42,11 @@ import mapboxgl from 'mapbox-gl';
 import MapboxCompare from 'mapbox-gl-compare';
 import standard from "../assets/styles/standard";
 import GeorgiaInsetMap from './georgiaInsetMap';
-import ColoradoInset from './coloradoInsetMap';
 import atlantaSliderText from "../assets/mapboxSlider/atlantaSliderText";
-import coloradoSliderText from "../assets/mapboxSlider/coloradoSliderText";
 export default {
     'name': 'MapboxSlider',
     'components':{
-      GeorgiaInsetMap,
-      ColoradoInset
+      GeorgiaInsetMap
     },
     data() {
         return {
@@ -91,8 +54,7 @@ export default {
             coloradoCenter: [-105.7821, 39.5501],
             zoom: 6,
             interactive: false,
-            atlantaText: atlantaSliderText.textContents,
-            coloradoText: coloradoSliderText.textContents
+            atlantaText: atlantaSliderText.textContents
         }
     },
     mounted(){
@@ -113,10 +75,6 @@ export default {
               [-85.626583,32.909064],
               [-82.835487,34.687393]
             ];
-            let coloradoBounds = [
-              [-110.074811,36.125882],
-              [-101.035681,41.899945]
-            ]
             let georgiaBeforeMap = new mapboxgl.Map({
                 container: 'georgiaBefore',
                 style: standard.style,
@@ -135,22 +93,6 @@ export default {
                 maxZoom: 9,
                 interactive: this.interactive
             });
-            let coloradoBeforeMap = new mapboxgl.Map({
-                container: 'coloradoBefore',
-                style: standard.style,
-                center: this.coloradoCenter,
-                maxBounds: coloradoBounds,
-                maxZoom: 9,
-                interactive: this.interactive
-            });
-            let coloradoAfterMap = new mapboxgl.Map({
-                container: 'coloradoAfter',
-                style: standard.style,
-                center: this.coloradoCenter,
-                maxBounds: coloradoBounds,
-                maxZoom: 9,
-                interactive: this.interactive
-            });
             //Makes sure the bounds are being honored, hopefully for IOS
             let windowWidth = window.innerWidth;
             window.addEventListener('resize', function(){
@@ -162,35 +104,23 @@ export default {
               }
             }, {passive: true});
             //Add Urban Extents
-            this.AddUrbanExtent(coloradoBeforeMap, urban1970Extent, 'co1970Extent', 'combined_urban_areas_1970');
-            this.AddUrbanExtent(coloradoAfterMap, urban2018Extent, 'co2018Extent', 'combined_urban_areas_2018');
             this.AddUrbanExtent(georgiaBeforeMap, urban1970Extent, 'ga1970Extent', 'combined_urban_areas_1970');
             this.AddUrbanExtent(georgiaAfterMap, urban2018Extent, 'ga2018Extent', 'combined_urban_areas_2018');
             //Get maps canvases
             let georgiaBeforeMapCanvas = georgiaBeforeMap.getCanvasContainer();
             let georgiaAfterMapCanvas = georgiaAfterMap.getCanvasContainer();
-            let coloradoBeforeMapCanvas = coloradoBeforeMap.getCanvasContainer();
-            let coloradoAfterMapCanvas = coloradoAfterMap.getCanvasContainer();
             //Creates divs in the canvas area
             this.CreateYearDiv(beforeYear, "beforeYear", georgiaBeforeMapCanvas);
             this.CreateYearDiv(afterYear, "afterYear", georgiaAfterMapCanvas);
-            this.CreateYearDiv(beforeYear, "beforeYear", coloradoBeforeMapCanvas);
-            this.CreateYearDiv(afterYear, "afterYear", coloradoAfterMapCanvas);
             //Add geojson layers
             this.AddGeoJSON(georgiaBeforeMap, slider_past_sites_inview, 'slider_past_sites_inview', radius, urban, rural);
             this.AddGeoJSON(georgiaAfterMap, slider_present_sites_inview, 'slider_present_sites_inview', radius, urban, rural);
-            this.AddGeoJSON(coloradoBeforeMap, slider_past_sites_inview, 'slider_past_sites_inview', radius, urban, rural);
-            this.AddGeoJSON(coloradoAfterMap, slider_present_sites_inview, 'slider_present_sites_inview', radius, urban, rural);
             //Add Scales
-            this.addScales(georgiaAfterMap);
-            this.addScales(georgiaBeforeMap);
-            this.addScales(coloradoAfterMap);
-            this.addScales(coloradoBeforeMap);
+            // this.addScales(georgiaAfterMap);
+            // this.addScales(georgiaBeforeMap);
             let georgiaContainer = '#georgia-comparison-container';
-            let coloradoContainer = '#colorado-comparison-container';
             //Creates the mapbox compares
             new MapboxCompare(georgiaBeforeMap, georgiaAfterMap, georgiaContainer);
-            new MapboxCompare(coloradoBeforeMap, coloradoAfterMap, coloradoContainer);
         },
         AddUrbanExtent(map, url, source, sourceLayer){
           let self = this;
