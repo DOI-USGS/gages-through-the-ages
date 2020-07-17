@@ -9,9 +9,9 @@
         </div>
         <div id="georgiaSlider" class="sliderContainer">
             <div id="sliderOne" class="beer-slider" data-beer-label="2018">
-                <img srcset="@/assets/images/slider/georgiaAfterSmall.jpg 400w, @/assets/images/slider/georgiaAfterMedium.jpg 600w" sizes="(max-width: 600px) 600px, 810px" src="@/assets/images/slider/georgiaAfter.jpg" alt="USGS Gages in Atlanta Georgia in 2018">
+                <img src="@/assets/images/slider/georgiaAfter.jpg" alt="USGS Gages in Atlanta Georgia in 2018">
                 <div class="beer-reveal" data-beer-label="1967">
-                    <img srcset="@/assets/images/slider/georgiaBeforeSmall.jpg 400w, @/assets/images/slider/georgiaBeforeMedium.jpg 600w" sizes="(max-width: 600px) 600px, 810px" src="@/assets/images/slider/georgiaBefore.jpg" alt="USGS Gages in Atlanta Georgia in 1967">
+                    <img src="@/assets/images/slider/georgiaBefore.jpg" alt="USGS Gages in Atlanta Georgia in 1967">
                 </div>
             </div>
             <GeorgiaInsetMap />

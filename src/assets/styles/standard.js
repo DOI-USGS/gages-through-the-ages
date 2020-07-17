@@ -170,33 +170,6 @@ export default {
                 'source': 'openmaptiles',
                 'source-layer': 'place',
                 'type': 'symbol'
-            },
-            {
-                'id': 'stateNames',
-                'source': 'stateNames',
-                'type': 'symbol',
-                'layout': {
-                    'text-field': ['get', 'State'],
-                    'text-font': ['Noto Sans Regular'],
-                    'text-offset': [0, -.1],
-                    'text-ignore-placement': true,
-                    "text-size": {
-                        "stops": [[5, 8],[6, 12], [7, 13]]
-                    },
-                    'text-transform': 'uppercase',
-                    'text-letter-spacing': .2,
-                    "text-max-width": 20,
-                    'text-rotate': [
-                    'case',
-                    ['==', ['get', 'State'], 'Utah'], -90,
-                    ['==', ['get', 'State'], 'Kansas'], -90,
-                    0
-                    ]
-                },
-                'paint':{
-                    'text-color': 'rgb(138,139,138)',
-                    'text-halo-blur': 0
-                }
             }
         ]
     }
