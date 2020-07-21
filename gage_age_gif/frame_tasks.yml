@@ -1,0 +1,816 @@
+# Do not edit - automatically generated
+# from the task_makefile.mustache template
+# by create_task_makefile() via create_gif_frames()
+# using scipiper package version 0.0.20
+
+target_default: frame_tasks
+
+include:
+  - remake.yml
+
+packages:
+  - scipiper
+
+sources:
+  - src/data_utils.R
+  - src/plot_utils.R
+
+file_extensions:
+  - "ind"
+
+targets:
+  frame_tasks:
+    depends:
+      - hash_table
+
+  # --- 1889 --- #
+  
+  out/twitter/gage_age_1889.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1889, width = 1024, height = 512)
+
+  # --- 1890 --- #
+  
+  out/twitter/gage_age_1890.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1890, width = 1024, height = 512)
+
+  # --- 1891 --- #
+  
+  out/twitter/gage_age_1891.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1891, width = 1024, height = 512)
+
+  # --- 1892 --- #
+  
+  out/twitter/gage_age_1892.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1892, width = 1024, height = 512)
+
+  # --- 1893 --- #
+  
+  out/twitter/gage_age_1893.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1893, width = 1024, height = 512)
+
+  # --- 1894 --- #
+  
+  out/twitter/gage_age_1894.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1894, width = 1024, height = 512)
+
+  # --- 1895 --- #
+  
+  out/twitter/gage_age_1895.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1895, width = 1024, height = 512)
+
+  # --- 1896 --- #
+  
+  out/twitter/gage_age_1896.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1896, width = 1024, height = 512)
+
+  # --- 1897 --- #
+  
+  out/twitter/gage_age_1897.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1897, width = 1024, height = 512)
+
+  # --- 1898 --- #
+  
+  out/twitter/gage_age_1898.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1898, width = 1024, height = 512)
+
+  # --- 1899 --- #
+  
+  out/twitter/gage_age_1899.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1899, width = 1024, height = 512)
+
+  # --- 1900 --- #
+  
+  out/twitter/gage_age_1900.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1900, width = 1024, height = 512)
+
+  # --- 1901 --- #
+  
+  out/twitter/gage_age_1901.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1901, width = 1024, height = 512)
+
+  # --- 1902 --- #
+  
+  out/twitter/gage_age_1902.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1902, width = 1024, height = 512)
+
+  # --- 1903 --- #
+  
+  out/twitter/gage_age_1903.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1903, width = 1024, height = 512)
+
+  # --- 1904 --- #
+  
+  out/twitter/gage_age_1904.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1904, width = 1024, height = 512)
+
+  # --- 1905 --- #
+  
+  out/twitter/gage_age_1905.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1905, width = 1024, height = 512)
+
+  # --- 1906 --- #
+  
+  out/twitter/gage_age_1906.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1906, width = 1024, height = 512)
+
+  # --- 1907 --- #
+  
+  out/twitter/gage_age_1907.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1907, width = 1024, height = 512)
+
+  # --- 1908 --- #
+  
+  out/twitter/gage_age_1908.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1908, width = 1024, height = 512)
+
+  # --- 1909 --- #
+  
+  out/twitter/gage_age_1909.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1909, width = 1024, height = 512)
+
+  # --- 1910 --- #
+  
+  out/twitter/gage_age_1910.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1910, width = 1024, height = 512)
+
+  # --- 1911 --- #
+  
+  out/twitter/gage_age_1911.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1911, width = 1024, height = 512)
+
+  # --- 1912 --- #
+  
+  out/twitter/gage_age_1912.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1912, width = 1024, height = 512)
+
+  # --- 1913 --- #
+  
+  out/twitter/gage_age_1913.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1913, width = 1024, height = 512)
+
+  # --- 1914 --- #
+  
+  out/twitter/gage_age_1914.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1914, width = 1024, height = 512)
+
+  # --- 1915 --- #
+  
+  out/twitter/gage_age_1915.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1915, width = 1024, height = 512)
+
+  # --- 1916 --- #
+  
+  out/twitter/gage_age_1916.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1916, width = 1024, height = 512)
+
+  # --- 1917 --- #
+  
+  out/twitter/gage_age_1917.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1917, width = 1024, height = 512)
+
+  # --- 1918 --- #
+  
+  out/twitter/gage_age_1918.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1918, width = 1024, height = 512)
+
+  # --- 1919 --- #
+  
+  out/twitter/gage_age_1919.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1919, width = 1024, height = 512)
+
+  # --- 1920 --- #
+  
+  out/twitter/gage_age_1920.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1920, width = 1024, height = 512)
+
+  # --- 1921 --- #
+  
+  out/twitter/gage_age_1921.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1921, width = 1024, height = 512)
+
+  # --- 1922 --- #
+  
+  out/twitter/gage_age_1922.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1922, width = 1024, height = 512)
+
+  # --- 1923 --- #
+  
+  out/twitter/gage_age_1923.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1923, width = 1024, height = 512)
+
+  # --- 1924 --- #
+  
+  out/twitter/gage_age_1924.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1924, width = 1024, height = 512)
+
+  # --- 1925 --- #
+  
+  out/twitter/gage_age_1925.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1925, width = 1024, height = 512)
+
+  # --- 1926 --- #
+  
+  out/twitter/gage_age_1926.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1926, width = 1024, height = 512)
+
+  # --- 1927 --- #
+  
+  out/twitter/gage_age_1927.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1927, width = 1024, height = 512)
+
+  # --- 1928 --- #
+  
+  out/twitter/gage_age_1928.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1928, width = 1024, height = 512)
+
+  # --- 1929 --- #
+  
+  out/twitter/gage_age_1929.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1929, width = 1024, height = 512)
+
+  # --- 1930 --- #
+  
+  out/twitter/gage_age_1930.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1930, width = 1024, height = 512)
+
+  # --- 1931 --- #
+  
+  out/twitter/gage_age_1931.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1931, width = 1024, height = 512)
+
+  # --- 1932 --- #
+  
+  out/twitter/gage_age_1932.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1932, width = 1024, height = 512)
+
+  # --- 1933 --- #
+  
+  out/twitter/gage_age_1933.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1933, width = 1024, height = 512)
+
+  # --- 1934 --- #
+  
+  out/twitter/gage_age_1934.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1934, width = 1024, height = 512)
+
+  # --- 1935 --- #
+  
+  out/twitter/gage_age_1935.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1935, width = 1024, height = 512)
+
+  # --- 1936 --- #
+  
+  out/twitter/gage_age_1936.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1936, width = 1024, height = 512)
+
+  # --- 1937 --- #
+  
+  out/twitter/gage_age_1937.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1937, width = 1024, height = 512)
+
+  # --- 1938 --- #
+  
+  out/twitter/gage_age_1938.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1938, width = 1024, height = 512)
+
+  # --- 1939 --- #
+  
+  out/twitter/gage_age_1939.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1939, width = 1024, height = 512)
+
+  # --- 1940 --- #
+  
+  out/twitter/gage_age_1940.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1940, width = 1024, height = 512)
+
+  # --- 1941 --- #
+  
+  out/twitter/gage_age_1941.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1941, width = 1024, height = 512)
+
+  # --- 1942 --- #
+  
+  out/twitter/gage_age_1942.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1942, width = 1024, height = 512)
+
+  # --- 1943 --- #
+  
+  out/twitter/gage_age_1943.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1943, width = 1024, height = 512)
+
+  # --- 1944 --- #
+  
+  out/twitter/gage_age_1944.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1944, width = 1024, height = 512)
+
+  # --- 1945 --- #
+  
+  out/twitter/gage_age_1945.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1945, width = 1024, height = 512)
+
+  # --- 1946 --- #
+  
+  out/twitter/gage_age_1946.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1946, width = 1024, height = 512)
+
+  # --- 1947 --- #
+  
+  out/twitter/gage_age_1947.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1947, width = 1024, height = 512)
+
+  # --- 1948 --- #
+  
+  out/twitter/gage_age_1948.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1948, width = 1024, height = 512)
+
+  # --- 1949 --- #
+  
+  out/twitter/gage_age_1949.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1949, width = 1024, height = 512)
+
+  # --- 1950 --- #
+  
+  out/twitter/gage_age_1950.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1950, width = 1024, height = 512)
+
+  # --- 1951 --- #
+  
+  out/twitter/gage_age_1951.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1951, width = 1024, height = 512)
+
+  # --- 1952 --- #
+  
+  out/twitter/gage_age_1952.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1952, width = 1024, height = 512)
+
+  # --- 1953 --- #
+  
+  out/twitter/gage_age_1953.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1953, width = 1024, height = 512)
+
+  # --- 1954 --- #
+  
+  out/twitter/gage_age_1954.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1954, width = 1024, height = 512)
+
+  # --- 1955 --- #
+  
+  out/twitter/gage_age_1955.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1955, width = 1024, height = 512)
+
+  # --- 1956 --- #
+  
+  out/twitter/gage_age_1956.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1956, width = 1024, height = 512)
+
+  # --- 1957 --- #
+  
+  out/twitter/gage_age_1957.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1957, width = 1024, height = 512)
+
+  # --- 1958 --- #
+  
+  out/twitter/gage_age_1958.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1958, width = 1024, height = 512)
+
+  # --- 1959 --- #
+  
+  out/twitter/gage_age_1959.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1959, width = 1024, height = 512)
+
+  # --- 1960 --- #
+  
+  out/twitter/gage_age_1960.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1960, width = 1024, height = 512)
+
+  # --- 1961 --- #
+  
+  out/twitter/gage_age_1961.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1961, width = 1024, height = 512)
+
+  # --- 1962 --- #
+  
+  out/twitter/gage_age_1962.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1962, width = 1024, height = 512)
+
+  # --- 1963 --- #
+  
+  out/twitter/gage_age_1963.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1963, width = 1024, height = 512)
+
+  # --- 1964 --- #
+  
+  out/twitter/gage_age_1964.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1964, width = 1024, height = 512)
+
+  # --- 1965 --- #
+  
+  out/twitter/gage_age_1965.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1965, width = 1024, height = 512)
+
+  # --- 1966 --- #
+  
+  out/twitter/gage_age_1966.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1966, width = 1024, height = 512)
+
+  # --- 1967 --- #
+  
+  out/twitter/gage_age_1967.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1967, width = 1024, height = 512)
+
+  # --- 1968 --- #
+  
+  out/twitter/gage_age_1968.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1968, width = 1024, height = 512)
+
+  # --- 1969 --- #
+  
+  out/twitter/gage_age_1969.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1969, width = 1024, height = 512)
+
+  # --- 1970 --- #
+  
+  out/twitter/gage_age_1970.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1970, width = 1024, height = 512)
+
+  # --- 1971 --- #
+  
+  out/twitter/gage_age_1971.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1971, width = 1024, height = 512)
+
+  # --- 1972 --- #
+  
+  out/twitter/gage_age_1972.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1972, width = 1024, height = 512)
+
+  # --- 1973 --- #
+  
+  out/twitter/gage_age_1973.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1973, width = 1024, height = 512)
+
+  # --- 1974 --- #
+  
+  out/twitter/gage_age_1974.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1974, width = 1024, height = 512)
+
+  # --- 1975 --- #
+  
+  out/twitter/gage_age_1975.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1975, width = 1024, height = 512)
+
+  # --- 1976 --- #
+  
+  out/twitter/gage_age_1976.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1976, width = 1024, height = 512)
+
+  # --- 1977 --- #
+  
+  out/twitter/gage_age_1977.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1977, width = 1024, height = 512)
+
+  # --- 1978 --- #
+  
+  out/twitter/gage_age_1978.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1978, width = 1024, height = 512)
+
+  # --- 1979 --- #
+  
+  out/twitter/gage_age_1979.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1979, width = 1024, height = 512)
+
+  # --- 1980 --- #
+  
+  out/twitter/gage_age_1980.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1980, width = 1024, height = 512)
+
+  # --- 1981 --- #
+  
+  out/twitter/gage_age_1981.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1981, width = 1024, height = 512)
+
+  # --- 1982 --- #
+  
+  out/twitter/gage_age_1982.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1982, width = 1024, height = 512)
+
+  # --- 1983 --- #
+  
+  out/twitter/gage_age_1983.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1983, width = 1024, height = 512)
+
+  # --- 1984 --- #
+  
+  out/twitter/gage_age_1984.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1984, width = 1024, height = 512)
+
+  # --- 1985 --- #
+  
+  out/twitter/gage_age_1985.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1985, width = 1024, height = 512)
+
+  # --- 1986 --- #
+  
+  out/twitter/gage_age_1986.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1986, width = 1024, height = 512)
+
+  # --- 1987 --- #
+  
+  out/twitter/gage_age_1987.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1987, width = 1024, height = 512)
+
+  # --- 1988 --- #
+  
+  out/twitter/gage_age_1988.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1988, width = 1024, height = 512)
+
+  # --- 1989 --- #
+  
+  out/twitter/gage_age_1989.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1989, width = 1024, height = 512)
+
+  # --- 1990 --- #
+  
+  out/twitter/gage_age_1990.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1990, width = 1024, height = 512)
+
+  # --- 1991 --- #
+  
+  out/twitter/gage_age_1991.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1991, width = 1024, height = 512)
+
+  # --- 1992 --- #
+  
+  out/twitter/gage_age_1992.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1992, width = 1024, height = 512)
+
+  # --- 1993 --- #
+  
+  out/twitter/gage_age_1993.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1993, width = 1024, height = 512)
+
+  # --- 1994 --- #
+  
+  out/twitter/gage_age_1994.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1994, width = 1024, height = 512)
+
+  # --- 1995 --- #
+  
+  out/twitter/gage_age_1995.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1995, width = 1024, height = 512)
+
+  # --- 1996 --- #
+  
+  out/twitter/gage_age_1996.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1996, width = 1024, height = 512)
+
+  # --- 1997 --- #
+  
+  out/twitter/gage_age_1997.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1997, width = 1024, height = 512)
+
+  # --- 1998 --- #
+  
+  out/twitter/gage_age_1998.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1998, width = 1024, height = 512)
+
+  # --- 1999 --- #
+  
+  out/twitter/gage_age_1999.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 1999, width = 1024, height = 512)
+
+  # --- 2000 --- #
+  
+  out/twitter/gage_age_2000.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2000, width = 1024, height = 512)
+
+  # --- 2001 --- #
+  
+  out/twitter/gage_age_2001.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2001, width = 1024, height = 512)
+
+  # --- 2002 --- #
+  
+  out/twitter/gage_age_2002.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2002, width = 1024, height = 512)
+
+  # --- 2003 --- #
+  
+  out/twitter/gage_age_2003.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2003, width = 1024, height = 512)
+
+  # --- 2004 --- #
+  
+  out/twitter/gage_age_2004.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2004, width = 1024, height = 512)
+
+  # --- 2005 --- #
+  
+  out/twitter/gage_age_2005.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2005, width = 1024, height = 512)
+
+  # --- 2006 --- #
+  
+  out/twitter/gage_age_2006.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2006, width = 1024, height = 512)
+
+  # --- 2007 --- #
+  
+  out/twitter/gage_age_2007.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2007, width = 1024, height = 512)
+
+  # --- 2008 --- #
+  
+  out/twitter/gage_age_2008.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2008, width = 1024, height = 512)
+
+  # --- 2009 --- #
+  
+  out/twitter/gage_age_2009.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2009, width = 1024, height = 512)
+
+  # --- 2010 --- #
+  
+  out/twitter/gage_age_2010.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2010, width = 1024, height = 512)
+
+  # --- 2011 --- #
+  
+  out/twitter/gage_age_2011.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2011, width = 1024, height = 512)
+
+  # --- 2012 --- #
+  
+  out/twitter/gage_age_2012.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2012, width = 1024, height = 512)
+
+  # --- 2013 --- #
+  
+  out/twitter/gage_age_2013.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2013, width = 1024, height = 512)
+
+  # --- 2014 --- #
+  
+  out/twitter/gage_age_2014.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2014, width = 1024, height = 512)
+
+  # --- 2015 --- #
+  
+  out/twitter/gage_age_2015.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2015, width = 1024, height = 512)
+
+  # --- 2016 --- #
+  
+  out/twitter/gage_age_2016.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2016, width = 1024, height = 512)
+
+  # --- 2017 --- #
+  
+  out/twitter/gage_age_2017.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2017, width = 1024, height = 512)
+
+  # --- 2018 --- #
+  
+  out/twitter/gage_age_2018.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2018, width = 1024, height = 512)
+
+  # --- 2019 --- #
+  
+  out/twitter/gage_age_2019.png:
+    command: plot_twitter(target_name, gage_melt, state_map = state_map, site_map = site_map, yr = 2019, width = 1024, height = 512)
+
+  # --- Overall job --- #
+
+  hash_table:
+    command: tibble_hash_frames(
+      'out/twitter/gage_age_1889.png',
+      'out/twitter/gage_age_1890.png',
+      'out/twitter/gage_age_1891.png',
+      'out/twitter/gage_age_1892.png',
+      'out/twitter/gage_age_1893.png',
+      'out/twitter/gage_age_1894.png',
+      'out/twitter/gage_age_1895.png',
+      'out/twitter/gage_age_1896.png',
+      'out/twitter/gage_age_1897.png',
+      'out/twitter/gage_age_1898.png',
+      'out/twitter/gage_age_1899.png',
+      'out/twitter/gage_age_1900.png',
+      'out/twitter/gage_age_1901.png',
+      'out/twitter/gage_age_1902.png',
+      'out/twitter/gage_age_1903.png',
+      'out/twitter/gage_age_1904.png',
+      'out/twitter/gage_age_1905.png',
+      'out/twitter/gage_age_1906.png',
+      'out/twitter/gage_age_1907.png',
+      'out/twitter/gage_age_1908.png',
+      'out/twitter/gage_age_1909.png',
+      'out/twitter/gage_age_1910.png',
+      'out/twitter/gage_age_1911.png',
+      'out/twitter/gage_age_1912.png',
+      'out/twitter/gage_age_1913.png',
+      'out/twitter/gage_age_1914.png',
+      'out/twitter/gage_age_1915.png',
+      'out/twitter/gage_age_1916.png',
+      'out/twitter/gage_age_1917.png',
+      'out/twitter/gage_age_1918.png',
+      'out/twitter/gage_age_1919.png',
+      'out/twitter/gage_age_1920.png',
+      'out/twitter/gage_age_1921.png',
+      'out/twitter/gage_age_1922.png',
+      'out/twitter/gage_age_1923.png',
+      'out/twitter/gage_age_1924.png',
+      'out/twitter/gage_age_1925.png',
+      'out/twitter/gage_age_1926.png',
+      'out/twitter/gage_age_1927.png',
+      'out/twitter/gage_age_1928.png',
+      'out/twitter/gage_age_1929.png',
+      'out/twitter/gage_age_1930.png',
+      'out/twitter/gage_age_1931.png',
+      'out/twitter/gage_age_1932.png',
+      'out/twitter/gage_age_1933.png',
+      'out/twitter/gage_age_1934.png',
+      'out/twitter/gage_age_1935.png',
+      'out/twitter/gage_age_1936.png',
+      'out/twitter/gage_age_1937.png',
+      'out/twitter/gage_age_1938.png',
+      'out/twitter/gage_age_1939.png',
+      'out/twitter/gage_age_1940.png',
+      'out/twitter/gage_age_1941.png',
+      'out/twitter/gage_age_1942.png',
+      'out/twitter/gage_age_1943.png',
+      'out/twitter/gage_age_1944.png',
+      'out/twitter/gage_age_1945.png',
+      'out/twitter/gage_age_1946.png',
+      'out/twitter/gage_age_1947.png',
+      'out/twitter/gage_age_1948.png',
+      'out/twitter/gage_age_1949.png',
+      'out/twitter/gage_age_1950.png',
+      'out/twitter/gage_age_1951.png',
+      'out/twitter/gage_age_1952.png',
+      'out/twitter/gage_age_1953.png',
+      'out/twitter/gage_age_1954.png',
+      'out/twitter/gage_age_1955.png',
+      'out/twitter/gage_age_1956.png',
+      'out/twitter/gage_age_1957.png',
+      'out/twitter/gage_age_1958.png',
+      'out/twitter/gage_age_1959.png',
+      'out/twitter/gage_age_1960.png',
+      'out/twitter/gage_age_1961.png',
+      'out/twitter/gage_age_1962.png',
+      'out/twitter/gage_age_1963.png',
+      'out/twitter/gage_age_1964.png',
+      'out/twitter/gage_age_1965.png',
+      'out/twitter/gage_age_1966.png',
+      'out/twitter/gage_age_1967.png',
+      'out/twitter/gage_age_1968.png',
+      'out/twitter/gage_age_1969.png',
+      'out/twitter/gage_age_1970.png',
+      'out/twitter/gage_age_1971.png',
+      'out/twitter/gage_age_1972.png',
+      'out/twitter/gage_age_1973.png',
+      'out/twitter/gage_age_1974.png',
+      'out/twitter/gage_age_1975.png',
+      'out/twitter/gage_age_1976.png',
+      'out/twitter/gage_age_1977.png',
+      'out/twitter/gage_age_1978.png',
+      'out/twitter/gage_age_1979.png',
+      'out/twitter/gage_age_1980.png',
+      'out/twitter/gage_age_1981.png',
+      'out/twitter/gage_age_1982.png',
+      'out/twitter/gage_age_1983.png',
+      'out/twitter/gage_age_1984.png',
+      'out/twitter/gage_age_1985.png',
+      'out/twitter/gage_age_1986.png',
+      'out/twitter/gage_age_1987.png',
+      'out/twitter/gage_age_1988.png',
+      'out/twitter/gage_age_1989.png',
+      'out/twitter/gage_age_1990.png',
+      'out/twitter/gage_age_1991.png',
+      'out/twitter/gage_age_1992.png',
+      'out/twitter/gage_age_1993.png',
+      'out/twitter/gage_age_1994.png',
+      'out/twitter/gage_age_1995.png',
+      'out/twitter/gage_age_1996.png',
+      'out/twitter/gage_age_1997.png',
+      'out/twitter/gage_age_1998.png',
+      'out/twitter/gage_age_1999.png',
+      'out/twitter/gage_age_2000.png',
+      'out/twitter/gage_age_2001.png',
+      'out/twitter/gage_age_2002.png',
+      'out/twitter/gage_age_2003.png',
+      'out/twitter/gage_age_2004.png',
+      'out/twitter/gage_age_2005.png',
+      'out/twitter/gage_age_2006.png',
+      'out/twitter/gage_age_2007.png',
+      'out/twitter/gage_age_2008.png',
+      'out/twitter/gage_age_2009.png',
+      'out/twitter/gage_age_2010.png',
+      'out/twitter/gage_age_2011.png',
+      'out/twitter/gage_age_2012.png',
+      'out/twitter/gage_age_2013.png',
+      'out/twitter/gage_age_2014.png',
+      'out/twitter/gage_age_2015.png',
+      'out/twitter/gage_age_2016.png',
+      'out/twitter/gage_age_2017.png',
+      'out/twitter/gage_age_2018.png',
+      'out/twitter/gage_age_2019.png')
+    
