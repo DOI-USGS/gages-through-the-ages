@@ -19,7 +19,6 @@
           RealTime: () => import( /*webpackChunkName: "real-time"*/ "../components/RealTime"),
           MapImageSlider: () => import( /*webpackChunkName: "image-slider"*/ "../components/MapImageSlider"),
           TakeAway: () => import(/*webpackChunkName: "take-away"*/ "../components/TakeAway"),
-          DataSources: () => import(/*webpackChunkName: "data-sources"*/ "../components/DataSources"),
           Methods: () => import(/*webpackChunkName: "methods"*/ "../components/Methods"),
           References: () => import(/*webpackChunkName: "references"*/ "../components/References")
       },
