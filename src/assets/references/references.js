@@ -13,7 +13,7 @@ export default {
                 href: ""
             },
             {
-                reference: "U.S. Geological Survey, 2016, National Water Information System data available on the World Wide Web (USGS Water Data for the Nation), accessed [June XX, 2020], at URL [<a href='http://waterdata.usgs.gov/nwis/' target='_blank'>http://waterdata.usgs.gov/nwis/</a>]. ",
+                reference: "U.S. Geological Survey, 2016, National Water Information System data available on the World Wide Web (USGS Water Data for the Nation), accessed [June 15, 2020], at URL [<a href='http://waterdata.usgs.gov/nwis/' target='_blank'>http://waterdata.usgs.gov/nwis/</a>]. ",
                 href: ""
             },
 
