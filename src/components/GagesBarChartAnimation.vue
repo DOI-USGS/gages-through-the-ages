@@ -2677,7 +2677,7 @@
           </picture>
           <caption>USGS Stream Gage along the Mississippi River.</caption>
         </div>
-        <p>{{ text.paragraphText1 }}</p>
+        <p v-html="text.paragraphText1"></p>
       </div>
       <p class="clear">{{ text.paragraphText2 }}</p>
     </div>
