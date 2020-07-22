@@ -3,16 +3,7 @@ export default {
         title: "The Next Generation Water Observing System ",
         introText: "",
         paragraphSections: [
-            {paragraphText: 'As factors that influence water monitoring change, the USGS is continually ' + 
-                            'adapting to the present-day needs of water management and the protection of life ' + 
-                            'and property. A new initiative established in 2019, called the ' + 
-                            '<a href="https://www.usgs.gov/mission-areas/water-resources/science/usgs-next-generation-water-observing-system-ngwos" target="_blank">Next-Generation Water ' + 
-                            'Observing System</a> is piloting new advanced water monitoring in the Delaware River Basin ' + 
-                            'and will be expanding into the Upper Colorado River Basin next year. This new initiative will ' + 
-                            'deliver high resolution water data using innovative technologies to support USGS regional assessments ' + 
-                            'and models  for water availability assessments and prediction. These new sources of water information ' + 
-                            'will inform water resources decisions and advance the understanding of how best to meet the nation’s ' + 
-                            'changing water needs. '
+            {paragraphText: 'Emergency managers and water resource managers rely on the USGS’s water monitoring system and the associated water-data delivery to address complex water challenges involving too much, too little, or poor-quality water. Each year, floods, droughts, and water quality issues remind us of the vulnerability of our physical and socioeconomic well-being and the importance of monitoring our Nation’s water. This monitoring system is currently functioning, but it was designed many decades ago to address 19th and 20th century challenges and needs major upgrades to meet the increasingly complex water challenges facing communities across the Nation. In 2019, the USGS established a new initiative called the <a href="https://www.usgs.gov/mission-areas/water-resources/science/usgs-next-generation-water-observing-system-ngwos?qt-science_center_objects=0#qt-science_center_objects" target="_blank">Next-Generation Water Observing System (NGWOS)</a> to provide high-resolution, state-of-the-art, real-time data on water quantity and quality necessary to support modern water prediction and assessments while also serving as an incubator for new instrumentation and innovative methods of monitoring water resources. The USGS plans to implement NGWOS in at least 10 watersheds with diverse environmental settings that can serve to represent larger regions across the Nation. Data from these intensively monitored watersheds will be used (alongside data from existing monitoring networks) to help develop advanced models to fill in data and knowledge gaps that limit water prediction and assessments in those watersheds that can be extended to support predictions/assessments at a Nation scale. This advanced observing system will provide quantitative information on streamflow, evapotranspiration, snowpack, soil moisture, a broad suite of water quality constituents, connections between groundwater and surface water, and water use.'
             },
         ]
     }
