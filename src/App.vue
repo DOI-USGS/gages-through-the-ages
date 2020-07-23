@@ -6,7 +6,7 @@
     <WorkInProgressWarning v-if="checkTypeOfEnv !== '' & !isInternetExplorer" />
     <router-view v-if="!isInternetExplorer" />
     <FooterLinks v-if="!isInternetExplorer & checkIfBarChartIsRendered" />
-    <PreFooterCodeLinks />
+    <PreFooterCodeLinks v-if="checkIfBarChartIsRendered || isInternetExplorer" />
     <FooterUSGS v-if="checkIfBarChartIsRendered || isInternetExplorer" />
   </div>
 </template>
