@@ -6,6 +6,7 @@
     <WorkInProgressWarning v-if="checkTypeOfEnv !== '' & !isInternetExplorer" />
     <router-view v-if="!isInternetExplorer" />
     <FooterLinks v-if="!isInternetExplorer & checkIfBarChartIsRendered" />
+    <PreFooterCodeLinks />
     <FooterUSGS v-if="checkIfBarChartIsRendered || isInternetExplorer" />
   </div>
 </template>
@@ -23,7 +24,8 @@
             HeaderUSGS,
             WorkInProgressWarning,
             InternetExplorerPage,
-            FooterLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links"*/ "./components/FooterLinks"),
+            FooterLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-visualizations"*/ "./components/FooterLinks"),
+            PreFooterCodeLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-code"*/ "./components/PreFooterCodeLinks"),
             FooterUSGS: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "usgs-footer"*/ "./components/FooterUSGS")
         },
         data() {

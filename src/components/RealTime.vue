@@ -1,8 +1,8 @@
 <template>
   <div class="section">
     <h2>{{ realtime.title }}</h2>
-    <p>{{realtime.paragraphText1}}</p>
-    <p>{{realtime.paragraphText2}}</p>
+    <p>{{ realtime.paragraphText1 }}</p>
+    <p>{{ realtime.paragraphText2 }}</p>
   </div>
 </template>
 <script>

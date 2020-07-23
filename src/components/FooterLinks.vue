@@ -6,20 +6,24 @@
         <a
           :href="mariaLink"
         >
-          <figcaption>Hurricane Maria's Water Footprint</figcaption>
-          <img
-            src="@/assets/images/thumbnailMaria.png"
-            alt="thumbnail for Hurricane Maria visualization link"
-          >
+          <figure>
+            <figcaption>Hurricane Maria's Water Footprint</figcaption>
+            <img
+              src="@/assets/images/thumbnailMaria.png"
+              alt="thumbnail for Hurricane Maria visualization link"
+            >
+          </figure>
         </a>
         <a
           :href="waterUseLink"
         >
-          <figcaption>Water use in the U.S., 2015</figcaption>
-          <img
-            src="@/assets/images/thumbnailWaterUse.png"
-            alt="thumbnail for Water Use visualization link"
-          >
+          <figure>
+            <figcaption>Water use in the U.S., 2015</figcaption>
+            <img
+              src="@/assets/images/thumbnailWaterUse.png"
+              alt="thumbnail for Water Use visualization link"
+            >
+          </figure>
         </a>
       </div>
     </div>
@@ -39,6 +43,8 @@
 </script>
 
 <style scoped lang="scss">
+
+
 /* for mobile */
 #app {
   .pre-footer-links {
@@ -52,7 +58,6 @@
       color: white;
     }
     background-color: #00264c;
-    border-bottom: 1px solid white;
     .footer-viz-links {
       margin: 0 auto;
       display: flex;
@@ -80,6 +85,12 @@
         justify-content: center;
       }
     }
+  }
+}
+
+#code-repository-link-container {
+  a {
+    color:white;
   }
 }
 </style>

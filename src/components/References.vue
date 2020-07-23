@@ -1,11 +1,16 @@
 <template>
-  <div id="references" class="section">
+  <div
+    id="references"
+    class="section"
+  >
     <h2>{{ title }}</h2>
     <div
       v-for="reference in references"
       :key="reference.reference"
     >
-      <p class="about-ref"><span v-html="reference.reference" /></p>
+      <p class="about-ref">
+        <span v-html="reference.reference" />
+      </p>
     </div>
   </div>
 </template>
