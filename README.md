@@ -30,6 +30,7 @@ To fix that, do the following:
 - Delete `NODE_ENV=development` from that value
 - That value should now look like `"serve": "vue-cli-service serve --mode test_tier",`
 - Run `npm run serve` again, and the project should start
+
 On Windows -
 You might get this error when running ``npm run serve``
 
