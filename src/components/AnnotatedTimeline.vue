@@ -5,22 +5,22 @@
   >
     <h2>{{ text.title }}</h2>
     <div id="imageArea">
-        <div id="oldTimeyImage">
-          <picture>
-            <source
-              srcset="@/assets/images/oldTimey/Picture1.webp"
-              type="image/webp"
-            >
-            <img
-              src="@/assets/images/oldTimey/Picture1.png"
-              alt="An early hydrographer makes measurements of Rio Grande river flow at Embudo, New Mexico."
-            >
-          </picture>
-          <caption>An early hydrographer makes measurements of Rio Grande river flow at Embudo, New Mexico.</caption>
-        </div>
-        <div>
-          <p v-html="text.firstParagraphText"></p>
-        </div>
+      <div id="oldTimeyImage">
+        <picture>
+          <source
+            srcset="@/assets/images/oldTimey/Picture1.webp"
+            type="image/webp"
+          >
+          <img
+            src="@/assets/images/oldTimey/Picture1.png"
+            alt="An early hydrographer makes measurements of Rio Grande river flow at Embudo, New Mexico."
+          >
+        </picture>
+        <caption>An early hydrographer makes measurements of Rio Grande river flow at Embudo, New Mexico.</caption>
+      </div>
+      <div>
+        <p v-html="text.firstParagraphText" />
+      </div>
     </div>
     <div
       v-for="paragraph in text.paragraphSections"

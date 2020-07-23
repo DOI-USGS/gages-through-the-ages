@@ -1,25 +1,41 @@
 <template>
-    <div class="section">
-        <h2>{{ atlantaText.title }}</h2>
-        <div
-            v-for="paragraph in atlantaText.paragraphSections"
-            :key="paragraph.aboveSliderText"
-        >
-            <p><span v-html="paragraph.aboveSliderText" /></p>
-        </div>
-        <div id="georgiaSlider" class="sliderContainer">
-            <div id="sliderOne" class="beer-slider" data-beer-label="2018">
-                <img src="@/assets/images/slider/georgiaAfter.jpg" alt="USGS Gages in Atlanta Georgia in 2018">
-                <div class="beer-reveal" data-beer-label="1967">
-                    <img src="@/assets/images/slider/georgiaBefore.jpg" alt="USGS Gages in Atlanta Georgia in 1967">
-                </div>
-            </div>
-            <GeorgiaInsetMap />
-        </div>
-        <caption class="mapcaption">
-            <span v-html="atlantaText.caption" />
-        </caption>
+  <div class="section">
+    <h2>{{ atlantaText.title }}</h2>
+    <div
+      v-for="paragraph in atlantaText.paragraphSections"
+      :key="paragraph.aboveSliderText"
+    >
+      <p><span v-html="paragraph.aboveSliderText" /></p>
     </div>
+    <div
+      id="georgiaSlider"
+      class="sliderContainer"
+    >
+      <div
+        id="sliderOne"
+        class="beer-slider"
+        data-beer-label="2018"
+      >
+        <img
+          src="@/assets/images/slider/georgiaAfter.jpg"
+          alt="USGS Gages in Atlanta Georgia in 2018"
+        >
+        <div
+          class="beer-reveal"
+          data-beer-label="1967"
+        >
+          <img
+            src="@/assets/images/slider/georgiaBefore.jpg"
+            alt="USGS Gages in Atlanta Georgia in 1967"
+          >
+        </div>
+      </div>
+      <GeorgiaInsetMap />
+    </div>
+    <caption class="mapcaption">
+      <span v-html="atlantaText.caption" />
+    </caption>
+  </div>
 </template>
 <script>
 import BeerSlider from "beerslider";
