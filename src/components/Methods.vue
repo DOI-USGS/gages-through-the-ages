@@ -3,7 +3,7 @@
     id="methods"
     class="section"
   >
-    <h2><a id="methods-anchor"></a>Methods</h2>
+    <h2><a id="methods-anchor" />Methods</h2>
     <div class="usa-accordion usa-accordion--bordered">
       <div
         v-for="method in methods.methods"
