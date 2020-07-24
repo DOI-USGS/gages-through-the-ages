@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.remake
+.Rproj
+*.rds
+*.png
+!usgs_logo_grey.png
+!usgs_logo_insta_h100.png
