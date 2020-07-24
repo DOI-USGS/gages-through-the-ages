@@ -11,14 +11,22 @@ export default{
             },
             {
                 'title': 'Determining if a gage is urban or non-urban',
-                'method': 'To determine whether a stream gage is in an urban or rural area, we used urban extent spatial ' +
+                'method': '<strong>Interactive slider map</strong><br>' +
+                        'To determine whether a stream gage is in an urban or rural area, we used urban extent spatial ' +
                         'data from the U.S. Census Bureau for years closest to our years of interest (1967 and 2018). ' +
                         'For the spatial extents used in the 1967 visual, we digitized maps from the <a href="https://www2.census.gov/library/publications/decennial/1970/pc-s1-supplementary-reports/pc-s1-108ch2.pdf" target="_blank">' +
-                        '1970 US Census Bureau report on urbanized areas in the United States. For the spatial extents ' +
+                        '1970 US Census Bureau report on urbanized areas in the United States</a>. For the spatial extents ' +
                         'used in the 2018 visual, we used <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html" target="_blank">cartographic boundary files for 2018 urban areas from the ' +
-                        'U.S. Census Bureau. Using the urban extent spatial data and the USGS stream gage location ' +
+                        'U.S. Census Bureau</a>. Using the urban extent spatial data and the USGS stream gage location ' +
                         'data, we used point-in-polygon methods in R to determine if a stream gage was inside or ' +
-                        'outside of an urbanized area. Those methods can be found in <a href="https://github.com/usgs-makerspace/gages-through-the-ages/tree/master/data_processing_pipeline">this data processing pipeline.'
+                        'outside of an urbanized area. Those methods can be found in <a href="https://github.com/usgs-makerspace/gages-through-the-ages/tree/master/data_processing_pipeline">this data processing pipeline</a>.<br>'  +
+                        '<br><strong>National statistic</strong><br>' +
+                        'To calculate the 2018 national percent of urban gages (23%), we used the full cartographic ' +
+                        'boundary file from the US Census Bureau. To calculate the 1967 national percent of urban ' +
+                        'gages (16%), we did not digitize every urban area in the country. Instead, we used the ' +
+                        'urban areas from 2018 to get an estimate. It is conservative because there are more urban ' +
+                        'areas in 2018 than in 1967, so we know we are over estimating the number of gages that ' +
+                        'count as urban in 1967.'
             }
         ]
     }
