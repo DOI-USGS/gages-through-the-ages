@@ -103,21 +103,20 @@
 <style scoped lang="scss">
   #imageArea {
     margin-top: 20px;
-    display: block;
     text-align: center;
-    p{
+    p {
       text-align: left;
     }
   }
-  #mobileAnnotatedBarCharts{
+  #mobileAnnotatedBarCharts {
     text-align: center;
   }
-  .breathingRoom{
+  .breathingRoom {
     margin: 4vh 0;
   }
-  @media screen and (min-width: 600px){
-    #oldTimeyImage{
-      width: 55%;
+  @media screen and (min-width: 600px) {
+    #oldTimeyImage {
+      width: 50%;
       float: left;
       margin: 15px 30px 10px 0;
     }
