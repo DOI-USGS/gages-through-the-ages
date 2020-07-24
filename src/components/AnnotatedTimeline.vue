@@ -119,10 +119,7 @@
     #oldTimeyImage{
       width: 50%;
       float: left;
-      margin: 5px 10px 10px 0;
+      margin: 15px 30px 10px 0;
     }
-  }
-  #oldTimeyImage {
-    margin: 15px 30px 10px 0;
   }
 </style>
