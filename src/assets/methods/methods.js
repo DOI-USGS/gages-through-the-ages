@@ -3,7 +3,16 @@ export default{
         methods:[
             {
                 'title': 'Digitization of historic urban extents',
-                'method': 'Historic urban extents were digitized using an ArcToolbox tool, "PDF to TIFF Conversion Tool". Each separate page of the provided PDF was converted into a geotiff format "TIF file" that was imported as a raster layer into ArcMap 10.7. After adding the TIF file into the current GIS project, the Georeferencing tool "Fit to Display" was used to pull the raster into the area of interest. Control points were identified and laid down to tie the non-geospatial TIF image to actual locations on the ground using the Georeferencing tool "Add Control Points". This stretched the raster into the current GIS projection, which is set at EPSG:3857. After successfully aligning the TIF to the geospatial extent of interest, a new empty shapefile was created. The Create Features toolset was used to manually trace polygons over the urban areas depicted in the original PDF.'
+                'method': 'Historic urban extents were digitized using an ArcToolbox<sup>*</sup> tool, "PDF to TIFF Conversion Tool". ' +
+                        'Each separate page of the provided PDF was converted into a geotiff format "TIF file" that was ' +
+                        'imported as a raster layer into ArcMap 10.7. After adding the TIF file into the current GIS project, ' +
+                        'the Georeferencing tool "Fit to Display" was used to pull the raster into the area of interest. ' +
+                        'Control points were identified and laid down to tie the non-geospatial TIF image to actual ' +
+                        'locations on the ground using the Georeferencing tool "Add Control Points". This stretched the ' +
+                        'raster into the current GIS projection, which is set at EPSG:3857. After successfully aligning ' +
+                        'the TIF to the geospatial extent of interest, a new empty shapefile was created. The Create ' +
+                        'Features toolset was used to manually trace polygons over the urban areas depicted in the ' +
+                        'original PDF. <br><br><sup>*</sup><i>Any use of trade, firm, or product names is for descriptive purposes only and does not imply endorsement by the U.S. Government</i>'
             },
             {
                 'title': 'Calculating USGS stream gages',
@@ -11,7 +20,7 @@ export default{
             },
             {
                 'title': 'Determining if a gage is urban or non-urban',
-                'method': '<strong>Interactive slider map</strong><br>' +
+                'method': '<strong>Slider map</strong><br>' +
                         'To determine whether a stream gage is in an urban or rural area, we used urban extent spatial ' +
                         'data from the U.S. Census Bureau for years closest to our years of interest (1967 and 2018). ' +
                         'For the spatial extents used in the 1967 visual, we digitized maps from the <a href="https://www2.census.gov/library/publications/decennial/1970/pc-s1-supplementary-reports/pc-s1-108ch2.pdf" target="_blank">' +
