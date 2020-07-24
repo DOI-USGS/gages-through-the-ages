@@ -20,7 +20,7 @@ export default{
             },
             {
                 'title': 'Determining if a gage is urban or non-urban',
-                'method': '<strong>Interactive slider map</strong><br>' +
+                'method': '<strong>Slider map</strong><br>' +
                         'To determine whether a stream gage is in an urban or rural area, we used urban extent spatial ' +
                         'data from the U.S. Census Bureau for years closest to our years of interest (1967 and 2018). ' +
                         'For the spatial extents used in the 1967 visual, we digitized maps from the <a href="https://www2.census.gov/library/publications/decennial/1970/pc-s1-supplementary-reports/pc-s1-108ch2.pdf" target="_blank">' +
