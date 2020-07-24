@@ -3,7 +3,16 @@ export default{
         methods:[
             {
                 'title': 'Digitization of historic urban extents',
-                'method': 'Historic urban extents were digitized using an ArcToolbox tool, "PDF to TIFF Conversion Tool". Each separate page of the provided PDF was converted into a geotiff format "TIF file" that was imported as a raster layer into ArcMap 10.7. After adding the TIF file into the current GIS project, the Georeferencing tool "Fit to Display" was used to pull the raster into the area of interest. Control points were identified and laid down to tie the non-geospatial TIF image to actual locations on the ground using the Georeferencing tool "Add Control Points". This stretched the raster into the current GIS projection, which is set at EPSG:3857. After successfully aligning the TIF to the geospatial extent of interest, a new empty shapefile was created. The Create Features toolset was used to manually trace polygons over the urban areas depicted in the original PDF.'
+                'method': 'Historic urban extents were digitized using an ArcToolbox<sup>*</sup> tool, "PDF to TIFF Conversion Tool". ' +
+                        'Each separate page of the provided PDF was converted into a geotiff format "TIF file" that was ' +
+                        'imported as a raster layer into ArcMap 10.7. After adding the TIF file into the current GIS project, ' +
+                        'the Georeferencing tool "Fit to Display" was used to pull the raster into the area of interest. ' +
+                        'Control points were identified and laid down to tie the non-geospatial TIF image to actual ' +
+                        'locations on the ground using the Georeferencing tool "Add Control Points". This stretched the ' +
+                        'raster into the current GIS projection, which is set at EPSG:3857. After successfully aligning ' +
+                        'the TIF to the geospatial extent of interest, a new empty shapefile was created. The Create ' +
+                        'Features toolset was used to manually trace polygons over the urban areas depicted in the ' +
+                        'original PDF. <br><br><sup>*</sup><i>Any use of trade, firm, or product names is for descriptive purposes only and does not imply endorsement by the U.S. Government</i>'
             },
             {
                 'title': 'Calculating USGS stream gages',
