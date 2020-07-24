@@ -101,7 +101,7 @@
 </script>
 
 <style scoped lang="scss">
-  #imageArea{
+  #imageArea {
     margin-top: 20px;
     display: block;
     text-align: center;
@@ -117,7 +117,7 @@
   }
   @media screen and (min-width: 600px){
     #oldTimeyImage{
-      width: 50%;
+      width: 55%;
       float: left;
       margin: 15px 30px 10px 0;
     }

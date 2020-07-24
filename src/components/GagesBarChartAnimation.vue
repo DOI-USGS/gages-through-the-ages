@@ -2998,12 +2998,16 @@ $axis: rgb(100,100,100);
   #textWrapArea{
     margin-top: 10px;
   }
+  #gageImage {
+    display: block;
+    text-align: center;
+  }
   @media screen and (min-width: 600px){
     .title{
       font-size: 2em;
       margin: 5px 0;
     }
-    #gageImage{
+    #gageImage {
      width: 55%;
      float: left;
      margin:15px 30px 10px 0;
