@@ -84,7 +84,7 @@
         window.addEventListener('resize', function(){
           let windowSize = window.innerWidth;
           self.checkWindowSize(windowSize);
-        }, {passive: true});  
+        }, {passive: true});
       },
       methods:{
         checkWindowSize(windowSize){
@@ -121,5 +121,8 @@
       float: left;
       margin: 5px 10px 10px 0;
     }
+  }
+  #oldTimeyImage {
+    margin: 15px 30px 10px 0;
   }
 </style>
