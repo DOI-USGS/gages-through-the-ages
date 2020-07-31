@@ -97,8 +97,8 @@ state_loc <- tibble(
 
   
 # Create whole SVG 
-pixel_width <- 1000
-pixel_height <- 800
+pixel_width <- 500
+pixel_height <- 400
 svg_root <- init_svg(pixel_width, pixel_height, is_pixels = TRUE)
 
 ##### State-specific #####
