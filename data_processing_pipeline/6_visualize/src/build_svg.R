@@ -7,8 +7,8 @@ library(dplyr)
 
 ##### Functions #####
 
-init_svg <- function(width = 8, height = 5, ppi = 72) {
-  view_box <- sprintf("%s %s %s %s", 0, 0, width*ppi, height*ppi)
+init_svg <- function(width = 8, height = 5, ppi = 72, is_pixels = FALSE) {
+  view_box <- sprintf("%s %s %s %s", 0, 0, ifelse(is_pixels, width, width*ppi), ifelse(is_pixels, height, height*ppi))
   # create the main "parent" svg node. This is the top-level part of the svg
   svg_root <- xml_new_root('svg', viewBox = view_box, preserveAspectRatio="xMidYMid meet", 
                            xmlns="http://www.w3.org/2000/svg", `xmlns:xlink`="http://www.w3.org/1999/xlink", version="1.1" )
@@ -20,8 +20,10 @@ add_state_grp <- function(svg_root, state_nm, trans_x, trans_y) {
                 transform = sprintf("translate(%s, %s)", trans_x, trans_y))
 }
 
-add_bar_path <- function(svg_root, state_nm, state_data, round_to = 1) {
-  d <- build_path_from_counts(state_data, round_to = round_to)
+add_bar_path <- function(svg_root, state_nm, state_data, total_width = 100, 
+                         total_height = 100, round_to = 1) {
+  d <- build_path_from_counts(state_data, total_width = total_width, 
+                              total_height = total_height, round_to = round_to)
   xml_add_child(svg_root, "path", d = d, id = sprintf('%s-counts', state_nm))
 }
 
@@ -95,11 +97,15 @@ state_loc <- tibble(
 
   
 # Create whole SVG 
-svg_root <- init_svg()
+pixel_width <- 1000
+pixel_height <- 800
+svg_root <- init_svg(pixel_width, pixel_height, is_pixels = TRUE)
 
 ##### State-specific #####
 
 states <- unique(state_dat$state)
+width_of_each_state <- round(pixel_width / length(states), decimal_to_round)
+height_of_each_state <- round(pixel_height / length(states), decimal_to_round)
 
 for(st in states) {
   state_nm <- state.name[which(state.abb == st)]
@@ -112,8 +118,8 @@ for(st in states) {
     # create a group for the state of VA
     add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y) %>% 
     # add the path for the VA-specific bars
-    add_bar_path(state_nm, st_dat, decimal_to_round) %>% 
-    add_hover_rects(st_dat)
+    add_bar_path(state_nm, st_dat, width_of_each_state, height_of_each_state, decimal_to_round) %>% 
+    add_hover_rects(st_dat, total_width = width_of_each_state, total_height = height_of_each_state)
 }
 
 ##### Write out final SVG to file #####
