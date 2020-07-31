@@ -14,12 +14,9 @@ init_svg <- function(width = 8, height = 5, ppi = 72) {
   return(svg_root)
 }
 
-
-
 add_state_grp <- function(svg_root, state_nm, trans_x, trans_y) {
   xml_add_child(svg_root, 'g', id = sprintf('%s-box', state_nm), 
-                transform = sprintf("translate(%s, %s)", 
-                                    trans_x, trans_y))
+                transform = sprintf("translate(%s, %s)", trans_x, trans_y))
 }
 
 add_bar_path <- function(svg_root, state_nm, state_data, round_to = 1) {
