@@ -1,4 +1,5 @@
 library(xml2)
+library(dplyr)
 
 ####### STILL NEED TO SCIPIPER-IFY THIS #######
 # Not doing it yet because I want to get a basic :thumbsup: on what I've got so far from JR
@@ -62,6 +63,7 @@ format_dat_to_bars <- function(dat, total_width, total_height, round_to) {
   n_range <- c(0, max(dat$n_gages))
   
   dat %>% 
+    ungroup() %>% # just in case it's grouped (causes weird issues)
     mutate(height = calc_bar_height(n_gages, n_range, total_height, round_to),
            width = width_ea) 
   
@@ -77,18 +79,31 @@ calc_bar_height <- function(this_n, n_range, svg_height, round_digits = 1) {
 svg_fp <- "example_svg.svg"
 decimal_to_round <- 1
 
-state_loc <- tibble(state = c("VA", "WI"), x = c(200, 75), y = c(400, 135))
-state_dat <- tibble(year = rep(1990:1992, 2), state = c(rep("VA", 3), rep("WI", 3)), n_gages = c(2,5,3,7,9,14))
+# state_loc <- tibble(state = c("VA", "WI"), x = c(200, 75), y = c(400, 135))
+# state_dat <- tibble(year = rep(1990:1992, 2), state = c(rep("VA", 3), rep("WI", 3)), n_gages = c(2,5,3,7,9,14))
+state_dat <- readRDS("gage_counts_by_state.rds") %>% 
+  rename(n_gages = n_gages_per_year) %>% # shorten for now to match what was used in the code
+  filter(!is.na(year), !is.na(state), !is.na(n_gages))
 
+# Make a fake version for now:
+state_loc <- tibble(
+  state = state.abb,
+  x = round(approx(range(state.center$x), c(0,576), state.center$x)$y),
+  y = round(approx(range(state.center$y), c(360, 0), state.center$y)$y)
+) %>% 
+  bind_rows(tibble(state = c("DC", "PR"), x = c(550, 500), y = c(163, 360)))
+
+  
 # Create whole SVG 
 svg_root <- init_svg()
 
 ##### State-specific #####
 
 states <- unique(state_dat$state)
+
 for(st in states) {
   state_nm <- state.name[which(state.abb == st)]
-  
+  message(st)
   # Prepare state data
   st_dat <- filter(state_dat, state == st)
   st_pos <- filter(state_loc, state == st)
