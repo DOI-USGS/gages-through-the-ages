@@ -7,6 +7,15 @@ library(dplyr)
 
 ##### Functions #####
 
+prepare_svg_data <- function(raw_dat, start_yr, end_yr) {
+  # Expect certain column names coming in
+  stopifnot(all(c("year", "state", "n_gages") %in% names(raw_dat)))
+  raw_dat %>% 
+    # Remove potential missing info
+    filter(!is.na(year), !is.na(state), !is.na(n_gages)) %>% 
+    filter(year %in% start_yr:end_yr)
+}
+
 init_svg <- function(width = 8, height = 5, ppi = 72, is_pixels = FALSE) {
   view_box <- sprintf("%s %s %s %s", 0, 0, ifelse(is_pixels, width, width*ppi), ifelse(is_pixels, height, height*ppi))
   # create the main "parent" svg node. This is the top-level part of the svg
@@ -20,15 +29,16 @@ add_state_grp <- function(svg_root, state_nm, trans_x, trans_y) {
                 transform = sprintf("translate(%s, %s)", trans_x, trans_y))
 }
 
-add_bar_path <- function(svg_root, state_nm, state_data, total_width = 100, 
+add_bar_path <- function(svg_root, state_nm, state_data, bar_width, 
                          total_height = 100, round_to = 1) {
-  d <- build_path_from_counts(state_data, total_width = total_width, 
+  d <- build_path_from_counts(state_data, bar_width = bar_width, 
                               total_height = total_height, round_to = round_to)
   xml_add_child(svg_root, "path", d = d, id = sprintf('%s-counts', state_nm))
 }
 
-add_hover_rects <- function(svg_root, dat, mx = 0, my = 0, total_width = 100, total_height = 100, round_to = 1) {
-  dat_bars <- format_dat_to_bars(dat, total_width, total_height, round_to) %>% 
+add_hover_rects <- function(svg_root, dat, mx = 0, my = 0, bar_width, total_height = 100, round_to = 1) {
+  dat_bars <- format_dat_to_bars(dat, total_height, round_to) %>% 
+    mutate(width = bar_width) %>% 
     mutate(x_pos = mx + cumsum(width) - width) # Set up x position to start at mx
   
   for(y in dat_bars$year) {
@@ -45,29 +55,25 @@ add_hover_rects <- function(svg_root, dat, mx = 0, my = 0, total_width = 100, to
   return(svg_root)
 }
 
-build_path_from_counts <- function(dat, mx = 0, my = 0, total_width = 100, 
+build_path_from_counts <- function(dat, mx = 0, my = 0, bar_width, 
                                    total_height = 100, round_to = 1) {
   
-  dat_bars <- format_dat_to_bars(dat, total_width, total_height, round_to)
+  dat_bars <- format_dat_to_bars(dat, total_height, round_to)
   dat_svg <- dat_bars %>% mutate(v = height - lead(height, 1)) 
   v_vec <- c(-head(dat_svg$height, 1), # first vertical distance is the first bar's height but negative to move up
              head(dat_svg$v, -1), # remove the last v bc it will just be NA since there is no `lead` value on the last one
              tail(dat_svg$height, 1)) # add in height of last bar to get back to baseline, positive to move down 
   
   # Build path string with equal widths
-  hv_path_str <- paste(paste0("v", v_vec), collapse = sprintf(" h%s ", unique(dat_bars$width))) # v=vertical, h=horizontal
+  hv_path_str <- paste(paste0("v", v_vec), collapse = sprintf(" h%s ", bar_width)) # v=vertical, h=horizontal
   sprintf('M%s,%s %sZ', mx, my, hv_path_str)
 }
 
-format_dat_to_bars <- function(dat, total_width, total_height, round_to) {
-  
-  width_ea <- round(total_width / length(unique(dat$year)), digits = round_to)
-  n_range <- c(0, max(dat$n_gages))
+format_dat_to_bars <- function(dat, total_height, round_to) {
   
   dat %>% 
     ungroup() %>% # just in case it's grouped (causes weird issues)
-    mutate(height = calc_bar_height(n_gages, n_range, total_height, round_to),
-           width = width_ea) 
+    mutate(height = calc_bar_height(n_gages, c(0, max(dat$n_gages)), total_height, round_to)) 
   
 }
 
@@ -81,12 +87,16 @@ calc_bar_height <- function(this_n, n_range, svg_height, round_digits = 1) {
 svg_fp <- "example_svg.svg"
 decimal_to_round <- 1
 
-# state_loc <- tibble(state = c("VA", "WI"), x = c(200, 75), y = c(400, 135))
-# state_dat <- tibble(year = rep(1990:1992, 2), state = c(rep("VA", 3), rep("WI", 3)), n_gages = c(2,5,3,7,9,14))
-state_dat <- readRDS("gage_counts_by_state.rds") %>% 
-  rename(n_gages = n_gages_per_year) %>% # shorten for now to match what was used in the code
-  filter(!is.na(year), !is.na(state), !is.na(n_gages))
+start_yr <- 1889
+end_yr <- 2019
 
+pixel_width <- 500
+pixel_height <- 400
+
+# Data inputs:
+state_dat_raw <- readRDS("gage_counts_by_state.rds") %>% 
+  rename(n_gages = n_gages_per_year) # shorten for now to match what was used in the code
+  
 # Make a fake version for now:
 state_loc <- tibble(
   state = state.abb,
@@ -95,17 +105,21 @@ state_loc <- tibble(
 ) %>% 
   bind_rows(tibble(state = c("DC", "PR"), x = c(550, 500), y = c(163, 360)))
 
-  
+## Everything below here would happen inside of a fxn/task
+
 # Create whole SVG 
-pixel_width <- 500
-pixel_height <- 400
 svg_root <- init_svg(pixel_width, pixel_height, is_pixels = TRUE)
 
-##### State-specific #####
+# Prepare data & setup configs based on data
+state_dat <- prepare_svg_data(state_dat_raw, start_yr, end_yr)
 
 states <- unique(state_dat$state)
 width_of_each_state <- round(pixel_width / length(states), decimal_to_round)
 height_of_each_state <- round(pixel_height / length(states), decimal_to_round)
+
+bar_width <- width_of_each_state / length(start_yr:end_yr)
+
+##### State-specific #####
 
 for(st in states) {
   state_nm <- state.name[which(state.abb == st)]
@@ -118,8 +132,8 @@ for(st in states) {
     # create a group for the state of VA
     add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y) %>% 
     # add the path for the VA-specific bars
-    add_bar_path(state_nm, st_dat, width_of_each_state, height_of_each_state, decimal_to_round) %>% 
-    add_hover_rects(st_dat, total_width = width_of_each_state, total_height = height_of_each_state)
+    add_bar_path(state_nm, st_dat, bar_width = bar_width, height_of_each_state, decimal_to_round) %>% 
+    add_hover_rects(st_dat, bar_width = bar_width, total_height = height_of_each_state)
 }
 
 ##### Write out final SVG to file #####
