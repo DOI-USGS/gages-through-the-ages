@@ -1,11 +1,42 @@
-library(xml2)
-library(dplyr)
 
-####### STILL NEED TO SCIPIPER-IFY THIS #######
-# Not doing it yet because I want to get a basic :thumbsup: on what I've got so far from JR
-# But just sending the script for review outside of GH will be annoying.
-
-##### Functions #####
+build_svg <- function(svg_fp, state_dat_raw, state_loc_info, svg_height, svg_width, start_yr, end_yr) {
+  
+  # Create whole SVG 
+  svg_root <- init_svg(svg_width, svg_height, is_pixels = TRUE)
+  
+  # Prepare data & setup configs based on data
+  state_dat <- prepare_svg_data(state_dat_raw, start_yr, end_yr)
+  
+  states <- unique(state_dat$state)
+  scale_width <- unique(state_loc_info$state_chart_width) / length(start_yr:end_yr)   
+  
+  ##### State-specific #####
+  
+  for(st in states) {
+    state_nm <- state.name[which(state.abb == st)]
+    message(st)
+    # Prepare state data
+    st_dat <- filter(state_dat, state == st)
+    st_pos <- filter(state_loc_info, state == st)
+    
+    # Height scale differs for each state because their max 
+    # bar height differs
+    scale_height <- unique(state_loc_info$state_chart_height) / max(st_dat$n_gages)
+    
+    st_path <- svg_root %>% 
+      # create a group for the state of VA
+      add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y,
+                    scale_x = scale_width, scale_y = scale_height) %>% 
+      # add the path for the VA-specific bars
+      add_bar_path(state_nm, st_dat) %>% 
+      add_hover_rects(st_dat)
+  }
+  
+  ##### Write out final SVG to file #####
+  
+  xml2::write_xml(svg_root, file = svg_fp)
+  
+}
 
 prepare_svg_data <- function(raw_dat, start_yr, end_yr) {
   # Expect certain column names coming in
@@ -77,65 +108,23 @@ build_path_from_counts <- function(dat, mx = 0, my = 0) {
   sprintf('M%s,%s %sZ', mx, my, hv_path_str)
 }
 
-##### Build SVG #####
+###### BELOW THIS LINE ARE PLACEHOLDERS #####
 
-# Config
-svg_fp <- "example_svg.svg"
+# # Just keeping these here to show how I created the "in" RDS files for now
+# 
+# # Data inputs:
+# state_dat_raw <- readRDS("gage_counts_by_state.rds") %>%
+#   rename(n_gages = n_gages_per_year) # shorten for now to match what was used in the code
+# saveRDS(state_dat_raw, "6_visualize/in/gage_counts_by_state.rds")  
+# 
+# # Make a fake version for now:
+# state_loc <- tibble(
+#   state = state.abb,
+#   x = round(approx(range(state.center$x), c(0,576), state.center$x)$y),
+#   y = round(approx(range(state.center$y), c(360, 0), state.center$y)$y)
+# ) %>% 
+#   bind_rows(tibble(state = c("DC", "PR"), x = c(550, 500), y = c(163, 360))) %>% 
+#   mutate(state_chart_height = 15, state_chart_width = 15)
+# saveRDS(state_loc, "6_visualize/in/cartogram_loc_config.rds")  
 
-start_yr <- 1889
-end_yr <- 2019
 
-pixel_width <- 500
-pixel_height <- 400
-
-width_of_each_state <- 15
-height_of_each_state <- 15
-
-# Data inputs:
-state_dat_raw <- readRDS("gage_counts_by_state.rds") %>% 
-  rename(n_gages = n_gages_per_year) # shorten for now to match what was used in the code
-  
-# Make a fake version for now:
-state_loc <- tibble(
-  state = state.abb,
-  x = round(approx(range(state.center$x), c(0,576), state.center$x)$y),
-  y = round(approx(range(state.center$y), c(360, 0), state.center$y)$y)
-) %>% 
-  bind_rows(tibble(state = c("DC", "PR"), x = c(550, 500), y = c(163, 360)))
-
-## Everything below here would happen inside of a fxn/task
-
-# Create whole SVG 
-svg_root <- init_svg(pixel_width, pixel_height, is_pixels = TRUE)
-
-# Prepare data & setup configs based on data
-state_dat <- prepare_svg_data(state_dat_raw, start_yr, end_yr)
-
-states <- unique(state_dat$state)
-scale_width <- width_of_each_state / length(start_yr:end_yr)   
-
-##### State-specific #####
-
-for(st in states) {
-  state_nm <- state.name[which(state.abb == st)]
-  message(st)
-  # Prepare state data
-  st_dat <- filter(state_dat, state == st)
-  st_pos <- filter(state_loc, state == st)
-  
-  # Height scale differs for each state because their max 
-  # bar height differs
-  scale_height <- height_of_each_state / max(st_dat$n_gages)
-  
-  st_path <- svg_root %>% 
-    # create a group for the state of VA
-    add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y,
-                  scale_x = scale_width, scale_y = scale_height) %>% 
-    # add the path for the VA-specific bars
-    add_bar_path(state_nm, st_dat) %>% 
-    add_hover_rects(st_dat)
-}
-
-##### Write out final SVG to file #####
-
-xml2::write_xml(svg_root, file = svg_fp)
