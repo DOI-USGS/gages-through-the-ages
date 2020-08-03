@@ -27,8 +27,8 @@ init_svg <- function(width = 8, height = 5, ppi = 72, is_pixels = FALSE) {
 
 add_state_grp <- function(svg_root, state_nm, trans_x, trans_y, scale_x = 1, scale_y = 1) {
   xml_add_child(svg_root, 'g', id = sprintf('%s-box', state_nm), 
-                transform = sprintf("translate(%s %s)", trans_x, trans_y),
-                scale = sprintf("scale(%s %s)", scale_x, scale_y))
+                transform = sprintf("translate(%s %s) scale(%s %s)", 
+                                    trans_x, trans_y, scale_x, scale_y))
 }
 
 add_bar_path <- function(svg_root, state_nm, state_data) {
