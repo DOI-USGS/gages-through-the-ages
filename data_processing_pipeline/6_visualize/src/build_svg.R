@@ -10,11 +10,18 @@ library(dplyr)
 prepare_svg_data <- function(raw_dat, start_yr, end_yr) {
   # Expect certain column names coming in
   stopifnot(all(c("year", "state", "n_gages") %in% names(raw_dat)))
-  raw_dat %>% 
+  
+  dat <- raw_dat %>% 
     ungroup() %>% # just in case it's grouped (causes weird issues)
     # Remove potential missing info
     filter(!is.na(year), !is.na(state), !is.na(n_gages)) %>% 
     filter(year %in% start_yr:end_yr)
+  
+  # Fill in missing years with 0s
+  expand.grid(state = unique(raw_dat$state), year = start_yr:end_yr) %>% 
+    arrange(state, year) %>% 
+    left_join(dat) %>% 
+    mutate(n_gages = tidyr::replace_na(n_gages, 0))
 }
 
 init_svg <- function(width = 8, height = 5, ppi = 72, is_pixels = FALSE) {
