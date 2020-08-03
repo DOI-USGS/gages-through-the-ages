@@ -104,6 +104,7 @@ state_dat <- prepare_svg_data(state_dat_raw, start_yr, end_yr)
 states <- unique(state_dat$state)
 width_of_each_state <- pixel_width / length(states)
 height_of_each_state <- pixel_height / length(states)
+scale_width <- width_of_each_state / length(start_yr:end_yr)   
 
 ##### State-specific #####
 
@@ -114,10 +115,14 @@ for(st in states) {
   st_dat <- filter(state_dat, state == st)
   st_pos <- filter(state_loc, state == st)
   
+  # Height scale differs for each state because their max 
+  # bar height differs
+  scale_height <- height_of_each_state / max(st_dat$n_gages)
+  
   st_path <- svg_root %>% 
     # create a group for the state of VA
     add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y,
-                  scale_x = width_of_each_state, scale_y = height_of_each_state) %>% 
+                  scale_x = scale_width, scale_y = scale_height) %>% 
     # add the path for the VA-specific bars
     add_bar_path(state_nm, st_dat) %>% 
     add_hover_rects(st_dat)
