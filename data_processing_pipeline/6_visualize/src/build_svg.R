@@ -18,7 +18,7 @@ prepare_svg_data <- function(raw_dat, start_yr, end_yr) {
     filter(year %in% start_yr:end_yr)
   
   # Fill in missing years with 0s
-  expand.grid(state = unique(raw_dat$state), year = start_yr:end_yr) %>% 
+  expand.grid(state = unique(dat$state), year = start_yr:end_yr) %>% 
     arrange(state, year) %>% 
     left_join(dat) %>% 
     mutate(n_gages = tidyr::replace_na(n_gages, 0))
