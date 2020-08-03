@@ -88,6 +88,9 @@ end_yr <- 2019
 pixel_width <- 500
 pixel_height <- 400
 
+width_of_each_state <- 15
+height_of_each_state <- 15
+
 # Data inputs:
 state_dat_raw <- readRDS("gage_counts_by_state.rds") %>% 
   rename(n_gages = n_gages_per_year) # shorten for now to match what was used in the code
@@ -109,8 +112,6 @@ svg_root <- init_svg(pixel_width, pixel_height, is_pixels = TRUE)
 state_dat <- prepare_svg_data(state_dat_raw, start_yr, end_yr)
 
 states <- unique(state_dat$state)
-width_of_each_state <- pixel_width / length(states)
-height_of_each_state <- pixel_height / length(states)
 scale_width <- width_of_each_state / length(start_yr:end_yr)   
 
 ##### State-specific #####
