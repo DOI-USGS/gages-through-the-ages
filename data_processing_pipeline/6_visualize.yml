@@ -28,7 +28,7 @@ targets:
   # tibble with 5 columns: state, x, y, state_chart_height, 
   # and state_chart_width
   cartogram_loc_config:
-    command: readRDS(I("6_visualize/in/cartogram_loc_config.rds"))
+    command: readRDS("6_visualize/in/cartogram_loc_config.rds")
   
   # This will be replaced by a processing step added in this issue:
   # https://github.com/usgs-makerspace/gages-through-the-ages/issues/147
