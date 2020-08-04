@@ -33,7 +33,7 @@ targets:
   # This will be replaced by a processing step added in this issue:
   # https://github.com/usgs-makerspace/gages-through-the-ages/issues/147
   state_data: 
-    command: readRDS(I("6_visualize/in/gage_counts_by_state.rds"))
+    command: readRDS("6_visualize/in/gage_counts_by_state.rds")
   
   6_visualize/out/cartogram_init.svg:
     command: build_svg(
