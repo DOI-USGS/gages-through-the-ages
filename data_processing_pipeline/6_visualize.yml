@@ -1,0 +1,47 @@
+target_default: 6_visualize
+
+packages:
+  - dplyr
+  - xml2
+  
+sources:
+  - 6_visualize/src/build_svg.R
+
+targets:
+  6_visualize:
+    depends:
+      - 6_visualize/out/cartogram_init.svg
+  
+  start_yr:
+    command: viz_year_range[[1]]
+  end_yr:
+    command: viz_year_range[[2]]
+  
+  # Overall SVG height and width in pixels
+  svg_w:
+    command: c(I(800))
+  svg_h:
+    command: c(I(500))
+  
+  # This is the config file that comes from Colleen's manual 
+  # placement and sizing of the bar charts. It should be a 
+  # tibble with 5 columns: state, x, y, state_chart_height, 
+  # and state_chart_width
+  cartogram_loc_config:
+    command: readRDS("6_visualize/in/cartogram_loc_config.rds")
+  
+  # This will be replaced by a processing step added in this issue:
+  # https://github.com/usgs-makerspace/gages-through-the-ages/issues/147
+  state_data: 
+    command: readRDS("6_visualize/in/gage_counts_by_state.rds")
+  
+  6_visualize/out/cartogram_init.svg:
+    command: build_svg(
+      svg_fp = target_name,
+      state_dat_raw = state_data,
+      state_loc_info = cartogram_loc_config,
+      svg_height = svg_h,
+      svg_width = svg_w,
+      start_yr = start_yr,
+      end_yr = end_yr)
+  
