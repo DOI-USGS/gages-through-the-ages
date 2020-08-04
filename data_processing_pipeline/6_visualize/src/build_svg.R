@@ -14,7 +14,7 @@ build_svg <- function(svg_fp, state_dat_raw, state_loc_info, svg_height, svg_wid
   
   for(st in states) {
     state_nm <- state.name[which(state.abb == st)]
-    message(st)
+    
     # Prepare state data
     st_dat <- filter(state_dat, state == st)
     st_pos <- filter(state_loc_info, state == st)
