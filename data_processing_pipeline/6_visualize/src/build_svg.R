@@ -46,7 +46,8 @@ prepare_svg_data <- function(raw_dat, start_yr, end_yr) {
     ungroup() %>% # just in case it's grouped (causes weird issues)
     # Remove potential missing info
     filter(!is.na(year), !is.na(state), !is.na(n_gages)) %>% 
-    filter(year %in% start_yr:end_yr)
+    filter(year %in% start_yr:end_yr) %>% 
+    filter(state != "VI") # We aren't using the Virgin Islands
   
   # Fill in missing years with 0s
   expand.grid(state = unique(dat$state), year = start_yr:end_yr) %>% 
