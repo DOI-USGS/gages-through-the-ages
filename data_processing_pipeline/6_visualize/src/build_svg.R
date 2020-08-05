@@ -113,7 +113,7 @@ build_state_loc_config <- function() {
   ## these locations were determined manually, outside of R
   tibble(
     state = c('ME','VT','NH','WA','ID','MT','ND','MN','WI','MI','NY','MA','RI','OR','NV','WY','SD','IA','IL',
-              'IN','OH','PA','NJ','CT','CA','UT','CO','NE','MO','KY','WY','MD','DE','DC','AZ','NM','KS','AR',
+              'IN','OH','PA','NJ','CT','CA','UT','CO','NE','MO','KY','WV','MD','DE','DC','AZ','NM','KS','AR',
               'TN','VA','NC','SC','OK','LA','MS','AL','GA','TX','FL','AK','HI','PR'), 
     row = c(1, rep(2, 2), rep(3, 10), rep(4, 11), rep(5, 10), rep(6, 8), rep(7, 5), rep(8, 2), rep(9, 3)),
     col = c(11.5, 10.5, 11.5, seq(1, 6, by=1), 7.5, 9.5, 10.5, 11.5, seq(1, 11, by=1), seq(1.5, 10.5, by=1),
