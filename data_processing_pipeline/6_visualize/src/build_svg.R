@@ -116,15 +116,14 @@ build_path_from_counts <- function(dat, mx = 0, my = 0) {
 # state_dat_raw <- readRDS("gage_counts_by_state.rds") %>%
 #   rename(n_gages = n_gages_per_year) # shorten for now to match what was used in the code
 # saveRDS(state_dat_raw, "6_visualize/in/gage_counts_by_state.rds")  
-# 
-# # Make a fake version for now:
-# state_loc <- tibble(
-#   state = state.abb,
-#   x = round(approx(range(state.center$x), c(0,576), state.center$x)$y),
-#   y = round(approx(range(state.center$y), c(360, 0), state.center$y)$y)
-# ) %>% 
-#   bind_rows(tibble(state = c("DC", "PR"), x = c(550, 500), y = c(163, 360))) %>% 
-#   mutate(state_chart_height = 15, state_chart_width = 15)
-# saveRDS(state_loc, "6_visualize/in/cartogram_loc_config.rds")  
 
+## based on a 500 x 400 px svg viewBox
+state_loc <- tibble(
+  state = c('ME','VT','NH','WA','ID','MT','ND','MN','WI','MI','NY','MA','RI','OR','NV','WY','SD','IA','IL','IN','OH','PA','NJ','CT','CA','UT','CO','NE','MO','KY','WY','MD','DE','DC','AZ','NM','KS','AR','TN','VA','NC','SC','OK','LA','MS','AL','GA','TX','FL','AK','HI','PR'), 
+  row = c(1, rep(2, 2), rep(3, 10), rep(4, 11), rep(5, 10), rep(6, 8), rep(7, 5), rep(8, 2), rep(9, 3)),
+  col = c(11.5, 10.5, 11.5, seq(1, 6, by=1), 7.5, 9.5, 10.5, 11.5, seq(1, 11, by=1), seq(1.5, 10.5, by=1),
+          seq(2.5, 9.5, by=1), seq(4, 8, by=1), 4, 9, 1, 2, 11),
+ state_chart_width = 41.22, state_chart_height = 41.22, margin = 2.55, margin.top=0.76,
+         x = (state_chart_width+margin)*(col-1), y = (state_chart_height+margin)*(row-1)+margin.top)
+saveRDS(state_loc, "6_visualize/in/cartogram_loc_config.rds")
 
