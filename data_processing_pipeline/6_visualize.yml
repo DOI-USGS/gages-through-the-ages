@@ -30,10 +30,8 @@ targets:
   cartogram_loc_config:
     command: readRDS("6_visualize/in/cartogram_loc_config.rds")
   
-  # This will be replaced by a processing step added in this issue:
-  # https://github.com/usgs-makerspace/gages-through-the-ages/issues/147
   state_data: 
-    command: readRDS("6_visualize/in/gage_counts_by_state.rds")
+    command: readRDS("2_process/out/gage_counts_by_state.rds")
   
   6_visualize/out/cartogram_init.svg:
     command: build_svg(
