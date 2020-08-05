@@ -61,7 +61,7 @@ process_state_counts <- function(file_out, summary_fl){
   gage_summary_data %>% rename(site_no = site) %>% inner_join(gages_info, by = "site_no") %>% 
     unnest(which_years_active) %>% rename(year = which_years_active) %>% select(site_no, year, state) %>% 
     group_by(state, year) %>% 
-    summarize(n_gages = length(year)) %>% 
+    summarize(n_gages = length(site_no)) %>% 
     saveRDS(file = file_out)
     
   
