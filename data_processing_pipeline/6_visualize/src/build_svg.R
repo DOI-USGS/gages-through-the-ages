@@ -5,20 +5,19 @@ build_svg <- function(svg_fp, state_dat_raw, state_loc_info, svg_height, svg_wid
   svg_root <- init_svg(svg_width, svg_height, is_pixels = TRUE)
   
   # Prepare data & setup configs based on data
-  state_dat <- prepare_svg_data(state_dat_raw, start_yr, end_yr)
-  
-  states <- unique(state_dat$state)
+  states <- unique(state_loc_info$state)
+  state_dat <- prepare_svg_data(state_dat_raw, states, start_yr, end_yr)
   scale_width <- unique(state_loc_info$state_chart_width) / length(start_yr:end_yr)   
   
   ##### State-specific #####
   
   for(st in states) {
     state_nm <- state.name[which(state.abb == st)]
-    
+  
     # Prepare state data
     st_dat <- filter(state_dat, state == st)
     st_pos <- filter(state_loc_info, state == st)
-    
+  
     # Height scale differs for each state because their max 
     # bar height differs
     scale_height <- unique(state_loc_info$state_chart_height) / max(st_dat$n_gages)
@@ -38,7 +37,7 @@ build_svg <- function(svg_fp, state_dat_raw, state_loc_info, svg_height, svg_wid
   
 }
 
-prepare_svg_data <- function(raw_dat, start_yr, end_yr) {
+prepare_svg_data <- function(raw_dat, states_to_use, start_yr, end_yr) {
   # Expect certain column names coming in
   stopifnot(all(c("year", "state", "n_gages") %in% names(raw_dat)))
   
@@ -47,7 +46,7 @@ prepare_svg_data <- function(raw_dat, start_yr, end_yr) {
     # Remove potential missing info
     filter(!is.na(year), !is.na(state), !is.na(n_gages)) %>% 
     filter(year %in% start_yr:end_yr) %>% 
-    filter(state != "VI") # We aren't using the Virgin Islands
+    filter(state %in% states_to_use) # Only use states that have location config info
   
   # Fill in missing years with 0s
   expand.grid(state = unique(dat$state), year = start_yr:end_yr) %>% 
@@ -66,8 +65,8 @@ init_svg <- function(width = 8, height = 5, ppi = 72, is_pixels = FALSE) {
 
 add_state_grp <- function(svg_root, state_nm, trans_x, trans_y, scale_x = 1, scale_y = 1) {
   xml_add_child(svg_root, 'g', id = sprintf('%s-box', state_nm), 
-                transform = sprintf("translate(%s %s) scale(%s %s)", 
-                                    trans_x, trans_y, scale_x, scale_y))
+                  transform = sprintf("translate(%s %s) scale(%s %s)", 
+                                      trans_x, trans_y, scale_x, scale_y))
 }
 
 add_bar_path <- function(svg_root, state_nm, state_data) {
@@ -88,9 +87,9 @@ add_hover_rects <- function(svg_root, dat, mx = 0, my = 0) {
     # add a rectangle for each, add style (don't do it this way in real life) and mouseover events, which won't work 
     # because hovertext() as a JS function is not defined
     xml_add_sibling(svg_root, 'rect', x = dat_y$x_pos, y = -total_height, width=dat_y$width, height=total_height, 
-                    style="fill:#0000ff1c",
-                    onmouseover = sprintf("hovertext('%s had %s gages in %s', evt)", dat_y$state, dat_y$n_gages, y),
-                    onmouseout = "hovertext(' ')")
+                  style="fill:#0000ff1c",
+                  onmouseover = sprintf("hovertext('%s had %s gages in %s', evt)", dat_y$state, dat_y$n_gages, y),
+                  onmouseout = "hovertext(' ')")
   }
   
   return(svg_root)
