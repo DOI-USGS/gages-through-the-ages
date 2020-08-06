@@ -5,20 +5,19 @@ build_svg <- function(svg_fp, state_dat_raw, state_loc_info, svg_height, svg_wid
   svg_root <- init_svg(svg_width, svg_height, is_pixels = TRUE)
   
   # Prepare data & setup configs based on data
-  state_dat <- prepare_svg_data(state_dat_raw, start_yr, end_yr)
-  
-  states <- unique(state_dat$state)
+  states <- unique(state_loc_info$state)
+  state_dat <- prepare_svg_data(state_dat_raw, states, start_yr, end_yr)
   scale_width <- unique(state_loc_info$state_chart_width) / length(start_yr:end_yr)   
   
   ##### State-specific #####
   
   for(st in states) {
     state_nm <- state.name[which(state.abb == st)]
-    
+  
     # Prepare state data
     st_dat <- filter(state_dat, state == st)
     st_pos <- filter(state_loc_info, state == st)
-    
+  
     # Height scale differs for each state because their max 
     # bar height differs
     scale_height <- unique(state_loc_info$state_chart_height) / max(st_dat$n_gages)
@@ -38,7 +37,7 @@ build_svg <- function(svg_fp, state_dat_raw, state_loc_info, svg_height, svg_wid
   
 }
 
-prepare_svg_data <- function(raw_dat, start_yr, end_yr) {
+prepare_svg_data <- function(raw_dat, states_to_use, start_yr, end_yr) {
   # Expect certain column names coming in
   stopifnot(all(c("year", "state", "n_gages") %in% names(raw_dat)))
   
@@ -46,7 +45,8 @@ prepare_svg_data <- function(raw_dat, start_yr, end_yr) {
     ungroup() %>% # just in case it's grouped (causes weird issues)
     # Remove potential missing info
     filter(!is.na(year), !is.na(state), !is.na(n_gages)) %>% 
-    filter(year %in% start_yr:end_yr)
+    filter(year %in% start_yr:end_yr) %>% 
+    filter(state %in% states_to_use) # Only use states that have location config info
   
   # Fill in missing years with 0s
   expand.grid(state = unique(dat$state), year = start_yr:end_yr) %>% 
@@ -65,8 +65,8 @@ init_svg <- function(width = 8, height = 5, ppi = 72, is_pixels = FALSE) {
 
 add_state_grp <- function(svg_root, state_nm, trans_x, trans_y, scale_x = 1, scale_y = 1) {
   xml_add_child(svg_root, 'g', id = sprintf('%s-box', state_nm), 
-                transform = sprintf("translate(%s %s) scale(%s %s)", 
-                                    trans_x, trans_y, scale_x, scale_y))
+                  transform = sprintf("translate(%s %s) scale(%s %s)", 
+                                      trans_x, trans_y, scale_x, scale_y))
 }
 
 add_bar_path <- function(svg_root, state_nm, state_data) {
@@ -87,9 +87,9 @@ add_hover_rects <- function(svg_root, dat, mx = 0, my = 0) {
     # add a rectangle for each, add style (don't do it this way in real life) and mouseover events, which won't work 
     # because hovertext() as a JS function is not defined
     xml_add_sibling(svg_root, 'rect', x = dat_y$x_pos, y = -total_height, width=dat_y$width, height=total_height, 
-                    style="fill:#0000ff1c",
-                    onmouseover = sprintf("hovertext('%s had %s gages in %s', evt)", dat_y$state, dat_y$n_gages, y),
-                    onmouseout = "hovertext(' ')")
+                  style="fill:#0000ff1c",
+                  onmouseover = sprintf("hovertext('%s had %s gages in %s', evt)", dat_y$state, dat_y$n_gages, y),
+                  onmouseout = "hovertext(' ')")
   }
   
   return(svg_root)
@@ -108,22 +108,16 @@ build_path_from_counts <- function(dat, mx = 0, my = 0) {
   sprintf('M%s,%s %sZ', mx, my, hv_path_str)
 }
 
-###### BELOW THIS LINE ARE PLACEHOLDERS #####
-
-# # Just keeping these here to show how I created the "in" RDS files for now
-# 
-# # Data inputs:
-# state_dat_raw <- readRDS("gage_counts_by_state.rds") %>%
-#   rename(n_gages = n_gages_per_year) # shorten for now to match what was used in the code
-# saveRDS(state_dat_raw, "6_visualize/in/gage_counts_by_state.rds")  
-
-## based on a 500 x 400 px svg viewBox
-state_loc <- tibble(
-  state = c('ME','VT','NH','WA','ID','MT','ND','MN','WI','MI','NY','MA','RI','OR','NV','WY','SD','IA','IL','IN','OH','PA','NJ','CT','CA','UT','CO','NE','MO','KY','WY','MD','DE','DC','AZ','NM','KS','AR','TN','VA','NC','SC','OK','LA','MS','AL','GA','TX','FL','AK','HI','PR'), 
-  row = c(1, rep(2, 2), rep(3, 10), rep(4, 11), rep(5, 10), rep(6, 8), rep(7, 5), rep(8, 2), rep(9, 3)),
-  col = c(11.5, 10.5, 11.5, seq(1, 6, by=1), 7.5, 9.5, 10.5, 11.5, seq(1, 11, by=1), seq(1.5, 10.5, by=1),
-          seq(2.5, 9.5, by=1), seq(4, 8, by=1), 4, 9, 1, 2, 11),
- state_chart_width = 41.22, state_chart_height = 41.22, margin = 2.55, margin.top=0.76,
-         x = (state_chart_width+margin)*(col-1), y = (state_chart_height+margin)*(row-1)+margin.top)
-saveRDS(state_loc, "6_visualize/in/cartogram_loc_config.rds")
-
+build_state_loc_config <- function() {
+  ## based on a 500 x 400 px svg viewBox
+  ## these locations were determined manually, outside of R
+  tibble(
+    state = c('ME','VT','NH','WA','ID','MT','ND','MN','WI','MI','NY','MA','RI','OR','NV','WY','SD','IA','IL',
+              'IN','OH','PA','NJ','CT','CA','UT','CO','NE','MO','KY','WV','MD','DE','DC','AZ','NM','KS','AR',
+              'TN','VA','NC','SC','OK','LA','MS','AL','GA','TX','FL','AK','HI','PR'), 
+    row = c(1, rep(2, 2), rep(3, 10), rep(4, 11), rep(5, 10), rep(6, 8), rep(7, 5), rep(8, 2), rep(9, 3)),
+    col = c(11.5, 10.5, 11.5, seq(1, 6, by=1), 7.5, 9.5, 10.5, 11.5, seq(1, 11, by=1), seq(1.5, 10.5, by=1),
+            seq(2.5, 9.5, by=1), seq(4, 8, by=1), 4, 9, 1, 2, 11),
+    state_chart_width = 41.22, state_chart_height = 41.22, margin = 2.55, margin.top=0.76,
+    x = (state_chart_width+margin)*(col-1), y = (state_chart_height+margin)*(row-1)+margin.top)
+}
