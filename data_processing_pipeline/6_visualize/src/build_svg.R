@@ -9,27 +9,14 @@ build_svg <- function(svg_fp, state_dat_raw, state_loc_info, svg_height, svg_wid
   state_dat <- prepare_svg_data(state_dat_raw, states, start_yr, end_yr)
   scale_width <- unique(state_loc_info$state_chart_width) / length(start_yr:end_yr)   
   
-  ##### State-specific #####
+  ##### Add the SVG nodes #####
   
-  for(st in states) {
-    state_nm <- state.name[which(state.abb == st)]
+  # Add the bars for each state
+  add_state_bars(svg_root, state_dat, state_loc_info, states, scale_width)
   
-    # Prepare state data
-    st_dat <- filter(state_dat, state == st)
-    st_pos <- filter(state_loc_info, state == st)
+  # Add the invisible hover rectangles for each state
+  add_state_hovers(svg_root, state_dat, state_loc_info, states, scale_width)
   
-    # Height scale differs for each state because their max 
-    # bar height differs
-    scale_height <- unique(state_loc_info$state_chart_height) / max(st_dat$n_gages)
-    
-    st_path <- svg_root %>% 
-      # create a group for the state of VA
-      add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y,
-                    scale_x = scale_width, scale_y = scale_height) %>% 
-      # add the path for the VA-specific bars
-      add_bar_path(state_nm, st_dat) %>% 
-      add_hover_rects(st_dat)
-  }
   
   ##### Write out final SVG to file #####
   
@@ -63,10 +50,67 @@ init_svg <- function(width = 8, height = 5, ppi = 72, is_pixels = FALSE) {
   return(svg_root)
 }
 
-add_state_grp <- function(svg_root, state_nm, trans_x, trans_y, scale_x = 1, scale_y = 1) {
-  xml_add_child(svg_root, 'g', id = sprintf('%s-box', state_nm), 
-                  transform = sprintf("translate(%s %s) scale(%s %s)", 
-                                      trans_x, trans_y, scale_x, scale_y))
+add_state_bars <- function(svg_root, state_dat, state_loc_info, states, scale_width) {
+  
+  for(st in states) {
+    
+    state_nm <- switch(
+      st,
+      DC = "District of Columbia",
+      PR = "Puerto Rico",
+      state.name[which(state.abb == st)]
+    )
+    
+    # Prepare state data
+    st_dat <- filter(state_dat, state == st)
+    st_pos <- filter(state_loc_info, state == st)
+    
+    # Height scale differs for each state because their max 
+    # bar height differs
+    scale_height <- unique(state_loc_info$state_chart_height) / max(st_dat$n_gages)
+    
+    svg_root %>% 
+      # Create a group for the state's bar path to go
+      add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y, scale_x = scale_width, 
+                    scale_y = scale_height, grp_id = "bars") %>% 
+      # add the path for the VA-specific bars
+      add_bar_path(state_nm, st_dat)
+    
+  }
+  
+}
+
+add_state_hovers <- function(svg_root, state_dat, state_loc_info, states, scale_width) {
+  
+  for(st in states) {
+    
+    state_nm <- switch(
+      st,
+      DC = "District of Columbia",
+      PR = "Puerto Rico",
+      state.name[which(state.abb == st)]
+    )
+    
+    # Prepare state data
+    st_dat <- filter(state_dat, state == st)
+    st_pos <- filter(state_loc_info, state == st)
+    
+    # Height scale differs for each state because their max 
+    # bar height differs
+    scale_height <- unique(state_loc_info$state_chart_height) / max(st_dat$n_gages)
+    
+    st_hovers <- svg_root %>%
+      add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y, scale_x = scale_width, 
+                    scale_y = scale_height, grp_id = "hovers") %>% 
+      add_hover_rects(st_dat)
+  }
+  
+}
+
+add_state_grp <- function(svg_root, state_nm, trans_x, trans_y, scale_x = 1, scale_y = 1, grp_id = "box") {
+  xml_add_child(svg_root, 'g', id = sprintf('%s-%s', state_nm, grp_id), 
+                transform = sprintf("translate(%s %s) scale(%s %s)", 
+                                    trans_x, trans_y, scale_x, scale_y))
 }
 
 add_bar_path <- function(svg_root, state_nm, state_data) {
@@ -86,7 +130,7 @@ add_hover_rects <- function(svg_root, dat, mx = 0, my = 0) {
     
     # add a rectangle for each, add style (don't do it this way in real life) and mouseover events, which won't work 
     # because hovertext() as a JS function is not defined
-    xml_add_sibling(svg_root, 'rect', x = dat_y$x_pos, y = -total_height, width=dat_y$width, height=total_height, 
+    xml_add_child(svg_root, 'rect', x = dat_y$x_pos, y = -total_height, width=dat_y$width, height=total_height, 
                   style="fill:#0000ff1c",
                   onmouseover = sprintf("hovertext('%s had %s gages in %s', evt)", dat_y$state, dat_y$n_gages, y),
                   onmouseout = "hovertext(' ')")
