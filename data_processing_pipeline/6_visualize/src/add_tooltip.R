@@ -1,7 +1,8 @@
 insert_tooltip <- function(xml_doc) {
   
-  # Find location of last bar group start, then add 2 to get to the closing </g>
-  last_bar <- tail(grep("-bars", xml_doc), 1) + 2
+  # Find location of last bar group start, then add 3 (path, text, 
+  #   closing `</g>`) to get to the last element for the -bars
+  last_bar <- tail(grep("-bars", xml_doc), 1) + 3
   
   # Now find start of first hover (should be last_bar + 1)
   first_hover <- head(grep("-hovers", xml_doc), 1)

@@ -71,10 +71,10 @@ add_state_bars <- function(svg_root, state_dat, state_loc_info, states, scale_wi
     
     svg_root %>% 
       # Create a group for the state's bar path to go
-      add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y, scale_x = scale_width, 
-                    scale_y = scale_height, grp_id = "bars") %>% 
+      add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y, grp_id = "bars") %>% 
       # add the path for the VA-specific bars
-      add_bar_path(state_nm, st_dat)
+      add_bar_path(state_nm, st_dat, scale_x = scale_width, scale_y = scale_height) %>% 
+      add_state_txt(state_nm, st_dat, scale_x = scale_width)
     
   }
   
@@ -100,25 +100,30 @@ add_state_hovers <- function(svg_root, state_dat, state_loc_info, states, scale_
     scale_height <- unique(state_loc_info$state_chart_height) / max(st_dat$n_gages)
     
     st_hovers <- svg_root %>%
-      add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y, scale_x = scale_width, 
-                    scale_y = scale_height, grp_id = "hovers") %>% 
-      add_hover_rects(st_dat)
+      add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y, grp_id = "hovers") %>% 
+      add_hover_rects(st_dat, scale_x = scale_width, scale_y = scale_height)
   }
   
 }
 
-add_state_grp <- function(svg_root, state_nm, trans_x, trans_y, scale_x = 1, scale_y = 1, grp_id = "box") {
+add_state_grp <- function(svg_root, state_nm, trans_x, trans_y, grp_id = "box") {
   xml_add_child(svg_root, 'g', id = sprintf('%s-%s', state_nm, grp_id), 
-                transform = sprintf("translate(%s %s) scale(%s %s)", 
-                                    trans_x, trans_y, scale_x, scale_y))
+                transform = sprintf("translate(%s %s)", trans_x, trans_y))
 }
 
-add_bar_path <- function(svg_root, state_nm, state_data) {
+add_bar_path <- function(svg_root, state_nm, state_data, scale_x = 1, scale_y = 1) {
   d <- build_path_from_counts(state_data)
-  xml_add_child(svg_root, "path", d = d, id = sprintf('%s-counts', state_nm))
+  xml_add_child(svg_root, "path", d = d, id = sprintf('%s-counts', state_nm),
+                transform = sprintf("scale(%s %s)", scale_x, scale_y))
 }
 
-add_hover_rects <- function(svg_root, dat, mx = 0, my = 0) {
+add_state_txt <- function(svg_root, state_nm, state_data, scale_x = 1) {
+    xml_add_sibling(svg_root, "text", unique(state_data$state), 
+                    class = "state-label", 
+                    y = "0", x = as.character(nrow(state_data)*scale_x))
+}
+
+add_hover_rects <- function(svg_root, dat, mx = 0, my = 0, scale_x = 1, scale_y = 1) {
   dat_bars <- dat %>% 
     mutate(width = 1) %>% # assume 1 year = 1 pixel
     mutate(x_pos = mx + cumsum(width) - width) # Set up x position to start at mx
@@ -131,7 +136,7 @@ add_hover_rects <- function(svg_root, dat, mx = 0, my = 0) {
     # add a rectangle for each, add style (don't do it this way in real life) and mouseover events, which won't work 
     # because hovertext() as a JS function is not defined
     xml_add_child(svg_root, 'rect', x = dat_y$x_pos, y = -total_height, width=dat_y$width, height=total_height, 
-                  style="fill:#0000ff1c",
+                  style="fill:#0000ff1c", transform = sprintf("scale(%s %s)", scale_x, scale_y),
                   onmouseover = sprintf("hovertext('%s had %s gages in %s', evt)", dat_y$state, dat_y$n_gages, y),
                   onmouseout = "hovertext(' ')")
   }
