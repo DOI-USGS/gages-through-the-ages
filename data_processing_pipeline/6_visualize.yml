@@ -6,11 +6,13 @@ packages:
   
 sources:
   - 6_visualize/src/build_svg.R
+  - 6_visualize/src/add_tooltip.R
 
 targets:
   6_visualize:
     depends:
       - 6_visualize/out/cartogram_init.svg
+      - 6_visualize/out/cartogram_init_tooltip.svg
   
   start_yr:
     command: viz_year_range[[1]]
@@ -43,3 +45,6 @@ targets:
       start_yr = start_yr,
       end_yr = end_yr)
   
+  6_visualize/out/cartogram_init_tooltip.svg:
+    command: add_tooltip_to_xml(
+      target_name, "6_visualize/out/cartogram_init.svg")
