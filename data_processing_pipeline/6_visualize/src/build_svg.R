@@ -74,7 +74,8 @@ add_state_bars <- function(svg_root, state_dat, state_loc_info, states, scale_wi
       add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y, scale_x = scale_width, 
                     scale_y = scale_height, grp_id = "bars") %>% 
       # add the path for the VA-specific bars
-      add_bar_path(state_nm, st_dat)
+      add_bar_path(state_nm, st_dat) %>% 
+      add_state_txt(state_nm, st_dat)
     
   }
   
@@ -116,6 +117,12 @@ add_state_grp <- function(svg_root, state_nm, trans_x, trans_y, scale_x = 1, sca
 add_bar_path <- function(svg_root, state_nm, state_data) {
   d <- build_path_from_counts(state_data)
   xml_add_child(svg_root, "path", d = d, id = sprintf('%s-counts', state_nm))
+}
+
+add_state_txt <- function(svg_root, state_nm, state_data) {
+    xml_add_sibling(svg_root, "text", unique(state_data$state), 
+                    class = "state-label", 
+                    y = "0", x = as.character(nrow(state_data)))
 }
 
 add_hover_rects <- function(svg_root, dat, mx = 0, my = 0) {
