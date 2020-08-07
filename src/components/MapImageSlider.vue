@@ -8,6 +8,11 @@
       <p><span v-html="paragraph.aboveSliderText" /></p>
     </div>
     <div
+      id="cartoUSA" 
+    >
+      <cartogram />
+    </div>
+    <div
       id="georgiaSlider"
       class="sliderContainer"
     >
@@ -39,11 +44,13 @@
 </template>
 <script>
 import BeerSlider from "beerslider";
+import cartogram from "../assets/cartogram/cartogram_init_tooltip.svg";
 import GeorgiaInsetMap from './georgiaInsetMap';
 import atlantaSliderText from "../assets/mapboxSlider/atlantaSliderText";
 export default {
     'name': 'MapImageSlider',
     components:{
+        cartogram, 
         GeorgiaInsetMap
     },
     data(){
@@ -124,6 +131,10 @@ $polygon: '~@/assets/images/polygon.png';
     height: 20px;
     width: 20px;
     display: inline-block;
+}
+#cartoUSA {
+  width:155%;
+  height: auto;
 }
 @media screen and (min-width: 600px){
     .beer-slider[data-beer-label]:after,
