@@ -425,27 +425,96 @@
   </div>
 </template>
 <script>
-import BeerSlider from "beerslider";
-/* import cartogram from "../assets/cartogram/cartogram_init_tooltip.svg"; */
-import GeorgiaInsetMap from './georgiaInsetMap';
-import atlantaSliderText from "../assets/mapboxSlider/atlantaSliderText";
-export default {
-    'name': 'MapImageSlider',
-    components:{
-          GeorgiaInsetMap
-    },
-    data(){
-        return{
-            atlantaText: atlantaSliderText.textContents
+  import BeerSlider from "beerslider";
+  /* import cartogram from "../assets/cartogram/cartogram_init_tooltip.svg"; */
+  import GeorgiaInsetMap from './georgiaInsetMap';
+  import atlantaSliderText from "../assets/mapboxSlider/atlantaSliderText";
+  export default {
+      'name': 'MapImageSlider',
+      components:{
+            GeorgiaInsetMap
+      },
+      data(){
+          return{
+              atlantaText: atlantaSliderText.textContents
+          }
+      },
+      mounted(){
+          window.addEventListener('load', function(){
+              new BeerSlider(document.getElementById('sliderOne'));
+              new BeerSlider(document.getElementById('sliderTwo'));
+          })
+          let svg = document.querySelector("#cartogram-svg");
+          let xmax = Number(svg.getAttribute("viewBox").split(" ")[2]);
+          let pt = svg.createSVGPoint();
+      },
+      methods: {
+        init: function (evt){
+          if ( window.svgDocument == null ) {
+            svgDocument = evt.target.ownerDocument;
+          }
+        },
+    
+        changeOpacity: function (id, val){
+          document.getElementById(id).setAttribute("opacity", val);
+        },
+        
+        gagetip: function (evt){
+      
+          var tooltip = document.getElementById("tooltip");
+          var tooltip_bg = document.getElementById("tooltip_bg");
+          var tool_pt = document.getElementById("tool_pt");
+      
+          if (evt === undefined){
+            tooltip.setAttribute("class","hidden");
+            tooltip_bg.setAttribute("class","hidden");
+            tool_pt.setAttribute("class","hidden");
+          } else {
+      
+            pt = cursorPoint(evt);
+            pt.x = Math.round(pt.x);
+            pt.y = Math.round(pt.y);
+      
+            svgWidth = Number(svg.getAttribute("viewBox").split(" ")[2]);
+            tooltip.setAttribute("x",pt.x);
+            tooltip.setAttribute("y",pt.y);
+      
+            translate_elements = window.getComputedStyle(evt.target.parentElement).transform;
+            scale_elements = window.getComputedStyle(evt.target).transform;
+      
+            scaleX = scale_elements.split(", ")[0].split("matrix(")[1];
+            translateX = translate_elements.split(", ")[4];
+            tip_JSON = evt.target.getAttribute("data");
+            tip_data = JSON.parse(tip_JSON);
+            pt_index = Math.round((pt.x - Math.round(translateX) ) / scaleX - 0.5);
+            state_id = evt.target.getAttribute("id").split("-")[0];
+            tip_text = state_id + " had " + tip_data.n_gages[pt_index] + " gages in " + (tip_data.start_year[0] + pt_index);
+            tooltip.firstChild.data = tip_text;
+            var length = Math.round(tooltip.getComputedTextLength());
+      
+            if (pt.x - length/2 - 6 < 0){
+              tooltip.setAttribute("x",length/2+6);
+            } else if (pt.x + length/2 + 6 > svgWidth) {
+              tooltip.setAttribute("x", svgWidth-length/2-6);
+            }
+      
+            tool_pt.setAttribute("transform","translate("+pt.x+","+pt.y+")");
+            tooltip_bg.setAttribute("x",tooltip.getAttribute("x")-length/2-6);
+            tooltip_bg.setAttribute("y",pt.y-41);
+            tooltip.setAttribute("class","shown");
+            tooltip_bg.setAttribute("class","tooltip-box");
+            tool_pt.setAttribute("class","tooltip-box");
+            tooltip_bg.setAttribute("width", length+12);
+      
+          }
+        },
+      
+        cursorPoint: function (evt){
+          pt.x = evt.clientX; pt.y = evt.clientY;
+          return pt.matrixTransform(svg.getScreenCTM().inverse());
         }
-    },
-    mounted(){
-        window.addEventListener('load', function(){
-            new BeerSlider(document.getElementById('sliderOne'));
-            new BeerSlider(document.getElementById('sliderTwo'));
-        })
-    }
-}
+      }
+  }
 </script>
 <style lang="scss">
 @import /* webpackPrefetch: true */ '~beerslider/dist/BeerSlider.css';
@@ -516,6 +585,20 @@ $polygon: '~@/assets/images/polygon.png';
 #cartoUSA {
   width:120%;
   height: auto;
+}
+.tooltip-box{
+  stroke-width: 0.5;
+  stroke: #696969;
+  opacity: 0.95;
+  fill: #f2f2f2;
+}
+#tooltip{
+  font-size: 26px;
+}
+.state-label{
+  font-size: 12px;
+  fill: white;
+  text-anchor: end;
 }
 @media screen and (min-width: 600px){
     .beer-slider[data-beer-label]:after,
