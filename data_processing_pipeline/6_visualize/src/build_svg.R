@@ -138,7 +138,8 @@ add_hover_rects <- function(svg_root, dat, state_nm, mx = 0, my = 0, scale_x = 1
                 x = min(dat_bars$x_pos), y = -total_height, 
                 width=sum(dat_bars$width), height=total_height,
                 style="fill:#0000ff1c", transform = sprintf("scale(%s %s)", scale_x, scale_y),
-                `@mouseover` = "gagetip($event)", `@mouseout` = "gagetip()",
+                #onmousemove = "gagetip(evt)", onmouseout = "gagetip()", # This is what regular JS needs
+                `@mousemove` = "gagetip($event)", `@mouseout` = "gagetip()", # This is what Vue needs
                 data = data_json)
   
   return(svg_root)
