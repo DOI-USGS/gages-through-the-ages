@@ -5,7 +5,6 @@
     <RealTime v-if="checkIfBarChartIsRendered" />
     <MapImageSlider v-if="checkIfBarChartIsRendered" />
     <TakeAway v-if="checkIfBarChartIsRendered" />
-    <DataSources v-if="checkIfBarChartIsRendered" />
     <Methods v-if="checkIfBarChartIsRendered" />
     <References v-if="checkIfBarChartIsRendered" />
   </div>

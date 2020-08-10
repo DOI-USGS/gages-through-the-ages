@@ -43,10 +43,11 @@ prepare_svg_data <- function(raw_dat, states_to_use, start_yr, end_yr) {
 }
 
 init_svg <- function(width = 8, height = 5, ppi = 72, is_pixels = FALSE) {
-  view_box <- sprintf("%s %s %s %s", 0, 0, ifelse(is_pixels, width, width*ppi), ifelse(is_pixels, height, height*ppi))
+  view_box <- sprintf("%s %s %s %s", 0, -0.1*height, ifelse(is_pixels, width, width*ppi), ifelse(is_pixels, height, height*ppi))
   # create the main "parent" svg node. This is the top-level part of the svg
-  svg_root <- xml_new_root('svg', viewBox = view_box, preserveAspectRatio="xMidYMid meet", 
-                           xmlns="http://www.w3.org/2000/svg", `xmlns:xlink`="http://www.w3.org/1999/xlink", version="1.1" )
+  svg_root <- xml_new_root('svg', viewBox = view_box, preserveAspectRatio="xMidYMid meet", id = "cartogram-svg",
+                           xmlns="http://www.w3.org/2000/svg", `xmlns:xlink`="http://www.w3.org/1999/xlink", 
+                           version="1.1" )
   return(svg_root)
 }
 
@@ -101,7 +102,7 @@ add_state_hovers <- function(svg_root, state_dat, state_loc_info, states, scale_
     
     st_hovers <- svg_root %>%
       add_state_grp(state_nm, trans_x = st_pos$x, trans_y = st_pos$y, grp_id = "hovers") %>% 
-      add_hover_rects(st_dat, scale_x = scale_width, scale_y = scale_height)
+      add_hover_rects(st_dat, state_nm, scale_x = scale_width, scale_y = scale_height)
   }
   
 }
@@ -123,23 +124,23 @@ add_state_txt <- function(svg_root, state_nm, state_data, scale_x = 1) {
                     y = "0", x = as.character(nrow(state_data)*scale_x))
 }
 
-add_hover_rects <- function(svg_root, dat, mx = 0, my = 0, scale_x = 1, scale_y = 1) {
+add_hover_rects <- function(svg_root, dat, state_nm, mx = 0, my = 0, scale_x = 1, scale_y = 1) {
   dat_bars <- dat %>% 
     mutate(width = 1) %>% # assume 1 year = 1 pixel
     mutate(x_pos = mx + cumsum(width) - width) # Set up x position to start at mx
   
   total_height <- max(dat_bars$n_gages, na.rm = TRUE)
   
-  for(y in dat_bars$year) {
-    dat_y <- filter(dat_bars, year == y) 
-    
-    # add a rectangle for each, add style (don't do it this way in real life) and mouseover events, which won't work 
-    # because hovertext() as a JS function is not defined
-    xml_add_child(svg_root, 'rect', x = dat_y$x_pos, y = -total_height, width=dat_y$width, height=total_height, 
-                  style="fill:#0000ff1c", transform = sprintf("scale(%s %s)", scale_x, scale_y),
-                  onmouseover = sprintf("hovertext('%s had %s gages in %s', evt)", dat_y$state, dat_y$n_gages, y),
-                  onmouseout = "hovertext(' ')")
-  }
+  data_json <- jsonlite::toJSON(list(n_gages = dat_bars$n_gages,
+                        start_year = min(dat_bars$year)))
+  
+  xml_add_child(svg_root, 'rect', id = sprintf("%s-mouse", state_nm),
+                x = min(dat_bars$x_pos), y = -total_height, 
+                width=sum(dat_bars$width), height=total_height,
+                style="fill:#0000ff1c", transform = sprintf("scale(%s %s)", scale_x, scale_y),
+                #onmousemove = "gagetip(evt)", onmouseout = "gagetip()", # This is what regular JS needs
+                `@mousemove` = "gagetip($event)", `@mouseout` = "gagetip()", # This is what Vue needs
+                data = data_json)
   
   return(svg_root)
 }
