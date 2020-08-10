@@ -203,7 +203,7 @@
         <h2 class="usa-accordion__heading">
           <button
             class="usa-accordion__button"
-            :style="method.width"
+            :style="{width:method.width}"
             aria-expanded="false"
             :aria-controls="method.title"
             @click="trackMethodClick"
@@ -215,6 +215,7 @@
           :id="method.title"
           class="usa-accordion__content usa-prose gage-target"
         >
+         <h1><span v-html="method.year"  /></h1>
           <p><span v-html="method.method" /></p>
         </div>
       </div>
@@ -258,12 +259,13 @@ $chevronDown: '~@/assets/images/chevron-down.png';
   button:not([disabled]):focus{
     outline: none;
   }
-  .usa-accordion__button{
+  .usa-accordion__button  {
     background-image: url($chevronDown);
     background-size: 15px 10px;
     background-color:  #00264c;
     color:  white;
-    width: 30%;
+    height: 50px;
+    text-align: center;
     display: inline-block;
   }
   .usa-accordion__button[aria-expanded=false]{
@@ -288,4 +290,5 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     stroke-miterlimit:10; 
     stroke-width:.35px;
 }
+
 </style>
