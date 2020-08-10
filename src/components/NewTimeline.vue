@@ -195,7 +195,7 @@
         </g>
       </svg>
     </div>
-    <div class="usa-accordion usa-accordion--bordered">
+    <div v-if="window.width > 992" class="usa-accordion usa-accordion--bordered custom-tabbed-accordion" >
       <div v-for="method in methods.methods" :key="method.title" class="headings">
         <h2 class="usa-accordion__heading">
           <button
@@ -214,7 +214,30 @@
         </div>
       </div>
     </div>
-
+    <div v-if="window.width <= 992" class="usa-accordion usa-accordion--bordered">
+      <div
+          v-for="method in methods.methods"
+          :key="method.title"
+      >
+        <h2 class="usa-accordion__heading">
+          <button
+              class="usa-accordion__button"
+              :style="method.width"
+              aria-expanded="false"
+              :aria-controls="method.title"
+              @click="trackMethodClick"
+          >
+            {{ method.title }}
+          </button>
+        </h2>
+        <div
+            :id="method.title"
+            class="usa-accordion__content usa-prose gage-target"
+        >
+          <p><span v-html="method.method" /></p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -224,17 +247,36 @@
         'name': 'NewTimeline',
         data(){
             return{
-                methods: methods.methodContent
+                methods: methods.methodContent,
+                window: {
+                  width: 0,
+                  height: 0
+                }
             }
+        },
+        created() {
+          window.addEventListener('resize', this.handleResize);
+          this.handleResize();
+        },
+        destroyed() {
+          window.removeEventListener('resize', this.handleResize);
         },
         mounted() {
             // This is a fix for the weird USWDS glitch that causes the Methods section accordion menus to be open on page load
-            const targetAccordionDivs = document.querySelectorAll('div.gage-target');
-            targetAccordionDivs.forEach((div) => {
-                div.setAttribute('hidden', '""');
-            });
+            this.closeAccordions();
         },
         methods: {
+            handleResize() {
+              this.window.width = window.innerWidth;
+              this.window.height = window.innerHeight;
+              this.closeAccordions();
+            },
+            closeAccordions() {
+              const targetAccordionDivs = document.querySelectorAll('div.gage-target');
+              targetAccordionDivs.forEach((div) => {
+                div.setAttribute('hidden', '""');
+              });
+            },
             runGoogleAnalytics(eventName, action, label) {
                 this.$ga.set({ dimension2: Date.now() });
                 this.$ga.event(eventName, action, label);
@@ -250,10 +292,9 @@
 <style scoped lang="scss">
 $chevronLeft: '~@/assets/images/chevron-left.png';
 $chevronDown: '~@/assets/images/chevron-down.png';
-.usa-accordion {
+.custom-tabbed-accordion {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: minmax(min-content, max-content);
   button:not([disabled]):focus {
     outline: none;
   }
@@ -290,17 +331,20 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     stroke-miterlimit:10; 
     stroke-width:.35px;
 }
-
-
-@media only screen and (max-width: 992px) {
-  #annotated-timeline {
-    div.usa-accordion.usa-accordion--bordered {
-      display: grid;
-      grid-template-columns: 1fr;
-      .content {
-        color: red;
-      }
-    }
-  }
+// styles for standard accordion
+button:not([disabled]):focus{
+  outline: none;
 }
+.usa-accordion__button{
+  background-image: url($chevronDown);
+  background-size: 15px 10px;
+  background-color:  #00264c;
+  color:  white;
+}
+.usa-accordion__button[aria-expanded=false]{
+  background-image: url($chevronLeft);
+  background-size: 10px 15px;
+  background-color:  grey;
+}
+
 </style>
