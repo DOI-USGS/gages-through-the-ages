@@ -62,6 +62,7 @@
     width: 100%;
     h1,h2{
       color: #003366;
+      margin: 20px 0;
     }
     caption,p{
       color: #2c3e50;
@@ -85,8 +86,8 @@
     padding:0; margin:0;
   }
   p{
-    margin-top:10px;
-    font-size:1.1em;
+    margin-top:1.5em;
+    font-size:16pt;
     line-height:1.5em;
   }
 
