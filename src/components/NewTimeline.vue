@@ -1,6 +1,6 @@
 <template>
   <div
-    id="methods"
+    id="annotated-timeline"
     class="section"
   >
     <a id="timeline-anchor" />
@@ -196,14 +196,10 @@
       </svg>
     </div>
     <div class="usa-accordion usa-accordion--bordered">
-      <div
-        v-for="method in methods.methods"
-        :key="method.title"
-      >
+      <div v-for="method in methods.methods" :key="method.title" class="headings">
         <h2 class="usa-accordion__heading">
           <button
             class="usa-accordion__button"
-            :style="method.width"
             aria-expanded="false"
             :aria-controls="method.title"
             @click="trackMethodClick"
@@ -211,14 +207,14 @@
             {{ method.title }}
           </button>
         </h2>
-        <div
-          :id="method.title"
-          class="usa-accordion__content usa-prose gage-target"
-        >
+      </div>
+      <div v-for="method in methods.methods" :key="method.title" class="content">
+        <div :id="method.title" class="usa-accordion__content usa-prose gage-target">
           <p><span v-html="method.method" /></p>
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -252,25 +248,31 @@
 </script>
 
 <style scoped lang="scss">
-
 $chevronLeft: '~@/assets/images/chevron-left.png';
 $chevronDown: '~@/assets/images/chevron-down.png';
-  button:not([disabled]):focus{
+.usa-accordion {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(min-content, max-content);
+  button:not([disabled]):focus {
     outline: none;
   }
-  .usa-accordion__button{
+  .usa-accordion__button {
     background-image: url($chevronDown);
     background-size: 15px 10px;
     background-color:  #00264c;
-    color:  white;
-    width: 30%;
-    display: inline-block;
+    color: white;
   }
-  .usa-accordion__button[aria-expanded=false]{
+  .usa-accordion__button[aria-expanded=false] {
     background-image: url($chevronLeft);
     background-size: 10px 15px;
     background-color:  grey;
   }
+  .content {
+    grid-column: 1 / 4;
+  }
+}
+
 #timeline {
     width: 100%;
 }
@@ -287,5 +289,18 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     stroke:#0e2433; 
     stroke-miterlimit:10; 
     stroke-width:.35px;
+}
+
+
+@media only screen and (max-width: 992px) {
+  #annotated-timeline {
+    div.usa-accordion.usa-accordion--bordered {
+      display: grid;
+      grid-template-columns: 1fr;
+      .content {
+        color: red;
+      }
+    }
+  }
 }
 </style>
