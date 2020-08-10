@@ -9,6 +9,7 @@ packages:
   - maps
   - maptools
   - rgeos
+  - tidyr
   - jsonlite
   - xml2
   - svglite
@@ -36,6 +37,7 @@ targets:
       - 2_process/out/states_map.svg
       # Needed to determine % gages urban in past vs present
       - 2_process/out/percent_urban_past_present.rds
+      - 2_process/out/gage_counts_by_state.rds
   
   viz_year_range: 
     command: c(I(1890), I(2019)) # taken from original viz code & conversations with JR
@@ -89,6 +91,13 @@ targets:
       target_name,
       gage_year_data_file = "2_process/out/active_gages_min_year_applied.rds",
       state_sp = state_map)
+  
+  ## -- yearly gage counts per state for cartogram -- ##
+  
+  2_process/out/gage_counts_by_state.rds:
+    command: process_state_counts(target_name, 
+      summary_fl = '1_fetch/out/active_gages_summary_data_file.rds')
+  
   
   ## -- Urban areas for map slider -- ##
   
