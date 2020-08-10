@@ -138,7 +138,7 @@ add_hover_rects <- function(svg_root, dat, state_nm, mx = 0, my = 0, scale_x = 1
                 x = min(dat_bars$x_pos), y = -total_height, 
                 width=sum(dat_bars$width), height=total_height,
                 style="fill:#0000ff1c", transform = sprintf("scale(%s %s)", scale_x, scale_y),
-                onmousemove = "gagetip(evt)", onmouseout = "gagetip()",
+                `@mouseover` = "gagetip($event)", `@mouseout` = "gagetip()",
                 data = data_json)
   
   return(svg_root)
