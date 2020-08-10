@@ -3,7 +3,7 @@
     id="gage-map"
     class="section"
   >
-    <div class="container">
+    <div id="title-container" class="container">
       <h1 class="title">
         {{ text.title }}
       </h1>
@@ -2918,16 +2918,19 @@ $stateFill: rgb(228,228,227);
 $stateStroke: rgb(255,255,255);
 $axis: rgb(100,100,100);
 
+  #title-container{
+    margin: 50px 0;
+  }
   .title{
-    font-size: 1.7em;
-    margin: 5px 0;
+    text-align: center;
+    font-size: 3em;
   }
   .subtitle {
-    font-size: 1em;
-    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.7em;
   }
   #svgcaption{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .interior-state {
     fill: $stateFill;
@@ -3008,10 +3011,7 @@ $axis: rgb(100,100,100);
     text-align: center;
   }
   @media screen and (min-width: 600px){
-    .title{
-      font-size: 2em;
-      margin: 5px 0;
-    }
+  
     #gageImage {
      width: 55%;
      float: left;
