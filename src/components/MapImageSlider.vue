@@ -436,7 +436,9 @@
       },
       data(){
           return{
-              atlantaText: atlantaSliderText.textContents
+              atlantaText: atlantaSliderText.textContents,
+              svg: null,
+              pt: null
           }
       },
       mounted(){
@@ -444,74 +446,64 @@
               new BeerSlider(document.getElementById('sliderOne'));
               new BeerSlider(document.getElementById('sliderTwo'));
           })
-          let svg = document.querySelector("#cartogram-svg");
-          let xmax = Number(svg.getAttribute("viewBox").split(" ")[2]);
-          let pt = svg.createSVGPoint();
+          this.svg = document.querySelector("#cartogram-svg");
+          this.pt = this.svg.createSVGPoint();
       },
       methods: {
-        init: function (evt){
-          if ( window.svgDocument == null ) {
-            svgDocument = evt.target.ownerDocument;
-          }
-        },
-    
-        changeOpacity: function (id, val){
-          document.getElementById(id).setAttribute("opacity", val);
+      
+        cursorPoint(evt) {
+          this.pt.x = evt.clientX; this.pt.y = evt.clientY;
+          return this.pt.matrixTransform(this.svg.getScreenCTM().inverse());
         },
         
-        gagetip: function (evt){
+        gagetip(evt) {
       
-          var tooltip = document.getElementById("tooltip");
-          var tooltip_bg = document.getElementById("tooltip_bg");
-          var tool_pt = document.getElementById("tool_pt");
-      
+          let tooltip = document.getElementById("tooltip");
+          let tooltip_bg = document.getElementById("tooltip_bg");
+          let tool_pt = document.getElementById("tool_pt");
+        
           if (evt === undefined){
             tooltip.setAttribute("class","hidden");
             tooltip_bg.setAttribute("class","hidden");
             tool_pt.setAttribute("class","hidden");
           } else {
       
-            pt = cursorPoint(evt);
-            pt.x = Math.round(pt.x);
-            pt.y = Math.round(pt.y);
+            this.pt = this.cursorPoint(evt);
+            this.pt.x = Math.round(this.pt.x);
+            this.pt.y = Math.round(this.pt.y);
       
-            svgWidth = Number(svg.getAttribute("viewBox").split(" ")[2]);
-            tooltip.setAttribute("x",pt.x);
-            tooltip.setAttribute("y",pt.y);
+            let svgWidth = Number(this.svg.getAttribute("viewBox").split(" ")[2]);
+            tooltip.setAttribute("x",this.pt.x);
+            tooltip.setAttribute("y",this.pt.y);
       
-            translate_elements = window.getComputedStyle(evt.target.parentElement).transform;
-            scale_elements = window.getComputedStyle(evt.target).transform;
+            let translate_elements = window.getComputedStyle(evt.target.parentElement).transform;
+            let scale_elements = window.getComputedStyle(evt.target).transform;
       
-            scaleX = scale_elements.split(", ")[0].split("matrix(")[1];
-            translateX = translate_elements.split(", ")[4];
-            tip_JSON = evt.target.getAttribute("data");
-            tip_data = JSON.parse(tip_JSON);
-            pt_index = Math.round((pt.x - Math.round(translateX) ) / scaleX - 0.5);
-            state_id = evt.target.getAttribute("id").split("-")[0];
-            tip_text = state_id + " had " + tip_data.n_gages[pt_index] + " gages in " + (tip_data.start_year[0] + pt_index);
-            tooltip.firstChild.data = tip_text;
+            let scaleX = scale_elements.split(", ")[0].split("matrix(")[1];
+            let translateX = translate_elements.split(", ")[4];
+            let tip_JSON = evt.target.getAttribute("data");
+            let tip_data = JSON.parse(tip_JSON);
+            let pt_index = Math.round((this.pt.x - Math.round(translateX) ) / scaleX - 0.5);
+            let state_id = evt.target.getAttribute("id").split("-")[0];
+            let tip_text = state_id + " had " + tip_data.n_gages[pt_index] + " gages in " + (tip_data.start_year[0] + pt_index);
+            tooltip.data = tip_text;
             var length = Math.round(tooltip.getComputedTextLength());
       
-            if (pt.x - length/2 - 6 < 0){
+            if (this.pt.x - length/2 - 6 < 0){
               tooltip.setAttribute("x",length/2+6);
-            } else if (pt.x + length/2 + 6 > svgWidth) {
+            } else if (this.pt.x + length/2 + 6 > svgWidth) {
               tooltip.setAttribute("x", svgWidth-length/2-6);
             }
       
-            tool_pt.setAttribute("transform","translate("+pt.x+","+pt.y+")");
+            tool_pt.setAttribute("transform","translate("+this.pt.x+","+this.pt.y+")");
             tooltip_bg.setAttribute("x",tooltip.getAttribute("x")-length/2-6);
-            tooltip_bg.setAttribute("y",pt.y-41);
+            tooltip_bg.setAttribute("y",this.pt.y-41);
             tooltip.setAttribute("class","shown");
             tooltip_bg.setAttribute("class","tooltip-box");
             tool_pt.setAttribute("class","tooltip-box");
             tooltip_bg.setAttribute("width", length+12);
       
           }
-        },
-      
-        cursorPoint: function (evt){
-          pt.x = evt.clientX; pt.y = evt.clientY;
-          return pt.matrixTransform(svg.getScreenCTM().inverse());
         }
       }
   }
