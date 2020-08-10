@@ -195,8 +195,15 @@
         </g>
       </svg>
     </div>
-    <div v-if="window.width > 992" class="usa-accordion usa-accordion--bordered custom-tabbed-accordion" >
-      <div v-for="method in methods.methods" :key="method.title" class="headings">
+    <div
+      v-if="window.width > 992"
+      class="usa-accordion usa-accordion--bordered custom-tabbed-accordion"
+    >
+      <div
+        v-for="method in methods.methods"
+        :key="method.title"
+        class="headings"
+      >
         <h2 class="usa-accordion__heading">
           <button
             class="usa-accordion__button"
@@ -208,32 +215,48 @@
           </button>
         </h2>
       </div>
-      <div v-for="method in methods.methods" :key="method.title" class="content">
-        <div :id="method.title" class="usa-accordion__content usa-prose gage-target">
+      <div
+        v-for="method in methods.methods"
+        :key="method.title"
+        class="content"
+      >
+        <div
+          :id="method.title"
+          class="usa-accordion__content usa-prose gage-target"
+        >
+          <h2 class="usa-prose">
+            {{ method.timePeriod }}
+          </h2>
           <p><span v-html="method.method" /></p>
         </div>
       </div>
     </div>
-    <div v-if="window.width <= 992" class="usa-accordion usa-accordion--bordered">
+    <div
+      v-if="window.width <= 992"
+      class="usa-accordion usa-accordion--bordered"
+    >
       <div
-          v-for="method in methods.methods"
-          :key="method.title"
+        v-for="method in methods.methods"
+        :key="method.title"
       >
         <h2 class="usa-accordion__heading">
           <button
-              class="usa-accordion__button"
-              :style="method.width"
-              aria-expanded="false"
-              :aria-controls="method.title"
-              @click="trackMethodClick"
+            class="usa-accordion__button"
+            :style="method.width"
+            aria-expanded="false"
+            :aria-controls="method.title"
+            @click="trackMethodClick"
           >
             {{ method.title }}
           </button>
         </h2>
         <div
-            :id="method.title"
-            class="usa-accordion__content usa-prose gage-target"
+          :id="method.title"
+          class="usa-accordion__content usa-prose gage-target"
         >
+          <h2 class="usa-prose">
+            {{ method.timePeriod }}
+          </h2>
           <p><span v-html="method.method" /></p>
         </div>
       </div>
