@@ -28,7 +28,7 @@
     >
       <p><span v-html="paragraph.paragraphText" /></p>
     </div>
-    <div
+    <!--   <div
       v-if="smallScreen"
       id="mobileAnnotatedBarCharts"
       class="breathingRoom"
@@ -45,7 +45,6 @@
       </picture>
     </div>
     <div
-      v-if="largeScreen"
       id="annotatedBarChart"
       class="breathingRoom"
     >
@@ -59,15 +58,21 @@
           alt="annotated timeline showing important periods in gage history"
         >
       </picture>
-    </div>
+      
+    </div> -->
+    <NewTimeline />
   </div>
 </template>
 
 <script>
   import annotatedTimelineText from "../assets/annotatedTimeline/annotatedTimeline";
+  import NewTimeline from "./NewTimeline.vue";
 
   export default {
       name: 'AnnotatedTimeline',
+      components: {
+        NewTimeline
+      },
       data() {
           return {
               smallScreen: false,
@@ -98,6 +103,7 @@
         }
       }
   }
+
 </script>
 
 <style scoped lang="scss">
