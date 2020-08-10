@@ -486,7 +486,7 @@
             let pt_index = Math.round((this.pt.x - Math.round(translateX) ) / scaleX - 0.5);
             let state_id = evt.target.getAttribute("id").split("-")[0];
             let tip_text = state_id + " had " + tip_data.n_gages[pt_index] + " gages in " + (tip_data.start_year[0] + pt_index);
-            tooltip.data = tip_text;
+            tooltip.textContent = tip_text;
             var length = Math.round(tooltip.getComputedTextLength());
       
             if (this.pt.x - length/2 - 6 < 0){
@@ -577,6 +577,9 @@ $polygon: '~@/assets/images/polygon.png';
 #cartoUSA {
   width:120%;
   height: auto;
+}
+.hidden {
+  opacity:0;
 }
 .tooltip-box{
   stroke-width: 0.5;
