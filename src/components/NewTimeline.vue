@@ -320,6 +320,7 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     background-image: url($chevronDown);
     background-size: 15px 10px;
     background-color:  #00264c;
+    min-height: 5.5em;
     color: white;
     text-align: center;
   }
@@ -327,6 +328,7 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     background-image: url($chevronLeft);
     background-size: 10px 15px;
     background-color:  rgb(138, 139, 138);
+    min-height: 5.5em;
   }
   .content {
     grid-column: 1 / 4;
@@ -352,7 +354,14 @@ $chevronDown: '~@/assets/images/chevron-down.png';
 button:not([disabled]):focus{
   outline:none;
 }
-
+#app h2.usa-accordion__heading {
+ margin: 0;
+}
+.usa-accordion__button {
+  background-image: url($chevronDown);
+  background-color:  #00264c;
+  color: white;
+}
 .usa-accordion__button[aria-expanded=false]{
   background-image: url($chevronLeft);
   background-size: 10px 15px;
