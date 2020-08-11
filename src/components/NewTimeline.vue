@@ -66,7 +66,7 @@
         />
         <path
           id="yr1998"
-          class="highlight"
+          fill="#efefef"
           d="M404.41 60.69h2.79v62.39h-2.79z"
         />
         <g
@@ -81,15 +81,26 @@
         >
           <path d="M292.21 47.01H295v76.08h-2.79zM295.95 47.88h2.79v75.2h-2.79zM299.69 48.44h2.79v74.64h-2.79zM303.43 49.79h2.79v73.29h-2.79zM307.17 51.94h2.79v71.14h-2.79zM310.91 52.58h2.79v70.51h-2.79zM314.65 53.77h2.79v69.31h-2.79z" />
         </g>
+        <g id="yr_1995">
+          <path
+            class="highlight"
+            d="M393.19 60.77h2.79v62.31h-2.79z"
+          />
+        </g>
 
         <g id="annotations-arrows-up">
           <g>
-            <path d="M410.49 55.65a71.7 71.7 0 0113.1-4.52c3.37-.79 6.82-1.25 10.23-1.82 9.61-1.62 19.3-3.28 28.77-5.6a97.54 97.54 0 0016.11-5.52c.69-.3.1-1.3-.58-1-9 3.93-18.31 6.08-27.87 8q-7.74 1.51-15.51 2.83c-3.64.62-7.32 1.1-10.93 1.9a72.06 72.06 0 00-13.91 4.76c-.68.31-.09 1.31.59 1z" />
-            <path d="M475.9 36.65c.93.49 1.87 1 2.83 1.36l-.21-.79-1.83 2.63a.61.61 0 00.21.8.6.6 0 00.8-.21l1.83-2.63a.59.59 0 00-.21-.8c-1-.41-1.91-.87-2.83-1.37a.6.6 0 00-.8.21.61.61 0 00.21.8z" />
+            <path
+              transform="translate(-10, 0)"
+              d="M410.49 55.65a71.7 71.7 0 0113.1-4.52c3.37-.79 6.82-1.25 10.23-1.82 9.61-1.62 19.3-3.28 28.77-5.6a97.54 97.54 0 0016.11-5.52c.69-.3.1-1.3-.58-1-9 3.93-18.31 6.08-27.87 8q-7.74 1.51-15.51 2.83c-3.64.62-7.32 1.1-10.93 1.9a72.06 72.06 0 00-13.91 4.76c-.68.31-.09 1.31.59 1z"
+            />
+            <path
+              transform="translate(-10, 0)"
+              d="M475.9 36.65c.93.49 1.87 1 2.83 1.36l-.21-.79-1.83 2.63a.61.61 0 00.21.8.6.6 0 00.8-.21l1.83-2.63a.59.59 0 00-.21-.8c-1-.41-1.91-.87-2.83-1.37a.6.6 0 00-.8.21.61.61 0 00.21.8z"
+            />
           </g>
           <path
             d="M333.2 46.79a31.91 31.91 0 0112.37 3 35.65 35.65 0 014.43 2.48c.57.39 1.14.8 1.69 1.22a3.24 3.24 0 001.87.88.64.64 0 00.62-.82c-.35-.95-.7-1.91-1.06-2.87a4.09 4.09 0 00-.45-1c-.37-.45-1.1-.06-1.11.46a3.49 3.49 0 00.31 1.09c.34 1 .7 2.05 1.05 3.08l.63-.83h-4.35a.65.65 0 000 1.3h4.34a.65.65 0 00.62-.82l-1-2.89c-.08-.23-.15-.47-.23-.71s-.09-.49-.09-.22l-1.11.46c-.16-.2-.05-.08 0 .07a5.1 5.1 0 00.28.74c.31.83.62 1.66.92 2.49l.63-.82a3.66 3.66 0 01-1.51-.93c-.6-.45-1.21-.88-1.84-1.29a33.22 33.22 0 00-17-5.37c-.84 0-.84 1.27 0 1.3zM296 42.72a67.53 67.53 0 019.51 2.09c1.73.52 3.45 1.11 5.14 1.77.81.32 1.62.66 2.42 1a3.66 3.66 0 002 .58.62.62 0 00.52-.91l-1.5-3.45c-.26-.62-1.35-.17-1.09.46.52 1.31 1 2.61 1.55 3.91l.42-.74-3.7 1.11c-.73.23-.42 1.39.32 1.16l3.7-1.11a.61.61 0 00.42-.74L314.19 44l-1.09.47 1.5 3.45.51-.9c-.77.09-1.63-.53-2.33-.83s-1.41-.58-2.12-.86a62.44 62.44 0 00-5-1.69 66.48 66.48 0 00-9.34-2c-.76-.11-1.09 1-.32 1.16z"
-            fill="#00264c"
           />
           <g>
             <path d="M154 96.18a82.72 82.72 0 0027.71-8.82c4-2.15 7.87-4.66 11.84-6.93s7.77-4.2 11.79-6a144.76 144.76 0 0117.1-6.43c.82-.25.47-1.55-.36-1.29a142.71 142.71 0 00-26.72 11.19c-4.17 2.27-8.15 4.85-12.27 7.19a79.8 79.8 0 01-14.38 6.35 86 86 0 01-15 3.44c-.85.12-.49 1.41.36 1.3z" />
@@ -144,7 +155,7 @@
             transform="translate(400 9)"
             class="callouts"
           >
-            1998:<tspan
+            1995:<tspan
               x="28"
               y="0"
               font-weight="400"
@@ -192,16 +203,16 @@
       </svg>
     </div>
     <div
-      v-if="window.width > 992"
       class="usa-accordion usa-accordion--bordered custom-tabbed-accordion"
     >
       <div
         v-for="method in methods.methods"
-        :key="method.title"
+        :key="method.title + '-1'"
         class="headings"
       >
         <h2 class="usa-accordion__heading">
           <button
+            v-if="window.width > 770"
             class="usa-accordion__button"
             aria-expanded="false"
             :aria-controls="method.title"
@@ -209,49 +220,38 @@
           >
             {{ method.title }}
           </button>
+          <button
+            v-if="window.width <= 770 || $isMobile()"
+            class="usa-accordion__button"
+            aria-expanded="false"
+            :aria-controls="method.title"
+            @click="trackMethodClick"
+          >
+            {{ method.timePeriod }}
+          </button>
         </h2>
       </div>
       <div
         v-for="method in methods.methods"
-        :key="method.title"
+        :key="method.title + '-2'"
         class="content"
       >
         <div
           :id="method.title"
           class="usa-accordion__content usa-prose gage-target"
         >
-          <h2 class="usa-prose">
+          <h3
+            v-if="window.width > 770"
+            class="usa-prose"
+          >
             {{ method.timePeriod }}
-          </h2>
-          <p><span v-html="method.method" /></p>
-        </div>
-      </div>
-    </div>
-    <div
-      v-if="window.width <= 992"
-      class="usa-accordion usa-accordion--bordered"
-    >
-      <div
-        v-for="method in methods.methods"
-        :key="method.title"
-      >
-        <h2 class="usa-accordion__heading">
-          <button
-            class="usa-accordion__button"
-            aria-expanded="false"
-            :aria-controls="method.title"
-            @click="trackMethodClick"
+          </h3>
+          <h3
+            v-if="window.width <= 770 || $isMobile()"
+            class="usa-prose"
           >
             {{ method.title }}
-          </button>
-        </h2>
-        <div
-          :id="method.title"
-          class="usa-accordion__content usa-prose gage-target"
-        >
-          <h2 class="usa-prose">
-            {{ method.timePeriod }}
-          </h2>
+          </h3>
           <p><span v-html="method.method" /></p>
         </div>
       </div>
@@ -320,13 +320,16 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     background-image: url($chevronDown);
     background-size: 15px 10px;
     background-color:  #00264c;
+    min-height: 5.5em;
     color: white;
     text-align: center;
   }
   .usa-accordion__button[aria-expanded=false] {
     background-image: url($chevronLeft);
     background-size: 10px 15px;
-    background-color:  rgb(138, 139, 138);
+    background-color: rgb(241, 240, 240);
+    color: #00264c;
+    min-height: 5.5em;
   }
   .content {
     grid-column: 1 / 4;
@@ -348,18 +351,5 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     stroke-width:.35px;
     opacity: .8;
 }
-// styles for standard accordion
-button:not([disabled]):focus{
-  outline:none;
-}
 
-.usa-accordion__button[aria-expanded=false]{
-  background-image: url($chevronLeft);
-  background-size: 10px 15px;
-  background-color:  rgb(138, 139, 138);
-}
-.usa-accordion__heading {
-  font-size:16px;
-  line-height: 1.1;
-}
 </style>

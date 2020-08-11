@@ -69,9 +69,17 @@ $chevronDown: '~@/assets/images/chevron-down.png';
   .usa-accordion__button{
     background-image: url($chevronDown);
     background-size: 15px 10px;
+    background-color:  #00264c;
+    color: white;
   }
   .usa-accordion__button[aria-expanded=false]{
     background-image: url($chevronLeft);
     background-size: 10px 15px;
+    background-color: rgb(241, 240, 240);
+    color: #00264c;
   }
+
+#app h2.usa-accordion__heading {
+  margin: 0;
+}
 </style>

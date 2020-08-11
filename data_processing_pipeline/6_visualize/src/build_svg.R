@@ -17,6 +17,9 @@ build_svg <- function(svg_fp, state_dat_raw, state_loc_info, svg_height, svg_wid
   # Add the invisible hover rectangles for each state
   add_state_hovers(svg_root, state_dat, state_loc_info, states, scale_width)
   
+  # Add a title and text + arrow for instructions about hovering
+  add_title(svg_root)
+  add_tooltip_instructions(svg_root)
   
   ##### Write out final SVG to file #####
   
@@ -138,12 +141,38 @@ add_hover_rects <- function(svg_root, dat, state_nm, mx = 0, my = 0, scale_x = 1
   xml_add_child(svg_root, 'rect', id = sprintf("%s-mouse", state_nm),
                 x = min(dat_bars$x_pos), y = -total_height, 
                 width=sum(dat_bars$width), height=total_height,
-                style="fill:#0000ff1c opacity:0", transform = sprintf("scale(%s %s)", scale_x, scale_y),
+                class="state-mousers", transform = sprintf("scale(%s %s)", scale_x, scale_y),
                 #onmousemove = "gagetip(evt)", onmouseout = "gagetip()", # This is what regular JS needs
                 `@mousemove` = "gagetip($event)", `@mouseout` = "gagetip()", # This is what Vue needs
                 data = data_json)
   
   return(svg_root)
+}
+
+add_title <- function(svg_root) {
+  
+  svg_root %>% 
+    xml_add_child("text", id = "title-svg", transform = "translate(0 0)",
+                  style = "font-size: 14px; font-weight: 600; fill: rgb(139, 139, 139);",
+                  "State-level trends in USGS streamgaging") %>% 
+    xml_add_child("tspan", x=0, y=15, "1890 - present")
+  
+}
+
+add_tooltip_instructions <- function(svg_root) {
+  
+  # Add tooltip text
+  svg_root %>% 
+    xml_add_child("text", id = "annotate-svg", transform = "translate(175 325)",
+                  style = "font-size: 10px; font-style: italic; fill: rgb(139, 139, 139);") %>% 
+    xml_add_child("tspan", x=0, y=0, "Hover to see the number of") %>% 
+    xml_add_sibling("tspan", x=0, y=10, "streamgages in each state")
+  
+  # Add tooltip arrow
+  svg_root %>% 
+    xml_add_child("path", id = "arrow", class = "annotate", transform = "translate(-142 -73)",
+                  d = "M446.47,402.11c-4.39-1.79,20.07,6.55,37.58.86a23.33,23.33,0,0,0,13.86-11.4l3,9.16L499.15,390l-11.31-.56,10.07,2.16",
+                  style = "fill: none; stroke: rgb(139, 139, 139); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3px;")
 }
 
 build_path_from_counts <- function(dat, mx = 0, my = 0) {
