@@ -197,7 +197,7 @@
     >
       <div
         v-for="method in methods.methods"
-        :key="method.title"
+        :key="method.title + '-1'"
         class="headings"
       >
         <h2 class="usa-accordion__heading">
@@ -213,7 +213,7 @@
       </div>
       <div
         v-for="method in methods.methods"
-        :key="method.title"
+        :key="method.title + '-2'"
         class="content"
       >
         <div
