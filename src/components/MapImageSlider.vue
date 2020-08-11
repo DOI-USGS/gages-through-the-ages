@@ -2005,7 +2005,7 @@ $polygon: '~@/assets/images/polygon.png';
 }
 }
 .hidden {
-  opacity:.2;
+  opacity: 0;
 }
 .tooltip-box{
   stroke-width: 0.5;
@@ -2022,5 +2022,17 @@ $polygon: '~@/assets/images/polygon.png';
     .beer-reveal[data-beer-label]:after{
         font-size: 1.5em;
     }
+}
+/*Touch screen devices - no hover*/
+@media screen and (hover: none) and (pointer: coarse) {
+  #cartogram-svg{
+    pointer-events: none;
+  }
+  #annotate-svg{
+    display: none;
+  }
+  #arrow.annotate{
+    display: none;
+  }
 }
 </style>
