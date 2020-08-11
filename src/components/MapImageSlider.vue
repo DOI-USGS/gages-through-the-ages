@@ -1767,6 +1767,15 @@
             @mouseout="gagetip()"
           />
         </g>
+        <!-- titles manually added to svg  -->
+        <text
+          id="title-svg"
+          transform="translate(0 0)"
+          style="font-size: 14px; font-weight:600; fill:rgb(139, 139, 139)"
+        >State-level trends in USGS streamgaging<tspan
+          x="0"
+          y="15"
+        >1890 - present</tspan></text>
         <text 
           id="annotate-svg" 
           transform="translate(175 325)"
@@ -1988,9 +1997,13 @@ $polygon: '~@/assets/images/polygon.png';
   text-anchor: end;
 
 }
-  .state-trend  {
+.state-trend  {
   fill: #00264c;
 }
+.state-mouser  {
+  fill: #00000000;
+}
+
 #annotate-map {
   fill:none;
   stroke:#00264c;
