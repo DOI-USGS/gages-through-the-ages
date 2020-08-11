@@ -2,7 +2,7 @@ export default{
     methodContent: {
         methods:[
             {
-                'title': 'Characterizing river flow for irrigation & hydropower',
+                'title': 'Characterizing flow for irrigation & hydropower',
                 'method': 'USGS streamgaging began in 1889 with the establishment of the first gage (see why the USGS spelling is ' +
                         '“gage” instead of “gauge”) on the Rio Grande in Embudo, New Mexico, where hydrographers were ' +
                         'trained in new techniques to measure river flow. The earliest era of streamgaging helped assess the ' +
@@ -30,7 +30,7 @@ export default{
                         'number of streamgages declined from 1991-1996 due to stringent national budget cuts and other ' +
                         'factors, but Congress established funding to retain federal priority streamgages in 2004. The need for ' +
                         'advanced flood warning has driven much of the growth in the national gage count during recent years.',
-                'timePeriod': '1996 - Present'
+                'timePeriod': '1966 - Present'
             }
         ]
     }
