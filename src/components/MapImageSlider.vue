@@ -2017,7 +2017,7 @@ $polygon: '~@/assets/images/polygon.png';
 }
 }
 .hidden {
-  opacity:.2;
+  opacity: 0;
 }
 .tooltip-box{
   stroke-width: 0.5;
