@@ -114,7 +114,8 @@ add_state_grp <- function(svg_root, state_nm, trans_x, trans_y, grp_id = "box") 
 
 add_bar_path <- function(svg_root, state_nm, state_data, scale_x = 1, scale_y = 1) {
   d <- build_path_from_counts(state_data)
-  xml_add_child(svg_root, "path", d = d, id = sprintf('%s-counts', state_nm),
+  xml_add_child(svg_root, "path", d = d, id = sprintf('%s-counts', state_nm), 
+                class = "state-trend",
                 transform = sprintf("scale(%s %s)", scale_x, scale_y))
 }
 
@@ -137,7 +138,7 @@ add_hover_rects <- function(svg_root, dat, state_nm, mx = 0, my = 0, scale_x = 1
   xml_add_child(svg_root, 'rect', id = sprintf("%s-mouse", state_nm),
                 x = min(dat_bars$x_pos), y = -total_height, 
                 width=sum(dat_bars$width), height=total_height,
-                style="fill:#0000ff1c", transform = sprintf("scale(%s %s)", scale_x, scale_y),
+                style="fill:#0000ff1c opacity:0", transform = sprintf("scale(%s %s)", scale_x, scale_y),
                 #onmousemove = "gagetip(evt)", onmouseout = "gagetip()", # This is what regular JS needs
                 `@mousemove` = "gagetip($event)", `@mouseout` = "gagetip()", # This is what Vue needs
                 data = data_json)

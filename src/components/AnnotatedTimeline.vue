@@ -18,48 +18,11 @@
         </picture>
         <caption>An early hydrographer makes measurements of Rio Grande river flow at Embudo, New Mexico.</caption>
       </div>
+      
       <div>
         <p v-html="text.firstParagraphText" />
       </div>
     </div>
-    <div
-      v-for="paragraph in text.paragraphSections"
-      :key="paragraph.paragraphText"
-    >
-      <p><span v-html="paragraph.paragraphText" /></p>
-    </div>
-    <!--   <div
-      v-if="smallScreen"
-      id="mobileAnnotatedBarCharts"
-      class="breathingRoom"
-    >
-      <picture>
-        <source
-          srcset="@/assets/images/annotatedBarChart/history_of_USGS_streamgage_network_mobile.webp"
-          type="image/webp"
-        >
-        <img
-          src="@/assets/images/annotatedBarChart/history_of_USGS_streamgage_network_mobile.png"
-          alt="annotated timeline showing the years 1900 to 1930."
-        >
-      </picture>
-    </div>
-    <div
-      id="annotatedBarChart"
-      class="breathingRoom"
-    >
-      <picture>
-        <source
-          srcset="@/assets/images/annotatedBarChart/history_of_USGS_streamgage_network.webp"
-          type="image/webp"
-        >
-        <img
-          src="@/assets/images/annotatedBarChart/history_of_USGS_streamgage_network.png"
-          alt="annotated timeline showing important periods in gage history"
-        >
-      </picture>
-      
-    </div> -->
     <NewTimeline />
   </div>
 </template>
@@ -108,7 +71,7 @@
 
 <style scoped lang="scss">
   #imageArea {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     p {
       text-align: left;
@@ -122,9 +85,10 @@
   }
   @media screen and (min-width: 600px) {
     #oldTimeyImage {
-      width: 50%;
+      width: 40%;
       float: left;
-      margin: 15px 30px 10px 0;
+      margin: 15px 30px 0px 0;
+      padding: 2%;
     }
   }
 </style>
