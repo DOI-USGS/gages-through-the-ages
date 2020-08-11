@@ -3026,4 +3026,377 @@ $axis: rgb(100,100,100);
       height: 506px;
     }
   }
+  /*Manually copied in CSS from the SVG infographic*/
+  .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: #d7e7f2;
+      }
+
+      .cls-12, .cls-16, .cls-17, .cls-18, .cls-20, .cls-3, .cls-71, .cls-8, .cls-92, .cls-93, .cls-94, .cls-95 {
+        fill: none;
+      }
+
+      .cls-16, .cls-17, .cls-20, .cls-3, .cls-92, .cls-93, .cls-95 {
+        stroke: #10113d;
+      }
+
+      .cls-16, .cls-17, .cls-20, .cls-3, .cls-71, .cls-92, .cls-93, .cls-95 {
+        stroke-linecap: round;
+      }
+
+      .cls-16, .cls-17, .cls-20, .cls-3, .cls-4, .cls-71, .cls-92, .cls-93, .cls-95 {
+        stroke-linejoin: round;
+      }
+
+      .cls-3 {
+        stroke-width: 0.59px;
+      }
+
+      .cls-19, .cls-4 {
+        fill: #cbcbcb;
+      }
+
+      .cls-4 {
+        stroke: #fff;
+        stroke-width: 0.32px;
+        fill-rule: evenodd;
+      }
+
+      .cls-5, .cls-59, .cls-66, .cls-77, .cls-80 {
+        fill: #686867;
+      }
+
+      .cls-6 {
+        fill: #ababaa;
+      }
+
+      .cls-7 {
+        fill: silver;
+      }
+
+      .cls-8 {
+        stroke: #686867;
+      }
+
+      .cls-12, .cls-18, .cls-8, .cls-94 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-9 {
+        fill: #eceac1;
+      }
+
+      .cls-10 {
+        fill: #f7ba2c;
+      }
+
+      .cls-11 {
+        fill: #036;
+      }
+
+      .cls-12, .cls-18, .cls-94 {
+        stroke: #f8f6f7;
+      }
+
+      .cls-12 {
+        stroke-width: 0.42px;
+      }
+
+      .cls-13 {
+        fill: #337835;
+      }
+
+      .cls-14 {
+        fill: #e4e4e3;
+      }
+
+      .cls-15 {
+        fill: #564441;
+      }
+
+      .cls-16 {
+        stroke-width: 0.43px;
+      }
+
+      .cls-17 {
+        stroke-width: 0.38px;
+      }
+
+      .cls-18 {
+        stroke-width: 0.31px;
+      }
+
+      .cls-20 {
+        stroke-width: 0.3px;
+      }
+
+      .cls-21 {
+        font-size: 24px;
+      }
+
+      .cls-21, .cls-59 {
+        font-family: SourceSansPro-Light, Source Sans Pro;
+      }
+
+      .cls-21, .cls-59, .cls-66 {
+        font-weight: 300;
+      }
+
+      .cls-22, .cls-35 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-23 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-24 {
+        letter-spacing: 0.04em;
+      }
+
+      .cls-25, .cls-38, .cls-43 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-26, .cls-32, .cls-41 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-27 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-28 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-29 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-30, .cls-86 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-31 {
+        letter-spacing: 0.04em;
+      }
+
+      .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38 {
+        font-family: SourceSansPro-Black, Source Sans Pro;
+        font-weight: 800;
+      }
+
+      .cls-33, .cls-89 {
+        letter-spacing: 0em;
+      }
+
+      .cls-34, .cls-47, .cls-69 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-37 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-39 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-40, .cls-41, .cls-42, .cls-43, .cls-44, .cls-69, .cls-70, .cls-72, .cls-80, .cls-84, .cls-85, .cls-86 {
+        font-family: SourceSansPro-Bold, Source Sans Pro;
+        font-weight: 700;
+      }
+
+      .cls-42 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-44, .cls-91 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-45, .cls-84 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-46 {
+        letter-spacing: -0.06em;
+      }
+
+      .cls-48, .cls-85 {
+        letter-spacing: 0em;
+      }
+
+      .cls-49 {
+        letter-spacing: 0.01em;
+      }
+
+      .cls-50 {
+        fill: #d0cccb;
+      }
+
+      .cls-51 {
+        fill: #5d5d5d;
+        opacity: 0.15;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-52 {
+        fill: #a8a4a4;
+      }
+
+      .cls-53 {
+        fill: #e0d6d3;
+      }
+
+      .cls-54 {
+        fill: #c6bbba;
+      }
+
+      .cls-55 {
+        fill: #4f0e06;
+      }
+
+      .cls-56 {
+        fill: #d1c2bf;
+      }
+
+      .cls-57 {
+        fill: #bab9b9;
+      }
+
+      .cls-58 {
+        fill: #eee3df;
+      }
+
+      .cls-59, .cls-66 {
+        font-size: 15.99px;
+      }
+
+      .cls-60 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-61 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-62 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-63 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-64 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-65 {
+        letter-spacing: 0.01em;
+      }
+
+      .cls-66 {
+        font-family: SourceSansPro-LightItalic, Source Sans Pro;
+        font-style: italic;
+      }
+
+      .cls-67 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-68 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-70 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-71 {
+        stroke: #eee3df;
+        stroke-width: 2.94px;
+      }
+
+      .cls-72 {
+        font-size: 7.68px;
+      }
+
+      .cls-73 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-74 {
+        letter-spacing: 0.01em;
+      }
+
+      .cls-75 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-76 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-77 {
+        opacity: 0.8;
+      }
+
+      .cls-78 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-79 {
+        letter-spacing: 0.01em;
+      }
+
+      .cls-80 {
+        font-size: 19.21px;
+      }
+
+      .cls-81 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-82 {
+        letter-spacing: 0.03em;
+      }
+
+      .cls-83 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-87 {
+        fill: #666;
+        fill-opacity: 0.8;
+      }
+
+      .cls-88 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-90 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-92 {
+        stroke-width: 2.03px;
+      }
+
+      .cls-93 {
+        stroke-width: 1.76px;
+      }
+
+      .cls-94 {
+        stroke-width: 1.44px;
+      }
+
+      .cls-95 {
+        stroke-width: 1.39px;
+      }
 </style>
