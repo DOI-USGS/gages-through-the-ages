@@ -2663,30 +2663,6 @@
       {{ text.caption }}
     </caption>
     <Infographic />
-    <div>
-      <p>{{ text.svgText }}</p>
-    </div>
-    <div id="textWrapArea">
-      <div id="gageImageContainer">
-        <div id="gageImage">
-          <picture>
-            <source
-              srcset="@/assets/images/gage/gageLarge.webp"
-              type="image/webp"
-            >
-            <img
-              src="@/assets/images/gage/gageLarge.jpg"
-              alt="Mississippi River Gage and Bridge in the background."
-            >
-          </picture>
-          <caption>USGS Stream Gage along the Mississippi River.</caption>
-        </div>
-        <p v-html="text.paragraphText1" />
-      </div>
-      <p class="clear">
-        {{ text.paragraphText2 }}
-      </p>
-    </div>
   </div>
 </template>
 <script>
