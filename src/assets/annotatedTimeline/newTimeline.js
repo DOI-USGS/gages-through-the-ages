@@ -2,14 +2,14 @@ export default{
     methodContent: {
         methods:[
             {
-                'title': 'Characterizing river flow for irrigation & hydropower',
+                'title': 'Characterizing flow for irrigation & hydropower',
                 'method': 'USGS streamgaging began in 1889 with the establishment of the first gage (see why the USGS spelling is ' +
                         '“gage” instead of “gauge”) on the Rio Grande in Embudo, New Mexico, where hydrographers were ' +
                         'trained in new techniques to measure river flow. The earliest era of streamgaging helped assess the ' +
                         'potential of the Nation’s water resources to support growth in the western U.S by monitoring the ' +
                         'amount of water for hydropower and irrigation. The resulting slow accumulation of monitoring locations ' +
                         'resulted in nearly 200 active gages by the turn of the century.',
-                'timePeriod': '1889 - 1930'
+                'timePeriod': '1889 - 1930',
             },
             {
                 'title': 'Developing flood control & water resources',
@@ -20,7 +20,7 @@ export default{
                         'resulting in new sources of funding that generated sustained growth in streamgaging that continues ' +
                         'today. Cost-sharing partnerships between the USGS and state and local agencies help the Nation tackle ' +
                         'increasingly complex local- to national-scale water issues.',
-                'timePeriod': '1930 - 1965'
+                'timePeriod': '1930 - 1965',
             },
             {
                 'title': 'Environmental management & flood warning',
@@ -30,7 +30,7 @@ export default{
                         'number of streamgages declined from 1991-1996 due to stringent national budget cuts and other ' +
                         'factors, but Congress established funding to retain federal priority streamgages in 2004. The need for ' +
                         'advanced flood warning has driven much of the growth in the national gage count during recent years.',
-                'timePeriod': '1996 - Present'
+                'timePeriod': '1966 - Present',
             }
         ]
     }

@@ -101,20 +101,16 @@
           </g>
         </g>
         <g id="annotations-text">
-          <text transform="translate(135 36)">
+          <text transform="translate(70 40)">
             1929:<tspan
               x="28"
               y="0"
               font-weight="400"
-            >USGS Cooperative Program
-              <tspan
-                x="13.12"
-                y="10"
-              >established, fuels investment in</tspan>
+            >Establishment of USGS Cooperative Program
               <tspan
                 x="20.04"
-                y="20"
-              >hydrological infrastructure</tspan></tspan>
+                y="10"
+              >fuels investment in hydrological infrastructure</tspan></tspan>
           </text>
           <text
             transform="translate(270 8)"
@@ -145,7 +141,7 @@
               >Program decline</tspan></tspan>
           </text>
           <text
-            transform="translate(380 9)"
+            transform="translate(400 9)"
             class="callouts"
           >
             1998:<tspan
@@ -190,7 +186,7 @@
         <g>
           <path
             d="M11.11 83.46c-4.52 4.48-6.55 11-7.8 17a139.53 139.53 0 00-2.2 20.4c-.06 1.08 1.63 1.08 1.69 0a138.45 138.45 0 012.07-19.6c1.18-5.91 3-12.28 7.44-16.64a.85.85 0 00-1.2-1.2zM56.51 108.36a28.81 28.81 0 00-1.51 3.56 34.89 34.89 0 00-1.34 5.89.88.88 0 00.59 1 .86.86 0 001-.59 34.66 34.66 0 011.31-5.79 23.25 23.25 0 011.44-3.22c.48-1-1-1.83-1.46-.85zM150.46 58.48a25 25 0 00-3 9 137.33 137.33 0 00-.7 15.71c-.1 5.46-.22 10.91-.39 16.36a.85.85 0 001.69 0c.25-8.14.31-16.29.57-24.43.12-3.72.19-7.56 1.29-11.15a23.49 23.49 0 012-4.59c.52-1-.94-1.81-1.46-.86z"
-            fill="#00264c"
+            fill="rgb(138, 139, 138)"
           />
         </g>
       </svg>
@@ -242,7 +238,6 @@
         <h2 class="usa-accordion__heading">
           <button
             class="usa-accordion__button"
-            :style="{width:method.width}"
             aria-expanded="false"
             :aria-controls="method.title"
             @click="trackMethodClick"
@@ -254,13 +249,9 @@
           :id="method.title"
           class="usa-accordion__content usa-prose gage-target"
         >
-<<<<<<< HEAD
-         <h1><span v-html="method.year"  /></h1>
-=======
           <h2 class="usa-prose">
             {{ method.timePeriod }}
           </h2>
->>>>>>> 622be66f82385ca5462a757d883134bfb6a2827e
           <p><span v-html="method.method" /></p>
         </div>
       </div>
@@ -321,41 +312,29 @@ $chevronLeft: '~@/assets/images/chevron-left.png';
 $chevronDown: '~@/assets/images/chevron-down.png';
 .custom-tabbed-accordion {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 30% 30% 40%;
   button:not([disabled]):focus {
     outline: none;
   }
-<<<<<<< HEAD
-  .usa-accordion__button  {
-    background-image: url($chevronDown);
-    background-size: 15px 10px;
-    background-color:  #00264c;
-    color:  white;
-    height: 50px;
-    text-align: center;
-    display: inline-block;
-=======
   .usa-accordion__button {
     background-image: url($chevronDown);
     background-size: 15px 10px;
     background-color:  #00264c;
     color: white;
->>>>>>> 622be66f82385ca5462a757d883134bfb6a2827e
+    text-align: center;
   }
   .usa-accordion__button[aria-expanded=false] {
     background-image: url($chevronLeft);
     background-size: 10px 15px;
-    background-color:  grey;
+    background-color:  rgb(138, 139, 138);
   }
   .content {
     grid-column: 1 / 4;
   }
 }
-
 #timeline {
     width: 100%;
 }
-
 #annotations-arrows-up  {
     fill:#00264c;
 }
@@ -363,29 +342,24 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     font-size:8px;
     font-weight: 800;
 }
-#highlight {
-    fill:#0e2433; 
-    stroke:#0e2433; 
+.highlight {
+  fill:#00264c;
     stroke-miterlimit:10; 
     stroke-width:.35px;
+    opacity: .8;
 }
-<<<<<<< HEAD
-=======
 // styles for standard accordion
 button:not([disabled]):focus{
-  outline: none;
+  outline:none;
 }
-.usa-accordion__button{
-  background-image: url($chevronDown);
-  background-size: 15px 10px;
-  background-color:  #00264c;
-  color:  white;
-}
+
 .usa-accordion__button[aria-expanded=false]{
   background-image: url($chevronLeft);
   background-size: 10px 15px;
-  background-color:  grey;
+  background-color:  rgb(138, 139, 138);
 }
->>>>>>> 622be66f82385ca5462a757d883134bfb6a2827e
-
+.usa-accordion__heading {
+  font-size:16px;
+  line-height: 1.1;
+}
 </style>
