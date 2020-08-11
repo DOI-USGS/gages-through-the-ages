@@ -24,8 +24,8 @@
           transform="translate(459.585 0.76)"
         >
           <path
-            class = "state-trend"
             id="Maine-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-6 h1 v-1 h1 v-2 h1 v-2 h1 v2 h1 v-2 h1 v0 h1 v-3 h1 v-1 h1 v1 h1 v-1 h1 v1 h1 v0 h1 v1 h1 v-2 h1 v0 h1 v0 h1 v-1 h1 v-2 h1 v1 h1 v0 h1 v1 h1 v-2 h1 v0 h1 v-1 h1 v-1 h1 v-3 h1 v-6 h1 v-2 h1 v-3 h1 v0 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v-2 h1 v-2 h1 v-2 h1 v-3 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v2 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-5 h1 v0 h1 v0 h1 v0 h1 v0 h1 v2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-2 h1 v-1 h1 v-3 h1 v7 h1 v-3 h1 v-2 h1 v11 h1 v5 h1 v4 h1 v0 h1 v0 h1 v-1 h1 v-2 h1 v-1 h1 v0 h1 v3 h1 v1 h1 v1 h1 v0 h1 v0 h1 v2 h1 v-1 h1 v-3 h1 v-8 h1 v-2 h1 v-3 h1 v1 h1 v-1 h1 v-1 h1 v0 h1 v5 h1 v-2 h1 v-6 h1 v-4 h1 v-1 h1 v0 h1 v2 h1 v1 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v0 h1 v61Z"
             transform="scale(0.317076923076923 0.6440625)"
           />
@@ -40,8 +40,8 @@
           transform="translate(415.815 44.53)"
         >
           <path
-            class = "state-trend"
             id="Vermont-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v2 h1 v-2 h1 v-1 h1 v-1 h1 v-4 h1 v1 h1 v0 h1 v-1 h1 v2 h1 v-1 h1 v1 h1 v-2 h1 v5 h1 v1 h1 v0 h1 v0 h1 v1 h1 v-14 h1 v-3 h1 v-1 h1 v-2 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v-3 h1 v-6 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v2 h1 v-1 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-11 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v2 h1 v9 h1 v1 h1 v-2 h1 v2 h1 v0 h1 v1 h1 v0 h1 v-4 h1 v6 h1 v2 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v4 h1 v-11 h1 v3 h1 v1 h1 v0 h1 v-1 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v-2 h1 v0 h1 v0 h1 v-3 h1 v-2 h1 v2 h1 v0 h1 v0 h1 v-5 h1 v-6 h1 v10 h1 v-1 h1 v1 h1 v1 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v47Z"
             transform="scale(0.317076923076923 0.749454545454545)"
           />
@@ -56,8 +56,8 @@
           transform="translate(459.585 44.53)"
         >
           <path
-            class = "state-trend"
             id="New Hampshire-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-2 h1 v0 h1 v-2 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v1 h1 v0 h1 v-1 h1 v-1 h1 v1 h1 v0 h1 v-2 h1 v-3 h1 v-2 h1 v0 h1 v1 h1 v0 h1 v-2 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v-3 h1 v-4 h1 v-1 h1 v1 h1 v0 h1 v-1 h1 v-1 h1 v-2 h1 v0 h1 v-2 h1 v-1 h1 v-7 h1 v-4 h1 v-1 h1 v-2 h1 v0 h1 v0 h1 v-4 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-3 h1 v-5 h1 v-4 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v4 h1 v0 h1 v-1 h1 v2 h1 v0 h1 v0 h1 v3 h1 v5 h1 v6 h1 v-1 h1 v4 h1 v0 h1 v-1 h1 v1 h1 v1 h1 v1 h1 v-2 h1 v0 h1 v-1 h1 v6 h1 v2 h1 v0 h1 v-1 h1 v-2 h1 v-3 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-7 h1 v-1 h1 v-4 h1 v12 h1 v-1 h1 v-2 h1 v4 h1 v-7 h1 v-8 h1 v4 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-3 h1 v0 h1 v-1 h1 v0 h1 v53Z"
             transform="scale(0.317076923076923 0.675737704918033)"
           />
@@ -72,8 +72,8 @@
           transform="translate(0 88.3)"
         >
           <path
-            class = "state-trend"
             id="Washington-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-2 h1 v-3 h1 v1 h1 v-1 h1 v3 h1 v-2 h1 v-5 h1 v-1 h1 v-1 h1 v3 h1 v-9 h1 v-10 h1 v-14 h1 v-16 h1 v-10 h1 v15 h1 v-16 h1 v4 h1 v18 h1 v-10 h1 v1 h1 v-3 h1 v-3 h1 v2 h1 v0 h1 v7 h1 v1 h1 v-5 h1 v0 h1 v5 h1 v-11 h1 v-22 h1 v-36 h1 v4 h1 v11 h1 v9 h1 v1 h1 v-6 h1 v-2 h1 v-3 h1 v-5 h1 v0 h1 v-10 h1 v0 h1 v-8 h1 v-6 h1 v-18 h1 v-20 h1 v-45 h1 v-27 h1 v-7 h1 v1 h1 v0 h1 v16 h1 v-6 h1 v-9 h1 v0 h1 v3 h1 v-5 h1 v-4 h1 v-8 h1 v-1 h1 v-6 h1 v-22 h1 v-10 h1 v-6 h1 v-19 h1 v-10 h1 v11 h1 v1 h1 v-8 h1 v14 h1 v16 h1 v20 h1 v34 h1 v13 h1 v13 h1 v-5 h1 v4 h1 v-10 h1 v13 h1 v13 h1 v14 h1 v1 h1 v14 h1 v-6 h1 v3 h1 v-15 h1 v1 h1 v12 h1 v-7 h1 v2 h1 v13 h1 v-8 h1 v-1 h1 v-6 h1 v-12 h1 v0 h1 v5 h1 v-10 h1 v-3 h1 v5 h1 v-3 h1 v-1 h1 v-9 h1 v-7 h1 v8 h1 v3 h1 v-4 h1 v-8 h1 v-2 h1 v-2 h1 v5 h1 v-6 h1 v-3 h1 v0 h1 v-1 h1 v-4 h1 v4 h1 v-2 h1 v-3 h1 v-6 h1 v250Z"
             transform="scale(0.317076923076923 0.121235294117647)"
           />
@@ -88,8 +88,8 @@
           transform="translate(43.77 88.3)"
         >
           <path
-            class = "state-trend"
             id="Idaho-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v-2 h1 v1 h1 v0 h1 v1 h1 v0 h1 v-4 h1 v3 h1 v0 h1 v-3 h1 v3 h1 v-2 h1 v0 h1 v0 h1 v-3 h1 v0 h1 v-1 h1 v2 h1 v-3 h1 v-1 h1 v-9 h1 v-21 h1 v-20 h1 v3 h1 v-2 h1 v16 h1 v-1 h1 v10 h1 v-3 h1 v-3 h1 v-19 h1 v-10 h1 v-16 h1 v7 h1 v-1 h1 v-2 h1 v-5 h1 v-2 h1 v4 h1 v-16 h1 v-7 h1 v-7 h1 v-14 h1 v7 h1 v2 h1 v-2 h1 v-4 h1 v-4 h1 v-13 h1 v-3 h1 v-21 h1 v-5 h1 v6 h1 v-5 h1 v-1 h1 v-11 h1 v-5 h1 v-12 h1 v4 h1 v4 h1 v9 h1 v-5 h1 v-2 h1 v16 h1 v-3 h1 v-1 h1 v-12 h1 v3 h1 v-1 h1 v-5 h1 v9 h1 v1 h1 v-2 h1 v5 h1 v0 h1 v-4 h1 v-2 h1 v-4 h1 v-4 h1 v1 h1 v8 h1 v2 h1 v15 h1 v3 h1 v7 h1 v4 h1 v-2 h1 v-6 h1 v7 h1 v-2 h1 v-6 h1 v-1 h1 v9 h1 v13 h1 v-1 h1 v-8 h1 v-53 h1 v16 h1 v6 h1 v0 h1 v4 h1 v5 h1 v-5 h1 v3 h1 v1 h1 v5 h1 v0 h1 v3 h1 v4 h1 v-9 h1 v0 h1 v-5 h1 v-4 h1 v-5 h1 v2 h1 v-1 h1 v0 h1 v9 h1 v0 h1 v2 h1 v-2 h1 v-8 h1 v-13 h1 v5 h1 v4 h1 v-3 h1 v-6 h1 v1 h1 v-15 h1 v4 h1 v204Z"
             transform="scale(0.317076923076923 0.198173076923077)"
           />
@@ -104,8 +104,8 @@
           transform="translate(87.54 88.3)"
         >
           <path
-            class = "state-trend"
             id="Montana-counts"
+            class="state-trend"
             d="M0,0 v-4 h1 v-1 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-2 h1 v-1 h1 v-3 h1 v1 h1 v1 h1 v-5 h1 v-4 h1 v0 h1 v-1 h1 v-1 h1 v-14 h1 v-9 h1 v-16 h1 v-8 h1 v9 h1 v6 h1 v-6 h1 v12 h1 v-4 h1 v6 h1 v-3 h1 v-4 h1 v0 h1 v-4 h1 v-8 h1 v-7 h1 v11 h1 v13 h1 v2 h1 v2 h1 v4 h1 v-20 h1 v-8 h1 v-8 h1 v-4 h1 v28 h1 v5 h1 v-31 h1 v-14 h1 v1 h1 v1 h1 v-12 h1 v-15 h1 v1 h1 v-10 h1 v14 h1 v0 h1 v-1 h1 v-16 h1 v-25 h1 v-12 h1 v-10 h1 v2 h1 v-6 h1 v-23 h1 v4 h1 v59 h1 v1 h1 v-9 h1 v4 h1 v-7 h1 v-2 h1 v-8 h1 v-7 h1 v0 h1 v-3 h1 v6 h1 v-5 h1 v-3 h1 v5 h1 v5 h1 v-2 h1 v17 h1 v2 h1 v5 h1 v-8 h1 v0 h1 v-5 h1 v-8 h1 v2 h1 v-3 h1 v-8 h1 v-1 h1 v-1 h1 v0 h1 v-18 h1 v-6 h1 v4 h1 v21 h1 v8 h1 v7 h1 v0 h1 v0 h1 v1 h1 v0 h1 v15 h1 v0 h1 v-7 h1 v7 h1 v7 h1 v-4 h1 v0 h1 v-5 h1 v-8 h1 v-7 h1 v1 h1 v-5 h1 v8 h1 v-3 h1 v15 h1 v-8 h1 v-3 h1 v1 h1 v3 h1 v4 h1 v-12 h1 v3 h1 v-7 h1 v-4 h1 v4 h1 v3 h1 v-5 h1 v162Z"
             transform="scale(0.317076923076923 0.204059405940594)"
           />
@@ -120,8 +120,8 @@
           transform="translate(131.31 88.3)"
         >
           <path
-            class = "state-trend"
             id="North Dakota-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-6 h1 v-2 h1 v1 h1 v2 h1 v-1 h1 v2 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v2 h1 v-1 h1 v1 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v1 h1 v-1 h1 v2 h1 v0 h1 v0 h1 v0 h1 v-6 h1 v-3 h1 v-2 h1 v-2 h1 v3 h1 v2 h1 v-2 h1 v-1 h1 v-1 h1 v-6 h1 v-4 h1 v-3 h1 v-1 h1 v0 h1 v0 h1 v-8 h1 v-3 h1 v-9 h1 v-4 h1 v0 h1 v-2 h1 v-6 h1 v-4 h1 v0 h1 v-1 h1 v-1 h1 v-3 h1 v-3 h1 v-12 h1 v-7 h1 v0 h1 v-3 h1 v-1 h1 v-3 h1 v-1 h1 v2 h1 v-3 h1 v-6 h1 v-2 h1 v0 h1 v1 h1 v0 h1 v4 h1 v-2 h1 v2 h1 v-1 h1 v-3 h1 v5 h1 v-1 h1 v-18 h1 v-8 h1 v3 h1 v-1 h1 v27 h1 v21 h1 v4 h1 v3 h1 v-1 h1 v0 h1 v0 h1 v-2 h1 v0 h1 v3 h1 v-1 h1 v-4 h1 v-4 h1 v6 h1 v4 h1 v0 h1 v1 h1 v1 h1 v-1 h1 v-1 h1 v-4 h1 v0 h1 v2 h1 v0 h1 v0 h1 v0 h1 v1 h1 v-3 h1 v-2 h1 v-2 h1 v1 h1 v-2 h1 v2 h1 v-1 h1 v4 h1 v1 h1 v-1 h1 v-2 h1 v80Z"
             transform="scale(0.317076923076923 0.312272727272727)"
           />
@@ -136,8 +136,8 @@
           transform="translate(175.08 88.3)"
         >
           <path
-            class = "state-trend"
             id="Minnesota-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v0 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-13 h1 v-2 h1 v-9 h1 v0 h1 v3 h1 v4 h1 v-4 h1 v2 h1 v19 h1 v-1 h1 v1 h1 v-3 h1 v1 h1 v-1 h1 v-3 h1 v1 h1 v0 h1 v0 h1 v0 h1 v-12 h1 v-6 h1 v-9 h1 v-3 h1 v2 h1 v-3 h1 v-8 h1 v-5 h1 v1 h1 v1 h1 v1 h1 v-13 h1 v-6 h1 v-2 h1 v-11 h1 v0 h1 v-6 h1 v-4 h1 v-4 h1 v5 h1 v-2 h1 v-6 h1 v1 h1 v-2 h1 v-7 h1 v-7 h1 v4 h1 v5 h1 v3 h1 v0 h1 v3 h1 v-3 h1 v-3 h1 v7 h1 v9 h1 v-3 h1 v5 h1 v-6 h1 v-3 h1 v-8 h1 v-9 h1 v1 h1 v7 h1 v2 h1 v-5 h1 v-1 h1 v2 h1 v-7 h1 v-5 h1 v1 h1 v13 h1 v6 h1 v7 h1 v12 h1 v-7 h1 v5 h1 v3 h1 v-2 h1 v3 h1 v-2 h1 v-6 h1 v7 h1 v4 h1 v-5 h1 v-1 h1 v3 h1 v2 h1 v-5 h1 v-2 h1 v-1 h1 v2 h1 v1 h1 v2 h1 v-6 h1 v-6 h1 v1 h1 v-5 h1 v-1 h1 v1 h1 v-3 h1 v3 h1 v4 h1 v-1 h1 v-9 h1 v3 h1 v-3 h1 v-5 h1 v3 h1 v1 h1 v0 h1 v-2 h1 v106Z"
             transform="scale(0.317076923076923 0.340661157024793)"
           />
@@ -152,8 +152,8 @@
           transform="translate(218.85 88.3)"
         >
           <path
-            class = "state-trend"
             id="Wisconsin-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-2 h1 v2 h1 v-2 h1 v-1 h1 v-3 h1 v6 h1 v-1 h1 v0 h1 v-2 h1 v-3 h1 v-7 h1 v-30 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v2 h1 v-1 h1 v3 h1 v1 h1 v0 h1 v-2 h1 v3 h1 v-1 h1 v1 h1 v-4 h1 v1 h1 v-3 h1 v0 h1 v-1 h1 v-1 h1 v-6 h1 v-2 h1 v-1 h1 v-1 h1 v-3 h1 v-8 h1 v0 h1 v-1 h1 v-7 h1 v0 h1 v-13 h1 v1 h1 v-3 h1 v1 h1 v-4 h1 v0 h1 v-2 h1 v3 h1 v-1 h1 v1 h1 v4 h1 v5 h1 v0 h1 v-1 h1 v0 h1 v-2 h1 v-1 h1 v7 h1 v0 h1 v-8 h1 v-6 h1 v3 h1 v-3 h1 v0 h1 v-8 h1 v4 h1 v5 h1 v-7 h1 v-7 h1 v5 h1 v-1 h1 v-12 h1 v-16 h1 v5 h1 v-6 h1 v15 h1 v4 h1 v18 h1 v-2 h1 v1 h1 v-2 h1 v2 h1 v1 h1 v-4 h1 v-13 h1 v-4 h1 v6 h1 v-7 h1 v-1 h1 v-10 h1 v-1 h1 v16 h1 v-4 h1 v-4 h1 v-18 h1 v-6 h1 v7 h1 v-5 h1 v-9 h1 v-7 h1 v-16 h1 v-6 h1 v12 h1 v-4 h1 v5 h1 v-1 h1 v-11 h1 v-3 h1 v-10 h1 v4 h1 v-1 h1 v4 h1 v0 h1 v-8 h1 v0 h1 v198Z"
             transform="scale(0.317076923076923 0.208181818181818)"
           />
@@ -168,8 +168,8 @@
           transform="translate(284.505 88.3)"
         >
           <path
-            class = "state-trend"
             id="Michigan-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-4 h1 v-1 h1 v-1 h1 v0 h1 v1 h1 v2 h1 v1 h1 v0 h1 v-3 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-2 h1 v3 h1 v-2 h1 v0 h1 v0 h1 v2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v-11 h1 v0 h1 v-5 h1 v1 h1 v-7 h1 v-3 h1 v2 h1 v-5 h1 v-12 h1 v-4 h1 v-1 h1 v7 h1 v-22 h1 v-1 h1 v-13 h1 v-9 h1 v-4 h1 v-7 h1 v-12 h1 v-1 h1 v-12 h1 v-10 h1 v-10 h1 v0 h1 v-8 h1 v-1 h1 v0 h1 v1 h1 v-7 h1 v-8 h1 v-5 h1 v-7 h1 v-6 h1 v2 h1 v-9 h1 v-10 h1 v-7 h1 v-3 h1 v3 h1 v-1 h1 v5 h1 v2 h1 v5 h1 v3 h1 v-4 h1 v3 h1 v0 h1 v8 h1 v3 h1 v-2 h1 v9 h1 v15 h1 v21 h1 v6 h1 v3 h1 v-1 h1 v1 h1 v-7 h1 v-4 h1 v2 h1 v-1 h1 v3 h1 v-1 h1 v7 h1 v-5 h1 v4 h1 v-2 h1 v0 h1 v-2 h1 v-2 h1 v-5 h1 v-10 h1 v-7 h1 v6 h1 v-10 h1 v8 h1 v4 h1 v2 h1 v0 h1 v2 h1 v1 h1 v11 h1 v-8 h1 v5 h1 v-14 h1 v-5 h1 v3 h1 v1 h1 v-2 h1 v162Z"
             transform="scale(0.317076923076923 0.191720930232558)"
           />
@@ -184,8 +184,8 @@
           transform="translate(372.045 88.3)"
         >
           <path
-            class = "state-trend"
             id="New York-counts"
+            class="state-trend"
             d="M0,0 v-2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v-4 h1 v-1 h1 v-2 h1 v0 h1 v-4 h1 v3 h1 v-10 h1 v-1 h1 v2 h1 v0 h1 v-4 h1 v-4 h1 v0 h1 v-2 h1 v-6 h1 v0 h1 v0 h1 v0 h1 v-3 h1 v-7 h1 v0 h1 v-1 h1 v-5 h1 v-14 h1 v-4 h1 v-4 h1 v-5 h1 v-5 h1 v-2 h1 v-7 h1 v-1 h1 v8 h1 v-6 h1 v-3 h1 v-2 h1 v-1 h1 v-28 h1 v-19 h1 v-3 h1 v-11 h1 v-1 h1 v-2 h1 v-3 h1 v-12 h1 v-5 h1 v-4 h1 v-2 h1 v-1 h1 v-4 h1 v-5 h1 v-4 h1 v-2 h1 v0 h1 v-2 h1 v-8 h1 v0 h1 v-8 h1 v-8 h1 v-6 h1 v-16 h1 v1 h1 v9 h1 v5 h1 v-16 h1 v-2 h1 v1 h1 v-7 h1 v71 h1 v4 h1 v4 h1 v-3 h1 v-3 h1 v0 h1 v-5 h1 v-1 h1 v4 h1 v1 h1 v-2 h1 v-3 h1 v-2 h1 v7 h1 v2 h1 v6 h1 v-2 h1 v0 h1 v1 h1 v3 h1 v2 h1 v8 h1 v-18 h1 v-13 h1 v-1 h1 v-8 h1 v14 h1 v5 h1 v-2 h1 v-17 h1 v-6 h1 v6 h1 v-8 h1 v-7 h1 v-3 h1 v-3 h1 v1 h1 v-8 h1 v-1 h1 v0 h1 v9 h1 v-6 h1 v7 h1 v-5 h1 v-3 h1 v6 h1 v-15 h1 v-10 h1 v-6 h1 v-16 h1 v-15 h1 v295Z"
             transform="scale(0.317076923076923 0.139728813559322)"
           />
@@ -200,8 +200,8 @@
           transform="translate(415.815 88.3)"
         >
           <path
-            class = "state-trend"
             id="Massachusetts-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v0 h1 v-3 h1 v-3 h1 v-1 h1 v-1 h1 v-5 h1 v2 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v-1 h1 v-4 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-2 h1 v-3 h1 v-1 h1 v-8 h1 v-4 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-3 h1 v0 h1 v-1 h1 v-3 h1 v0 h1 v2 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-4 h1 v-1 h1 v3 h1 v-3 h1 v-5 h1 v-5 h1 v-1 h1 v-2 h1 v-9 h1 v1 h1 v0 h1 v-1 h1 v-3 h1 v3 h1 v-4 h1 v0 h1 v6 h1 v0 h1 v0 h1 v-2 h1 v6 h1 v0 h1 v1 h1 v0 h1 v5 h1 v2 h1 v-4 h1 v0 h1 v3 h1 v0 h1 v1 h1 v2 h1 v6 h1 v2 h1 v-1 h1 v0 h1 v-5 h1 v-4 h1 v2 h1 v-7 h1 v3 h1 v-6 h1 v4 h1 v-2 h1 v-7 h1 v-1 h1 v-3 h1 v-1 h1 v-15 h1 v-11 h1 v-2 h1 v22 h1 v-2 h1 v-3 h1 v-1 h1 v-1 h1 v-4 h1 v-2 h1 v6 h1 v-1 h1 v0 h1 v101Z"
             transform="scale(0.317076923076923 0.358434782608696)"
           />
@@ -216,8 +216,8 @@
           transform="translate(459.585 88.3)"
         >
           <path
-            class = "state-trend"
             id="Rhode Island-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-5 h1 v-4 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-3 h1 v3 h1 v0 h1 v-2 h1 v0 h1 v0 h1 v-3 h1 v-5 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v-2 h1 v6 h1 v-3 h1 v0 h1 v0 h1 v2 h1 v0 h1 v0 h1 v2 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v0 h1 v-1 h1 v-2 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-3 h1 v0 h1 v2 h1 v-8 h1 v-1 h1 v4 h1 v5 h1 v-1 h1 v-5 h1 v-11 h1 v2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v4 h1 v0 h1 v1 h1 v-1 h1 v0 h1 v31Z"
             transform="scale(0.317076923076923 1.11405405405405)"
           />
@@ -232,8 +232,8 @@
           transform="translate(0 132.07)"
         >
           <path
-            class = "state-trend"
             id="Oregon-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v-1 h1 v1 h1 v0 h1 v-1 h1 v1 h1 v-3 h1 v2 h1 v-2 h1 v0 h1 v2 h1 v0 h1 v0 h1 v0 h1 v-8 h1 v-4 h1 v-12 h1 v1 h1 v-4 h1 v-3 h1 v-8 h1 v-10 h1 v1 h1 v-3 h1 v-4 h1 v8 h1 v6 h1 v4 h1 v-6 h1 v3 h1 v-5 h1 v-1 h1 v-5 h1 v-4 h1 v-8 h1 v-17 h1 v-8 h1 v-13 h1 v0 h1 v-14 h1 v-12 h1 v-4 h1 v-5 h1 v3 h1 v-9 h1 v-1 h1 v-14 h1 v-2 h1 v-10 h1 v-11 h1 v-11 h1 v-18 h1 v-3 h1 v-3 h1 v2 h1 v-3 h1 v1 h1 v-10 h1 v-4 h1 v-4 h1 v-10 h1 v-3 h1 v-1 h1 v4 h1 v6 h1 v-2 h1 v-4 h1 v-2 h1 v0 h1 v-2 h1 v-1 h1 v-18 h1 v-3 h1 v-2 h1 v-14 h1 v1 h1 v-10 h1 v-13 h1 v-9 h1 v7 h1 v0 h1 v8 h1 v4 h1 v-5 h1 v11 h1 v0 h1 v-21 h1 v9 h1 v0 h1 v-6 h1 v7 h1 v-1 h1 v24 h1 v-2 h1 v4 h1 v1 h1 v4 h1 v3 h1 v14 h1 v3 h1 v4 h1 v10 h1 v54 h1 v-3 h1 v-4 h1 v7 h1 v2 h1 v-3 h1 v6 h1 v-3 h1 v-2 h1 v1 h1 v-5 h1 v-10 h1 v-9 h1 v6 h1 v-3 h1 v6 h1 v-7 h1 v11 h1 v-2 h1 v0 h1 v-4 h1 v0 h1 v2 h1 v-4 h1 v2 h1 v1 h1 v-5 h1 v-1 h1 v206Z"
             transform="scale(0.317076923076923 0.130031545741325)"
           />
@@ -248,8 +248,8 @@
           transform="translate(43.77 132.07)"
         >
           <path
-            class = "state-trend"
             id="Nevada-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v-1 h1 v0 h1 v0 h1 v1 h1 v-1 h1 v-1 h1 v-2 h1 v1 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v0 h1 v2 h1 v-2 h1 v0 h1 v3 h1 v-1 h1 v3 h1 v-1 h1 v-8 h1 v-1 h1 v-11 h1 v-2 h1 v-1 h1 v4 h1 v1 h1 v0 h1 v0 h1 v-3 h1 v-6 h1 v7 h1 v4 h1 v5 h1 v-3 h1 v2 h1 v2 h1 v1 h1 v0 h1 v-2 h1 v1 h1 v2 h1 v1 h1 v1 h1 v-2 h1 v-2 h1 v1 h1 v0 h1 v-4 h1 v0 h1 v3 h1 v-1 h1 v-6 h1 v-4 h1 v-5 h1 v-5 h1 v-3 h1 v-9 h1 v0 h1 v-1 h1 v-3 h1 v1 h1 v0 h1 v1 h1 v3 h1 v0 h1 v-3 h1 v0 h1 v-2 h1 v-3 h1 v-5 h1 v-3 h1 v-8 h1 v-2 h1 v-8 h1 v-8 h1 v-2 h1 v3 h1 v-1 h1 v0 h1 v1 h1 v4 h1 v3 h1 v-2 h1 v-3 h1 v-5 h1 v-10 h1 v0 h1 v-1 h1 v0 h1 v13 h1 v9 h1 v2 h1 v-6 h1 v-1 h1 v2 h1 v2 h1 v-13 h1 v-13 h1 v-14 h1 v-12 h1 v-7 h1 v-5 h1 v1 h1 v16 h1 v4 h1 v0 h1 v4 h1 v-1 h1 v2 h1 v-2 h1 v-12 h1 v-7 h1 v14 h1 v-7 h1 v-5 h1 v1 h1 v5 h1 v3 h1 v-1 h1 v-4 h1 v2 h1 v0 h1 v-12 h1 v7 h1 v1 h1 v-1 h1 v-1 h1 v137Z"
             transform="scale(0.317076923076923 0.28625)"
           />
@@ -264,8 +264,8 @@
           transform="translate(87.54 132.07)"
         >
           <path
-            class = "state-trend"
             id="Wyoming-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v0 h1 v1 h1 v1 h1 v0 h1 v-3 h1 v-2 h1 v-4 h1 v1 h1 v4 h1 v1 h1 v0 h1 v1 h1 v-8 h1 v-9 h1 v5 h1 v-8 h1 v-9 h1 v-17 h1 v0 h1 v4 h1 v-3 h1 v-2 h1 v-3 h1 v-5 h1 v2 h1 v2 h1 v19 h1 v0 h1 v1 h1 v5 h1 v-10 h1 v-8 h1 v-11 h1 v1 h1 v5 h1 v-2 h1 v-1 h1 v-2 h1 v-1 h1 v-5 h1 v-30 h1 v-7 h1 v-4 h1 v-8 h1 v-3 h1 v0 h1 v-3 h1 v-14 h1 v-21 h1 v-3 h1 v-8 h1 v-17 h1 v-7 h1 v-6 h1 v-4 h1 v16 h1 v-1 h1 v0 h1 v-8 h1 v2 h1 v3 h1 v-4 h1 v5 h1 v-9 h1 v-5 h1 v8 h1 v3 h1 v-5 h1 v-8 h1 v7 h1 v13 h1 v7 h1 v4 h1 v44 h1 v0 h1 v3 h1 v-13 h1 v-19 h1 v4 h1 v-11 h1 v0 h1 v5 h1 v3 h1 v23 h1 v-4 h1 v3 h1 v19 h1 v-8 h1 v5 h1 v-4 h1 v-8 h1 v2 h1 v-6 h1 v-6 h1 v16 h1 v7 h1 v-3 h1 v8 h1 v15 h1 v8 h1 v3 h1 v-2 h1 v-4 h1 v-4 h1 v-2 h1 v-7 h1 v-6 h1 v10 h1 v0 h1 v1 h1 v1 h1 v1 h1 v-2 h1 v-2 h1 v2 h1 v1 h1 v-6 h1 v3 h1 v2 h1 v6 h1 v-3 h1 v95Z"
             transform="scale(0.317076923076923 0.205074626865672)"
           />
@@ -280,8 +280,8 @@
           transform="translate(131.31 132.07)"
         >
           <path
-            class = "state-trend"
             id="South Dakota-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-5 h1 v-2 h1 v0 h1 v2 h1 v0 h1 v-1 h1 v-4 h1 v0 h1 v0 h1 v-1 h1 v-7 h1 v-2 h1 v5 h1 v-1 h1 v-1 h1 v-8 h1 v1 h1 v-22 h1 v-1 h1 v-3 h1 v-5 h1 v-4 h1 v-9 h1 v0 h1 v0 h1 v-3 h1 v-2 h1 v-5 h1 v0 h1 v0 h1 v2 h1 v-6 h1 v-1 h1 v-3 h1 v-7 h1 v0 h1 v0 h1 v-4 h1 v-3 h1 v0 h1 v-3 h1 v6 h1 v1 h1 v-4 h1 v8 h1 v0 h1 v1 h1 v-3 h1 v-5 h1 v2 h1 v-4 h1 v1 h1 v5 h1 v-2 h1 v-7 h1 v3 h1 v-7 h1 v2 h1 v3 h1 v-18 h1 v-14 h1 v10 h1 v1 h1 v-2 h1 v0 h1 v0 h1 v4 h1 v5 h1 v-1 h1 v6 h1 v7 h1 v-4 h1 v-3 h1 v0 h1 v7 h1 v1 h1 v-1 h1 v2 h1 v0 h1 v-3 h1 v2 h1 v1 h1 v0 h1 v0 h1 v1 h1 v0 h1 v-2 h1 v-1 h1 v-1 h1 v1 h1 v2 h1 v103Z"
             transform="scale(0.317076923076923 0.305333333333333)"
           />
@@ -296,8 +296,8 @@
           transform="translate(175.08 132.07)"
         >
           <path
-            class = "state-trend"
             id="Iowa-counts"
+            class="state-trend"
             d="M0,0 v-2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v-1 h1 v1 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v0 h1 v-3 h1 v-4 h1 v-2 h1 v1 h1 v-1 h1 v-4 h1 v-3 h1 v-4 h1 v0 h1 v-1 h1 v0 h1 v4 h1 v0 h1 v0 h1 v7 h1 v-3 h1 v-1 h1 v0 h1 v2 h1 v-6 h1 v-6 h1 v-4 h1 v0 h1 v-5 h1 v-1 h1 v-3 h1 v-5 h1 v-12 h1 v0 h1 v2 h1 v0 h1 v1 h1 v-10 h1 v-2 h1 v-1 h1 v-5 h1 v-3 h1 v-1 h1 v0 h1 v-7 h1 v0 h1 v-3 h1 v-4 h1 v-4 h1 v-3 h1 v-7 h1 v-2 h1 v-2 h1 v0 h1 v-2 h1 v-3 h1 v0 h1 v-3 h1 v-1 h1 v-1 h1 v0 h1 v6 h1 v0 h1 v-4 h1 v-2 h1 v7 h1 v6 h1 v-3 h1 v1 h1 v-10 h1 v0 h1 v2 h1 v5 h1 v2 h1 v4 h1 v1 h1 v-1 h1 v-4 h1 v-2 h1 v0 h1 v-1 h1 v0 h1 v-2 h1 v2 h1 v-2 h1 v1 h1 v-2 h1 v2 h1 v1 h1 v1 h1 v3 h1 v-1 h1 v-6 h1 v-6 h1 v-2 h1 v-3 h1 v1 h1 v5 h1 v-2 h1 v-3 h1 v4 h1 v-3 h1 v-11 h1 v-3 h1 v-6 h1 v0 h1 v-3 h1 v9 h1 v-3 h1 v5 h1 v0 h1 v138Z"
             transform="scale(0.317076923076923 0.276644295302013)"
           />
@@ -312,8 +312,8 @@
           transform="translate(218.85 132.07)"
         >
           <path
-            class = "state-trend"
             id="Illinois-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v1 h1 v1 h1 v-1 h1 v0 h1 v-9 h1 v-6 h1 v-2 h1 v1 h1 v16 h1 v0 h1 v-18 h1 v-5 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v1 h1 v-3 h1 v0 h1 v0 h1 v-2 h1 v-2 h1 v1 h1 v0 h1 v-4 h1 v-1 h1 v-1 h1 v-2 h1 v0 h1 v5 h1 v-7 h1 v-1 h1 v-5 h1 v3 h1 v-3 h1 v-33 h1 v-15 h1 v-2 h1 v-4 h1 v-2 h1 v-12 h1 v-5 h1 v0 h1 v2 h1 v-15 h1 v-12 h1 v-9 h1 v-7 h1 v-3 h1 v0 h1 v-3 h1 v0 h1 v2 h1 v-2 h1 v15 h1 v-5 h1 v-1 h1 v-3 h1 v2 h1 v1 h1 v-1 h1 v-4 h1 v-2 h1 v-7 h1 v-3 h1 v-3 h1 v-4 h1 v17 h1 v-5 h1 v-2 h1 v-1 h1 v6 h1 v0 h1 v0 h1 v-8 h1 v1 h1 v-4 h1 v7 h1 v22 h1 v0 h1 v0 h1 v2 h1 v4 h1 v0 h1 v-6 h1 v-8 h1 v1 h1 v-4 h1 v4 h1 v1 h1 v-3 h1 v0 h1 v2 h1 v0 h1 v0 h1 v-3 h1 v-3 h1 v0 h1 v-5 h1 v3 h1 v-2 h1 v-2 h1 v-2 h1 v-6 h1 v1 h1 v-7 h1 v-4 h1 v-3 h1 v-4 h1 v-1 h1 v4 h1 v1 h1 v4 h1 v-10 h1 v8 h1 v185Z"
             transform="scale(0.317076923076923 0.213575129533679)"
           />
@@ -328,8 +328,8 @@
           transform="translate(262.62 132.07)"
         >
           <path
-            class = "state-trend"
             id="Indiana-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v2 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v1 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-7 h1 v-1 h1 v-3 h1 v2 h1 v-4 h1 v-4 h1 v-2 h1 v-4 h1 v-7 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-8 h1 v-4 h1 v-3 h1 v-2 h1 v-12 h1 v-4 h1 v-3 h1 v-5 h1 v-4 h1 v-14 h1 v-7 h1 v-1 h1 v2 h1 v-5 h1 v0 h1 v-3 h1 v-9 h1 v-2 h1 v-8 h1 v-3 h1 v-5 h1 v-4 h1 v-4 h1 v-1 h1 v-2 h1 v-7 h1 v-2 h1 v-6 h1 v-5 h1 v-13 h1 v-11 h1 v-10 h1 v8 h1 v4 h1 v10 h1 v0 h1 v-1 h1 v4 h1 v1 h1 v1 h1 v-3 h1 v-9 h1 v7 h1 v10 h1 v-2 h1 v2 h1 v-3 h1 v-1 h1 v1 h1 v1 h1 v-8 h1 v-1 h1 v8 h1 v0 h1 v9 h1 v1 h1 v1 h1 v-1 h1 v2 h1 v-1 h1 v-1 h1 v3 h1 v9 h1 v3 h1 v24 h1 v-3 h1 v1 h1 v-5 h1 v-12 h1 v-3 h1 v-6 h1 v-6 h1 v-4 h1 v-7 h1 v10 h1 v3 h1 v-20 h1 v-4 h1 v-4 h1 v0 h1 v181Z"
             transform="scale(0.317076923076923 0.20713567839196)"
           />
@@ -344,8 +344,8 @@
           transform="translate(306.39 132.07)"
         >
           <path
-            class = "state-trend"
             id="Ohio-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v1 h1 v0 h1 v0 h1 v-2 h1 v2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-4 h1 v-12 h1 v-3 h1 v4 h1 v1 h1 v-1 h1 v0 h1 v-23 h1 v-2 h1 v-13 h1 v-7 h1 v-15 h1 v-10 h1 v-5 h1 v1 h1 v-3 h1 v-2 h1 v-5 h1 v10 h1 v1 h1 v0 h1 v42 h1 v0 h1 v-5 h1 v-23 h1 v-28 h1 v-8 h1 v-10 h1 v-9 h1 v-5 h1 v-1 h1 v-7 h1 v-15 h1 v6 h1 v4 h1 v2 h1 v-2 h1 v8 h1 v-7 h1 v4 h1 v-3 h1 v0 h1 v1 h1 v-2 h1 v6 h1 v0 h1 v-5 h1 v1 h1 v-2 h1 v-3 h1 v-3 h1 v-10 h1 v-2 h1 v-3 h1 v-4 h1 v1 h1 v-3 h1 v4 h1 v-1 h1 v-4 h1 v12 h1 v4 h1 v-3 h1 v-2 h1 v-4 h1 v6 h1 v-4 h1 v31 h1 v4 h1 v1 h1 v2 h1 v5 h1 v1 h1 v-7 h1 v-5 h1 v5 h1 v-1 h1 v7 h1 v0 h1 v3 h1 v2 h1 v-3 h1 v-1 h1 v0 h1 v6 h1 v-2 h1 v-1 h1 v-16 h1 v2 h1 v-2 h1 v4 h1 v-4 h1 v-3 h1 v-9 h1 v2 h1 v-17 h1 v7 h1 v-8 h1 v-17 h1 v1 h1 v-10 h1 v-13 h1 v-2 h1 v-22 h1 v-2 h1 v228Z"
             transform="scale(0.317076923076923 0.180789473684211)"
           />
@@ -360,8 +360,8 @@
           transform="translate(350.16 132.07)"
         >
           <path
-            class = "state-trend"
             id="Pennsylvania-counts"
+            class="state-trend"
             d="M0,0 v-3 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v-1 h1 v0 h1 v-2 h1 v-1 h1 v0 h1 v-1 h1 v-7 h1 v-6 h1 v-5 h1 v-7 h1 v-2 h1 v-3 h1 v-10 h1 v3 h1 v-2 h1 v2 h1 v0 h1 v-11 h1 v-3 h1 v-1 h1 v0 h1 v2 h1 v1 h1 v-3 h1 v-1 h1 v-3 h1 v0 h1 v-8 h1 v-1 h1 v-8 h1 v-3 h1 v-2 h1 v-1 h1 v-1 h1 v1 h1 v-6 h1 v-10 h1 v-13 h1 v-18 h1 v-11 h1 v0 h1 v-6 h1 v-3 h1 v0 h1 v1 h1 v-3 h1 v-10 h1 v-1 h1 v1 h1 v-1 h1 v2 h1 v3 h1 v-5 h1 v-1 h1 v-1 h1 v-3 h1 v6 h1 v0 h1 v-8 h1 v-6 h1 v-4 h1 v-8 h1 v-13 h1 v-18 h1 v-6 h1 v-8 h1 v-3 h1 v-2 h1 v1 h1 v-3 h1 v-5 h1 v-6 h1 v-11 h1 v-3 h1 v5 h1 v-2 h1 v20 h1 v3 h1 v19 h1 v-1 h1 v1 h1 v-1 h1 v-7 h1 v1 h1 v-5 h1 v-2 h1 v1 h1 v3 h1 v2 h1 v8 h1 v-4 h1 v1 h1 v12 h1 v11 h1 v-3 h1 v-4 h1 v9 h1 v-4 h1 v2 h1 v-4 h1 v-4 h1 v0 h1 v-5 h1 v-8 h1 v1 h1 v-8 h1 v-10 h1 v4 h1 v-10 h1 v-2 h1 v-12 h1 v-5 h1 v-2 h1 v-4 h1 v10 h1 v2 h1 v-10 h1 v275Z"
             transform="scale(0.317076923076923 0.148808664259928)"
           />
@@ -376,8 +376,8 @@
           transform="translate(393.93 132.07)"
         >
           <path
-            class = "state-trend"
             id="New Jersey-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-7 h1 v0 h1 v1 h1 v3 h1 v0 h1 v2 h1 v0 h1 v0 h1 v2 h1 v-2 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-3 h1 v0 h1 v-16 h1 v-6 h1 v-5 h1 v0 h1 v-2 h1 v1 h1 v-2 h1 v-2 h1 v0 h1 v-2 h1 v-3 h1 v-5 h1 v-2 h1 v-6 h1 v-1 h1 v-1 h1 v-5 h1 v2 h1 v-4 h1 v0 h1 v-1 h1 v-1 h1 v0 h1 v-2 h1 v0 h1 v0 h1 v1 h1 v-1 h1 v1 h1 v0 h1 v1 h1 v-3 h1 v-2 h1 v-2 h1 v2 h1 v0 h1 v-3 h1 v4 h1 v-1 h1 v-1 h1 v1 h1 v1 h1 v-1 h1 v0 h1 v-1 h1 v-2 h1 v-2 h1 v-3 h1 v0 h1 v-1 h1 v3 h1 v-6 h1 v1 h1 v2 h1 v1 h1 v5 h1 v-14 h1 v-2 h1 v-1 h1 v-3 h1 v0 h1 v-3 h1 v1 h1 v6 h1 v-1 h1 v1 h1 v2 h1 v5 h1 v3 h1 v-3 h1 v0 h1 v-9 h1 v0 h1 v2 h1 v5 h1 v1 h1 v2 h1 v2 h1 v-3 h1 v0 h1 v1 h1 v-3 h1 v-11 h1 v-5 h1 v2 h1 v-3 h1 v0 h1 v-8 h1 v2 h1 v-8 h1 v-6 h1 v-4 h1 v8 h1 v7 h1 v2 h1 v0 h1 v0 h1 v-3 h1 v115Z"
             transform="scale(0.317076923076923 0.31953488372093)"
           />
@@ -392,8 +392,8 @@
           transform="translate(437.7 132.07)"
         >
           <path
-            class = "state-trend"
             id="Connecticut-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v-7 h1 v-1 h1 v-7 h1 v-4 h1 v-4 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-3 h1 v-2 h1 v0 h1 v-3 h1 v-2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v2 h1 v-4 h1 v-1 h1 v-6 h1 v2 h1 v-6 h1 v-8 h1 v-13 h1 v2 h1 v-1 h1 v-1 h1 v-10 h1 v-4 h1 v3 h1 v8 h1 v1 h1 v18 h1 v2 h1 v5 h1 v3 h1 v-2 h1 v8 h1 v-2 h1 v-2 h1 v1 h1 v1 h1 v6 h1 v-1 h1 v2 h1 v-1 h1 v-1 h1 v1 h1 v-2 h1 v0 h1 v3 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v-3 h1 v3 h1 v0 h1 v-5 h1 v0 h1 v-4 h1 v1 h1 v-2 h1 v0 h1 v1 h1 v-3 h1 v-4 h1 v-2 h1 v-3 h1 v-5 h1 v-1 h1 v1 h1 v3 h1 v0 h1 v-2 h1 v3 h1 v-1 h1 v-1 h1 v0 h1 v64Z"
             transform="scale(0.317076923076923 0.44804347826087)"
           />
@@ -408,8 +408,8 @@
           transform="translate(21.885 175.84)"
         >
           <path
-            class = "state-trend"
             id="California-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v-2 h1 v0 h1 v-2 h1 v1 h1 v-5 h1 v0 h1 v0 h1 v-1 h1 v-2 h1 v0 h1 v-6 h1 v-4 h1 v-5 h1 v-7 h1 v-6 h1 v-4 h1 v-7 h1 v2 h1 v-8 h1 v-26 h1 v-58 h1 v-15 h1 v30 h1 v0 h1 v15 h1 v-19 h1 v-4 h1 v0 h1 v-2 h1 v-14 h1 v-25 h1 v-11 h1 v-9 h1 v-4 h1 v-13 h1 v-1 h1 v-26 h1 v-27 h1 v-35 h1 v-32 h1 v8 h1 v16 h1 v-1 h1 v10 h1 v-3 h1 v-9 h1 v11 h1 v-7 h1 v-41 h1 v-17 h1 v-1 h1 v-5 h1 v-18 h1 v-7 h1 v-5 h1 v-18 h1 v-17 h1 v-13 h1 v-14 h1 v-33 h1 v-30 h1 v-19 h1 v-11 h1 v-13 h1 v-5 h1 v-29 h1 v-55 h1 v-52 h1 v-30 h1 v-42 h1 v-22 h1 v-5 h1 v-24 h1 v-11 h1 v-28 h1 v-11 h1 v8 h1 v-13 h1 v-2 h1 v-17 h1 v6 h1 v7 h1 v22 h1 v-11 h1 v-1 h1 v6 h1 v4 h1 v42 h1 v8 h1 v1 h1 v47 h1 v31 h1 v25 h1 v-4 h1 v19 h1 v-30 h1 v-6 h1 v-14 h1 v-40 h1 v-7 h1 v19 h1 v28 h1 v-22 h1 v35 h1 v-14 h1 v11 h1 v-16 h1 v-27 h1 v-15 h1 v-23 h1 v8 h1 v5 h1 v-15 h1 v36 h1 v-9 h1 v-30 h1 v-2 h1 v9 h1 v-19 h1 v17 h1 v-16 h1 v18 h1 v-16 h1 v5 h1 v20 h1 v25 h1 v-21 h1 v19 h1 v792Z"
             transform="scale(0.317076923076923 0.0454465270121279)"
           />
@@ -424,8 +424,8 @@
           transform="translate(65.655 175.84)"
         >
           <path
-            class = "state-trend"
             id="Utah-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-3 h1 v-11 h1 v-1 h1 v-8 h1 v-1 h1 v-5 h1 v-10 h1 v-3 h1 v5 h1 v5 h1 v-6 h1 v5 h1 v0 h1 v-6 h1 v-3 h1 v3 h1 v0 h1 v1 h1 v2 h1 v-6 h1 v1 h1 v-3 h1 v1 h1 v0 h1 v-3 h1 v-2 h1 v1 h1 v-2 h1 v3 h1 v-7 h1 v-10 h1 v-13 h1 v-5 h1 v-3 h1 v-15 h1 v-13 h1 v-1 h1 v-5 h1 v-17 h1 v-6 h1 v-7 h1 v-28 h1 v-24 h1 v-7 h1 v3 h1 v-8 h1 v-5 h1 v42 h1 v-3 h1 v-13 h1 v13 h1 v-6 h1 v-17 h1 v7 h1 v4 h1 v-26 h1 v-29 h1 v-5 h1 v-2 h1 v6 h1 v27 h1 v0 h1 v13 h1 v-14 h1 v3 h1 v8 h1 v-17 h1 v3 h1 v-15 h1 v8 h1 v-10 h1 v-27 h1 v-5 h1 v65 h1 v6 h1 v6 h1 v12 h1 v-10 h1 v31 h1 v1 h1 v-5 h1 v4 h1 v5 h1 v2 h1 v1 h1 v4 h1 v12 h1 v9 h1 v6 h1 v1 h1 v-2 h1 v-2 h1 v-5 h1 v-1 h1 v-1 h1 v5 h1 v0 h1 v-3 h1 v6 h1 v1 h1 v0 h1 v-4 h1 v-3 h1 v-3 h1 v8 h1 v-1 h1 v-3 h1 v-2 h1 v2 h1 v0 h1 v-1 h1 v137Z"
             transform="scale(0.317076923076923 0.148273381294964)"
           />
@@ -440,8 +440,8 @@
           transform="translate(109.425 175.84)"
         >
           <path
-            class = "state-trend"
             id="Colorado-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v-2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-3 h1 v-4 h1 v-1 h1 v1 h1 v0 h1 v-1 h1 v-2 h1 v-3 h1 v1 h1 v-19 h1 v4 h1 v8 h1 v-3 h1 v-1 h1 v-3 h1 v-33 h1 v-15 h1 v2 h1 v-11 h1 v-2 h1 v3 h1 v0 h1 v-5 h1 v8 h1 v2 h1 v4 h1 v-5 h1 v-9 h1 v-11 h1 v1 h1 v4 h1 v-3 h1 v-4 h1 v6 h1 v-14 h1 v1 h1 v-1 h1 v-1 h1 v-6 h1 v-5 h1 v-14 h1 v-13 h1 v-23 h1 v-13 h1 v-17 h1 v-13 h1 v-1 h1 v-27 h1 v-4 h1 v-13 h1 v-8 h1 v3 h1 v-5 h1 v-5 h1 v3 h1 v-12 h1 v-11 h1 v6 h1 v-2 h1 v6 h1 v11 h1 v1 h1 v-7 h1 v-4 h1 v-8 h1 v-1 h1 v0 h1 v-8 h1 v-14 h1 v-13 h1 v-1 h1 v-16 h1 v8 h1 v2 h1 v3 h1 v12 h1 v-5 h1 v3 h1 v0 h1 v-23 h1 v-20 h1 v-24 h1 v-3 h1 v-33 h1 v-4 h1 v22 h1 v39 h1 v29 h1 v26 h1 v-24 h1 v5 h1 v17 h1 v15 h1 v-8 h1 v6 h1 v2 h1 v-11 h1 v-2 h1 v8 h1 v-17 h1 v10 h1 v14 h1 v12 h1 v7 h1 v6 h1 v-2 h1 v-6 h1 v-6 h1 v7 h1 v7 h1 v1 h1 v0 h1 v21 h1 v5 h1 v0 h1 v5 h1 v1 h1 v-1 h1 v1 h1 v-2 h1 v-3 h1 v3 h1 v0 h1 v-4 h1 v247Z"
             transform="scale(0.317076923076923 0.0958604651162791)"
           />
@@ -456,8 +456,8 @@
           transform="translate(153.195 175.84)"
         >
           <path
-            class = "state-trend"
             id="Nebraska-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-8 h1 v-5 h1 v-7 h1 v-10 h1 v-3 h1 v0 h1 v-5 h1 v-3 h1 v-1 h1 v-8 h1 v-3 h1 v-1 h1 v-14 h1 v-7 h1 v5 h1 v-4 h1 v-4 h1 v-6 h1 v-11 h1 v-8 h1 v-14 h1 v-19 h1 v-8 h1 v-11 h1 v-8 h1 v8 h1 v-8 h1 v-4 h1 v10 h1 v-2 h1 v7 h1 v-4 h1 v0 h1 v-7 h1 v-1 h1 v0 h1 v8 h1 v5 h1 v-2 h1 v-1 h1 v-7 h1 v14 h1 v0 h1 v2 h1 v5 h1 v0 h1 v-2 h1 v5 h1 v1 h1 v-9 h1 v-8 h1 v3 h1 v1 h1 v5 h1 v-7 h1 v0 h1 v1 h1 v-1 h1 v2 h1 v-3 h1 v3 h1 v-3 h1 v1 h1 v26 h1 v2 h1 v11 h1 v28 h1 v4 h1 v-9 h1 v-1 h1 v7 h1 v0 h1 v0 h1 v-2 h1 v-7 h1 v1 h1 v4 h1 v-2 h1 v-1 h1 v-1 h1 v1 h1 v2 h1 v-4 h1 v2 h1 v0 h1 v-1 h1 v-5 h1 v0 h1 v-3 h1 v-9 h1 v1 h1 v109Z"
             transform="scale(0.317076923076923 0.243905325443787)"
           />
@@ -472,8 +472,8 @@
           transform="translate(196.965 175.84)"
         >
           <path
-            class = "state-trend"
             id="Missouri-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v0 h1 v2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v-21 h1 v-14 h1 v-4 h1 v-4 h1 v-3 h1 v-1 h1 v-4 h1 v-8 h1 v-4 h1 v0 h1 v-2 h1 v-4 h1 v2 h1 v-3 h1 v-3 h1 v-2 h1 v1 h1 v-3 h1 v-4 h1 v0 h1 v3 h1 v1 h1 v-1 h1 v-1 h1 v-4 h1 v0 h1 v-1 h1 v-17 h1 v-3 h1 v-5 h1 v1 h1 v0 h1 v-1 h1 v-3 h1 v-7 h1 v-3 h1 v-4 h1 v-3 h1 v3 h1 v-4 h1 v0 h1 v-5 h1 v0 h1 v-2 h1 v-12 h1 v-6 h1 v2 h1 v-2 h1 v4 h1 v3 h1 v7 h1 v13 h1 v0 h1 v0 h1 v10 h1 v7 h1 v3 h1 v-1 h1 v-1 h1 v-3 h1 v11 h1 v3 h1 v-1 h1 v4 h1 v1 h1 v0 h1 v-2 h1 v-4 h1 v3 h1 v6 h1 v3 h1 v0 h1 v-5 h1 v-2 h1 v-2 h1 v-6 h1 v-17 h1 v-4 h1 v-8 h1 v-11 h1 v-21 h1 v-1 h1 v-2 h1 v0 h1 v-7 h1 v-2 h1 v-22 h1 v-4 h1 v2 h1 v-1 h1 v-4 h1 v-2 h1 v-8 h1 v-2 h1 v-4 h1 v-4 h1 v-2 h1 v0 h1 v232Z"
             transform="scale(0.317076923076923 0.177672413793103)"
           />
@@ -488,8 +488,8 @@
           transform="translate(240.735 175.84)"
         >
           <path
-            class = "state-trend"
             id="Kentucky-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v-2 h1 v-9 h1 v2 h1 v1 h1 v3 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-2 h1 v-4 h1 v0 h1 v-1 h1 v-9 h1 v-4 h1 v-4 h1 v24 h1 v-4 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-4 h1 v-27 h1 v-15 h1 v-13 h1 v-6 h1 v0 h1 v1 h1 v-4 h1 v0 h1 v-1 h1 v1 h1 v-3 h1 v-2 h1 v-1 h1 v-4 h1 v-4 h1 v-3 h1 v-7 h1 v-2 h1 v-5 h1 v-5 h1 v0 h1 v0 h1 v-4 h1 v5 h1 v1 h1 v-1 h1 v-2 h1 v1 h1 v-1 h1 v-5 h1 v-7 h1 v0 h1 v-1 h1 v7 h1 v1 h1 v1 h1 v-4 h1 v14 h1 v3 h1 v2 h1 v5 h1 v-2 h1 v-3 h1 v3 h1 v2 h1 v10 h1 v5 h1 v-2 h1 v3 h1 v-3 h1 v-3 h1 v-11 h1 v-3 h1 v1 h1 v17 h1 v-5 h1 v18 h1 v0 h1 v-5 h1 v-10 h1 v-4 h1 v-15 h1 v3 h1 v-11 h1 v-8 h1 v2 h1 v4 h1 v4 h1 v0 h1 v-6 h1 v0 h1 v-5 h1 v-6 h1 v1 h1 v-8 h1 v-3 h1 v-1 h1 v4 h1 v-5 h1 v-5 h1 v-4 h1 v154Z"
             transform="scale(0.317076923076923 0.267662337662338)"
           />
@@ -504,8 +504,8 @@
           transform="translate(284.505 175.84)"
         >
           <path
-            class = "state-trend"
             id="West Virginia-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-3 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v1 h1 v-2 h1 v-1 h1 v1 h1 v2 h1 v0 h1 v-4 h1 v-9 h1 v-5 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-16 h1 v18 h1 v8 h1 v0 h1 v0 h1 v1 h1 v-2 h1 v-1 h1 v-4 h1 v-4 h1 v0 h1 v5 h1 v-2 h1 v-14 h1 v-14 h1 v-4 h1 v10 h1 v-1 h1 v0 h1 v-1 h1 v1 h1 v-2 h1 v-7 h1 v-9 h1 v-2 h1 v-12 h1 v-2 h1 v0 h1 v-3 h1 v-3 h1 v-7 h1 v-7 h1 v-1 h1 v1 h1 v0 h1 v2 h1 v2 h1 v4 h1 v0 h1 v1 h1 v-2 h1 v-2 h1 v0 h1 v3 h1 v-1 h1 v1 h1 v1 h1 v-2 h1 v3 h1 v-5 h1 v1 h1 v-5 h1 v-3 h1 v-3 h1 v-3 h1 v1 h1 v-3 h1 v0 h1 v2 h1 v-12 h1 v3 h1 v-5 h1 v14 h1 v-2 h1 v1 h1 v3 h1 v3 h1 v28 h1 v9 h1 v1 h1 v-10 h1 v-2 h1 v4 h1 v-4 h1 v1 h1 v0 h1 v0 h1 v3 h1 v8 h1 v3 h1 v3 h1 v-9 h1 v0 h1 v2 h1 v0 h1 v-3 h1 v0 h1 v-2 h1 v0 h1 v1 h1 v1 h1 v0 h1 v-1 h1 v-1 h1 v-5 h1 v0 h1 v-3 h1 v-6 h1 v0 h1 v-1 h1 v-1 h1 v0 h1 v-2 h1 v2 h1 v84Z"
             transform="scale(0.317076923076923 0.346386554621849)"
           />
@@ -520,8 +520,8 @@
           transform="translate(328.275 175.84)"
         >
           <path
-            class = "state-trend"
             id="Maryland-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-2 h1 v-2 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v1 h1 v1 h1 v-1 h1 v0 h1 v0 h1 v3 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-3 h1 v-8 h1 v-1 h1 v-2 h1 v-3 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v-4 h1 v-1 h1 v0 h1 v-2 h1 v-2 h1 v0 h1 v-8 h1 v-1 h1 v-1 h1 v-10 h1 v-13 h1 v-6 h1 v-5 h1 v-6 h1 v2 h1 v1 h1 v0 h1 v0 h1 v6 h1 v-6 h1 v7 h1 v-2 h1 v1 h1 v0 h1 v-1 h1 v1 h1 v-1 h1 v-2 h1 v-9 h1 v-8 h1 v1 h1 v0 h1 v2 h1 v0 h1 v3 h1 v-1 h1 v4 h1 v2 h1 v-4 h1 v6 h1 v-1 h1 v1 h1 v-3 h1 v5 h1 v-1 h1 v-5 h1 v3 h1 v1 h1 v-2 h1 v2 h1 v2 h1 v4 h1 v-1 h1 v5 h1 v-4 h1 v2 h1 v-2 h1 v4 h1 v-10 h1 v0 h1 v-9 h1 v-8 h1 v-13 h1 v-5 h1 v3 h1 v0 h1 v-1 h1 v4 h1 v-10 h1 v-9 h1 v-5 h1 v2 h1 v-1 h1 v-1 h1 v-1 h1 v-8 h1 v1 h1 v3 h1 v-4 h1 v-2 h1 v2 h1 v144Z"
             transform="scale(0.317076923076923 0.282328767123288)"
           />
@@ -536,8 +536,8 @@
           transform="translate(372.045 175.84)"
         >
           <path
-            class = "state-trend"
             id="Delaware-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-3 h1 v0 h1 v2 h1 v0 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-7 h1 v0 h1 v0 h1 v-2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v2 h1 v-2 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-3 h1 v1 h1 v3 h1 v2 h1 v1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v1 h1 v-1 h1 v-1 h1 v-1 h1 v-2 h1 v0 h1 v2 h1 v1 h1 v-1 h1 v-1 h1 v-4 h1 v5 h1 v-6 h1 v-1 h1 v0 h1 v-1 h1 v7 h1 v1 h1 v0 h1 v-5 h1 v5 h1 v0 h1 v0 h1 v-1 h1 v-3 h1 v2 h1 v0 h1 v0 h1 v1 h1 v-2 h1 v0 h1 v18Z"
             transform="scale(0.317076923076923 1.79217391304348)"
           />
@@ -552,8 +552,8 @@
           transform="translate(415.815 175.84)"
         >
           <path
-            class = "state-trend"
             id="District of Columbia-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v1 h1 v-1 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v4Z"
             transform="scale(0.317076923076923 10.305)"
           />
@@ -568,8 +568,8 @@
           transform="translate(65.655 219.61)"
         >
           <path
-            class = "state-trend"
             id="Arizona-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v-1 h1 v-4 h1 v-3 h1 v4 h1 v1 h1 v0 h1 v2 h1 v0 h1 v-2 h1 v-2 h1 v-12 h1 v0 h1 v-1 h1 v0 h1 v-2 h1 v0 h1 v2 h1 v0 h1 v-2 h1 v-1 h1 v-2 h1 v-1 h1 v6 h1 v-2 h1 v-2 h1 v-2 h1 v-10 h1 v-5 h1 v-3 h1 v-1 h1 v16 h1 v-2 h1 v-15 h1 v1 h1 v0 h1 v-3 h1 v-3 h1 v-9 h1 v-4 h1 v1 h1 v-2 h1 v-7 h1 v3 h1 v11 h1 v-1 h1 v-6 h1 v-1 h1 v-7 h1 v-3 h1 v-3 h1 v-5 h1 v-2 h1 v-5 h1 v-5 h1 v-10 h1 v6 h1 v-8 h1 v-2 h1 v-11 h1 v-2 h1 v-7 h1 v-2 h1 v-8 h1 v-21 h1 v-13 h1 v-1 h1 v-6 h1 v3 h1 v1 h1 v16 h1 v0 h1 v1 h1 v-3 h1 v4 h1 v-2 h1 v10 h1 v-21 h1 v10 h1 v2 h1 v18 h1 v1 h1 v-2 h1 v1 h1 v6 h1 v-1 h1 v-3 h1 v-5 h1 v-10 h1 v-2 h1 v14 h1 v-3 h1 v-2 h1 v-15 h1 v-1 h1 v3 h1 v-4 h1 v-1 h1 v-11 h1 v4 h1 v-6 h1 v-2 h1 v20 h1 v-27 h1 v0 h1 v-1 h1 v-9 h1 v1 h1 v-1 h1 v-7 h1 v4 h1 v7 h1 v2 h1 v-4 h1 v10 h1 v-5 h1 v-4 h1 v193Z"
             transform="scale(0.317076923076923 0.203054187192118)"
           />
@@ -584,8 +584,8 @@
           transform="translate(109.425 219.61)"
         >
           <path
-            class = "state-trend"
             id="New Mexico-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v0 h1 v0 h1 v0 h1 v1 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v1 h1 v-1 h1 v0 h1 v-3 h1 v-1 h1 v2 h1 v-1 h1 v0 h1 v-1 h1 v-8 h1 v-4 h1 v4 h1 v2 h1 v-6 h1 v1 h1 v3 h1 v-4 h1 v5 h1 v-3 h1 v4 h1 v-3 h1 v-1 h1 v7 h1 v-7 h1 v-9 h1 v3 h1 v-2 h1 v-18 h1 v-6 h1 v-1 h1 v0 h1 v-4 h1 v-2 h1 v-14 h1 v-4 h1 v-3 h1 v-8 h1 v-1 h1 v3 h1 v-3 h1 v-8 h1 v-3 h1 v-3 h1 v-2 h1 v-2 h1 v0 h1 v-4 h1 v4 h1 v-5 h1 v-4 h1 v-4 h1 v-4 h1 v5 h1 v-10 h1 v-3 h1 v-6 h1 v-3 h1 v-7 h1 v-2 h1 v-7 h1 v-20 h1 v-2 h1 v0 h1 v4 h1 v2 h1 v6 h1 v-4 h1 v3 h1 v8 h1 v5 h1 v7 h1 v-3 h1 v-4 h1 v-1 h1 v-12 h1 v4 h1 v-3 h1 v2 h1 v-1 h1 v13 h1 v1 h1 v-2 h1 v3 h1 v7 h1 v0 h1 v1 h1 v-3 h1 v4 h1 v-2 h1 v-2 h1 v-7 h1 v10 h1 v5 h1 v8 h1 v-2 h1 v-2 h1 v3 h1 v-11 h1 v-5 h1 v1 h1 v-3 h1 v14 h1 v-9 h1 v-2 h1 v-3 h1 v0 h1 v2 h1 v1 h1 v3 h1 v1 h1 v1 h1 v3 h1 v-3 h1 v2 h1 v-11 h1 v1 h1 v146Z"
             transform="scale(0.317076923076923 0.234204545454545)"
           />
@@ -600,8 +600,8 @@
           transform="translate(153.195 219.61)"
         >
           <path
-            class = "state-trend"
             id="Kansas-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-6 h1 v1 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-4 h1 v3 h1 v-1 h1 v5 h1 v3 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v-6 h1 v-5 h1 v-6 h1 v0 h1 v-5 h1 v-9 h1 v0 h1 v5 h1 v0 h1 v2 h1 v-2 h1 v-7 h1 v-12 h1 v0 h1 v8 h1 v1 h1 v0 h1 v-4 h1 v-1 h1 v-2 h1 v5 h1 v-12 h1 v-10 h1 v0 h1 v0 h1 v-4 h1 v0 h1 v-3 h1 v-5 h1 v-7 h1 v-3 h1 v-1 h1 v-4 h1 v-6 h1 v-3 h1 v-1 h1 v7 h1 v-10 h1 v-1 h1 v0 h1 v0 h1 v-3 h1 v-13 h1 v0 h1 v-9 h1 v-11 h1 v-7 h1 v-8 h1 v1 h1 v-4 h1 v-4 h1 v1 h1 v-1 h1 v7 h1 v3 h1 v3 h1 v-2 h1 v1 h1 v-1 h1 v-1 h1 v2 h1 v-5 h1 v-4 h1 v1 h1 v8 h1 v6 h1 v1 h1 v-2 h1 v4 h1 v4 h1 v0 h1 v-2 h1 v1 h1 v0 h1 v0 h1 v-8 h1 v-5 h1 v-2 h1 v-3 h1 v5 h1 v-4 h1 v6 h1 v0 h1 v2 h1 v-1 h1 v-6 h1 v-4 h1 v-2 h1 v3 h1 v7 h1 v0 h1 v-1 h1 v-9 h1 v4 h1 v-6 h1 v-4 h1 v2 h1 v-11 h1 v-5 h1 v-5 h1 v-1 h1 v0 h1 v183Z"
             transform="scale(0.317076923076923 0.225245901639344)"
           />
@@ -616,8 +616,8 @@
           transform="translate(196.965 219.61)"
         >
           <path
-            class = "state-trend"
             id="Arkansas-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-5 h1 v-10 h1 v-3 h1 v-2 h1 v1 h1 v0 h1 v2 h1 v-3 h1 v-4 h1 v-6 h1 v-6 h1 v-6 h1 v-12 h1 v-2 h1 v-1 h1 v4 h1 v0 h1 v0 h1 v-3 h1 v-3 h1 v-2 h1 v0 h1 v-4 h1 v-5 h1 v-1 h1 v-3 h1 v0 h1 v-5 h1 v0 h1 v-1 h1 v-2 h1 v0 h1 v0 h1 v-3 h1 v-4 h1 v-1 h1 v-2 h1 v-1 h1 v1 h1 v-2 h1 v-2 h1 v1 h1 v7 h1 v12 h1 v1 h1 v2 h1 v1 h1 v0 h1 v5 h1 v0 h1 v12 h1 v0 h1 v0 h1 v6 h1 v3 h1 v2 h1 v0 h1 v4 h1 v-2 h1 v3 h1 v-5 h1 v-3 h1 v-4 h1 v-5 h1 v3 h1 v-2 h1 v0 h1 v12 h1 v-2 h1 v-7 h1 v-5 h1 v-8 h1 v-9 h1 v-7 h1 v-13 h1 v-4 h1 v3 h1 v2 h1 v-9 h1 v3 h1 v-7 h1 v-5 h1 v-8 h1 v10 h1 v-7 h1 v-5 h1 v-7 h1 v1 h1 v4 h1 v0 h1 v-6 h1 v-1 h1 v133Z"
             transform="scale(0.317076923076923 0.309924812030075)"
           />
@@ -632,8 +632,8 @@
           transform="translate(240.735 219.61)"
         >
           <path
-            class = "state-trend"
             id="Tennessee-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-4 h1 v1 h1 v0 h1 v-5 h1 v-3 h1 v1 h1 v0 h1 v2 h1 v2 h1 v0 h1 v0 h1 v-2 h1 v-2 h1 v0 h1 v0 h1 v0 h1 v2 h1 v0 h1 v-2 h1 v-9 h1 v-11 h1 v-2 h1 v-5 h1 v0 h1 v0 h1 v-11 h1 v0 h1 v-5 h1 v-1 h1 v-12 h1 v-6 h1 v-1 h1 v-16 h1 v12 h1 v-14 h1 v-2 h1 v-2 h1 v-1 h1 v-1 h1 v-5 h1 v-7 h1 v-1 h1 v0 h1 v0 h1 v-4 h1 v-3 h1 v-2 h1 v-3 h1 v4 h1 v0 h1 v-3 h1 v-4 h1 v0 h1 v-11 h1 v-5 h1 v-2 h1 v4 h1 v1 h1 v12 h1 v7 h1 v-5 h1 v9 h1 v1 h1 v-3 h1 v-7 h1 v-1 h1 v-21 h1 v-2 h1 v18 h1 v3 h1 v8 h1 v6 h1 v-1 h1 v6 h1 v6 h1 v-6 h1 v-6 h1 v5 h1 v-4 h1 v-1 h1 v1 h1 v21 h1 v-1 h1 v9 h1 v3 h1 v-5 h1 v-7 h1 v12 h1 v-4 h1 v4 h1 v0 h1 v17 h1 v-4 h1 v5 h1 v9 h1 v4 h1 v-6 h1 v-2 h1 v-8 h1 v-4 h1 v-3 h1 v-13 h1 v-4 h1 v-6 h1 v0 h1 v8 h1 v-4 h1 v-3 h1 v4 h1 v2 h1 v0 h1 v1 h1 v-2 h1 v-7 h1 v1 h1 v-4 h1 v10 h1 v-14 h1 v0 h1 v107Z"
             transform="scale(0.317076923076923 0.272980132450331)"
           />
@@ -648,8 +648,8 @@
           transform="translate(284.505 219.61)"
         >
           <path
-            class = "state-trend"
             id="Virginia-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v3 h1 v0 h1 v-4 h1 v-5 h1 v0 h1 v0 h1 v-1 h1 v2 h1 v-1 h1 v-1 h1 v2 h1 v5 h1 v0 h1 v0 h1 v0 h1 v-7 h1 v-1 h1 v0 h1 v0 h1 v-1 h1 v-16 h1 v-11 h1 v-10 h1 v-7 h1 v-12 h1 v-6 h1 v-1 h1 v0 h1 v3 h1 v0 h1 v-1 h1 v-3 h1 v-1 h1 v-4 h1 v-4 h1 v-1 h1 v-6 h1 v-14 h1 v-12 h1 v-9 h1 v-3 h1 v-7 h1 v-6 h1 v-7 h1 v-6 h1 v-7 h1 v-7 h1 v2 h1 v-1 h1 v-2 h1 v1 h1 v15 h1 v0 h1 v-1 h1 v6 h1 v1 h1 v-1 h1 v-1 h1 v-3 h1 v-1 h1 v-4 h1 v-4 h1 v-3 h1 v3 h1 v-2 h1 v-2 h1 v-1 h1 v0 h1 v-4 h1 v-6 h1 v-2 h1 v-4 h1 v3 h1 v-1 h1 v-10 h1 v-2 h1 v10 h1 v4 h1 v2 h1 v1 h1 v-1 h1 v17 h1 v3 h1 v0 h1 v0 h1 v-3 h1 v0 h1 v2 h1 v-3 h1 v4 h1 v7 h1 v1 h1 v8 h1 v-1 h1 v1 h1 v-2 h1 v-14 h1 v-5 h1 v3 h1 v-3 h1 v-4 h1 v-1 h1 v-10 h1 v-1 h1 v7 h1 v-1 h1 v3 h1 v-6 h1 v-3 h1 v0 h1 v-8 h1 v-4 h1 v-3 h1 v1 h1 v194Z"
             transform="scale(0.317076923076923 0.211384615384615)"
           />
@@ -664,8 +664,8 @@
           transform="translate(328.275 219.61)"
         >
           <path
-            class = "state-trend"
             id="North Carolina-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-2 h1 v-2 h1 v0 h1 v1 h1 v1 h1 v-1 h1 v0 h1 v-1 h1 v-4 h1 v1 h1 v-1 h1 v-4 h1 v4 h1 v4 h1 v0 h1 v1 h1 v-5 h1 v0 h1 v-2 h1 v0 h1 v3 h1 v3 h1 v1 h1 v-3 h1 v-8 h1 v-3 h1 v-2 h1 v-3 h1 v-9 h1 v-7 h1 v2 h1 v-5 h1 v-16 h1 v-3 h1 v-6 h1 v3 h1 v-1 h1 v-1 h1 v-18 h1 v-5 h1 v0 h1 v-2 h1 v-5 h1 v-8 h1 v-9 h1 v1 h1 v-13 h1 v3 h1 v-2 h1 v1 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v-5 h1 v-6 h1 v3 h1 v-2 h1 v-2 h1 v9 h1 v-3 h1 v-2 h1 v1 h1 v0 h1 v-3 h1 v-3 h1 v-5 h1 v-4 h1 v-18 h1 v-4 h1 v-3 h1 v1 h1 v-4 h1 v0 h1 v2 h1 v15 h1 v0 h1 v10 h1 v-4 h1 v7 h1 v-3 h1 v0 h1 v-6 h1 v-1 h1 v-1 h1 v13 h1 v-1 h1 v-4 h1 v-3 h1 v-7 h1 v-11 h1 v-5 h1 v-4 h1 v5 h1 v15 h1 v1 h1 v1 h1 v-6 h1 v-9 h1 v2 h1 v-8 h1 v0 h1 v-8 h1 v-15 h1 v-7 h1 v4 h1 v-6 h1 v-1 h1 v-2 h1 v-2 h1 v-1 h1 v-1 h1 v-7 h1 v-4 h1 v9 h1 v-5 h1 v4 h1 v-1 h1 v-2 h1 v4 h1 v1 h1 v-1 h1 v-5 h1 v223Z"
             transform="scale(0.317076923076923 0.1815859030837)"
           />
@@ -680,8 +680,8 @@
           transform="translate(372.045 219.61)"
         >
           <path
-            class = "state-trend"
             id="South Carolina-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-2 h1 v1 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v0 h1 v-1 h1 v-8 h1 v-3 h1 v1 h1 v0 h1 v-2 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-4 h1 v-9 h1 v-5 h1 v1 h1 v-6 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-5 h1 v-6 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v2 h1 v0 h1 v1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v1 h1 v2 h1 v-8 h1 v1 h1 v-2 h1 v2 h1 v0 h1 v7 h1 v-6 h1 v-3 h1 v-4 h1 v0 h1 v-2 h1 v-3 h1 v1 h1 v0 h1 v-12 h1 v5 h1 v3 h1 v2 h1 v-18 h1 v-2 h1 v-3 h1 v-1 h1 v-4 h1 v-10 h1 v-1 h1 v-8 h1 v5 h1 v-16 h1 v7 h1 v-7 h1 v21 h1 v6 h1 v-11 h1 v0 h1 v8 h1 v-14 h1 v24 h1 v15 h1 v-3 h1 v-2 h1 v-5 h1 v-3 h1 v-5 h1 v5 h1 v-3 h1 v-2 h1 v3 h1 v3 h1 v-3 h1 v-1 h1 v-1 h1 v-8 h1 v0 h1 v102Z"
             transform="scale(0.317076923076923 0.327142857142857)"
           />
@@ -696,8 +696,8 @@
           transform="translate(131.31 263.38)"
         >
           <path
-            class = "state-trend"
             id="Oklahoma-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-3 h1 v-1 h1 v-5 h1 v2 h1 v6 h1 v1 h1 v0 h1 v0 h1 v1 h1 v-2 h1 v0 h1 v1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v2 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-4 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-3 h1 v-2 h1 v2 h1 v0 h1 v0 h1 v-4 h1 v-7 h1 v-4 h1 v-19 h1 v-13 h1 v-9 h1 v-2 h1 v0 h1 v-4 h1 v-3 h1 v-7 h1 v0 h1 v-1 h1 v-3 h1 v-3 h1 v-3 h1 v2 h1 v-7 h1 v-9 h1 v2 h1 v0 h1 v-7 h1 v-1 h1 v0 h1 v3 h1 v-10 h1 v-4 h1 v-7 h1 v5 h1 v8 h1 v-2 h1 v-6 h1 v-4 h1 v5 h1 v-3 h1 v-7 h1 v16 h1 v4 h1 v3 h1 v-4 h1 v-1 h1 v2 h1 v4 h1 v-4 h1 v-15 h1 v0 h1 v1 h1 v11 h1 v3 h1 v-2 h1 v-2 h1 v-1 h1 v1 h1 v-3 h1 v-7 h1 v1 h1 v6 h1 v-7 h1 v-4 h1 v19 h1 v2 h1 v-4 h1 v-7 h1 v0 h1 v-3 h1 v-3 h1 v-3 h1 v-1 h1 v1 h1 v-2 h1 v1 h1 v-1 h1 v-2 h1 v1 h1 v0 h1 v-1 h1 v2 h1 v1 h1 v0 h1 v-4 h1 v-1 h1 v-4 h1 v-5 h1 v0 h1 v-1 h1 v146Z"
             transform="scale(0.317076923076923 0.282328767123288)"
           />
@@ -712,8 +712,8 @@
           transform="translate(175.08 263.38)"
         >
           <path
-            class = "state-trend"
             id="Louisiana-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-3 h1 v0 h1 v3 h1 v0 h1 v0 h1 v0 h1 v-4 h1 v-1 h1 v1 h1 v2 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v-3 h1 v-1 h1 v-13 h1 v-7 h1 v-7 h1 v0 h1 v-8 h1 v-4 h1 v-3 h1 v-2 h1 v-1 h1 v0 h1 v-7 h1 v-7 h1 v0 h1 v-1 h1 v0 h1 v1 h1 v-1 h1 v-11 h1 v-6 h1 v2 h1 v-2 h1 v-1 h1 v-11 h1 v0 h1 v-1 h1 v-1 h1 v5 h1 v2 h1 v8 h1 v1 h1 v15 h1 v-4 h1 v9 h1 v0 h1 v-3 h1 v3 h1 v-3 h1 v2 h1 v0 h1 v2 h1 v-2 h1 v1 h1 v-8 h1 v2 h1 v4 h1 v-1 h1 v8 h1 v3 h1 v5 h1 v-1 h1 v2 h1 v-2 h1 v2 h1 v1 h1 v9 h1 v-3 h1 v-4 h1 v7 h1 v-4 h1 v-1 h1 v-4 h1 v-1 h1 v0 h1 v-4 h1 v-7 h1 v-1 h1 v1 h1 v6 h1 v1 h1 v1 h1 v0 h1 v-3 h1 v-2 h1 v-4 h1 v2 h1 v1 h1 v1 h1 v11 h1 v-1 h1 v-5 h1 v3 h1 v50Z"
             transform="scale(0.317076923076923 0.4122)"
           />
@@ -728,8 +728,8 @@
           transform="translate(218.85 263.38)"
         >
           <path
-            class = "state-trend"
             id="Mississippi-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v0 h1 v-1 h1 v1 h1 v5 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-12 h1 v0 h1 v0 h1 v2 h1 v-1 h1 v0 h1 v0 h1 v-2 h1 v-3 h1 v-4 h1 v-16 h1 v-15 h1 v1 h1 v-3 h1 v8 h1 v-5 h1 v-6 h1 v-1 h1 v5 h1 v-1 h1 v1 h1 v1 h1 v-1 h1 v-2 h1 v-1 h1 v2 h1 v1 h1 v0 h1 v-1 h1 v-1 h1 v1 h1 v1 h1 v-3 h1 v-5 h1 v0 h1 v-2 h1 v-1 h1 v-5 h1 v-2 h1 v3 h1 v6 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v-3 h1 v-5 h1 v-5 h1 v1 h1 v1 h1 v0 h1 v0 h1 v7 h1 v0 h1 v3 h1 v-1 h1 v-2 h1 v-4 h1 v-2 h1 v-4 h1 v4 h1 v8 h1 v-10 h1 v0 h1 v-3 h1 v-3 h1 v4 h1 v-4 h1 v-7 h1 v0 h1 v-4 h1 v-6 h1 v1 h1 v4 h1 v-1 h1 v7 h1 v7 h1 v1 h1 v-2 h1 v-1 h1 v-1 h1 v5 h1 v-2 h1 v8 h1 v-1 h1 v1 h1 v2 h1 v3 h1 v-1 h1 v-10 h1 v2 h1 v75Z"
             transform="scale(0.317076923076923 0.424948453608247)"
           />
@@ -744,8 +744,8 @@
           transform="translate(262.62 263.38)"
         >
           <path
-            class = "state-trend"
             id="Alabama-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-5 h1 v0 h1 v1 h1 v-1 h1 v-1 h1 v-1 h1 v0 h1 v2 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v1 h1 v3 h1 v0 h1 v1 h1 v0 h1 v0 h1 v2 h1 v0 h1 v0 h1 v-7 h1 v-2 h1 v-1 h1 v5 h1 v-3 h1 v2 h1 v-12 h1 v-4 h1 v-4 h1 v8 h1 v-2 h1 v-1 h1 v0 h1 v-7 h1 v0 h1 v-7 h1 v-12 h1 v-16 h1 v1 h1 v-3 h1 v0 h1 v-6 h1 v-7 h1 v-2 h1 v1 h1 v0 h1 v0 h1 v1 h1 v2 h1 v-3 h1 v-11 h1 v1 h1 v0 h1 v1 h1 v-11 h1 v-3 h1 v-5 h1 v-10 h1 v3 h1 v0 h1 v-1 h1 v-3 h1 v2 h1 v10 h1 v1 h1 v11 h1 v4 h1 v3 h1 v21 h1 v14 h1 v0 h1 v2 h1 v-11 h1 v-11 h1 v-12 h1 v4 h1 v-6 h1 v6 h1 v-7 h1 v11 h1 v2 h1 v2 h1 v1 h1 v1 h1 v-3 h1 v-4 h1 v-10 h1 v-1 h1 v-9 h1 v8 h1 v-4 h1 v-2 h1 v2 h1 v-4 h1 v-5 h1 v0 h1 v-9 h1 v-2 h1 v-1 h1 v-2 h1 v-6 h1 v4 h1 v-1 h1 v-1 h1 v9 h1 v-1 h1 v-3 h1 v-3 h1 v-3 h1 v4 h1 v0 h1 v3 h1 v-4 h1 v-1 h1 v0 h1 v-12 h1 v1 h1 v133Z"
             transform="scale(0.317076923076923 0.307611940298507)"
           />
@@ -760,8 +760,8 @@
           transform="translate(306.39 263.38)"
         >
           <path
-            class = "state-trend"
             id="Georgia-counts"
+            class="state-trend"
             d="M0,0 v-1 h1 v0 h1 v1 h1 v0 h1 v-2 h1 v0 h1 v-1 h1 v-5 h1 v-3 h1 v-1 h1 v-1 h1 v-1 h1 v-4 h1 v3 h1 v-3 h1 v-7 h1 v1 h1 v0 h1 v1 h1 v4 h1 v2 h1 v0 h1 v-2 h1 v5 h1 v-1 h1 v0 h1 v2 h1 v-2 h1 v0 h1 v-2 h1 v-2 h1 v6 h1 v3 h1 v1 h1 v1 h1 v0 h1 v-3 h1 v-1 h1 v-1 h1 v-13 h1 v-10 h1 v-2 h1 v15 h1 v0 h1 v1 h1 v0 h1 v0 h1 v-5 h1 v-32 h1 v-6 h1 v-13 h1 v-7 h1 v0 h1 v-12 h1 v-6 h1 v-6 h1 v3 h1 v1 h1 v4 h1 v0 h1 v5 h1 v3 h1 v-4 h1 v1 h1 v-3 h1 v-6 h1 v3 h1 v-7 h1 v-2 h1 v-6 h1 v-1 h1 v-3 h1 v-2 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v0 h1 v-2 h1 v-3 h1 v12 h1 v8 h1 v18 h1 v0 h1 v2 h1 v-1 h1 v-4 h1 v1 h1 v-3 h1 v2 h1 v-2 h1 v-4 h1 v0 h1 v2 h1 v-1 h1 v-3 h1 v2 h1 v-8 h1 v-1 h1 v-5 h1 v0 h1 v2 h1 v2 h1 v1 h1 v-5 h1 v-3 h1 v-7 h1 v4 h1 v8 h1 v-8 h1 v0 h1 v-3 h1 v-20 h1 v-6 h1 v-17 h1 v1 h1 v-24 h1 v9 h1 v-19 h1 v-17 h1 v-20 h1 v-39 h1 v3 h1 v-5 h1 v5 h1 v-19 h1 v5 h1 v-1 h1 v-5 h1 v5 h1 v289Z"
             transform="scale(0.317076923076923 0.140204081632653)"
           />
@@ -776,8 +776,8 @@
           transform="translate(131.31 307.15)"
         >
           <path
-            class = "state-trend"
             id="Texas-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v0 h1 v0 h1 v0 h1 v-4 h1 v0 h1 v-1 h1 v3 h1 v-3 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-14 h1 v-7 h1 v-2 h1 v0 h1 v4 h1 v-3 h1 v-2 h1 v-7 h1 v-16 h1 v-52 h1 v17 h1 v1 h1 v6 h1 v1 h1 v4 h1 v-10 h1 v-1 h1 v-5 h1 v6 h1 v3 h1 v1 h1 v-2 h1 v-1 h1 v-13 h1 v-60 h1 v3 h1 v-4 h1 v-7 h1 v-5 h1 v-4 h1 v-2 h1 v-3 h1 v-17 h1 v0 h1 v-3 h1 v-2 h1 v-1 h1 v-18 h1 v-2 h1 v3 h1 v-2 h1 v-8 h1 v4 h1 v-11 h1 v-9 h1 v-22 h1 v-11 h1 v-27 h1 v-26 h1 v-13 h1 v-10 h1 v-7 h1 v-22 h1 v-25 h1 v-14 h1 v-11 h1 v-4 h1 v2 h1 v14 h1 v-9 h1 v-4 h1 v19 h1 v6 h1 v-6 h1 v11 h1 v14 h1 v9 h1 v4 h1 v7 h1 v-7 h1 v17 h1 v23 h1 v9 h1 v2 h1 v19 h1 v3 h1 v11 h1 v9 h1 v2 h1 v-4 h1 v18 h1 v-10 h1 v-18 h1 v-5 h1 v0 h1 v-5 h1 v-35 h1 v-21 h1 v-1 h1 v-5 h1 v-4 h1 v-8 h1 v-28 h1 v-13 h1 v-7 h1 v-10 h1 v-3 h1 v-3 h1 v-6 h1 v-8 h1 v-21 h1 v-10 h1 v-21 h1 v-1 h1 v514Z"
             transform="scale(0.317076923076923 0.0801945525291829)"
           />
@@ -792,8 +792,8 @@
           transform="translate(350.16 307.15)"
         >
           <path
-            class = "state-trend"
             id="Florida-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v-3 h1 v-4 h1 v-1 h1 v0 h1 v-10 h1 v-8 h1 v-5 h1 v-2 h1 v-1 h1 v-3 h1 v-2 h1 v1 h1 v-4 h1 v-14 h1 v-5 h1 v0 h1 v-4 h1 v-3 h1 v0 h1 v-2 h1 v-13 h1 v-3 h1 v-1 h1 v-3 h1 v-16 h1 v-4 h1 v2 h1 v-2 h1 v0 h1 v-9 h1 v-5 h1 v-17 h1 v-5 h1 v-6 h1 v-4 h1 v0 h1 v-3 h1 v-21 h1 v-18 h1 v4 h1 v-10 h1 v11 h1 v2 h1 v3 h1 v-12 h1 v7 h1 v-3 h1 v-10 h1 v-7 h1 v-1 h1 v-12 h1 v-7 h1 v-2 h1 v-1 h1 v-13 h1 v-1 h1 v5 h1 v-6 h1 v-10 h1 v-6 h1 v-14 h1 v-22 h1 v-1 h1 v14 h1 v3 h1 v4 h1 v-4 h1 v-5 h1 v12 h1 v-30 h1 v-11 h1 v-6 h1 v5 h1 v-25 h1 v-14 h1 v1 h1 v-2 h1 v-19 h1 v8 h1 v-36 h1 v-5 h1 v-32 h1 v-3 h1 v31 h1 v4 h1 v18 h1 v1 h1 v12 h1 v-3 h1 v-22 h1 v10 h1 v2 h1 v-4 h1 v402Z"
             transform="scale(0.317076923076923 0.0913968957871397)"
           />
@@ -808,8 +808,8 @@
           transform="translate(0 350.92)"
         >
           <path
-            class = "state-trend"
             id="Alaska-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v-2 h1 v0 h1 v-9 h1 v-4 h1 v0 h1 v0 h1 v1 h1 v1 h1 v1 h1 v0 h1 v-1 h1 v1 h1 v5 h1 v-1 h1 v-3 h1 v0 h1 v0 h1 v-1 h1 v-1 h1 v3 h1 v2 h1 v0 h1 v1 h1 v0 h1 v1 h1 v2 h1 v0 h1 v1 h1 v1 h1 v0 h1 v1 h1 v-1 h1 v-1 h1 v-7 h1 v-13 h1 v-5 h1 v-17 h1 v-3 h1 v-13 h1 v3 h1 v-2 h1 v3 h1 v-4 h1 v2 h1 v-3 h1 v-1 h1 v-4 h1 v-6 h1 v0 h1 v-8 h1 v-11 h1 v-2 h1 v-17 h1 v-3 h1 v-2 h1 v-1 h1 v3 h1 v-6 h1 v-1 h1 v3 h1 v16 h1 v-2 h1 v2 h1 v-1 h1 v-8 h1 v8 h1 v-3 h1 v-4 h1 v9 h1 v2 h1 v-2 h1 v5 h1 v14 h1 v10 h1 v2 h1 v2 h1 v-6 h1 v0 h1 v-16 h1 v9 h1 v13 h1 v3 h1 v4 h1 v2 h1 v-13 h1 v-13 h1 v-9 h1 v1 h1 v-7 h1 v-3 h1 v8 h1 v-3 h1 v3 h1 v3 h1 v0 h1 v-2 h1 v-6 h1 v-7 h1 v0 h1 v11 h1 v-1 h1 v4 h1 v9 h1 v0 h1 v-1 h1 v-2 h1 v87Z"
             transform="scale(0.317076923076923 0.340661157024793)"
           />
@@ -824,8 +824,8 @@
           transform="translate(43.77 350.92)"
         >
           <path
-            class = "state-trend"
             id="Hawaii-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v1 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-2 h1 v-1 h1 v-2 h1 v-9 h1 v-17 h1 v-7 h1 v-14 h1 v-12 h1 v12 h1 v7 h1 v6 h1 v-10 h1 v-10 h1 v1 h1 v-3 h1 v-9 h1 v0 h1 v9 h1 v-10 h1 v-2 h1 v-3 h1 v0 h1 v5 h1 v-5 h1 v-5 h1 v-22 h1 v4 h1 v7 h1 v1 h1 v-4 h1 v-9 h1 v-2 h1 v-9 h1 v-5 h1 v-2 h1 v3 h1 v0 h1 v0 h1 v0 h1 v6 h1 v-2 h1 v-2 h1 v1 h1 v-3 h1 v0 h1 v-6 h1 v-7 h1 v0 h1 v2 h1 v2 h1 v6 h1 v-12 h1 v0 h1 v-10 h1 v6 h1 v-5 h1 v-17 h1 v-14 h1 v-1 h1 v3 h1 v-12 h1 v15 h1 v4 h1 v12 h1 v20 h1 v20 h1 v3 h1 v-2 h1 v-2 h1 v1 h1 v1 h1 v2 h1 v8 h1 v-3 h1 v1 h1 v10 h1 v-1 h1 v-2 h1 v13 h1 v0 h1 v3 h1 v-2 h1 v1 h1 v-1 h1 v-2 h1 v-1 h1 v-1 h1 v-3 h1 v7 h1 v5 h1 v5 h1 v0 h1 v1 h1 v1 h1 v-4 h1 v5 h1 v4 h1 v6 h1 v5 h1 v-1 h1 v-2 h1 v2 h1 v-2 h1 v4 h1 v3 h1 v-5 h1 v-3 h1 v3 h1 v-1 h1 v-5 h1 v0 h1 v-3 h1 v65Z"
             transform="scale(0.317076923076923 0.224021739130435)"
           />
@@ -840,8 +840,8 @@
           transform="translate(437.7 350.92)"
         >
           <path
-            class = "state-trend"
             id="Puerto Rico-counts"
+            class="state-trend"
             d="M0,0 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v0 h1 v-1 h1 v0 h1 v-2 h1 v-3 h1 v-1 h1 v1 h1 v-4 h1 v0 h1 v1 h1 v2 h1 v2 h1 v1 h1 v0 h1 v-1 h1 v2 h1 v1 h1 v-3 h1 v-9 h1 v-5 h1 v1 h1 v-1 h1 v-3 h1 v-1 h1 v-5 h1 v-4 h1 v1 h1 v-19 h1 v16 h1 v-3 h1 v-2 h1 v5 h1 v3 h1 v-1 h1 v-1 h1 v-1 h1 v0 h1 v-2 h1 v0 h1 v-2 h1 v1 h1 v-1 h1 v-5 h1 v1 h1 v0 h1 v-4 h1 v-7 h1 v-2 h1 v-9 h1 v-7 h1 v-6 h1 v4 h1 v0 h1 v0 h1 v2 h1 v-3 h1 v2 h1 v-2 h1 v-7 h1 v-3 h1 v3 h1 v-1 h1 v-2 h1 v-3 h1 v6 h1 v-1 h1 v3 h1 v-1 h1 v3 h1 v1 h1 v-2 h1 v2 h1 v-1 h1 v3 h1 v-15 h1 v0 h1 v-5 h1 v94Z"
             transform="scale(0.317076923076923 0.438510638297872)"
           />
@@ -862,7 +862,8 @@
         >
           <defs>
             <clipPath
-              id="tip-clip">
+              id="tip-clip"
+            >
               <rect
                 x="-8"
                 width="16"
@@ -1770,21 +1771,38 @@
           />
         </g>
         <!-- titles manually added to svg  -->
-        <text id="title-svg" transform="translate(0 0)" style="font-size: 14px; font-weight:600; fill:rgb(139, 139, 139)">State-level trends in USGS streamgaging<tspan x="0" y="15">1890 - present</tspan></text>
+        <text
+          id="title-svg"
+          transform="translate(0 0)"
+          style="font-size: 14px; font-weight:600; fill:rgb(139, 139, 139)"
+        >State-level trends in USGS streamgaging<tspan
+          x="0"
+          y="15"
+        >1890 - present</tspan></text>
         <!-- <text id="text-svg" transform="translate(0 35)" style="font-size: 10px; font-style: italic"><tspan x="0" y="0">Hover to see the number of streamgages over time</tspan></text> -->
         <text 
-        id="annotate-svg" 
-        transform="translate(175 325)" style="font-size: 10px;font-style: italic; fill:rgb(139, 139, 139)"><tspan x="0" y="0">Hover to see the number of</tspan>
-          <tspan x="0" y="10">streamgages in each state</tspan></text>
-       <!--  <path 
+          id="annotate-svg" 
+          transform="translate(175 325)"
+          style="font-size: 10px;font-style: italic; fill:rgb(139, 139, 139)"
+        ><tspan
+           x="0"
+           y="0"
+         >Hover to see the number of</tspan>
+          <tspan
+            x="0"
+            y="10"
+          >streamgages in each state</tspan></text>
+        <!--  <path 
         d="M548.76,335.22a28.54,28.54,0,0,0-19.47-2.86c-6.68,1.51-12.4,5.93-16.53,11.26-4.6,5.94-8.09,13.35-8.58,20.93a18.44,18.44,0,0,0,6.17,15.26c8.33,7.48,21.27,9.85,32,7.52a26.14,26.14,0,0,0,14.5-8.22c4.23-5,6.06-11.59,6.28-18A35.37,35.37,0,0,0,558,341a26,26,0,0,0-17.86-11.7,35.19,35.19,0,0,0-3.56-.37c-1.8-.08-1.8,2.73,0,2.81a23.7,23.7,0,0,1,16.48,7.4c4.31,4.69,6.61,11.08,7.18,17.35.54,6-.31,12.5-3.38,17.81a21.32,21.32,0,0,1-11.53,9.25,35.65,35.65,0,0,1-29.9-3.46c-3.86-2.46-7.12-6-8.1-10.57-1.43-6.67,1.31-14,4.62-19.65s8.23-11.06,14.54-13.71c5.94-2.5,12.76-2,18.64.39.77.32,1.52.68,2.26,1.07,1.6.84,3-1.58,1.41-2.43Z" 
         transform="translate(-162 -73)" class="annotate" /> -->
-        <path id="arrow" 
-        d="M446.47,402.11c-4.39-1.79,20.07,6.55,37.58.86a23.33,23.33,0,0,0,13.86-11.4l3,9.16L499.15,390l-11.31-.56,10.07,2.16"
-        style="fill: none;stroke: rgb(139, 139, 139);stroke-linecap: round;stroke-linejoin: round;stroke-width: 3px"
-        transform="translate(-142 -73)" 
-        class="annotate"/>    </svg>
-          </div>
+        <path
+          id="arrow" 
+          d="M446.47,402.11c-4.39-1.79,20.07,6.55,37.58.86a23.33,23.33,0,0,0,13.86-11.4l3,9.16L499.15,390l-11.31-.56,10.07,2.16"
+          style="fill: none;stroke: rgb(139, 139, 139);stroke-linecap: round;stroke-linejoin: round;stroke-width: 3px"
+          transform="translate(-142 -73)" 
+          class="annotate"
+        />    </svg>
+    </div>
     <div
       v-for="paragraph in atlantaText.paragraphSections"
       :key="paragraph.aboveSliderText"
