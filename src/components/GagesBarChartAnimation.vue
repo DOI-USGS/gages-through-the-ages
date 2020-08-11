@@ -2660,10 +2660,12 @@
       {{ text.caption }}
     </caption>
     <Infographic />
-    <div>
+    <div class="screenreader">
       <p>{{ text.svgText }}</p>
       <p v-html="text.paragraphText1" />
-      <p class="clear">{{ text.paragraphText2 }}</p>
+      <p>
+        {{ text.paragraphText2 }}
+      </p>
     </div>
   </div>
 </template>
@@ -3006,6 +3008,13 @@ $axis: rgb(100,100,100);
       width: 100%;
       height: 506px;
     }
+  }
+  /*Text version of information captured by infographic
+  This class leaves it in the site for a screen reader 
+  but hides it from view*/
+  .screenreader {
+    position: absolute;
+    left:-9999px;
   }
   /*Manually copied in CSS from the SVG infographic*/
   .cls-1 {
