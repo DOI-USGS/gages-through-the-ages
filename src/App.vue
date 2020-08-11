@@ -31,6 +31,7 @@
         data() {
             return {
                 isInternetExplorer: false,
+              isMobile: false
             }
         },
         computed: {

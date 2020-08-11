@@ -192,7 +192,6 @@
       </svg>
     </div>
     <div
-      v-if="window.width > 992"
       class="usa-accordion usa-accordion--bordered custom-tabbed-accordion"
     >
       <div
@@ -202,12 +201,22 @@
       >
         <h2 class="usa-accordion__heading">
           <button
+            v-if="window.width > 770"
             class="usa-accordion__button"
             aria-expanded="false"
             :aria-controls="method.title"
             @click="trackMethodClick"
           >
             {{ method.title }}
+          </button>
+          <button
+            v-if="window.width <= 770 || $isMobile()"
+            class="usa-accordion__button"
+            aria-expanded="false"
+            :aria-controls="method.title"
+            @click="trackMethodClick"
+          >
+            {{ method.timePeriod }}
           </button>
         </h2>
       </div>
@@ -220,38 +229,18 @@
           :id="method.title"
           class="usa-accordion__content usa-prose gage-target"
         >
-          <h2 class="usa-prose">
+          <h3
+            v-if="window.width > 770"
+            class="usa-prose"
+          >
             {{ method.timePeriod }}
-          </h2>
-          <p><span v-html="method.method" /></p>
-        </div>
-      </div>
-    </div>
-    <div
-      v-if="window.width <= 992"
-      class="usa-accordion usa-accordion--bordered"
-    >
-      <div
-        v-for="method in methods.methods"
-        :key="method.title"
-      >
-        <h2 class="usa-accordion__heading">
-          <button
-            class="usa-accordion__button"
-            aria-expanded="false"
-            :aria-controls="method.title"
-            @click="trackMethodClick"
+          </h3>
+          <h3
+            v-if="window.width <= 770 || $isMobile()"
+            class="usa-prose"
           >
             {{ method.title }}
-          </button>
-        </h2>
-        <div
-          :id="method.title"
-          class="usa-accordion__content usa-prose gage-target"
-        >
-          <h2 class="usa-prose">
-            {{ method.timePeriod }}
-          </h2>
+          </h3>
           <p><span v-html="method.method" /></p>
         </div>
       </div>
@@ -327,7 +316,8 @@ $chevronDown: '~@/assets/images/chevron-down.png';
   .usa-accordion__button[aria-expanded=false] {
     background-image: url($chevronLeft);
     background-size: 10px 15px;
-    background-color:  rgb(138, 139, 138);
+    background-color: rgb(241, 240, 240);
+    color: #00264c;
     min-height: 5.5em;
   }
   .content {
@@ -350,25 +340,5 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     stroke-width:.35px;
     opacity: .8;
 }
-// styles for standard accordion
-button:not([disabled]):focus{
-  outline:none;
-}
-#app h2.usa-accordion__heading {
- margin: 0;
-}
-.usa-accordion__button {
-  background-image: url($chevronDown);
-  background-color:  #00264c;
-  color: white;
-}
-.usa-accordion__button[aria-expanded=false]{
-  background-image: url($chevronLeft);
-  background-size: 10px 15px;
-  background-color:  rgb(138, 139, 138);
-}
-.usa-accordion__heading {
-  font-size:16px;
-  line-height: 1.1;
-}
+
 </style>
