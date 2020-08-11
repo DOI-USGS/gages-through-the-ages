@@ -229,12 +229,16 @@
           :id="method.title"
           class="usa-accordion__content usa-prose gage-target"
         >
-          <h3 v-if="window.width > 770"
-              class="usa-prose">
+          <h3
+            v-if="window.width > 770"
+            class="usa-prose"
+          >
             {{ method.timePeriod }}
           </h3>
-          <h3  v-if="window.width <= 770 || $isMobile()"
-              class="usa-prose">
+          <h3
+            v-if="window.width <= 770 || $isMobile()"
+            class="usa-prose"
+          >
             {{ method.title }}
           </h3>
           <p><span v-html="method.method" /></p>
