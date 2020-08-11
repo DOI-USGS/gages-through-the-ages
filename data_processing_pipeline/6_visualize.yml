@@ -6,11 +6,13 @@ packages:
   
 sources:
   - 6_visualize/src/build_svg.R
+  - 6_visualize/src/add_tooltip.R
 
 targets:
   6_visualize:
     depends:
       - 6_visualize/out/cartogram_init.svg
+      - 6_visualize/out/cartogram_init_tooltip.svg
   
   start_yr:
     command: viz_year_range[[1]]
@@ -23,17 +25,15 @@ targets:
   svg_h:
     command: c(I(500))
   
-  # This is the config file that comes from Colleen's manual 
-  # placement and sizing of the bar charts. It should be a 
+  # This is the config data comes from Colleen's manual 
+  # placement and sizing of the bar charts. It is a 
   # tibble with 5 columns: state, x, y, state_chart_height, 
   # and state_chart_width
   cartogram_loc_config:
-    command: readRDS("6_visualize/in/cartogram_loc_config.rds")
+    command: build_state_loc_config()
   
-  # This will be replaced by a processing step added in this issue:
-  # https://github.com/usgs-makerspace/gages-through-the-ages/issues/147
   state_data: 
-    command: readRDS("6_visualize/in/gage_counts_by_state.rds")
+    command: readRDS("2_process/out/gage_counts_by_state.rds")
   
   6_visualize/out/cartogram_init.svg:
     command: build_svg(
@@ -45,3 +45,6 @@ targets:
       start_yr = start_yr,
       end_yr = end_yr)
   
+  6_visualize/out/cartogram_init_tooltip.svg:
+    command: add_tooltip_to_xml(
+      target_name, "6_visualize/out/cartogram_init.svg")

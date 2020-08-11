@@ -41,6 +41,33 @@ process_site_info <- function(target_name, active_gages_data_file, file.out = FA
   }
 }
 
+#' create state-specific year counts of number of active gages
+#' writes a file for a data.frame that has three columns: state, year, and n_gages
+process_state_counts <- function(file_out, summary_fl){
+  
+  gage_summary_data <- readRDS(summary_fl)
+  
+  gages_info <- gage_summary_data %>% 
+    pull(site) %>% unique() %>% 
+    dataRetrieval::readNWISsite() %>% rename(STATE = state_cd) %>% 
+    full_join(dataRetrieval::stateCd, by = "STATE") %>%
+    select(site_no, state = STUSAB)
+  
+  if (any(is.na(gages_info$state))){
+    stop("one or more sites didn't have a state code that joined")
+  }
+  
+  # now re-join with the new `state` column
+  gage_summary_data %>% rename(site_no = site) %>% inner_join(gages_info, by = "site_no") %>% 
+    unnest(which_years_active) %>% rename(year = which_years_active) %>% select(site_no, year, state) %>% 
+    group_by(state, year) %>% 
+    summarize(n_gages = length(site_no)) %>% 
+    saveRDS(file = file_out)
+    
+  
+}
+
+
 process_year_json <- function(target_name, gage_locations_file, gage_year_data_file, 
                               site_chunk_n, site_chunk_nm_pattern){
   sites_sp <- readRDS(gage_locations_file)
