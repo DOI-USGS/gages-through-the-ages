@@ -22,7 +22,7 @@
       <div>
         <p v-html="text.firstParagraphText" />
       </div>
-</div>
+    </div>
     <NewTimeline />
   </div>
 </template>

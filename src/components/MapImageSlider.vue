@@ -1770,18 +1770,18 @@
           />
         </g>
         <!-- titles manually added to svg  -->
-        <text id="title-svg" transform="translate(0 0)" style="font-size: 14px; font-weight:600">State-level trends in USGS streamgaging<tspan x="0" y="15">1890 - present</tspan></text>
+        <text id="title-svg" transform="translate(0 0)" style="font-size: 14px; font-weight:600; fill:rgb(139, 139, 139)">State-level trends in USGS streamgaging<tspan x="0" y="15">1890 - present</tspan></text>
         <!-- <text id="text-svg" transform="translate(0 35)" style="font-size: 10px; font-style: italic"><tspan x="0" y="0">Hover to see the number of streamgages over time</tspan></text> -->
         <text 
         id="annotate-svg" 
-        transform="translate(175 325)" style="font-size: 10px;font-style: italic"><tspan x="0" y="0">Hover to see the number of</tspan>
+        transform="translate(175 325)" style="font-size: 10px;font-style: italic; fill:rgb(139, 139, 139)"><tspan x="0" y="0">Hover to see the number of</tspan>
           <tspan x="0" y="10">streamgages in each state</tspan></text>
        <!--  <path 
         d="M548.76,335.22a28.54,28.54,0,0,0-19.47-2.86c-6.68,1.51-12.4,5.93-16.53,11.26-4.6,5.94-8.09,13.35-8.58,20.93a18.44,18.44,0,0,0,6.17,15.26c8.33,7.48,21.27,9.85,32,7.52a26.14,26.14,0,0,0,14.5-8.22c4.23-5,6.06-11.59,6.28-18A35.37,35.37,0,0,0,558,341a26,26,0,0,0-17.86-11.7,35.19,35.19,0,0,0-3.56-.37c-1.8-.08-1.8,2.73,0,2.81a23.7,23.7,0,0,1,16.48,7.4c4.31,4.69,6.61,11.08,7.18,17.35.54,6-.31,12.5-3.38,17.81a21.32,21.32,0,0,1-11.53,9.25,35.65,35.65,0,0,1-29.9-3.46c-3.86-2.46-7.12-6-8.1-10.57-1.43-6.67,1.31-14,4.62-19.65s8.23-11.06,14.54-13.71c5.94-2.5,12.76-2,18.64.39.77.32,1.52.68,2.26,1.07,1.6.84,3-1.58,1.41-2.43Z" 
         transform="translate(-162 -73)" class="annotate" /> -->
         <path id="arrow" 
         d="M446.47,402.11c-4.39-1.79,20.07,6.55,37.58.86a23.33,23.33,0,0,0,13.86-11.4l3,9.16L499.15,390l-11.31-.56,10.07,2.16"
-        style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 3px"
+        style="fill: none;stroke: rgb(139, 139, 139);stroke-linecap: round;stroke-linejoin: round;stroke-width: 3px"
         transform="translate(-142 -73)" 
         class="annotate"/>    </svg>
           </div>
@@ -1980,7 +1980,6 @@ $polygon: '~@/assets/images/polygon.png';
   font-weight: 600;
   fill: white;
   text-anchor: end;
-  transform: translate(10, 20);
 
 }
   .state-trend  {
@@ -1992,8 +1991,8 @@ $polygon: '~@/assets/images/polygon.png';
   stroke-width:5px;
 }
  .annotate {
-    fill: black;
-    stroke: #000;
+    fill: rgb(139, 139, 139);
+    stroke: rgb(139, 139, 139);
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 1px;
