@@ -3,7 +3,10 @@
     id="gage-map"
     class="section"
   >
-    <div id="title-container" class="container">
+    <div
+      id="title-container"
+      class="container"
+    >
       <h1 class="title">
         {{ text.title }}
       </h1>
