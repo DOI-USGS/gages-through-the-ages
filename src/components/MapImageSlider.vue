@@ -2035,4 +2035,16 @@ $polygon: '~@/assets/images/polygon.png';
         font-size: 1.5em;
     }
 }
+/*Touch screen devices - no hover*/
+@media screen and (hover: none) and (pointer: coarse) {
+  #cartogram-svg{
+    pointer-events: none;
+  }
+  #annotate-svg{
+    display: none;
+  }
+  #arrow.annotate{
+    display: none;
+  }
+}
 </style>
