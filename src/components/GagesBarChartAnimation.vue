@@ -2662,12 +2662,8 @@
     <Infographic />
     <div>
       <p>{{ text.svgText }}</p>
-    </div>
-    <div id="textWrapArea">
       <p v-html="text.paragraphText1" />
-      <p class="clear">
-        {{ text.paragraphText2 }}
-      </p>
+      <p class="clear">{{ text.paragraphText2 }}</p>
     </div>
   </div>
 </template>
