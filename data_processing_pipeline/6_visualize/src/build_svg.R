@@ -138,7 +138,7 @@ add_hover_rects <- function(svg_root, dat, state_nm, mx = 0, my = 0, scale_x = 1
   xml_add_child(svg_root, 'rect', id = sprintf("%s-mouse", state_nm),
                 x = min(dat_bars$x_pos), y = -total_height, 
                 width=sum(dat_bars$width), height=total_height,
-                style="fill:#0000ff1c opacity:0", transform = sprintf("scale(%s %s)", scale_x, scale_y),
+                class="state-mousers", transform = sprintf("scale(%s %s)", scale_x, scale_y),
                 #onmousemove = "gagetip(evt)", onmouseout = "gagetip()", # This is what regular JS needs
                 `@mousemove` = "gagetip($event)", `@mouseout` = "gagetip()", # This is what Vue needs
                 data = data_json)

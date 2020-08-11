@@ -9,7 +9,7 @@ insert_tooltip <- function(xml_doc) {
   
   # Now reconstruct to fit this tool tip code in between those
   tooltip <- c(
-    '<rect id="tooltip_bg" height="32" class="hidden"/>',
+    '<rect id="tooltip_bg" height="21" class="hidden"/>',
     ' <g id="tool_pt" class="hidden">',
     '  <defs>',
     '   <clipPath id="tip-clip">',
