@@ -1847,7 +1847,8 @@
           return{
               atlantaText: atlantaSliderText.textContents,
               svg: null,
-              pt: null
+              pt: null,
+              firstHover: null
           }
       },
       mounted(){
@@ -1866,6 +1867,12 @@
         },
         
         gagetip(evt) {
+      
+          if (!this.firstHover) {
+            document.getElementById("annotate-svg").setAttribute("class","hidden");
+            document.getElementById("arrow").setAttribute("class","hidden");
+            this.firstHover = true;
+          }
       
           let tooltip = document.getElementById("tooltip");
           let tooltip_bg = document.getElementById("tooltip_bg");
