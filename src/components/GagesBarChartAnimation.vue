@@ -3796,7 +3796,7 @@
                 flood forecasting
               </text>
               <text transform="translate(600 990)">
-                hydopower plants
+                energy production 
               </text>
               <text transform="translate(600 1030)">
                 recreation
@@ -3819,13 +3819,13 @@
                 font-style="italic"
                 transform="translate(696 990)"
               >
-                How much water can I release?
+                How many turbines can I run?
               </text>
               <text
                 font-style="italic"
                 transform="translate(696 1030)"
               >
-                Can trout live in this stream?
+                Are conditions good for fishing?
               </text>
               <text
                 font-style="italic"
