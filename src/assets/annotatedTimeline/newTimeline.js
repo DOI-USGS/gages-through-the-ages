@@ -29,7 +29,7 @@ export default{
                         'Many environmental priorities (e.g., the coal hydrology studies of the 1970s examined impacts of ' +
                         'surface mining on streams) grew or declined, leading to variations in the national streamgage count. The ' +
                         'number of streamgages declined from 1991-1996 due to stringent national budget cuts and other ' +
-                        'factors, but Congress established funding to retain federal priority streamgages in 2004. The need for ' +
+                        'factors, but Congress established funding to retain Federal Priority Streamgages in 2004. The need for ' +
                         'advanced flood warning has driven much of the growth in the national gage count during recent years.',
                 'timePeriod': '1966 - Present'
             }
