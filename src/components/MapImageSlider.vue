@@ -1884,12 +1884,12 @@
             let svgWidth = Number(this.svg.getAttribute("viewBox").split(" ")[2]);
             tooltip.setAttribute("x",this.pt.x);
             tooltip.setAttribute("y",this.pt.y);
-      
-            let translate_elements = window.getComputedStyle(evt.target.parentElement).transform;
-            let scale_elements = window.getComputedStyle(evt.target).transform;
-      
-            let scaleX = scale_elements.split(", ")[0].split("matrix(")[1];
-            let translateX = translate_elements.split(", ")[4];
+            
+            let translate_elements = evt.target.parentElement.getAttribute("transform");
+            let scale_elements = evt.target.getAttribute("transform");
+            
+            let scaleX = scale_elements.split(/scale\(| /)[1];
+            let translateX = translate_elements.split(/translate\(| /)[1];
             let tip_JSON = evt.target.getAttribute("data");
             let tip_data = JSON.parse(tip_JSON);
             let pt_index = Math.round((this.pt.x - Math.round(translateX) ) / scaleX - 0.5);
