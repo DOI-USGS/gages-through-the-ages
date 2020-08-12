@@ -2675,7 +2675,7 @@
       <svg
         id="infographic"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1100 1800"
+        viewBox="0 30 1100 1730"
         aria-hidden="true"
       >
         <g class="cls-1">
@@ -2855,7 +2855,7 @@
             </text>
             <text
               class="text-big"
-              transform="translate(555 1361.2)"
+              transform="translate(555 1381.2)"
             >
               and <tspan font-weight="700">over 1,400 state and<tspan
                 x="10"
@@ -3785,7 +3785,7 @@
                 flood forecasting
               </text>
               <text transform="translate(600 990)">
-                hydopower plants
+                energy production 
               </text>
               <text transform="translate(600 1030)">
                 recreation
@@ -3802,31 +3802,31 @@
                 font-style="italic"
                 transform="translate(696 950)"
               >
-                What was the storm surge?
+                How high will the water get?
               </text>
               <text
                 font-style="italic"
                 transform="translate(696 990)"
               >
-                How much water can I release?
+                How many turbines can I run?
               </text>
               <text
                 font-style="italic"
                 transform="translate(696 1030)"
               >
-                Can trout live in this each?
+                Are conditions good for fishing?
               </text>
               <text
                 font-style="italic"
                 transform="translate(696 1070)"
               >
-                How high is the river?
+                How deep is the channel?
               </text>
               <text
                 font-style="italic"
                 transform="translate(696 1110)"
               >
-                What rivers are at risk?
+                Which roads are flooded?
               </text>
             </g>
             <g transform="translate(-210, -295) scale(1.3)">
@@ -3855,14 +3855,14 @@
             class="text-big"
             transform="translate(100 1017.2)"
           >
-            That data is critical <tspan
+            These data are critical <tspan
               x="0"
               y="28.8"
-            >for</tspan> <tspan font-weight="700">water management.</tspan>
+            >for</tspan> <tspan font-weight="700">water decisions.</tspan>
           </text>
           <g
             id="nwis-cell"
-            transform="translate(-190, -300) scale(1.3, 1.3)"
+            transform="translate(445, -200) scale(1.3, 1.3)"
           >
             <path
               d="M459.3 961.1c3.7-7.5-6.8-24.9-17.5-26.1M468.7 966.4c5.2-12.6-10.8-41.4-28.5-40.9M450.3 958.8c2.3-5.2-3.4-14.6-9.6-14.5"
@@ -3970,25 +3970,17 @@
               </text>
               <g>
                 <text transform="translate(696 750)">
-                  72
+                  72°
                 </text>
-                <path
-                  d="M724.1 740.3a3.5 3.5 0 01-1.4-.3 2.3 2.3 0 01-1.2-.6 3.1 3.1 0 01-.9-1.1 3.2 3.2 0 01-.3-1.4 3.3 3.3 0 01.3-1.5 2.2 2.2 0 01.9-1 3.5 3.5 0 011.2-.7 3.4 3.4 0 011.4-.2 3.9 3.9 0 011.5.2l1.2.7a2 2 0 01.8 1 2.4 2.4 0 01.4 1.5 2.3 2.3 0 01-.4 1.4 2.8 2.8 0 01-.8 1.1 3.4 3.4 0 01-1.2.6 4 4 0 01-1.5.3zm0-1.6a1.3 1.3 0 001.1-.5 1.8 1.8 0 00.4-1.3 2.1 2.1 0 00-.4-1.4 1.3 1.3 0 00-1.1-.5 1.4 1.4 0 00-1.1.5 2.9 2.9 0 00-.3 1.4 2.5 2.5 0 00.3 1.3 1.4 1.4 0 001.1.5z"
-                  class="cls-5"
-                />
               </g>
               <text transform="translate(696 830)">
                 8.7 mg/L
               </text>
               <g>
                 <text transform="translate(696 790)">
-                  150
+                  150 μS/cm
                 </text>
               </g>
-              <path
-                d="M740.1 772.8v6.3a3.6 3.6 0 01-.8.9l-.9.2a1 1 0 01-.9-.4 4.6 4.6 0 01-.3-.9v-6.1h-2.8v13.1h2.8v-3.3h.2a2.7 2.7 0 001.6-.4 7.5 7.5 0 001.4-1.2l.2 1.4h2.3v-9.6zM749.5 782.6a6.9 6.9 0 01-2.5-.4 7.4 7.4 0 01-2.2-1.4l1.6-1.9a11.9 11.9 0 001.5.9 5.3 5.3 0 001.6.4 2 2 0 001.4-.4 1.2 1.2 0 00.4-.8 4.3 4.3 0 00-.1-.5.8.8 0 00-.4-.4l-.6-.3-.7-.3-1.7-.7-.9-.5a3 3 0 01-.8-.8 7 7 0 01-.6-.9 5.1 5.1 0 01-.2-1.3 2.3 2.3 0 01.4-1.4 2.7 2.7 0 01.9-1.2 4.7 4.7 0 011.4-.8 4.8 4.8 0 011.8-.3 9.3 9.3 0 012.2.4 4.6 4.6 0 011.8 1.3l-1.4 1.8a4.2 4.2 0 00-1.2-.8 3.4 3.4 0 00-1.4-.2 2.1 2.1 0 00-1.2.3.8.8 0 00-.4.8.9.9 0 00.1.5l.4.3.6.4c.3 0 .5.2.8.3l1.6.6a4.2 4.2 0 011.8 1.3 2.8 2.8 0 01.7 2.1 4 4 0 01-.3 1.5 2.7 2.7 0 01-.9 1.2 4.6 4.6 0 01-1.5.9 6.4 6.4 0 01-2 .3zM755.1 785.4l3.9-16.7h1.8l-3.9 16.7zM766.4 782.6a5.7 5.7 0 01-1.8-.3 5.6 5.6 0 01-1.5-1 3.7 3.7 0 01-1-1.6 5.7 5.7 0 010-4.2 6.4 6.4 0 011.1-1.6l1.6-1a5.8 5.8 0 011.9-.3 4.1 4.1 0 011.6.3l1.2.7-1.3 1.9a2.2 2.2 0 00-1.3-.6 2.1 2.1 0 00-1.7.7 3.6 3.6 0 000 4 2 2 0 001.6.7 1.5 1.5 0 00.9-.2l.8-.5 1.1 1.9a3.7 3.7 0 01-1.5.8 5.1 5.1 0 01-1.7.3zM771.6 782.5V773h2.4v1.2h.1l1.3-1a2.8 2.8 0 011.6-.5 2.5 2.5 0 011.6.5 1.8 1.8 0 011 1.1l1.4-1.1a2.8 2.8 0 011.6-.5 2.6 2.6 0 012.3 1.1 4.7 4.7 0 01.7 2.8v5.9h-2.8V777a2.8 2.8 0 00-.3-1.5 1.3 1.3 0 00-.9-.4c-.5 0-1 .4-1.6 1v6.4h-2.8V777a2.8 2.8 0 00-.3-1.5 1.3 1.3 0 00-.9-.4c-.5 0-1 .4-1.6 1v6.4z"
-                class="cls-5"
-              />
             </g>
  
             <text
