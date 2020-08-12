@@ -2662,32 +2662,21 @@
     <caption id="svgcaption">
       {{ text.caption }}
     </caption>
-    <div id="textWrapArea">
-      <div id="gageImageContainer">
-        <!-- <div id="gageImage">
-          <picture>
-            <source
-              srcset="@/assets/images/gage/gageLarge.webp"
-              type="image/webp"
-            >
-            <img
-              src="@/assets/images/gage/gageLarge.jpg"
-              alt="Mississippi River Gage and Bridge in the background."
-            >
-          </picture>
-          <caption>USGS Stream Gage along the Mississippi River.</caption>
-        </div> -->
-        <p v-html="text.paragraphText1" />
-      </div>
-      <p class="clear">
+    
+    <div class="screenreader">
+      <p>{{ text.svgText }}</p>
+      <p v-html="text.paragraphText1" />
+      <p>
         {{ text.paragraphText2 }}
       </p>
     </div>
+    
     <div>
       <svg
         id="infographic"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 30 1100 1730"
+        aria-hidden="true"
       >
         <g class="cls-1">
           <path
@@ -4101,10 +4090,6 @@
         </g>
       </svg>
     </div>
-    
-    <!-- <div>
-      <p>{{ text.svgText }}</p>
-    </div> -->
   </div>
 </template>
 <script>
@@ -4477,6 +4462,13 @@ $axis: rgb(100,100,100);
       width: 100%;
       height: 506px;
     }
+  }
+  /*Text version of information captured by infographic
+  This class leaves it in the site for a screen reader 
+  but hides it from view*/
+  .screenreader {
+    position: absolute;
+    left:-9999px;
   }
   /*Manually copied in CSS from the SVG infographic*/
   .svg-lines  {
