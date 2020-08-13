@@ -229,6 +229,17 @@ export default {
 }
 </script>
 <style scoped lang='scss'>
+
+// Import Colors
+$stateFill: #e4e4e3;
+$white: rgb(255,255,255);
+$axis: rgb(100,100,100);
+$lightGray:rgb(237,237,237);
+$darkGray: rgb(51,51,51);
+$brightBlue: rgb(9,98,178);
+$usgsGreen: rgb(51,120,53);
+$brightYellow: rgb(255,200,51);
+
 @import /* webpackPrefetch: true */ '~mapbox-gl/dist/mapbox-gl.css';
 @import /* webpackPrefetch: true */ '~mapbox-gl-compare/dist/mapbox-gl-compare.css';
 .spacer{
@@ -316,10 +327,10 @@ $ScaleColor: rgb(120,120,120);
     border-radius: 50%;
   }
   .urbanGage{
-    background: #f7bb2e;
+    background: $brightBlue;
   }
   .ruralGage{
-    background: #b087bd;
+    background: $brightBlue;
   }
   .urbanPolygon{
     background-image: url($polygon);

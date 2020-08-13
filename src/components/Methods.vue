@@ -9,7 +9,7 @@
         v-for="method in methods.methods"
         :key="method.title"
       >
-        <h2 class="usa-accordion__heading">
+        <h3 class="usa-accordion__heading">
           <button
             class="usa-accordion__button"
             aria-expanded="false"
@@ -18,7 +18,7 @@
           >
             {{ method.title }}
           </button>
-        </h2>
+        </h3>
         <div
           :id="method.title"
           class="usa-accordion__content usa-prose gage-target"
@@ -60,6 +60,18 @@
 <style lang="scss" scoped>
 $chevronLeft: '~@/assets/images/chevron-left.png';
 $chevronDown: '~@/assets/images/chevron-down.png';
+
+// Import Colors
+$stateFill: #e4e4e3;
+$white: rgb(255,255,255);
+$axis: rgb(100,100,100);
+$lightGray:rgb(237,237,237);
+$darkGray: rgb(51,51,51);
+$brightBlue: rgb(9,98,178);
+$usgsGreen: rgb(51,120,53);
+$brightYellow: rgb(255,200,51);
+
+
   h2{
     margin-bottom: 10px;
   }
@@ -69,14 +81,14 @@ $chevronDown: '~@/assets/images/chevron-down.png';
   .usa-accordion__button{
     background-image: url($chevronDown);
     background-size: 15px 10px;
-    background-color:  #00264c;
+    background-color: $brightBlue;
     color: white;
   }
   .usa-accordion__button[aria-expanded=false]{
     background-image: url($chevronLeft);
     background-size: 10px 15px;
     background-color: rgb(241, 240, 240);
-    color: #00264c;
+    color: $brightBlue;
   }
 
 #app h2.usa-accordion__heading {
