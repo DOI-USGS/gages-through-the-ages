@@ -1994,7 +1994,6 @@ $polygon: '~@/assets/images/polygon.png';
 #cartogram-svg {
   width:150%;
   height: auto;
-  shape-rendering: crispEdges;
 
 .state-label{
   font-size: 12px;
