@@ -210,7 +210,7 @@
         :key="method.title + '-1'"
         class="headings"
       >
-        <h2 class="usa-accordion__heading">
+        <h4 class="usa-accordion__heading">
           <button
             v-if="window.width > 770"
             class="usa-accordion__button"
@@ -229,7 +229,7 @@
           >
             {{ method.timePeriod }}
           </button>
-        </h2>
+        </h4>
       </div>
       <div
         v-for="method in methods.methods"
@@ -310,6 +310,19 @@
 <style scoped lang="scss">
 $chevronLeft: '~@/assets/images/chevron-left.png';
 $chevronDown: '~@/assets/images/chevron-down.png';
+$stateFill: #e4e4e3;
+$white: rgb(255,255,255);
+$axis: rgb(100,100,100);
+$lightGray:rgb(237,237,237);
+$darkGray: rgb(51,51,51);
+$brightBlue: rgb(9,98,178);
+$usgsGreen: rgb(51,120,53);
+$brightYellow: rgb(255,200,51);
+
+#newTimeline{
+  margin-top: 100px;
+}
+
 .custom-tabbed-accordion {
   display: grid;
   grid-template-columns: 30% 30% 40%;
@@ -319,7 +332,7 @@ $chevronDown: '~@/assets/images/chevron-down.png';
   .usa-accordion__button {
     background-image: url($chevronDown);
     background-size: 15px 10px;
-    background-color:  #00264c;
+    background-color:  $brightBlue;
     min-height: 5.5em;
     color: white;
     text-align: center;
@@ -328,7 +341,7 @@ $chevronDown: '~@/assets/images/chevron-down.png';
     background-image: url($chevronLeft);
     background-size: 10px 15px;
     background-color: rgb(241, 240, 240);
-    color: #00264c;
+    color: $darkGray;
     min-height: 5.5em;
   }
   .content {
@@ -338,15 +351,16 @@ $chevronDown: '~@/assets/images/chevron-down.png';
 #timeline {
     width: 100%;
 }
-#annotations-arrows-up  {
-    fill:#00264c;
+#annotations-arrows-up {
+    fill: $brightBlue;
 }
 #annotations-text {
+    color: $darkGray;
     font-size:8px;
     font-weight: 800;
 }
 .highlight {
-  fill:#00264c;
+  fill: $brightBlue;
     stroke-miterlimit:10; 
     stroke-width:.35px;
     opacity: .8;

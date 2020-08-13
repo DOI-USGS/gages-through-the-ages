@@ -50,6 +50,34 @@
 </script>
 
 <style lang="scss">
+
+// Import fonts
+
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: url('/src/fonts/SourceSansPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src: url('/fonts/SourceSansPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+}
+
+// Import Colors
+$stateFill: #e4e4e3;
+$white: rgb(255,255,255);
+$axis: rgb(100,100,100);
+$lightGray:rgb(237,237,237);
+$darkGray: rgb(51,51,51);
+$brightBlue: rgb(9,98,178);
+$usgsGreen: rgb(51,120,53);
+$brightYellow: rgb(255,200,51);
+
+// General CSS
   body{
     margin: 0;
     padding: 0;
@@ -57,13 +85,21 @@
       display: none;
     }
   }
+  
   #app {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
     h1,h2{
-      color: #003366;
+      color: black;
       margin: 20px 0;
+    }
+    h2{
+      font-size: 2em;
+      margin-top: 80px;
+    }
+    h3{
+      font-size: 1.4em;
     }
     caption,p{
       color: #2c3e50;
@@ -95,7 +131,7 @@
   a{
     text-decoration:none;
     cursor:pointer;
-    color: #003366;
+    color: $brightBlue;
     font-weight: 600;
   }
 
@@ -104,7 +140,7 @@
   }
 
   body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'SourceSansPro-Regular', Arial, Helvetica, sans-serif;
   }
 
   figure{
