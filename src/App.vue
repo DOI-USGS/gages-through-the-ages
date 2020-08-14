@@ -3,7 +3,6 @@
     <HeaderUSWDSBanner />
     <HeaderUSGS />
     <InternetExplorerPage v-if="isInternetExplorer" />
-    <WorkInProgressWarning v-if="checkTypeOfEnv !== '' & !isInternetExplorer" />
     <router-view v-if="!isInternetExplorer" />
     <FooterLinks v-if="!isInternetExplorer & checkIfBarChartIsRendered" />
     <PreFooterCodeLinks v-if="checkIfBarChartIsRendered || isInternetExplorer" />
@@ -14,7 +13,6 @@
 <script>
     import HeaderUSWDSBanner from './components/HeaderUSWDSBanner'
     import HeaderUSGS from './components/HeaderUSGS'
-    import WorkInProgressWarning from "./components/WorkInProgressWarning"
     import InternetExplorerPage from "./components/InternetExplorerPage";
 
     export default {
@@ -22,7 +20,6 @@
         components: {
             HeaderUSWDSBanner,
             HeaderUSGS,
-            WorkInProgressWarning,
             InternetExplorerPage,
             FooterLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-visualizations"*/ "./components/FooterLinks"),
             PreFooterCodeLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-code"*/ "./components/PreFooterCodeLinks"),
