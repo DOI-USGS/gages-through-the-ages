@@ -21,9 +21,9 @@ targets:
   
   # Overall SVG height and width in pixels
   svg_w:
-    command: c(I(800))
+    command: c(I(770))
   svg_h:
-    command: c(I(500))
+    command: c(I(420))
   
   # This is the config data comes from Colleen's manual 
   # placement and sizing of the bar charts. It is a 
