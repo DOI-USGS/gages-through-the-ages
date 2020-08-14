@@ -3,7 +3,7 @@
     id="references"
     class="section"
   >
-    <h2>{{ title }}</h2>
+    <h2><span class="lowlight">{{ title }}</span></h2>
     <div
       v-for="reference in references"
       :key="reference.reference"

@@ -83,6 +83,7 @@ $brightYellow: rgb(255,200,51);
     h2{
       font-size: 2em;
       margin-top: 80px;
+  
     }
     h3{
       font-size: 1.4em;
@@ -90,6 +91,11 @@ $brightYellow: rgb(255,200,51);
     caption,p{
       color: $darkGray;
     }
+    .lowlight {
+        background: linear-gradient(180deg,rgba(255,255,255,0) 70%, $brightYellow 30%);
+        padding: 10px 10px 0 10px;
+        line-height: 1.3em;
+      }
   }
   caption{
     width: 100%;

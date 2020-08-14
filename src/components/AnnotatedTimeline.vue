@@ -3,7 +3,7 @@
     id="annotated-bar-chart"
     class="section"
   >
-    <h2>{{ text.title }}</h2>
+    <h2><span class="lowlight">{{ text.title }}</span></h2>
     <div id="imageArea">
       <div id="oldTimeyImage">
         <picture>

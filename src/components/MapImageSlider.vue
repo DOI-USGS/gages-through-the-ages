@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <h2>{{ atlantaText.title }}</h2>
+    <h2><span class="lowlight">{{ atlantaText.title }}</span></h2>
     <div
       v-for="paragraph in atlantaText.paragraphSections"
       :key="paragraph.aboveMapText"

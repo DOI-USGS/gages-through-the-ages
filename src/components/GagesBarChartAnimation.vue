@@ -7,9 +7,12 @@
       id="title-container"
       class="container"
     >
-      <h1 class="main-title">
-        {{ text.title }}
-      </h1>
+      <h1 class="main-title"><span class="lowlight">
+        {{ text.title1 }}
+      </span></h1>
+      <h1 class="main-title"><span class="lowlight">
+        {{ text.title2 }}
+      </span></h1>
       <h3 class="subtitle">
         {{ text.introText }}
       </h3>
@@ -5875,8 +5878,11 @@ $brightYellow: rgb(255,200,51);
   }
   .subtitle {
     text-align: center;
-    font-size: 1.7em;
+    margin-top: 2em;
   }
+  .lowlight {
+  background: linear-gradient(180deg,rgba(255,255,255,0) 70%, $brightYellow 30%);
+}
   #svgcaption{
     margin-bottom: 40px;
   }

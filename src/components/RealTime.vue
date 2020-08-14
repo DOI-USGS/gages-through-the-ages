@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <h2>{{ realtime.title }}</h2>
+    <h2><span class="lowlight">{{ realtime.title }}</span></h2>
     <p v-html="realtime.paragraphText" />
   </div>
 </template>
