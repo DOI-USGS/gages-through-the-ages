@@ -6,7 +6,7 @@ export default {
         paragraphSections: [
             {aboveMapText: "The evolving local, regional, and national water monitoring priorities have steered growth and retirement of gages through time. Early USGS streamgages were distributed widely across the landscape, while newer gages have been placed strategically to meet the needs of the era. State-level patterns in gages are the unique fingerprints of changing water priorities."
             },
-            {aboveSliderText: "An example of evolving water-data needs is in the metro area of Atlanta, Georgia, where population increased five-fold between 1967 and 2018, major increases in urban gages (see orange dots in the map below) were motivated by the need to better plan for floods and droughts—as well as new regulatory demands and the complex litigation of water uses between Atlanta and downstream communities."}
+            {aboveSliderText: "An example of evolving water-data needs is in the metro area of Atlanta, Georgia, where population increased five-fold between 1967 and 2018, major increases in urban gages (see blue dots in the map below) were motivated by the need to better plan for floods and droughts—as well as new regulatory demands and the complex litigation of water uses between Atlanta and downstream communities."}
         ]
     }
 };
