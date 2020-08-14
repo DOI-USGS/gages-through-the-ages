@@ -2,7 +2,7 @@ export default {
     textContents: {
         title1: "Gages Through",
         title2: "the Ages",
-        introText: "The history of streamgages reflects",
+        introText: "How the history of streamgaging reflects",
         introText2: "the evolving water needs of the nation",
         graphTitle: "",
         caption:"U.S. Geological Survey’s active streamgages since 1889 until present day",
