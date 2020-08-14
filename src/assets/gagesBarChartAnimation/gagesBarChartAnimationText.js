@@ -1,7 +1,9 @@
 export default {
     textContents: {
-        title: "Gages Through the Ages ",
-        introText: "A visual history of streamgaging in the US ",
+        title1: "Gages Through",
+        title2: "the Ages",
+        introText: "The history of streamgages reflects",
+        introText2: "the evolving water needs of the nation",
         graphTitle: "",
         caption:"U.S. Geological Survey’s active streamgages since 1889 until present day",
         svgText: "The U.S. Geological Survey (USGS) Streamgaging Program is funded by both Congress and over 1,400 state and local partner agencies to monitor river water levels and flow, and to support water-quality monitoring across the U.S.",

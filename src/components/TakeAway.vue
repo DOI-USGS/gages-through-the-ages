@@ -3,7 +3,7 @@
     id="takeaway"
     class="section"
   >
-    <h2>{{ text.title }}</h2>
+    <h2><span class="lowlight">{{ text.title }}</span></h2>
     <div
       v-for="paragraph in text.paragraphSections"
       :key="paragraph.paragraphText"

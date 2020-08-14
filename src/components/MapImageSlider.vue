@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <h2>{{ atlantaText.title }}</h2>
+    <h2><span class="lowlight">{{ atlantaText.title }}</span></h2>
     <div
       v-for="paragraph in atlantaText.paragraphSections"
       :key="paragraph.aboveMapText"
@@ -1961,10 +1961,10 @@ $polygon: '~@/assets/images/polygon.png';
   left: 5px; 
 }
 .beer-handle{
-    background: $brightBlue;
+    background: $darkGray;
 }
 .beer-ready .beer-handle, .beer-ready .beer-reveal{
-    border-right: 2px solid $brightBlue;
+    border-right: 2px solid $darkGray;
 }
 .beer-handle:before, .beer-handle:after{
     border-left: 2px solid #fff;
