@@ -5794,29 +5794,75 @@
             </g>
           </g>
           <g id="water-data-quality-text">
-            <text class="cls-16" transform="translate(205.3 992.2)">Some even collect <tspan class="cls-32"><tspan class="cls-21" x="0" y="28.8">w</tspan><tspan class="cls-82" x="18.4" y="28.8">at</tspan><tspan x="39.4" y="28.8">er quality d</tspan><tspan class="cls-82" x="159.9" y="28.8">a</tspan><tspan class="cls-17" x="172.1" y="28.8">t</tspan><tspan class="cls-26" x="180.8" y="28.8">a </tspan><tspan class="cls-82" x="198.3" y="28.8">t</tspan><tspan x="207" y="28.8">o</tspan><tspan class="cls-21" x="220.4" y="28.8">o</tspan><tspan x="233.4" y="28.8">.</tspan></tspan></text>
-            <path class="cls-83" d="M522,963.5H504.2a6.1,6.1,0,0,0-6.1,6.1V1055a6.1,6.1,0,0,0,6.1,6.1H522"/>
-            <path class="cls-83" d="M456.2,1012.5c15.9,3.4,41.9-7,41.9-7"/>
+            <text
+              class="cls-16"
+              transform="translate(205.3 992.2)"
+            >Some even collect <tspan class="cls-32"><tspan
+              class="cls-21"
+              x="0"
+              y="28.8"
+            >w</tspan><tspan
+              class="cls-82"
+              x="18.4"
+              y="28.8"
+            >at</tspan><tspan
+              x="39.4"
+              y="28.8"
+            >er quality d</tspan><tspan
+              class="cls-82"
+              x="159.9"
+              y="28.8"
+            >a</tspan><tspan
+              class="cls-17"
+              x="172.1"
+              y="28.8"
+            >t</tspan><tspan
+              class="cls-26"
+              x="180.8"
+              y="28.8"
+            >a </tspan><tspan
+              class="cls-82"
+              x="198.3"
+              y="28.8"
+            >t</tspan><tspan
+              x="207"
+              y="28.8"
+            >o</tspan><tspan
+              class="cls-21"
+              x="220.4"
+              y="28.8"
+            >o</tspan><tspan
+              x="233.4"
+              y="28.8"
+            >.</tspan></tspan></text>
+            <path
+              class="cls-83"
+              d="M522,963.5H504.2a6.1,6.1,0,0,0-6.1,6.1V1055a6.1,6.1,0,0,0,6.1,6.1H522"
+            />
+            <path
+              class="cls-83"
+              d="M456.2,1012.5c15.9,3.4,41.9-7,41.9-7"
+            />
           </g>
           <g id="water-data-text">
             <text
               class="cls-16"
               transform="translate(202.1 846)"
             >Active gages collect
-            <tspan
-              class="cls-33"
-              x="192.6"
-              y="0"
-            >water data</tspan>
-            <tspan
-              x="0"
-              y="28.8"
-            >and transmit it in</tspan>
-            <tspan
-              class="cls-33"
-              x="171.5"
-              y="28.8"
-            >real time.</tspan></text>
+              <tspan
+                class="cls-33"
+                x="192.6"
+                y="0"
+              >water data</tspan>
+              <tspan
+                x="0"
+                y="28.8"
+              >and transmit it in</tspan>
+              <tspan
+                class="cls-33"
+                x="171.5"
+                y="28.8"
+              >real time.</tspan></text>
           </g>
           <g id="main-gage-dot-and-arrow">
             <circle
