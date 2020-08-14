@@ -2683,7 +2683,7 @@
       <svg
         id="infographic"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 30 1100 2200"
+        viewBox="0 200 1100 2000"
         aria-hidden="true"
       >
         <g class="cls-1">
@@ -2691,10 +2691,6 @@
             <path
               class="cls-2"
               d="M913.1,1999.5c-62.7-1.3-191-1.2-253.9,0-80.9,1.4-215.7,1.2-286.8,0-194.2-3.3-373.1,1.6-373.1,1.6v162.7s123.3.3,186.7,1.6,191.1,1.1,254,0c80.8-1.5,215.6-1.2,286.8,0,194.1,3.2,373.1-1.6,373.1-1.6V2001.1S976.6,2000.8,913.1,1999.5Z"
-            />
-            <path
-              class="cls-2"
-              d="M913.1,1.9C850.4.7,722.1.8,659.2,1.9c-80.9,1.5-215.7,1.2-286.8,0C178.2-1.3-.7,3.5-.7,3.5V166.2s123.3.3,186.7,1.6,191.1,1.2,254,0c80.8-1.4,215.6-1.2,286.8,0,194.1,3.2,373.1-1.6,373.1-1.6V3.5S976.6,3.2,913.1,1.9Z"
             />
           </g>
           <g id="end-tiny-gages">
@@ -2843,20 +2839,21 @@
             </g>
           </g>
           <g id="end-text">
+
             <text
               class="cls-16"
-              transform="translate(369.1 2080.9)"
-            >The history of streamgages reflects<tspan class="cls-25"><tspan
-              x="-43.4"
-              y="28.8"
-            >the evolving water needs of the nation.</tspan></tspan></text>
-            <text
-              class="cls-16"
-              transform="translate(264.3 72.1)"
-            ><tspan class="cls-21">US monitoring of streams has changed a lot in 130 years.</tspan><tspan class="cls-25"><tspan
-              x="89.5"
-              y="34.8"
-            >But how has it changed, and why?</tspan></tspan></text>
+              transform="translate(264.3 2080.9)"
+            >
+              US monitoring of streams has changed a lot in 130 years.
+              <tspan class="cls-25">
+                <tspan
+                  x="89.5"
+                  y="28.8"
+                >
+                But how has it changed, and why?
+                </tspan>
+              </tspan>
+            </text>
           </g>
           <g id="funding-text">
             <text
@@ -5543,10 +5540,19 @@ $brightYellow: rgb(255,200,51);
     text-align: center;
     font-size: 5em;
     font-weight: 900;
+
+    @media screen and (max-width: 600px) {
+      font-size: 3em;
+    }
+   
   }
   .subtitle {
     text-align: center;
     margin-top: 2em;
+    @media screen and (max-width: 600px) {
+      font-size: 1.2em;
+    }
+
   }
   .lowlight {
   background: linear-gradient(180deg,rgba(255,255,255,0) 70%, $brightYellow 30%);
@@ -5636,7 +5642,6 @@ $brightYellow: rgb(255,200,51);
 
   #infographic  {
     width: 100%;
-    margin-top: 100px;
 
     .text-big {
       font-size: 26px;
