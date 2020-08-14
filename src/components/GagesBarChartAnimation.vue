@@ -2694,6 +2694,7 @@
         aria-hidden="true"
       >
         <g class="cls-1">
+          <g id="bottom" transform="translate(0, -120)">
           <g id="end-water-background">
             <path
               class="cls-2"
@@ -2862,6 +2863,7 @@
               </tspan>
             </text>
           </g>
+          </g>
           <g id="funding-text">
             <text
               class="cls-16"
@@ -2885,6 +2887,7 @@
               x="14.4"
               y="28.8"
             >local partner agencies.</tspan></tspan></text>
+            <g id="mgmt-text" transform="translate(0, -40)">
             <text
               class="cls-16"
               transform="translate(202 1864.5)"
@@ -2899,6 +2902,7 @@
               x="0"
               y="28.8"
             >which has been operating gages for the last 130 years.</tspan></text>
+          </g>
           </g>
           <g id="funding-partner-agencies">
             <g>
