@@ -170,9 +170,8 @@ add_tooltip_instructions <- function(svg_root) {
   
   # Add tooltip arrow
   svg_root %>% 
-    xml_add_child("path", id = "arrow", class = "annotate", transform = "translate(-142 -73)",
-                  d = "M446.47,402.11c-4.39-1.79,20.07,6.55,37.58.86a23.33,23.33,0,0,0,13.86-11.4l3,9.16L499.15,390l-11.31-.56,10.07,2.16",
-                  style = "fill: none; stroke: rgb(139, 139, 139); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3px;")
+    xml_add_child("path", id = "annotate-arrow", transform = "translate(-142 -73)",
+                  d = "M446.47,402.11c-4.39-1.79,20.07,6.55,37.58.86a23.33,23.33,0,0,0,13.86-11.4l3,9.16L499.15,390l-11.31-.56,10.07,2.16")
 }
 
 build_path_from_counts <- function(dat, mx = 0, my = 0) {
