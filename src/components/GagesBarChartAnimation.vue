@@ -2659,6 +2659,10 @@
         </g>
       </svg>
     </figure>
+    <caption id="svgcaption" class="screenreader">
+      {{ text.caption }}
+    </caption>
+    
     <div class="screenreader">
       <p>{{ text.svgText }}</p>
       <p v-html="text.paragraphText1" />
