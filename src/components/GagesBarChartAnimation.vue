@@ -5793,97 +5793,30 @@
               </g>
             </g>
           </g>
+          <g id="water-data-quality-text">
+            <text class="cls-16" transform="translate(205.3 992.2)">Some even collect <tspan class="cls-32"><tspan class="cls-21" x="0" y="28.8">w</tspan><tspan class="cls-82" x="18.4" y="28.8">at</tspan><tspan x="39.4" y="28.8">er quality d</tspan><tspan class="cls-82" x="159.9" y="28.8">a</tspan><tspan class="cls-17" x="172.1" y="28.8">t</tspan><tspan class="cls-26" x="180.8" y="28.8">a </tspan><tspan class="cls-82" x="198.3" y="28.8">t</tspan><tspan x="207" y="28.8">o</tspan><tspan class="cls-21" x="220.4" y="28.8">o</tspan><tspan x="233.4" y="28.8">.</tspan></tspan></text>
+            <path class="cls-83" d="M522,963.5H504.2a6.1,6.1,0,0,0-6.1,6.1V1055a6.1,6.1,0,0,0,6.1,6.1H522"/>
+            <path class="cls-83" d="M456.2,1012.5c15.9,3.4,41.9-7,41.9-7"/>
+          </g>
           <g id="water-data-text">
             <text
               class="cls-16"
               transform="translate(202.1 846)"
-            >A<tspan
-              class="cls-21"
-              x="12.6"
-              y="0"
-            >c</tspan><tspan
-              x="23.2"
-              y="0"
-            >tive </tspan><tspan
-              class="cls-23"
-              x="63"
-              y="0"
-            >g</tspan><tspan
-              class="cls-39"
-              x="74.3"
-              y="0"
-            >a</tspan><tspan
-              class="cls-18"
-              x="86.1"
-              y="0"
-            >g</tspan><tspan
-              x="97.5"
-              y="0"
-            >es </tspan><tspan
-              class="cls-80"
-              x="123.6"
-              y="0"
-            >c</tspan><tspan
-              x="134"
-              y="0"
-            >olle</tspan><tspan
-              class="cls-21"
-              x="169.8"
-              y="0"
-            >c</tspan><tspan
-              x="180.3"
-              y="0"
-            >t </tspan><tspan
+            >Active gages collect
+            <tspan
               class="cls-33"
               x="192.6"
               y="0"
-            >w</tspan><tspan
-              class="cls-81"
-              x="211"
-              y="0"
-            >at</tspan><tspan
-              class="cls-32"
-              x="232"
-              y="0"
-            >er d</tspan><tspan
-              class="cls-36"
-              x="272.5"
-              y="0"
-            >a</tspan><tspan
-              class="cls-35"
-              x="284.7"
-              y="0"
-            >t</tspan><tspan
-              class="cls-82"
-              x="293.4"
-              y="0"
-            >a </tspan><tspan
+            >water data</tspan>
+            <tspan
               x="0"
               y="28.8"
-            >and t</tspan><tspan
-              class="cls-31"
-              x="49.9"
-              y="28.8"
-            >r</tspan><tspan
-              x="57"
-              y="28.8"
-            >ansmit it </tspan><tspan
-              class="cls-32"
-              x="146.3"
-              y="28.8"
-            >in </tspan><tspan
+            >and transmit it in</tspan>
+            <tspan
               class="cls-33"
               x="171.5"
               y="28.8"
-            >r</tspan><tspan
-              class="cls-83"
-              x="180.8"
-              y="28.8"
-            >e</tspan><tspan
-              class="cls-32"
-              x="193"
-              y="28.8"
-            >al time. </tspan></text>
+            >real time.</tspan></text>
           </g>
           <g id="main-gage-dot-and-arrow">
             <circle
@@ -6445,7 +6378,7 @@ $brightYellow: rgb(255,200,51);
         opacity: 0.15;
       }
 
-      .cls-11, .cls-14, .cls-3, .cls-66, .cls-7, .cls-85, .cls-90, .cls-91 {
+      .cls-11, .cls-14, .cls-3, .cls-66, .cls-7, .cls-83, .cls-85, .cls-90, .cls-91 {
         fill: none;
       }
 
@@ -6453,11 +6386,11 @@ $brightYellow: rgb(255,200,51);
         stroke: #063d66;
       }
 
-      .cls-3, .cls-66, .cls-7, .cls-85, .cls-90 {
+      .cls-3, .cls-66, .cls-7, .cls-83, .cls-85, .cls-90 {
         stroke-linecap: round;
       }
 
-      .cls-3, .cls-4, .cls-66, .cls-7, .cls-85, .cls-90 {
+      .cls-3, .cls-4, .cls-66, .cls-83, .cls-7, .cls-85, .cls-90 {
         stroke-linejoin: round;
       }
 
@@ -6781,6 +6714,11 @@ $brightYellow: rgb(255,200,51);
         letter-spacing: -0.02em;
       }
 
+      .cls-83 {
+        stroke: #333;
+        stroke-width: 2px;
+      }
+
       .cls-85 {
         stroke: #ededed;
       }
@@ -6794,6 +6732,6 @@ $brightYellow: rgb(255,200,51);
       }
 
       .cls-91 {
-        stroke-width: 1.44px;
+        stroke-width: 2px;
       }
 </style>
