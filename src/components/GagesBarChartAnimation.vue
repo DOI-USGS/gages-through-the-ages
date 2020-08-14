@@ -5870,7 +5870,8 @@ $brightYellow: rgb(255,200,51);
   }
   .title{
     text-align: center;
-    font-size: 3em;
+    font-size: 5em;
+    font-weight: 900;
   }
   .subtitle {
     text-align: center;
@@ -5941,11 +5942,12 @@ $brightYellow: rgb(255,200,51);
   .tooltip-text {
     z-index: 100;
     opacity: 1;
+    fill: white;
   }
   .tooltip-box, .tooltip-point {
     stroke: none;
     opacity: 0.85;
-    fill: white;
+    fill: $darkGray;
   }
   .tooltip-box.hidden, .tooltip-point.hidden {
     opacity: 0;
