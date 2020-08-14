@@ -1961,10 +1961,10 @@ $polygon: '~@/assets/images/polygon.png';
   left: 5px; 
 }
 .beer-handle{
-    background: $brightBlue;
+    background: $darkGray;
 }
 .beer-ready .beer-handle, .beer-ready .beer-reveal{
-    border-right: 2px solid $brightBlue;
+    border-right: 2px solid $darkGray;
 }
 .beer-handle:before, .beer-handle:after{
     border-left: 2px solid #fff;

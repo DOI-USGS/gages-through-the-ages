@@ -87,6 +87,7 @@ $brightYellow: rgb(255,200,51);
     }
     h3{
       font-size: 1.4em;
+      padding-top: .5em;
     }
     caption,p{
       color: $darkGray;

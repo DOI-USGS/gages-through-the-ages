@@ -13,9 +13,14 @@
       <h1 class="main-title"><span class="lowlight">
         {{ text.title2 }}
       </span></h1>
-      <h3 class="subtitle">
-        {{ text.introText }}
-      </h3>
+      <div class="subtitle">
+        <h3>
+          {{ text.introText }}
+        </h3>
+        <h3>
+          {{ text.introText2 }}
+        </h3>
+      </div>
     </div>
     <figure>
       <svg
