@@ -50,22 +50,8 @@
 </script>
 
 <style lang="scss">
-
-// Import fonts
-
-@font-face {
-  font-family: 'SourceSansPro-Regular';
-  src: url('/src/fonts/SourceSansPro-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'SourceSansPro-Bold';
-  src: url('/fonts/SourceSansPro-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: bold;
-}
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
 // Import Colors
 $stateFill: #e4e4e3;
