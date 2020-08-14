@@ -1774,7 +1774,7 @@
         >State-level trends in USGS streamgaging<tspan
           x="0"
           y="10"
-        >1890 - present</tspan></text>
+        >from 1890 to present</tspan></text>
         <text
           id="annotate-svg"
           transform="translate(175 325)"
@@ -2009,12 +2009,6 @@ $polygon: '~@/assets/images/polygon.png';
 #cartogram-svg {
   width:150%;
   height: auto;
-
-  #title-svg {
-    fill: rgb(139, 139, 139);
-    font-style: italic;
-    font-size: 10px;
-  }
 
 .state-label{
   font-size: 8px;

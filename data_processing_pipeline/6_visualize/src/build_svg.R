@@ -155,7 +155,7 @@ add_title <- function(svg_root) {
     xml_add_child("text", id = "title-svg", transform = "translate(0 0)",
                   style = "font-size: 10px; font-style: italic; fill: rgb(139, 139, 139);",
                   "State-level trends in USGS streamgaging") %>% 
-    xml_add_child("tspan", x=0, y=15, "1890 - present")
+    xml_add_child("tspan", x=0, y=15, "from 1890 to present")
   
 }
 
