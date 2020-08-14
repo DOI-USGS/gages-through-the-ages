@@ -4831,237 +4831,43 @@
               <text
                 class="cls-53"
                 transform="translate(508.2 1184.5)"
-              >flood <tspan
-                class="cls-54"
-                x="37"
-                y="0"
-              >f</tspan><tspan
-                x="41"
-                y="0"
-              >o</tspan><tspan
-                class="cls-55"
-                x="49.6"
-                y="0"
-              >r</tspan><tspan
-                x="54.5"
-                y="0"
-              >e</tspan><tspan
-                class="cls-54"
-                x="62.2"
-                y="0"
-              >c</tspan><tspan
-                x="69.3"
-                y="0"
-              >a</tspan><tspan
-                class="cls-56"
-                x="77.1"
-                y="0"
-              >s</tspan><tspan
-                x="83.3"
-                y="0"
-              >ting</tspan></text>
+              >flood forecasting</text>
               <text
                 class="cls-53"
                 transform="translate(507.8 1217.1)"
-              ><tspan class="cls-54">w</tspan><tspan
-                class="cls-57"
-                x="10.8"
-                y="0"
-              >at</tspan><tspan
-                x="23.3"
-                y="0"
-              >er a</tspan><tspan
-                class="cls-56"
-                x="47.1"
-                y="0"
-              >v</tspan><tspan
-                x="53.7"
-                y="0"
-              >ailability</tspan></text>
+              ><tspan class="cls-54">water availability</tspan></text>
               <text
                 class="cls-53"
                 transform="translate(550.9 1249.8)"
-              ><tspan class="cls-54">r</tspan><tspan
-                x="4.9"
-                y="0"
-              >ec</tspan><tspan
-                class="cls-55"
-                x="19.8"
-                y="0"
-              >r</tspan><tspan
-                class="cls-58"
-                x="24.7"
-                y="0"
-              >e</tspan><tspan
-                class="cls-57"
-                x="32.2"
-                y="0"
-              >a</tspan><tspan
-                x="39.9"
-                y="0"
-              >tion</tspan></text>
+              ><tspan class="cls-54">recreation</tspan></text>
               <text
                 class="cls-53"
                 transform="translate(502.6 1282.5)"
-              >power <tspan
-                class="cls-57"
-                x="44.2"
-                y="0"
-              >g</tspan><tspan
-                x="51.8"
-                y="0"
-              >ene</tspan><tspan
-                class="cls-59"
-                x="75.8"
-                y="0"
-              >r</tspan><tspan
-                class="cls-57"
-                x="80.5"
-                y="0"
-              >a</tspan><tspan
-                x="88.2"
-                y="0"
-              >tion</tspan></text>
+              >power generation</text>
               <text
                 class="cls-53"
                 transform="translate(455 1315.1)"
-              >eme<tspan
-                class="cls-54"
-                x="28.4"
-                y="0"
-              >r</tspan><tspan
-                class="cls-57"
-                x="33.3"
-                y="0"
-              >g</tspan><tspan
-                x="41"
-                y="0"
-              >en</tspan><tspan
-                class="cls-60"
-                x="57.2"
-                y="0"
-              >c</tspan><tspan
-                x="64.5"
-                y="0"
-              >y mana</tspan><tspan
-                class="cls-57"
-                x="111.9"
-                y="0"
-              >g</tspan><tspan
-                x="119.5"
-                y="0"
-              >ement</tspan></text>
+              >emergency management</text>
               <text
                 class="cls-61"
                 transform="translate(701.7 1184.5)"
-              >What was the s<tspan
-                class="cls-54"
-                x="94.2"
-                y="0"
-              >t</tspan><tspan
-                x="98.9"
-                y="0"
-              >orm su</tspan><tspan
-                class="cls-55"
-                x="142"
-                y="0"
-              >r</tspan><tspan
-                x="146.9"
-                y="0"
-              >ge?</tspan></text>
+              >What was the storm surge?</text>
               <text
                 class="cls-61"
                 transform="translate(701.7 1217.1)"
-              >Is the<tspan
-                class="cls-54"
-                x="33.2"
-                y="0"
-              >r</tspan><tspan
-                x="38.2"
-                y="0"
-              >e enough wa</tspan><tspan
-                class="cls-55"
-                x="119.5"
-                y="0"
-              >t</tspan><tspan
-                x="124.1"
-                y="0"
-              >er </tspan><tspan
-                class="cls-54"
-                x="139.7"
-                y="0"
-              >f</tspan><tspan
-                x="143.7"
-                y="0"
-              >or people and </tspan><tspan
-                class="cls-54"
-                x="234.5"
-                y="0"
-              >f</tspan><tspan
-                x="238.4"
-                y="0"
-              >arms?</tspan></text>
+              >Is there enough water for people and farms?</text>
               <text
                 class="cls-61"
                 transform="translate(701.7 1249.8)"
-              >A<tspan
-                class="cls-54"
-                x="7.8"
-                y="0"
-              >r</tspan><tspan
-                x="12.7"
-                y="0"
-              >e </tspan><tspan
-                class="cls-58"
-                x="23.3"
-                y="0"
-              >c</tspan><tspan
-                x="29.9"
-                y="0"
-              >onditions good </tspan><tspan
-                class="cls-55"
-                x="127.7"
-                y="0"
-              >f</tspan><tspan
-                x="131.7"
-                y="0"
-              >or fishing?</tspan></text>
+              >Are conditions good for fishing?</text>
               <text
                 class="cls-61"
                 transform="translate(701.7 1282.5)"
-              >How many <tspan
-                class="cls-54"
-                x="70.5"
-                y="0"
-              >t</tspan><tspan
-                x="75.1"
-                y="0"
-              >urbines </tspan><tspan
-                class="cls-58"
-                x="125.3"
-                y="0"
-              >c</tspan><tspan
-                x="132"
-                y="0"
-              >an I run?</tspan></text>
+              >How many turbines can I run?</text>
               <text
                 class="cls-61"
                 transform="translate(701.7 1315.1)"
-              >What rive<tspan
-                class="cls-62"
-                x="58.8"
-                y="0"
-              >r</tspan><tspan
-                x="63.8"
-                y="0"
-              >s a</tspan><tspan
-                class="cls-55"
-                x="81.4"
-                y="0"
-              >r</tspan><tspan
-                x="86.3"
-                y="0"
-              >e at risk?</tspan></text>
+              >What rivers are at risk?</text>
               <g>
                 <path
                   class="cls-63"
@@ -5136,51 +4942,15 @@
             <text
               class="cls-16"
               transform="translate(208.1 1287.2)"
-            >These d<tspan
-              class="cls-29"
-              x="76"
-              y="0"
-            >a</tspan><tspan
-              class="cls-64"
-              x="87.5"
-              y="0"
-            >t</tspan><tspan
-              x="94.5"
-              y="0"
-            >a a</tspan><tspan
-              class="cls-27"
-              x="122.9"
-              y="0"
-            >r</tspan><tspan
-              x="130.2"
-              y="0"
-            >e criti</tspan><tspan
-              class="cls-27"
-              x="183.5"
-              y="0"
-            >c</tspan><tspan
-              x="194"
-              y="0"
-            >al </tspan><tspan
+            >These data are critical<tspan
               class="cls-27"
               x="0"
               y="28.8"
-            >f</tspan><tspan
-              x="6.1"
-              y="28.8"
-            >or </tspan><tspan
+            >for</tspan><tspan
               class="cls-65"
               x="31.3"
               y="28.8"
-            >w</tspan><tspan
-              class="cls-36"
-              x="49.7"
-              y="28.8"
-            >at</tspan><tspan
-              class="cls-32"
-              x="70.7"
-              y="28.8"
-            >er decisions.</tspan></text>
+            >water decisions.</tspan></text>
           </g>
           <g id="nwis-cell">
             <g>
@@ -5232,75 +5002,19 @@
               <text
                 class="cls-53"
                 transform="translate(566.8 945.7)"
-              >flow <tspan
-                class="cls-70"
-                x="30.7"
-                y="0"
-              >r</tspan><tspan
-                class="cls-57"
-                x="35.4"
-                y="0"
-              >at</tspan><tspan
-                x="47.9"
-                y="0"
-              >e</tspan></text>
+              >flow rate</text>
               <text
                 class="cls-53"
                 transform="translate(553 911.6)"
-              ><tspan class="cls-55">w</tspan><tspan
-                class="cls-57"
-                x="10.8"
-                y="0"
-              >at</tspan><tspan
-                x="23.3"
-                y="0"
-              >er l</tspan><tspan
-                class="cls-71"
-                x="43.1"
-                y="0"
-              >e</tspan><tspan
-                x="51"
-                y="0"
-              >vel</tspan></text>
+              ><tspan class="cls-55">water level</tspan></text>
               <text
                 class="cls-53"
                 transform="translate(542 979.8)"
-              ><tspan class="cls-57">t</tspan><tspan
-                x="4.8"
-                y="0"
-              >empe</tspan><tspan
-                class="cls-70"
-                x="41.9"
-                y="0"
-              >r</tspan><tspan
-                class="cls-57"
-                x="46.7"
-                y="0"
-              >a</tspan><tspan
-                x="54.4"
-                y="0"
-              >tu</tspan><tspan
-                class="cls-72"
-                x="67.8"
-                y="0"
-              >r</tspan><tspan
-                x="72.7"
-                y="0"
-              >e</tspan></text>
+              ><tspan class="cls-57">temperature</tspan></text>
               <text
                 class="cls-53"
                 transform="translate(543 1013.9)"
-              ><tspan class="cls-73">c</tspan><tspan
-                x="6.9"
-                y="0"
-              >ondu</tspan><tspan
-                class="cls-55"
-                x="41.1"
-                y="0"
-              >c</tspan><tspan
-                x="48.1"
-                y="0"
-              >tivity</tspan></text>
+              ><tspan class="cls-73">conductivity</tspan></text>
               <path
                 class="cls-63"
                 d="M656.2,883.1a1.6,1.6,0,0,0-1.3-.5h-3c-.2,0-.3.1-.3.2v1c0,.1,0,.1.1.2H655l-.2,3.8h-1.1c-.1,0-.1,0-.1.1l-.4,1c0,.1.1.2.2.3l1.4.2-.2,5.2h-.2l-1.5.4h-.1v.2l.3,1c0,.1.1.1.2.1h.1l1.1-.3v4.6l-1.2-.2H653c0,.1-.1.1-.1.2l-.3.9c-.1.1,0,.1,0,.2a.1.1,0,0,0,.1.1,4.5,4.5,0,0,0,1.6.3v4h-1.7c-.1,0-.2.1-.2.3v1c0,.1.1.2.3.2h1.5v1.4a3.6,3.6,0,0,1-.6,2,3.2,3.2,0,0,1-1.7,0h-.2c0,.1-.1.1-.1.2v1c-.1.1,0,.1,0,.2h1.4a2.4,2.4,0,0,0,1.5-.4c1.2-.8,1.2-2.4,1.3-3.3l.9-24.8A1.7,1.7,0,0,0,656.2,883.1Z"
@@ -5322,25 +5036,7 @@
               <text
                 class="cls-53"
                 transform="translate(512.4 1048)"
-              >dissolved <tspan
-                class="cls-75"
-                x="64.2"
-                y="0"
-              >o</tspan><tspan
-                class="cls-76"
-                x="72.6"
-                y="0"
-              >x</tspan><tspan
-                x="79.2"
-                y="0"
-              >y</tspan><tspan
-                class="cls-57"
-                x="86.2"
-                y="0"
-              >g</tspan><tspan
-                x="93.8"
-                y="0"
-              >en</tspan></text>
+              >dissolved oxygen</text>
               <g>
                 <path
                   class="cls-63"
@@ -5453,40 +5149,7 @@
               class="cls-21"
               x="0"
               y="28.8"
-            >w</tspan><tspan
-              class="cls-82"
-              x="18.4"
-              y="28.8"
-            >at</tspan><tspan
-              x="39.4"
-              y="28.8"
-            >er quality d</tspan><tspan
-              class="cls-82"
-              x="159.9"
-              y="28.8"
-            >a</tspan><tspan
-              class="cls-17"
-              x="172.1"
-              y="28.8"
-            >t</tspan><tspan
-              class="cls-26"
-              x="180.8"
-              y="28.8"
-            >a </tspan><tspan
-              class="cls-82"
-              x="198.3"
-              y="28.8"
-            >t</tspan><tspan
-              x="207"
-              y="28.8"
-            >o</tspan><tspan
-              class="cls-21"
-              x="220.4"
-              y="28.8"
-            >o</tspan><tspan
-              x="233.4"
-              y="28.8"
-            >.</tspan></tspan></text>
+            >water quality data too</tspan></tspan></text>
             <path
               class="cls-83"
               d="M522,963.5H504.2a6.1,6.1,0,0,0-6.1,6.1V1055a6.1,6.1,0,0,0,6.1,6.1H522"
@@ -5525,7 +5188,7 @@
             />
             <g>
               <path
-                id="arrow"
+                
                 d="M393.3,407.6a47.8,47.8,0,0,1,17.47,4.15c18.25,8.3,26.28,26.82,33,44.48,14.86,38.91,13.7,48.14,22.75,72.53,8.62,23.25,22.69,61.18,55.56,82.79,22.25,14.62,54.76,22.86,56.5,23.29,4.59,1.12,9,1.74,9,1.74,2.65.37,4.84.55,6.26.64A51.58,51.58,0,0,1,581.06,643a80.35,80.35,0,0,1-12.23,2.29c0,.19,5.23.36,11.47-1.07a46.61,46.61,0,0,0,14.12-5.77c.53-.33,1-.61,1.25-.81-.85-1.63-1.76-3.29-2.72-5a146.86,146.86,0,0,0-10.75-16.2c-.06-.07,2.18,3.11,5.28,8.41,2.9,4.94,5,9.16,6.29,12l-6.14-.36" 
                 style="stroke-width: 4px"
                 class="cls-85"
