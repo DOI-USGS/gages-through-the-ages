@@ -14,7 +14,7 @@
         id="cartogram-svg"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 -50 800 500"
+        viewBox="0 -50 770 420"
         preserveAspectRatio="xMidYMid meet"
         version="1.1"
       >
@@ -864,8 +864,8 @@
               <rect
                 x="-8"
                 width="16"
-                y="-11.5"
-                height="13"
+                y="-9.5"
+                height="11"
               />
             </clipPath>
           </defs>
@@ -1770,6 +1770,7 @@
         <text
           id="title-svg"
           transform="translate(0 0)"
+          style="font-size: 14px; font-weight: 600; fill: rgb(139, 139, 139);"
         >State-level trends in USGS streamgaging<tspan
           x="0"
           y="15"

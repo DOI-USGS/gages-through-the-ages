@@ -46,7 +46,7 @@ prepare_svg_data <- function(raw_dat, states_to_use, start_yr, end_yr) {
 }
 
 init_svg <- function(width = 8, height = 5, ppi = 72, is_pixels = FALSE) {
-  view_box <- sprintf("%s %s %s %s", 0, -0.1*height, ifelse(is_pixels, width, width*ppi), ifelse(is_pixels, height, height*ppi))
+  view_box <- sprintf("%s %s %s %s", 0, -50, ifelse(is_pixels, width, width*ppi), ifelse(is_pixels, height, height*ppi))
   # create the main "parent" svg node. This is the top-level part of the svg
   svg_root <- xml_new_root('svg', viewBox = view_box, preserveAspectRatio="xMidYMid meet", id = "cartogram-svg",
                            xmlns="http://www.w3.org/2000/svg", `xmlns:xlink`="http://www.w3.org/1999/xlink", 
