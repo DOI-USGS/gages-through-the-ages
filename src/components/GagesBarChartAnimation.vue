@@ -8,7 +8,7 @@
       class="container"
     >
       <h1 class="main-title">
-        <span class="lowlight">
+        <span class="lowlight" style="line-height: 20%">
           {{ text.title1 }}
         </span>
       </h1>
@@ -5167,7 +5167,7 @@
               y="28.8"
             >water quality data too</tspan></tspan></text>
             <path
-              class="cls-83"
+              class="cls-bracket"
               d="M522,963.5H504.2a6.1,6.1,0,0,0-6.1,6.1V1055a6.1,6.1,0,0,0,6.1,6.1H522"
             />
             <path
@@ -5549,8 +5549,9 @@ $brightYellow: rgb(255,200,51);
   }
   .main-title{
     text-align: center;
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 900;
+
 
     @media screen and (max-width: 600px) {
       font-size: 3em;
@@ -6066,7 +6067,13 @@ $brightYellow: rgb(255,200,51);
         stroke: #333;
         stroke-width: 2px;
       }
-
+.cls-bracket  {
+  stroke: #333;
+  fill: none;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+}
       .cls-85 {
         stroke: #ededed;
       }
