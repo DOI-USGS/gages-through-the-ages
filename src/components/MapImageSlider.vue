@@ -1770,11 +1770,11 @@
         <text
           id="title-svg"
           transform="translate(0 0)"
-          style="font-size: 14px; font-weight: 600; fill: rgb(139, 139, 139);"
+          style="font-size: 10px; font-style: italic; fill: rgb(139, 139, 139);"
         >State-level trends in USGS streamgaging<tspan
           x="0"
-          y="15"
-        >1890 - present</tspan></text>
+          y="10"
+        >from 1890 to present</tspan></text>
         <text
           id="annotate-svg"
           transform="translate(175 325)"
@@ -2003,14 +2003,12 @@ $polygon: '~@/assets/images/polygon.png';
     width: 20px;
     display: inline-block;
 }
+#georgiaSlider  {
+  margin-top: 50px;
+}
 #cartogram-svg {
   width:150%;
   height: auto;
-
-  #title-svg {
-    color: $darkGray;
-    font-weight: bold;
-  }
 
 .state-label{
   font-size: 8px;
@@ -2039,7 +2037,7 @@ $polygon: '~@/assets/images/polygon.png';
     stroke: $lightGray;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-width: 1px;
+    stroke-width: 2px;
 }
 }
 .hidden {

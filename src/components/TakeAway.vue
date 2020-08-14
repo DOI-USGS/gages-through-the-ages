@@ -9,7 +9,6 @@
       :key="paragraph.paragraphText"
     >
       <p><span v-html="paragraph.paragraphText1" /></p>
-      <p><span v-html="paragraph.paragraphText2" /></p>
     </div>
   </div>
 </template>
