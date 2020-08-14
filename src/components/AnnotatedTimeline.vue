@@ -21,6 +21,7 @@
       
       <div>
         <p v-html="text.firstParagraphText" />
+        <p v-html="text.caption" />
       </div>
     </div>
     <NewTimeline />

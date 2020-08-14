@@ -2838,244 +2838,30 @@
             <text
               class="cls-16"
               transform="translate(369.1 2080.9)"
-            >The hi<tspan
-              class="cls-17"
-              x="59.8"
-              y="0"
-            >s</tspan><tspan
-              class="cls-18"
-              x="69"
-              y="0"
-            >t</tspan><tspan
-              x="76.3"
-              y="0"
-            >o</tspan><tspan
-              class="cls-19"
-              x="89.1"
-              y="0"
-            >r</tspan><tspan
-              x="97.6"
-              y="0"
-            >y of </tspan><tspan
-              class="cls-20"
-              x="136.8"
-              y="0"
-            >s</tspan><tspan
-              x="146"
-              y="0"
-            >t</tspan><tspan
-              class="cls-21"
-              x="153.5"
-              y="0"
-            >r</tspan><tspan
-              class="cls-22"
-              x="160.9"
-              y="0"
-            >e</tspan><tspan
-              x="172.1"
-              y="0"
-            >am</tspan><tspan
-              class="cls-23"
-              x="203.4"
-              y="0"
-            >g</tspan><tspan
-              x="214.7"
-              y="0"
-            >a</tspan><tspan
-              class="cls-24"
-              x="226.5"
-              y="0"
-            >g</tspan><tspan
-              x="237.9"
-              y="0"
-            >es </tspan><tspan
-              class="cls-21"
-              x="264"
-              y="0"
-            >r</tspan><tspan
-              x="271.4"
-              y="0"
-            >efle</tspan><tspan
-              class="cls-21"
-              x="306.6"
-              y="0"
-            >ct</tspan><tspan
-              x="324.4"
-              y="0"
-            >s </tspan><tspan class="cls-25"><tspan
+            >The history of streamgages reflects<tspan class="cls-25"><tspan
               x="-43.4"
               y="28.8"
-            >the </tspan><tspan
-              class="cls-21"
-              x="-2.4"
-              y="28.8"
-            >ev</tspan><tspan
-              class="cls-26"
-              x="22.8"
-              y="28.8"
-            >olving </tspan><tspan
-              class="cls-27"
-              x="95.2"
-              y="28.8"
-            >w</tspan><tspan
-              class="cls-17"
-              x="114.1"
-              y="28.8"
-            >at</tspan><tspan
-              x="135.6"
-              y="28.8"
-            >er needs </tspan><tspan
-              class="cls-28"
-              x="231.8"
-              y="28.8"
-            >o</tspan><tspan
-              x="245.1"
-              y="28.8"
-            >f the n</tspan><tspan
-              class="cls-20"
-              x="313.5"
-              y="28.8"
-            >a</tspan><tspan
-              x="325.9"
-              y="28.8"
-            >tion.</tspan></tspan></text>
+            >the evolving water needs of the nation.</tspan></tspan></text>
             <text
               class="cls-16"
               transform="translate(264.3 72.1)"
-            ><tspan class="cls-21">U</tspan><tspan
-              x="15"
-              y="0"
-            >S moni</tspan><tspan
-              class="cls-29"
-              x="82.9"
-              y="0"
-            >t</tspan><tspan
-              x="90.1"
-              y="0"
-            >oring of </tspan><tspan
-              class="cls-20"
-              x="169.2"
-              y="0"
-            >s</tspan><tspan
-              x="178.5"
-              y="0"
-            >t</tspan><tspan
-              class="cls-21"
-              x="186"
-              y="0"
-            >r</tspan><tspan
-              class="cls-22"
-              x="193.3"
-              y="0"
-            >e</tspan><tspan
-              x="204.6"
-              y="0"
-            >ams has chan</tspan><tspan
-              class="cls-29"
-              x="337.3"
-              y="0"
-            >g</tspan><tspan
-              x="348.8"
-              y="0"
-            >ed a l</tspan><tspan
-              class="cls-30"
-              x="400.5"
-              y="0"
-            >o</tspan><tspan
-              x="413"
-              y="0"
-            >t in 130 y</tspan><tspan
-              class="cls-22"
-              x="498.1"
-              y="0"
-            >e</tspan><tspan
-              x="509.4"
-              y="0"
-            >ars.</tspan><tspan class="cls-25"><tspan
+            ><tspan class="cls-21">US monitoring of streams has changed a lot in 130 years.</tspan><tspan class="cls-25"><tspan
               x="89.5"
               y="34.8"
-            >But h</tspan><tspan
-              class="cls-21"
-              x="146.4"
-              y="34.8"
-            >o</tspan><tspan
-              x="159.6"
-              y="34.8"
-            >w has it chan</tspan><tspan
-              class="cls-20"
-              x="299.5"
-              y="34.8"
-            >g</tspan><tspan
-              x="312.1"
-              y="34.8"
-            >ed, and why?</tspan></tspan></text>
+            >But how has it changed, and why?</tspan></tspan></text>
           </g>
           <g id="funding-text">
             <text
               class="cls-16"
               transform="translate(197.7 1476.1)"
-            >The N<tspan
-              class="cls-29"
-              x="56.9"
-              y="0"
-            >a</tspan><tspan
-              x="68.4"
-              y="0"
-            >tional </tspan><tspan
-              class="cls-31"
-              x="129.3"
-              y="0"
-            >S</tspan><tspan
-              x="141.3"
-              y="0"
-            >t</tspan><tspan
-              class="cls-21"
-              x="148.8"
-              y="0"
-            >r</tspan><tspan
-              class="cls-22"
-              x="156.1"
-              y="0"
-            >e</tspan><tspan
-              x="167.4"
-              y="0"
-            >am</tspan><tspan
-              class="cls-22"
-              x="198.6"
-              y="0"
-            >g</tspan><tspan
-              x="210"
-              y="0"
-            >aging p</tspan><tspan
-              class="cls-21"
-              x="281.3"
-              y="0"
-            >r</tspan><tspan
-              x="288.6"
-              y="0"
-            >og</tspan><tspan
-              class="cls-31"
-              x="313.1"
-              y="0"
-            >r</tspan><tspan
-              x="320.3"
-              y="0"
-            >am </tspan><tspan
+            >The National Streamgaging program<tspan
               x="0"
               y="28.8"
             >is funded by </tspan><tspan
               class="cls-32"
-              x="122.6"
+              x="128"
               y="28.8"
-            >Cong</tspan><tspan
-              class="cls-33"
-              x="176.4"
-              y="28.8"
-            >r</tspan><tspan
-              class="cls-32"
-              x="185.7"
-              y="28.8"
-            >ess</tspan></text>
+            >Congress</tspan></text>
             <text
               class="cls-16"
               transform="translate(638.8 1711.2)"
@@ -3083,158 +2869,24 @@
               class="cls-34"
               x="42.4"
               y="0"
-            >ov</tspan><tspan
-              class="cls-32"
-              x="67.9"
-              y="0"
-            >er 1,400 </tspan><tspan
-              class="cls-35"
-              x="157.4"
-              y="0"
-            >st</tspan><tspan
-              class="cls-36"
-              x="176.2"
-              y="0"
-            >at</tspan><tspan
-              class="cls-32"
-              x="197.2"
-              y="0"
-            >e and </tspan><tspan class="cls-32"><tspan
+            >over 1,400 state and</tspan><tspan class="cls-32"><tspan
               x="14.4"
               y="28.8"
-            >lo</tspan><tspan
-              class="cls-21"
-              x="34.6"
-              y="28.8"
-            >c</tspan><tspan
-              x="45.6"
-              y="28.8"
-            >al </tspan><tspan
-              class="cls-29"
-              x="69.9"
-              y="28.8"
-            >p</tspan><tspan
-              x="83.4"
-              y="28.8"
-            >artner a</tspan><tspan
-              class="cls-37"
-              x="167.9"
-              y="28.8"
-            >g</tspan><tspan
-              x="180.3"
-              y="28.8"
-            >encies.</tspan></tspan></text>
+            >local partner agencies.</tspan></tspan></text>
             <text
               class="cls-16"
               transform="translate(202 1864.5)"
-            >It<tspan
-              class="cls-38"
-              x="13.2"
-              y="0"
-            >’</tspan><tspan
-              x="17.1"
-              y="0"
-            >s mana</tspan><tspan
-              class="cls-29"
-              x="87.5"
-              y="0"
-            >g</tspan><tspan
-              x="98.9"
-              y="0"
-            >ed by the </tspan><tspan
+            >It's managed by the<tspan
               class="cls-33"
-              x="193.2"
+              x="200"
               y="0"
-            >U</tspan><tspan
-              class="cls-32"
-              x="208.9"
+            >USGS</tspan><tspan
+              x="257"
               y="0"
-            >SGS</tspan><tspan
-              x="250.9"
-              y="0"
-            >, the </tspan><tspan
-              class="cls-21"
-              x="297.5"
-              y="0"
-            >U</tspan><tspan
-              x="312.5"
-              y="0"
-            >.S. Geologi</tspan><tspan
-              class="cls-27"
-              x="415"
-              y="0"
-            >c</tspan><tspan
-              class="cls-39"
-              x="425.5"
-              y="0"
-            >al Su</tspan><tspan
-              class="cls-40"
-              x="473"
-              y="0"
-            >r</tspan><tspan
-              x="481.4"
-              y="0"
-            >v</tspan><tspan
-              class="cls-41"
-              x="491.8"
-              y="0"
-            >e</tspan><tspan
-              class="cls-17"
-              x="503.7"
-              y="0"
-            >y</tspan><tspan
-              x="513.7"
-              y="0"
-            >, </tspan><tspan
+            >, the U.S. Geological Survey,</tspan><tspan
               x="0"
               y="28.8"
-            >which has been ope</tspan><tspan
-              class="cls-31"
-              x="193.1"
-              y="28.8"
-            >r</tspan><tspan
-              class="cls-29"
-              x="200.2"
-              y="28.8"
-            >a</tspan><tspan
-              x="211.7"
-              y="28.8"
-            >ting </tspan><tspan
-              class="cls-22"
-              x="253.9"
-              y="28.8"
-            >g</tspan><tspan
-              x="265.3"
-              y="28.8"
-            >a</tspan><tspan
-              class="cls-29"
-              x="277.1"
-              y="28.8"
-            >g</tspan><tspan
-              x="288.5"
-              y="28.8"
-            >es </tspan><tspan
-              class="cls-21"
-              x="314.6"
-              y="28.8"
-            >f</tspan><tspan
-              x="320.7"
-              y="28.8"
-            >or the la</tspan><tspan
-              class="cls-20"
-              x="399.9"
-              y="28.8"
-            >s</tspan><tspan
-              x="409.2"
-              y="28.8"
-            >t 130 y</tspan><tspan
-              class="cls-22"
-              x="471.2"
-              y="28.8"
-            >e</tspan><tspan
-              x="482.4"
-              y="28.8"
-            >ars.</tspan></text>
+            >which has been operating gages for the last 130 years.</tspan></text>
           </g>
           <g id="funding-partner-agencies">
             <g>
@@ -5793,97 +5445,76 @@
               </g>
             </g>
           </g>
+          <g id="water-data-quality-text">
+            <text
+              class="cls-16"
+              transform="translate(205.3 992.2)"
+            >Some even collect <tspan class="cls-32"><tspan
+              class="cls-21"
+              x="0"
+              y="28.8"
+            >w</tspan><tspan
+              class="cls-82"
+              x="18.4"
+              y="28.8"
+            >at</tspan><tspan
+              x="39.4"
+              y="28.8"
+            >er quality d</tspan><tspan
+              class="cls-82"
+              x="159.9"
+              y="28.8"
+            >a</tspan><tspan
+              class="cls-17"
+              x="172.1"
+              y="28.8"
+            >t</tspan><tspan
+              class="cls-26"
+              x="180.8"
+              y="28.8"
+            >a </tspan><tspan
+              class="cls-82"
+              x="198.3"
+              y="28.8"
+            >t</tspan><tspan
+              x="207"
+              y="28.8"
+            >o</tspan><tspan
+              class="cls-21"
+              x="220.4"
+              y="28.8"
+            >o</tspan><tspan
+              x="233.4"
+              y="28.8"
+            >.</tspan></tspan></text>
+            <path
+              class="cls-83"
+              d="M522,963.5H504.2a6.1,6.1,0,0,0-6.1,6.1V1055a6.1,6.1,0,0,0,6.1,6.1H522"
+            />
+            <path
+              class="cls-83"
+              d="M456.2,1012.5c15.9,3.4,41.9-7,41.9-7"
+            />
+          </g>
           <g id="water-data-text">
             <text
               class="cls-16"
               transform="translate(202.1 846)"
-            >A<tspan
-              class="cls-21"
-              x="12.6"
-              y="0"
-            >c</tspan><tspan
-              x="23.2"
-              y="0"
-            >tive </tspan><tspan
-              class="cls-23"
-              x="63"
-              y="0"
-            >g</tspan><tspan
-              class="cls-39"
-              x="74.3"
-              y="0"
-            >a</tspan><tspan
-              class="cls-18"
-              x="86.1"
-              y="0"
-            >g</tspan><tspan
-              x="97.5"
-              y="0"
-            >es </tspan><tspan
-              class="cls-80"
-              x="123.6"
-              y="0"
-            >c</tspan><tspan
-              x="134"
-              y="0"
-            >olle</tspan><tspan
-              class="cls-21"
-              x="169.8"
-              y="0"
-            >c</tspan><tspan
-              x="180.3"
-              y="0"
-            >t </tspan><tspan
-              class="cls-33"
-              x="192.6"
-              y="0"
-            >w</tspan><tspan
-              class="cls-81"
-              x="211"
-              y="0"
-            >at</tspan><tspan
-              class="cls-32"
-              x="232"
-              y="0"
-            >er d</tspan><tspan
-              class="cls-36"
-              x="272.5"
-              y="0"
-            >a</tspan><tspan
-              class="cls-35"
-              x="284.7"
-              y="0"
-            >t</tspan><tspan
-              class="cls-82"
-              x="293.4"
-              y="0"
-            >a </tspan><tspan
-              x="0"
-              y="28.8"
-            >and t</tspan><tspan
-              class="cls-31"
-              x="49.9"
-              y="28.8"
-            >r</tspan><tspan
-              x="57"
-              y="28.8"
-            >ansmit it </tspan><tspan
-              class="cls-32"
-              x="146.3"
-              y="28.8"
-            >in </tspan><tspan
-              class="cls-33"
-              x="171.5"
-              y="28.8"
-            >r</tspan><tspan
-              class="cls-83"
-              x="180.8"
-              y="28.8"
-            >e</tspan><tspan
-              class="cls-32"
-              x="193"
-              y="28.8"
-            >al time. </tspan></text>
+            >Active gages collect
+              <tspan
+                class="cls-33"
+                x="200"
+                y="0"
+              >water data</tspan>
+              <tspan
+                x="0"
+                y="28.8"
+              >and transmit it in</tspan>
+              <tspan
+                class="cls-33"
+                x="178"
+                y="28.8"
+              >real time.</tspan></text>
           </g>
           <g id="main-gage-dot-and-arrow">
             <circle
@@ -5894,12 +5525,10 @@
             />
             <g>
               <path
+                id="arrow"
+                d="M393.3,407.6a47.8,47.8,0,0,1,17.47,4.15c18.25,8.3,26.28,26.82,33,44.48,14.86,38.91,13.7,48.14,22.75,72.53,8.62,23.25,22.69,61.18,55.56,82.79,22.25,14.62,54.76,22.86,56.5,23.29,4.59,1.12,9,1.74,9,1.74,2.65.37,4.84.55,6.26.64A51.58,51.58,0,0,1,581.06,643a80.35,80.35,0,0,1-12.23,2.29c0,.19,5.23.36,11.47-1.07a46.61,46.61,0,0,0,14.12-5.77c.53-.33,1-.61,1.25-.81-.85-1.63-1.76-3.29-2.72-5a146.86,146.86,0,0,0-10.75-16.2c-.06-.07,2.18,3.11,5.28,8.41,2.9,4.94,5,9.16,6.29,12l-6.14-.36" 
+                style="stroke-width: 4px"
                 class="cls-85"
-                d="M393.3,407.6c87.2,0,30.8,242.1,197.6,257.7"
-              />
-              <path
-                class="cls-85"
-                d="M580.8,645c7.2,7.7,8.4,9.9,14,21.8-4.3,6.3-22.1,7.6-27.8,8"
               />
             </g>
           </g>
@@ -5907,54 +5536,14 @@
             <text
               class="cls-16"
               transform="translate(203.3 388.3)"
-            >Each d<tspan
-              class="cls-86"
-              x="65.4"
-              y="0"
-            >o</tspan><tspan
-              class="cls-26"
-              x="78"
-              y="0"
-            >t on the map above is</tspan><tspan
+            >Each dot on the map above is<tspan
               x="0"
               y="28.8"
             >a </tspan><tspan
               class="cls-87"
               x="16.6"
               y="28.8"
-            >s</tspan><tspan
-              class="cls-88"
-              x="26.7"
-              y="28.8"
-            >t</tspan><tspan
-              class="cls-33"
-              x="35.9"
-              y="28.8"
-            >r</tspan><tspan
-              class="cls-83"
-              x="45.2"
-              y="28.8"
-            >e</tspan><tspan
-              class="cls-32"
-              x="57.4"
-              y="28.8"
-            >am</tspan><tspan
-              class="cls-89"
-              x="90.6"
-              y="28.8"
-            >g</tspan><tspan
-              class="cls-82"
-              x="103"
-              y="28.8"
-            >a</tspan><tspan
-              class="cls-81"
-              x="115.6"
-              y="28.8"
-            >g</tspan><tspan
-              class="cls-32"
-              x="128"
-              y="28.8"
-            >e.</tspan></text>
+            >streamgage</tspan></text>
           </g>
           <g id="main-gage">
             <g>
@@ -6445,7 +6034,7 @@ $brightYellow: rgb(255,200,51);
         opacity: 0.15;
       }
 
-      .cls-11, .cls-14, .cls-3, .cls-66, .cls-7, .cls-85, .cls-90, .cls-91 {
+      .cls-11, .cls-14, .cls-3, .cls-66, .cls-7, .cls-83, .cls-85, .cls-90, .cls-91 {
         fill: none;
       }
 
@@ -6453,11 +6042,11 @@ $brightYellow: rgb(255,200,51);
         stroke: #063d66;
       }
 
-      .cls-3, .cls-66, .cls-7, .cls-85, .cls-90 {
+      .cls-3, .cls-66, .cls-7, .cls-83, .cls-85, .cls-90 {
         stroke-linecap: round;
       }
 
-      .cls-3, .cls-4, .cls-66, .cls-7, .cls-85, .cls-90 {
+      .cls-3, .cls-4, .cls-66, .cls-83, .cls-7, .cls-85, .cls-90 {
         stroke-linejoin: round;
       }
 
@@ -6781,6 +6370,11 @@ $brightYellow: rgb(255,200,51);
         letter-spacing: -0.02em;
       }
 
+      .cls-83 {
+        stroke: #333;
+        stroke-width: 2px;
+      }
+
       .cls-85 {
         stroke: #ededed;
       }
@@ -6794,6 +6388,6 @@ $brightYellow: rgb(255,200,51);
       }
 
       .cls-91 {
-        stroke-width: 1.44px;
+        stroke-width: 2px;
       }
 </style>
