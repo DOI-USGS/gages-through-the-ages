@@ -4867,7 +4867,7 @@
               <text
                 class="cls-61"
                 transform="translate(701.7 1184.5)"
-              >Will the road flood?</text>
+              >How high will the water get?</text>
               <text
                 class="cls-61"
                 transform="translate(701.7 1217.1)"
@@ -4883,7 +4883,7 @@
               <text
                 class="cls-61"
                 transform="translate(701.7 1315.1)"
-              >What rivers are at risk?</text>
+              >Which roads are flooded?</text>
               <g>
                 <path
                   class="cls-63"
