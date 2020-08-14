@@ -7,7 +7,7 @@
       id="title-container"
       class="container"
     >
-      <h1 class="title">
+      <h1 class="main-title">
         {{ text.title }}
       </h1>
       <h3 class="subtitle">
@@ -5868,7 +5868,7 @@ $brightYellow: rgb(255,200,51);
   #title-container{
     margin: 50px 0;
   }
-  .title{
+  .main-title{
     text-align: center;
     font-size: 5em;
     font-weight: 900;
