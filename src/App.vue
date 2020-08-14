@@ -83,11 +83,16 @@ $brightYellow: rgb(255,200,51);
     h2{
       font-size: 2em;
       margin-top: 80px;
+      font-weight: 700;
   
     }
     h3{
       font-size: 1.4em;
       padding-top: .5em;
+      font-weight: 700;
+      @media screen and (max-width: 600px) {
+        font-size: .8em;
+    }
     }
     caption,p{
       color: $darkGray;
