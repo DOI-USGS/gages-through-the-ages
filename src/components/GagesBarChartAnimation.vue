@@ -7,12 +7,16 @@
       id="title-container"
       class="container"
     >
-      <h1 class="main-title"><span class="lowlight">
-        {{ text.title1 }}
-      </span></h1>
-      <h1 class="main-title"><span class="lowlight">
-        {{ text.title2 }}
-      </span></h1>
+      <h1 class="main-title">
+        <span class="lowlight">
+          {{ text.title1 }}
+        </span>
+      </h1>
+      <h1 class="main-title">
+        <span class="lowlight">
+          {{ text.title2 }}
+        </span>
+      </h1>
       <div class="subtitle">
         <h3>
           {{ text.introText }}
@@ -2667,7 +2671,10 @@
         </g>
       </svg>
     </figure>
-    <caption id="svgcaption" class="screenreader">
+    <caption
+      id="svgcaption"
+      class="screenreader"
+    >
       {{ text.caption }}
     </caption>
     
