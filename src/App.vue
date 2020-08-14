@@ -88,14 +88,15 @@ $brightYellow: rgb(255,200,51);
       font-size: 1.4em;
     }
     caption,p{
-      color: #2c3e50;
+      color: $darkGray;
     }
   }
   caption{
     width: 100%;
     display: block;
-    padding: 5px 0;
+    padding: 10px 5px;
     font-style:italic;
+    text-align: left;
   }
   .svg-text {
     -webkit-touch-callout: none; /* iOS Safari */

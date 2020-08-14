@@ -7,7 +7,7 @@
       id="title-container"
       class="container"
     >
-      <h1 class="title">
+      <h1 class="main-title">
         {{ text.title }}
       </h1>
       <h3 class="subtitle">
@@ -5531,9 +5531,10 @@ $brightYellow: rgb(255,200,51);
   #title-container{
     margin: 50px 0;
   }
-  .title{
+  .main-title{
     text-align: center;
-    font-size: 3em;
+    font-size: 5em;
+    font-weight: 900;
   }
   .subtitle {
     text-align: center;
@@ -5604,11 +5605,12 @@ $brightYellow: rgb(255,200,51);
   .tooltip-text {
     z-index: 100;
     opacity: 1;
+    fill: white;
   }
   .tooltip-box, .tooltip-point {
     stroke: none;
     opacity: 0.85;
-    fill: white;
+    fill: $darkGray;
   }
   .tooltip-box.hidden, .tooltip-point.hidden {
     opacity: 0;
