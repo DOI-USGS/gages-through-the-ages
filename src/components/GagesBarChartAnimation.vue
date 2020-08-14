@@ -2862,7 +2862,7 @@
             <text
               class="cls-16"
               transform="translate(197.7 1476.1)"
-            >The National Streamgaging program<tspan
+            >The National Streamgage Network<tspan
               x="0"
               y="28.8"
             >is funded by </tspan><tspan
@@ -4859,7 +4859,7 @@
               <text
                 class="cls-61"
                 transform="translate(701.7 1184.5)"
-              >What was the storm surge?</text>
+              >Will the road flood?</text>
               <text
                 class="cls-61"
                 transform="translate(701.7 1217.1)"
