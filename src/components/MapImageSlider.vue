@@ -864,8 +864,8 @@
               <rect
                 x="-8"
                 width="16"
-                y="-9.5"
-                height="11"
+                y="-11.5"
+                height="13"
               />
             </clipPath>
           </defs>
@@ -1813,7 +1813,7 @@
         data-beer-label="2018"
       >
         <img
-          src="@/assets/images/slider/georgiaAfter.jpg"
+          src="@/assets/images/slider/atlanta-gages-2018.png"
           alt="USGS Gages in Atlanta Georgia in 2018"
         >
         <div
@@ -1821,7 +1821,7 @@
           data-beer-label="1967"
         >
           <img
-            src="@/assets/images/slider/georgiaBefore.jpg"
+            src="@/assets/images/slider/atlanta-gages-1967.png"
             alt="USGS Gages in Atlanta Georgia in 1967"
           >
         </div>
@@ -1987,12 +1987,13 @@ $polygon: '~@/assets/images/polygon.png';
     width: 12px;
     display: inline-block;
     border-radius: 50%;
+    border: 3px solid $brightBlue;
 }
 .urbanGage{
     background: $brightBlue;
 }
 .ruralGage{
-    background: $brightBlue;
+    background: white;
 }
 .urbanPolygon{
     background-image: url($polygon);
@@ -2013,21 +2014,21 @@ $polygon: '~@/assets/images/polygon.png';
   }
 
 .state-label{
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 8px;
+  font-weight: 100;
   fill: white;
   text-anchor: end;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  transform: translate(-3px, -3px);
 
 }
 .state-trend  {
   fill: $brightBlue;
 }
 .state-mousers  {
-  fill: #0000001c;
-  opacity: 0.2;
-}
+  fill: $darkGray;
+  opacity: .05;
+  border-radius: 25%;
+  }
 
 #annotate-map {
   fill:none;
@@ -2046,13 +2047,15 @@ $polygon: '~@/assets/images/polygon.png';
   opacity: 0;
 }
 .tooltip-box{
-  stroke-width: 0.5;
-  stroke: $lightGray;
   opacity: 0.95;
-  fill: #f2f2f2;
+  fill: $darkGray;
+  padding: 3px;
+
 }
 #tooltip{
-  font-size: 12px;
+  font-size: .6em;
+  fill: white;
+  
 }
 
 @media screen and (min-width: 600px){
