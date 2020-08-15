@@ -861,7 +861,6 @@
           <text
             id="tooltip-text"
             class="tooltip-text-label svg-text"
-            text-anchor="middle"
             dy="0.33em"
           />
         </g>
@@ -2070,7 +2069,7 @@ $polygon: '~@/assets/images/polygon.png';
 #tooltip-text{
   font-size: .6em;
   fill: white;
-  
+  text-anchor: middle;
 }
 
 @media screen and (min-width: 600px){
