@@ -33,6 +33,7 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 654.14 537.1"
         preserveAspectRatio="xMidYMid meet"
+        @click="hovertext('');play()"
       >
         <title>U.S. Geological Survey Active Stream Gages</title>
         <desc>Map of U.S. Geological Survey gages</desc>
