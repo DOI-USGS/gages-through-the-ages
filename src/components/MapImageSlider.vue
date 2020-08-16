@@ -1852,7 +1852,7 @@
             document.getElementById("annotate-arrow").setAttribute("class","hidden");
             this.firstHover = true;
           }
-          // the group contains the 
+          // the group contains the path and the text
           let tooltipGroup = document.getElementById("tooltip-group")
           let tooltipPath = document.getElementById("tooltip-path");
           let tooltipText = document.getElementById("tooltip-text");
