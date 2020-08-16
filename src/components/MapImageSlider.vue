@@ -14,7 +14,7 @@
         id="cartogram-svg"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 -50 770 420"
+        viewBox="0 -50 502 405"
         preserveAspectRatio="xMidYMid meet"
         version="1.1"
       >
@@ -2007,7 +2007,7 @@ $polygon: '~@/assets/images/polygon.png';
   margin-top: 50px;
 }
 #cartogram-svg {
-  width:150%;
+  width:100%;
   height: auto;
 
 .state-label{
