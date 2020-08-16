@@ -14,7 +14,7 @@
         id="cartogram-svg"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 -50 750 420"
+        viewBox="0 -50 770 420"
         preserveAspectRatio="xMidYMid meet"
         version="1.1"
       >
