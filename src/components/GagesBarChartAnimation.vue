@@ -11,9 +11,8 @@
         <span class="lowlight" style="line-height: 20%">
           {{ text.title1 }}
         </span>
-      </h1>
-      <h1 class="main-title">
-        <span class="lowlight">
+        <br>
+        <span class="lowlight" style="line-height: 20%">
           {{ text.title2 }}
         </span>
       </h1>
