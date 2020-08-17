@@ -2086,7 +2086,7 @@ $polygon: '~@/assets/images/polygon.png';
   #annotate-svg{
     display: none;
   }
-  #arrow.annotate{
+  #annotate-arrow{
     display: none;
   }
 }
