@@ -8,11 +8,17 @@
       class="container"
     >
       <h1 class="main-title">
-        <span class="lowlight" style="line-height: 20%">
+        <span
+          class="lowlight"
+          style="line-height: 20%"
+        >
           {{ text.title1 }}
         </span>
         <br>
-        <span class="lowlight" style="line-height: 20%">
+        <span
+          class="lowlight"
+          style="line-height: 20%"
+        >
           {{ text.title2 }}
         </span>
       </h1>
