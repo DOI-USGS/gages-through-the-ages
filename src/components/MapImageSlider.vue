@@ -850,39 +850,20 @@
             x="41.22"
           >PR</text>
         </g>
-        <rect
-          id="tooltip_bg"
-          height="21"
-          class="hidden"
-        />
         <g
-          id="tool_pt"
+          id="tooltip-group"
           class="hidden"
         >
-          <defs>
-            <clipPath id="tip-clip">
-              <rect
-                x="-8"
-                width="16"
-                y="-9.5"
-                height="11"
-              />
-            </clipPath>
-          </defs>
           <path
-            d="M-6,-10 l6,10 l6,-10"
-            class="tooltip-box"
-            clip-path="url(#tip-clip)"
+            id="tooltip-path"
+            class="tooltip-path"
+          />
+          <text
+            id="tooltip-text"
+            class="tooltip-text-label svg-text"
+            dy="0.33em"
           />
         </g>
-        <text
-          id="tooltip"
-          stroke="none"
-          dy="-15"
-          fill="#000000"
-          text-anchor="middle"
-          class="sub-label"
-        />
         <g
           id="Maine-hovers"
           transform="translate(459.585 0.76)"
@@ -1871,24 +1852,28 @@
             document.getElementById("annotate-arrow").setAttribute("class","hidden");
             this.firstHover = true;
           }
-      
-          let tooltip = document.getElementById("tooltip");
-          let tooltip_bg = document.getElementById("tooltip_bg");
-          let tool_pt = document.getElementById("tool_pt");
+          // the group contains the path and the text
+          let tooltipGroup = document.getElementById("tooltip-group")
+          let tooltipPath = document.getElementById("tooltip-path");
+          let tooltipText = document.getElementById("tooltip-text");
         
           if (evt === undefined){
-            tooltip.setAttribute("class","hidden");
-            tooltip_bg.setAttribute("class","hidden");
-            tool_pt.setAttribute("class","hidden");
+            tooltipGroup.setAttribute("class","hidden");
           } else {
-      
+            tooltipGroup.setAttribute("class","shown");
+            var textBuffer = 6; // px between text edge and tooltipPath border
+            var tipYoffset = -1; // so that the tip is slightly above the mouse location
+            var tipPointer = {x:5, y:10}; // dimensions on the tooltip pointer
+    
             this.pt = this.cursorPoint(evt);
             this.pt.x = Math.round(this.pt.x);
             this.pt.y = Math.round(this.pt.y);
-      
-            let svgWidth = Number(this.svg.getAttribute("viewBox").split(" ")[2]);
-            tooltip.setAttribute("x",this.pt.x);
-            tooltip.setAttribute("y",this.pt.y);
+            let svgDims = this.svg.getAttribute("viewBox").split(" ");
+            let svgLeftBound = Number(svgDims[0]);
+            let svgRightBound = Number(svgDims[2]) + svgLeftBound;
+            let svgTopBound = Number(svgDims[1]);
+            let tooltipX = this.pt.x;
+            let tooltipY = this.pt.y;
             
             let translate_elements = evt.target.parentElement.getAttribute("transform");
             let scale_elements = evt.target.getAttribute("transform");
@@ -1899,27 +1884,56 @@
             let tip_data = JSON.parse(tip_JSON);
             let pt_index = Math.round((this.pt.x - Math.round(translateX) ) / scaleX - 0.5);
             let state_id = evt.target.getAttribute("id").split("-")[0];
-            let tip_text = state_id + " had " + tip_data.n_gages[pt_index] + " gages in " + (tip_data.start_year[0] + pt_index);
-            tooltip.textContent = tip_text;
-            var length = Math.round(tooltip.getComputedTextLength());
+            tooltipText.textContent = state_id + " had " + tip_data.n_gages[pt_index] + 
+              " gages in " + (tip_data.start_year[0] + pt_index);
             
-            if (this.pt.x - length/2 - 6 < 0){
-              tooltip.setAttribute("x",length/2+6);
-            } else if (this.pt.x + length/2 + 6 > svgWidth) {
-              tooltip.setAttribute("x", svgWidth-length/2-6);
+            let textBox = tooltipText.getBBox();
+            let textLength = Math.round(textBox.width);
+            let textHeight = Math.round(textBox.height);
+            let halfLength = textLength / 2;
+            
+            // modify the border if part of it is outside of the bounds
+            if (this.pt.x - halfLength - textBuffer < svgLeftBound)  {
+              // the tip is going to slide while the box stays fixed on the left
+              tooltipX = halfLength + textBuffer;
             }
-      
-            tool_pt.setAttribute("transform","translate("+this.pt.x+","+this.pt.y+")");
-            tooltip_bg.setAttribute("x",tooltip.getAttribute("x")-length/2-6);
-            tooltip_bg.setAttribute("y",this.pt.y-30);
-            tooltip.setAttribute("class","shown");
-            tooltip_bg.setAttribute("class","tooltip-box");
-            tool_pt.setAttribute("class","tooltip-box");
-            tooltip_bg.setAttribute("width", length+12);
-      
+            else if (this.pt.x + halfLength + textBuffer > svgRightBound) {
+              // the tip is going to slide while the box stays fixed on the right
+              tooltipX = svgRightBound - halfLength - textBuffer;
+            } 
+            
+            var totHeight = tipPointer.y + textHeight + textBuffer;
+            if (this.pt.y - totHeight < svgTopBound){
+              // the tip is going to shrink w/ the box stuck on top
+              tipPointer.y = this.pt.y - totHeight + tipPointer.y - svgTopBound;
+            }
+            
+            tooltipText.setAttribute('x',tooltipX);
+            
+            if (tipPointer.y < - (tipYoffset)){ 
+              // is a rectangle w/ no tip
+              tooltipPath.setAttribute("d", 
+                "M" + (tooltipX - halfLength - textBuffer) + "," + svgTopBound +
+                " H" + (tooltipX + halfLength + textBuffer) +
+                " v" + (textHeight + textBuffer) +
+                " H" + (tooltipX - halfLength - textBuffer)+"Z");
+        
+              tooltipText.setAttribute("y", svgTopBound + (textHeight+textBuffer) / 2);  
+            } else { 
+              // is a normal tip w/ a triangle tip to it
+              tooltipPath.setAttribute("d", 
+                "M" + (this.pt.x - tipPointer.x) + "," + (this.pt.y-tipPointer.y) +
+                " l" + tipPointer.x + "," + (tipPointer.y + tipYoffset) +
+                " l" + tipPointer.x + ",-" + (tipPointer.y + tipYoffset) +
+                " H" + (tooltipX + halfLength + textBuffer) +
+                " v-" + (textHeight + textBuffer) +
+                " H" + (tooltipX - halfLength - textBuffer) +
+                " v" + (textHeight + textBuffer) + "Z");
+        
+              tooltipText.setAttribute("y", this.pt.y-tipPointer.y - (textHeight+textBuffer) / 2);
+            }
           }
         }
-        
       }
   }
 </script>
@@ -2043,16 +2057,19 @@ $polygon: '~@/assets/images/polygon.png';
 .hidden {
   opacity: 0;
 }
-.tooltip-box{
+.shown {
+  opacity: 1;
+}
+.tooltip-path{
   opacity: 0.95;
   fill: $darkGray;
   padding: 3px;
 
 }
-#tooltip{
+#tooltip-text{
   font-size: .6em;
   fill: white;
-  
+  text-anchor: middle;
 }
 
 @media screen and (min-width: 600px){
