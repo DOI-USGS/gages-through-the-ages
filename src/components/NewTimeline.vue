@@ -170,7 +170,7 @@
               transform="translate(.81 77)"
               class="callouts"
             >
-              1989:<tspan
+              1889:<tspan
                 x="28"
                 y="0"
                 font-weight="400"
