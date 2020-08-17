@@ -9,7 +9,7 @@ export default {
         title: "References",
         references: [
             {
-                reference: "Gunn, M.A., Matherne, A.M. and Mason, R.E., 2014. The USGS at Embudo, New Mexico: 125 years of systematic streamgaging in the United States. US Department of the Interior, US Geological Survey. <a href='https://doi.org/10.3133/fs20143034' target='_blank'>https://doi.org/10.3133/fs20143034</a> ",
+                reference: "Gunn, M.A., Matherne, A.M. and Mason, R.R., 2014. The USGS at Embudo, New Mexico: 125 years of systematic streamgaging in the United States. US Department of the Interior, US Geological Survey. <a href='https://doi.org/10.3133/fs20143034' target='_blank'>https://doi.org/10.3133/fs20143034</a> ",
                 href: ""
             },
             {
