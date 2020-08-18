@@ -5176,7 +5176,7 @@
               class="cls-21"
               x="0"
               y="28.8"
-            >water quality data too</tspan></tspan></text>
+            >water quality data too.</tspan></tspan></text>
             <path
               class="cls-bracket"
               d="M522,963.5H504.2a6.1,6.1,0,0,0-6.1,6.1V1055a6.1,6.1,0,0,0,6.1,6.1H522"
