@@ -5,7 +5,7 @@ unravel_data <- function(gage_data = "data/active_flow_gages_summary_wy.rds"){
   gage.data <- readRDS(gage_data)
   
   # reshape dat for plotting
-  gage_melt<-gage.data %>%
+  gage_melt <- gage.data %>%
     unnest(which_years_active)%>%
     unnest(gap_years)%>%
     melt(id.vars=c('site','n_years_active','earliest_active_year', 'any_gaps'), value.name='year', variable.name='activity')%>%
@@ -19,7 +19,6 @@ unravel_data <- function(gage_data = "data/active_flow_gages_summary_wy.rds"){
     transform(year=as.numeric(year))
   # warning produced = inactive years contain ranges. desn't affect age calc, ignoring for now
   return(gage_melt)
-  
-  font_add_google(name = 'Open Sans', family = 'open-sans')
-  
+
 }
+
