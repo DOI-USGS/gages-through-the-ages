@@ -1,3 +1,8 @@
+
+
+#' Plot bar chart of active gages
+#' @param gage_melt long form, gage site_no & years active
+#' @param yr year being shown
 plot_gage_timeseries <- function(gage_melt, yr){
   
   font_fam <-'Source Sans Pro'
@@ -53,6 +58,11 @@ plot_gage_timeseries <- function(gage_melt, yr){
   
 }
 
+#' Plot map of active gages
+#' @param gage_melt long form, gage site_no & years active
+#' @param active_year year being shown
+#' @param site_map shifted sites to matcvh state_map
+#' @param state_map shifted states and territories
 plot_gage_map <- function(gage_melt, active_year, site_map, state_map){
   
   # filter gage data to given year
@@ -84,7 +94,12 @@ plot_gage_map <- function(gage_melt, active_year, site_map, state_map){
   
 }
 
-compose_chart <- function(bar_chart, gage_map, year, width, height){
+
+#' Compose map and bar chart together
+#' @param bar_chart timeseries bar chart of active flow gages
+#' @param year year being shown
+#' @param gage_map map of active gages
+compose_chart <- function(bar_chart, gage_map, year){
   
   ggdraw(xlim = c(0, 1), ylim = c(0,1)) +
     # create background canvas
@@ -106,7 +121,7 @@ compose_chart <- function(bar_chart, gage_map, year, width, height){
       height = 0.25, width = 1 - 0.1
     )
   
-  ggsave(sprintf('out/ppt/gage_time_%s.png', year), width = 5, height = 4, dpi = 300, units = 'in')
+  ggsave(sprintf('out/gage_time_%s.png', year), width = 5, height = 4, dpi = 300, units = 'in')
   
 }
 

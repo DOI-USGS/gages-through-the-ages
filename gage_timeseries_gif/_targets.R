@@ -20,20 +20,17 @@ showtext::showtext_auto(enable = TRUE)
 proj.string <- "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"
 
 list(
+  # Output of `national-flow-observations`
   tar_target(
     gage_data,
     readRDS("data/active_flow_gages_summary_wy.rds")
   ),
+  # Put in long form with site_no x years active
   tar_target(
     gage_melt,
-    gage_data |>
-      unnest(which_years_active) |>
-      unnest(gap_years) |>
-      select(-n_years_active, -earliest_active_year) |>
-      transform(gap_years = as.numeric(gap_years)) |>
-      pivot_longer(c(which_years_active, gap_years), values_to = 'year', names_to = 'activity') |>
-      filter(!is.na(year), year >= 1889, activity == 'which_years_active')
+    time_data(gage_data) 
   ),
+  # Prep shifted states for map layout
   tar_target(
     AK,
     list(abrv = 'AK', scale = 0.37, shift = I(c(90,-460)), 
@@ -53,27 +50,32 @@ list(
     state_map,
     fetch_state_map(AK, HI, PR)
   ),
+  #Prep shifted sites for map layout
   tar_target(
     site_map,
     shift_sites(AK, HI, PR, gage_data = "data/active_flow_gages_summary_wy.rds")
   ),
+  # Years for animation
   tar_target(
     year_list,
     seq(1889, 2021, by = 1)
   ),
+  # Plot bar chart of active streamgages through time
   tar_target(
     gage_bar_list,
     plot_gage_timeseries(gage_melt, year_list),
     pattern = map(year_list)
   ),
+  # Map active streamgages through time - shifted layout
   tar_target(
     gage_map_list,
     plot_gage_map(gage_melt, year_list, site_map, state_map),
     pattern = map(year_list)
   ),
+  # Plot bar chart and map together 
   tar_target(
     gage_frames,
-    compose_chart(gage_bar_list, gage_map_list, year = year_list, width = 1000, height = 900),
+    compose_chart(gage_bar_list, gage_map_list, year = year_list),
     format = 'file',
     pattern = map(year_list, gage_bar_list, gage_map_list)
   ),
@@ -82,12 +84,14 @@ list(
   #  resize_frames(gage_frames, scale_width = 800, dir_out = 'out/'),
   #  format = 'file'
   #),
+  # Animate frames to gif
   tar_target(
     gage_gif,
-    animate_frames_gif(gage_frames, 'out/ppt/gage_timeseries.gif',
+    animate_frames_gif(gage_frames, 'out/gage_timeseries.gif',
                    reduce = TRUE, frame_delay_cs = 20, frame_rate = 4),
     format = 'file'
   ),
+  # Add logo to gif
   tar_target(
     gif_final,
     {
@@ -98,7 +102,7 @@ list(
      # add to gif 
      image_read(gage_gif) |>
      image_composite(usgs_logo, offset = '+180+920') |>
-      image_write('gage_timeseries_logo.gif')
+      image_write('out/gage_timeseries_logo.gif')
     },
     format = 'file'
   )
