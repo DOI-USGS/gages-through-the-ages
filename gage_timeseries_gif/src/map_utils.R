@@ -3,7 +3,6 @@
 #' @param \dots arguments passed to \code{\link[maps]{map}} excluding \code{fill} and \code{plot}
 #' 
 
-proj.string <- "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"
 to_sp <- function(...){
   map <- maps::map(..., fill = TRUE, plot = FALSE)
   IDs <- sapply(strsplit(map$names, ":"), function(x) x[1])
