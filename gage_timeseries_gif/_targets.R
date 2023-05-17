@@ -50,7 +50,7 @@ list(
     state_map,
     fetch_state_map(AK, HI, PR)
   ),
-  #Prep shifted sites for map layout
+  # Prep shifted sites for map layout
   tar_target(
     site_map,
     shift_sites(AK, HI, PR, gage_data = "data/active_flow_gages_summary_wy.rds")

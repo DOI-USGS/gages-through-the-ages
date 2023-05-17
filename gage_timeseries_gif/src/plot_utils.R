@@ -81,7 +81,6 @@ plot_gage_map <- function(gage_melt, active_year, site_map, state_map){
     ggplot() +
     geom_sf(data = states.sf, fill = '#ededed',
             linewidth = 0.25, color = 'white') +
-    #geom_sf(color = 'white', size = 0.2) +
     geom_sf(color = '#0962b2', size = 0.1, alpha = 0.7) +
     theme_void() 
   
