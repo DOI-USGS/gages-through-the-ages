@@ -63,7 +63,7 @@ list(
   # Plot bar chart of active streamgages through time
   tar_target(
     gage_bar_list,
-    plot_gage_timeseries(gage_melt, year_list),
+    plot_gage_timeseries(gage_melt, year_list, font_fam),
     pattern = map(year_list)
   ),
   # Map active streamgages through time - shifted layout

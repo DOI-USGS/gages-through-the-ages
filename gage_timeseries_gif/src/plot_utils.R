@@ -3,12 +3,7 @@
 #' Plot bar chart of active gages
 #' @param gage_melt long form, gage site_no & years active
 #' @param yr year being shown
-plot_gage_timeseries <- function(gage_melt, yr){
-  
-  font_fam <-'Source Sans Pro'
-  sysfonts::font_add_google(font_fam, regular.wt = 300, bold.wt = 700)
-  showtext::showtext_opts(dpi = 300)
-  showtext::showtext_auto(enable = TRUE)
+plot_gage_timeseries <- function(gage_melt, yr, font_fam){
   
   # store vars for plotting
   active_year <- as.numeric(as.character(yr))
