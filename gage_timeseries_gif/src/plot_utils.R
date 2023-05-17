@@ -6,7 +6,7 @@
 plot_gage_timeseries <- function(gage_melt, yr, font_fam){
   
   # store vars for plotting
-  active_year <- as.numeric(as.character(yr))
+  active_year <- as.numeric(yr)
   yr_max <- max(gage_melt$year)
   
   gages_by_year <- gage_melt |>
