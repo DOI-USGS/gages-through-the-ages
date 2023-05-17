@@ -49,7 +49,7 @@ targets:
     command: unravel_data(gage_data = "data/active_flow_gages_summary_wy.rds")
     
   gage_years:
-    command: seq(I(1889), I(2019))
+    command: seq(I(1889), I(2021))
   
   twitter_frames:
     command: create_gif_frames(gage_years, 

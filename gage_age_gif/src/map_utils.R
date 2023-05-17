@@ -7,21 +7,22 @@ proj.string <- "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=637
 to_sp <- function(...){
   library(maptools)
   library(maps)
-  map <- maps::map(..., fill=TRUE, plot = FALSE)
+  map <- maps::map(..., fill = TRUE, plot = FALSE)
   IDs <- sapply(strsplit(map$names, ":"), function(x) x[1])
   map.sp <- map2SpatialPolygons(map, IDs=IDs, proj4string=CRS("+proj=longlat +datum=WGS84"))
-  map.sp.t <- spTransform(map.sp, CRS(proj.string))
+  map.sp.t <- spTransform(map.sp, CRSobj = proj.string)
   return(map.sp.t)
 }
 
 #' @param locations a data.frame with dec_long_va and dec_lat_va
 points_sp <- function(locations){
   library(dplyr)
-  
-  points <- cbind(locations$dec_long_va, locations$dec_lat_va) %>% 
-    sp::SpatialPoints(proj4string = CRS("+proj=longlat +datum=WGS84")) %>% 
-    sp::spTransform(CRS(proj.string)) %>% 
+  #browser()
+  points <- cbind(locations$dec_long_va, locations$dec_lat_va) #%>% 
+  points_sp <- sp::SpatialPoints(points, CRS("+proj=longlat +datum=WGS84")) #%>% 
+  points_transform <- sp::spTransform(points_sp, proj.string) %>% 
     sp::SpatialPointsDataFrame(data = locations[c('site_no')])
+  return(points_transform)
 }
 
 
