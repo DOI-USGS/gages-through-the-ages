@@ -17,7 +17,7 @@ to_sp <- function(...){
 #' @param locations a data.frame with dec_long_va and dec_lat_va
 points_sp <- function(locations){
   library(dplyr)
-  points <- cbind(locations$dec_long_va, locations$dec_lat_va) #%>% 
+  points <- cbind(locations$dec_long_va, locations$dec_lat_va) 
   points_sp <- sp::SpatialPoints(points, CRS("+proj=longlat +datum=WGS84")) #%>% 
   points_transform <- sp::spTransform(points_sp, proj.string) %>% 
     sp::SpatialPointsDataFrame(data = locations[c('site_no')])
