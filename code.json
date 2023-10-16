@@ -14,10 +14,10 @@
         }
       ]
     },
-    "homepageURL": "https://github.com/usgs-makerspace/gages-through-the-ages/",
-    "downloadURL": "https://github.com/usgs-makerspace/gages-through-the-ages/archive/refs/heads/main.zip",
-    "disclaimerURL": "https://github.com/usgs-makerspace/gages-through-the-ages/blob/main/DISCLAIMER.md",
-    "repositoryURL": "https://github.com/usgs-makerspace/gages-through-the-ages.git",
+    "homepageURL": "https://github.com/DOI-USGS/gages-through-the-ages/",
+    "downloadURL": "https://github.com/DOI-USGS/gages-through-the-ages/archive/refs/heads/main.zip",
+    "disclaimerURL": "https://github.com/DOI-USGS/gages-through-the-ages/blob/main/DISCLAIMER.md",
+    "repositoryURL": "https://github.com/DOI-USGS/gages-through-the-ages.git",
     "vcs": "git",
     "laborHours": 50,
     "tags": [
@@ -35,42 +35,6 @@
     },
     "date": {
       "metadataLastUpdated": "2023-10-16"
-    }
-  },
-  {
-    "name": "",
-    "organization": "U.S. Geological Survey",
-    "description": "",
-    "version": "v0.0.0",
-    "status": "Ideation",
-    "permissions": {
-      "usageType": "openSource",
-      "licenses": [
-        {
-          "name": "Public Domain, CC0-1.0",
-          "URL": "LICENSE.md"
-        }
-      ]
-    },
-    "homepageURL": "",
-    "downloadURL": "",
-    "disclaimerURL": "",
-    "repositoryURL": "",
-    "vcs": "git",
-    "laborHours": 1,
-    "tags": [
-      "R",
-      "USGS"
-    ],
-    "languages": [
-      "R"
-    ],
-    "contact": {
-      "name": "",
-      "email": ""
-    },
-    "date": {
-      "metadataLastUpdated": "2022-10-16"
     }
   }
 ]
