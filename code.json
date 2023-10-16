@@ -19,7 +19,7 @@
     "disclaimerURL": "https://github.com/usgs-makerspace/gages-through-the-ages/blob/main/DISCLAIMER.md",
     "repositoryURL": "https://github.com/usgs-makerspace/gages-through-the-ages.git",
     "vcs": "git",
-    "laborHours": -1,
+    "laborHours": 50,
     "tags": [
       "R",
       "USGS"
