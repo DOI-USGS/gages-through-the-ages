@@ -1,0 +1,5 @@
+@import './common.css'; /* USGS Viz ID Stylesheet */
+@import './custom.css'; /* USGS Viz ID Stylesheet */
+
+/* css styles specific to page content exclusive of header and footer*/
+/* NOT component-specific */

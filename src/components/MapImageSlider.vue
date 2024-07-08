@@ -1813,128 +1813,123 @@
     </caption>
   </div>
 </template>
-<script>
+<script setup>
+  import { onMounted } from "vue";
+
   import BeerSlider from "beerslider";
-  import GeorgiaInsetMap from './georgiaInsetMap';
-  import atlantaSliderText from "../assets/mapboxSlider/atlantaSliderText";
-  export default {
-      'name': 'MapImageSlider',
-      components:{
-            GeorgiaInsetMap
-      },
-      data(){
-          return{
-              atlantaText: atlantaSliderText.textContents,
-              svg: null,
-              pt: null,
-              firstHover: null
-          }
-      },
-      mounted(){
-          window.addEventListener('load', function(){
-              new BeerSlider(document.getElementById('sliderOne'));
-              new BeerSlider(document.getElementById('sliderTwo'));
-          })
-          this.svg = document.querySelector("#cartogram-svg");
-          this.pt = this.svg.createSVGPoint();
-      },
-      methods: {
+  import GeorgiaInsetMap from '@/components/GeorgiaInsetMap.vue';
+  import atlantaSliderText from "../assets/text/atlantaSliderText";
+
+  // global variables
+  const atlantaText = atlantaSliderText.textContents;
+  let svg = null;
+  let pt = null;
+  let firstHover = null;
+
+  // Declare behavior on mounted
+  // functions called here
+  onMounted(() => {
+    window.addEventListener('load', function(){
+        new BeerSlider(document.getElementById('sliderOne'));
+        new BeerSlider(document.getElementById('sliderTwo'));
+    })
+    svg = document.querySelector("#cartogram-svg");
+    pt = svg.createSVGPoint();
+  });
+
+  function cursorPoint(evt) {
+    pt.x = evt.clientX; pt.y = evt.clientY;
+    return pt.matrixTransform(svg.getScreenCTM().inverse());
+  }
+        
+  function gagetip(evt) {
       
-        cursorPoint(evt) {
-          this.pt.x = evt.clientX; this.pt.y = evt.clientY;
-          return this.pt.matrixTransform(this.svg.getScreenCTM().inverse());
-        },
-        
-        gagetip(evt) {
+    if (!firstHover) {
+      document.getElementById("annotate-svg").setAttribute("class","hidden");
+      document.getElementById("annotate-arrow").setAttribute("class","hidden");
+      firstHover = true;
+    }
+    // the group contains the path and the text
+    let tooltipGroup = document.getElementById("tooltip-group")
+    let tooltipPath = document.getElementById("tooltip-path");
+    let tooltipText = document.getElementById("tooltip-text");
+  
+    if (evt === undefined){
+      tooltipGroup.setAttribute("class","hidden");
+    } else {
+      tooltipGroup.setAttribute("class","shown");
+      var textBuffer = 6; // px between text edge and tooltipPath border
+      var tipYoffset = -1; // so that the tip is slightly above the mouse location
+      var tipPointer = {x:5, y:10}; // dimensions on the tooltip pointer
+
+      pt = cursorPoint(evt);
+      pt.x = Math.round(pt.x);
+      pt.y = Math.round(pt.y);
+      let svgDims = svg.getAttribute("viewBox").split(" ");
+      let svgLeftBound = Number(svgDims[0]);
+      let svgRightBound = Number(svgDims[2]) + svgLeftBound;
+      let svgTopBound = Number(svgDims[1]);
+      let tooltipX = pt.x;
+      // let tooltipY = pt.y;
       
-          if (!this.firstHover) {
-            document.getElementById("annotate-svg").setAttribute("class","hidden");
-            document.getElementById("annotate-arrow").setAttribute("class","hidden");
-            this.firstHover = true;
-          }
-          // the group contains the path and the text
-          let tooltipGroup = document.getElementById("tooltip-group")
-          let tooltipPath = document.getElementById("tooltip-path");
-          let tooltipText = document.getElementById("tooltip-text");
-        
-          if (evt === undefined){
-            tooltipGroup.setAttribute("class","hidden");
-          } else {
-            tooltipGroup.setAttribute("class","shown");
-            var textBuffer = 6; // px between text edge and tooltipPath border
-            var tipYoffset = -1; // so that the tip is slightly above the mouse location
-            var tipPointer = {x:5, y:10}; // dimensions on the tooltip pointer
-    
-            this.pt = this.cursorPoint(evt);
-            this.pt.x = Math.round(this.pt.x);
-            this.pt.y = Math.round(this.pt.y);
-            let svgDims = this.svg.getAttribute("viewBox").split(" ");
-            let svgLeftBound = Number(svgDims[0]);
-            let svgRightBound = Number(svgDims[2]) + svgLeftBound;
-            let svgTopBound = Number(svgDims[1]);
-            let tooltipX = this.pt.x;
-            let tooltipY = this.pt.y;
-            
-            let translate_elements = evt.target.parentElement.getAttribute("transform");
-            let scale_elements = evt.target.getAttribute("transform");
-            
-            let scaleX = scale_elements.split(/scale\(| /)[1];
-            let translateX = translate_elements.split(/translate\(| /)[1];
-            let tip_JSON = evt.target.getAttribute("data");
-            let tip_data = JSON.parse(tip_JSON);
-            let pt_index = Math.round((this.pt.x - Math.round(translateX) ) / scaleX - 0.5);
-            let state_id = evt.target.getAttribute("id").split("-")[0];
-            tooltipText.textContent = state_id + " had " + tip_data.n_gages[pt_index] + 
-              " gages in " + (tip_data.start_year[0] + pt_index);
-            
-            let textBox = tooltipText.getBBox();
-            let textLength = Math.round(textBox.width);
-            let textHeight = Math.round(textBox.height);
-            let halfLength = textLength / 2;
-            
-            // modify the border if part of it is outside of the bounds
-            if (this.pt.x - halfLength - textBuffer < svgLeftBound)  {
-              // the tip is going to slide while the box stays fixed on the left
-              tooltipX = halfLength + textBuffer;
-            }
-            else if (this.pt.x + halfLength + textBuffer > svgRightBound) {
-              // the tip is going to slide while the box stays fixed on the right
-              tooltipX = svgRightBound - halfLength - textBuffer;
-            } 
-            
-            var totHeight = tipPointer.y + textHeight + textBuffer;
-            if (this.pt.y - totHeight < svgTopBound){
-              // the tip is going to shrink w/ the box stuck on top
-              tipPointer.y = this.pt.y - totHeight + tipPointer.y - svgTopBound;
-            }
-            
-            tooltipText.setAttribute('x',tooltipX);
-            
-            if (tipPointer.y < - (tipYoffset)){ 
-              // is a rectangle w/ no tip
-              tooltipPath.setAttribute("d", 
-                "M" + (tooltipX - halfLength - textBuffer) + "," + svgTopBound +
-                " H" + (tooltipX + halfLength + textBuffer) +
-                " v" + (textHeight + textBuffer) +
-                " H" + (tooltipX - halfLength - textBuffer)+"Z");
-        
-              tooltipText.setAttribute("y", svgTopBound + (textHeight+textBuffer) / 2);  
-            } else { 
-              // is a normal tip w/ a triangle tip to it
-              tooltipPath.setAttribute("d", 
-                "M" + (this.pt.x - tipPointer.x) + "," + (this.pt.y-tipPointer.y) +
-                " l" + tipPointer.x + "," + (tipPointer.y + tipYoffset) +
-                " l" + tipPointer.x + ",-" + (tipPointer.y + tipYoffset) +
-                " H" + (tooltipX + halfLength + textBuffer) +
-                " v-" + (textHeight + textBuffer) +
-                " H" + (tooltipX - halfLength - textBuffer) +
-                " v" + (textHeight + textBuffer) + "Z");
-        
-              tooltipText.setAttribute("y", this.pt.y-tipPointer.y - (textHeight+textBuffer) / 2);
-            }
-          }
-        }
+      let translate_elements = evt.target.parentElement.getAttribute("transform");
+      let scale_elements = evt.target.getAttribute("transform");
+      
+      let scaleX = scale_elements.split(/scale\(| /)[1];
+      let translateX = translate_elements.split(/translate\(| /)[1];
+      let tip_JSON = evt.target.getAttribute("data");
+      let tip_data = JSON.parse(tip_JSON);
+      let pt_index = Math.round((pt.x - Math.round(translateX) ) / scaleX - 0.5);
+      let state_id = evt.target.getAttribute("id").split("-")[0];
+      tooltipText.textContent = state_id + " had " + tip_data.n_gages[pt_index] + 
+        " gages in " + (tip_data.start_year[0] + pt_index);
+      
+      let textBox = tooltipText.getBBox();
+      let textLength = Math.round(textBox.width);
+      let textHeight = Math.round(textBox.height);
+      let halfLength = textLength / 2;
+      
+      // modify the border if part of it is outside of the bounds
+      if (pt.x - halfLength - textBuffer < svgLeftBound)  {
+        // the tip is going to slide while the box stays fixed on the left
+        tooltipX = halfLength + textBuffer;
       }
+      else if (pt.x + halfLength + textBuffer > svgRightBound) {
+        // the tip is going to slide while the box stays fixed on the right
+        tooltipX = svgRightBound - halfLength - textBuffer;
+      } 
+      
+      var totHeight = tipPointer.y + textHeight + textBuffer;
+      if (pt.y - totHeight < svgTopBound){
+        // the tip is going to shrink w/ the box stuck on top
+        tipPointer.y = pt.y - totHeight + tipPointer.y - svgTopBound;
+      }
+      
+      tooltipText.setAttribute('x',tooltipX);
+      
+      if (tipPointer.y < - (tipYoffset)){ 
+        // is a rectangle w/ no tip
+        tooltipPath.setAttribute("d", 
+          "M" + (tooltipX - halfLength - textBuffer) + "," + svgTopBound +
+          " H" + (tooltipX + halfLength + textBuffer) +
+          " v" + (textHeight + textBuffer) +
+          " H" + (tooltipX - halfLength - textBuffer)+"Z");
+  
+        tooltipText.setAttribute("y", svgTopBound + (textHeight+textBuffer) / 2);  
+      } else { 
+        // is a normal tip w/ a triangle tip to it
+        tooltipPath.setAttribute("d", 
+          "M" + (pt.x - tipPointer.x) + "," + (pt.y-tipPointer.y) +
+          " l" + tipPointer.x + "," + (tipPointer.y + tipYoffset) +
+          " l" + tipPointer.x + ",-" + (tipPointer.y + tipYoffset) +
+          " H" + (tooltipX + halfLength + textBuffer) +
+          " v-" + (textHeight + textBuffer) +
+          " H" + (tooltipX - halfLength - textBuffer) +
+          " v" + (textHeight + textBuffer) + "Z");
+  
+        tooltipText.setAttribute("y", pt.y-tipPointer.y - (textHeight+textBuffer) / 2);
+      }
+    }
   }
 </script>
 <style lang="scss">
@@ -1949,10 +1944,8 @@ $brightBlue: rgb(9,98,178);
 $usgsGreen: rgb(51,120,53);
 $brightYellow: rgb(255,200,51);
 
-
-
-@import /* webpackPrefetch: true */ '~beerslider/dist/BeerSlider.css';
-$polygon: '~@/assets/images/polygon.png';
+@import '../../node_modules/beerslider/dist/BeerSlider.css';
+$polygon: '@/assets/images/polygon.png';
 .spacer{
   margin-top: 4vh;
 }

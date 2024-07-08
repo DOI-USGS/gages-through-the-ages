@@ -22,10 +22,7 @@
     </picture>
   </div>
 </template>
-<script>
-export default {
-    'name': 'InsetMap'
-}
+<script setup>
 </script>
 <style scoped lang="scss">
     #insetMap{

@@ -5322,228 +5322,206 @@
     </div>
   </div>
 </template>
-<script>
-    import $ from 'jquery';
-    import yearData from "../assets/data/year-data.js"
-    import gagesBarChartAnimationText from "../assets/gagesBarChartAnimation/gagesBarChartAnimationText";
-    export default {
-        name: 'GagesBarChartAnimation',
-        data() {
-            return {
-                monitoringLocationData: yearData.monitoringLocationData,
-                vizlab: this.vizlab || {},
-                yeardata: {},
-                paths: {},
-                toolTipMethods: null,
-                yearPointer: 0,
-                startYear: undefined,
-                numYears: undefined,
-                delay: 500,
-                playInterval: undefined,
-                ls: null,
-                svg: null,
-                svgId: null,
-                tooltipGroupId: null,
-                TOOLTIP_HTML: null,
-                text: gagesBarChartAnimationText.textContents
-            }
-        },
-        mounted() {
-          this.setUpHoverText();
-          this.startMonitoringLocationAnimation();
-          // The following code will only run after the entire view GagesBarChartAnimation has been rendered
-          // it will change the Vuex state so that other components will know the the GagesBarChartAnimation map has loaded
-          this.$nextTick(function () {
-              this.$store.commit('changeBooleanStateOnSVGMapRender');
+<script setup>
+  import { nextTick, onMounted } from "vue";
+  import $ from 'jquery';
+  import yearData from "../assets/data/year-data.js"
+  import gagesBarChartAnimationText from "../assets/text/gagesBarChartAnimationText";
+  
+  import { useSvgRenderStore } from '@/stores/SvgRenderStore';
+  const svgRenderStore = useSvgRenderStore();
+
+  // global variables
+  const monitoringLocationData = yearData.monitoringLocationData;
+  let yeardata = {};
+  let paths = {};
+  let yearPointer = 0;
+  let startYear = undefined;
+  let numYears = undefined;
+  let delay = 500;
+  let playInterval = undefined;
+  let ls = null;
+  let svg = null;
+  let svgId = null;
+  let tooltipGroupId = null;
+  let TOOLTIP_HTML = null;
+  let text = gagesBarChartAnimationText.textContents;
+
+  // Declare behavior on mounted
+  // functions called here
+  onMounted(() => {
+    setUpHoverText();
+    startMonitoringLocationAnimation();
+    // The following code will only run after the entire view GagesBarChartAnimation has been rendered
+    // it will change the Vuex state so that other components will know the the GagesBarChartAnimation map has loaded
+    nextTick(() => {
+      svgRenderStore.svgRenderedOnInitialLoad = true;      
+    });
+  });
+
+  function setUpHoverText() {
+      let doySVG = document.getElementById('doy-NM');
+
+      svg = document.getElementById("map-svg");
+      svgId = $(svg).attr("id");
+      tooltipGroupId = svgId + '-tooltip-group';
+      TOOLTIP_HTML = '<defs>' +
+              '<clipPath id="' + svgId + '-tipClip">' +
+              '<rect x="-6" y="-11.5" height="11" width="12"/>' +
+              '</clipPath>' +
+              '</defs>' +
+              '<rect height="24" class="tooltip-box hidden"/>' +
+              '<path d="M-6,-12 l6,10 l6,-10" class="tooltip-point hidden" clipPath="url(#'+ svgId + '-tipClip"/>' +
+              '<text dy="-1.1em" text-anchor="middle" class="tooltip-text svg-text"> </text>'
+
+      addTooltip();
+      $('#doy-NM .years-rect').mouseenter(function() {
+          let year = $(this).attr('id').slice(2);
+          $(this).addClass('selected-year');
+          $('#doy_' + year).addClass('selected-doy');
+
+          let use = document.createElementNS(doySVG.namespaceURI, 'use');
+          use.setAttributeNS(doySVG.attributes["xmlns:xlink"].nodeValue, 'href', '#doy_' + year);
+          document.getElementById('dayOfYear').appendChild(use);
+      });
+      $('#doy-NM .years-rect').mouseleave(function() {
+          let year = $(this).attr('id').slice(2);
+          $(this).removeClass('selected-year');
+          $('#dayOfYear use').remove();
+          $('#doy_' + year).removeClass('selected-doy');
+      });
+  }
+
+  function cursorPoint(screenX, screenY) {
+      let point = svg.createSVGPoint();
+      point.x = screenX;
+      point.y = screenY;
+      point = point.matrixTransform(svg.getScreenCTM().inverse());
+      point.x = Math.round(point.x);
+      point.y = Math.round(point.y);
+      return point;
+  }
+  function addTooltip() {
+      let tooltipGroup = document.createElementNS(svg.namespaceURI,"g");
+      tooltipGroup.id = tooltipGroupId
+      tooltipGroup.innerHTML = TOOLTIP_HTML;
+      svg.appendChild(tooltipGroup);
+  }
+  function showTooltip(x, y, tooltipText) {
+      let $tooltip = $(svg).find('.tooltip-text');
+      let $tooltipBox = $(svg).find('.tooltip-box');
+      let $tooltipPoint = $(svg).find('.tooltip-point');
+
+      let text = (typeof tooltipText === "function") ? tooltipText(options) : tooltipText;
+      let svgPoint = cursorPoint(x, y);
+      let svgWidth = Number(svg.getAttribute("viewBox").split(" ")[2]);
+      let textLength;
+      let halfLength;
+      let tooltipX;
+
+      $tooltip.html(text);
+      textLength = Math.round($tooltip.get()[0].getComputedTextLength());
+      halfLength = textLength / 2;
+
+      /* Make sure tooltip text is within the SVG */
+      if (svgPoint.x - halfLength - 6 < 0)  {
+          tooltipX = halfLength + 6;
+      }
+      else if (svgPoint.x + halfLength + 6 > svgWidth) {
+          tooltipX = svgWidth - halfLength - 6;
+      }
+      else {
+          tooltipX = svgPoint.x;
+      }
+      $tooltip.attr("x", tooltipX).attr("y", svgPoint.y);
+
+      /* Set attributes for background box */
+      $tooltipBox.attr("x", tooltipX - halfLength - 6).attr("y", svgPoint.y - 35).attr("width", textLength + 12).removeClass("hidden");
+
+      /* Set attributes for the tooltip point */
+      $tooltipPoint.attr("transform", "translate(" + svgPoint.x + "," + svgPoint.y + ")").removeClass("hidden");
+  }
+  function hideTooltip() {
+      $(svg).find('.tooltip-text').html("");
+      $(svg).find('.tooltip-box').addClass("hidden");
+      $(svg).find('.tooltip-point').addClass("hidden");
+  }
+  function hovertext(event, text) {
+      text ? showTooltip(event.clientX, event.clientY, text):
+              hideTooltip();
+  }
+  function showyear(year) {
+      let indices = undefined;
+      year = "" + year; // force year to be string
+      let barId = '#yr' + year;
+      let filterFunc = function (val, i) {
+          if (undefined !== indices) {
+              return (indices.indexOf(i) != -1)
+          } else {
+              return false;
+          }
+      }
+      for (let group in yeardata) {
+          if (paths.hasOwnProperty(group)) {
+              indices = yeardata[group][year];
+              let newpath = paths[group]["split"].filter(filterFunc);
+              newpath = "M" + ((newpath.length > 0) ? newpath.join("M") : "0,0");
+              $('#' + group).attr("d", newpath);
+          }
+      }
+      $(barId).addClass('selected-year');
+      $(":not(" + barId + ")").removeClass('selected-year');
+  }
+  function pause(year) {
+      clearInterval(playInterval);
+      yearPointer = year - startYear;
+      showyear(year);
+  }
+  function play() {
+      playInterval = setInterval(function () {
+          let year = startYear + yearPointer;
+          yearPointer = (yearPointer + 1) % numYears;
+          showyear(year);
+      }, delay);
+  }
+  function lsfilter(val, i) {
+      return (ls.indexOf(val) == -1);
+  }
+  function startMonitoringLocationAnimation() {
+      const data = monitoringLocationData;
+
+      async function organizeTheData() {
+          let promise = new Promise((resolve, reject) => {
+              for (let group in data) {
+                  let prevgages = [];
+                  yeardata[group] = {};
+                  if (undefined === numYears && undefined === startYear) {
+                      let keys = Object.keys(data[group])
+                      startYear = Number(keys[0]);
+                      numYears = keys.length;
+                  }
+                  for (let year in data[group]) {
+                      let gn = data[group][year]["gn"]
+                      ls = data[group][year]["ls"]
+                      let newgages = prevgages.filter(lsfilter)
+                      newgages = newgages.concat(gn);
+                      yeardata[group][year] = newgages;
+                      prevgages = newgages;
+                  }
+              }
+              resolve();
           });
-        },
-        methods: {
-            runGoogleAnalytics(eventName, action, label) {
-                this.$ga.set({ dimension2: Date.now() });
-                this.$ga.event(eventName, action, label);
-            },
-            setUpHoverText() {
-                const self = this;
-                let doySVG = document.getElementById('doy-NM');
+      }
 
-                this.svg = document.getElementById("map-svg");
-                this.svgId = $(this.svg).attr("id");
-                this.tooltipGroupId = this.svgId + '-tooltip-group';
-                this.TOOLTIP_HTML = '<defs>' +
-                        '<clipPath id="' + this.svgId + '-tipClip">' +
-                        '<rect x="-6" y="-11.5" height="11" width="12"/>' +
-                        '</clipPath>' +
-                        '</defs>' +
-                        '<rect height="24" class="tooltip-box hidden"/>' +
-                        '<path d="M-6,-12 l6,10 l6,-10" class="tooltip-point hidden" clipPath="url(#'+ this.svgId + '-tipClip"/>' +
-                        '<text dy="-1.1em" text-anchor="middle" class="tooltip-text svg-text"> </text>'
-
-                self.addTooltip();
-                $('#doy-NM .years-rect').mouseenter(function() {
-                    let year = $(this).attr('id').slice(2);
-                    $(this).addClass('selected-year');
-                    $('#doy_' + year).addClass('selected-doy');
-
-                    let use = document.createElementNS(doySVG.namespaceURI, 'use');
-                    use.setAttributeNS(doySVG.attributes["xmlns:xlink"].nodeValue, 'href', '#doy_' + year);
-                    document.getElementById('dayOfYear').appendChild(use);
-                });
-                $('#doy-NM .years-rect').mouseleave(function() {
-                    let year = $(this).attr('id').slice(2);
-                    $(this).removeClass('selected-year');
-                    $('#dayOfYear use').remove();
-                    $('#doy_' + year).removeClass('selected-doy');
-                });
-            },
-
-            cursorPoint: function(screenX, screenY) {
-                let svg = this.svg;
-                let point = svg.createSVGPoint();
-                point.x = screenX;
-                point.y = screenY;
-                point = point.matrixTransform(svg.getScreenCTM().inverse());
-                point.x = Math.round(point.x);
-                point.y = Math.round(point.y);
-                return point;
-            },
-            addTooltip() {
-                const self = this;
-
-                let tooltipGroup = document.createElementNS(self.svg.namespaceURI,"g");
-                tooltipGroup.id = self.tooltipGroupId
-                tooltipGroup.innerHTML = self.TOOLTIP_HTML;
-                self.svg.appendChild(tooltipGroup);
-            },
-            showTooltip(x, y, tooltipText) {
-                const self = this;
-                let svg = this.svg;
-                let $tooltip = $(svg).find('.tooltip-text');
-                let $tooltipBox = $(svg).find('.tooltip-box');
-                let $tooltipPoint = $(svg).find('.tooltip-point');
-
-                let text = (typeof tooltipText === "function") ? tooltipText(options) : tooltipText;
-                let svgPoint = self.cursorPoint(x, y);
-                let svgWidth = Number(svg.getAttribute("viewBox").split(" ")[2]);
-                let textLength;
-                let halfLength;
-                let tooltipX;
-
-                $tooltip.html(text);
-                textLength = Math.round($tooltip.get()[0].getComputedTextLength());
-                halfLength = textLength / 2;
-
-                /* Make sure tooltip text is within the SVG */
-                if (svgPoint.x - halfLength - 6 < 0)  {
-                    tooltipX = halfLength + 6;
-                }
-                else if (svgPoint.x + halfLength + 6 > svgWidth) {
-                    tooltipX = svgWidth - halfLength - 6;
-                }
-                else {
-                    tooltipX = svgPoint.x;
-                }
-                $tooltip.attr("x", tooltipX).attr("y", svgPoint.y);
-
-                /* Set attributes for background box */
-                $tooltipBox.attr("x", tooltipX - halfLength - 6).attr("y", svgPoint.y - 35).attr("width", textLength + 12).removeClass("hidden");
-
-                /* Set attributes for the tooltip point */
-                $tooltipPoint.attr("transform", "translate(" + svgPoint.x + "," + svgPoint.y + ")").removeClass("hidden");
-            },
-            hideTooltip() {
-                let svg = this.svg;
-                $(svg).find('.tooltip-text').html("");
-                $(svg).find('.tooltip-box').addClass("hidden");
-                $(svg).find('.tooltip-point').addClass("hidden");
-            },
-            hovertext(event, text) {
-                const self = this;
-                if (event !== '') { // Don't run this on mouseout, which sends an empty event.
-                    const yearForGoogleAnalytics = text !== 'undefined' ? text.slice(-4) : 'year not active';
-                    self.runGoogleAnalytics('bar chart hover', 'hover', yearForGoogleAnalytics)
-                }
-
-                text ? self.showTooltip(event.clientX, event.clientY, text):
-                        self.hideTooltip();
-            },
-            showyear(year) {
-                const self = this;
-                let indices = undefined;
-                year = "" + year; // force year to be string
-                let barId = '#yr' + year;
-                let filterFunc = function (val, i) {
-                    if (undefined !== indices) {
-                        return (indices.indexOf(i) != -1)
-                    } else {
-                        return false;
-                    }
-                }
-                for (let group in self.yeardata) {
-                    if (self.paths.hasOwnProperty(group)) {
-                        indices = self.yeardata[group][year];
-                        let newpath = self.paths[group]["split"].filter(filterFunc);
-                        newpath = "M" + ((newpath.length > 0) ? newpath.join("M") : "0,0");
-                        $('#' + group).attr("d", newpath);
-                    }
-                }
-                $(barId).addClass('selected-year');
-                $(":not(" + barId + ")").removeClass('selected-year');
-            },
-            pause(year) {
-                const self = this;
-                clearInterval(self.playInterval);
-                self.yearPointer = year - this.startYear;
-                self.showyear(year);
-            },
-            play() {
-                const self = this;
-                self.playInterval = setInterval(function () {
-                    let year = self.startYear + self.yearPointer;
-                    self.yearPointer = (self.yearPointer + 1) % self.numYears;
-                    self.showyear(year);
-                }, self.delay);
-            },
-            lsfilter: function (val, i) {
-                return (this.ls.indexOf(val) == -1);
-            },
-            startMonitoringLocationAnimation() {
-                const self = this;
-                const data = this.monitoringLocationData;
-
-                async function organizeTheData() {
-                    let promise = new Promise((resolve, reject) => {
-                        for (let group in data) {
-                            let prevgages = [];
-                            self.yeardata[group] = {};
-                            if (undefined === self.numYears && undefined === self.startYear) {
-                                let keys = Object.keys(data[group])
-                                self.startYear = Number(keys[0]);
-                                self.numYears = keys.length;
-                            }
-                            for (let year in data[group]) {
-                                let gn = data[group][year]["gn"]
-                                self.ls = data[group][year]["ls"]
-                                let newgages = prevgages.filter(self.lsfilter)
-                                newgages = newgages.concat(gn);
-                                self.yeardata[group][year] = newgages;
-                                prevgages = newgages;
-                            }
-                        }
-                        resolve();
-                    });
-                }
-
-                organizeTheData().then(function () {
-                    for (let group in self.yeardata) {
-                        self.paths[group] = {};
-                        self.paths[group]["orig"] = $('#' + group).attr("d");
-                        self.paths[group]["split"] = self.paths[group]["orig"].split("M");
-                    }
-                    self.play();
-                });
-            },
-        }
-    }
+      organizeTheData().then(function () {
+          for (let group in yeardata) {
+              paths[group] = {};
+              paths[group]["orig"] = $('#' + group).attr("d");
+              paths[group]["split"] = paths[group]["orig"].split("M");
+          }
+          play();
+      });
+  }
 </script>
 <style lang="scss">
 $stateFill: #e4e4e3;
@@ -5562,6 +5540,7 @@ $brightYellow: rgb(255,200,51);
     text-align: center;
     font-size: 4em;
     font-weight: 900;
+    line-height: 115%;
 
 
     @media screen and (max-width: 600px) {
