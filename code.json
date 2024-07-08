@@ -2,7 +2,7 @@
   {
     "name": "gages-through-the-ages",
     "organization": "U.S. Geological Survey",
-    "description": "{project_description}",
+    "description": "How the history of streamgaging reflects the evolving water needs of the nation.",
     "version": "main",
     "status": "Production",
     "permissions": {
