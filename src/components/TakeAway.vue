@@ -12,16 +12,10 @@
     </div>
   </div>
 </template>
-<script>
-import takeAwayText from "../assets/takeAway/takeAwayText";
-export default {
-    'name': 'TakeAway',
-    data() {
-        return {
-            text: takeAwayText.textContents
-        }
-    }
-}
+<script setup>
+  import takeAwayText from "@/assets/text/takeAwayText";
+
+  const text = takeAwayText.textContents
 </script>
 <style lang="scss" scoped>
 

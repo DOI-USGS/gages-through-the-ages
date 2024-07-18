@@ -212,7 +212,7 @@
       >
         <h4 class="usa-accordion__heading">
           <button
-            v-if="window.width > 770"
+            v-if="windowWidth > 770"
             class="usa-accordion__button"
             aria-expanded="false"
             :aria-controls="method.title"
@@ -221,7 +221,7 @@
             {{ method.title }}
           </button>
           <button
-            v-if="window.width <= 770 || $isMobile()"
+            v-if="windowWidth <= 770 || mobileView"
             class="usa-accordion__button"
             aria-expanded="false"
             :aria-controls="method.title"
@@ -241,13 +241,13 @@
           class="usa-accordion__content usa-prose gage-target"
         >
           <h3
-            v-if="window.width > 770"
+            v-if="windowWidth > 770"
             class="usa-prose"
           >
             {{ method.timePeriod }}
           </h3>
           <h3
-            v-if="window.width <= 770 || $isMobile()"
+            v-if="windowWidth <= 770 || mobileView"
             class="usa-prose"
           >
             {{ method.title }}
@@ -259,57 +259,22 @@
   </div>
 </template>
 
-<script>
-  import methods from '../assets/annotatedTimeline/newTimeline.js';
-    export default {
-        'name': 'NewTimeline',
-        data(){
-            return{
-                methods: methods.methodContent,
-                window: {
-                  width: 0,
-                  height: 0
-                }
-            }
-        },
-        created() {
-          window.addEventListener('resize', this.handleResize);
-          this.handleResize();
-        },
-        destroyed() {
-          window.removeEventListener('resize', this.handleResize);
-        },
-        mounted() {
-            // This is a fix for the weird USWDS glitch that causes the Methods section accordion menus to be open on page load
-            this.closeAccordions();
-        },
-        methods: {
-            handleResize() {
-              this.window.width = window.innerWidth;
-              this.window.height = window.innerHeight;
-              this.closeAccordions();
-            },
-            closeAccordions() {
-              const targetAccordionDivs = document.querySelectorAll('div.gage-target');
-              targetAccordionDivs.forEach((div) => {
-                div.setAttribute('hidden', '""');
-              });
-            },
-            runGoogleAnalytics(eventName, action, label) {
-                this.$ga.set({ dimension2: Date.now() });
-                this.$ga.event(eventName, action, label);
-            },
-            trackMethodClick(event) {
-              const methodClicked = 'Method clicked: ' + event.target.innerHTML;
-              this.runGoogleAnalytics('method interaction', 'click', methodClicked);
-            }
-        }
-    }
+<script setup>
+  import { isMobile } from 'mobile-device-detect';
+  import methodContent from '../assets/text/newTimeline.js';
+
+  // global variables
+  const mobileView = isMobile;
+  const methods = methodContent.methodContent;
+  const windowWidth = window.innerWidth
+  
 </script>
 
 <style scoped lang="scss">
-$chevronLeft: '~@/assets/images/chevron-left.png';
-$chevronDown: '~@/assets/images/chevron-down.png';
+@import '../../node_modules/@uswds/uswds/dist/css/uswds.css';
+
+$chevronLeft: '@/assets/images/chevron-left.png';
+$chevronDown: '@/assets/images/chevron-down.png';
 $stateFill: #e4e4e3;
 $white: rgb(255,255,255);
 $axis: rgb(100,100,100);

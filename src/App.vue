@@ -1,69 +1,67 @@
 <template>
-  <div id="app">
-    <HeaderUSWDSBanner />
+  <div>
+    <WindowSize v-if="typeOfEnv === '-test build-'" />
+    <HeaderUSWDSBanner v-if="typeOfEnv !== '-test build-'" />
     <HeaderUSGS />
-    <InternetExplorerPage v-if="isInternetExplorer" />
-    <WorkInProgressWarning v-if="checkTypeOfEnv !== '' & !isInternetExplorer" />
-    <router-view v-if="!isInternetExplorer" />
-    <FooterLinks v-if="!isInternetExplorer & checkIfBarChartIsRendered" />
-    <PreFooterCodeLinks v-if="checkIfBarChartIsRendered || isInternetExplorer" />
-    <FooterUSGS v-if="checkIfBarChartIsRendered || isInternetExplorer" />
+    <WorkInProgressWarning v-if="typeOfEnv === '-beta build-'" />
+    <RouterView />
+    <PreFooterCodeLinks v-if="checkIfSvgIsRendered"/>
+    <FooterUSGS v-if="checkIfSvgIsRendered"/>
   </div>
 </template>
 
-<script>
-    import HeaderUSWDSBanner from './components/HeaderUSWDSBanner'
-    import HeaderUSGS from './components/HeaderUSGS'
-    import WorkInProgressWarning from "./components/WorkInProgressWarning"
-    import InternetExplorerPage from "./components/InternetExplorerPage";
+<script setup>
+  import { computed, onMounted } from "vue";
+  import { RouterView } from 'vue-router'
+  import WindowSize from "@/components/WindowSize.vue";
+  import HeaderUSWDSBanner from "@/components/HeaderUSWDSBanner.vue";
+  import HeaderUSGS from '@/components/HeaderUSGS.vue';
+  import WorkInProgressWarning from "@/components/WorkInProgressWarning.vue";
+  import PreFooterCodeLinks from "@/components/PreFooterCodeLinks.vue";
+  import FooterUSGS from '@/components/FooterUSGS.vue';
+  import { useWindowSizeStore } from '@/stores/WindowSizeStore';
+  import { useSvgRenderStore } from '@/stores/SvgRenderStore';
 
-    export default {
-        name: 'App',
-        components: {
-            HeaderUSWDSBanner,
-            HeaderUSGS,
-            WorkInProgressWarning,
-            InternetExplorerPage,
-            FooterLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-visualizations"*/ "./components/FooterLinks"),
-            PreFooterCodeLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-code"*/ "./components/PreFooterCodeLinks"),
-            FooterUSGS: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "usgs-footer"*/ "./components/FooterUSGS")
-        },
-        data() {
-            return {
-                isInternetExplorer: false,
-              isMobile: false
-            }
-        },
-        computed: {
-            checkIfBarChartIsRendered() {
-                return this.$store.state.svgRenderedOnInitialLoad;
-            },
-            checkTypeOfEnv() {
-                return process.env.VUE_APP_TIER
-            }
-        },
-        created() {
-            // We are ending support for Internet Explorer, so let's test to see if the browser used is IE.
-            this.$browserDetect.isIE ? this.isInternetExplorer = true : this.isInternetExplorer = false;
-        }
-    }
+  const windowSizeStore = useWindowSizeStore();
+  const svgRenderStore = useSvgRenderStore();
+  const typeOfEnv = import.meta.env.VITE_APP_TIER;
+
+  // ADD CHECK IF SVG IS RENDERED
+  const checkIfSvgIsRendered = computed(() => {
+    return svgRenderStore.svgRenderedOnInitialLoad
+  })
+
+  // Declare behavior on mounted
+  // functions called here
+  onMounted(() => {
+    // Add window size tracking by adding a listener
+    window.addEventListener('resize', handleResize);
+    handleResize();
+  });
+
+  // Functions
+  function handleResize() {
+    // store the window size values in the Pinia state
+    windowSizeStore.windowWidth = window.innerWidth;
+    windowSizeStore.windowHeight = window.innerHeight;
+  }
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
-// Import Colors
-$stateFill: #e4e4e3;
-$white: rgb(255,255,255);
-$axis: rgb(100,100,100);
-$lightGray:rgb(237,237,237);
-$darkGray: rgb(51,51,51);
-$brightBlue: rgb(9,98,178);
-$usgsGreen: rgb(51,120,53);
-$brightYellow: rgb(255,200,51);
+  // Import Colors
+  $stateFill: #e4e4e3;
+  $white: rgb(255,255,255);
+  $axis: rgb(100,100,100);
+  $lightGray:rgb(237,237,237);
+  $darkGray: rgb(51,51,51);
+  $brightBlue: rgb(9,98,178);
+  $usgsGreen: rgb(51,120,53);
+  $brightYellow: rgb(255,200,51);
 
-// General CSS
+  // General CSS
   body{
     margin: 0;
     padding: 0;

@@ -13,6 +13,6 @@ into the project you can [fork this repository][2] and
 
 
 
-[1]: https://github.com/usgs-makerspace/gages-through-the-ages/issues
+[1]: https://github.com/DOI-USGS/gages-through-the-ages/issues
 [2]: https://help.github.com/articles/fork-a-repo/
 [3]: https://help.github.com/articles/about-pull-requests/
