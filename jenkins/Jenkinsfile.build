@@ -29,7 +29,7 @@ pipeline {
                           extensions: [],
                           gitTool: 'Default',
                           submoduleCfg: [],
-                          userRemoteConfigs: [[url: "https://github.com/DOI-USGS/${params.VITE_APP_TITLE}.git", credentialsId: "vizlab_jenkins_${params.VITE_APP_TITLE}"]]
+                          userRemoteConfigs: [[url: "https://github.com/DOI-USGS/${params.VITE_APP_TITLE}.git"]]
                         ])
                 }
         }
