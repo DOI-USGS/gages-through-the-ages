@@ -1977,7 +1977,9 @@ $polygon: '@/assets/images/polygon.png';
     border-left: 2px solid #fff;
     border-top: 2px solid #fff;
 }
-
+.beer-range {
+  -webkit-appearance: sliderthumb-horizontal !important;
+}
 .beer-range:focus ~ .beer-handle {
     background: $brightBlue;
 }
