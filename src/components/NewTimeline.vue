@@ -239,6 +239,7 @@
         <div
           :id="method.title"
           class="usa-accordion__content usa-prose gage-target"
+          hidden
         >
           <h3
             v-if="windowWidth > 770"

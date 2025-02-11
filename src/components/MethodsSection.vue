@@ -22,6 +22,7 @@
         <div
           :id="method.title"
           class="usa-accordion__content usa-prose gage-target"
+          hidden
         >
           <p><span v-html="method.method" /></p>
         </div>
