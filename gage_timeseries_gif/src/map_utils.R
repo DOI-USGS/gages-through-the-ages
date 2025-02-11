@@ -6,9 +6,9 @@
 to_sp <- function(...){
   map <- maps::map(..., fill = TRUE, plot = FALSE)
   IDs <- sapply(strsplit(map$names, ":"), function(x) x[1])
-  map.sp <- map2SpatialPolygons(map, IDs=IDs, proj4string=CRS("+proj=longlat +datum=WGS84"))
-  map.sp.t <- spTransform(map.sp, CRSobj = proj.string)
-  return(map.sp.t)
+  map.sp <- sf::st_as_sf(map)
+  map.sp.t <- sp::spTransform(x = map.sp, CRSobj = sp::CRS("+proj=longlat +datum=WGS84"))
+  return(map.sp)
 }
 
 #' @param locations a data.frame with dec_long_va and dec_lat_va

@@ -3,7 +3,7 @@ library(tidyverse)
 
 options(tidyverse.quiet = TRUE)
 tar_option_set(packages = c("tidyverse", "raster", "sf", 
-                            "maps", "maptools",
+                            "maps", #"maptools",
                             "scico", "cowplot", "geomtextpath", 
                             "sp","magick"))
 
@@ -58,7 +58,7 @@ list(
   # Years for animation
   tar_target(
     year_list,
-    seq(1889, 2021, by = 1)
+    seq(1889, 2022, by = 1)
   ),
   # Plot bar chart of active streamgages through time
   tar_target(
