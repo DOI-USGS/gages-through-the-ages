@@ -7,8 +7,8 @@ to_sp <- function(...){
   map <- maps::map(..., fill = TRUE, plot = FALSE)
   IDs <- sapply(strsplit(map$names, ":"), function(x) x[1])
   map.sp <- sf::st_as_sf(map)
-  map.sp.t <- sp::spTransform(x = map.sp, CRSobj = sp::CRS("+proj=longlat +datum=WGS84"))
-  return(map.sp)
+  map.sp.t <- sf::st_transform(x = map.sp, CRSobj = sp::CRS("+proj=longlat +datum=WGS84"))
+  return(map.sp.t)
 }
 
 #' @param locations a data.frame with dec_long_va and dec_lat_va
@@ -33,7 +33,7 @@ fetch_state_map <- function(...){
     these_shifts <- shift_details[[i]][c('scale','shift','rotate')]
     shifted <- do.call(shift_sp, c(sp = this_sp,
                                    these_shifts,  
-                                   proj.string = proj4string(state_map),
+                                   proj.string = sf::st_crs(state_map),
                                    row.names = shift_details[[i]]$regions))
     state_map <- rbind(shifted, state_map, makeUniqueIDs = TRUE)
   }
