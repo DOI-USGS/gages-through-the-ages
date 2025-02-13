@@ -14,7 +14,7 @@ to_sp <- function(...){
 #' @param locations a data.frame with dec_long_va and dec_lat_va
 points_sp <- function(locations){
   points <- cbind(locations$dec_long_va, locations$dec_lat_va) 
-  points_sp <- sp::SpatialPoints(points, CRS("+proj=longlat +datum=WGS84")) 
+  points_sp <- sp::SpatialPoints(points, sp::CRS("+proj=longlat +datum=WGS84")) 
   points_transform <- sp::spTransform(points_sp, proj.string) %>% 
     sp::SpatialPointsDataFrame(data = locations[c('site_no')])
   return(points_transform)
@@ -31,10 +31,12 @@ fetch_state_map <- function(...){
     
     this_sp <- to_sp("world", shift_details[[i]]$regions)
     these_shifts <- shift_details[[i]][c('scale','shift','rotate')]
-    shifted <- do.call(shift_sp, c(sp = this_sp,
-                                   these_shifts,  
-                                   proj.string = sf::st_crs(state_map),
-                                   row.names = shift_details[[i]]$regions))
+    shifted <- shift_sp(sp = this_sp,
+                        scale = these_shifts$scale,
+                        rotate = these_shifts$rotate,
+                        shift = these_shifts$shift,  
+                        proj.string = "+proj=longlat +datum=WGS84",
+                        row.names = shift_details[[i]]$regions)
     state_map <- rbind(shifted, state_map, makeUniqueIDs = TRUE)
   }
   
@@ -67,7 +69,8 @@ shift_sites <- function(..., gage_data){
   for(i in 1:length(shift_details)){
     region <- shift_details[[i]]$abrv
     
-    sites_tmp <- gages_info %>% filter(huc == huc_map[[region]]) %>% 
+    sites_tmp <- gages_info %>% 
+      filter(huc == huc_map[[region]]) %>% 
       points_sp()
     
     sites_out <- do.call(shift_sp, c(sp = sites_tmp, 
@@ -80,22 +83,31 @@ shift_sites <- function(..., gage_data){
 }
 
 
-shift_sp <- function(sp, scale = NULL, shift = NULL, rotate = 0, ref=sp, proj.string=NULL, row.names=NULL){
+shift_sp <- function(sp, 
+                     scale = NULL, 
+                     shift = NULL, 
+                     rotate = 0, 
+                     ref = sp, 
+                     proj.string = NULL, 
+                     row.names = NULL){
   if (is.null(scale) & is.null(shift) & rotate == 0){
     return(obj)
   }
-  orig.cent <- rgeos::gCentroid(ref, byid=TRUE)@coords
-  scale <- max(apply(bbox(ref), 1, diff)) * scale
-  obj <- elide(sp, rotate=rotate, center=orig.cent, bb = bbox(ref))
-  ref <- elide(ref, rotate=rotate, center=orig.cent, bb = bbox(ref))
-  obj <- elide(obj, scale=scale, center=orig.cent, bb = bbox(ref))
-  ref <- elide(ref, scale=scale, center=orig.cent, bb = bbox(ref))
-  new.cent <- rgeos::gCentroid(ref, byid=TRUE)@coords
-  obj <- elide(obj, shift=shift*10000+c(orig.cent-new.cent))
+  #orig.cent <- rgeos::gCentroid(ref, byid = TRUE)@coords
+  orig.cent <- sf::st_coordinates(sf::st_centroid(ref))
+  bbox <- unname(sf::st_bbox(ref))
+  scale <- max(diff(bbox)) * scale
+  sp_obj <- as(sp, "Spatial")
+  obj <- sp::elide(obj = sp_obj, rotate = rotate, center = orig.cent)
+  ref <- sp::elide(obj = sp_obj, rotate = rotate, center = orig.cent)
+  obj <- sp::elide(obj, scale = scale, center = orig.cent)
+  ref <- sp::elide(ref, scale = scale, center = orig.cent)
+  new.cent <- sf::st_coordinates(sf::st_centroid(sf::st_as_sf(ref)))
+  final_obj <- sp::elide(obj, shift = shift * 10000 + c(orig.cent - new.cent))
   if (is.null(proj.string)){
-    proj4string(obj) <- proj4string(sp)
+    sp::proj4string(final_obj) <- sp::proj4string(sp_obj)
   } else {
-    proj4string(obj) <- proj.string
+    sp::proj4string(final_obj) <- proj.string
   }
   
   if (!is.null(row.names)){
