@@ -3,8 +3,8 @@
 #' @param \dots arguments passed to \code{\link[maps]{map}} excluding \code{fill} and \code{plot}
 #' 
 
-to_sp <- function(...){
-  map <- maps::map(..., fill = TRUE, plot = FALSE)
+to_sp <- function(area_name){
+  map <- maps::map(area_name, fill = TRUE, plot = FALSE)
   IDs <- sapply(strsplit(map$names, ":"), function(x) x[1])
   map.sp <- sf::st_as_sf(map)
   map.sp.t <- sf::st_transform(x = map.sp, CRSobj = sp::CRS("+proj=longlat +datum=WGS84"))
@@ -23,32 +23,26 @@ points_sp <- function(locations){
 
 #' create the sp object 
 #'
-fetch_state_map <- function(...){
-  shift_details <- list(...)
+extract_states <- function(area_name){
+
+  # projection code look up for non-CONUS regions
+  crs_map <- c(AK = 3338, HI = 6633, PR = 4139)
   
-  state_map <- to_sp('state')
-  for(i in 1:length(shift_details)){
-    
-    this_sp <- to_sp("world", shift_details[[i]]$regions)
-    these_shifts <- shift_details[[i]][c('scale','shift','rotate')]
-    shifted <- shift_sp(sp = this_sp,
-                        scale = these_shifts$scale,
-                        rotate = these_shifts$rotate,
-                        shift = these_shifts$shift,  
-                        proj.string = "+proj=longlat +datum=WGS84",
-                        row.names = shift_details[[i]]$regions)
-    state_map <- rbind(shifted, state_map, makeUniqueIDs = TRUE)
+  if(area_name == "CONUS") {
+    state_map <- tigris::states(cb = TRUE) %>%
+      filter(!(STUSPS %in% c('AS', 'MP','GU', 'VI', 'HI', 'PR', 'AK'))) %>%
+      sf::st_transform(crs = 5070) 
+  } else {
+    state_map <- tigris::states(cb = TRUE) %>%
+      filter(STUSPS == area_name) %>%
+      sf::st_transform(crs = crs_map[area_name]) 
   }
   
   return(state_map)
 }
 
-shift_sites <- function(..., gage_data){
-  huc_map <- c(AK = "19", HI = "20", PR = "21")
-  
-  shift_details <- list(...)
-  
-  gages_info <- readRDS(gage_data) %>%
+fetch_gage_info <- function(gage_data){
+  gages_info <- gage_data %>%
     pull(site) %>% 
     dataRetrieval::readNWISsite() %>% 
     group_by(site_no) %>% 
@@ -60,25 +54,36 @@ shift_sites <- function(..., gage_data){
     summarize(huc = stringr::str_sub(tail(unique(huc_cd),1), 1L, 2L), 
               # huc = paste(stringr::str_sub(unique(huc_cd)[[1]], 1L, 2L), collapse = "|"),
               dec_lat_va = mean(dec_lat_va), dec_long_va = mean(dec_long_va)) %>% 
-    filter(dec_long_va < -65.4)  # remove US virgin Islands and other things we won't plot
+    filter(dec_long_va < -65.4,
+           dec_lat_va > 0)  # remove US virgin Islands and other things we won't plot
   
-  
-  sites_out <- gages_info %>% filter(!huc %in% huc_map) %>% 
-    points_sp()
-  
-  for(i in 1:length(shift_details)){
-    region <- shift_details[[i]]$abrv
-    
-    sites_tmp <- gages_info %>% 
-      filter(huc == huc_map[[region]]) %>% 
-      points_sp()
-    
-    sites_out <- do.call(shift_sp, c(sp = sites_tmp, 
-                                     ref = to_sp("world", shift_details[[i]]$regions), 
-                                     shift_details[[i]][c('scale','shift','rotate')])) %>% 
-      rbind(sites_out, .)
-  }
+}
 
+extract_sites <- function(area_name, gage_info){
+  
+  # huc look up for non-CONUS regions
+  huc_map <- c(AK = "19", HI = "20", PR = "21")
+  
+  # projection code look up for non-CONUS regions
+  crs_map <- c(AK = 3338, HI = 6633, PR = 4139)
+  
+  if(area_name == "CONUS") {
+    
+    sites_out <- gage_info %>% 
+      filter(!huc %in% huc_map) %>% 
+      points_sp() |>
+      sf::st_as_sf() |>
+      sf::st_transform(crs = 5070)
+    
+  } else if(area_name != "CONUS") {
+    
+    sites_out <- gage_info %>% 
+      filter(huc == huc_map[[area_name]]) |>
+      points_sp() |>
+      sf::st_as_sf() |>
+      sf::st_transform(crs = crs_map[[area_name]])
+  }
+  
   return(sites_out)
 }
 

@@ -3,7 +3,7 @@
 #' Plot bar chart of active gages
 #' @param gage_melt long form, gage site_no & years active
 #' @param yr year being shown
-plot_gage_timeseries <- function(gage_melt, yr, font_fam){
+plot_gage_timeseries <- function(gage_melt, yr, font_fam, max_year){
   
   # store vars for plotting
   active_year <- as.numeric(yr)
@@ -33,8 +33,8 @@ plot_gage_timeseries <- function(gage_melt, yr, font_fam){
     ) +
     scale_x_continuous(
       breaks = scales::breaks_width(10), 
-      expand = c(0,0.025),
-      limits = c(NA, 2022)
+      expand = c(0, 0.025),
+      limits = c(NA, max_year)
     ) +
     scale_y_continuous(
       breaks = scales::breaks_width(2000),
@@ -66,20 +66,20 @@ plot_gage_map <- function(gage_melt, active_year, site_map, state_map){
     distinct(site)
   
   # convert to sf 
-  states.sf <- state_map |> st_as_sf()
-  sites.sf <- site_map |> st_as_sf() |> 
-    distinct() |> 
-    st_transform(st_crs(states.sf)) |>
-    st_intersection(states.sf) # drops south pacific islands
+  #states.sf <- state_map |> st_as_sf()
+  #sites.sf <- site_map |> st_as_sf() |> 
+    #distinct() |> 
+    #st_transform(st_crs(states.sf)) |>
+    #st_intersection(states.sf) # drops south pacific islands
                                   
   # sites active in a given year
-  gages_active <- sites.sf |>
+  gages_active <- site_map |>
     filter(site_no %in% yr_gages$site)
   
   # plot map
   gage_map <- gages_active |>
     ggplot() +
-    geom_sf(data = states.sf, fill = '#ededed',
+    geom_sf(data = state_map, fill = '#ededed',
             linewidth = 0.25, color = 'white') +
     geom_sf(color = '#0962b2', size = 0.1, alpha = 0.7) +
     theme_void() 
@@ -92,8 +92,13 @@ plot_gage_map <- function(gage_melt, active_year, site_map, state_map){
 #' Compose map and bar chart together
 #' @param bar_chart timeseries bar chart of active flow gages
 #' @param year year being shown
-#' @param gage_map map of active gages
-compose_chart <- function(bar_chart, gage_map, year){
+#' @param gage_map maps of active gages
+compose_chart <- function(bar_chart, 
+                          gage_map_CONUS, 
+                          #gage_map_AK, 
+                          #gage_map_PR, 
+                          #gage_map_HI, 
+                          year){
   
   ggdraw(xlim = c(0, 1), ylim = c(0,1)) +
     # create background canvas
@@ -103,7 +108,7 @@ compose_chart <- function(bar_chart, gage_map, year){
       gp = grid::gpar(fill = 'white', alpha = 1, col = 'white')
     )) +
     draw_plot(
-      gage_map,
+      gage_map_CONUS,
       x = 0,
       y = 0.2,
       height = 0.8

@@ -30,54 +30,80 @@ list(
     gage_melt,
     time_data(gage_data) 
   ),
-  # Prep shifted states for map layout
+  # get metadata about all the gages
   tar_target(
-    AK,
-    list(abrv = 'AK', scale = 0.37, shift = I(c(90,-460)), 
-         rotate = I(-50), regions = I("USA:alaska"))
+    gage_info,
+    fetch_gage_info(gage_data = gage_data)
+  ),
+  # Prep states for map layout
+  tar_target(
+    state_map_CONUS,
+    extract_states(area_name = "CONUS")
   ),
   tar_target(
-    HI,
-    list(abrv ='HI', scale = 1, shift = I(c(520, -110)), 
-         rotate = I(-35), regions = I("USA:hawaii"))
+    state_map_AK,
+    extract_states(area_name = "AK")
   ),
   tar_target(
-    PR, 
-    list(abrv = 'PR', scale = 2.5, shift = I(c(-140, 90)), 
-         rotate = 20, regions = I("Puerto Rico"))
+    state_map_HI,
+    extract_states(area_name = "HI")
   ),
   tar_target(
-    state_map,
-    fetch_state_map(AK, HI, PR)
+    state_map_PR,
+    extract_states(area_name = "PR")
   ),
-  # Prep shifted sites for map layout
+  # Prep sites for map layout
   tar_target(
-    site_map,
-    shift_sites(AK, HI, PR, gage_data = "data/active_flow_gages_summary_wy.rds")
+    site_map_CONUS,
+    extract_sites(area_name = "CONUS", gage_info = gage_info)
+  ),
+  tar_target(
+    site_map_AK,
+    extract_sites(area_name = "AK", gage_info = gage_info)
+  ),
+  tar_target(
+    site_map_HI,
+    extract_sites(area_name = "HI", gage_info = gage_info)
+  ),
+  tar_target(
+    site_map_PR,
+    extract_sites(area_name = "PR", gage_info = gage_info)
   ),
   # Years for animation
   tar_target(
     year_list,
-    seq(1889, 2021, by = 1)
+    seq(1889, 2024, by = 1)
+    #seq(2000, 2024, by = 1)
   ),
   # Plot bar chart of active streamgages through time
   tar_target(
     gage_bar_list,
-    plot_gage_timeseries(gage_melt, year_list, font_fam),
+    plot_gage_timeseries(gage_melt, 
+                         year_list, 
+                         font_fam,
+                         max_year = 2025),
     pattern = map(year_list)
   ),
   # Map active streamgages through time - shifted layout
   tar_target(
-    gage_map_list,
-    plot_gage_map(gage_melt, year_list, site_map, state_map),
+    gage_map_list_CONUS,
+    plot_gage_map(gage_melt = gage_melt, 
+                  active_year = year_list, 
+                  site_map = site_map_CONUS, 
+                  state_map = state_map_CONUS),
     pattern = map(year_list)
   ),
   # Plot bar chart and map together 
   tar_target(
     gage_frames,
-    compose_chart(gage_bar_list, gage_map_list, year = year_list),
+    compose_chart(bar_chart = gage_bar_list, 
+                  gage_map_CONUS = gage_map_list_CONUS,
+                  #gage_map_AK = plot_gage_map_AK,
+                  #gage_map_HI = plot_gage_map_HI,
+                  #gage_map_PR = plot_gage_map_PR, 
+                  year = year_list),
     format = 'file',
-    pattern = map(year_list, gage_bar_list, gage_map_list)
+    pattern = map(year_list, gage_bar_list, gage_map_list_CONUS)
   ),
   #tar_target(
   #  gage_frames_scaled,
