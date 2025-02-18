@@ -58,23 +58,16 @@ plot_gage_timeseries <- function(gage_melt, yr, font_fam, max_year){
 #' @param active_year year being shown
 #' @param site_map shifted sites to matcvh state_map
 #' @param state_map shifted states and territories
-plot_gage_map <- function(gage_melt, active_year, site_map, state_map){
+plot_gage_map <- function(gage_melt, yr, site_map, state_map){
   
   # filter gage data to given year
   yr_gages <- gage_melt |>
-    filter(year == as.numeric(active_year)) |>
+    filter(year == as.numeric(yr)) |>
     distinct(site)
-  
-  # convert to sf 
-  #states.sf <- state_map |> st_as_sf()
-  #sites.sf <- site_map |> st_as_sf() |> 
-    #distinct() |> 
-    #st_transform(st_crs(states.sf)) |>
-    #st_intersection(states.sf) # drops south pacific islands
                                   
   # sites active in a given year
   gages_active <- site_map |>
-    filter(site_no %in% yr_gages$site)
+    dplyr::filter(site_no %in% yr_gages$site)
   
   # plot map
   gage_map <- gages_active |>
@@ -95,10 +88,10 @@ plot_gage_map <- function(gage_melt, active_year, site_map, state_map){
 #' @param gage_map maps of active gages
 compose_chart <- function(bar_chart, 
                           gage_map_CONUS, 
-                          #gage_map_AK, 
-                          #gage_map_PR, 
-                          #gage_map_HI, 
-                          year){
+                          gage_map_AK, 
+                          gage_map_PR, 
+                          gage_map_HI, 
+                          yr){
   
   ggdraw(xlim = c(0, 1), ylim = c(0,1)) +
     # create background canvas
@@ -108,19 +101,38 @@ compose_chart <- function(bar_chart,
       gp = grid::gpar(fill = 'white', alpha = 1, col = 'white')
     )) +
     draw_plot(
+      bar_chart,
+      x = 0.05,
+      y = 0,
+      height = 0.25, width = 1 - 0.1
+    )+
+    draw_plot(
       gage_map_CONUS,
       x = 0,
       y = 0.2,
       height = 0.8
       )+
     draw_plot(
-      bar_chart,
-      x = 0.05,
-      y = 0,
-      height = 0.25, width = 1 - 0.1
+      gage_map_AK,
+      x = -0.40,
+      y = 0.24,
+      height = 0.23
+    )+
+    draw_plot(
+      gage_map_PR,
+      x = 0.2,
+      y = 0.24,
+      height = 0.05
+    )+
+    draw_plot(
+      gage_map_HI,
+      x = -0.25,
+      y = 0.24,
+      height = 0.2
     )
   
-  ggsave(sprintf('out/gage_time_%s.png', year), width = 5, height = 4, dpi = 300, units = 'in')
+  ggsave(sprintf('out/gage_time_%s.png', yr), 
+         width = 5, height = 4, dpi = 300, units = 'in')
   
 }
 
@@ -132,7 +144,7 @@ compose_chart <- function(bar_chart,
 #' @param frame_rate frames per second 
 animate_frames_gif <- function(frames, out_file, reduce = TRUE, frame_delay_cs, frame_rate){
   frames %>%
-    image_read() %>%
+    magick::image_read() %>%
     image_join() %>%
     image_animate(
       delay = frame_delay_cs,
