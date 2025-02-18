@@ -110,6 +110,7 @@ list(
                     gage_map_PR = gage_map_list_PR, 
                     yr = active_year),
       format = 'file'),
+    unlist = TRUE,
     names = active_year
   ),
   tar_target(
