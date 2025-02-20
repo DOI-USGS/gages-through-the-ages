@@ -29,7 +29,7 @@ years_to_plot <- seq(2020, 2024, by = 1)
 
 proj.string <- "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"
 
-list(
+upstream_targets <- list(
   # Output of `national-flow-observations`
   tar_target(
     gage_data,
@@ -121,9 +121,10 @@ list(
                     gage_map_AK = gage_map_list_AK,
                     gage_map_HI = gage_map_list_HI,
                     gage_map_PR = gage_map_list_PR, 
-                    yr = active_year),
+                    yr = active_year,
+                    png_out = sprintf("out/gage_time_%s.png", active_year)),
       format = 'file'),
-    unlist = TRUE,
+    #unlist = TRUE,
     names = active_year
   ),
 
@@ -150,7 +151,7 @@ list(
                        frame_rate = 4),
     format = 'file'
   ),
-
+  
   # Add logo to gif
   tar_target(
     gif_final,
@@ -167,3 +168,36 @@ list(
     format = 'file'
   )
 )
+
+# pull only one year for standalone viz
+#   defaults to latest year
+##    https://github.com/ropensci/targets/discussions/324
+year_for_plot <- max(years_to_plot)
+selected_plot_target <- rlang::syms(sprintf("gage_bar_list_%s", year_for_plot))
+selected_conus_target <- rlang::syms(sprintf("gage_map_list_CONUS_%s", year_for_plot))
+selected_ak_target <- rlang::syms(sprintf("gage_map_list_AK_%s", year_for_plot))
+selected_pr_target <- rlang::syms(sprintf("gage_map_list_PR_%s", year_for_plot))
+selected_hi_target <- rlang::syms(sprintf("gage_map_list_HI_%s", year_for_plot))
+
+downstream_targets <- list(
+  tar_map(
+    values = list(plot = selected_plot_target,
+                  conus_map = selected_conus_target,
+                  ak_map = selected_ak_target,
+                  pr_map = selected_pr_target,
+                  hi_map = selected_hi_target),
+    tar_target(
+      standalone_png,
+      compose_chart(bar_chart = plot,
+                    gage_map_CONUS = conus_map,
+                    gage_map_AK = ak_map,
+                    gage_map_PR = pr_map,
+                    gage_map_HI = hi_map,
+                    yr = year_for_plot,
+                    png_out = sprintf("out/standalone_%s.png", year_for_plot)
+      )
+    )
+  )
+)
+
+c(upstream_targets, downstream_targets)

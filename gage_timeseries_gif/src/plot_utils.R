@@ -91,7 +91,8 @@ compose_chart <- function(bar_chart,
                           gage_map_AK, 
                           gage_map_PR, 
                           gage_map_HI, 
-                          yr){
+                          yr,
+                          png_out){
   
   ggdraw(xlim = c(0, 1), ylim = c(0,1)) +
     # create background canvas
@@ -131,8 +132,10 @@ compose_chart <- function(bar_chart,
       height = 0.2
     )
   
-  ggsave(sprintf('out/gage_time_%s.png', yr), 
+  ggsave(png_out, 
          width = 5, height = 4, dpi = 300, units = 'in')
+  
+  return(png_out)
   
 }
 
