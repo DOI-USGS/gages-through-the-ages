@@ -1,11 +1,17 @@
 library(targets)
+library(tarchetypes)
 library(tidyverse)
 
 options(tidyverse.quiet = TRUE)
-tar_option_set(packages = c("tidyverse", "raster", "sf", 
-                            "maps", #"maptools",
-                            "scico", "cowplot", "geomtextpath", 
-                            "sp","magick"))
+tar_option_set(packages = c("tidyverse", 
+                            "raster", 
+                            "sf", 
+                            "maps", 
+                            "scico", 
+                            "cowplot", 
+                            "geomtextpath", 
+                            "sp",
+                            "magick"))
 
 source('src/data_utils.R')
 source('src/plot_utils.R')
@@ -19,6 +25,7 @@ showtext::showtext_auto(enable = TRUE)
 
 # years in time series 
 years_to_plot <- seq(1889, 2024, by = 1)
+years_to_plot <- seq(2020, 2024, by = 1)
 
 proj.string <- "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"
 
@@ -55,7 +62,7 @@ list(
     state_map_PR,
     extract_states(area_name = "PR")
   ),
-  # Prep sites for map layout
+  # Prep sites for map layout (get location information)
   tar_target(
     site_map_CONUS,
     extract_sites(area_name = "CONUS", gage_info = gage_info)
