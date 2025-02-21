@@ -10,18 +10,29 @@ plot_gage_age <- function(gage_melt, yr, font_fam){
   gage_yr |>
     ggplot(aes(y = years_since_active,
                x = n_sites)) +
-    geom_bar(stat = "identity", orientation = "y") +
+    geom_linerange(stat = "identity", 
+                   aes(xmin = 0, xmax = n_sites),
+                   color = grey_light) +
     scale_y_continuous(limits = c(0, 165),
                        breaks = c(0, 50, 100, 150),
-                       expand = c(0, 0.025)) +
+                       expand = c(0, 0.025),
+                       position = "right") +
+    #scale_x_continuous(limits = c(0, 450),
+    #                   breaks = c(0, 200, 400)) +
+    scale_x_reverse(breaks = c(0, 200, 400),
+                    limits = c(450, 0))+
     ylab(NULL) + xlab(NULL) +
     theme(
       text = element_text(size = 22/.pt, margin = margin(r = 0, t = 0)),
-      plot.background = element_rect(fill = 'white'),
-      panel.background = element_rect(fill = 'white'),
-      axis.line = element_line(color = grey_light, linewidth = 0.25),
+      plot.background = element_rect(fill = 'transparent', color = 'transparent'),
+      panel.background = element_rect(fill = 'transparent', color = 'transparent'),
+      axis.line.x = element_line(color = grey_light, linewidth = 0.25),
+      axis.line.y.right = element_line(color = grey_light, linewidth = 0.25),
+      axis.line.y.left = element_blank(),
       axis.ticks = element_blank(),
-      axis.text.y = element_text(hjust = 1, margin = margin(r = -0.5, t = 0)),
+      panel.grid = element_blank(),
+      axis.text.y.right = element_text(),
+      axis.text.y.left = element_blank(),
       axis.text.x = element_text(vjust = 0, margin = margin(r = 0, t = -2))
     )
     
@@ -31,7 +42,7 @@ plot_gage_age <- function(gage_melt, yr, font_fam){
 #' Plot bar chart of active gages
 #' @param gage_melt long form, gage site_no & years active
 #' @param yr year being shown
-plot_gage_timeseries <- function(gage_melt, yr, font_fam, max_year){
+plot_gage_timeseries <- function(gage_melt, yr, font_fam){
   
   # store vars for plotting
   yr_max <- max(gage_melt$year)
@@ -59,7 +70,7 @@ plot_gage_timeseries <- function(gage_melt, yr, font_fam, max_year){
     scale_x_continuous(
       breaks = scales::breaks_width(10), 
       expand = c(0, 0.025),
-      limits = c(NA, max_year)
+      limits = c(NA, yr_max + 1)
     ) +
     scale_y_continuous(
       breaks = scales::breaks_width(2000),
@@ -67,13 +78,14 @@ plot_gage_timeseries <- function(gage_melt, yr, font_fam, max_year){
     ) +
     ylab(NULL) + xlab(NULL) +
     theme(
-      text = element_text(size = 22/.pt, margin=margin(r = 0, t = 0)),
-      plot.background = element_rect(fill = 'white'),
-      panel.background = element_rect(fill = 'white'),
+      text = element_text(size = 22/.pt, margin = margin(r = 0, t = 0)),
+      plot.background = element_rect(fill = 'transparent', color = 'transparent'),
+      panel.background = element_rect(fill = 'transparent', color = 'transparent'),
       axis.line = element_line(color = grey_light, linewidth = 0.25),
       axis.ticks = element_blank(),
-      axis.text.y = element_text(hjust = 1, margin=margin(r = -0.5, t = 0)),
-      axis.text.x = element_text(vjust = 0, margin=margin(r = 0, t = -2))
+      panel.grid = element_blank(),
+      axis.text.y = element_text(hjust = 1, margin = margin(r = -0.5, t = 0)),
+      axis.text.x = element_text(vjust = 0, margin = margin(r = 0, t = -2))
     )
   
 }
@@ -112,16 +124,26 @@ plot_gage_map <- function(gage_melt, yr, site_map, state_map){
 #' @param year year being shown
 #' @param gage_map maps of active gages
 compose_chart <- function(bar_chart, 
+                          age_chart,
                           gage_map_CONUS, 
                           gage_map_AK, 
                           gage_map_PR, 
                           gage_map_HI, 
                           yr,
-                          png_out){
+                          png_out,
+                          standalone_logic,
+                          gage_melt){
   
 
+  # summary stats for standalone viz
+  average_age <- gage_melt |>
+    filter(year == yr) |>
+    summarize(age = mean(years_since_active),
+              total_gages = n()) 
   
-  ggdraw(xlim = c(0, 1), 
+  
+  # base composition for both standalone and gif
+  base_plot <- ggdraw(xlim = c(0, 1), 
          ylim = c(0,1)) +
     # create background canvas
     draw_grob(grid::rectGrob(
@@ -139,8 +161,7 @@ compose_chart <- function(bar_chart,
       gage_map_CONUS,
       x = -0.02,
       y = 0.12,
-      #height = 0.75,
-      width = 1
+      width = 1.03
       )+
     draw_text("Alaska",
               x = 0.17, y = 0.27,
@@ -164,26 +185,66 @@ compose_chart <- function(bar_chart,
               family = font_fam, size = 7) +
     draw_plot(
       gage_map_HI,
-      x = -0.3,
-      y = 0.24,
+      x = -0.27,
+      y = 0.27,
       height = 0.25
     )+
     draw_text("Hawaii",
-              x = 0.37, y = 0.27,
+              x = 0.38, y = 0.27,
               color = grey_dark,
               family = font_fam, size = 7) +
     # Add logo
     draw_image(usgs_logo, 
-               x = 0.025,
+               x = 0.975,
                y = 0.925,
                width = 0.15, 
-               hjust = 0, vjust = 0, 
+               hjust = 1, vjust = 0, 
                halign = 0, valign = 0)+
     draw_text(sprintf("Active Streamgages, 1889 to %s", yr),
-              x = 0.2, y = 0.973,
+              x = 0.025, y = 0.973,
               hjust = 0, vjust = 1,
               family = font_fam,
               size = 18)
+  
+  if(standalone_logic){
+    final_plot <- base_plot +
+      draw_text(text = "average age\nof active gages",
+                x = 0.9, y = 0.08,
+                hjust = 0.5, 
+                family = font_fam,
+                size = 7,
+                lineheight = 1) +
+      draw_text(text = sprintf("%s yrs", round(average_age$age, 1)),
+                x = 0.9, y = 0.13,
+                hjust = 0.5, 
+                family = font_fam,
+                size = 18) +
+      draw_text(text = "total number\nof active gages",
+                x = 0.9, y = 0.20,
+                hjust = 0.5, 
+                family = font_fam,
+                size = 7,
+                lineheight = 1) +
+      draw_text(text = scales::comma(average_age$total_gages),
+                x = 0.9, y = 0.25,
+                hjust = 0.5, 
+                family = font_fam,
+                size = 18)
+  } else {
+    final_plot <- base_plot +
+      draw_plot(
+        age_chart,
+        x = 0.8,
+        y = 0.0,
+        height = 0.50, width = 0.2
+      ) +
+      draw_text("yrs",
+                size = 7, family = font_fam,
+                x = 0.98,
+                y = 0.43,
+                hjust = 1)
+  }
+
   
   ggsave(png_out, 
          width = 5, height = 5, dpi = 300, units = 'in')

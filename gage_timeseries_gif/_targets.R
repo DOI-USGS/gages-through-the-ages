@@ -25,7 +25,16 @@ showtext::showtext_auto(enable = TRUE)
 
 # years in time series 
 years_to_plot <- seq(1889, 2024, by = 1)
-years_to_plot <- seq(2020, 2024, by = 1)
+years_to_plot <- seq(2020, 2024, by = 1) 
+
+# Plotting configs
+blue_color <- "#143D60" #11.25:1 contrast on white
+grey_dark <- "#61677A" #5.6:1 contrast on white
+grey_light <- "#CFD3D3" #1.5:1 contrast on white
+# import logo
+usgs_logo <- magick::image_read('usgs_logo_grey.png') |>
+  magick::image_resize('x80') |>
+  magick::image_colorize(100, grey_light)
 
 proj.string <- "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"
 
@@ -82,12 +91,16 @@ upstream_targets <- list(
   tarchetypes::tar_map(
     # Years 
     values = list(active_year = years_to_plot),
+    # Plot bar chart of streamgage age distribution through time
+    tar_target(gage_age_list,
+               plot_gage_age(gage_melt,
+                             yr = active_year, 
+                             font_fam)),
     # Plot bar chart of active streamgages through time
     tar_target(gage_bar_list,
                plot_gage_timeseries(gage_melt, 
                                     yr = active_year, 
-                                    font_fam,
-                                    max_year = 2025)),
+                                    font_fam)),
     # Map active streamgages through time - for each region
     tar_target(
       gage_map_list_CONUS,
@@ -117,12 +130,15 @@ upstream_targets <- list(
     tar_target(
       gage_frames,
       compose_chart(bar_chart = gage_bar_list, 
+                    age_chart = gage_age_list,
                     gage_map_CONUS = gage_map_list_CONUS,
                     gage_map_AK = gage_map_list_AK,
                     gage_map_HI = gage_map_list_HI,
                     gage_map_PR = gage_map_list_PR, 
                     yr = active_year,
-                    png_out = sprintf("out/gage_time_%s.png", active_year)),
+                    png_out = sprintf("out/gage_time_%s.png", active_year),
+                    standalone_logic = FALSE,
+                    gage_melt = gage_melt),
       format = 'file'),
     #unlist = TRUE,
     names = active_year
@@ -150,22 +166,6 @@ upstream_targets <- list(
                        frame_delay_cs = 20, 
                        frame_rate = 4),
     format = 'file'
-  ),
-  
-  # Add logo to gif
-  tar_target(
-    gif_final,
-    {
-      # import logo
-      usgs_logo <- magick::image_read('usgs_logo_grey.png') |>
-        magick::image_resize('x80') |>
-        magick::image_colorize(100, "grey80")
-     # add to gif 
-     image_read(gage_gif) |>
-     image_composite(usgs_logo, offset = '+180+920') |>
-      image_write('out/gage_timeseries_logo.gif')
-    },
-    format = 'file'
   )
 )
 
@@ -174,6 +174,7 @@ upstream_targets <- list(
 ##    https://github.com/ropensci/targets/discussions/324
 year_for_plot <- max(years_to_plot)
 selected_plot_target <- rlang::syms(sprintf("gage_bar_list_%s", year_for_plot))
+selected_age_target <- rlang::syms(sprintf("gage_age_list_%s", year_for_plot))
 selected_conus_target <- rlang::syms(sprintf("gage_map_list_CONUS_%s", year_for_plot))
 selected_ak_target <- rlang::syms(sprintf("gage_map_list_AK_%s", year_for_plot))
 selected_pr_target <- rlang::syms(sprintf("gage_map_list_PR_%s", year_for_plot))
@@ -182,6 +183,7 @@ selected_hi_target <- rlang::syms(sprintf("gage_map_list_HI_%s", year_for_plot))
 downstream_targets <- list(
   tar_map(
     values = list(plot = selected_plot_target,
+                  age_plot = selected_age_target,
                   conus_map = selected_conus_target,
                   ak_map = selected_ak_target,
                   pr_map = selected_pr_target,
@@ -189,12 +191,15 @@ downstream_targets <- list(
     tar_target(
       standalone_png,
       compose_chart(bar_chart = plot,
+                    age_chart = age_plot,
                     gage_map_CONUS = conus_map,
                     gage_map_AK = ak_map,
                     gage_map_PR = pr_map,
                     gage_map_HI = hi_map,
                     yr = year_for_plot,
-                    png_out = sprintf("out/standalone_%s.png", year_for_plot)
+                    png_out = sprintf("out/standalone_%s.png", year_for_plot),
+                    standalone_logic = TRUE,
+                    gage_melt = gage_melt
       )
     )
   )
