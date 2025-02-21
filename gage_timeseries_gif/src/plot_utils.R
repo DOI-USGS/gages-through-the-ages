@@ -1,4 +1,32 @@
-
+#' Plot gage age chart
+#' 
+plot_gage_age <- function(gage_melt, yr, font_fam){
+  
+  gage_yr <- gage_melt |>
+    filter(year == yr) |>
+    group_by(years_since_active) |>
+    summarize(n_sites = n())
+  
+  gage_yr |>
+    ggplot(aes(y = years_since_active,
+               x = n_sites)) +
+    geom_bar(stat = "identity", orientation = "y") +
+    scale_y_continuous(limits = c(0, 165),
+                       breaks = c(0, 50, 100, 150),
+                       expand = c(0, 0.025)) +
+    ylab(NULL) + xlab(NULL) +
+    theme(
+      text = element_text(size = 22/.pt, margin = margin(r = 0, t = 0)),
+      plot.background = element_rect(fill = 'white'),
+      panel.background = element_rect(fill = 'white'),
+      axis.line = element_line(color = grey_light, linewidth = 0.25),
+      axis.ticks = element_blank(),
+      axis.text.y = element_text(hjust = 1, margin = margin(r = -0.5, t = 0)),
+      axis.text.x = element_text(vjust = 0, margin = margin(r = 0, t = -2))
+    )
+    
+  
+}
 
 #' Plot bar chart of active gages
 #' @param gage_melt long form, gage site_no & years active
@@ -6,7 +34,6 @@
 plot_gage_timeseries <- function(gage_melt, yr, font_fam, max_year){
   
   # store vars for plotting
-  active_year <- as.numeric(yr)
   yr_max <- max(gage_melt$year)
   
   gages_by_year <- gage_melt |>
@@ -14,21 +41,19 @@ plot_gage_timeseries <- function(gage_melt, yr, font_fam, max_year){
     summarize(n_sites = length(unique(site)))
   
   ## plot bar chart
-  active_year <- yr
-  
   gages_by_year |>
     ggplot(
-      aes(year, n_sites)
+      aes(x = year, y = n_sites)
     ) +
-    geom_bar(stat = "identity", fill = "#ededed", width = 0.8) +
-    geom_bar(data = .%>% filter(year == active_year), 
+    geom_bar(stat = "identity", fill = grey_light, width = 0.6) +
+    geom_bar(data = .%>% filter(year == yr), 
              stat = "identity",
-             fill = '#0962b2') +
+             fill = blue_color) +
     geom_textline(data = gages_by_year, 
                   aes(x = year, y = n_sites, 
                       label = "Number of active gages through time"),
                   hjust = 0.05,
-                  color = 'grey70', size = 8/.pt, vjust = -0.35, text_smoothing = 30,
+                  color = grey_dark, size = 8/.pt, vjust = -0.35, text_smoothing = 50,
                   family = font_fam, linecolor = NA
     ) +
     scale_x_continuous(
@@ -45,7 +70,7 @@ plot_gage_timeseries <- function(gage_melt, yr, font_fam, max_year){
       text = element_text(size = 22/.pt, margin=margin(r = 0, t = 0)),
       plot.background = element_rect(fill = 'white'),
       panel.background = element_rect(fill = 'white'),
-      axis.line = element_line(color = "#ededed", linewidth = 0.25),
+      axis.line = element_line(color = grey_light, linewidth = 0.25),
       axis.ticks = element_blank(),
       axis.text.y = element_text(hjust = 1, margin=margin(r = -0.5, t = 0)),
       axis.text.x = element_text(vjust = 0, margin=margin(r = 0, t = -2))
@@ -72,9 +97,9 @@ plot_gage_map <- function(gage_melt, yr, site_map, state_map){
   # plot map
   gage_map <- gages_active |>
     ggplot() +
-    geom_sf(data = state_map, fill = '#ededed',
+    geom_sf(data = state_map, fill = grey_light,
             linewidth = 0.25, color = 'white') +
-    geom_sf(color = '#0962b2', size = 0.1, alpha = 0.7) +
+    geom_sf(color = blue_color, size = 0.1, alpha = 0.7) +
     theme_void() 
   
   return(gage_map)
@@ -94,7 +119,10 @@ compose_chart <- function(bar_chart,
                           yr,
                           png_out){
   
-  ggdraw(xlim = c(0, 1), ylim = c(0,1)) +
+
+  
+  ggdraw(xlim = c(0, 1), 
+         ylim = c(0,1)) +
     # create background canvas
     draw_grob(grid::rectGrob(
       x = 0, y = 0, 
@@ -103,16 +131,21 @@ compose_chart <- function(bar_chart,
     )) +
     draw_plot(
       bar_chart,
-      x = 0.05,
+      x = 0.0,
       y = 0,
-      height = 0.25, width = 1 - 0.1
+      height = 0.25, width = 1 - 0.2
     )+
     draw_plot(
       gage_map_CONUS,
-      x = 0,
-      y = 0.2,
-      height = 0.8
+      x = -0.02,
+      y = 0.12,
+      #height = 0.75,
+      width = 1
       )+
+    draw_text("Alaska",
+              x = 0.17, y = 0.27,
+              color = grey_dark,
+              family = font_fam, size = 7) +
     draw_plot(
       gage_map_AK,
       x = -0.40,
@@ -121,19 +154,39 @@ compose_chart <- function(bar_chart,
     )+
     draw_plot(
       gage_map_PR,
-      x = 0.2,
-      y = 0.24,
+      x = 0.16,
+      y = 0.28,
       height = 0.05
     )+
+    draw_text("Puerto Rico",
+              x = 0.67, y = 0.27,
+              color = grey_dark,
+              family = font_fam, size = 7) +
     draw_plot(
       gage_map_HI,
-      x = -0.25,
+      x = -0.3,
       y = 0.24,
-      height = 0.2
-    )
+      height = 0.25
+    )+
+    draw_text("Hawaii",
+              x = 0.37, y = 0.27,
+              color = grey_dark,
+              family = font_fam, size = 7) +
+    # Add logo
+    draw_image(usgs_logo, 
+               x = 0.025,
+               y = 0.925,
+               width = 0.15, 
+               hjust = 0, vjust = 0, 
+               halign = 0, valign = 0)+
+    draw_text(sprintf("Active Streamgages, 1889 to %s", yr),
+              x = 0.2, y = 0.973,
+              hjust = 0, vjust = 1,
+              family = font_fam,
+              size = 18)
   
   ggsave(png_out, 
-         width = 5, height = 4, dpi = 300, units = 'in')
+         width = 5, height = 5, dpi = 300, units = 'in')
   
   return(png_out)
   
