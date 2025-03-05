@@ -259,16 +259,20 @@ compose_chart <- function(bar_chart,
 #' @param frame_delay_cs time spent on each frame
 #' @param reduce logical, whether or not to apply gifsicle compression
 #' @param frame_rate frames per second 
-animate_frames_gif <- function(frames, out_file, reduce = TRUE, frame_delay_cs, frame_rate){
+animate_frames_gif <- function(..., out_file, reduce = TRUE, frame_delay_cs, frame_rate){
+  
+  frames <- c(...)
+  
   frames %>%
+    unlist() |>
     magick::image_read() %>%
-    image_join() %>%
-    image_animate(
+    magick::image_join() %>%
+    magick::image_animate(
       delay = frame_delay_cs,
       optimize = TRUE,
       fps = frame_rate
     ) %>%
-    image_write(out_file)
+    magick::image_write(out_file)
   
   if(reduce == TRUE){
     optimize_gif(out_file, frame_delay_cs)

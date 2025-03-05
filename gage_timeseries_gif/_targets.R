@@ -25,7 +25,6 @@ showtext::showtext_auto(enable = TRUE)
 
 # years in time series 
 years_to_plot <- seq(1889, 2024, by = 1)
-years_to_plot <- seq(2020, 2024, by = 1) 
 
 # Plotting configs
 blue_color <- "#143D60" #11.25:1 contrast on white
@@ -38,22 +37,24 @@ usgs_logo <- magick::image_read('usgs_logo_grey.png') |>
 
 proj.string <- "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"
 
-upstream_targets <- list(
+p1_fetch_targets <- list(
   # Output of `national-flow-observations`
   tar_target(
-    gage_data,
-    readRDS("data/active_flow_gages_summary_wy.rds")
+    gage_file,
+    return("data/active_flow_gages_summary_wy.rds"),
+    format = "file"
   ),
-  # Put in long form with site_no x years active
   tar_target(
-    gage_melt,
-    time_data(gage_data) 
+    gage_data,
+    readRDS(gage_file)
   ),
+  
   # get metadata about all the gages
   tar_target(
     gage_info,
     fetch_gage_info(gage_data = gage_data)
   ),
+  
   # Prep states for map layout
   tar_target(
     state_map_CONUS,
@@ -70,24 +71,41 @@ upstream_targets <- list(
   tar_target(
     state_map_PR,
     extract_states(area_name = "PR")
+  )
+)
+
+p2_process_targets <- list(
+  
+  # Put in long form with site_no x years active
+  tar_target(
+    gage_melt,
+    time_data(gage_data) 
   ),
+  
   # Prep sites for map layout (get location information)
   tar_target(
     site_map_CONUS,
-    extract_sites(area_name = "CONUS", gage_info = gage_info)
+    extract_sites(area_name = "CONUS", 
+                  gage_info = gage_info)
   ),
   tar_target(
     site_map_AK,
-    extract_sites(area_name = "AK", gage_info = gage_info)
+    extract_sites(area_name = "AK", 
+                  gage_info = gage_info)
   ),
   tar_target(
     site_map_HI,
-    extract_sites(area_name = "HI", gage_info = gage_info)
+    extract_sites(area_name = "HI", 
+                  gage_info = gage_info)
   ),
   tar_target(
     site_map_PR,
-    extract_sites(area_name = "PR", gage_info = gage_info)
-  ),
+    extract_sites(area_name = "PR", 
+                  gage_info = gage_info)
+  )
+)
+
+p3_viz_split_targets <- 
   tarchetypes::tar_map(
     # Years 
     values = list(active_year = years_to_plot),
@@ -111,19 +129,19 @@ upstream_targets <- list(
     tar_target(
       gage_map_list_AK,
       plot_gage_map(gage_melt = gage_melt, 
-                    yr = year_list, 
+                    yr = active_year, 
                     site_map = site_map_AK, 
                     state_map = state_map_AK)),
     tar_target(
       gage_map_list_PR,
       plot_gage_map(gage_melt = gage_melt, 
-                    yr = year_list, 
+                    yr = active_year, 
                     site_map = site_map_PR, 
                     state_map = state_map_PR)),
     tar_target(
       gage_map_list_HI,
       plot_gage_map(gage_melt = gage_melt, 
-                    yr = year_list, 
+                    yr = active_year, 
                     site_map = site_map_HI, 
                     state_map = state_map_HI)),
     # Plot bar chart and map together 
@@ -142,32 +160,30 @@ upstream_targets <- list(
       format = 'file'),
     #unlist = TRUE,
     names = active_year
-  ),
+  )
 
-  # Years for animation
-  tar_target(
-    year_list,
-    years_to_plot
-  ),
-  
-  # Intermediate target to make sure the files have been updated before
-  # running the full animation target
-  tarchetypes::tar_files(
-    gage_png_files,
-    sprintf("out/gage_time_%s.png", year_list)
-  ),
-  
-  # Create animation 
-  tar_target(
+# p3_intermediate_targets <- 
+#   # Intermediate target to make sure the files have been updated before
+#   # running the full animation target
+#   tarchetypes::tar_files(
+#     gage_png_files,
+#     sprintf("out/gage_time_%s.png", years_to_plot)
+#   )
+
+p3_viz_combine_targets <- 
+  tarchetypes::tar_combine(
+    # Create animation 
     gage_gif,
-    animate_frames_gif(frames = gage_png_files, 
-                       out_file = 'out/gage_timeseries.gif',
-                       reduce = TRUE, 
-                       frame_delay_cs = 20, 
-                       frame_rate = 4),
+    # specific target from static branching
+    p3_viz_split_targets[["gage_frames"]],
+    command = animate_frames_gif(!!!.x, 
+                                 out_file = 'out/gage_timeseries.gif',
+                                 reduce = TRUE, 
+                                 frame_delay_cs = 20, 
+                                 frame_rate = 4),
     format = 'file'
   )
-)
+
 
 # pull only one year for standalone viz
 #   defaults to latest year
@@ -205,4 +221,4 @@ downstream_targets <- list(
   )
 )
 
-c(upstream_targets, downstream_targets)
+c(p1_fetch_targets, p2_process_targets, p3_viz_split_targets, p3_viz_combine_targets, downstream_targets)
