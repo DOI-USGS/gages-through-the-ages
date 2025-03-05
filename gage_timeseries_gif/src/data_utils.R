@@ -1,4 +1,8 @@
-
+#' Turn the raw gage data into melted, long format gage data 
+#' 
+#' @param area_name name of the spatial extent for mapping
+#' @param gage_info the metadata including locations for gages
+#' 
 time_data <- function(gage_data){
   
   # reshape data for plotting

@@ -1,28 +1,21 @@
-#' take map arguments and return a projected sp object
-#' 
-#' @param \dots arguments passed to \code{\link[maps]{map}} excluding \code{fill} and \code{plot}
-#' 
 
-to_sp <- function(area_name){
-  map <- maps::map(area_name, fill = TRUE, plot = FALSE)
-  IDs <- sapply(strsplit(map$names, ":"), function(x) x[1])
-  map.sp <- sf::st_as_sf(map)
-  map.sp.t <- sf::st_transform(x = map.sp, CRSobj = sp::CRS("+proj=longlat +datum=WGS84"))
-  return(map.sp.t)
-}
-
-#' @param locations a data.frame with dec_long_va and dec_lat_va
+#' take map locations and return a projected sf object
+#' 
+#' @param locations coordinates of the spatial points for mapping
+#' 
 points_sp <- function(locations){
   points <- cbind(locations$dec_long_va, locations$dec_lat_va) 
-  points_sp <- sp::SpatialPoints(points, sp::CRS("+proj=longlat +datum=WGS84")) 
-  points_transform <- sp::spTransform(points_sp, proj.string) %>% 
+  points_sp_obj <- sp::SpatialPoints(points, sp::CRS("+proj=longlat +datum=WGS84")) 
+  points_transform <- sp::spTransform(points_sp_obj, proj.string) %>% 
     sp::SpatialPointsDataFrame(data = locations[c('site_no')])
   return(points_transform)
 }
 
 
-#' create the sp object 
-#'
+#' take map arguments and return a projected sf object
+#' 
+#' @param area_name name of the spatial extent for mapping
+#' 
 extract_states <- function(area_name){
 
   # projection code look up for non-CONUS regions
@@ -41,6 +34,10 @@ extract_states <- function(area_name){
   return(state_map)
 }
 
+#' Use gage sites to get metadata on locations
+#' 
+#' @param gage_data data frame of gages read from .rds file
+#' 
 fetch_gage_info <- function(gage_data){
   gages_info <- gage_data %>%
     pull(site) %>% 
@@ -59,6 +56,11 @@ fetch_gage_info <- function(gage_data){
   
 }
 
+#' take map arguments and return a projected sf object
+#' 
+#' @param area_name name of the spatial extent for mapping
+#' @param gage_info the metadata including locations for gages
+#' 
 extract_sites <- function(area_name, gage_info){
   
   # huc look up for non-CONUS regions
@@ -88,35 +90,3 @@ extract_sites <- function(area_name, gage_info){
 }
 
 
-shift_sp <- function(sp, 
-                     scale = NULL, 
-                     shift = NULL, 
-                     rotate = 0, 
-                     ref = sp, 
-                     proj.string = NULL, 
-                     row.names = NULL){
-  if (is.null(scale) & is.null(shift) & rotate == 0){
-    return(obj)
-  }
-  #orig.cent <- rgeos::gCentroid(ref, byid = TRUE)@coords
-  orig.cent <- sf::st_coordinates(sf::st_centroid(ref))
-  bbox <- unname(sf::st_bbox(ref))
-  scale <- max(diff(bbox)) * scale
-  sp_obj <- as(sp, "Spatial")
-  obj <- sp::elide(obj = sp_obj, rotate = rotate, center = orig.cent)
-  ref <- sp::elide(obj = sp_obj, rotate = rotate, center = orig.cent)
-  obj <- sp::elide(obj, scale = scale, center = orig.cent)
-  ref <- sp::elide(ref, scale = scale, center = orig.cent)
-  new.cent <- sf::st_coordinates(sf::st_centroid(sf::st_as_sf(ref)))
-  final_obj <- sp::elide(obj, shift = shift * 10000 + c(orig.cent - new.cent))
-  if (is.null(proj.string)){
-    sp::proj4string(final_obj) <- sp::proj4string(sp_obj)
-  } else {
-    sp::proj4string(final_obj) <- proj.string
-  }
-  
-  if (!is.null(row.names)){
-    row.names(obj) <- row.names
-  }
-  return(obj)
-}

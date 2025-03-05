@@ -1,4 +1,7 @@
-#' Plot gage age chart
+#' Plot gage age in vertical chart
+#' 
+#' @param gage_melt dataframe in long format for all sites
+#' @param font_fam name of font to use for mapping
 #' 
 plot_gage_age <- function(gage_melt, yr, font_fam){
   
@@ -17,8 +20,6 @@ plot_gage_age <- function(gage_melt, yr, font_fam){
                        breaks = c(0, 50, 100, 150),
                        expand = c(0, 0.025),
                        position = "right") +
-    #scale_x_continuous(limits = c(0, 450),
-    #                   breaks = c(0, 200, 400)) +
     scale_x_reverse(breaks = c(0, 200, 400),
                     limits = c(450, 0))+
     ylab(NULL) + xlab(NULL) +
@@ -40,8 +41,11 @@ plot_gage_age <- function(gage_melt, yr, font_fam){
 }
 
 #' Plot bar chart of active gages
+#' 
 #' @param gage_melt long form, gage site_no & years active
 #' @param yr year being shown
+#' @param font_fam name of font to use for mapping
+#' 
 plot_gage_timeseries <- function(gage_melt, yr, font_fam){
   
   # store vars for plotting
@@ -92,9 +96,9 @@ plot_gage_timeseries <- function(gage_melt, yr, font_fam){
 
 #' Plot map of active gages
 #' @param gage_melt long form, gage site_no & years active
-#' @param active_year year being shown
-#' @param site_map shifted sites to matcvh state_map
-#' @param state_map shifted states and territories
+#' @param yr year being shown
+#' @param site_map projected sites to match state_map
+#' @param state_map projected states and territories
 plot_gage_map <- function(gage_melt, yr, site_map, state_map){
   
   # filter gage data to given year
@@ -121,8 +125,15 @@ plot_gage_map <- function(gage_melt, yr, site_map, state_map){
 
 #' Compose map and bar chart together
 #' @param bar_chart timeseries bar chart of active flow gages
-#' @param year year being shown
-#' @param gage_map maps of active gages
+#' @param age_chart chart that shows age graph of each site
+#' @param gage_map_CONUS the map of active gages in CONUS
+#' @param gage_map_AK the map of active gages in Alaska
+#' @param gage_map_PR the map of active gages in Puerto Rico
+#' @param gage_map_HI the map of active gages in Hawaii
+#' @param yr year being shown
+#' @param png_out the name of the resultant png
+#' @param standalone_logic TRUE/FALSE to indicate if this is a standalone viz or one for the gif
+#' @param gage_melt the data frame in long format of all gages
 compose_chart <- function(bar_chart, 
                           age_chart,
                           gage_map_CONUS, 
@@ -254,7 +265,7 @@ compose_chart <- function(bar_chart,
 }
 
 #' Animate frames to create gif
-#' @param frames list of pngs, frames for gif
+#' @param ... list of pngs, frames for gif
 #' @param out_file output file name for gif
 #' @param frame_delay_cs time spent on each frame
 #' @param reduce logical, whether or not to apply gifsicle compression
