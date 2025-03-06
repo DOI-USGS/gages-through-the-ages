@@ -158,17 +158,8 @@ p3_viz_split_targets <-
                     standalone_logic = FALSE,
                     gage_melt = gage_melt),
       format = 'file'),
-    #unlist = TRUE,
     names = active_year
   )
-
-# p3_intermediate_targets <- 
-#   # Intermediate target to make sure the files have been updated before
-#   # running the full animation target
-#   tarchetypes::tar_files(
-#     gage_png_files,
-#     sprintf("out/gage_time_%s.png", years_to_plot)
-#   )
 
 p3_viz_combine_targets <- 
   tarchetypes::tar_combine(
