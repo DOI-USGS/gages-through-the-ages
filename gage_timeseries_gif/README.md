@@ -1,6 +1,6 @@
 # Gages through the ages GIF and stand-alone png
 
-![alt text](./markDownImages/gages_gif.png "The 2024 map from the Gages Through the Ages gif created with this folder's pipeline.")
+![alt text](././markDownImages/gages_gif.png "The 2024 map from the Gages Through the Ages gif created with this folder's pipeline.")
 
 This RStudio .Rproj uses a `targets` pipeline to build a gif and a stand alone png of the gages from 1889 to current. 
 
