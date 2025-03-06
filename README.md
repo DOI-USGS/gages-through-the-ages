@@ -1,5 +1,5 @@
 # Gages Through the Ages Visualization
-![alt text](./markDownImages/gages.png "The SVG map from the Gages Through the Ages Visualization")
+![alt text](./markDownImages/gages_website.png "The SVG map from the Gages Through the Ages Visualization")
 ## The Purpose
 The Gages Through the Ages Visualization presents the viewer with a brief history of the U.S. Geological Survey's (USGS) streamgaging efforts from the placement of the first USGS gage at Embudo, New Mexico in 1889 to the present day. The site is viewable at https://labs.waterdata.usgs.gov/visualizations/gages-through-the-ages
 
