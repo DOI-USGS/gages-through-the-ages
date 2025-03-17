@@ -4,8 +4,11 @@ library(tidyverse)
 
 options(tidyverse.quiet = TRUE)
 tar_option_set(packages = c("tidyverse", 
+                            "purrr",
+                            "dataRetrieval",
                             "raster", 
                             "sf", 
+                            "stringr",
                             "maps", 
                             "scico", 
                             "cowplot", 
@@ -16,6 +19,7 @@ tar_option_set(packages = c("tidyverse",
 source('src/data_utils.R')
 source('src/plot_utils.R')
 source('src/map_utils.R')
+source('src/gw_utils.R')
 
 # output configs
 font_fam <-'Source Sans Pro'
@@ -30,6 +34,14 @@ years_to_plot <- seq(1889, 2024, by = 1)
 blue_color <- "#143D60" #11.25:1 contrast on white
 grey_dark <- "#61677A" #5.6:1 contrast on white
 grey_light <- "#CFD3D3" #1.5:1 contrast on white
+teal_color <- "#386785" #6.09:1 contrast on white
+teal_dark <- "#41789B"
+teal_med <- "#5D97BB"
+teal_light <- "#93BAD2"
+red_color <- "#78303D"  #9.17:1 contrast on white
+lighter_red <- "#9D3F51"  # 6.43:1 contrast on white 
+lighter_red2 <- "#BE5B6D"
+lighter_red3 <- "#CC7F8D"
 # import logo
 usgs_logo <- magick::image_read('usgs_logo_grey.png') |>
   magick::image_resize('x80') |>
@@ -212,4 +224,131 @@ downstream_targets <- list(
   )
 )
 
-c(p1_fetch_targets, p2_process_targets, p3_viz_split_targets, p3_viz_combine_targets, downstream_targets)
+# # # # # # # # # # # # # # # # # # # # # # #  
+#
+# 
+#       GROUNDWATER SITE MAP
+# 
+# 
+gw_targets <- list(
+  # fetch raw data from dataRetrieval
+  tar_target(
+    p1_fetch_gw_sites,
+    fetch_gw_sites()
+  ),
+  # Process for plotting
+  tar_target(
+    p1_fetch_gw_distinct,
+    p1_fetch_gw_sites |> 
+      filter(stringr::str_detect(string = site_tp_cd, pattern = "GW")) |>
+      distinct(site_no, .keep_all = TRUE) |>
+      left_join(p1_agency_codes, by = "agency_cd") |>
+      mutate(agency_general = case_when(
+        grepl("USGS", agency_cd) ~ "USGS",
+        grepl("US", agency_cd) ~ "Other Federal",
+        TRUE ~ "Non-Federal")) 
+  ),
+  # Save to csv for collaborators
+  tar_target(
+    p1_fetch_gw_csv,
+    {readr::write_csv(p1_fetch_gw_distinct, 
+                      file = "data/groundwater_site_ids.csv")
+      return("data/groundwater_site_ids.csv")},
+    format = "file"
+  ),
+  # read agency codes, downloaded from NWIS page March 2025
+  tar_target(
+    p1_agency_codes,
+    readr::read_delim("data/agency_cd_query.txt", delim = '\t',skip = 7)
+  ),
+  
+  # convert sites to spatial
+  tar_target(
+    p2_gw_sites_sf_CONUS,
+    extract_gw_sites(area_name = "CONUS",
+                     site_info = p1_fetch_gw_distinct)
+  ),
+  tar_target(
+    p2_gw_sites_sf_AK,
+    extract_gw_sites(area_name = "AK",
+                     site_info = p1_fetch_gw_distinct)
+  ),
+  tar_target(
+    p2_gw_sites_sf_HI,
+    extract_gw_sites(area_name = "HI",
+                     site_info = p1_fetch_gw_distinct)
+  ),
+  # process data for pie charts
+  tar_target(
+    p2_federal_collaborators,
+    process_for_pie(in_df = p1_fetch_gw_distinct,
+                    breakdown_type = "federal")
+  ),
+  tar_target(
+    p2_nonfederal_collaborators,
+    process_for_pie(in_df = p1_fetch_gw_distinct,
+                    breakdown_type = "non-federal")
+  ),
+  tar_target(
+    p2_all_collaborators,
+    process_for_pie(in_df = p1_fetch_gw_distinct,
+                    breakdown_type = "overview")
+  ),
+  
+  # map mini-maps for each region
+  tar_target(
+    p3_gw_sitemap_CONUS,
+    plot_gw_map(gw_sf = p2_gw_sites_sf_CONUS,
+                state_map = state_map_CONUS)
+  ),
+  tar_target(
+    p3_gw_sitemap_HI,
+    plot_gw_map(gw_sf = p2_gw_sites_sf_HI,
+                state_map = state_map_HI)
+  ),
+  tar_target(
+    p3_gw_sitemap_AK,
+    plot_gw_map(gw_sf = p2_gw_sites_sf_AK,
+                state_map = state_map_AK)
+  ),
+  # pie charts
+  tar_target(
+    p3_federal_pie,
+    plot_gw_piechart(in_df = p2_federal_collaborators,
+                     breakdown_type = "federal")
+  ),
+  tar_target(
+    p3_nonfederal_pie,
+    plot_gw_piechart(in_df = p2_nonfederal_collaborators,
+                     breakdown_type = "non-federal")
+  ),
+  tar_target(
+    p3_overview_pie,
+    plot_gw_piechart(in_df = p2_all_collaborators,
+                     breakdown_type = "overview")
+  ),
+  
+  tar_target(
+    p3_gw_map_png,
+    compose_gw_chart(gw_map_CONUS = p3_gw_sitemap_CONUS,
+                     gw_map_AK = p3_gw_sitemap_AK,
+                     gw_map_HI = p3_gw_sitemap_HI,
+                     pie_all = p3_overview_pie,
+                     pie_nonfed = p3_nonfederal_pie,
+                     pie_fed = p3_federal_pie,
+                     yr = 2025,
+                     png_out = "out/gw_map/gw_site_map_2025.png",
+                     overall_agencies = p2_all_collaborators,
+                     gw_raw = p1_fetch_gw_distinct)
+  )
+)
+
+# List of all targets to run, (the order here matters for the tar_combine() fxn)
+c(p1_fetch_targets, 
+  p2_process_targets, 
+  p3_viz_split_targets, 
+  p3_viz_combine_targets, 
+  downstream_targets,
+  gw_targets)
+
+
