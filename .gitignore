@@ -39,6 +39,8 @@ coverage
 data_processing_pipeline/.remake
 data_processing_pipeline/*/out/
 data_processing_pipeline/*/tmp/
+gage_timeseries_gif/data/groundwater_site_ids.csv
+gage_timeseries_gif/out/gw_map/*
 
 */out/*.png
 */out/*.gif
