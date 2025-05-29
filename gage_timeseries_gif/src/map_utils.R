@@ -89,4 +89,34 @@ extract_sites <- function(area_name, gage_info){
   return(sites_out)
 }
 
-
+#' 
+#' Bind all sites together, reprojecting them to ortho/global projection
+#' 
+#' @param in_CONUS sf object with sites in CONUS
+#' @param in_HI sf object with sites in Hawaii
+#' @param in_PR sf object with sites in PR
+#' @param in_AK sf object with sites in Alaska
+#' @param crs the ortho projection as string
+#' 
+harmonize_sites <- function(in_CONUS, in_HI, in_PR, in_AK, crs){
+  
+  temp_conus <- in_CONUS |>
+    sf::st_transform(crs = crs) |>
+    mutate(location = "CONUS")
+  
+  temp_AK <- in_AK |>
+    sf::st_transform(crs = crs) |>
+    mutate(location = "AK")
+  
+  temp_HI <- in_HI |>
+    sf::st_transform(crs = crs) |>
+    mutate(location = "HI")
+  
+  temp_PR <- in_PR |>
+    sf::st_transform(crs = crs) |>
+    mutate(location = "PR")
+  
+  out_sf <- bind_rows(temp_conus, temp_AK, temp_HI, temp_PR)
+  
+  return(out_sf)
+}

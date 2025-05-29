@@ -47,7 +47,10 @@ usgs_logo <- magick::image_read('usgs_logo_grey.png') |>
   magick::image_resize('x80') |>
   magick::image_colorize(100, grey_light)
 
+# projected maps
 proj.string <- "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"
+# global map
+ortho_crs <- "+proj=ortho +lat_0=40 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +no_defs"
 
 p1_fetch_targets <- list(
   # Output of `national-flow-observations`
@@ -83,6 +86,12 @@ p1_fetch_targets <- list(
   tar_target(
     state_map_PR,
     extract_states(area_name = "PR")
+  ),
+  
+  # prep globe for global layout
+  tar_target(
+    world_map_sf,
+    rnaturalearth::ne_countries(scale = "medium", returnclass = "sf")
   )
 )
 
@@ -114,6 +123,16 @@ p2_process_targets <- list(
     site_map_PR,
     extract_sites(area_name = "PR", 
                   gage_info = gage_info)
+  ),
+  
+  # merge all sites together for global view map
+  tar_target(
+    sites_all_global,
+    harmonize_sites(in_CONUS = site_map_CONUS,
+                    in_HI = site_map_HI,
+                    in_PR = site_map_PR,
+                    in_AK = site_map_AK,
+                    crs = ortho_crs)
   )
 )
 
@@ -221,6 +240,27 @@ downstream_targets <- list(
                     gage_melt = gage_melt
       )
     )
+  )
+)
+
+# # # # # # # # # # # # # # # # # # # # # # #  
+#
+# 
+#       GLOBAL MAP of STREAMGAGES
+# 
+#
+global_targets <- list(
+  tar_target(
+    global_png,
+    compose_global_map(
+      gage_melt = gage_melt,
+      sites_in_sf = sites_all_global,
+      globe_in_sf = world_map_sf,
+      focal_year = year_for_plot,
+      crs = ortho_crs,
+      png_out = "out/global_gages_map.png"
+    ),
+    format = "file"
   )
 )
 
@@ -349,6 +389,7 @@ c(p1_fetch_targets,
   p3_viz_split_targets, 
   p3_viz_combine_targets, 
   downstream_targets,
+  global_targets,
   gw_targets)
 
 
