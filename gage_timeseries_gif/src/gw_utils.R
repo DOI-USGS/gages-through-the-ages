@@ -45,8 +45,7 @@ extract_gw_sites <- function(area_name, site_info){
       filter(! state %in% names(crs_map)) |>
       points_sp() |> # (this function is in map_utils.R)
       sf::st_as_sf() |>
-      sf::st_transform(crs = 5070) |>
-      left_join(site_info, by = "site_no")
+      sf::st_transform(crs = 5070) 
     
   } else if(area_name != "CONUS") {
     
@@ -54,8 +53,7 @@ extract_gw_sites <- function(area_name, site_info){
       filter(state == area_name) |>
       points_sp() |>
       sf::st_as_sf() |>
-      sf::st_transform(crs = crs_map[[area_name]]) |>
-      left_join(site_info, by = "site_no")
+      sf::st_transform(crs = crs_map[[area_name]]) 
   }
   
   return(sites_out)

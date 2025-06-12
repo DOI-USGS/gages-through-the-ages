@@ -36,7 +36,7 @@ plot_gage_age <- function(gage_melt, yr, font_fam){
       axis.text.y.left = element_blank(),
       axis.text.x = element_text(vjust = 0, margin = margin(r = 0, t = -2))
     )
-    
+  
   
 }
 
@@ -105,7 +105,7 @@ plot_gage_map <- function(gage_melt, yr, site_map, state_map){
   yr_gages <- gage_melt |>
     filter(year == as.numeric(yr)) |>
     distinct(site)
-                                  
+  
   # sites active in a given year
   gages_active <- site_map |>
     dplyr::filter(site_no %in% yr_gages$site)
@@ -145,7 +145,7 @@ compose_chart <- function(bar_chart,
                           standalone_logic,
                           gage_melt){
   
-
+  
   # summary stats for standalone viz
   average_age <- gage_melt |>
     filter(year == yr) |>
@@ -155,7 +155,7 @@ compose_chart <- function(bar_chart,
   
   # base composition for both standalone and gif
   base_plot <- ggdraw(xlim = c(0, 1), 
-         ylim = c(0,1)) +
+                      ylim = c(0,1)) +
     # create background canvas
     draw_grob(grid::rectGrob(
       x = 0, y = 0, 
@@ -173,7 +173,7 @@ compose_chart <- function(bar_chart,
       x = -0.02,
       y = 0.12,
       width = 1.03
-      )+
+    )+
     draw_text("Alaska",
               x = 0.17, y = 0.27,
               color = grey_dark,
@@ -255,7 +255,7 @@ compose_chart <- function(bar_chart,
                 y = 0.43,
                 hjust = 1)
   }
-
+  
   
   ggsave(png_out, 
          width = 5, height = 5, dpi = 300, units = 'in')
@@ -337,3 +337,77 @@ optimize_gif <- function(out_file, frame_delay_cs) {
   return(out_file)
 }
 
+#' Create global map
+#' 
+#' @param gage_melt gages by year 
+#' @param sites_in_sf global sf of all streamgages
+#' @param globe_in_sf time spent on each frame
+#' @param focal_year year for plotting
+#' @param png_out chr string of save location for final png
+#' @param crs crs for global map layout
+#' 
+compose_global_map <- function(gage_melt, 
+                               sites_in_sf, 
+                               globe_in_sf,
+                               focal_year,
+                               crs,
+                               ortho_crs,
+                               png_out){
+  
+  # filter gage data to given year
+  yr_gages <- gage_melt |>
+    filter(year == as.numeric(focal_year)) |>
+    distinct(site)
+  
+  # sites active in a given year
+  gages_active <- sites_in_sf |>
+    dplyr::filter(site_no %in% yr_gages$site)
+  
+  # generate lat/lon gridlines
+  graticules <- sf::st_graticule(lat = seq(-90, 90, by = 15),
+                                 lon = seq(-180, 180, by = 15))
+  
+  # transform graticules
+  graticules_ortho <- sf::st_transform(graticules, crs = crs) 
+  
+  # create clipping circle in projected space
+  circle <- sf::st_sfc(sf::st_point(c(0, 0)), crs = crs) |>
+    sf::st_buffer(dist = 6371000)  # match Earth's radius in meters
+  
+  # clip graticules
+  graticules_clipped <- sf::st_intersection(graticules_ortho, circle) 
+  
+  # transform world to same projection
+  world_ortho <- sf::st_transform(globe_in_sf, crs = crs)
+  
+  # background for behind globe
+  globe_background <- grid::grid.circle(x=0.5, y=0.5, r=0.5, default.units="npc", name=NULL,
+                                        gp=grid::gpar(fill = "#CDE0EA"), draw=TRUE, vp=NULL) #A8BBCD
+  
+  # plot with orthographic projection
+  globe_map <- ggplot(world_ortho) +
+    geom_sf(data = graticules_clipped, 
+            linewidth = 5) +
+    #geom_sf(data = graticules_clipped, color = grey_dark, linewidth = 0.2, fill = NA) +  # lat/lon lines
+    geom_sf(fill = grey_dark, color = "#CDE0EA", alpha = 0.5, linewidth = 0.5) +
+    geom_sf(data = gages_active, color = blue_color, size = 1, alpha = 0.7) +
+    #coord_sf(crs = "+proj=ortho +lat_0=43 +lon_0=290") +  # adjust lat/lon center
+    theme_void()+
+    theme(plot.background = element_rect(fill = NA, color = NA),
+          panel.background = element_rect(fill = NA, color = NA))
+  
+  composition <- ggdraw(ylim = c(0, 16), # 0-16 scale makes it easy to place viz items on canvas
+                        xlim = c(0, 16))  +
+    draw_plot(globe_background,
+              x = 0.8, y = -0 + 0.68, width = 16*0.912, height = 16*0.912) +
+    draw_plot(globe_map, 
+              x = 0.1, y = -0, width = 16, height = 16) +
+    draw_text("Alaska",
+              x = 0.17, y = 0.27,
+              color = grey_dark,
+              family = font_fam, size = 24)
+  
+  
+  ggsave(png_out, width = 16, height = 16, units = "in", dpi = 300, bg = "white")
+  
+}
