@@ -55,9 +55,9 @@ fetch_gage_info <- function(gage_data){
       dec_lat_va = mean(dec_lat_va, na.rm = TRUE),
       dec_long_va = mean(dec_long_va, na.rm = TRUE),
       .groups = "drop"
-    ) #|> 
-    #filter(dec_long_va < -65.4,
-    #       dec_lat_va > 0)  # remove US virgin Islands and other things we won't plot
+    ) |> 
+    filter(dec_long_va < -65.4,
+           dec_lat_va > 0)  # remove US virgin Islands and other things we won't plot
   
 }
 
