@@ -3,13 +3,13 @@
 #' 
 #' @param locations coordinates of the spatial points for mapping
 #' 
-points_sp <- function(locations){
+points_sp <- function(locations, crs_out){
   sf::st_as_sf(
     locations,
     coords = c("dec_long_va", "dec_lat_va"),
     crs = 4326  # WGS84
-  ) |>
-    sf::st_transform(crs = crs_out)
+  ) #|>
+    #sf::st_transform(crs = crs_out)
 }
 
 
