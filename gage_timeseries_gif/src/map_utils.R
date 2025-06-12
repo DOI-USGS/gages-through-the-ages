@@ -6,7 +6,7 @@
 points_sp <- function(locations){
   points <- cbind(locations$dec_long_va, locations$dec_lat_va) 
   points_sp_obj <- sp::SpatialPoints(points, sp::CRS("+proj=longlat +datum=WGS84")) 
-  points_transform <- sp::spTransform(points_sp_obj, proj.string) %>% 
+  points_transform <- sp::spTransform(points_sp_obj, proj.string) |> 
     sp::SpatialPointsDataFrame(data = locations[c('site_no')])
   return(points_transform)
 }
@@ -22,12 +22,12 @@ extract_states <- function(area_name){
   crs_map <- c(AK = 3338, HI = 6633, PR = 4139)
   
   if(area_name == "CONUS") {
-    state_map <- tigris::states(cb = TRUE) %>%
-      filter(!(STUSPS %in% c('AS', 'MP','GU', 'VI', 'HI', 'PR', 'AK'))) %>%
+    state_map <- tigris::states(cb = TRUE) |>
+      filter(!(STUSPS %in% c('AS', 'MP','GU', 'VI', 'HI', 'PR', 'AK'))) |>
       sf::st_transform(crs = 5070) 
   } else {
-    state_map <- tigris::states(cb = TRUE) %>%
-      filter(STUSPS == area_name) %>%
+    state_map <- tigris::states(cb = TRUE) |>
+      filter(STUSPS == area_name) |>
       sf::st_transform(crs = crs_map[area_name]) 
   }
   
@@ -39,20 +39,23 @@ extract_states <- function(area_name){
 #' @param gage_data data frame of gages read from .rds file
 #' 
 fetch_gage_info <- function(gage_data){
-  gages_info <- gage_data %>%
-    pull(site) %>% 
-    dataRetrieval::readNWISsite() %>% 
-    group_by(site_no) %>% 
-    # parse huc_cd to 2 digits, and rename to huc to stay consistent
-    # 3/19/2020 - discovered that some sites have more than one HUC code, not sure how that
-    # is possible, but filtering to the last one (most recent) for now
-    #   E.g. site number `11434500` had huc_cd=="18020129" for year == 2014 and then 
-    #     huc_cd `16050101` for year == 2016
-    summarize(huc = stringr::str_sub(tail(unique(huc_cd),1), 1L, 2L), 
-              # huc = paste(stringr::str_sub(unique(huc_cd)[[1]], 1L, 2L), collapse = "|"),
-              dec_lat_va = mean(dec_lat_va), dec_long_va = mean(dec_long_va)) %>% 
-    filter(dec_long_va < -65.4,
-           dec_lat_va > 0)  # remove US virgin Islands and other things we won't plot
+  site_ids <- gage_data |>
+    pull(site) |>
+    unique()
+  
+  site_chunks <- split(site_ids, ceiling(seq_along(site_ids) / 100))
+  
+  gages_info <- site_chunks |>
+    map_dfr(possibly(readNWISsite, otherwise = NULL)) |>
+    group_by(site_no) |>
+    summarize(
+      huc = stringr::str_sub(tail(unique(huc_cd), 1), 1L, 2L),
+      dec_lat_va = mean(dec_lat_va, na.rm = TRUE),
+      dec_long_va = mean(dec_long_va, na.rm = TRUE),
+      .groups = "drop"
+    ) #|> 
+    #filter(dec_long_va < -65.4,
+    #       dec_lat_va > 0)  # remove US virgin Islands and other things we won't plot
   
 }
 
@@ -71,15 +74,15 @@ extract_sites <- function(area_name, gage_info){
   
   if(area_name == "CONUS") {
     
-    sites_out <- gage_info %>% 
-      filter(!huc %in% huc_map) %>% 
+    sites_out <- gage_info |> 
+      filter(!huc %in% huc_map) |> 
       points_sp() |>
       sf::st_as_sf() |>
       sf::st_transform(crs = 5070)
     
   } else if(area_name != "CONUS") {
     
-    sites_out <- gage_info %>% 
+    sites_out <- gage_info |> 
       filter(huc == huc_map[[area_name]]) |>
       points_sp() |>
       sf::st_as_sf() |>
