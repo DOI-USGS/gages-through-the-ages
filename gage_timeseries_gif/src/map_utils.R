@@ -4,11 +4,12 @@
 #' @param locations coordinates of the spatial points for mapping
 #' 
 points_sp <- function(locations){
-  points <- cbind(locations$dec_long_va, locations$dec_lat_va) 
-  points_sp_obj <- sp::SpatialPoints(points, sp::CRS("+proj=longlat +datum=WGS84")) 
-  points_transform <- sp::spTransform(points_sp_obj, proj.string) |> 
-    sp::SpatialPointsDataFrame(data = locations[c('site_no')])
-  return(points_transform)
+  sf::st_as_sf(
+    locations,
+    coords = c("dec_long_va", "dec_lat_va"),
+    crs = 4326  # WGS84
+  ) |>
+    sf::st_transform(crs = crs_out)
 }
 
 
@@ -43,6 +44,7 @@ fetch_gage_info <- function(gage_data){
     pull(site) |>
     unique()
   
+  # need to chunk sites to pull info from dataRetrieval
   site_chunks <- split(site_ids, ceiling(seq_along(site_ids) / 100))
   
   gages_info <- site_chunks |>
@@ -76,6 +78,7 @@ extract_sites <- function(area_name, gage_info){
     
     sites_out <- gage_info |> 
       filter(!huc %in% huc_map) |> 
+      filter(!is.na(dec_lat_va), !is.na(dec_long_va)) |>  # exclude NA coordinates
       points_sp() |>
       sf::st_as_sf() |>
       sf::st_transform(crs = 5070)
