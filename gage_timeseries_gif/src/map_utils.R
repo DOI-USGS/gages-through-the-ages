@@ -4,13 +4,13 @@
 #' @param locations coordinates of the spatial points for mapping
 #' 
 points_sp <- function(locations){
-  points <- cbind(locations$dec_long_va, locations$dec_lat_va) 
-  points_sp_obj <- sp::SpatialPoints(points, sp::CRS("+proj=longlat +datum=WGS84")) 
-  points_transform <- sp::spTransform(points_sp_obj, proj.string) %>% 
-    sp::SpatialPointsDataFrame(data = locations[c('site_no')])
-  return(points_transform)
+  sf::st_as_sf(
+    locations,
+    coords = c("dec_long_va", "dec_lat_va"),
+    crs = 4326  # WGS84
+  ) #|>
+  #sf::st_transform(crs = crs_out)
 }
-
 
 #' take map arguments and return a projected sf object
 #' 
