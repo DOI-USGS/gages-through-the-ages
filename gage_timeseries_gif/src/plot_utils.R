@@ -337,3 +337,69 @@ optimize_gif <- function(out_file, frame_delay_cs) {
   return(out_file)
 }
 
+#' Plot gage age in vertical chart
+#' 
+#' @param gage_data spatial dataframe with gage counts aggregated by state and year
+#' @param font_fam name of font to use for mapping
+#' @param out_file file name to save plot 
+#' 
+plot_state_geofacet <- function(gage_data, map_grid, font_fam, out_file){
+  
+  # build data to add facet labels using geom_text
+  corner_labels <- gage_data |>
+    group_by(postal) |>
+    summarize(
+      x = max(year),
+      y = max(n_gages),  # just above top bar
+      label = Inf,         # or use dynamic label
+      .groups = "drop"
+    )
+  
+  state_upper <- gage_data |>
+    group_by(postal) |>
+    summarize(
+      x = min(year),
+      y = Inf,
+      label = postal,
+      .groups = "drop"
+    )
+  
+  
+  ggplot(gage_data, aes(y = n_gages, x = year)) +
+    geom_bar(stat = "identity", fill = color_blue, color = NA, width = 1) +
+    
+    # state abbrev in upper left
+    geom_text(
+      data = state_upper,
+      aes(x = x, y = y, label = label),
+      family = font_fam,
+      inherit.aes = FALSE,
+      hjust = 0, vjust = 1.5,
+      fontface = "bold", color = "#213363", size = 4.5
+    ) +
+    geom_text(
+      data = corner_labels,
+      aes(x = x, y = label, label = y),
+      inherit.aes = FALSE,
+      hjust = 1, vjust = 1.5,
+      #fontface = "bold", 
+      family = font_fam,
+      color = "#213363", size = 4.5
+    ) +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.25))) +
+    facet_geo(~ postal, grid = map_grid, label = "code", scales = "free") +
+    theme_void() +
+    theme(
+      legend.position = "none", 
+      strip.text = element_blank(),
+      plot.background = element_rect(fill = "white"),
+      strip.background = element_rect(fill = "#F2F2F2", color = NA),
+      panel.background = element_rect(fill = "#F2F2F2", color = NA),
+      panel.spacing = unit(0.1, "lines"),
+      plot.margin = margin(5, 5, 5, 5)
+    )
+  
+  ggsave(out_file, width = 9, height = 6, dpi = 400)
+  return(out_file)
+  
+}

@@ -410,8 +410,17 @@ p3_geofacet_targets <- list(
       group_by(year, postal) |>
       summarize(n_gages = length(unique(site_no))) |>
       filter(postal %in% state.abb | postal == "DC" | postal == "PR") 
+  ),
+  tar_target(
+    p3_state_geofacet,
+    plot_state_geofacet(
+      p3_gage_data_sf, 
+      map_grid = p3_grid_pr,
+      font_fam, 
+      out_file = "out/state_geofacet.png"
+      ),
+    format = "file"
   )
-  
 )
 
 # List of all targets to run, (the order here matters for the tar_combine() fxn)
