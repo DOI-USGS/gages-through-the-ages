@@ -356,7 +356,7 @@ gw_targets <- list(
 #       STATE GEOFACET TIMESERIES
 # 
 # 
-geofacet_targets <- list(
+p3_geofacet_targets <- list(
   ## create a grid that include PR
   tar_target(
     # get all US administrative regions, including states and territories
@@ -381,16 +381,31 @@ geofacet_targets <- list(
     )
   ),
   tar_target(
+    p3_gage_file,
+    return("data/active_flow_gages_summary_wy.rds"),
+    format = "file"
+  ),
+  tar_target(
+    p3_gage_data,
+    readRDS(p3_gage_file)
+  ),
+  
+  # get metadata about all the gages
+  tar_target(
+    p3_gage_info,
+    fetch_gage_info(gage_data = p3_gage_data)
+  ),
+  tar_target(
     p3_gage_sf,
-    gage_info |>
+    p3_gage_info |>
       st_as_sf(coords = c("dec_long_va", "dec_lat_va"), crs = 4326, remove = FALSE) |>
       st_join(p3_usa_sf[c("name", "postal")])
   ),
   tar_target(
-    p3_gage_data,
+    p3_gage_data_sf,
     gage_melt |>
-      select(-n_years_active, -years_since_active, -any_gaps) |>
-      select(site_no = site, everything()) |>
+      dplyr::select(-n_years_active, -years_since_active, -any_gaps) |>
+      dplyr::select(site_no = site, everything()) |>
       left_join(p3_gage_sf) |>
       group_by(year, postal) |>
       summarize(n_gages = length(unique(site_no))) |>
@@ -400,13 +415,13 @@ geofacet_targets <- list(
 )
 
 # List of all targets to run, (the order here matters for the tar_combine() fxn)
-c(p1_fetch_targets, 
+list(p1_fetch_targets, 
+     p3_geofacet_targets, 
   p2_process_targets, 
   p3_viz_split_targets, 
   p3_viz_combine_targets, 
   downstream_targets,
-  gw_targets, 
-  geofacet_targets
+  gw_targets
   )
 
 
