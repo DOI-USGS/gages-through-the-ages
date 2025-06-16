@@ -14,7 +14,10 @@ tar_option_set(packages = c("tidyverse",
                             "cowplot", 
                             "geomtextpath", 
                             "sp",
-                            "magick"))
+                            "magick",
+                            "rnaturalearthdata",
+                            "rnaturalearth",
+                            "geofacet"))
 
 source('src/data_utils.R')
 source('src/plot_utils.R')
@@ -42,6 +45,10 @@ red_color <- "#78303D"  #9.17:1 contrast on white
 lighter_red <- "#9D3F51"  # 6.43:1 contrast on white 
 lighter_red2 <- "#BE5B6D"
 lighter_red3 <- "#CC7F8D"
+
+# geofacet fill
+color_blue <- "#0962b2"
+
 # import logo
 usgs_logo <- magick::image_read('usgs_logo_grey.png') |>
   magick::image_resize('x80') |>
@@ -343,12 +350,63 @@ gw_targets <- list(
   )
 )
 
+# # # # # # # # # # # # # # # # # # # # # # #  
+#
+# 
+#       STATE GEOFACET TIMESERIES
+# 
+# 
+geofacet_targets <- list(
+  ## create a grid that include PR
+  tar_target(
+    # get all US administrative regions, including states and territories
+    p3_usa_sf,
+    ne_states(country = "united states of america", returnclass = "sf") |> 
+      st_transform(us_admin1, crs = st_crs(4326)) |>
+      bind_rows(ne_states(returnclass = "sf") |>
+                  filter(name == "Puerto Rico") |>
+                  mutate(postal = "PR"))
+ 
+  ),
+  tar_target(
+    p3_grid_pr,
+    dplyr::bind_rows(
+      tibble::as_tibble(unclass(us_state_grid1)),
+      tibble::tibble(
+        name = "Puerto Rico",
+        code = "PR",
+        row = 7,
+        col = 11
+      )
+    )
+  ),
+  tar_target(
+    p3_gage_sf,
+    gage_info |>
+      st_as_sf(coords = c("dec_long_va", "dec_lat_va"), crs = 4326, remove = FALSE) |>
+      st_join(p3_usa_sf[c("name", "postal")])
+  ),
+  tar_target(
+    p3_gage_data,
+    gage_melt |>
+      select(-n_years_active, -years_since_active, -any_gaps) |>
+      select(site_no = site, everything()) |>
+      left_join(p3_gage_sf) |>
+      group_by(year, postal) |>
+      summarize(n_gages = length(unique(site_no))) |>
+      filter(postal %in% state.abb | postal == "DC" | postal == "PR") 
+  )
+  
+)
+
 # List of all targets to run, (the order here matters for the tar_combine() fxn)
 c(p1_fetch_targets, 
   p2_process_targets, 
   p3_viz_split_targets, 
   p3_viz_combine_targets, 
   downstream_targets,
-  gw_targets)
+  gw_targets, 
+  geofacet_targets
+  )
 
 
