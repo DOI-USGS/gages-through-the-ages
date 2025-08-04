@@ -375,7 +375,7 @@ plot_state_geofacet <- function(gage_data, map_grid, font_fam, out_file){
       family = font_fam,
       inherit.aes = FALSE,
       hjust = 0, vjust = 1.5,
-      fontface = "bold", color = "#213363", size = 4.5
+      fontface = "bold", color = "#213363", size = 9
     ) +
     geom_text(
       data = corner_labels,
@@ -384,7 +384,7 @@ plot_state_geofacet <- function(gage_data, map_grid, font_fam, out_file){
       hjust = 1, vjust = 1.5,
       #fontface = "bold", 
       family = font_fam,
-      color = "#213363", size = 4.5
+      color = "#213363", size = 9
     ) +
     scale_y_continuous(expand = expansion(mult = c(0, 0.25))) +
     facet_geo(~ postal, grid = map_grid, label = "code", scales = "free") +
@@ -399,7 +399,8 @@ plot_state_geofacet <- function(gage_data, map_grid, font_fam, out_file){
       plot.margin = margin(5, 5, 5, 5)
     )
   
-  ggsave(out_file, width = 9, height = 6, dpi = 400)
+  ggsave(out_file, type = "cairo", device = "png", 
+         width = 18, height = 12, dpi = 400, units = "in")
   return(out_file)
   
 }
