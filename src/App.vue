@@ -4,8 +4,8 @@
     <HeaderUSWDSBanner v-if="typeOfEnv !== '-test build-'" />
     <HeaderUSGS />
     <WorkInProgressWarning v-if="typeOfEnv === '-beta build-'" />
-    <RouterView />
     <ShutdownBanner />
+    <RouterView />
     <PreFooterCodeLinks v-if="checkIfSvgIsRendered"/>
     <FooterUSGS v-if="checkIfSvgIsRendered"/>
   </div>
