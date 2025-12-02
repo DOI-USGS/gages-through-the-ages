@@ -4,7 +4,7 @@
     <HeaderUSWDSBanner v-if="typeOfEnv !== '-test build-'" />
     <HeaderUSGS />
     <WorkInProgressWarning v-if="typeOfEnv === '-beta build-'" />
-    <ShutdownBanner />
+    <!-- <ShutdownBanner /> -->
     <RouterView />
     <PreFooterCodeLinks v-if="checkIfSvgIsRendered"/>
     <FooterUSGS v-if="checkIfSvgIsRendered"/>
@@ -17,7 +17,7 @@
   import WindowSize from "@/components/WindowSize.vue";
   import HeaderUSWDSBanner from "@/components/HeaderUSWDSBanner.vue";
   import HeaderUSGS from '@/components/HeaderUSGS.vue';
-  import ShutdownBanner from '@/components/ShutdownBanner.vue'; 
+  // import ShutdownBanner from '@/components/ShutdownBanner.vue'; 
   import WorkInProgressWarning from "@/components/WorkInProgressWarning.vue";
   import PreFooterCodeLinks from "@/components/PreFooterCodeLinks.vue";
   import FooterUSGS from '@/components/FooterUSGS.vue';
