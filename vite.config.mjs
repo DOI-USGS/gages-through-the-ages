@@ -1,6 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
-// import replace from "@rollup/plugin-replace";
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import {ViteEjsPlugin} from "vite-plugin-ejs";
