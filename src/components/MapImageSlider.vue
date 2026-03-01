@@ -1842,63 +1842,34 @@
     // safari drag fallback
     const syncFromPointerX = (event) => {
       const pointer = event.touches?.[0] || event.changedTouches?.[0] || event;
-      if (!pointer || typeof pointer.clientX !== "number") {
-        return;
-      }
-
       const bounds = sliderElement.getBoundingClientRect();
-      if (!bounds.width) {
-        return;
-      }
-
       const raw = ((pointer.clientX - bounds.left) / bounds.width) * 100;
       const clamped = Math.max(0, Math.min(100, Math.round(raw)));
       rangeInput.value = String(clamped);
-      rangeInput.dispatchEvent(new Event("input", { bubbles: true }));
-      rangeInput.dispatchEvent(new Event("change", { bubbles: true }));
+      rangeInput.dispatchEvent(new Event("input"));
+      rangeInput.dispatchEvent(new Event("change"));
     };
 
     rangeInput.style.pointerEvents = "none";
 
-    let dragging = false;
     const stopDragging = () => {
-      dragging = false;
-      document.removeEventListener("mousemove", mouseMoveHandler);
+      document.removeEventListener("mousemove", syncFromPointerX);
       document.removeEventListener("mouseup", stopDragging);
-      document.removeEventListener("touchmove", touchMoveHandler);
+      document.removeEventListener("touchmove", syncFromPointerX);
       document.removeEventListener("touchend", stopDragging);
       document.removeEventListener("touchcancel", stopDragging);
     };
-    const mouseMoveHandler = (event) => {
-      if (!dragging) {
-        return;
-      }
-      syncFromPointerX(event);
-    };
-    const touchMoveHandler = (event) => {
-      if (!dragging) {
-        return;
-      }
-      syncFromPointerX(event);
-      if (event.cancelable) {
-        event.preventDefault();
-      }
-    };
     const startDragging = (event) => {
-      dragging = true;
       syncFromPointerX(event);
-      document.addEventListener("mousemove", mouseMoveHandler);
+      document.addEventListener("mousemove", syncFromPointerX);
       document.addEventListener("mouseup", stopDragging);
-      document.addEventListener("touchmove", touchMoveHandler, { passive: false });
+      document.addEventListener("touchmove", syncFromPointerX);
       document.addEventListener("touchend", stopDragging);
       document.addEventListener("touchcancel", stopDragging);
-      if (event.cancelable) {
-        event.preventDefault();
-      }
     };
 
     sliderElement.addEventListener("mousedown", startDragging);
-    sliderElement.addEventListener("touchstart", startDragging, { passive: false });
+    sliderElement.addEventListener("touchstart", startDragging);
 
     cleanupSlider = () => {
       stopDragging();
