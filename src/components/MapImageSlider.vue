@@ -1841,13 +1841,11 @@
 
     // safari drag fallback
     const syncFromPointerX = (event) => {
-      const pointer = event.touches?.[0] || event.changedTouches?.[0] || event;
       const bounds = sliderElement.getBoundingClientRect();
-      const raw = ((pointer.clientX - bounds.left) / bounds.width) * 100;
+      const raw = ((event.clientX - bounds.left) / bounds.width) * 100;
       const clamped = Math.max(0, Math.min(100, Math.round(raw)));
       rangeInput.value = String(clamped);
       rangeInput.dispatchEvent(new Event("input"));
-      rangeInput.dispatchEvent(new Event("change"));
     };
 
     rangeInput.style.pointerEvents = "none";
@@ -1855,26 +1853,18 @@
     const stopDragging = () => {
       document.removeEventListener("mousemove", syncFromPointerX);
       document.removeEventListener("mouseup", stopDragging);
-      document.removeEventListener("touchmove", syncFromPointerX);
-      document.removeEventListener("touchend", stopDragging);
-      document.removeEventListener("touchcancel", stopDragging);
     };
     const startDragging = (event) => {
       syncFromPointerX(event);
       document.addEventListener("mousemove", syncFromPointerX);
       document.addEventListener("mouseup", stopDragging);
-      document.addEventListener("touchmove", syncFromPointerX);
-      document.addEventListener("touchend", stopDragging);
-      document.addEventListener("touchcancel", stopDragging);
     };
 
     sliderElement.addEventListener("mousedown", startDragging);
-    sliderElement.addEventListener("touchstart", startDragging);
 
     cleanupSlider = () => {
       stopDragging();
       sliderElement.removeEventListener("mousedown", startDragging);
-      sliderElement.removeEventListener("touchstart", startDragging);
       rangeInput.style.pointerEvents = "";
       cleanupSlider = () => {};
     };
