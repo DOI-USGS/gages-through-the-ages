@@ -1783,34 +1783,36 @@
     >
       <p><span v-html="paragraph.aboveSliderText" /></p>
     </div>
-    <div
-      id="georgiaSlider"
-      class="sliderContainer"
-    >
+    <figure class="sliderFigure">
       <div
-        id="sliderOne"
-        class="beer-slider"
-        data-beer-label="2018"
+        id="georgiaSlider"
+        class="sliderContainer"
       >
-        <img
-          src="@/assets/images/slider/atlanta-gages-2018.png"
-          alt="USGS Gages in Atlanta Georgia in 2018"
-        >
         <div
-          class="beer-reveal"
-          data-beer-label="1967"
+          id="sliderOne"
+          class="beer-slider"
+          data-beer-label="2018"
         >
           <img
-            src="@/assets/images/slider/atlanta-gages-1967.png"
-            alt="USGS Gages in Atlanta Georgia in 1967"
+            src="@/assets/images/slider/atlanta-gages-2018.png"
+            alt="USGS Gages in Atlanta Georgia in 2018"
           >
+          <div
+            class="beer-reveal"
+            data-beer-label="1967"
+          >
+            <img
+              src="@/assets/images/slider/atlanta-gages-1967.png"
+              alt="USGS Gages in Atlanta Georgia in 1967"
+            >
+          </div>
         </div>
+        <GeorgiaInsetMap />
       </div>
-      <GeorgiaInsetMap />
-    </div>
-    <caption class="mapcaption">
-      <span v-html="atlantaText.caption" />
-    </caption>
+      <figcaption class="mapcaption">
+        <span v-html="atlantaText.caption" />
+      </figcaption>
+    </figure>
   </div>
 </template>
 <script setup>
@@ -1952,6 +1954,9 @@ $polygon: '@/assets/images/polygon.png';
 .sliderContainer{
     position: relative;
     margin-top: 100px;
+}
+.sliderFigure {
+  margin: 0;
 }
 .beer-slider[data-beer-label]:after,
 .beer-reveal[data-beer-label]:after{

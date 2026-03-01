@@ -2675,13 +2675,13 @@
           </g>
         </g>
       </svg>
+      <figcaption
+        id="svgcaption"
+        class="screenreader"
+      >
+        {{ text.caption }}
+      </figcaption>
     </figure>
-    <caption
-      id="svgcaption"
-      class="screenreader"
-    >
-      {{ text.caption }}
-    </caption>
     
     <div class="screenreader">
       <p>{{ text.svgText }}</p>
