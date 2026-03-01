@@ -1816,27 +1816,90 @@
   </div>
 </template>
 <script setup>
-  import { onMounted } from "vue";
+  import { onMounted, onUnmounted } from "vue";
 
   import BeerSlider from "beerslider";
   import GeorgiaInsetMap from '@/components/GeorgiaInsetMap.vue';
   import atlantaSliderText from "../assets/text/atlantaSliderText";
 
-  // global variables
+  // global vars
   const atlantaText = atlantaSliderText.textContents;
   let svg = null;
   let pt = null;
   let firstHover = null;
+  let cleanupSlider = () => {};
 
-  // Declare behavior on mounted
-  // functions called here
+  function initComparisonSlider() {
+    const sliderElement = document.getElementById("sliderOne");
+    if (!sliderElement) {
+      return;
+    }
+    new BeerSlider(sliderElement);
+
+    const isSafari = /^((?!chrome|android).)*safari/i.test(window.navigator.userAgent);
+    const rangeInput = sliderElement.querySelector(".beer-range");
+    if (!isSafari || !rangeInput) {
+      return;
+    }
+
+    // safari drag fallback
+    const syncFromPointerX = (event) => {
+      if (typeof event.clientX !== "number") {
+        return;
+      }
+
+      const bounds = sliderElement.getBoundingClientRect();
+      if (!bounds.width) {
+        return;
+      }
+
+      const raw = ((event.clientX - bounds.left) / bounds.width) * 100;
+      const clamped = Math.max(0, Math.min(100, Math.round(raw)));
+      rangeInput.value = String(clamped);
+      rangeInput.dispatchEvent(new Event("input", { bubbles: true }));
+      rangeInput.dispatchEvent(new Event("change", { bubbles: true }));
+    };
+
+    rangeInput.style.pointerEvents = "none";
+
+    let dragging = false;
+    const stopDragging = () => {
+      dragging = false;
+      document.removeEventListener("mousemove", mouseMoveHandler);
+      document.removeEventListener("mouseup", stopDragging);
+    };
+    const mouseMoveHandler = (event) => {
+      if (!dragging) {
+        return;
+      }
+      syncFromPointerX(event);
+    };
+    const startDragging = (event) => {
+      dragging = true;
+      syncFromPointerX(event);
+      document.addEventListener("mousemove", mouseMoveHandler);
+      document.addEventListener("mouseup", stopDragging);
+    };
+
+    sliderElement.addEventListener("mousedown", startDragging);
+
+    cleanupSlider = () => {
+      stopDragging();
+      sliderElement.removeEventListener("mousedown", startDragging);
+      rangeInput.style.pointerEvents = "";
+      cleanupSlider = () => {};
+    };
+  }
+
+  // mount behavior
   onMounted(() => {
-    window.addEventListener('load', function(){
-        new BeerSlider(document.getElementById('sliderOne'));
-        new BeerSlider(document.getElementById('sliderTwo'));
-    })
+    initComparisonSlider();
     svg = document.querySelector("#cartogram-svg");
     pt = svg.createSVGPoint();
+  });
+
+  onUnmounted(() => {
+    cleanupSlider();
   });
 
   function cursorPoint(evt) {
@@ -2075,17 +2138,5 @@ $polygon: '@/assets/images/polygon.png';
     .beer-reveal[data-beer-label]:after{
         font-size: 1.5em;
     }
-}
-/*Touch screen devices - no hover*/
-@media screen and (hover: none) and (pointer: coarse) {
-  #cartogram-svg{
-    pointer-events: none;
-  }
-  #annotate-svg{
-    display: none;
-  }
-  #annotate-arrow{
-    display: none;
-  }
 }
 </style>
