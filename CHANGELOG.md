@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [Released]
+## [2.1.0] - 2026-03-01
+- Domain migrated to water.usgs.gov/vizlab/gages-through-the-ages 
+- Updated vite to v7 and changed <caption>s in components to <figcaption> to address HTML requirements
 
 ## [2.0.0] - 2024-07-17
 - Vue dependency updated to v3, with behind-the-scenes changes to adopt composition API
