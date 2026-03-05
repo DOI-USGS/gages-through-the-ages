@@ -27,6 +27,6 @@ export default ({mode}) => {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       }
     },
-    base: `/visualizations/${process.env.VITE_APP_TITLE}/`
+    base: `/${process.env.VITE_APP_ASSET_URL}/${process.env.VITE_APP_TITLE}/`
   });
 }
