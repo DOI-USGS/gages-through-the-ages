@@ -5,7 +5,7 @@
   >
     <h2><span class="lowlight">{{ text.title }}</span></h2>
     <div id="imageArea">
-      <div id="oldTimeyImage-container">
+      <figure id="oldTimeyImage-container">
         <picture>
           <source
             srcset="@/assets/images/oldTimey/Picture1.webp"
@@ -17,8 +17,8 @@
             alt="An early hydrographer makes measurements of Rio Grande river flow at Embudo, New Mexico."
           >
         </picture>
-        <caption>An early hydrographer makes measurements of Rio Grande river flow at Embudo, New Mexico.</caption>
-      </div>
+        <figcaption>An early hydrographer makes measurements of Rio Grande river flow at Embudo, New Mexico.</figcaption>
+      </figure>
       
       <div>
         <p v-html="text.firstParagraphText" />
@@ -48,6 +48,9 @@
   }
   .breathingRoom {
     margin: 4vh 0;
+  }
+  #oldTimeyImage-container {
+    margin: 0;
   }
   @media screen and (min-width: 600px) {
     #oldTimeyImage-container {

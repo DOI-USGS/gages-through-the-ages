@@ -165,4 +165,7 @@
   .usa-banner__icon {
     width: 40px;
   }
+  .usa-accordion__content[hidden] {
+    display: none !important;
+  }
 </style>

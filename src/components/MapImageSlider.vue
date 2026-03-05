@@ -1783,58 +1783,121 @@
     >
       <p><span v-html="paragraph.aboveSliderText" /></p>
     </div>
-    <div
-      id="georgiaSlider"
-      class="sliderContainer"
-    >
+    <figure class="sliderFigure">
       <div
-        id="sliderOne"
-        class="beer-slider"
-        data-beer-label="2018"
+        id="georgiaSlider"
+        class="sliderContainer"
       >
-        <img
-          src="@/assets/images/slider/atlanta-gages-2018.png"
-          alt="USGS Gages in Atlanta Georgia in 2018"
-        >
         <div
-          class="beer-reveal"
-          data-beer-label="1967"
+          id="sliderOne"
+          class="beer-slider"
+          data-beer-label="2018"
         >
           <img
-            src="@/assets/images/slider/atlanta-gages-1967.png"
-            alt="USGS Gages in Atlanta Georgia in 1967"
+            src="@/assets/images/slider/atlanta-gages-2018.png"
+            alt="USGS Gages in Atlanta Georgia in 2018"
+            draggable="false"
+            @dragstart.prevent
           >
+          <div
+            class="beer-reveal"
+            data-beer-label="1967"
+          >
+            <img
+              src="@/assets/images/slider/atlanta-gages-1967.png"
+              alt="USGS Gages in Atlanta Georgia in 1967"
+              draggable="false"
+              @dragstart.prevent
+            >
+          </div>
         </div>
+        <GeorgiaInsetMap />
       </div>
-      <GeorgiaInsetMap />
-    </div>
-    <caption class="mapcaption">
-      <span v-html="atlantaText.caption" />
-    </caption>
+      <figcaption class="mapcaption">
+        <span v-html="atlantaText.caption" />
+      </figcaption>
+    </figure>
   </div>
 </template>
 <script setup>
-  import { onMounted } from "vue";
+  import { onMounted, onUnmounted } from "vue";
 
   import BeerSlider from "beerslider";
   import GeorgiaInsetMap from '@/components/GeorgiaInsetMap.vue';
   import atlantaSliderText from "../assets/text/atlantaSliderText";
 
-  // global variables
+  // global vars
   const atlantaText = atlantaSliderText.textContents;
   let svg = null;
   let pt = null;
   let firstHover = null;
+  let cleanupSlider = () => {};
 
-  // Declare behavior on mounted
-  // functions called here
+  function initComparisonSlider() {
+    const sliderElement = document.getElementById("sliderOne");
+    if (!sliderElement) {
+      return;
+    }
+    new BeerSlider(sliderElement);
+
+    const isSafari = /^((?!chrome|android).)*safari/i.test(window.navigator.userAgent);
+    const rangeInput = sliderElement.querySelector(".beer-range");
+    if (!isSafari || !rangeInput) {
+      return;
+    }
+
+    // safari drag fallback
+    const syncFromPointerX = (event) => {
+      if (typeof event.clientX !== "number") {
+        return;
+      }
+      const bounds = sliderElement.getBoundingClientRect();
+      if (!bounds.width) {
+        return;
+      }
+      const raw = ((event.clientX - bounds.left) / bounds.width) * 100;
+      const clamped = Math.max(0, Math.min(100, Math.round(raw)));
+      rangeInput.value = String(clamped);
+      rangeInput.dispatchEvent(new Event("input", { bubbles: true }));
+      rangeInput.dispatchEvent(new Event("change", { bubbles: true }));
+    };
+
+    const preventNativeDrag = (event) => event.preventDefault();
+    sliderElement.addEventListener("dragstart", preventNativeDrag);
+
+    rangeInput.style.pointerEvents = "none";
+
+    const stopDragging = () => {
+      document.removeEventListener("mousemove", syncFromPointerX);
+      document.removeEventListener("mouseup", stopDragging);
+    };
+    const startDragging = (event) => {
+      event.preventDefault();
+      syncFromPointerX(event);
+      document.addEventListener("mousemove", syncFromPointerX);
+      document.addEventListener("mouseup", stopDragging);
+    };
+
+    sliderElement.addEventListener("mousedown", startDragging);
+
+    cleanupSlider = () => {
+      stopDragging();
+      sliderElement.removeEventListener("mousedown", startDragging);
+      sliderElement.removeEventListener("dragstart", preventNativeDrag);
+      rangeInput.style.pointerEvents = "";
+      cleanupSlider = () => {};
+    };
+  }
+
+  // mount behavior
   onMounted(() => {
-    window.addEventListener('load', function(){
-        new BeerSlider(document.getElementById('sliderOne'));
-        new BeerSlider(document.getElementById('sliderTwo'));
-    })
+    initComparisonSlider();
     svg = document.querySelector("#cartogram-svg");
     pt = svg.createSVGPoint();
+  });
+
+  onUnmounted(() => {
+    cleanupSlider();
   });
 
   function cursorPoint(evt) {
@@ -1953,6 +2016,9 @@ $polygon: '@/assets/images/polygon.png';
     position: relative;
     margin-top: 100px;
 }
+.sliderFigure {
+  margin: 0;
+}
 .beer-slider[data-beer-label]:after,
 .beer-reveal[data-beer-label]:after{
     background: none;
@@ -1980,6 +2046,12 @@ $polygon: '@/assets/images/polygon.png';
 
 .beer-range:focus ~ .beer-handle {
     background: $brightBlue;
+}
+.beer-slider img,
+.beer-reveal img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .scale{
     position: absolute;

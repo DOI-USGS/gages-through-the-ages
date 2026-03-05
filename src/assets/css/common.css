@@ -196,6 +196,9 @@ footer.footer .footer-social-links ul li a i {
 	color:#fff;
 	font-size: 24px;
 }
+figcaption {
+    font-style: italic;
+}
 
 /* COMMENTED OUT B/C IMPORTING USING vue-fontawesome PACKAGE INSTEAD */ 
 /* Font Awesome Social Media icons */

@@ -2675,13 +2675,13 @@
           </g>
         </g>
       </svg>
+      <figcaption
+        id="svgcaption"
+        class="screenreader"
+      >
+        {{ text.caption }}
+      </figcaption>
     </figure>
-    <caption
-      id="svgcaption"
-      class="screenreader"
-    >
-      {{ text.caption }}
-    </caption>
     
     <div class="screenreader">
       <p>{{ text.svgText }}</p>
@@ -5685,13 +5685,7 @@ $brightYellow: rgb(255,200,51);
     }
     .clear{clear: both;}
   }
-  /*IE SVG Width Fix*/
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    #gage-map figure {
-      width: 100%;
-      height: 506px;
-    }
-  }
+  
   /*Text version of information captured by infographic
   This class leaves it in the site for a screen reader 
   but hides it from view*/

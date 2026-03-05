@@ -313,6 +313,9 @@ $brightYellow: rgb(255,200,51);
   .content {
     grid-column: 1 / 4;
   }
+  .usa-accordion__content[hidden] {
+    display: none !important;
+  }
 }
 #timeline {
     width: 100%;
