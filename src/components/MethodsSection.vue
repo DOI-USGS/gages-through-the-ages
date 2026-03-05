@@ -84,6 +84,9 @@
     background-color: rgb(241, 240, 240);
     color: $brightBlue;
   }
+  .usa-accordion__content[hidden] {
+    display: none !important;
+  }
   #app h2.usa-accordion__heading {
     margin: 0;
   }
