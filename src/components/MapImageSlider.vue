@@ -1796,6 +1796,8 @@
           <img
             src="@/assets/images/slider/atlanta-gages-2018.png"
             alt="USGS Gages in Atlanta Georgia in 2018"
+            draggable="false"
+            @dragstart.prevent
           >
           <div
             class="beer-reveal"
@@ -1804,6 +1806,8 @@
             <img
               src="@/assets/images/slider/atlanta-gages-1967.png"
               alt="USGS Gages in Atlanta Georgia in 1967"
+              draggable="false"
+              @dragstart.prevent
             >
           </div>
         </div>
@@ -1831,6 +1835,9 @@
 
   function initComparisonSlider() {
     const sliderElement = document.getElementById("sliderOne");
+    if (!sliderElement) {
+      return;
+    }
     new BeerSlider(sliderElement);
 
     const isSafari = /^((?!chrome|android).)*safari/i.test(window.navigator.userAgent);
@@ -1841,12 +1848,22 @@
 
     // safari drag fallback
     const syncFromPointerX = (event) => {
+      if (typeof event.clientX !== "number") {
+        return;
+      }
       const bounds = sliderElement.getBoundingClientRect();
+      if (!bounds.width) {
+        return;
+      }
       const raw = ((event.clientX - bounds.left) / bounds.width) * 100;
       const clamped = Math.max(0, Math.min(100, Math.round(raw)));
       rangeInput.value = String(clamped);
-      rangeInput.dispatchEvent(new Event("input"));
+      rangeInput.dispatchEvent(new Event("input", { bubbles: true }));
+      rangeInput.dispatchEvent(new Event("change", { bubbles: true }));
     };
+
+    const preventNativeDrag = (event) => event.preventDefault();
+    sliderElement.addEventListener("dragstart", preventNativeDrag);
 
     rangeInput.style.pointerEvents = "none";
 
@@ -1855,6 +1872,7 @@
       document.removeEventListener("mouseup", stopDragging);
     };
     const startDragging = (event) => {
+      event.preventDefault();
       syncFromPointerX(event);
       document.addEventListener("mousemove", syncFromPointerX);
       document.addEventListener("mouseup", stopDragging);
@@ -1865,6 +1883,7 @@
     cleanupSlider = () => {
       stopDragging();
       sliderElement.removeEventListener("mousedown", startDragging);
+      sliderElement.removeEventListener("dragstart", preventNativeDrag);
       rangeInput.style.pointerEvents = "";
       cleanupSlider = () => {};
     };
@@ -2027,6 +2046,12 @@ $polygon: '@/assets/images/polygon.png';
 
 .beer-range:focus ~ .beer-handle {
     background: $brightBlue;
+}
+.beer-slider img,
+.beer-reveal img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .scale{
     position: absolute;
