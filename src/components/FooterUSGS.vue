@@ -24,7 +24,6 @@
           <li class="first leaf menu-links menu-level-1"><a href="https://www.doi.gov/" target="_blank">U.S. Department of the Interior</a></li>
           <li class="leaf menu-links menu-level-1"><a href="https://www.doioig.gov/" target="_blank">DOI Inspector General</a></li>
           <li class="leaf menu-links menu-level-1"><a href="https://www.whitehouse.gov/" target="_blank">White House</a></li>
-          <li class="leaf menu-links menu-level-1"><a href="https://www.whitehouse.gov/omb/management/egov/" target="_blank">E-gov</a></li>
           <li class="leaf menu-links menu-level-1"><a href="https://www.doi.gov/pmb/eeo/no-fear-act" target="_blank">No Fear Act</a></li>
           <li class="last leaf menu-links menu-level-1"><a href="https://www.usgs.gov/foia" target="_blank">FOIA</a></li>
         </ul>
@@ -35,7 +34,7 @@
         <ul class="social">
           <li class="follow">Follow</li>
           <li class="twitter">
-            <a href="https://twitter.com/usgs_datasci" target="_blank" aria-label="twitter link">
+            <a href="https://x.com/usgs_water" target="_blank" aria-label="twitter link">
               <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'square-x-twitter' } " class="fa fa-square-x-twitter"><span class="only">Twitter</span></font-awesome-icon>
             </a>
           </li>

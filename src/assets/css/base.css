@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* semantic color variables for this project */
+/* Define colors */
+:root {
+  --white: #ffffff;
+  --white-soft: #F0F0F0;
+
+  --black-soft: #151515;
+  --dodger-blue: #1e90ff;
+  --medium-grey: #B5B5B5;
+  --medium-purple: #8F00DB;
+  --medium-blue: #4365A8;
+  --medium-orange: #E48951;
+  --usgs-blue: #00264c;
+  --usgs-green: #006F41;
+
+  font-size: 62.5%;
+
+  --title-font: Abel;
+  --style-font: Assistant;
+  --default-font: Source Sans Pro;
+}
+
+/* Declare color variables */
+:root {
+  --color-background: var(--white);
+  --color-text: var(--black-soft);
+  --color-title-text: var(--dodger-blue);
+  --color-overlay: var(--black-soft);
+  --color-overlay-text: var(--white-soft);
+  --color-code-links-background: var(--medium-grey);
+  --color-link: var(--medium-purple);
+  --color-bar-focal: var(--medium-blue);
+  --color-bar-default: var(--medium-grey);
+  --color-map-focal: var(--medium-orange);
+  --color-map-default: var(--white);
+  --color-USGS-header-footer: var(--usgs-blue);
+  --color-prefooter-highlight: var(--medium-blue);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  /* font-weight: normal; */
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  fill: var(--color-text); /* Needed for text added w/ d3 */
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.2;
+  font-family: sans-serif; /* This is fallback font for old browsers */
+  font-family: var(--default-font);
+  font-weight: 400;
+  font-size: 2rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  @media screen and (max-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  font-family: var(--title-font);
+  line-height: 1;
+  text-align: left;
+  padding: 0rem 0 1rem 0;
+  text-shadow: 1px 1px 100px rgba(0,0,0,.8);
+  @media screen and (max-width: 600px) {
+    font-size: 2.5em;
+  }
+}
+h2 {
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-align: left;
+  font-family: var(--style-font);
+  margin-top: 5px;
+  line-height: 1.2;
+  padding: 3rem 0 1rem 0;
+  @media screen and (max-width: 600px) {
+    font-size: 2em;
+  }
+}
+h3{
+  font-size: 1.3em;
+  font-family: var(--style-font);
+  font-weight: 400;
+  @media screen and (max-height: 770px) {
+    font-size: 1.2em;
+  }
+  @media screen and (max-width: 700px) {
+      font-size: 0.9em;
+  } 
+  @media screen and (max-height: 500px) {
+      font-size: 0.9em;
+  } 
+}
+p, text {
+  font-family: var(--style-font);
+  font-size: 1em;
+  @media screen and (max-width: 700px) {
+      font-size: 0.9em;
+  } 
+  @media screen and (max-height: 500px) {
+      font-size: 0.9em;
+  } 
+}
+a { 
+  color: black;
+}

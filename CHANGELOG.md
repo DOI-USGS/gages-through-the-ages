@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Added]
+## [2.1.1] - 2026-03-09
+- New pre-footer code links component 
+
 ## [Released]
 ## [2.1.0] - 2026-03-01
 - Domain migrated to water.usgs.gov/vizlab/gages-through-the-ages 

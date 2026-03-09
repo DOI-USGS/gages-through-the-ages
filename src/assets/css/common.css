@@ -133,6 +133,8 @@ footer.footer .footer-doi ul.menu li a {
     color: #ffffff;
     float: left;
     font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 footer.footer .footer-doi ul.menu li:first-of-type {
@@ -162,6 +164,15 @@ footer.footer .footer-wrap .menu.nav a {
 	padding: 4px 0px;
 	color: #ffffff;
 	font-size: 12px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+footer.footer .footer-doi ul.menu li a:hover,
+footer.footer .footer-doi ul.menu li a:focus-visible,
+footer.footer .footer-wrap .menu.nav a:hover,
+footer.footer .footer-wrap .menu.nav a:focus-visible {
+	text-decoration: underline;
 }
 
 footer.footer .footer-social-links {
