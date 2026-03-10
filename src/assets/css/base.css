@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 /* semantic color variables for this project */
 /* Define colors */
@@ -19,8 +18,7 @@
 
   font-size: 62.5%;
 
-  --title-font: Abel;
-  --style-font: Assistant;
+  --title-font: Roboto Slab;
   --default-font: Source Sans Pro;
 }
 
@@ -41,6 +39,13 @@
   --color-prefooter-highlight: var(--medium-blue);
 }
 
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--black-soft);
+    --color-text: var(--white-soft);
+  }
+} */
+
 *,
 *::before,
 *::after {
@@ -60,66 +65,22 @@ body {
   line-height: 1.2;
   font-family: sans-serif; /* This is fallback font for old browsers */
   font-family: var(--default-font);
-  font-weight: 400;
   font-size: 2rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior: none;
-  @media screen and (max-width: 600px) {
-    font-size: 16px;
-  }
 }
-
-
 h1 {
-  font-size: 3.5rem;
-  font-weight: 300;
-  font-family: var(--title-font);
-  line-height: 1;
-  text-align: left;
+  font-size: 5rem;
+  font-weight: 800;
   padding: 0rem 0 1rem 0;
-  text-shadow: 1px 1px 100px rgba(0,0,0,.8);
-  @media screen and (max-width: 600px) {
-    font-size: 2.5em;
-  }
 }
 h2 {
-  font-size: 1.3rem;
-  font-weight: 300;
-  text-align: left;
-  font-family: var(--style-font);
-  margin-top: 5px;
-  line-height: 1.2;
+  font-size: 2.5rem;
+  font-weight: 700;
   padding: 3rem 0 1rem 0;
-  @media screen and (max-width: 600px) {
-    font-size: 2em;
-  }
 }
-h3{
-  font-size: 1.3em;
-  font-family: var(--style-font);
-  font-weight: 400;
-  @media screen and (max-height: 770px) {
-    font-size: 1.2em;
-  }
-  @media screen and (max-width: 700px) {
-      font-size: 0.9em;
-  } 
-  @media screen and (max-height: 500px) {
-      font-size: 0.9em;
-  } 
-}
-p, text {
-  font-family: var(--style-font);
-  font-size: 1em;
-  @media screen and (max-width: 700px) {
-      font-size: 0.9em;
-  } 
-  @media screen and (max-height: 500px) {
-      font-size: 0.9em;
-  } 
-}
-a { 
-  color: black;
+p, text, li {
+  padding: 0 0 1rem 0;
 }
