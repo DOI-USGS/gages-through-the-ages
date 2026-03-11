@@ -302,6 +302,7 @@ $brightYellow: rgb(255,200,51);
     min-height: 5.5em;
     color: white;
     text-align: center;
+    font-size: 1.75rem;
   }
   .usa-accordion__button[aria-expanded=false] {
     background-image: url($chevronLeft);
@@ -332,6 +333,7 @@ $brightYellow: rgb(255,200,51);
     font-size:8px;
     font-weight: 800;
 }
+
 .highlight {
   fill: $brightBlue;
     stroke-miterlimit:10; 

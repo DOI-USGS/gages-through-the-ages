@@ -64,6 +64,8 @@
     background-size: 15px 10px;
     background-color: $brightBlue;
     color: white;
+    font-size: 2rem;
+
   }
   .usa-accordion__button[aria-expanded=false]{
     background-image: url($chevronLeft);
