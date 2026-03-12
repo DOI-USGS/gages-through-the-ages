@@ -91,7 +91,7 @@
       padding-top: 1.1rem;
       font-weight: 700;
       @media screen and (max-width: 600px) {
-        font-size: 1.35em;
+        font-size: 1.53rem;
     }
     }
     caption,p{
