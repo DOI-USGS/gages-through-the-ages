@@ -314,6 +314,9 @@ $brightYellow: rgb(255,200,51);
   .content {
     grid-column: 1 / 4;
   }
+  .usa-accordion__content {
+    padding: 1.6rem 2rem;
+}
   .usa-accordion__content[hidden] {
     display: none !important;
   }

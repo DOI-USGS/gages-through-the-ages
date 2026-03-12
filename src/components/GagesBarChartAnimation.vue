@@ -5538,21 +5538,21 @@ $brightYellow: rgb(255,200,51);
   }
   .main-title{
     text-align: center;
-    font-size: 4em;
+    font-size: 6.4rem;
     font-weight: 900;
     line-height: 115%;
 
 
     @media screen and (max-width: 600px) {
-      font-size: 3em;
+      font-size: 4.8rem;
     }
    
   }
   .subtitle {
     text-align: center;
-    margin-top: 2em;
+    margin-top: 3.2rem;
     @media screen and (max-width: 600px) {
-      font-size: 1.2em;
+      font-size: 1.92rem;
     }
 
   }

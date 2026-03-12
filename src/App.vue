@@ -81,14 +81,14 @@
       margin: 20px 0;
     }
     h2{
-      font-size: 2em;
+      font-size: 3.2rem;
       margin-top: 80px;
       font-weight: 700;
-  
+      padding: 0;
     }
     h3{
-      font-size: 1.4em;
-      padding-top: .5em;
+      font-size: 2.37rem;
+      padding-top: 1.1rem;
       font-weight: 700;
       @media screen and (max-width: 600px) {
         font-size: .8em;

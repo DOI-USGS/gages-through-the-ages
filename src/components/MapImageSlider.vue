@@ -2136,7 +2136,10 @@ $polygon: '@/assets/images/polygon.png';
   fill: white;
   text-anchor: middle;
 }
-
+.mapcaption {
+  font-size: 1.6rem;
+  font-style: italic;
+}
 @media screen and (min-width: 600px){
     .beer-slider[data-beer-label]:after,
     .beer-reveal[data-beer-label]:after{
