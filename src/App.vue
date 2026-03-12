@@ -91,7 +91,7 @@
       padding-top: 1.1rem;
       font-weight: 700;
       @media screen and (max-width: 600px) {
-        font-size: .8em;
+        font-size: 1.35em;
     }
     }
     caption,p{
@@ -126,7 +126,12 @@
     font-size:16pt;
     line-height:1.5em;
   }
-
+  figcaption {
+    font-size: 1.6rem;
+    font-style: italic;
+    text-align: start;
+    padding: 1rem 0.5rem;
+  }
   a{
     text-decoration:none;
     cursor:pointer;

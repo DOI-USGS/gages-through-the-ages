@@ -303,6 +303,7 @@ $brightYellow: rgb(255,200,51);
     color: white;
     text-align: center;
     font-size: 1.75rem;
+    padding: 1.6rem 5.6rem 1.6rem 2rem;
   }
   .usa-accordion__button[aria-expanded=false] {
     background-image: url($chevronLeft);
