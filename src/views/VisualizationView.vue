@@ -60,7 +60,7 @@
         font-size: 1.15rem;
       }
       caption,p{
-        font-size: 1rem;
+        font-size: 1.6rem;
       }
     }
   }

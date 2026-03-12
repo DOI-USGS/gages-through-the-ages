@@ -13,9 +13,11 @@ footer, #navbar {
     box-sizing: border-box;
 }	
 
-footer, header, main, nav, div {
+/* Commented out so that it doesn't affect USWDS banner css */
+/* Moved into HeaderUSGS.vue and FooterUSGS.vue */
+/* footer, header, main, nav, div {
     display: block;
-}
+} */
 
 .tmp-container {
 	margin-right: auto;
@@ -133,7 +135,10 @@ footer.footer .footer-doi ul.menu li a {
     color: #ffffff;
     float: left;
     font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
 }
+
 
 footer.footer .footer-doi ul.menu li:first-of-type {
     padding-left: 0px;
@@ -162,6 +167,15 @@ footer.footer .footer-wrap .menu.nav a {
 	padding: 4px 0px;
 	color: #ffffff;
 	font-size: 12px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+footer.footer .footer-doi ul.menu li a:hover,
+footer.footer .footer-doi ul.menu li a:focus-visible,
+footer.footer .footer-wrap .menu.nav a:hover,
+footer.footer .footer-wrap .menu.nav a:focus-visible {
+	text-decoration: underline;
 }
 
 footer.footer .footer-social-links {
@@ -195,9 +209,6 @@ footer.footer .footer-social-links ul li:last-of-type {
 footer.footer .footer-social-links ul li a i {
 	color:#fff;
 	font-size: 24px;
-}
-figcaption {
-    font-style: italic;
 }
 
 /* COMMENTED OUT B/C IMPORTING USING vue-fontawesome PACKAGE INSTEAD */ 
